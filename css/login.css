@@ -25,7 +25,7 @@ html, body {
 #app {
   position: relative;
   min-height: 100vh;
-  min-height: 100dvh; /* Garante adaptação perfeita com barras dinâmicas do navegador mobile */
+  min-height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@ html, body {
   padding: 16px;
 }
 
-/* ---------- Fundo: Onda SVG / Vector (Preservada) ---------- */
+/* ---------- Fundo: Onda SVG / Vector ---------- */
 .login-bg {
   position: absolute;
   inset: 0;
@@ -42,12 +42,12 @@ html, body {
   pointer-events: none;
 }
 
+/* No Desktop mantemos 100% idêntico ao original */
 .login-vector1 {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  /* No desktop mantém a fidelidade exata do layout original */
   object-fit: fill; 
   display: block;
 }
@@ -221,18 +221,21 @@ html, body {
 }
 
 /* ===========================================================================
- * RESPONSIVIDADE E ADAPTAÇÃO GEOMÉTRICA (MOBILE / SMALL SCREENS)
+ * CORREÇÃO DA ONDA NO MOBILE (AJUSTE GEOMÉTRICO)
  * =========================================================================== */
 
 @media (max-width: 768px) {
-  /* Adapta a geometria do vetor no mobile para a curva não "achatar" nem "esmagar" o form */
+  /* Alarga a proporção horizontal da imagem no mobile para abrir o centro branco */
   .login-vector1 {
+    width: 220%;
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
     object-fit: cover;
-    object-position: center center;
   }
 }
 
-/* Telas de smartmphones em geral (360px até 480px) */
+/* Telas de celulares (360px a 480px) */
 @media (max-width: 480px) {
   .login-card {
     padding: 16px 8px;
@@ -257,8 +260,12 @@ html, body {
   }
 }
 
-/* Telas ultra compactas (Dispositivos muito pequenos ~320px) */
+/* Telas ultra compactas (~320px) */
 @media (max-width: 340px) {
+  .login-vector1 {
+    width: 250%; /* Um pouco mais de largura para telas muito estreitas */
+  }
+
   .login-logo {
     width: 110px;
     height: 110px;
