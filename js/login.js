@@ -1,87 +1,178 @@
+import { supabase, upsertUserProfile } from './supabaseClient.js';
+
+const form = document.getElementById('login-form');
+const emailInput = document.getElementById('email');
+const passInput = document.getElementById('password');
+const msg = document.getElementById('login-msg');
+const submitBtn = document.getElementById('login-submit');
+const googleBtn = document.getElementById('google-btn');
+
+// Flag para evitar múltiplos redirecionamentos simultâneos
+let isRedirecting = false;
+
+function showMsg(text, type = 'error') {
+  msg.textContent = text;
+  msg.className = 'login-msg ' + type;
+}
+
 /**
- * ===========================================================================
- * login.js — TODA a página login.html é montada por este arquivo.
- * O HTML só tem uma div vazia (#app); aqui a gente cria o fundo, a logo
- * e o formulário. A autenticação com o Supabase entra na próxima etapa.
- * ===========================================================================
+ * Centraliza o redirecionamento pós-autenticação para evitar chamadas duplas
  */
+async function handleUserRedirect(user) {
+  if (isRedirecting) return;
+  isRedirecting = true;
 
-const ICONES_LOGIN = {
-  usuario: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5Z"/></svg>`,
-  senha: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 10V8a6 6 0 1 1 12 0v2h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h1Zm2 0h8V8a4 4 0 1 0-8 0v2Zm4 5a1.5 1.5 0 0 0-.75 2.8V19h1.5v-1.2A1.5 1.5 0 0 0 12 15Z"/></svg>`,
-  google: `<svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.66-.22-2.45H12v4.63h6.47a5.54 5.54 0 0 1-2.4 3.64v3h3.88c2.27-2.09 3.57-5.17 3.57-8.82Z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.9l-3.88-3.02c-1.08.72-2.46 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.25v3.11A12 12 0 0 0 12 24Z"/><path fill="#FBBC05" d="M5.27 14.27a7.2 7.2 0 0 1 0-4.54V6.62H1.25a12 12 0 0 0 0 10.76l4.02-3.11Z"/><path fill="#EA4335" d="M12 4.75c1.76 0 3.35.6 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.25 6.62l4.02 3.11C6.22 6.87 8.87 4.75 12 4.75Z"/></svg>`,
-};
+  try {
+    await upsertUserProfile(user);
+    window.location.href = 'index.html';
+  } catch (err) {
+    console.error('Erro ao sincronizar perfil ou redirecionar:', err);
+    showMsg('Erro ao preparar sua conta. Tente novamente.');
+    isRedirecting = false;
+  }
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderizarLogin();
-  configurarFormulario();
+/**
+ * Controla o estado de carregamento do botão de submit
+ */
+function setLoading(isLoading) {
+  submitBtn.disabled = isLoading;
+  submitBtn.textContent = isLoading ? 'ENTRANDO...' : 'LOGIN';
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function validatePassword(password) {
+  return password.length >= 6;
+}
+
+/**
+ * Traduz erros do Supabase Auth para mensagens amigáveis em português
+ */
+function translateAuthError(error) {
+  if (!error) return 'Erro inesperado.';
+  
+  const message = error.message?.toLowerCase() || '';
+
+  if (message.includes('invalid login credentials') || message.includes('invalid credentials')) {
+    return 'E-mail ou senha incorretos.';
+  }
+  if (message.includes('user not found')) {
+    return 'Usuário não encontrado.';
+  }
+  if (message.includes('network') || message.includes('fetch')) {
+    return 'Falha ao conectar ao servidor. Verifique sua conexão.';
+  }
+
+  return 'Erro ao realizar login. Tente novamente mais tarde.';
+}
+
+async function redirectIfSigned() {
+  try {
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+
+    if (data.session?.user) {
+      await handleUserRedirect(data.session.user);
+    }
+  } catch (err) {
+    console.error('Erro ao verificar sessão existente:', err);
+  }
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = emailInput.value.trim();
+  const password = passInput.value;
+
+  if (!email || !password) {
+    showMsg('Preencha e-mail e senha.');
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    showMsg('Digite um e-mail válido.');
+    return;
+  }
+
+  if (!validatePassword(password)) {
+    showMsg('A senha deve possuir pelo menos 6 caracteres.');
+    return;
+  }
+
+  setLoading(true);
+
+  console.log('=== INICIANDO LOGIN ===');
+  console.log('Email:', email);
+  console.log('Senha possui', password.length, 'caracteres');
+
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    console.log('=== RESPOSTA DO SUPABASE ===');
+    console.log('Data:', data);
+    console.log('Error:', error);
+    if (error) {
+      console.error('Mensagem:', error.message);
+      console.error('Status:', error.status);
+      console.error('Código:', error.code);
+    }
+
+    if (error) {
+      console.error('Erro no login por e-mail/senha:', error);
+      showMsg(translateAuthError(error));
+      setLoading(false);
+      return;
+    }
+
+    showMsg('Login realizado com sucesso!', 'success');
+    console.log('Usuário autenticado com sucesso:', data.user);
+    await handleUserRedirect(data.user);
+  } catch (err) {
+    console.error('Erro inesperado durante o login:', err);
+    showMsg('Erro inesperado ao realizar login.');
+    setLoading(false);
+  }
 });
 
-function renderizarLogin() {
-  const app = document.getElementById("app");
+googleBtn.addEventListener('click', async () => {
+  try {
+    // Bloqueia o botão para evitar múltiplos cliques/janelas
+    googleBtn.disabled = true;
 
-  app.innerHTML = `
-    <div class="login-bg">
-      <img src="assets/vector1.png" alt="" class="login-vector1" />
-    </div>
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/login.html` },
+    });
 
-    <div class="login-card">
-      <div class="login-logo">
-        <img src="assets/logo.png" alt="Logo SkillUp" />
-      </div>
+    if (error) {
+      console.error('Erro no login com Google:', error);
+      showMsg(translateAuthError(error));
+      googleBtn.disabled = false; // Reabilita em caso de erro
+    }
+  } catch (err) {
+    console.error('Erro inesperado no login via Google:', err);
+    showMsg('Falha ao conectar com o serviço do Google.');
+    googleBtn.disabled = false; // Reabilita em caso de erro
+  }
+});
 
-      <div id="loginMessage" class="login-message" hidden></div>
+supabase.auth.onAuthStateChange(async (event, session) => {
+  console.log('Evento Auth:', event);
+  console.log('Sessão:', session);
+  if (event === 'SIGNED_IN' && session?.user) {
+    await handleUserRedirect(session.user);
+  }
+});
 
-      <form id="formLogin" novalidate>
-        <div class="login-field">
-          <label for="loginUsuario">Username</label>
-          <div class="login-field-row">
-            ${ICONES_LOGIN.usuario}
-            <input type="text" id="loginUsuario" autocomplete="username" required />
-          </div>
-        </div>
-
-        <div class="login-field">
-          <label for="loginSenha">Password</label>
-          <div class="login-field-row">
-            ${ICONES_LOGIN.senha}
-            <input type="password" id="loginSenha" autocomplete="current-password" required />
-          </div>
-        </div>
-
-        <div class="login-forgot">
-          <a href="#" id="linkEsqueciSenha">Forgot Password?</a>
-        </div>
-
-        <button type="submit" class="login-submit" id="loginSubmit">LOGIN</button>
-      </form>
-
-      <button type="button" class="login-google" id="loginGoogle" aria-label="Entrar com Google">
-        ${ICONES_LOGIN.google}
-      </button>
-    </div>
-  `;
+// Estrutura reservada para implementação futura de cadastro
+async function register() {
+  // A ser implementado posteriormente
 }
 
-/** Liga os eventos do formulário. Por enquanto só cuida do visual;
- *  a autenticação real com o Supabase entra na próxima etapa. */
-function configurarFormulario() {
-  const form = document.getElementById("formLogin");
-
-  form.addEventListener("submit", (evento) => {
-    evento.preventDefault();
-    // TODO: próxima etapa -> chamar o Supabase aqui (signInWithPassword)
-    console.log("Login enviado (autenticação ainda não conectada).");
-  });
-
-  document.getElementById("linkEsqueciSenha").addEventListener("click", (evento) => {
-    evento.preventDefault();
-    // TODO: próxima etapa -> fluxo de recuperação de senha
-    console.log("Fluxo de 'esqueci senha' ainda não implementado.");
-  });
-
-  document.getElementById("loginGoogle").addEventListener("click", () => {
-    // TODO: próxima etapa -> supabase.auth.signInWithOAuth({ provider: 'google' })
-    console.log("Login com Google ainda não implementado.");
-  });
-}
+// Execução inicial
+redirectIfSigned();
