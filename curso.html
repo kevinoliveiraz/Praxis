@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillUp — Curso</title>
+  <meta name="description" content="Aprenda com aulas práticas e projetos reais na plataforma SkillUp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/curso.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span>Skill<span class="up">Up</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Explorar</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Meus cursos</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Favoritos</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Certificados</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost">Entrar</a>
+        <a href="#" class="btn btn-primary">Assine agora</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="course-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">🏠</a>
+        <span>›</span>
+        <a href="index.html">Catálogo</a>
+        <span>›</span>
+        <span class="current" id="bc-current">Curso</span>
+      </div>
+
+      <div class="course-head-grid">
+        <div class="course-cover"><img id="course-cover-img" alt=""></div>
+        <div class="course-info">
+          <span class="category-chip" id="course-category">CURSO</span>
+          <h1 id="course-title">Carregando...</h1>
+          <p class="desc" id="course-desc"></p>
+          <div class="course-actions">
+            <button class="btn-continue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              Continuar aprendendo
+            </button>
+            <button class="btn-save">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              Salvar curso
+            </button>
+          </div>
+          <div class="course-meta">
+            <span>👥 Alunos inscritos</span>
+            <span>📶 Nível: Básico ao Avançado</span>
+          </div>
+        </div>
+
+        <div class="progress-card">
+          <div class="label">SEU PROGRESSO</div>
+          <div class="progress-ring">
+            <svg width="150" height="150">
+              <circle cx="75" cy="75" r="65" stroke="#222634" stroke-width="10" fill="none"/>
+              <circle id="progress-circle" cx="75" cy="75" r="65" stroke="#E0FB38" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="pct" id="progress-pct">0%</div>
+            <div class="sub">Curso em andamento</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-row">
+              <span>Aulas concluídas</span>
+              <span id="progress-count">0 de 0</span>
+            </div>
+            <div class="progress-bar"><span id="progress-bar-fill" style="width:0%"></span></div>
+          </div>
+          <button class="cert-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Ver certificado
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-body">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab active">Conteúdo do curso</button>
+        <button class="tab">Exercícios</button>
+        <button class="tab">Projetos</button>
+        <button class="tab">Materiais</button>
+        <button class="tab">Certificado</button>
+      </div>
+
+      <div class="body-grid">
+        <div>
+          <div id="current-lesson"></div>
+          <div id="lessons-container"></div>
+        </div>
+        <aside>
+          <div class="side-card">
+            <h3>O que você vai aprender</h3>
+            <ul class="side-list">
+              <li><span class="check">✓</span>Aplicar conceitos na prática</li>
+              <li><span class="check">✓</span>Trabalhar com projetos reais</li>
+              <li><span class="check">✓</span>Ganhar produtividade</li>
+              <li><span class="check">✓</span>Resolver problemas complexos</li>
+              <li><span class="check">✓</span>Evoluir profissionalmente</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Recursos do curso</h3>
+            <ul class="side-list stats">
+              <li><span>📼 Aulas práticas</span><span>—</span></li>
+              <li><span>📝 Exercícios</span><span>—</span></li>
+              <li><span>📂 Materiais</span><span>—</span></li>
+              <li><span>🏆 Certificado</span><span style="color:#E0FB38">✓</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="scripts/curso.js"></script>
+</body>
+</html>
