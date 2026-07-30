@@ -7,6 +7,14 @@ const searchBtn = document.getElementById('search-btn');
 let allCourses = [];
 
 /**
+ * Encerra a sessão do usuário no Supabase e redireciona para a tela de login
+ */
+async function logout() {
+  await supabase.auth.signOut();
+  window.location.href = 'login.html';
+}
+
+/**
  * Carrega e exibe as informações do usuário logado na área #user-area do header
  */
 async function loadUserSession() {
@@ -30,8 +38,15 @@ async function loadUserSession() {
         <div class="user-info">
           ${avatarHtml}
           <span class="user-email" title="${email}">${email}</span>
+          <button id="logout-btn" class="btn btn-ghost" style="padding: 6px 12px; font-size: 13px; margin-left: 6px;">Sair</button>
         </div>
       `;
+
+      // Vincular evento de clique ao botão de sair
+      const logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', logout);
+      }
     } else {
       userArea.innerHTML = `
         <a href="login.html" class="btn btn-ghost">
