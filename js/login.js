@@ -1,85 +1,178 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login — SkillUp</title>
-  <meta name="description" content="Acesse sua conta SkillUp e continue evoluindo." />
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/login.css" />
-</head>
-<body>
-  <img src="assets/vector1.png" alt="" class="bg-vector" aria-hidden="true" />
+import { supabase, upsertUserProfile } from './supabaseClient.js';
 
-  <div class="login-wrap">
-    <div class="login-card">
-      
-      <div class="login-logo">
-        <img src="assets/logo.png" alt="SkillUp" class="login-logo-img">
-      </div>
+const form = document.getElementById('login-form');
+const emailInput = document.getElementById('email');
+const passInput = document.getElementById('password');
+const msg = document.getElementById('login-msg');
+const submitBtn = document.getElementById('login-submit');
+const googleBtn = document.getElementById('google-btn');
 
-      <form class="login-form" id="login-form" novalidate>
-        
-        <div class="field">
-          <label for="email">E-mail</label>
-          <div class="field-input">
-            <svg class="icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
-          </div>
-        </div>
+// Flag para evitar múltiplos redirecionamentos simultâneos
+let isRedirecting = false;
 
-        <div class="field">
-          <label for="password">Senha</label>
-          <div class="field-input">
-            <svg class="icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required />
-            
-            <button type="button" id="toggle-password" class="btn-toggle-pass" aria-label="Alternar exibição da senha" title="Ver ou ocultar senha">
-              <svg id="eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
-              <svg id="eye-on" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </button>
-          </div>
-        </div>
+function showMsg(text, type = 'error') {
+  msg.textContent = text;
+  msg.className = 'login-msg ' + type;
+}
 
-        <a href="#" class="forgot" id="forgot-password">Esqueceu sua senha?</a>
+/**
+ * Centraliza o redirecionamento pós-autenticação para evitar chamadas duplas
+ */
+async function handleUserRedirect(user) {
+  if (isRedirecting) return;
+  isRedirecting = true;
 
-        <div id="login-msg" class="login-msg" aria-live="polite"></div>
+  try {
+    await upsertUserProfile(user);
+    window.location.href = 'index.html';
+  } catch (err) {
+    console.error('Erro ao sincronizar perfil ou redirecionar:', err);
+    showMsg('Erro ao preparar sua conta. Tente novamente.');
+    isRedirecting = false;
+  }
+}
 
-        <button type="submit" class="btn-login" id="login-submit">LOGIN</button>
+/**
+ * Controla o estado de carregamento do botão de submit
+ */
+function setLoading(isLoading) {
+  submitBtn.disabled = isLoading;
+  submitBtn.textContent = isLoading ? 'ENTRANDO...' : 'LOGIN';
+}
 
-        <div class="actions-group">
-          <button type="button" class="btn-register" id="register-btn">Criar conta</button>
-          
-          <button type="button" class="google-btn" id="google-btn" aria-label="Continuar com Google" title="Continuar com Google">
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-            <span>Continuar com Google</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('toggle-password');
-      const passInput = document.getElementById('password');
-      const eyeOn = document.getElementById('eye-on');
-      const eyeOff = document.getElementById('eye-off');
+function validatePassword(password) {
+  return password.length >= 6;
+}
 
-      if (toggleBtn && passInput) {
-        toggleBtn.addEventListener('click', () => {
-          const isPassword = passInput.type === 'password';
-          passInput.type = isPassword ? 'text' : 'password';
-          eyeOn.classList.toggle('hidden', !isPassword);
-          eyeOff.classList.toggle('hidden', isPassword);
-        });
-      }
+/**
+ * Traduz erros do Supabase Auth para mensagens amigáveis em português
+ */
+function translateAuthError(error) {
+  if (!error) return 'Erro inesperado.';
+  
+  const message = error.message?.toLowerCase() || '';
+
+  if (message.includes('invalid login credentials') || message.includes('invalid credentials')) {
+    return 'E-mail ou senha incorretos.';
+  }
+  if (message.includes('user not found')) {
+    return 'Usuário não encontrado.';
+  }
+  if (message.includes('network') || message.includes('fetch')) {
+    return 'Falha ao conectar ao servidor. Verifique sua conexão.';
+  }
+
+  return 'Erro ao realizar login. Tente novamente mais tarde.';
+}
+
+async function redirectIfSigned() {
+  try {
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+
+    if (data.session?.user) {
+      await handleUserRedirect(data.session.user);
+    }
+  } catch (err) {
+    console.error('Erro ao verificar sessão existente:', err);
+  }
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = emailInput.value.trim();
+  const password = passInput.value;
+
+  if (!email || !password) {
+    showMsg('Preencha e-mail e senha.');
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    showMsg('Digite um e-mail válido.');
+    return;
+  }
+
+  if (!validatePassword(password)) {
+    showMsg('A senha deve possuir pelo menos 6 caracteres.');
+    return;
+  }
+
+  setLoading(true);
+
+  console.log('=== INICIANDO LOGIN ===');
+  console.log('Email:', email);
+  console.log('Senha possui', password.length, 'caracteres');
+
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    console.log('=== RESPOSTA DO SUPABASE ===');
+    console.log('Data:', data);
+    console.log('Error:', error);
+    if (error) {
+      console.error('Mensagem:', error.message);
+      console.error('Status:', error.status);
+      console.error('Código:', error.code);
+    }
+
+    if (error) {
+      console.error('Erro no login por e-mail/senha:', error);
+      showMsg(translateAuthError(error));
+      setLoading(false);
+      return;
+    }
+
+    showMsg('Login realizado com sucesso!', 'success');
+    console.log('Usuário autenticado com sucesso:', data.user);
+    await handleUserRedirect(data.user);
+  } catch (err) {
+    console.error('Erro inesperado durante o login:', err);
+    showMsg('Erro inesperado ao realizar login.');
+    setLoading(false);
+  }
+});
+
+googleBtn.addEventListener('click', async () => {
+  try {
+    // Bloqueia o botão para evitar múltiplos cliques/janelas
+    googleBtn.disabled = true;
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/login.html` },
     });
-  </script>
 
-  <script type="module" src="scripts/login.js"></script>
-</body>
-</html>
+    if (error) {
+      console.error('Erro no login com Google:', error);
+      showMsg(translateAuthError(error));
+      googleBtn.disabled = false; // Reabilita em caso de erro
+    }
+  } catch (err) {
+    console.error('Erro inesperado no login via Google:', err);
+    showMsg('Falha ao conectar com o serviço do Google.');
+    googleBtn.disabled = false; // Reabilita em caso de erro
+  }
+});
+
+supabase.auth.onAuthStateChange(async (event, session) => {
+  console.log('Evento Auth:', event);
+  console.log('Sessão:', session);
+  if (event === 'SIGNED_IN' && session?.user) {
+    await handleUserRedirect(session.user);
+  }
+});
+
+// Estrutura reservada para implementação futura de cadastro
+async function register() {
+  // A ser implementado posteriormente
+}
+
+// Execução inicial
+redirectIfSigned();
