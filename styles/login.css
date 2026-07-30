@@ -1,0 +1,311 @@
+:root {
+  --bg-dark: #06070C;
+  --bg-light: #FFFFFF;
+  --accent: #E0FB38;
+  --accent-hover: #d2f025;
+  --text-dark: #0b0d10;
+  --text-muted: #6a6f7d;
+  --border-line: #d5d7de;
+  --border-focus: #06070C;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------------------------------- */
+/* Vetor de Fundo (vector1.png)       */
+/* ---------------------------------- */
+.bg-vector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------------------------------- */
+/* Layout Principal                   */
+/* ---------------------------------- */
+.login-wrap {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+/* ---------------------------------- */
+/* Card Central e Logo Circular       */
+/* ---------------------------------- */
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 2;
+}
+
+.login-logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  padding: 16px;
+}
+
+.login-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------------------------------- */
+/* Formulário e Campos                */
+/* ---------------------------------- */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.field-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1.5px solid var(--border-line);
+  padding: 6px 0;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.field-input:focus-within {
+  border-color: var(--border-focus);
+}
+
+.field-input .icon-left {
+  color: var(--text-dark);
+  flex-shrink: 0;
+}
+
+.field-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  padding: 4px 0;
+  color: var(--text-dark);
+  font-family: inherit;
+}
+
+.field-input input::placeholder {
+  color: #9ea3b0;
+  font-size: 14px;
+}
+
+/* Botão Ver/Ocultar Senha */
+.btn-toggle-pass {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.btn-toggle-pass:hover {
+  color: var(--text-dark);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------------------------------- */
+/* Link Esqueceu sua senha?           */
+/* ---------------------------------- */
+.forgot {
+  align-self: flex-end;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-top: -6px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgot:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+/* ---------------------------------- */
+/* Mensagens de Alerta                */
+/* ---------------------------------- */
+.login-msg {
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  display: none;
+  font-weight: 500;
+}
+
+.login-msg.error {
+  background: #fde8e8;
+  color: #9b1c1c;
+  display: block;
+}
+
+.login-msg.success {
+  background: #f3face;
+  color: #3b5000;
+  display: block;
+}
+
+/* ---------------------------------- */
+/* Botão Entrar Principal             */
+/* ---------------------------------- */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: var(--text-dark);
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, filter 0.2s ease;
+  font-family: inherit;
+  margin-top: 6px;
+}
+
+.btn-login:hover {
+  background: var(--accent-hover);
+  filter: brightness(1.03);
+}
+
+.btn-login:active {
+  transform: translateY(1px);
+}
+
+.btn-login:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* ---------------------------------- */
+/* Ações Secundárias                  */
+/* ---------------------------------- */
+.actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 11px;
+  background: transparent;
+  color: var(--text-dark);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1.5px solid var(--border-line);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-register:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--border-focus);
+}
+
+.google-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #c5c8d2;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------------------------- */
+/* Responsividade                     */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 320px;
+  }
+  .login-logo {
+    width: 110px;
+    height: 110px;
+  }
+}
