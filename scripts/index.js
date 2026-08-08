@@ -1,134 +1,439 @@
-import { supabase, escapeHtml } from './supabaseClient.js';
+import { supabase, escapeHtml } from "./supabaseClient.js";
 
-const grid = document.getElementById('catalog-grid');
-const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
+const grid = document.getElementById("catalog-grid");
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
 
 let allCourses = [];
 
 /**
- * Encerra a sessão do usuário no Supabase e redireciona para a tela de login
+ * Encerra a sessão do usuário.
  */
 async function logout() {
-  await supabase.auth.signOut();
-  window.location.href = 'login.html';
+  const logoutButton = document.getElementById("logout-btn");
+
+  try {
+    if (logoutButton) {
+      logoutButton.disabled = true;
+      logoutButton.textContent = "Saindo...";
+    }
+
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      throw error;
+    }
+
+    window.location.href = "login.html";
+  } catch (error) {
+    console.error("Erro ao sair:", error);
+
+    if (logoutButton) {
+      logoutButton.disabled = false;
+      logoutButton.textContent = "Sair";
+    }
+
+    alert("Não foi possível sair da conta. Tente novamente.");
+  }
 }
 
 /**
- * Carrega e exibe as informações do usuário logado na área #user-area do header
+ * Exibe a área de visitante.
+ */
+function renderGuestArea(userArea) {
+  userArea.innerHTML = `
+    <a href="login.html" class="btn btn-ghost">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+
+      <span>Entrar</span>
+    </a>
+  `;
+}
+
+/**
+ * Exibe avatar, e-mail e botão de saída.
+ */
+function renderAuthenticatedArea(userArea, user) {
+  const email = escapeHtml(user.email || "");
+
+  const avatarUrl =
+    user.user_metadata?.avatar_url ||
+    user.user_metadata?.picture ||
+    "";
+
+  const fullName =
+    user.user_metadata?.full_name ||
+    user.user_metadata?.name ||
+    "";
+
+  const initial = String(fullName || email || "U")
+    .trim()
+    .charAt(0)
+    .toUpperCase();
+
+  const avatarHtml = avatarUrl
+    ? `
+      <img
+        src="${escapeHtml(avatarUrl)}"
+        alt="Foto do usuário"
+        class="user-avatar"
+        referrerpolicy="no-referrer"
+      >
+    `
+    : `
+      <div
+        class="user-avatar-placeholder"
+        aria-label="Avatar do usuário"
+      >
+        ${escapeHtml(initial)}
+      </div>
+    `;
+
+  userArea.innerHTML = `
+    <div class="user-info">
+      ${avatarHtml}
+
+      <span
+        class="user-email"
+        title="${email}"
+      >
+        ${email}
+      </span>
+
+      <button
+        type="button"
+        id="logout-btn"
+        class="btn btn-ghost logout-btn"
+        aria-label="Sair da conta"
+      >
+        Sair
+      </button>
+    </div>
+  `;
+
+  const logoutButton = document.getElementById("logout-btn");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", logout);
+  }
+}
+
+/**
+ * Carrega a sessão atual.
  */
 async function loadUserSession() {
-  const userArea = document.getElementById('user-area');
-  if (!userArea) return;
+  const userArea = document.getElementById("user-area");
+
+  if (!userArea) {
+    return;
+  }
 
   try {
-    const { data: { session } } = await supabase.auth.getSession();
-    const user = session?.user;
+    const {
+      data: { session },
+      error
+    } = await supabase.auth.getSession();
 
-    if (user) {
-      const email = escapeHtml(user.email || '');
-      const avatarUrl = user.user_metadata?.avatar_url;
-      const initial = email ? email.charAt(0).toUpperCase() : 'U';
-
-      const avatarHtml = avatarUrl
-        ? `<img src="${escapeHtml(avatarUrl)}" alt="Avatar" class="user-avatar" />`
-        : `<div class="user-avatar-placeholder">${initial}</div>`;
-
-      userArea.innerHTML = `
-        <div class="user-info">
-          ${avatarHtml}
-          <span class="user-email" title="${email}">${email}</span>
-          <button id="logout-btn" class="btn btn-ghost" style="padding: 6px 12px; font-size: 13px; margin-left: 6px;">Sair</button>
-        </div>
-      `;
-
-      // Vincular evento de clique ao botão de sair
-      const logoutBtn = document.getElementById('logout-btn');
-      if (logoutBtn) {
-        logoutBtn.addEventListener('click', logout);
-      }
-    } else {
-      userArea.innerHTML = `
-        <a href="login.html" class="btn btn-ghost">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Entrar
-        </a>
-      `;
+    if (error) {
+      throw error;
     }
-  } catch (err) {
-    console.error('Erro ao verificar sessão do usuário:', err);
+
+    if (session?.user) {
+      renderAuthenticatedArea(userArea, session.user);
+      return;
+    }
+
+    renderGuestArea(userArea);
+  } catch (error) {
+    console.error("Erro ao verificar a sessão:", error);
+    renderGuestArea(userArea);
   }
 }
 
+/**
+ * Carrega os cursos publicados.
+ */
 async function loadCatalog() {
-  grid.innerHTML = `<div class="state">Carregando cursos...</div>`;
-  const { data, error } = await supabase
-    .from('catalogo')
-    .select('*')
-    .eq('status', 'publicado')
-    .order('ordem_exibicao', { ascending: true });
-
-  if (error) {
-    grid.innerHTML = `<div class="state">Erro ao carregar cursos: ${escapeHtml(error.message)}</div>`;
+  if (!grid) {
     return;
   }
-  allCourses = data || [];
-  render(allCourses);
+
+  grid.setAttribute("aria-busy", "true");
+
+  grid.innerHTML = `
+    <div class="state">
+      Carregando cursos...
+    </div>
+  `;
+
+  try {
+    const { data, error } = await supabase
+      .from("catalogo")
+      .select(`
+        id,
+        nome,
+        descricao,
+        categoria,
+        imagem_capa_url,
+        ordem_exibicao,
+        status
+      `)
+      .eq("status", "publicado")
+      .order("ordem_exibicao", {
+        ascending: true,
+        nullsFirst: false
+      });
+
+    if (error) {
+      throw error;
+    }
+
+    allCourses = Array.isArray(data) ? data : [];
+
+    renderCourses(allCourses);
+  } catch (error) {
+    console.error("Erro ao carregar catálogo:", error);
+
+    grid.innerHTML = `
+      <div class="state">
+        <strong>Não foi possível carregar os cursos.</strong>
+        <br>
+        Verifique a conexão com o Supabase e tente novamente.
+      </div>
+    `;
+  } finally {
+    grid.setAttribute("aria-busy", "false");
+  }
 }
 
-function render(list) {
-  if (!list.length) {
-    grid.innerHTML = `<div class="state">Nenhum curso encontrado.</div>`;
+/**
+ * Cria os cards verticais.
+ *
+ * O texto não é exibido visualmente porque
+ * nome/categoria já fazem parte da arte da capa.
+ */
+function renderCourses(courses) {
+  if (!grid) {
     return;
   }
-  grid.innerHTML = list.map(course => `
-    <article class="course-card" data-id="${course.id}">
-      <div class="cover">
-        ${course.imagem_capa_url ? `<img src="${escapeHtml(course.imagem_capa_url)}" alt="${escapeHtml(course.nome)}" loading="lazy">` : ''}
-      </div>
-      <div class="body">
-        <span class="category-chip">${escapeHtml(course.categoria || 'CURSO')}</span>
-        <h3>${escapeHtml(course.nome || '')}</h3>
-        <p>${escapeHtml(course.descricao || '')}</p>
-        <div class="card-footer">
-          <span>Acessar curso</span>
-          <span>Publicado</span>
-        </div>
-      </div>
-      <button class="play-btn" aria-label="Abrir curso">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-    </article>
-  `).join('');
 
-  grid.querySelectorAll('.course-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.dataset.id;
-      window.location.href = `curso.html?id=${id}`;
+  if (!courses.length) {
+    grid.innerHTML = `
+      <div class="state">
+        Nenhum curso encontrado.
+      </div>
+    `;
+
+    return;
+  }
+
+  grid.innerHTML = courses
+    .map((course) => {
+      const id = escapeHtml(String(course.id ?? ""));
+
+      const name = escapeHtml(
+        String(course.nome || "Curso sem nome").trim()
+      );
+
+      const category = escapeHtml(
+        String(course.categoria || "Curso").trim()
+      );
+
+      const coverUrl = String(
+        course.imagem_capa_url || ""
+      ).trim();
+
+      return `
+        <article
+          class="course-card"
+          data-course-id="${id}"
+          tabindex="0"
+          role="link"
+          aria-label="Abrir o curso ${name}"
+          title="${name}"
+        >
+          <div class="cover">
+            ${
+              coverUrl
+                ? `
+                  <img
+                    src="${escapeHtml(coverUrl)}"
+                    alt="Capa do curso ${name}"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                `
+                : `
+                  <div class="course-cover-placeholder">
+                    <span>${category}</span>
+                  </div>
+                `
+            }
+          </div>
+
+          <!--
+            Mantém apenas o gradiente visual.
+            Nenhum texto duplicado sobre a capa.
+          -->
+          <div class="body" aria-hidden="true"></div>
+
+          <span class="play-btn" aria-hidden="true">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+        </article>
+      `;
+    })
+    .join("");
+
+  addCourseEvents();
+}
+
+/**
+ * Adiciona navegação por clique e teclado.
+ */
+function addCourseEvents() {
+  if (!grid) {
+    return;
+  }
+
+  const cards = grid.querySelectorAll(".course-card");
+
+  cards.forEach((card) => {
+    const openCourse = () => {
+      const courseId = card.dataset.courseId;
+
+      if (!courseId) {
+        return;
+      }
+
+      window.location.href =
+        `curso.html?id=${encodeURIComponent(courseId)}`;
+    };
+
+    card.addEventListener("click", openCourse);
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openCourse();
+      }
     });
   });
 }
 
-function doSearch() {
-  const q = (searchInput.value || '').trim().toLowerCase();
-  if (!q) return render(allCourses);
-  const filtered = allCourses.filter(c =>
-    (c.nome || '').toLowerCase().includes(q) ||
-    (c.descricao || '').toLowerCase().includes(q) ||
-    (c.categoria || '').toLowerCase().includes(q)
-  );
-  render(filtered);
+/**
+ * Pesquisa cursos já carregados.
+ *
+ * Mesmo sem mostrar os textos no card,
+ * nome, categoria e descrição continuam
+ * sendo utilizados na pesquisa.
+ */
+function searchCourses() {
+  if (!searchInput) {
+    return;
+  }
+
+  const query = searchInput.value
+    .trim()
+    .toLocaleLowerCase("pt-BR");
+
+  if (!query) {
+    renderCourses(allCourses);
+    return;
+  }
+
+  const filteredCourses = allCourses.filter((course) => {
+    const name = String(course.nome || "")
+      .toLocaleLowerCase("pt-BR");
+
+    const description = String(course.descricao || "")
+      .toLocaleLowerCase("pt-BR");
+
+    const category = String(course.categoria || "")
+      .toLocaleLowerCase("pt-BR");
+
+    return (
+      name.includes(query) ||
+      description.includes(query) ||
+      category.includes(query)
+    );
+  });
+
+  renderCourses(filteredCourses);
 }
 
-searchBtn.addEventListener('click', doSearch);
-searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
-document.querySelectorAll('.tag').forEach(tag => {
-  tag.addEventListener('click', () => {
+/**
+ * Eventos da pesquisa.
+ */
+if (searchBtn) {
+  searchBtn.addEventListener("click", searchCourses);
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    if (!searchInput.value.trim()) {
+      renderCourses(allCourses);
+    }
+  });
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      searchCourses();
+    }
+  });
+}
+
+/**
+ * Botões de buscas populares.
+ */
+document.querySelectorAll(".tag").forEach((tag) => {
+  tag.addEventListener("click", () => {
+    if (!searchInput) {
+      return;
+    }
+
     searchInput.value = tag.textContent.trim();
-    doSearch();
+    searchCourses();
   });
 });
 
-// Inicialização
+/**
+ * Atualiza o cabeçalho quando a autenticação mudar.
+ */
+supabase.auth.onAuthStateChange((_event, session) => {
+  const userArea = document.getElementById("user-area");
+
+  if (!userArea) {
+    return;
+  }
+
+  if (session?.user) {
+    renderAuthenticatedArea(userArea, session.user);
+  } else {
+    renderGuestArea(userArea);
+  }
+});
+
+/**
+ * Inicialização.
+ */
 loadUserSession();
 loadCatalog();
