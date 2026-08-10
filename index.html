@@ -1,935 +1,358 @@
-import {
-  supabase,
-  escapeHtml
-} from "./supabaseClient.js";
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>SkillUp — Domine novas habilidades</title>
 
-/* =========================================================
-   ELEMENTOS
-========================================================= */
+  <meta
+    name="description"
+    content="Cursos práticos, diretos e atualizados para você aprender do zero ao avançado."
+  >
 
-const grid =
-  document.getElementById("catalog-grid");
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-const searchInput =
-  document.getElementById("search-input");
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
-const searchBtn =
-  document.getElementById("search-btn");
+  <link rel="stylesheet" href="styles/main.css">
+</head>
 
+<body>
+  <header class="site-header">
+    <div class="container header-container">
 
-let allCourses = [];
-
-
-/* =========================================================
-   PÁGINAS ESPECÍFICAS DOS CURSOS
-
-   Conforme criarmos novas páginas,
-   basta adicionar aqui.
-
-   Exemplo:
-   1: "excel.html"
-   2: "python.html"
-   3: "javascript.html"
-========================================================= */
-
-const COURSE_PAGES = {
-  1: "excel.html"
-};
-
-
-/* =========================================================
-   DESCOBRE QUAL PÁGINA DEVE ABRIR
-========================================================= */
-
-function getCoursePage(course) {
-  if (!course) {
-    return null;
-  }
-
-
-  const courseId =
-    Number(course.id);
-
-
-  /*
-    Primeiro verifica o ID.
-  */
-
-  if (COURSE_PAGES[courseId]) {
-    return COURSE_PAGES[courseId];
-  }
-
-
-  /*
-    Proteção extra para Excel.
-
-    Se futuramente o ID do Excel mudar
-    no Supabase, ainda conseguimos
-    identificar pelo nome/categoria.
-  */
-
-  const name =
-    String(
-      course.nome || ""
-    )
-      .trim()
-      .toLocaleLowerCase("pt-BR");
-
-
-  const category =
-    String(
-      course.categoria || ""
-    )
-      .trim()
-      .toLocaleLowerCase("pt-BR");
-
-
-  if (
-    name.includes("excel") ||
-    category.includes("excel")
-  ) {
-    return "excel.html";
-  }
-
-
-  /*
-    Enquanto o curso não tiver
-    página individual própria,
-    continua usando a página genérica.
-  */
-
-  if (course.id) {
-    return `curso.html?id=${encodeURIComponent(
-      course.id
-    )}`;
-  }
-
-
-  return null;
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-async function logout() {
-  const logoutButton =
-    document.getElementById(
-      "logout-btn"
-    );
-
-
-  try {
-
-    if (logoutButton) {
-
-      logoutButton.disabled =
-        true;
-
-      logoutButton.textContent =
-        "Saindo...";
-    }
-
-
-    const { error } =
-      await supabase.auth.signOut();
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    window.location.href =
-      "login.html";
-
-
-  } catch (error) {
-
-    console.error(
-      "Erro ao sair:",
-      error
-    );
-
-
-    if (logoutButton) {
-
-      logoutButton.disabled =
-        false;
-
-      logoutButton.textContent =
-        "Sair";
-    }
-
-
-    alert(
-      "Não foi possível sair da conta. Tente novamente."
-    );
-  }
-}
-
-
-/* =========================================================
-   ÁREA DE VISITANTE
-========================================================= */
-
-function renderGuestArea(
-  userArea
-) {
-  if (!userArea) {
-    return;
-  }
-
-
-  userArea.innerHTML = `
-    <a
-      href="login.html"
-      class="btn btn-ghost"
-    >
-
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        aria-hidden="true"
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Ir para a página inicial da SkillUp"
       >
-        <path
-          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-        />
-
-        <circle
-          cx="12"
-          cy="7"
-          r="4"
-        />
-      </svg>
-
-      <span>
-        Entrar
-      </span>
-
-    </a>
-  `;
-}
-
-
-/* =========================================================
-   ÁREA DO USUÁRIO LOGADO
-========================================================= */
-
-function renderAuthenticatedArea(
-  userArea,
-  user
-) {
-  if (!userArea || !user) {
-    return;
-  }
-
-
-  const email =
-    escapeHtml(
-      user.email || ""
-    );
-
-
-  const avatarUrl =
-    user.user_metadata?.avatar_url ||
-    user.user_metadata?.picture ||
-    "";
-
-
-  const fullName =
-    user.user_metadata?.full_name ||
-    user.user_metadata?.name ||
-    "";
-
-
-  const initial =
-    String(
-      fullName ||
-      email ||
-      "U"
-    )
-      .trim()
-      .charAt(0)
-      .toUpperCase();
-
-
-  const avatarHtml =
-    avatarUrl
-
-      ? `
         <img
-          src="${escapeHtml(
-            avatarUrl
-          )}"
-          alt="Foto do usuário"
-          class="user-avatar"
-          referrerpolicy="no-referrer"
+          src="assets/logo.png"
+          alt="SkillUp"
+          class="logo-image"
         >
-      `
-
-      : `
-        <div
-          class="user-avatar-placeholder"
-          aria-label="Avatar do usuário"
-        >
-          ${escapeHtml(initial)}
-        </div>
-      `;
-
-
-  userArea.innerHTML = `
-    <div class="user-info">
-
-      ${avatarHtml}
-
-      <span
-        class="user-email"
-        title="${email}"
-      >
-        ${email}
-      </span>
-
-      <button
-        type="button"
-        id="logout-btn"
-        class="btn btn-ghost logout-btn"
-        aria-label="Sair da conta"
-      >
-        Sair
-      </button>
-
-    </div>
-  `;
-
-
-  const logoutButton =
-    document.getElementById(
-      "logout-btn"
-    );
-
-
-  if (logoutButton) {
-
-    logoutButton.addEventListener(
-      "click",
-      logout
-    );
-  }
-}
-
-
-/* =========================================================
-   CARREGAR SESSÃO
-========================================================= */
-
-async function loadUserSession() {
-  const userArea =
-    document.getElementById(
-      "user-area"
-    );
-
-
-  if (!userArea) {
-    return;
-  }
-
-
-  try {
-
-    const {
-      data: { session },
-      error
-    } =
-      await supabase.auth.getSession();
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    if (session?.user) {
-
-      renderAuthenticatedArea(
-        userArea,
-        session.user
-      );
-
-      return;
-    }
-
-
-    renderGuestArea(
-      userArea
-    );
-
-
-  } catch (error) {
-
-    console.error(
-      "Erro ao verificar a sessão:",
-      error
-    );
-
-
-    renderGuestArea(
-      userArea
-    );
-  }
-}
-
-
-/* =========================================================
-   CARREGAR CATÁLOGO
-========================================================= */
-
-async function loadCatalog() {
-  if (!grid) {
-    return;
-  }
-
-
-  grid.setAttribute(
-    "aria-busy",
-    "true"
-  );
-
-
-  grid.innerHTML = `
-    <div class="state">
-      Carregando cursos...
-    </div>
-  `;
-
-
-  try {
-
-    const {
-      data,
-      error
-    } =
-      await supabase
-        .from("catalogo")
-        .select(`
-          id,
-          nome,
-          descricao,
-          categoria,
-          imagem_capa_url,
-          ordem_exibicao,
-          status
-        `)
-        .eq(
-          "status",
-          "publicado"
-        )
-        .order(
-          "ordem_exibicao",
-          {
-            ascending: true,
-            nullsFirst: false
-          }
-        );
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    allCourses =
-      Array.isArray(data)
-        ? data
-        : [];
-
-
-    renderCourses(
-      allCourses
-    );
-
-
-  } catch (error) {
-
-    console.error(
-      "Erro ao carregar catálogo:",
-      error
-    );
-
-
-    grid.innerHTML = `
-      <div class="state">
-
-        <strong>
-          Não foi possível carregar os cursos.
-        </strong>
-
-        <br>
-
-        Verifique a conexão com o Supabase
-        e tente novamente.
-
-      </div>
-    `;
-
-
-  } finally {
-
-    grid.setAttribute(
-      "aria-busy",
-      "false"
-    );
-  }
-}
-
-
-/* =========================================================
-   RENDERIZAR CARDS
-========================================================= */
-
-function renderCourses(
-  courses
-) {
-  if (!grid) {
-    return;
-  }
-
-
-  if (!courses.length) {
-
-    grid.innerHTML = `
-      <div class="state">
-        Nenhum curso encontrado.
-      </div>
-    `;
-
-    return;
-  }
-
-
-  grid.innerHTML =
-    courses
-      .map((course) => {
-
-        const id =
-          escapeHtml(
-            String(
-              course.id ?? ""
-            )
-          );
-
-
-        const name =
-          escapeHtml(
-            String(
-              course.nome ||
-              "Curso sem nome"
-            ).trim()
-          );
-
-
-        const category =
-          escapeHtml(
-            String(
-              course.categoria ||
-              "Curso"
-            ).trim()
-          );
-
-
-        const coverUrl =
-          String(
-            course.imagem_capa_url ||
-            ""
-          ).trim();
-
-
-        /*
-          Define agora qual página
-          este card deverá abrir.
-        */
-
-        const coursePage =
-          getCoursePage(
-            course
-          );
-
-
-        return `
-          <article
-            class="course-card"
-            data-course-id="${id}"
-            data-course-page="${
-              coursePage
-                ? escapeHtml(coursePage)
-                : ""
-            }"
-            tabindex="0"
-            role="link"
-            aria-label="Abrir o curso ${name}"
-            title="${name}"
-          >
-
-            <div class="cover">
-
-              ${
-                coverUrl
-
-                  ? `
-                    <img
-                      src="${escapeHtml(
-                        coverUrl
-                      )}"
-                      alt="Capa do curso ${name}"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  `
-
-                  : `
-                    <div
-                      class="course-cover-placeholder"
-                    >
-                      <span>
-                        ${category}
-                      </span>
-                    </div>
-                  `
-              }
-
-            </div>
-
-
-            <!--
-              Mantém somente o gradiente.
-
-              Os textos já fazem parte
-              da própria arte da capa.
-            -->
-
-            <div
-              class="body"
-              aria-hidden="true"
-            ></div>
-
-
-            <span
-              class="play-btn"
+      </a>
+
+      <div class="header-actions">
+
+        <div id="user-area">
+          <a href="login.html" class="btn btn-ghost">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
             >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
 
+            <span>Entrar</span>
+          </a>
+        </div>
+
+        <a href="#" class="btn btn-primary">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+
+          <span class="subscribe-text">Assine agora</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            APRENDA. PRATIQUE. EVOLUA.
+          </div>
+
+          <h1>
+            Domine novas habilidades.<br>
+            <span class="accent">Transforme sua carreira.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Cursos práticos, diretos e atualizados para você aprender
+            do zero ao avançado.
+          </p>
+
+        </div>
+
+        <div class="search-block">
+
+          <h2>O que você quer aprender hoje?</h2>
+
+          <div class="search-box">
+
+            <svg
+              class="search-ico"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Ex: Python, Excel, Marketing Digital..."
+              autocomplete="off"
+              aria-label="Pesquisar cursos"
+            >
+
+            <button
+              type="button"
+              class="search-btn"
+              id="search-btn"
+              aria-label="Buscar cursos"
+            >
               <svg
                 width="18"
                 height="18"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
               >
-                <path
-                  d="M8 5v14l11-7z"
-                />
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
+            </button>
 
+          </div>
+
+          <div class="popular">
+
+            <span class="popular-label">
+              Buscas populares:
             </span>
 
-          </article>
-        `;
-      })
-      .join("");
-
-
-  addCourseEvents();
-}
-
-
-/* =========================================================
-   CLIQUE NOS CARDS
-========================================================= */
-
-function addCourseEvents() {
-  if (!grid) {
-    return;
-  }
-
-
-  const cards =
-    grid.querySelectorAll(
-      ".course-card"
-    );
-
-
-  cards.forEach(
-    (card) => {
-
-      const openCourse = () => {
-
-        /*
-          A página já foi calculada
-          no renderCourses().
-        */
-
-        const coursePage =
-          String(
-            card.dataset.coursePage ||
-            ""
-          ).trim();
-
-
-        if (!coursePage) {
-
-          console.warn(
-            "O curso não possui uma página configurada:",
-            card.dataset.courseId
-          );
-
-          return;
-        }
-
-
-        /*
-          Excel:
-          excel.html
-
-          Outros cursos atualmente:
-          curso.html?id=...
-        */
-
-        window.location.href =
-          coursePage;
-      };
-
-
-      card.addEventListener(
-        "click",
-        openCourse
-      );
-
-
-      card.addEventListener(
-        "keydown",
-        (event) => {
-
-          if (
-            event.key === "Enter" ||
-            event.key === " "
-          ) {
-
-            event.preventDefault();
-
-            openCourse();
-          }
-
-        }
-      );
-
-    }
-  );
-}
-
-
-/* =========================================================
-   PESQUISA
-========================================================= */
-
-function searchCourses() {
-  if (!searchInput) {
-    return;
-  }
-
-
-  const query =
-    searchInput.value
-      .trim()
-      .toLocaleLowerCase(
-        "pt-BR"
-      );
-
-
-  if (!query) {
-
-    renderCourses(
-      allCourses
-    );
-
-    return;
-  }
-
-
-  const filteredCourses =
-    allCourses.filter(
-      (course) => {
-
-        const name =
-          String(
-            course.nome ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        const description =
-          String(
-            course.descricao ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        const category =
-          String(
-            course.categoria ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        return (
-          name.includes(query) ||
-          description.includes(query) ||
-          category.includes(query)
-        );
-      }
-    );
-
-
-  renderCourses(
-    filteredCourses
-  );
-}
-
-
-/* =========================================================
-   BOTÃO DE PESQUISA
-========================================================= */
-
-if (searchBtn) {
-
-  searchBtn.addEventListener(
-    "click",
-    searchCourses
-  );
-}
-
-
-/* =========================================================
-   INPUT DE PESQUISA
-========================================================= */
-
-if (searchInput) {
-
-  searchInput.addEventListener(
-    "input",
-    () => {
-
-      if (
-        !searchInput.value.trim()
-      ) {
-
-        renderCourses(
-          allCourses
-        );
-      }
-
-    }
-  );
-
-
-  searchInput.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (
-        event.key === "Enter"
-      ) {
-
-        searchCourses();
-      }
-
-    }
-  );
-}
-
-
-/* =========================================================
-   BUSCAS POPULARES
-========================================================= */
-
-document
-  .querySelectorAll(".tag")
-  .forEach((tag) => {
-
-    tag.addEventListener(
-      "click",
-      () => {
-
-        if (!searchInput) {
-          return;
-        }
-
-
-        searchInput.value =
-          tag.textContent.trim();
-
-
-        searchCourses();
-      }
-    );
-
-  });
-
-
-/* =========================================================
-   ALTERAÇÃO DA AUTENTICAÇÃO
-========================================================= */
-
-supabase.auth.onAuthStateChange(
-  (_event, session) => {
-
-    const userArea =
-      document.getElementById(
-        "user-area"
-      );
-
-
-    if (!userArea) {
-      return;
-    }
-
-
-    if (session?.user) {
-
-      renderAuthenticatedArea(
-        userArea,
-        session.user
-      );
-
-    } else {
-
-      renderGuestArea(
-        userArea
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
-
-loadUserSession();
-
-loadCatalog();
+            <button type="button" class="tag">
+              Python
+            </button>
+
+            <button type="button" class="tag">
+              Excel
+            </button>
+
+            <button type="button" class="tag">
+              JavaScript
+            </button>
+
+            <button type="button" class="tag">
+              Marketing Digital
+            </button>
+
+            <button type="button" class="tag">
+              Power BI
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section
+      class="catalog-panel"
+      aria-labelledby="catalog-title"
+    >
+      <div class="container">
+
+        <div class="catalog-head">
+
+          <div>
+            <div class="eyebrow">
+              CATÁLOGO DE CURSOS
+            </div>
+
+            <h2
+              id="catalog-title"
+              class="catalog-title"
+            >
+              Escolha um curso e comece a praticar
+            </h2>
+          </div>
+
+          <a
+            href="#catalog-grid"
+            class="see-all"
+          >
+            Ver todos os cursos →
+          </a>
+
+        </div>
+
+        <!--
+          Os cards dos cursos serão criados pelo index.js.
+
+          Estrutura esperada de cada card:
+
+          article.course-card
+            ├── div.cover
+            │     └── img
+            │
+            ├── div.body
+            │     ├── span.category-chip
+            │     ├── h3
+            │     └── p
+            │
+            └── span.play-btn
+
+          O CSS será responsável por deixar
+          o card vertical e preservar a capa inteira.
+        -->
+
+        <div
+          class="catalog-grid"
+          id="catalog-grid"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <div class="state">
+            Carregando cursos...
+          </div>
+        </div>
+
+        <div class="features">
+
+          <div class="feature">
+
+            <div class="feature-ico">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+
+            <div>
+              <h4>Aprenda no seu ritmo</h4>
+              <p>Acesse quando e onde quiser</p>
+            </div>
+
+          </div>
+
+          <div class="feature">
+
+            <div class="feature-ico">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+
+            <div>
+              <h4>Certificados</h4>
+              <p>Comprove suas conquistas</p>
+            </div>
+
+          </div>
+
+          <div class="feature">
+
+            <div class="feature-ico">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+
+            <div>
+              <h4>Conteúdo atualizado</h4>
+              <p>Sempre atual e relevante</p>
+            </div>
+
+          </div>
+
+          <div class="feature">
+
+            <div class="feature-ico">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/>
+              </svg>
+            </div>
+
+            <div>
+              <h4>Suporte dedicado</h4>
+              <p>Tire suas dúvidas sempre</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script
+    type="module"
+    src="scripts/index.js"
+  ></script>
+
+</body>
+</html>
