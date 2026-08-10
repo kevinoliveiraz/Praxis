@@ -1,48 +1,194 @@
-import { supabase, escapeHtml } from "./supabaseClient.js";
+import {
+  supabase,
+  escapeHtml
+} from "./supabaseClient.js";
 
-const grid = document.getElementById("catalog-grid");
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
+
+/* =========================================================
+   ELEMENTOS
+========================================================= */
+
+const grid =
+  document.getElementById("catalog-grid");
+
+const searchInput =
+  document.getElementById("search-input");
+
+const searchBtn =
+  document.getElementById("search-btn");
+
 
 let allCourses = [];
 
-/**
- * Encerra a sessão do usuário.
- */
+
+/* =========================================================
+   PÁGINAS ESPECÍFICAS DOS CURSOS
+
+   Conforme criarmos novas páginas,
+   basta adicionar aqui.
+
+   Exemplo:
+   1: "excel.html"
+   2: "python.html"
+   3: "javascript.html"
+========================================================= */
+
+const COURSE_PAGES = {
+  1: "excel.html"
+};
+
+
+/* =========================================================
+   DESCOBRE QUAL PÁGINA DEVE ABRIR
+========================================================= */
+
+function getCoursePage(course) {
+  if (!course) {
+    return null;
+  }
+
+
+  const courseId =
+    Number(course.id);
+
+
+  /*
+    Primeiro verifica o ID.
+  */
+
+  if (COURSE_PAGES[courseId]) {
+    return COURSE_PAGES[courseId];
+  }
+
+
+  /*
+    Proteção extra para Excel.
+
+    Se futuramente o ID do Excel mudar
+    no Supabase, ainda conseguimos
+    identificar pelo nome/categoria.
+  */
+
+  const name =
+    String(
+      course.nome || ""
+    )
+      .trim()
+      .toLocaleLowerCase("pt-BR");
+
+
+  const category =
+    String(
+      course.categoria || ""
+    )
+      .trim()
+      .toLocaleLowerCase("pt-BR");
+
+
+  if (
+    name.includes("excel") ||
+    category.includes("excel")
+  ) {
+    return "excel.html";
+  }
+
+
+  /*
+    Enquanto o curso não tiver
+    página individual própria,
+    continua usando a página genérica.
+  */
+
+  if (course.id) {
+    return `curso.html?id=${encodeURIComponent(
+      course.id
+    )}`;
+  }
+
+
+  return null;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
 async function logout() {
-  const logoutButton = document.getElementById("logout-btn");
+  const logoutButton =
+    document.getElementById(
+      "logout-btn"
+    );
+
 
   try {
+
     if (logoutButton) {
-      logoutButton.disabled = true;
-      logoutButton.textContent = "Saindo...";
+
+      logoutButton.disabled =
+        true;
+
+      logoutButton.textContent =
+        "Saindo...";
     }
 
-    const { error } = await supabase.auth.signOut();
+
+    const { error } =
+      await supabase.auth.signOut();
+
 
     if (error) {
       throw error;
     }
 
-    window.location.href = "login.html";
+
+    window.location.href =
+      "login.html";
+
+
   } catch (error) {
-    console.error("Erro ao sair:", error);
+
+    console.error(
+      "Erro ao sair:",
+      error
+    );
+
 
     if (logoutButton) {
-      logoutButton.disabled = false;
-      logoutButton.textContent = "Sair";
+
+      logoutButton.disabled =
+        false;
+
+      logoutButton.textContent =
+        "Sair";
     }
 
-    alert("Não foi possível sair da conta. Tente novamente.");
+
+    alert(
+      "Não foi possível sair da conta. Tente novamente."
+    );
   }
 }
 
-/**
- * Exibe a área de visitante.
- */
-function renderGuestArea(userArea) {
+
+/* =========================================================
+   ÁREA DE VISITANTE
+========================================================= */
+
+function renderGuestArea(
+  userArea
+) {
+  if (!userArea) {
+    return;
+  }
+
+
   userArea.innerHTML = `
-    <a href="login.html" class="btn btn-ghost">
+    <a
+      href="login.html"
+      class="btn btn-ghost"
+    >
+
       <svg
         width="16"
         height="16"
@@ -52,56 +198,95 @@ function renderGuestArea(userArea) {
         stroke-width="2"
         aria-hidden="true"
       >
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-        <circle cx="12" cy="7" r="4"/>
+        <path
+          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+        />
+
+        <circle
+          cx="12"
+          cy="7"
+          r="4"
+        />
       </svg>
 
-      <span>Entrar</span>
+      <span>
+        Entrar
+      </span>
+
     </a>
   `;
 }
 
-/**
- * Exibe avatar, e-mail e botão de saída.
- */
-function renderAuthenticatedArea(userArea, user) {
-  const email = escapeHtml(user.email || "");
+
+/* =========================================================
+   ÁREA DO USUÁRIO LOGADO
+========================================================= */
+
+function renderAuthenticatedArea(
+  userArea,
+  user
+) {
+  if (!userArea || !user) {
+    return;
+  }
+
+
+  const email =
+    escapeHtml(
+      user.email || ""
+    );
+
 
   const avatarUrl =
     user.user_metadata?.avatar_url ||
     user.user_metadata?.picture ||
     "";
 
+
   const fullName =
     user.user_metadata?.full_name ||
     user.user_metadata?.name ||
     "";
 
-  const initial = String(fullName || email || "U")
-    .trim()
-    .charAt(0)
-    .toUpperCase();
 
-  const avatarHtml = avatarUrl
-    ? `
-      <img
-        src="${escapeHtml(avatarUrl)}"
-        alt="Foto do usuário"
-        class="user-avatar"
-        referrerpolicy="no-referrer"
-      >
-    `
-    : `
-      <div
-        class="user-avatar-placeholder"
-        aria-label="Avatar do usuário"
-      >
-        ${escapeHtml(initial)}
-      </div>
-    `;
+  const initial =
+    String(
+      fullName ||
+      email ||
+      "U"
+    )
+      .trim()
+      .charAt(0)
+      .toUpperCase();
+
+
+  const avatarHtml =
+    avatarUrl
+
+      ? `
+        <img
+          src="${escapeHtml(
+            avatarUrl
+          )}"
+          alt="Foto do usuário"
+          class="user-avatar"
+          referrerpolicy="no-referrer"
+        >
+      `
+
+      : `
+        <div
+          class="user-avatar-placeholder"
+          aria-label="Avatar do usuário"
+        >
+          ${escapeHtml(initial)}
+        </div>
+      `;
+
 
   userArea.innerHTML = `
     <div class="user-info">
+
       ${avatarHtml}
 
       <span
@@ -119,57 +304,103 @@ function renderAuthenticatedArea(userArea, user) {
       >
         Sair
       </button>
+
     </div>
   `;
 
-  const logoutButton = document.getElementById("logout-btn");
+
+  const logoutButton =
+    document.getElementById(
+      "logout-btn"
+    );
+
 
   if (logoutButton) {
-    logoutButton.addEventListener("click", logout);
+
+    logoutButton.addEventListener(
+      "click",
+      logout
+    );
   }
 }
 
-/**
- * Carrega a sessão atual.
- */
+
+/* =========================================================
+   CARREGAR SESSÃO
+========================================================= */
+
 async function loadUserSession() {
-  const userArea = document.getElementById("user-area");
+  const userArea =
+    document.getElementById(
+      "user-area"
+    );
+
 
   if (!userArea) {
     return;
   }
 
+
   try {
+
     const {
       data: { session },
       error
-    } = await supabase.auth.getSession();
+    } =
+      await supabase.auth.getSession();
+
 
     if (error) {
       throw error;
     }
 
+
     if (session?.user) {
-      renderAuthenticatedArea(userArea, session.user);
+
+      renderAuthenticatedArea(
+        userArea,
+        session.user
+      );
+
       return;
     }
 
-    renderGuestArea(userArea);
+
+    renderGuestArea(
+      userArea
+    );
+
+
   } catch (error) {
-    console.error("Erro ao verificar a sessão:", error);
-    renderGuestArea(userArea);
+
+    console.error(
+      "Erro ao verificar a sessão:",
+      error
+    );
+
+
+    renderGuestArea(
+      userArea
+    );
   }
 }
 
-/**
- * Carrega os cursos publicados.
- */
+
+/* =========================================================
+   CARREGAR CATÁLOGO
+========================================================= */
+
 async function loadCatalog() {
   if (!grid) {
     return;
   }
 
-  grid.setAttribute("aria-busy", "true");
+
+  grid.setAttribute(
+    "aria-busy",
+    "true"
+  );
+
 
   grid.innerHTML = `
     <div class="state">
@@ -177,58 +408,101 @@ async function loadCatalog() {
     </div>
   `;
 
+
   try {
-    const { data, error } = await supabase
-      .from("catalogo")
-      .select(`
-        id,
-        nome,
-        descricao,
-        categoria,
-        imagem_capa_url,
-        ordem_exibicao,
-        status
-      `)
-      .eq("status", "publicado")
-      .order("ordem_exibicao", {
-        ascending: true,
-        nullsFirst: false
-      });
+
+    const {
+      data,
+      error
+    } =
+      await supabase
+        .from("catalogo")
+        .select(`
+          id,
+          nome,
+          descricao,
+          categoria,
+          imagem_capa_url,
+          ordem_exibicao,
+          status
+        `)
+        .eq(
+          "status",
+          "publicado"
+        )
+        .order(
+          "ordem_exibicao",
+          {
+            ascending: true,
+            nullsFirst: false
+          }
+        );
+
 
     if (error) {
       throw error;
     }
 
-    allCourses = Array.isArray(data) ? data : [];
 
-    renderCourses(allCourses);
+    allCourses =
+      Array.isArray(data)
+        ? data
+        : [];
+
+
+    renderCourses(
+      allCourses
+    );
+
+
   } catch (error) {
-    console.error("Erro ao carregar catálogo:", error);
+
+    console.error(
+      "Erro ao carregar catálogo:",
+      error
+    );
+
 
     grid.innerHTML = `
       <div class="state">
-        <strong>Não foi possível carregar os cursos.</strong>
+
+        <strong>
+          Não foi possível carregar os cursos.
+        </strong>
+
         <br>
-        Verifique a conexão com o Supabase e tente novamente.
+
+        Verifique a conexão com o Supabase
+        e tente novamente.
+
       </div>
     `;
+
+
   } finally {
-    grid.setAttribute("aria-busy", "false");
+
+    grid.setAttribute(
+      "aria-busy",
+      "false"
+    );
   }
 }
 
-/**
- * Cria os cards verticais.
- *
- * O texto não é exibido visualmente porque
- * nome/categoria já fazem parte da arte da capa.
- */
-function renderCourses(courses) {
+
+/* =========================================================
+   RENDERIZAR CARDS
+========================================================= */
+
+function renderCourses(
+  courses
+) {
   if (!grid) {
     return;
   }
 
+
   if (!courses.length) {
+
     grid.innerHTML = `
       <div class="state">
         Nenhum curso encontrado.
@@ -238,202 +512,424 @@ function renderCourses(courses) {
     return;
   }
 
-  grid.innerHTML = courses
-    .map((course) => {
-      const id = escapeHtml(String(course.id ?? ""));
 
-      const name = escapeHtml(
-        String(course.nome || "Curso sem nome").trim()
-      );
+  grid.innerHTML =
+    courses
+      .map((course) => {
 
-      const category = escapeHtml(
-        String(course.categoria || "Curso").trim()
-      );
+        const id =
+          escapeHtml(
+            String(
+              course.id ?? ""
+            )
+          );
 
-      const coverUrl = String(
-        course.imagem_capa_url || ""
-      ).trim();
 
-      return `
-        <article
-          class="course-card"
-          data-course-id="${id}"
-          tabindex="0"
-          role="link"
-          aria-label="Abrir o curso ${name}"
-          title="${name}"
-        >
-          <div class="cover">
-            ${
-              coverUrl
-                ? `
-                  <img
-                    src="${escapeHtml(coverUrl)}"
-                    alt="Capa do curso ${name}"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                `
-                : `
-                  <div class="course-cover-placeholder">
-                    <span>${category}</span>
-                  </div>
-                `
-            }
-          </div>
+        const name =
+          escapeHtml(
+            String(
+              course.nome ||
+              "Curso sem nome"
+            ).trim()
+          );
 
-          <!--
-            Mantém apenas o gradiente visual.
-            Nenhum texto duplicado sobre a capa.
-          -->
-          <div class="body" aria-hidden="true"></div>
 
-          <span class="play-btn" aria-hidden="true">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+        const category =
+          escapeHtml(
+            String(
+              course.categoria ||
+              "Curso"
+            ).trim()
+          );
+
+
+        const coverUrl =
+          String(
+            course.imagem_capa_url ||
+            ""
+          ).trim();
+
+
+        /*
+          Define agora qual página
+          este card deverá abrir.
+        */
+
+        const coursePage =
+          getCoursePage(
+            course
+          );
+
+
+        return `
+          <article
+            class="course-card"
+            data-course-id="${id}"
+            data-course-page="${
+              coursePage
+                ? escapeHtml(coursePage)
+                : ""
+            }"
+            tabindex="0"
+            role="link"
+            aria-label="Abrir o curso ${name}"
+            title="${name}"
+          >
+
+            <div class="cover">
+
+              ${
+                coverUrl
+
+                  ? `
+                    <img
+                      src="${escapeHtml(
+                        coverUrl
+                      )}"
+                      alt="Capa do curso ${name}"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  `
+
+                  : `
+                    <div
+                      class="course-cover-placeholder"
+                    >
+                      <span>
+                        ${category}
+                      </span>
+                    </div>
+                  `
+              }
+
+            </div>
+
+
+            <!--
+              Mantém somente o gradiente.
+
+              Os textos já fazem parte
+              da própria arte da capa.
+            -->
+
+            <div
+              class="body"
+              aria-hidden="true"
+            ></div>
+
+
+            <span
+              class="play-btn"
+              aria-hidden="true"
             >
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </span>
-        </article>
-      `;
-    })
-    .join("");
+
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M8 5v14l11-7z"
+                />
+              </svg>
+
+            </span>
+
+          </article>
+        `;
+      })
+      .join("");
+
 
   addCourseEvents();
 }
 
-/**
- * Adiciona navegação por clique e teclado.
- */
+
+/* =========================================================
+   CLIQUE NOS CARDS
+========================================================= */
+
 function addCourseEvents() {
   if (!grid) {
     return;
   }
 
-  const cards = grid.querySelectorAll(".course-card");
 
-  cards.forEach((card) => {
-    const openCourse = () => {
-      const courseId = card.dataset.courseId;
+  const cards =
+    grid.querySelectorAll(
+      ".course-card"
+    );
 
-      if (!courseId) {
-        return;
-      }
 
-      window.location.href =
-        `curso.html?id=${encodeURIComponent(courseId)}`;
-    };
+  cards.forEach(
+    (card) => {
 
-    card.addEventListener("click", openCourse);
+      const openCourse = () => {
 
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openCourse();
-      }
-    });
-  });
+        /*
+          A página já foi calculada
+          no renderCourses().
+        */
+
+        const coursePage =
+          String(
+            card.dataset.coursePage ||
+            ""
+          ).trim();
+
+
+        if (!coursePage) {
+
+          console.warn(
+            "O curso não possui uma página configurada:",
+            card.dataset.courseId
+          );
+
+          return;
+        }
+
+
+        /*
+          Excel:
+          excel.html
+
+          Outros cursos atualmente:
+          curso.html?id=...
+        */
+
+        window.location.href =
+          coursePage;
+      };
+
+
+      card.addEventListener(
+        "click",
+        openCourse
+      );
+
+
+      card.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+            openCourse();
+          }
+
+        }
+      );
+
+    }
+  );
 }
 
-/**
- * Pesquisa cursos já carregados.
- *
- * Mesmo sem mostrar os textos no card,
- * nome, categoria e descrição continuam
- * sendo utilizados na pesquisa.
- */
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
 function searchCourses() {
   if (!searchInput) {
     return;
   }
 
-  const query = searchInput.value
-    .trim()
-    .toLocaleLowerCase("pt-BR");
+
+  const query =
+    searchInput.value
+      .trim()
+      .toLocaleLowerCase(
+        "pt-BR"
+      );
+
 
   if (!query) {
-    renderCourses(allCourses);
+
+    renderCourses(
+      allCourses
+    );
+
     return;
   }
 
-  const filteredCourses = allCourses.filter((course) => {
-    const name = String(course.nome || "")
-      .toLocaleLowerCase("pt-BR");
 
-    const description = String(course.descricao || "")
-      .toLocaleLowerCase("pt-BR");
+  const filteredCourses =
+    allCourses.filter(
+      (course) => {
 
-    const category = String(course.categoria || "")
-      .toLocaleLowerCase("pt-BR");
+        const name =
+          String(
+            course.nome ||
+            ""
+          )
+            .toLocaleLowerCase(
+              "pt-BR"
+            );
 
-    return (
-      name.includes(query) ||
-      description.includes(query) ||
-      category.includes(query)
+
+        const description =
+          String(
+            course.descricao ||
+            ""
+          )
+            .toLocaleLowerCase(
+              "pt-BR"
+            );
+
+
+        const category =
+          String(
+            course.categoria ||
+            ""
+          )
+            .toLocaleLowerCase(
+              "pt-BR"
+            );
+
+
+        return (
+          name.includes(query) ||
+          description.includes(query) ||
+          category.includes(query)
+        );
+      }
     );
-  });
 
-  renderCourses(filteredCourses);
+
+  renderCourses(
+    filteredCourses
+  );
 }
 
-/**
- * Eventos da pesquisa.
- */
+
+/* =========================================================
+   BOTÃO DE PESQUISA
+========================================================= */
+
 if (searchBtn) {
-  searchBtn.addEventListener("click", searchCourses);
+
+  searchBtn.addEventListener(
+    "click",
+    searchCourses
+  );
 }
+
+
+/* =========================================================
+   INPUT DE PESQUISA
+========================================================= */
 
 if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    if (!searchInput.value.trim()) {
-      renderCourses(allCourses);
-    }
-  });
 
-  searchInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      searchCourses();
+  searchInput.addEventListener(
+    "input",
+    () => {
+
+      if (
+        !searchInput.value.trim()
+      ) {
+
+        renderCourses(
+          allCourses
+        );
+      }
+
     }
-  });
+  );
+
+
+  searchInput.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Enter"
+      ) {
+
+        searchCourses();
+      }
+
+    }
+  );
 }
 
-/**
- * Botões de buscas populares.
- */
-document.querySelectorAll(".tag").forEach((tag) => {
-  tag.addEventListener("click", () => {
-    if (!searchInput) {
+
+/* =========================================================
+   BUSCAS POPULARES
+========================================================= */
+
+document
+  .querySelectorAll(".tag")
+  .forEach((tag) => {
+
+    tag.addEventListener(
+      "click",
+      () => {
+
+        if (!searchInput) {
+          return;
+        }
+
+
+        searchInput.value =
+          tag.textContent.trim();
+
+
+        searchCourses();
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   ALTERAÇÃO DA AUTENTICAÇÃO
+========================================================= */
+
+supabase.auth.onAuthStateChange(
+  (_event, session) => {
+
+    const userArea =
+      document.getElementById(
+        "user-area"
+      );
+
+
+    if (!userArea) {
       return;
     }
 
-    searchInput.value = tag.textContent.trim();
-    searchCourses();
-  });
-});
 
-/**
- * Atualiza o cabeçalho quando a autenticação mudar.
- */
-supabase.auth.onAuthStateChange((_event, session) => {
-  const userArea = document.getElementById("user-area");
+    if (session?.user) {
 
-  if (!userArea) {
-    return;
+      renderAuthenticatedArea(
+        userArea,
+        session.user
+      );
+
+    } else {
+
+      renderGuestArea(
+        userArea
+      );
+
+    }
+
   }
+);
 
-  if (session?.user) {
-    renderAuthenticatedArea(userArea, session.user);
-  } else {
-    renderGuestArea(userArea);
-  }
-});
 
-/**
- * Inicialização.
- */
+/* =========================================================
+   INICIALIZAÇÃO
+========================================================= */
+
 loadUserSession();
+
 loadCatalog();
