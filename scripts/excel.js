@@ -5,21 +5,203 @@ import {
 
 
 /* =========================================================
-   CONFIGURAÇÃO
+   CONFIGURAÇÃO DO CURSO
 ========================================================= */
 
 const EXCEL_COURSE_ID = 1;
 
 
+/*
+  IMPORTANTE:
+
+  Estes são os nomes dos buckets que serão usados
+  quando você colocar slides e materiais no Storage.
+
+  Se você criar os buckets com outros nomes,
+  basta alterar SOMENTE essas duas constantes.
+*/
+
+const SLIDES_BUCKET = "slides";
+const MATERIALS_BUCKET = "materiais";
+
+
+/*
+  Tempo de validade das URLs assinadas do Storage.
+
+  3600 segundos = 1 hora.
+*/
+
+const SIGNED_URL_EXPIRES_IN = 60 * 60;
+
+
 /* =========================================================
-   ELEMENTOS / ESTADO
+   ELEMENTOS
 ========================================================= */
 
 const $ = (id) => document.getElementById(id);
 
+
+/* =========================================================
+   ESTADO DA PÁGINA
+========================================================= */
+
+let currentUser = null;
+
 let course = null;
+
+let modules = [];
+
 let lessons = [];
+
+let slides = [];
+
+let materials = [];
+
+let progressRows = [];
+
+
+/*
+  Mapas para facilitar o acesso aos dados.
+
+  Exemplo:
+
+  slidesByLesson.get(5)
+
+  retorna todos os slides da aula de ID 5.
+*/
+
+const slidesByLesson = new Map();
+
+const materialsByLesson = new Map();
+
+const progressByLesson = new Map();
+
+
 let currentLessonIndex = 0;
+
+let currentSlideIndex = 0;
+
+
+/*
+  Evita que uma imagem antiga apareça
+  caso o usuário troque rapidamente de aula.
+*/
+
+let slideRenderVersion = 0;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function normalizeText(value) {
+  return String(value ?? "").trim();
+}
+
+
+function normalizeNumber(value, fallback = 0) {
+  const parsed = Number(value);
+
+  return Number.isFinite(parsed)
+    ? parsed
+    : fallback;
+}
+
+
+function isHttpUrl(value) {
+  const text = normalizeText(value);
+
+  return (
+    text.startsWith("https://") ||
+    text.startsWith("http://")
+  );
+}
+
+
+/* =========================================================
+   CURSO PADRÃO
+========================================================= */
+
+function getDefaultCourse() {
+  return {
+    id: EXCEL_COURSE_ID,
+
+    nome:
+      "Excel Prático — Básico ao Avançado",
+
+    descricao:
+      "Aprenda Excel do básico ao avançado com aulas práticas, exercícios e projetos aplicados ao dia a dia.",
+
+    categoria:
+      "Excel"
+  };
+}
+
+
+/* =========================================================
+   URL DO STORAGE
+========================================================= */
+
+async function getStorageUrl(
+  bucket,
+  path
+) {
+  const filePath = normalizeText(path);
+
+  if (!filePath) {
+    return "";
+  }
+
+
+  /*
+    Se imagem_path / arquivo_path já tiver
+    uma URL completa, usamos diretamente.
+  */
+
+  if (isHttpUrl(filePath)) {
+    return filePath;
+  }
+
+
+  try {
+
+    /*
+      Criamos URL assinada.
+
+      Isso permite que futuramente você deixe
+      os buckets privados, o que é melhor para
+      uma plataforma paga.
+    */
+
+    const {
+      data,
+      error
+    } = await supabase
+      .storage
+      .from(bucket)
+      .createSignedUrl(
+        filePath,
+        SIGNED_URL_EXPIRES_IN
+      );
+
+
+    if (error) {
+      throw error;
+    }
+
+
+    return data?.signedUrl || "";
+
+  } catch (error) {
+
+    console.error(
+      `Erro ao gerar URL do Storage (${bucket}/${filePath}):`,
+      error
+    );
+
+    return "";
+  }
+}
 
 
 /* =========================================================
@@ -29,33 +211,58 @@ let currentLessonIndex = 0;
 async function loadUserSession() {
   const userArea = $("user-area");
 
-  if (!userArea) {
-    return;
-  }
-
   try {
+
     const {
       data: { session },
       error
     } = await supabase.auth.getSession();
 
+
     if (error) {
       throw error;
     }
 
-    if (session?.user) {
-      renderUser(userArea, session.user);
-    } else {
-      renderGuest(userArea);
+
+    currentUser =
+      session?.user || null;
+
+
+    if (userArea) {
+
+      if (currentUser) {
+        renderUser(
+          userArea,
+          currentUser
+        );
+      } else {
+        renderGuest(
+          userArea
+        );
+      }
+
     }
 
+
+    return currentUser;
+
   } catch (error) {
+
     console.error(
       "Erro ao carregar sessão:",
       error
     );
 
-    renderGuest(userArea);
+
+    currentUser = null;
+
+
+    if (userArea) {
+      renderGuest(userArea);
+    }
+
+
+    return null;
   }
 }
 
@@ -68,6 +275,7 @@ function renderGuest(userArea) {
   if (!userArea) {
     return;
   }
+
 
   userArea.innerHTML = `
     <a
@@ -104,50 +312,65 @@ function renderGuest(userArea) {
    USUÁRIO LOGADO
 ========================================================= */
 
-function renderUser(userArea, user) {
-  if (!userArea || !user) {
+function renderUser(
+  userArea,
+  user
+) {
+  if (
+    !userArea ||
+    !user
+  ) {
     return;
   }
 
-  const email = escapeHtml(
-    user.email || ""
-  );
+
+  const email =
+    escapeHtml(
+      user.email || ""
+    );
+
 
   const avatarUrl =
     user.user_metadata?.avatar_url ||
     user.user_metadata?.picture ||
     "";
 
+
   const name =
     user.user_metadata?.full_name ||
     user.user_metadata?.name ||
-    email ||
+    user.email ||
     "U";
 
-  const initial = escapeHtml(
-    String(name)
-      .trim()
-      .charAt(0)
-      .toUpperCase()
-  );
 
-  const avatar = avatarUrl
-    ? `
-      <img
-        src="${escapeHtml(avatarUrl)}"
-        alt="Foto do usuário"
-        class="user-avatar"
-        referrerpolicy="no-referrer"
-      >
-    `
-    : `
-      <div
-        class="user-avatar-placeholder"
-        aria-hidden="true"
-      >
-        ${initial}
-      </div>
-    `;
+  const initial =
+    escapeHtml(
+      String(name)
+        .trim()
+        .charAt(0)
+        .toUpperCase()
+    );
+
+
+  const avatar =
+    avatarUrl
+      ? `
+        <img
+          src="${escapeHtml(avatarUrl)}"
+          alt="Foto do usuário"
+          class="user-avatar"
+          referrerpolicy="no-referrer"
+        >
+      `
+      : `
+        <div
+          class="user-avatar-placeholder"
+          aria-hidden="true"
+        >
+          ${initial}
+        </div>
+      `;
+
 
   userArea.innerHTML = `
     <div class="user-info">
@@ -172,10 +395,12 @@ function renderUser(userArea, user) {
     </div>
   `;
 
-  $("logout-btn")?.addEventListener(
-    "click",
-    logout
-  );
+
+  $("logout-btn")
+    ?.addEventListener(
+      "click",
+      logout
+    );
 }
 
 
@@ -184,34 +409,45 @@ function renderUser(userArea, user) {
 ========================================================= */
 
 async function logout() {
-  const button = $("logout-btn");
+  const button =
+    $("logout-btn");
+
 
   try {
+
     if (button) {
       button.disabled = true;
-      button.textContent = "Saindo...";
+      button.textContent =
+        "Saindo...";
     }
+
 
     const { error } =
       await supabase.auth.signOut();
+
 
     if (error) {
       throw error;
     }
 
+
     window.location.href =
       "login.html";
 
   } catch (error) {
+
     console.error(
       "Erro ao sair:",
       error
     );
 
+
     if (button) {
       button.disabled = false;
-      button.textContent = "Sair";
+      button.textContent =
+        "Sair";
     }
+
 
     alert(
       "Não foi possível sair da conta."
@@ -221,138 +457,564 @@ async function logout() {
 
 
 /* =========================================================
-   CURSO PADRÃO
+   LIMPAR MAPAS
 ========================================================= */
 
-function getDefaultCourse() {
-  return {
-    id: EXCEL_COURSE_ID,
+function clearDataMaps() {
+  slidesByLesson.clear();
 
-    nome:
-      "Excel Prático — Básico ao Avançado",
+  materialsByLesson.clear();
 
-    descricao:
-      "Aprenda Excel do básico ao avançado com aulas práticas, exercícios e projetos aplicados ao dia a dia.",
-
-    categoria:
-      "Excel"
-  };
+  progressByLesson.clear();
 }
 
 
 /* =========================================================
-   CARREGAR CURSO + AULAS
+   CARREGAR CURSO
+========================================================= */
+
+async function loadCourse() {
+  const {
+    data,
+    error
+  } = await supabase
+    .from("catalogo")
+    .select(`
+      id,
+      nome,
+      descricao,
+      categoria,
+      imagem_capa_url,
+      status
+    `)
+    .eq(
+      "id",
+      EXCEL_COURSE_ID
+    )
+    .maybeSingle();
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  course =
+    data ||
+    getDefaultCourse();
+}
+
+
+/* =========================================================
+   CARREGAR MÓDULOS
+========================================================= */
+
+async function loadModules() {
+  const {
+    data,
+    error
+  } = await supabase
+    .from("modulos")
+    .select(`
+      id,
+      curso_id,
+      nome,
+      descricao,
+      ordem,
+      status
+    `)
+    .eq(
+      "curso_id",
+      EXCEL_COURSE_ID
+    )
+    .eq(
+      "status",
+      "publicado"
+    )
+    .order(
+      "ordem",
+      {
+        ascending: true
+      }
+    );
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  modules =
+    Array.isArray(data)
+      ? data
+      : [];
+}
+
+
+/* =========================================================
+   CARREGAR AULAS
+========================================================= */
+
+async function loadLessons() {
+  if (!modules.length) {
+    lessons = [];
+    return;
+  }
+
+
+  const moduleIds =
+    modules.map(
+      (module) =>
+        module.id
+    );
+
+
+  const {
+    data,
+    error
+  } = await supabase
+    .from("aulas")
+    .select(`
+      id,
+      modulo_id,
+      nome,
+      descricao,
+      ordem,
+      status
+    `)
+    .in(
+      "modulo_id",
+      moduleIds
+    )
+    .eq(
+      "status",
+      "publicado"
+    )
+    .order(
+      "ordem",
+      {
+        ascending: true
+      }
+    );
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  const rawLessons =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  /*
+    Adicionamos a informação do módulo
+    dentro de cada aula para simplificar
+    a renderização.
+  */
+
+  lessons =
+    rawLessons
+      .map((lesson) => {
+
+        const module =
+          modules.find(
+            (item) =>
+              Number(item.id) ===
+              Number(
+                lesson.modulo_id
+              )
+          );
+
+
+        return {
+          ...lesson,
+
+          module:
+            module || null
+        };
+      })
+      .sort((a, b) => {
+
+        const moduleA =
+          normalizeNumber(
+            a.module?.ordem
+          );
+
+        const moduleB =
+          normalizeNumber(
+            b.module?.ordem
+          );
+
+
+        if (
+          moduleA !==
+          moduleB
+        ) {
+          return moduleA - moduleB;
+        }
+
+
+        return (
+          normalizeNumber(a.ordem) -
+          normalizeNumber(b.ordem)
+        );
+      });
+}
+
+
+/* =========================================================
+   CARREGAR SLIDES
+========================================================= */
+
+async function loadSlides() {
+  slidesByLesson.clear();
+
+
+  if (!lessons.length) {
+    slides = [];
+    return;
+  }
+
+
+  const lessonIds =
+    lessons.map(
+      (lesson) =>
+        lesson.id
+    );
+
+
+  const {
+    data,
+    error
+  } = await supabase
+    .from("slides")
+    .select(`
+      id,
+      aula_id,
+      titulo,
+      imagem_path,
+      ordem,
+      status
+    `)
+    .in(
+      "aula_id",
+      lessonIds
+    )
+    .eq(
+      "status",
+      "publicado"
+    )
+    .order(
+      "ordem",
+      {
+        ascending: true
+      }
+    );
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  slides =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  slides.forEach(
+    (slide) => {
+
+      const lessonId =
+        Number(
+          slide.aula_id
+        );
+
+
+      if (
+        !slidesByLesson.has(
+          lessonId
+        )
+      ) {
+        slidesByLesson.set(
+          lessonId,
+          []
+        );
+      }
+
+
+      slidesByLesson
+        .get(lessonId)
+        .push(slide);
+    }
+  );
+
+
+  /*
+    Garantimos novamente a ordem.
+  */
+
+  slidesByLesson.forEach(
+    (lessonSlides) => {
+
+      lessonSlides.sort(
+        (a, b) =>
+          normalizeNumber(a.ordem) -
+          normalizeNumber(b.ordem)
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+   CARREGAR MATERIAIS
+========================================================= */
+
+async function loadMaterials() {
+  materialsByLesson.clear();
+
+
+  if (!lessons.length) {
+    materials = [];
+    return;
+  }
+
+
+  const lessonIds =
+    lessons.map(
+      (lesson) =>
+        lesson.id
+    );
+
+
+  const {
+    data,
+    error
+  } = await supabase
+    .from("materiais")
+    .select(`
+      id,
+      aula_id,
+      nome,
+      arquivo_path,
+      tipo,
+      ordem,
+      status
+    `)
+    .in(
+      "aula_id",
+      lessonIds
+    )
+    .eq(
+      "status",
+      "publicado"
+    )
+    .order(
+      "ordem",
+      {
+        ascending: true
+      }
+    );
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  materials =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  materials.forEach(
+    (material) => {
+
+      const lessonId =
+        Number(
+          material.aula_id
+        );
+
+
+      if (
+        !materialsByLesson.has(
+          lessonId
+        )
+      ) {
+        materialsByLesson.set(
+          lessonId,
+          []
+        );
+      }
+
+
+      materialsByLesson
+        .get(lessonId)
+        .push(material);
+    }
+  );
+}
+
+
+/* =========================================================
+   CARREGAR PROGRESSO
+========================================================= */
+
+async function loadProgress() {
+  progressByLesson.clear();
+
+  progressRows = [];
+
+
+  if (
+    !currentUser ||
+    !lessons.length
+  ) {
+    return;
+  }
+
+
+  const lessonIds =
+    lessons.map(
+      (lesson) =>
+        lesson.id
+    );
+
+
+  const {
+    data,
+    error
+  } = await supabase
+    .from("progresso_aulas")
+    .select(`
+      id,
+      user_id,
+      aula_id,
+      concluida,
+      concluida_em
+    `)
+    .eq(
+      "user_id",
+      currentUser.id
+    )
+    .in(
+      "aula_id",
+      lessonIds
+    );
+
+
+  if (error) {
+    throw error;
+  }
+
+
+  progressRows =
+    Array.isArray(data)
+      ? data
+      : [];
+
+
+  progressRows.forEach(
+    (row) => {
+
+      progressByLesson.set(
+        Number(row.aula_id),
+        row
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+   CARREGAR TODA A ESTRUTURA DO EXCEL
 ========================================================= */
 
 async function loadExcelCourse() {
   try {
-    const [
-      courseResponse,
-      lessonsResponse
-    ] = await Promise.all([
 
-      supabase
-        .from("catalogo")
-        .select(`
-          id,
-          nome,
-          descricao,
-          categoria,
-          imagem_capa_url,
-          status
-        `)
-        .eq("id", EXCEL_COURSE_ID)
-        .maybeSingle(),
+    clearDataMaps();
 
-      supabase
-        .from("curso")
-        .select("*")
-        .eq(
-          "curso_id",
-          EXCEL_COURSE_ID
-        )
-        .eq(
-          "status",
-          "publicado"
-        )
-        .order(
-          "ordem",
-          {
-            ascending: true
-          }
-        )
 
+    await loadCourse();
+
+    await loadModules();
+
+    await loadLessons();
+
+
+    /*
+      Slides, materiais e progresso podem
+      ser carregados ao mesmo tempo depois
+      que as aulas já estiverem disponíveis.
+    */
+
+    await Promise.all([
+      loadSlides(),
+      loadMaterials(),
+      loadProgress()
     ]);
-
-
-    /* =========================
-       CURSO
-    ========================= */
-
-    if (courseResponse.error) {
-      console.warn(
-        "Erro ao carregar dados do curso:",
-        courseResponse.error
-      );
-    }
-
-    course =
-      courseResponse.data ||
-      getDefaultCourse();
-
-
-    /* =========================
-       AULAS
-    ========================= */
-
-    if (lessonsResponse.error) {
-      console.warn(
-        "Aulas ainda não disponíveis:",
-        lessonsResponse.error
-      );
-
-      lessons = [];
-
-    } else {
-      lessons =
-        Array.isArray(
-          lessonsResponse.data
-        )
-          ? lessonsResponse.data
-          : [];
-    }
 
 
     renderCourseHeader();
 
-    renderDownloads();
+    renderLessons();
+
+    await renderDownloads();
 
 
     if (lessons.length) {
-      renderLessons();
-      selectLesson(0);
+
+      await selectLesson(
+        0,
+        0
+      );
+
     } else {
+
       renderNoLessons();
+
+      updateProgress();
     }
 
-    updateProgress();
-
   } catch (error) {
+
     console.error(
-      "Erro ao carregar Excel:",
+      "Erro ao carregar o curso de Excel:",
       error
     );
 
+
     course =
+      course ||
       getDefaultCourse();
 
+
+    modules = [];
+
     lessons = [];
+
+    slides = [];
+
+    materials = [];
+
+    progressRows = [];
+
+
+    clearDataMaps();
+
 
     renderCourseHeader();
 
     renderNoLessons();
 
-    renderDownloads();
+    await renderDownloads();
 
     updateProgress();
   }
@@ -368,16 +1030,106 @@ function renderCourseHeader() {
     course?.nome ||
     "Excel Prático — Básico ao Avançado";
 
+
   const breadcrumb =
     $("breadcrumb-course");
+
 
   if (breadcrumb) {
     breadcrumb.textContent =
       courseName;
   }
 
+
   document.title =
     `${courseName} — SkillUp`;
+}
+
+
+/* =========================================================
+   NUMERAÇÃO DA AULA
+========================================================= */
+
+function getLessonNumber(
+  lesson
+) {
+  const moduleOrder =
+    normalizeNumber(
+      lesson?.module?.ordem,
+      1
+    );
+
+
+  const lessonOrder =
+    normalizeNumber(
+      lesson?.ordem,
+      1
+    );
+
+
+  return (
+    `${moduleOrder}.${lessonOrder}`
+  );
+}
+
+
+/* =========================================================
+   SLIDES DE UMA AULA
+========================================================= */
+
+function getLessonSlides(
+  lesson
+) {
+  if (!lesson) {
+    return [];
+  }
+
+
+  return (
+    slidesByLesson.get(
+      Number(lesson.id)
+    ) || []
+  );
+}
+
+
+/* =========================================================
+   MATERIAIS DE UMA AULA
+========================================================= */
+
+function getLessonMaterials(
+  lesson
+) {
+  if (!lesson) {
+    return [];
+  }
+
+
+  return (
+    materialsByLesson.get(
+      Number(lesson.id)
+    ) || []
+  );
+}
+
+
+/* =========================================================
+   VERIFICAR SE AULA FOI CONCLUÍDA
+========================================================= */
+
+function isLessonCompleted(
+  lesson
+) {
+  if (!lesson) {
+    return false;
+  }
+
+
+  return Boolean(
+    progressByLesson.get(
+      Number(lesson.id)
+    )?.concluida
+  );
 }
 
 
@@ -389,125 +1141,237 @@ function renderLessons() {
   const container =
     $("lessons-container");
 
+
   if (!container) {
     return;
   }
 
+
   container.innerHTML = "";
 
 
-  const moduleBlock =
-    document.createElement(
-      "div"
-    );
-
-  moduleBlock.className =
-    "module-block";
+  if (!modules.length) {
+    renderNoLessons();
+    return;
+  }
 
 
-  moduleBlock.innerHTML = `
-    <div class="module-label">
-      MÓDULO 1
-    </div>
+  modules.forEach(
+    (
+      module,
+      moduleIndex
+    ) => {
 
-    <div class="module-title">
-      Excel Prático
-    </div>
-
-    <ul class="lesson-list"></ul>
-  `;
-
-
-  const list =
-    moduleBlock.querySelector(
-      ".lesson-list"
-    );
+      const moduleLessons =
+        lessons.filter(
+          (lesson) =>
+            Number(
+              lesson.modulo_id
+            ) ===
+            Number(
+              module.id
+            )
+        );
 
 
-  lessons.forEach(
-    (lesson, index) => {
+      /*
+        Se o módulo estiver publicado
+        mas ainda não tiver aula publicada,
+        ainda mostramos o módulo.
+      */
 
-      const li =
+      const moduleBlock =
         document.createElement(
-          "li"
-        );
-
-      li.className =
-        "lesson";
-
-      li.dataset.lessonIndex =
-        String(index);
-
-
-      const lessonNumber =
-        `1.${index + 1}`;
-
-
-      const lessonName =
-        escapeHtml(
-          lesson.nome ||
-          `Aula ${index + 1}`
+          "div"
         );
 
 
-      li.innerHTML = `
-        <div class="lesson-status"></div>
+      moduleBlock.className =
+        "module-block";
 
-        <div class="lesson-num">
-          ${lessonNumber}
+
+      const moduleNumber =
+        normalizeNumber(
+          module.ordem,
+          moduleIndex + 1
+        );
+
+
+      moduleBlock.innerHTML = `
+        <div class="module-label">
+          MÓDULO ${moduleNumber}
         </div>
 
-        <div class="lesson-name">
-          ${lessonName}
+        <div class="module-title">
+          ${escapeHtml(
+            module.nome ||
+            `Módulo ${moduleNumber}`
+          )}
         </div>
 
-        <div class="lesson-duration">
-          —
-        </div>
-
-        <button
-          type="button"
-          class="lesson-play"
-          aria-label="Abrir ${lessonName}"
-        >
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M8 5v14l11-7z"
-            />
-          </svg>
-        </button>
+        <ul class="lesson-list"></ul>
       `;
 
 
-      li.addEventListener(
-        "click",
-        () => {
-          selectLesson(index);
+      const list =
+        moduleBlock.querySelector(
+          ".lesson-list"
+        );
 
-          /*
-            Ao escolher uma aula,
-            fecha a sidebar automaticamente.
-          */
 
-          closeAllSidebars();
+      moduleLessons.forEach(
+        (lesson) => {
+
+          const globalIndex =
+            lessons.findIndex(
+              (item) =>
+                Number(item.id) ===
+                Number(lesson.id)
+            );
+
+
+          const lessonSlides =
+            getLessonSlides(
+              lesson
+            );
+
+
+          const completed =
+            isLessonCompleted(
+              lesson
+            );
+
+
+          const li =
+            document.createElement(
+              "li"
+            );
+
+
+          li.className =
+            "lesson";
+
+
+          li.dataset.lessonIndex =
+            String(globalIndex);
+
+
+          li.dataset.lessonId =
+            String(lesson.id);
+
+
+          const lessonNumber =
+            getLessonNumber(
+              lesson
+            );
+
+
+          const lessonName =
+            escapeHtml(
+              lesson.nome ||
+              `Aula ${lessonNumber}`
+            );
+
+
+          const slidesLabel =
+            lessonSlides.length
+              ? (
+                lessonSlides.length === 1
+                  ? "1 slide"
+                  : `${lessonSlides.length} slides`
+              )
+              : "—";
+
+
+          li.innerHTML = `
+            <div class="lesson-status">
+              ${
+                completed
+                  ? `
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      aria-hidden="true"
+                    >
+                      <polyline
+                        points="20 6 9 17 4 12"
+                      />
+                    </svg>
+                  `
+                  : ""
+              }
+            </div>
+
+            <div class="lesson-num">
+              ${escapeHtml(
+                lessonNumber
+              )}
+            </div>
+
+            <div class="lesson-name">
+              ${lessonName}
+            </div>
+
+            <div class="lesson-duration">
+              ${escapeHtml(
+                slidesLabel
+              )}
+            </div>
+
+            <button
+              type="button"
+              class="lesson-play"
+              aria-label="Abrir ${lessonName}"
+            >
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 5v14l11-7z"
+                />
+              </svg>
+            </button>
+          `;
+
+
+          li.addEventListener(
+            "click",
+            async () => {
+
+              await selectLesson(
+                globalIndex,
+                0
+              );
+
+
+              closeAllSidebars();
+            }
+          );
+
+
+          list?.appendChild(
+            li
+          );
         }
       );
 
 
-      list.appendChild(li);
+      container.appendChild(
+        moduleBlock
+      );
     }
   );
 
 
-  container.appendChild(
-    moduleBlock
-  );
+  updateLessonSelection();
 }
 
 
@@ -515,28 +1379,59 @@ function renderLessons() {
    SELECIONAR AULA
 ========================================================= */
 
-function selectLesson(index) {
+async function selectLesson(
+  lessonIndex,
+  slideIndex = 0
+) {
   if (
-    index < 0 ||
-    index >= lessons.length
+    lessonIndex < 0 ||
+    lessonIndex >=
+      lessons.length
   ) {
     return;
   }
 
 
-  currentLessonIndex = index;
+  currentLessonIndex =
+    lessonIndex;
 
 
   const lesson =
-    lessons[index];
+    lessons[
+      currentLessonIndex
+    ];
+
+
+  const lessonSlides =
+    getLessonSlides(
+      lesson
+    );
+
+
+  if (
+    !lessonSlides.length
+  ) {
+
+    currentSlideIndex = 0;
+
+  } else {
+
+    currentSlideIndex =
+      Math.max(
+        0,
+        Math.min(
+          slideIndex,
+          lessonSlides.length - 1
+        )
+      );
+  }
 
 
   updateLessonSelection();
 
-  renderCurrentLesson(
-    lesson,
-    index
-  );
+
+  await renderCurrentLesson();
+
 
   updateNavigation();
 
@@ -556,7 +1451,22 @@ function updateLessonSelection() {
 
 
   items.forEach(
-    (item, index) => {
+    (item) => {
+
+      const index =
+        Number(
+          item.dataset.lessonIndex
+        );
+
+
+      const lesson =
+        lessons[index];
+
+
+      if (!lesson) {
+        return;
+      }
+
 
       const isCurrent =
         index ===
@@ -564,8 +1474,9 @@ function updateLessonSelection() {
 
 
       const isDone =
-        index <
-        currentLessonIndex;
+        isLessonCompleted(
+          lesson
+        );
 
 
       item.classList.toggle(
@@ -591,39 +1502,45 @@ function updateLessonSelection() {
       }
 
 
-      if (isDone) {
-        status.innerHTML = `
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            aria-hidden="true"
-          >
-            <polyline
-              points="20 6 9 17 4 12"
-            />
-          </svg>
-        `;
-      } else {
-        status.innerHTML = "";
-      }
-
+      status.innerHTML =
+        isDone
+          ? `
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              aria-hidden="true"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          `
+          : "";
     }
   );
 }
 
 
 /* =========================================================
-   RENDERIZAR AULA
+   RENDERIZAR AULA / SLIDE
 ========================================================= */
 
-function renderCurrentLesson(
-  lesson,
-  index
-) {
+async function renderCurrentLesson() {
+  const lesson =
+    lessons[
+      currentLessonIndex
+    ];
+
+
+  if (!lesson) {
+    return;
+  }
+
+
   const title =
     $("lesson-title");
 
@@ -639,83 +1556,211 @@ function renderCurrentLesson(
   }
 
 
+  const lessonNumber =
+    getLessonNumber(
+      lesson
+    );
+
+
   const lessonName =
     lesson.nome ||
-    `Aula ${index + 1}`;
+    `Aula ${lessonNumber}`;
 
 
   if (title) {
     title.textContent =
-      `1.${index + 1} ${lessonName}`;
+      `${lessonNumber} ${lessonName}`;
   }
 
 
   if (description) {
     description.textContent =
-      lesson.conteudo_texto ||
       lesson.descricao ||
+      lesson.module?.descricao ||
       course?.descricao ||
       "Conteúdo prático do curso de Excel.";
   }
 
 
+  const lessonSlides =
+    getLessonSlides(
+      lesson
+    );
+
+
   /*
-    SUPABASE STORAGE
-
-    Quando o banco estiver pronto,
-    o slide pode vir de uma coluna como:
-
-    slide_url
-    imagem_slide_url
-    slide_imagem_url
-
-    Depois definimos apenas um nome definitivo.
+    Ainda não há slides cadastrados.
   */
 
-  const slideUrl =
-    String(
-      lesson.slide_url ||
-      lesson.imagem_slide_url ||
-      lesson.slide_imagem_url ||
-      ""
-    ).trim();
-
-
-  if (slideUrl) {
-
-    currentLesson.innerHTML = `
-      <div
-        id="slide-stage"
-        class="slide-stage"
-      >
-
-        <div class="slide-viewer">
-
-          <img
-            src="${escapeHtml(slideUrl)}"
-            alt="Slide da aula ${escapeHtml(lessonName)}"
-            loading="eager"
-          >
-
-        </div>
-
-      </div>
-    `;
-
-  } else {
+  if (!lessonSlides.length) {
 
     currentLesson.innerHTML =
       getSlidePlaceholder();
 
+    renderSlideCounter(
+      0,
+      0
+    );
+
+    return;
   }
+
+
+  const slide =
+    lessonSlides[
+      currentSlideIndex
+    ];
+
+
+  if (!slide) {
+
+    currentLesson.innerHTML =
+      getSlidePlaceholder();
+
+    return;
+  }
+
+
+  /*
+    Enquanto buscamos a URL assinada,
+    mostramos um estado de carregamento.
+  */
+
+  const renderVersion =
+    ++slideRenderVersion;
+
+
+  currentLesson.innerHTML = `
+    <div
+      id="slide-stage"
+      class="slide-stage"
+    >
+      <div class="slide-loading">
+        Carregando slide...
+      </div>
+    </div>
+  `;
+
+
+  const slideUrl =
+    await getStorageUrl(
+      SLIDES_BUCKET,
+      slide.imagem_path
+    );
+
+
+  /*
+    Se o usuário já mudou de slide/aula,
+    ignoramos o resultado antigo.
+  */
+
+  if (
+    renderVersion !==
+    slideRenderVersion
+  ) {
+    return;
+  }
+
+
+  if (!slideUrl) {
+
+    currentLesson.innerHTML =
+      getSlidePlaceholder(
+        "Não foi possível carregar este slide."
+      );
+
+    renderSlideCounter(
+      currentSlideIndex + 1,
+      lessonSlides.length
+    );
+
+    return;
+  }
+
+
+  const slideTitle =
+    normalizeText(
+      slide.titulo
+    );
+
+
+  currentLesson.innerHTML = `
+    <div
+      id="slide-stage"
+      class="slide-stage"
+    >
+
+      <div class="slide-viewer">
+
+        <img
+          src="${escapeHtml(slideUrl)}"
+          alt="${
+            escapeHtml(
+              slideTitle ||
+              `Slide ${
+                currentSlideIndex + 1
+              } da aula ${lessonName}`
+            )
+          }"
+          loading="eager"
+          decoding="async"
+        >
+
+      </div>
+
+    </div>
+  `;
+
+
+  renderSlideCounter(
+    currentSlideIndex + 1,
+    lessonSlides.length
+  );
 }
 
 
 /* =========================================================
-   PLACEHOLDER DO SLIDE
+   CONTADOR DE SLIDES
 ========================================================= */
 
-function getSlidePlaceholder() {
+function renderSlideCounter(
+  current,
+  total
+) {
+  const counter =
+    $("slide-counter");
+
+
+  /*
+    O HTML atual pode ainda não ter esse elemento.
+    Por isso ele é opcional.
+  */
+
+  if (!counter) {
+    return;
+  }
+
+
+  if (!total) {
+    counter.textContent =
+      "Nenhum slide";
+    return;
+  }
+
+
+  counter.textContent =
+    `${current} de ${total}`;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+function getSlidePlaceholder(
+  message =
+    "Os slides do Supabase serão exibidos exatamente neste espaço."
+) {
   return `
     <div
       id="slide-stage"
@@ -791,7 +1836,7 @@ function getSlidePlaceholder() {
             font-weight="800"
             fill="#071008"
           >
-            SLIDE 01
+            SLIDE
           </text>
 
 
@@ -811,11 +1856,11 @@ function getSlidePlaceholder() {
             x="110"
             y="325"
             font-family="Inter, Arial, sans-serif"
-            font-size="30"
+            font-size="27"
             font-weight="500"
             fill="#aeb9b1"
           >
-            Os slides do Supabase serão exibidos exatamente neste espaço.
+            ${escapeHtml(message)}
           </text>
 
 
@@ -901,7 +1946,7 @@ function getSlidePlaceholder() {
             font-weight="500"
             fill="#7f8f84"
           >
-            Placeholder visual — será substituído pelo arquivo real do Storage
+            Conteúdo carregado pelo Supabase Storage
           </text>
 
         </svg>
@@ -923,133 +1968,21 @@ function renderNoLessons() {
 
 
   if (container) {
+
     container.innerHTML = `
       <div class="module-block">
 
         <div class="module-label">
-          MÓDULO 1
+          CURSO
         </div>
 
         <div class="module-title">
-          Primeiros passos no Excel
+          Conteúdo ainda não publicado
         </div>
 
-        <ul class="lesson-list">
-
-          <li class="lesson active">
-
-            <div class="lesson-status"></div>
-
-            <div class="lesson-num">
-              1.1
-            </div>
-
-            <div class="lesson-name">
-              Interface do Excel
-            </div>
-
-            <div class="lesson-duration">
-              —
-            </div>
-
-            <button
-              type="button"
-              class="lesson-play"
-              tabindex="-1"
-              aria-label="Aula demonstrativa"
-            >
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 5v14l11-7z"
-                />
-              </svg>
-            </button>
-
-          </li>
-
-
-          <li class="lesson">
-
-            <div class="lesson-status"></div>
-
-            <div class="lesson-num">
-              1.2
-            </div>
-
-            <div class="lesson-name">
-              Criando sua primeira planilha
-            </div>
-
-            <div class="lesson-duration">
-              —
-            </div>
-
-            <button
-              type="button"
-              class="lesson-play"
-              tabindex="-1"
-              aria-label="Aula demonstrativa"
-            >
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 5v14l11-7z"
-                />
-              </svg>
-            </button>
-
-          </li>
-
-
-          <li class="lesson">
-
-            <div class="lesson-status"></div>
-
-            <div class="lesson-num">
-              1.3
-            </div>
-
-            <div class="lesson-name">
-              Navegação e seleção
-            </div>
-
-            <div class="lesson-duration">
-              —
-            </div>
-
-            <button
-              type="button"
-              class="lesson-play"
-              tabindex="-1"
-              aria-label="Aula demonstrativa"
-            >
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 5v14l11-7z"
-                />
-              </svg>
-            </button>
-
-          </li>
-
-        </ul>
+        <div class="empty-side">
+          Nenhuma aula publicada foi encontrada.
+        </div>
 
       </div>
     `;
@@ -1065,13 +1998,13 @@ function renderNoLessons() {
 
   if (title) {
     title.textContent =
-      "1.1 Interface do Excel";
+      "Conteúdo em preparação";
   }
 
 
   if (description) {
     description.textContent =
-      "Área preparada para receber os slides desta aula.";
+      "As aulas e slides deste curso serão exibidos aqui.";
   }
 
 
@@ -1104,6 +2037,168 @@ function renderNoLessons() {
 
 
 /* =========================================================
+   MARCAR AULA COMO CONCLUÍDA
+========================================================= */
+
+async function markLessonCompleted(
+  lesson
+) {
+  if (
+    !lesson ||
+    !currentUser
+  ) {
+    return;
+  }
+
+
+  const lessonId =
+    Number(
+      lesson.id
+    );
+
+
+  const existing =
+    progressByLesson.get(
+      lessonId
+    );
+
+
+  /*
+    Já está concluída.
+  */
+
+  if (
+    existing?.concluida
+  ) {
+    return;
+  }
+
+
+  const completedAt =
+    new Date()
+      .toISOString();
+
+
+  try {
+
+    /*
+      Se já existe uma linha de progresso,
+      atualizamos.
+    */
+
+    if (existing?.id) {
+
+      const {
+        data,
+        error
+      } = await supabase
+        .from(
+          "progresso_aulas"
+        )
+        .update({
+          concluida: true,
+          concluida_em:
+            completedAt
+        })
+        .eq(
+          "id",
+          existing.id
+        )
+        .eq(
+          "user_id",
+          currentUser.id
+        )
+        .select(`
+          id,
+          user_id,
+          aula_id,
+          concluida,
+          concluida_em
+        `)
+        .maybeSingle();
+
+
+      if (error) {
+        throw error;
+      }
+
+
+      if (data) {
+
+        progressByLesson.set(
+          lessonId,
+          data
+        );
+      }
+
+    } else {
+
+      /*
+        Ainda não existe registro.
+        Criamos um novo.
+      */
+
+      const {
+        data,
+        error
+      } = await supabase
+        .from(
+          "progresso_aulas"
+        )
+        .insert({
+          user_id:
+            currentUser.id,
+
+          aula_id:
+            lesson.id,
+
+          concluida:
+            true,
+
+          concluida_em:
+            completedAt
+        })
+        .select(`
+          id,
+          user_id,
+          aula_id,
+          concluida,
+          concluida_em
+        `)
+        .maybeSingle();
+
+
+      if (error) {
+        throw error;
+      }
+
+
+      if (data) {
+
+        progressByLesson.set(
+          lessonId,
+          data
+        );
+      }
+
+    }
+
+
+    updateLessonSelection();
+
+    updateProgress();
+
+  } catch (error) {
+
+    console.error(
+      "Erro ao salvar progresso da aula:",
+      error
+    );
+  }
+}
+
+
+/* =========================================================
    NAVEGAÇÃO
 ========================================================= */
 
@@ -1115,16 +2210,87 @@ function updateNavigation() {
     $("next-lesson");
 
 
-  if (previous) {
-    previous.disabled =
-      currentLessonIndex <= 0;
+  if (
+    !lessons.length
+  ) {
+
+    if (previous) {
+      previous.disabled = true;
+    }
+
+    if (next) {
+      next.disabled = true;
+    }
+
+    return;
   }
 
 
-  if (next) {
+  const lesson =
+    lessons[
+      currentLessonIndex
+    ];
+
+
+  const lessonSlides =
+    getLessonSlides(
+      lesson
+    );
+
+
+  const firstPosition =
+    currentLessonIndex === 0 &&
+    currentSlideIndex === 0;
+
+
+  if (previous) {
+
+    previous.disabled =
+      firstPosition;
+  }
+
+
+  if (!next) {
+    return;
+  }
+
+
+  const isLastLesson =
+    currentLessonIndex ===
+    lessons.length - 1;
+
+
+  const isLastSlide =
+    !lessonSlides.length ||
+    currentSlideIndex ===
+      lessonSlides.length - 1;
+
+
+  if (
+    isLastLesson &&
+    isLastSlide
+  ) {
+
+    next.textContent =
+      isLessonCompleted(
+        lesson
+      )
+        ? "Concluída ✓"
+        : "Concluir aula ✓";
+
+
     next.disabled =
-      currentLessonIndex >=
-      lessons.length - 1;
+      isLessonCompleted(
+        lesson
+      );
+
+  } else {
+
+    next.textContent =
+      "Próxima →";
+
+    next.disabled =
+      false;
   }
 }
 
@@ -1133,63 +2299,195 @@ function updateNavigation() {
    BOTÃO ANTERIOR
 ========================================================= */
 
-$("prev-lesson")?.addEventListener(
-  "click",
-  () => {
+$("prev-lesson")
+  ?.addEventListener(
+    "click",
+    async () => {
 
-    if (
-      currentLessonIndex <= 0
-    ) {
-      return;
+      if (!lessons.length) {
+        return;
+      }
+
+
+      /*
+        Ainda existem slides anteriores
+        dentro da aula atual.
+      */
+
+      if (
+        currentSlideIndex > 0
+      ) {
+
+        currentSlideIndex -= 1;
+
+        await renderCurrentLesson();
+
+        updateNavigation();
+
+        return;
+      }
+
+
+      /*
+        Estamos no primeiro slide.
+        Voltamos para a aula anterior.
+      */
+
+      if (
+        currentLessonIndex <= 0
+      ) {
+        return;
+      }
+
+
+      const previousLessonIndex =
+        currentLessonIndex - 1;
+
+
+      const previousLesson =
+        lessons[
+          previousLessonIndex
+        ];
+
+
+      const previousSlides =
+        getLessonSlides(
+          previousLesson
+        );
+
+
+      const lastSlideIndex =
+        previousSlides.length
+          ? previousSlides.length - 1
+          : 0;
+
+
+      await selectLesson(
+        previousLessonIndex,
+        lastSlideIndex
+      );
     }
-
-    selectLesson(
-      currentLessonIndex - 1
-    );
-  }
-);
+  );
 
 
 /* =========================================================
    BOTÃO PRÓXIMA
 ========================================================= */
 
-$("next-lesson")?.addEventListener(
-  "click",
-  () => {
+$("next-lesson")
+  ?.addEventListener(
+    "click",
+    async () => {
 
-    if (
-      currentLessonIndex >=
-      lessons.length - 1
-    ) {
-      return;
+      if (!lessons.length) {
+        return;
+      }
+
+
+      const lesson =
+        lessons[
+          currentLessonIndex
+        ];
+
+
+      const lessonSlides =
+        getLessonSlides(
+          lesson
+        );
+
+
+      /*
+        Existem mais slides dentro
+        da mesma aula.
+      */
+
+      if (
+        lessonSlides.length &&
+        currentSlideIndex <
+          lessonSlides.length - 1
+      ) {
+
+        currentSlideIndex += 1;
+
+        await renderCurrentLesson();
+
+        updateNavigation();
+
+        return;
+      }
+
+
+      /*
+        Chegamos ao último slide.
+
+        Se existem slides de verdade,
+        registramos a aula como concluída.
+      */
+
+      if (
+        lessonSlides.length
+      ) {
+
+        await markLessonCompleted(
+          lesson
+        );
+      }
+
+
+      /*
+        Existe uma próxima aula.
+      */
+
+      if (
+        currentLessonIndex <
+        lessons.length - 1
+      ) {
+
+        await selectLesson(
+          currentLessonIndex + 1,
+          0
+        );
+
+        return;
+      }
+
+
+      /*
+        Última aula do curso.
+      */
+
+      updateNavigation();
     }
-
-    selectLesson(
-      currentLessonIndex + 1
-    );
-  }
-);
+  );
 
 
 /* =========================================================
-   PROGRESSO
+   PROGRESSO REAL
 ========================================================= */
 
 function updateProgress() {
-  /*
-    O progresso real ainda será ligado
-    à conta do usuário no Supabase.
-
-    Por enquanto permanece em 0%.
-  */
-
   const total =
     lessons.length;
 
-  const completed = 0;
 
-  const percentage = 0;
+  const completed =
+    lessons.filter(
+      (lesson) =>
+        isLessonCompleted(
+          lesson
+        )
+    ).length;
+
+
+  const percentage =
+    total
+      ? Math.round(
+          (
+            completed /
+            total
+          ) * 100
+        )
+      : 0;
 
 
   const percentageElement =
@@ -1206,24 +2504,28 @@ function updateProgress() {
 
 
   if (percentageElement) {
+
     percentageElement.textContent =
       `${percentage}%`;
   }
 
 
   if (countElement) {
+
     countElement.textContent =
       `${completed} de ${total} aulas concluídas`;
   }
 
 
   if (labelElement) {
+
     labelElement.textContent =
       `${percentage}% concluído`;
   }
 
 
   if (fill) {
+
     fill.style.width =
       `${percentage}%`;
   }
@@ -1238,23 +2540,35 @@ function updateProgress() {
     const radius =
       circle.r.baseVal.value;
 
+
     const circumference =
-      2 * Math.PI * radius;
+      2 *
+      Math.PI *
+      radius;
+
 
     circle.style.strokeDasharray =
       `${circumference}`;
 
+
     circle.style.strokeDashoffset =
-      `${circumference}`;
+      `${
+        circumference -
+        (
+          percentage /
+          100
+        ) *
+        circumference
+      }`;
   }
 }
 
 
 /* =========================================================
-   DOWNLOADS
+   DOWNLOADS / MATERIAIS
 ========================================================= */
 
-function renderDownloads() {
+async function renderDownloads() {
   const list =
     $("downloads-list");
 
@@ -1262,16 +2576,6 @@ function renderDownloads() {
   if (!list) {
     return;
   }
-
-
-  const materials =
-    lessons.filter(
-      (lesson) =>
-        String(
-          lesson.material_complementar_url ||
-          ""
-        ).trim()
-    );
 
 
   if (!materials.length) {
@@ -1287,58 +2591,132 @@ function renderDownloads() {
   }
 
 
+  list.innerHTML = `
+    <li class="empty-side">
+      Carregando materiais...
+    </li>
+  `;
+
+
+  const renderedMaterials =
+    await Promise.all(
+      materials.map(
+        async (
+          material
+        ) => {
+
+          const url =
+            await getStorageUrl(
+              MATERIALS_BUCKET,
+              material.arquivo_path
+            );
+
+
+          const lesson =
+            lessons.find(
+              (item) =>
+                Number(item.id) ===
+                Number(
+                  material.aula_id
+                )
+            );
+
+
+          return {
+            ...material,
+
+            url,
+
+            lesson
+          };
+        }
+      )
+    );
+
+
   list.innerHTML =
-    materials
-      .map((lesson) => {
+    renderedMaterials
+      .map(
+        (material) => {
 
-        const url =
-          escapeHtml(
-            lesson.material_complementar_url
-          );
-
-
-        const name =
-          escapeHtml(
-            lesson.material_complementar_nome ||
-            `Material — ${
-              lesson.nome || "Excel"
-            }`
-          );
+          const name =
+            escapeHtml(
+              material.nome ||
+              "Material complementar"
+            );
 
 
-        return `
-          <li class="download-item">
+          const type =
+            escapeHtml(
+              material.tipo ||
+              "Arquivo"
+            );
 
-            <div class="file-icon">
-              ↓
-            </div>
 
-            <div>
+          const lessonName =
+            material.lesson
+              ? escapeHtml(
+                  material.lesson.nome
+                )
+              : "";
 
-              <div class="file-name">
-                ${name}
+
+          const meta =
+            lessonName
+              ? `${type} • ${lessonName}`
+              : type;
+
+
+          const action =
+            material.url
+              ? `
+                <a
+                  class="download-action"
+                  href="${escapeHtml(
+                    material.url
+                  )}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir ${name}"
+                >
+                  ↗
+                </a>
+              `
+              : `
+                <span
+                  class="download-action"
+                  aria-hidden="true"
+                >
+                  —
+                </span>
+              `;
+
+
+          return `
+            <li class="download-item">
+
+              <div class="file-icon">
+                ↓
               </div>
 
-              <div class="file-meta">
-                Material complementar
+              <div>
+
+                <div class="file-name">
+                  ${name}
+                </div>
+
+                <div class="file-meta">
+                  ${meta}
+                </div>
+
               </div>
 
-            </div>
+              ${action}
 
-            <a
-              class="download-action"
-              href="${url}"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir ${name}"
-            >
-              ↗
-            </a>
-
-          </li>
-        `;
-
-      })
+            </li>
+          `;
+        }
+      )
       .join("");
 }
 
@@ -1376,49 +2754,67 @@ const closeMaterialsButton =
 ========================================================= */
 
 function closeAllSidebars() {
-
-  lessonsSidebar?.classList.remove(
-    "is-open"
-  );
-
-  materialsSidebar?.classList.remove(
-    "is-open"
-  );
-
-  sidebarOverlay?.classList.remove(
-    "is-visible"
-  );
-
-  document.body.classList.remove(
-    "sidebar-open"
-  );
+  lessonsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
 
 
-  lessonsSidebar?.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  materialsSidebar?.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  sidebarOverlay?.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+  materialsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
 
 
-  openLessonsButton?.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+  sidebarOverlay
+    ?.classList
+    .remove(
+      "is-visible"
+    );
 
-  openMaterialsButton?.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+
+  document.body
+    .classList
+    .remove(
+      "sidebar-open"
+    );
+
+
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 }
 
 
@@ -1427,57 +2823,67 @@ function closeAllSidebars() {
 ========================================================= */
 
 function openLessonsSidebar() {
-
-  /*
-    Fecha materiais caso esteja aberta.
-  */
-
-  materialsSidebar?.classList.remove(
-    "is-open"
-  );
-
-  materialsSidebar?.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  openMaterialsButton?.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+  materialsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
 
 
-  /*
-    Abre aulas.
-  */
-
-  lessonsSidebar?.classList.add(
-    "is-open"
-  );
-
-  sidebarOverlay?.classList.add(
-    "is-visible"
-  );
-
-  document.body.classList.add(
-    "sidebar-open"
-  );
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
 
 
-  lessonsSidebar?.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-  sidebarOverlay?.setAttribute(
-    "aria-hidden",
-    "false"
-  );
 
-  openLessonsButton?.setAttribute(
-    "aria-expanded",
-    "true"
-  );
+  lessonsSidebar
+    ?.classList
+    .add(
+      "is-open"
+    );
+
+
+  sidebarOverlay
+    ?.classList
+    .add(
+      "is-visible"
+    );
+
+
+  document.body
+    .classList
+    .add(
+      "sidebar-open"
+    );
+
+
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "true"
+    );
 }
 
 
@@ -1486,57 +2892,67 @@ function openLessonsSidebar() {
 ========================================================= */
 
 function openMaterialsSidebar() {
-
-  /*
-    Fecha aulas caso esteja aberta.
-  */
-
-  lessonsSidebar?.classList.remove(
-    "is-open"
-  );
-
-  lessonsSidebar?.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  openLessonsButton?.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+  lessonsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
 
 
-  /*
-    Abre materiais.
-  */
-
-  materialsSidebar?.classList.add(
-    "is-open"
-  );
-
-  sidebarOverlay?.classList.add(
-    "is-visible"
-  );
-
-  document.body.classList.add(
-    "sidebar-open"
-  );
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
 
 
-  materialsSidebar?.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-  sidebarOverlay?.setAttribute(
-    "aria-hidden",
-    "false"
-  );
 
-  openMaterialsButton?.setAttribute(
-    "aria-expanded",
-    "true"
-  );
+  materialsSidebar
+    ?.classList
+    .add(
+      "is-open"
+    );
+
+
+  sidebarOverlay
+    ?.classList
+    .add(
+      "is-visible"
+    );
+
+
+  document.body
+    .classList
+    .add(
+      "sidebar-open"
+    );
+
+
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "true"
+    );
 }
 
 
@@ -1544,54 +2960,52 @@ function openMaterialsSidebar() {
    EVENTOS DAS SIDEBARS
 ========================================================= */
 
-openLessonsButton?.addEventListener(
-  "click",
-  openLessonsSidebar
-);
+openLessonsButton
+  ?.addEventListener(
+    "click",
+    openLessonsSidebar
+  );
 
 
-closeLessonsButton?.addEventListener(
-  "click",
-  closeAllSidebars
-);
+closeLessonsButton
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
 
 
-openMaterialsButton?.addEventListener(
-  "click",
-  openMaterialsSidebar
-);
+openMaterialsButton
+  ?.addEventListener(
+    "click",
+    openMaterialsSidebar
+  );
 
 
-closeMaterialsButton?.addEventListener(
-  "click",
-  closeAllSidebars
-);
+closeMaterialsButton
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
 
 
-/*
-  Clicar no fundo fecha.
-*/
+sidebarOverlay
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
 
-sidebarOverlay?.addEventListener(
-  "click",
-  closeAllSidebars
-);
-
-
-/*
-  ESC fecha qualquer sidebar aberta.
-*/
 
 document.addEventListener(
   "keydown",
   (event) => {
 
     if (
-      event.key === "Escape"
+      event.key ===
+      "Escape"
     ) {
+
       closeAllSidebars();
     }
-
   }
 );
 
@@ -1601,32 +3015,56 @@ document.addEventListener(
 ========================================================= */
 
 supabase.auth.onAuthStateChange(
-  (_event, session) => {
+  (
+    event,
+    session
+  ) => {
+
+    currentUser =
+      session?.user ||
+      null;
+
 
     const userArea =
       $("user-area");
 
 
-    if (!userArea) {
-      return;
+    if (userArea) {
+
+      if (currentUser) {
+
+        renderUser(
+          userArea,
+          currentUser
+        );
+
+      } else {
+
+        renderGuest(
+          userArea
+        );
+      }
     }
 
 
-    if (session?.user) {
+    /*
+      O logout manual já redireciona.
 
-      renderUser(
-        userArea,
-        session.user
-      );
+      Evitamos fazer reload desnecessário
+      durante INITIAL_SESSION.
+    */
 
-    } else {
+    if (
+      event ===
+      "SIGNED_OUT"
+    ) {
 
-      renderGuest(
-        userArea
-      );
+      progressByLesson.clear();
 
+      updateProgress();
+
+      updateLessonSelection();
     }
-
   }
 );
 
@@ -1636,17 +3074,37 @@ supabase.auth.onAuthStateChange(
 ========================================================= */
 
 async function init() {
-
   /*
-    Carrega autenticação e dados do curso
-    ao mesmo tempo.
+    Primeiro descobrimos quem está logado.
+
+    Isso é importante porque agora:
+    - catalogo
+    - modulos
+    - aulas
+    - slides
+    - materiais
+
+    estão liberados para a role authenticated.
   */
 
-  await Promise.all([
-    loadUserSession(),
-    loadExcelCourse()
-  ]);
+  await loadUserSession();
+
+
+  /*
+    Mesmo se não houver sessão, deixamos a página
+    carregar o estado visual.
+
+    Quando o usuário estiver autenticado,
+    as queries autorizadas pelo RLS retornarão
+    normalmente.
+  */
+
+  await loadExcelCourse();
 }
 
+
+/* =========================================================
+   START
+========================================================= */
 
 init();
