@@ -23,18 +23,13 @@ let allCourses = [];
 
 /* =========================================================
    PÁGINAS ESPECÍFICAS DOS CURSOS
-
-   Conforme criarmos novas páginas,
-   basta adicionar aqui.
-
-   Exemplo:
-   1: "excel.html"
-   2: "python.html"
-   3: "javascript.html"
 ========================================================= */
 
 const COURSE_PAGES = {
-  1: "excel.html"
+  1: "excel.html",
+  2: "word.html",
+  3: "powerpoint.html",
+  4: "powerbi.html"
 };
 
 
@@ -53,7 +48,8 @@ function getCoursePage(course) {
 
 
   /*
-    Primeiro verifica o ID.
+    Primeiro verifica o ID cadastrado
+    na tabela catalogo do Supabase.
   */
 
   if (COURSE_PAGES[courseId]) {
@@ -62,11 +58,11 @@ function getCoursePage(course) {
 
 
   /*
-    Proteção extra para Excel.
+    Proteção extra pelo nome/categoria.
 
-    Se futuramente o ID do Excel mudar
-    no Supabase, ainda conseguimos
-    identificar pelo nome/categoria.
+    Caso algum ID seja alterado no futuro,
+    ainda conseguimos localizar a página
+    correta pelo nome ou categoria.
   */
 
   const name =
@@ -85,6 +81,8 @@ function getCoursePage(course) {
       .toLocaleLowerCase("pt-BR");
 
 
+  /* EXCEL */
+
   if (
     name.includes("excel") ||
     category.includes("excel")
@@ -93,17 +91,52 @@ function getCoursePage(course) {
   }
 
 
+  /* WORD */
+
+  if (
+    name.includes("word") ||
+    category.includes("word")
+  ) {
+    return "word.html";
+  }
+
+
+  /* POWERPOINT */
+
+  if (
+    name.includes("power point") ||
+    name.includes("powerpoint") ||
+    category.includes("power point") ||
+    category.includes("powerpoint")
+  ) {
+    return "powerpoint.html";
+  }
+
+
+  /* POWER BI */
+
+  if (
+    name.includes("power bi") ||
+    name.includes("power-bi") ||
+    name.includes("powerbi") ||
+    category.includes("power bi") ||
+    category.includes("power-bi") ||
+    category.includes("powerbi")
+  ) {
+    return "powerbi.html";
+  }
+
+
   /*
-    Enquanto o curso não tiver
-    página individual própria,
-    continua usando a página genérica.
+    Se ainda não existir página individual
+    para este curso, não tenta mais abrir
+    curso.html?id=...
   */
 
-  if (course.id) {
-    return `curso.html?id=${encodeURIComponent(
-      course.id
-    )}`;
-  }
+  console.warn(
+    "Curso sem página configurada:",
+    course
+  );
 
 
   return null;
@@ -692,11 +725,19 @@ function addCourseEvents() {
 
 
         /*
+          Páginas individuais:
+
           Excel:
           excel.html
 
-          Outros cursos atualmente:
-          curso.html?id=...
+          Word:
+          word.html
+
+          PowerPoint:
+          powerpoint.html
+
+          Power BI:
+          powerbi.html
         */
 
         window.location.href =
