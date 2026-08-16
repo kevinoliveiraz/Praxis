@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Excel Prático — SkillUp
+  </title>
+
+  <meta
+    name="description"
+    content="Curso prático de Power BI com conteúdo direto e aplicado."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles/curso.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="Voltar para a página inicial"
+      >
+        <img
+          src="assets/logo.png"
+          alt="SkillUp"
+        >
+      </a>
+
+
+      <div class="header-actions">
+
+        <a
+          href="index.html"
+          class="btn btn-ghost"
+        >
+          Catálogo
+        </a>
+
+
+        <div id="user-area">
+
+          <a
+            href="login.html"
+            class="btn btn-ghost"
+          >
+            Entrar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       BREADCRUMB
+  ====================================================== -->
+
+  <div class="breadcrumb-area">
+
+    <div class="container breadcrumb">
+
+      <a href="index.html">
+        Início
+      </a>
+
+      <span>›</span>
+
+      <a href="index.html#catalog-grid">
+        Catálogo
+      </a>
+
+      <span>›</span>
+
+      <strong id="breadcrumb-course">
+        Excel
+      </strong>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       BARRA DE CONTROLES DAS SIDEBARS
+  ====================================================== -->
+
+  <div class="course-toolbar">
+
+    <div class="container course-toolbar-inner">
+
+      <!-- ABRIR AULAS -->
+
+      <button
+        type="button"
+        id="open-lessons-sidebar"
+        class="sidebar-trigger sidebar-trigger-left"
+        aria-label="Abrir aulas do curso"
+        aria-controls="lessons-sidebar"
+        aria-expanded="false"
+      >
+
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+
+        <span>
+          Aulas
+        </span>
+
+      </button>
+
+
+      <div class="course-toolbar-title">
+
+        <span class="course-toolbar-label">
+          CURSO
+        </span>
+
+        <strong>
+          Excel Prático
+        </strong>
+
+      </div>
+
+
+      <!-- ABRIR MATERIAIS -->
+
+      <button
+        type="button"
+        id="open-materials-sidebar"
+        class="sidebar-trigger sidebar-trigger-right"
+        aria-label="Abrir materiais do curso"
+        aria-controls="materials-sidebar"
+        aria-expanded="false"
+      >
+
+        <span>
+          Materiais
+        </span>
+
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       OVERLAY DAS SIDEBARS
+  ====================================================== -->
+
+  <div
+    id="sidebar-overlay"
+    class="sidebar-overlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =====================================================
+       SIDEBAR ESQUERDA
+       AULAS
+  ====================================================== -->
+
+  <aside
+    id="lessons-sidebar"
+    class="course-sidebar course-sidebar-left"
+    aria-label="Aulas do curso"
+    aria-hidden="true"
+  >
+
+    <div class="course-sidebar-header">
+
+      <div>
+
+        <span class="sidebar-eyebrow">
+          CURSO
+        </span>
+
+        <h2>
+          Aulas do curso
+        </h2>
+
+      </div>
+
+
+      <button
+        type="button"
+        id="close-lessons-sidebar"
+        class="sidebar-close"
+        aria-label="Fechar aulas do curso"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+    </div>
+
+
+    <div class="course-sidebar-content">
+
+      <!-- =================================================
+           LISTA DE AULAS
+      ================================================== -->
+
+      <div id="lessons-container">
+
+        <div class="module-block">
+
+          <div class="module-label">
+            MÓDULO 1
+          </div>
+
+          <div class="module-title">
+            Primeiros passos no Excel
+          </div>
+
+
+          <ul class="lesson-list">
+
+            <!-- AULA 1 -->
+
+            <li class="lesson active">
+
+              <div class="lesson-status"></div>
+
+              <div class="lesson-num">
+                1.1
+              </div>
+
+              <div class="lesson-name">
+                Interface do Excel
+              </div>
+
+              <div class="lesson-duration">
+                —
+              </div>
+
+              <button
+                type="button"
+                class="lesson-play"
+                aria-label="Abrir aula Interface do Excel"
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+
+            </li>
+
+
+            <!-- AULA 2 -->
+
+            <li class="lesson">
+
+              <div class="lesson-status"></div>
+
+              <div class="lesson-num">
+                1.2
+              </div>
+
+              <div class="lesson-name">
+                Criando sua primeira planilha
+              </div>
+
+              <div class="lesson-duration">
+                —
+              </div>
+
+              <button
+                type="button"
+                class="lesson-play"
+                aria-label="Abrir aula Criando sua primeira planilha"
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+
+            </li>
+
+
+            <!-- AULA 3 -->
+
+            <li class="lesson">
+
+              <div class="lesson-status"></div>
+
+              <div class="lesson-num">
+                1.3
+              </div>
+
+              <div class="lesson-name">
+                Navegação e seleção
+              </div>
+
+              <div class="lesson-duration">
+                —
+              </div>
+
+              <button
+                type="button"
+                class="lesson-play"
+                aria-label="Abrir aula Navegação e seleção"
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           PROGRESSO
+      ================================================== -->
+
+      <div class="progress-card">
+
+        <div class="progress-grid">
+
+          <div>
+
+            <div class="progress-small">
+              Seu progresso
+            </div>
+
+
+            <div
+              id="progress-pct"
+              class="progress-value"
+            >
+              0%
+            </div>
+
+
+            <div
+              id="progress-count"
+              class="progress-count"
+            >
+              0 de 0 aulas concluídas
+            </div>
+
+          </div>
+
+
+          <svg
+            class="progress-ring"
+            viewBox="0 0 80 80"
+            aria-hidden="true"
+          >
+
+            <circle
+              class="progress-ring-bg"
+              cx="40"
+              cy="40"
+              r="31"
+            ></circle>
+
+            <circle
+              id="progress-circle"
+              class="progress-ring-value"
+              cx="40"
+              cy="40"
+              r="31"
+            ></circle>
+
+          </svg>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       SIDEBAR DIREITA
+       MATERIAIS
+  ====================================================== -->
+
+  <aside
+    id="materials-sidebar"
+    class="course-sidebar course-sidebar-right"
+    aria-label="Materiais do curso"
+    aria-hidden="true"
+  >
+
+    <div class="course-sidebar-header">
+
+      <div>
+
+        <span class="sidebar-eyebrow">
+          EXCEL
+        </span>
+
+        <h2>
+          Materiais
+        </h2>
+
+      </div>
+
+
+      <button
+        type="button"
+        id="close-materials-sidebar"
+        class="sidebar-close"
+        aria-label="Fechar materiais do curso"
+      >
+
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+
+      </button>
+
+    </div>
+
+
+    <div class="course-sidebar-content">
+
+
+      <!-- =================================================
+           DOWNLOADS
+      ================================================== -->
+
+      <section class="sidebar-section">
+
+        <h3>
+          Arquivos para download
+        </h3>
+
+
+        <ul
+          id="downloads-list"
+          class="download-list"
+        >
+
+          <li class="empty-side">
+            Nenhum material complementar foi cadastrado ainda.
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- =================================================
+           LINKS
+      ================================================== -->
+
+      <section class="sidebar-section">
+
+        <h3>
+          Links úteis
+        </h3>
+
+        <div class="empty-side">
+          Os links úteis do curso poderão ser adicionados
+          posteriormente ao banco de dados.
+        </div>
+
+      </section>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+  ====================================================== -->
+
+  <main class="course-page">
+
+    <div class="container">
+
+      <div
+        id="course-layout"
+        class="course-layout course-layout-focus"
+      >
+
+        <!-- =================================================
+             AULA CENTRAL
+        ================================================== -->
+
+        <section class="panel lesson-main">
+
+          <a
+            href="index.html"
+            class="back-course"
+          >
+            ← Voltar para o catálogo
+          </a>
+
+
+          <header class="lesson-header">
+
+            <h1 id="lesson-title">
+              1.1 Power BI
+            </h1>
+
+            <p id="lesson-description">
+              Área preparada para receber os slides desta aula.
+            </p>
+
+          </header>
+
+
+          <!-- =================================================
+               PROGRESSO DA AULA
+          ================================================== -->
+
+          <div class="lesson-progress-row">
+
+            <div class="progress-track">
+
+              <div
+                id="progress-bar-fill"
+                class="progress-fill"
+              ></div>
+
+            </div>
+
+
+            <div
+              id="progress-label"
+              class="lesson-progress-label"
+            >
+              0% concluído
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               SLIDE
+          ================================================== -->
+
+          <div
+            id="current-lesson"
+            class="current-lesson"
+          >
+
+            <div
+              id="slide-stage"
+              class="slide-stage"
+            >
+
+              <div
+                class="slide-placeholder"
+                aria-label="Área reservada para os slides do curso"
+              >
+
+                <svg
+                  class="slide-placeholder-svg"
+                  viewBox="0 0 1600 900"
+                  role="img"
+                  aria-labelledby="
+                    slidePlaceholderTitle
+                    slidePlaceholderDesc
+                  "
+                >
+
+                  <title id="slidePlaceholderTitle">
+                    Área do slide do curso
+                  </title>
+
+
+                  <desc id="slidePlaceholderDesc">
+                    Espaço demonstrativo em proporção 16 por 9
+                    preparado para receber os slides do Supabase.
+                  </desc>
+
+
+                  <rect
+                    width="1600"
+                    height="900"
+                    rx="34"
+                    fill="#07110b"
+                  />
+
+
+                  <rect
+                    x="2"
+                    y="2"
+                    width="1596"
+                    height="896"
+                    rx="32"
+                    fill="none"
+                    stroke="#193522"
+                    stroke-width="4"
+                  />
+
+
+                  <circle
+                    cx="1350"
+                    cy="170"
+                    r="270"
+                    fill="#0e2918"
+                    opacity=".72"
+                  />
+
+
+                  <circle
+                    cx="1415"
+                    cy="705"
+                    r="230"
+                    fill="#102118"
+                    opacity=".58"
+                  />
+
+
+                  <rect
+                    x="110"
+                    y="110"
+                    width="170"
+                    height="38"
+                    rx="19"
+                    fill="#dfff00"
+                  />
+
+
+                  <text
+                    x="195"
+                    y="136"
+                    text-anchor="middle"
+                    font-family="Inter, Arial, sans-serif"
+                    font-size="18"
+                    font-weight="800"
+                    fill="#071008"
+                  >
+                    SLIDE 01
+                  </text>
+
+
+                  <text
+                    x="110"
+                    y="255"
+                    font-family="Inter, Arial, sans-serif"
+                    font-size="72"
+                    font-weight="800"
+                    fill="#ffffff"
+                  >
+                    Área do conteúdo
+                  </text>
+
+
+                  <text
+                    x="110"
+                    y="325"
+                    font-family="Inter, Arial, sans-serif"
+                    font-size="30"
+                    font-weight="500"
+                    fill="#aeb9b1"
+                  >
+                    Os slides do Supabase serão exibidos exatamente neste espaço.
+                  </text>
+
+
+                  <rect
+                    x="110"
+                    y="410"
+                    width="650"
+                    height="32"
+                    rx="16"
+                    fill="#17301f"
+                  />
+
+
+                  <rect
+                    x="110"
+                    y="475"
+                    width="790"
+                    height="32"
+                    rx="16"
+                    fill="#17301f"
+                  />
+
+
+                  <rect
+                    x="110"
+                    y="540"
+                    width="565"
+                    height="32"
+                    rx="16"
+                    fill="#17301f"
+                  />
+
+
+                  <rect
+                    x="1050"
+                    y="355"
+                    width="360"
+                    height="300"
+                    rx="26"
+                    fill="#0f2517"
+                    stroke="#245132"
+                    stroke-width="3"
+                  />
+
+
+                  <path
+                    d="M1165 575V435h175"
+                    fill="none"
+                    stroke="#dfff00"
+                    stroke-width="18"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+
+                  <path
+                    d="M1188 540l55-63 48 38 72-92"
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+
+                  <text
+                    x="110"
+                    y="790"
+                    font-family="Inter, Arial, sans-serif"
+                    font-size="24"
+                    font-weight="700"
+                    fill="#dfff00"
+                  >
+                    Proporção 16:9 • 1600 × 900
+                  </text>
+
+
+                  <text
+                    x="110"
+                    y="830"
+                    font-family="Inter, Arial, sans-serif"
+                    font-size="20"
+                    font-weight="500"
+                    fill="#7f8f84"
+                  >
+                    Placeholder visual — será substituído pelo arquivo real do Storage
+                  </text>
+
+                </svg>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =================================================
+               NAVEGAÇÃO
+          ================================================== -->
+
+          <div class="lesson-navigation">
+
+            <button
+              type="button"
+              id="prev-lesson"
+              class="nav-btn"
+              disabled
+            >
+              ← Anterior
+            </button>
+
+
+            <button
+              type="button"
+              id="next-lesson"
+              class="nav-btn primary"
+              disabled
+            >
+              Próxima →
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <span>
+        © SkillUp. Todos os direitos reservados.
+      </span>
+
+      <a href="index.html">
+        Voltar ao catálogo
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script
+    type="module"
+    src="scripts/powerbi.js"
+  ></script>
+
+</body>
+
+</html>
