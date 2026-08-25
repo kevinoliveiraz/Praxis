@@ -1373,6 +1373,16 @@ svg {
 }
 
 
+/* =========================================================
+   ETAPA 3
+   ANIMAÇÃO DE TROCA DOS SLIDES
+========================================================= */
+
+.slide-viewer {
+  isolation: isolate;
+}
+
+
 .slide-viewer img {
   display: block;
 
@@ -1383,6 +1393,65 @@ svg {
   object-position: center;
 
   background: #07110b;
+
+  transform-origin: center;
+
+  will-change:
+    opacity,
+    transform;
+
+  animation:
+    slide-enter
+    320ms
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    both;
+}
+
+
+/*
+  Sempre que o JavaScript coloca um novo
+  slide no viewer, a nova imagem entra
+  suavemente.
+
+  A animação é propositalmente curta para
+  não deixar a navegação lenta.
+*/
+
+@keyframes slide-enter {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(18px)
+      scale(0.985);
+
+    filter:
+      blur(1px);
+  }
+
+
+  55% {
+    opacity: 1;
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+    filter:
+      blur(0);
+  }
+
 }
 
 
@@ -1807,6 +1876,20 @@ svg {
   .nav-btn,
   .sidebar-trigger {
     transition: none;
+  }
+
+
+  /*
+    Desativa a animação dos slides para
+    usuários que preferem movimento reduzido.
+  */
+
+  .slide-viewer img {
+    animation: none !important;
+
+    transform: none !important;
+
+    filter: none !important;
   }
 
 }
