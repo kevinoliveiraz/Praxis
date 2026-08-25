@@ -10,26 +10,8 @@ import {
 
 const EXCEL_COURSE_ID = 1;
 
-
-/*
-  IMPORTANTE:
-
-  Estes são os nomes dos buckets que serão usados
-  quando você colocar slides e materiais no Storage.
-
-  Se você criar os buckets com outros nomes,
-  basta alterar SOMENTE essas duas constantes.
-*/
-
 const SLIDES_BUCKET = "slides";
 const MATERIALS_BUCKET = "materiais";
-
-
-/*
-  Tempo de validade das URLs assinadas do Storage.
-
-  3600 segundos = 1 hora.
-*/
 
 const SIGNED_URL_EXPIRES_IN = 60 * 60;
 
@@ -38,7 +20,8 @@ const SIGNED_URL_EXPIRES_IN = 60 * 60;
    ELEMENTOS
 ========================================================= */
 
-const $ = (id) => document.getElementById(id);
+const $ = (id) =>
+  document.getElementById(id);
 
 
 /* =========================================================
@@ -60,15 +43,9 @@ let materials = [];
 let progressRows = [];
 
 
-/*
-  Mapas para facilitar o acesso aos dados.
-
-  Exemplo:
-
-  slidesByLesson.get(5)
-
-  retorna todos os slides da aula de ID 5.
-*/
+/* =========================================================
+   MAPAS
+========================================================= */
 
 const slidesByLesson = new Map();
 
@@ -77,17 +54,44 @@ const materialsByLesson = new Map();
 const progressByLesson = new Map();
 
 
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
 let currentLessonIndex = 0;
 
 let currentSlideIndex = 0;
 
 
 /*
-  Evita que uma imagem antiga apareça
-  caso o usuário troque rapidamente de aula.
+  Evita que uma resposta antiga
+  substitua o slide atual.
 */
 
 let slideRenderVersion = 0;
+
+
+/* =========================================================
+   ETAPA 3
+   CACHE DOS SLIDES
+========================================================= */
+
+/*
+  Guarda as URLs assinadas dos slides.
+
+  Assim não pedimos uma URL nova ao Supabase
+  toda vez que o usuário volta para um slide.
+*/
+
+const slideUrlCache = new Map();
+
+
+/*
+  Guarda as imagens que já foram
+  pré-carregadas pelo navegador.
+*/
+
+const preloadedSlideUrls = new Set();
 
 
 /* =========================================================
@@ -99,7 +103,10 @@ function normalizeText(value) {
 }
 
 
-function normalizeNumber(value, fallback = 0) {
+function normalizeNumber(
+  value,
+  fallback = 0
+) {
   const parsed = Number(value);
 
   return Number.isFinite(parsed)
@@ -109,7 +116,8 @@ function normalizeNumber(value, fallback = 0) {
 
 
 function isHttpUrl(value) {
-  const text = normalizeText(value);
+  const text =
+    normalizeText(value);
 
   return (
     text.startsWith("https://") ||
@@ -146,43 +154,35 @@ async function getStorageUrl(
   bucket,
   path
 ) {
-  const filePath = normalizeText(path);
+  const filePath =
+    normalizeText(path);
+
 
   if (!filePath) {
     return "";
   }
 
 
-  /*
-    Se imagem_path / arquivo_path já tiver
-    uma URL completa, usamos diretamente.
-  */
-
-  if (isHttpUrl(filePath)) {
+  if (
+    isHttpUrl(filePath)
+  ) {
     return filePath;
   }
 
 
   try {
 
-    /*
-      Criamos URL assinada.
-
-      Isso permite que futuramente você deixe
-      os buckets privados, o que é melhor para
-      uma plataforma paga.
-    */
-
     const {
       data,
       error
-    } = await supabase
-      .storage
-      .from(bucket)
-      .createSignedUrl(
-        filePath,
-        SIGNED_URL_EXPIRES_IN
-      );
+    } =
+      await supabase
+        .storage
+        .from(bucket)
+        .createSignedUrl(
+          filePath,
+          SIGNED_URL_EXPIRES_IN
+        );
 
 
     if (error) {
@@ -190,7 +190,10 @@ async function getStorageUrl(
     }
 
 
-    return data?.signedUrl || "";
+    return (
+      data?.signedUrl ||
+      ""
+    );
 
   } catch (error) {
 
@@ -199,7 +202,245 @@ async function getStorageUrl(
       error
     );
 
+
     return "";
+  }
+}
+
+
+/* =========================================================
+   ETAPA 3
+   URL DO SLIDE COM CACHE
+========================================================= */
+
+async function getSlideUrl(
+  slide
+) {
+  if (!slide) {
+    return "";
+  }
+
+
+  const path =
+    normalizeText(
+      slide.imagem_path
+    );
+
+
+  if (!path) {
+    return "";
+  }
+
+
+  if (
+    slideUrlCache.has(path)
+  ) {
+
+    return slideUrlCache.get(
+      path
+    );
+  }
+
+
+  const url =
+    await getStorageUrl(
+      SLIDES_BUCKET,
+      path
+    );
+
+
+  if (url) {
+
+    slideUrlCache.set(
+      path,
+      url
+    );
+  }
+
+
+  return url;
+}
+
+
+/* =========================================================
+   ETAPA 3
+   PRÉ-CARREGAR IMAGEM
+========================================================= */
+
+function preloadImage(url) {
+  if (!url) {
+
+    return Promise.reject(
+      new Error(
+        "URL do slide vazia."
+      )
+    );
+  }
+
+
+  if (
+    preloadedSlideUrls.has(url)
+  ) {
+
+    return Promise.resolve();
+  }
+
+
+  return new Promise(
+    (
+      resolve,
+      reject
+    ) => {
+
+      const image =
+        new Image();
+
+
+      image.onload = () => {
+
+        preloadedSlideUrls.add(
+          url
+        );
+
+
+        resolve();
+      };
+
+
+      image.onerror = () => {
+
+        reject(
+          new Error(
+            `Não foi possível carregar a imagem: ${url}`
+          )
+        );
+      };
+
+
+      image.src = url;
+    }
+  );
+}
+
+
+/* =========================================================
+   ETAPA 3
+   PRÉ-CARREGAR PRÓXIMO SLIDE
+========================================================= */
+
+async function preloadNextSlide() {
+  const lesson =
+    lessons[
+      currentLessonIndex
+    ];
+
+
+  if (!lesson) {
+    return;
+  }
+
+
+  const lessonSlides =
+    getLessonSlides(
+      lesson
+    );
+
+
+  const nextSlide =
+    lessonSlides[
+      currentSlideIndex + 1
+    ];
+
+
+  if (!nextSlide) {
+    return;
+  }
+
+
+  try {
+
+    const url =
+      await getSlideUrl(
+        nextSlide
+      );
+
+
+    if (!url) {
+      return;
+    }
+
+
+    await preloadImage(
+      url
+    );
+
+  } catch (error) {
+
+    console.debug(
+      "Não foi possível pré-carregar o próximo slide:",
+      error
+    );
+  }
+}
+
+
+/* =========================================================
+   ETAPA 3
+   PRÉ-CARREGAR SLIDE ANTERIOR
+========================================================= */
+
+async function preloadPreviousSlide() {
+  const lesson =
+    lessons[
+      currentLessonIndex
+    ];
+
+
+  if (!lesson) {
+    return;
+  }
+
+
+  const lessonSlides =
+    getLessonSlides(
+      lesson
+    );
+
+
+  const previousSlide =
+    lessonSlides[
+      currentSlideIndex - 1
+    ];
+
+
+  if (!previousSlide) {
+    return;
+  }
+
+
+  try {
+
+    const url =
+      await getSlideUrl(
+        previousSlide
+      );
+
+
+    if (!url) {
+      return;
+    }
+
+
+    await preloadImage(
+      url
+    );
+
+  } catch (error) {
+
+    console.debug(
+      "Não foi possível pré-carregar o slide anterior:",
+      error
+    );
   }
 }
 
@@ -209,14 +450,21 @@ async function getStorageUrl(
 ========================================================= */
 
 async function loadUserSession() {
-  const userArea = $("user-area");
+  const userArea =
+    $("user-area");
+
 
   try {
 
     const {
-      data: { session },
+      data: {
+        session
+      },
       error
-    } = await supabase.auth.getSession();
+    } =
+      await supabase
+        .auth
+        .getSession();
 
 
     if (error) {
@@ -225,22 +473,25 @@ async function loadUserSession() {
 
 
     currentUser =
-      session?.user || null;
+      session?.user ||
+      null;
 
 
     if (userArea) {
 
       if (currentUser) {
+
         renderUser(
           userArea,
           currentUser
         );
+
       } else {
+
         renderGuest(
           userArea
         );
       }
-
     }
 
 
@@ -258,7 +509,9 @@ async function loadUserSession() {
 
 
     if (userArea) {
-      renderGuest(userArea);
+      renderGuest(
+        userArea
+      );
     }
 
 
@@ -271,7 +524,9 @@ async function loadUserSession() {
    VISITANTE
 ========================================================= */
 
-function renderGuest(userArea) {
+function renderGuest(
+  userArea
+) {
   if (!userArea) {
     return;
   }
@@ -326,7 +581,8 @@ function renderUser(
 
   const email =
     escapeHtml(
-      user.email || ""
+      user.email ||
+      ""
     );
 
 
@@ -356,7 +612,9 @@ function renderUser(
     avatarUrl
       ? `
         <img
-          src="${escapeHtml(avatarUrl)}"
+          src="${escapeHtml(
+            avatarUrl
+          )}"
           alt="Foto do usuário"
           class="user-avatar"
           referrerpolicy="no-referrer"
@@ -416,14 +674,22 @@ async function logout() {
   try {
 
     if (button) {
-      button.disabled = true;
+
+      button.disabled =
+        true;
+
+
       button.textContent =
         "Saindo...";
     }
 
 
-    const { error } =
-      await supabase.auth.signOut();
+    const {
+      error
+    } =
+      await supabase
+        .auth
+        .signOut();
 
 
     if (error) {
@@ -443,7 +709,11 @@ async function logout() {
 
 
     if (button) {
-      button.disabled = false;
+
+      button.disabled =
+        false;
+
+
       button.textContent =
         "Sair";
     }
@@ -466,6 +736,10 @@ function clearDataMaps() {
   materialsByLesson.clear();
 
   progressByLesson.clear();
+
+  slideUrlCache.clear();
+
+  preloadedSlideUrls.clear();
 }
 
 
@@ -477,21 +751,22 @@ async function loadCourse() {
   const {
     data,
     error
-  } = await supabase
-    .from("catalogo")
-    .select(`
-      id,
-      nome,
-      descricao,
-      categoria,
-      imagem_capa_url,
-      status
-    `)
-    .eq(
-      "id",
-      EXCEL_COURSE_ID
-    )
-    .maybeSingle();
+  } =
+    await supabase
+      .from("catalogo")
+      .select(`
+        id,
+        nome,
+        descricao,
+        categoria,
+        imagem_capa_url,
+        status
+      `)
+      .eq(
+        "id",
+        EXCEL_COURSE_ID
+      )
+      .maybeSingle();
 
 
   if (error) {
@@ -513,30 +788,31 @@ async function loadModules() {
   const {
     data,
     error
-  } = await supabase
-    .from("modulos")
-    .select(`
-      id,
-      curso_id,
-      nome,
-      descricao,
-      ordem,
-      status
-    `)
-    .eq(
-      "curso_id",
-      EXCEL_COURSE_ID
-    )
-    .eq(
-      "status",
-      "publicado"
-    )
-    .order(
-      "ordem",
-      {
-        ascending: true
-      }
-    );
+  } =
+    await supabase
+      .from("modulos")
+      .select(`
+        id,
+        curso_id,
+        nome,
+        descricao,
+        ordem,
+        status
+      `)
+      .eq(
+        "curso_id",
+        EXCEL_COURSE_ID
+      )
+      .eq(
+        "status",
+        "publicado"
+      )
+      .order(
+        "ordem",
+        {
+          ascending: true
+        }
+      );
 
 
   if (error) {
@@ -557,7 +833,9 @@ async function loadModules() {
 
 async function loadLessons() {
   if (!modules.length) {
+
     lessons = [];
+
     return;
   }
 
@@ -572,30 +850,31 @@ async function loadLessons() {
   const {
     data,
     error
-  } = await supabase
-    .from("aulas")
-    .select(`
-      id,
-      modulo_id,
-      nome,
-      descricao,
-      ordem,
-      status
-    `)
-    .in(
-      "modulo_id",
-      moduleIds
-    )
-    .eq(
-      "status",
-      "publicado"
-    )
-    .order(
-      "ordem",
-      {
-        ascending: true
-      }
-    );
+  } =
+    await supabase
+      .from("aulas")
+      .select(`
+        id,
+        modulo_id,
+        nome,
+        descricao,
+        ordem,
+        status
+      `)
+      .in(
+        "modulo_id",
+        moduleIds
+      )
+      .eq(
+        "status",
+        "publicado"
+      )
+      .order(
+        "ordem",
+        {
+          ascending: true
+        }
+      );
 
 
   if (error) {
@@ -609,59 +888,70 @@ async function loadLessons() {
       : [];
 
 
-  /*
-    Adicionamos a informação do módulo
-    dentro de cada aula para simplificar
-    a renderização.
-  */
-
   lessons =
     rawLessons
-      .map((lesson) => {
+      .map(
+        (lesson) => {
 
-        const module =
-          modules.find(
-            (item) =>
-              Number(item.id) ===
-              Number(
-                lesson.modulo_id
-              )
-          );
-
-
-        return {
-          ...lesson,
-
-          module:
-            module || null
-        };
-      })
-      .sort((a, b) => {
-
-        const moduleA =
-          normalizeNumber(
-            a.module?.ordem
-          );
-
-        const moduleB =
-          normalizeNumber(
-            b.module?.ordem
-          );
+          const module =
+            modules.find(
+              (item) =>
+                Number(item.id) ===
+                Number(
+                  lesson.modulo_id
+                )
+            );
 
 
-        if (
-          moduleA !==
-          moduleB
-        ) {
-          return moduleA - moduleB;
+          return {
+            ...lesson,
+
+            module:
+              module ||
+              null
+          };
         }
+      )
+      .sort(
+        (
+          a,
+          b
+        ) => {
+
+          const moduleA =
+            normalizeNumber(
+              a.module?.ordem
+            );
 
 
-        return (
-          normalizeNumber(a.ordem) -
-          normalizeNumber(b.ordem)
-        );
-      });
+          const moduleB =
+            normalizeNumber(
+              b.module?.ordem
+            );
+
+
+          if (
+            moduleA !==
+            moduleB
+          ) {
+
+            return (
+              moduleA -
+              moduleB
+            );
+          }
+
+
+          return (
+            normalizeNumber(
+              a.ordem
+            ) -
+            normalizeNumber(
+              b.ordem
+            )
+          );
+        }
+      );
 }
 
 
@@ -674,7 +964,9 @@ async function loadSlides() {
 
 
   if (!lessons.length) {
+
     slides = [];
+
     return;
   }
 
@@ -689,30 +981,31 @@ async function loadSlides() {
   const {
     data,
     error
-  } = await supabase
-    .from("slides")
-    .select(`
-      id,
-      aula_id,
-      titulo,
-      imagem_path,
-      ordem,
-      status
-    `)
-    .in(
-      "aula_id",
-      lessonIds
-    )
-    .eq(
-      "status",
-      "publicado"
-    )
-    .order(
-      "ordem",
-      {
-        ascending: true
-      }
-    );
+  } =
+    await supabase
+      .from("slides")
+      .select(`
+        id,
+        aula_id,
+        titulo,
+        imagem_path,
+        ordem,
+        status
+      `)
+      .in(
+        "aula_id",
+        lessonIds
+      )
+      .eq(
+        "status",
+        "publicado"
+      )
+      .order(
+        "ordem",
+        {
+          ascending: true
+        }
+      );
 
 
   if (error) {
@@ -740,6 +1033,7 @@ async function loadSlides() {
           lessonId
         )
       ) {
+
         slidesByLesson.set(
           lessonId,
           []
@@ -754,17 +1048,20 @@ async function loadSlides() {
   );
 
 
-  /*
-    Garantimos novamente a ordem.
-  */
-
   slidesByLesson.forEach(
     (lessonSlides) => {
 
       lessonSlides.sort(
-        (a, b) =>
-          normalizeNumber(a.ordem) -
-          normalizeNumber(b.ordem)
+        (
+          a,
+          b
+        ) =>
+          normalizeNumber(
+            a.ordem
+          ) -
+          normalizeNumber(
+            b.ordem
+          )
       );
     }
   );
@@ -780,7 +1077,9 @@ async function loadMaterials() {
 
 
   if (!lessons.length) {
+
     materials = [];
+
     return;
   }
 
@@ -795,31 +1094,32 @@ async function loadMaterials() {
   const {
     data,
     error
-  } = await supabase
-    .from("materiais")
-    .select(`
-      id,
-      aula_id,
-      nome,
-      arquivo_path,
-      tipo,
-      ordem,
-      status
-    `)
-    .in(
-      "aula_id",
-      lessonIds
-    )
-    .eq(
-      "status",
-      "publicado"
-    )
-    .order(
-      "ordem",
-      {
-        ascending: true
-      }
-    );
+  } =
+    await supabase
+      .from("materiais")
+      .select(`
+        id,
+        aula_id,
+        nome,
+        arquivo_path,
+        tipo,
+        ordem,
+        status
+      `)
+      .in(
+        "aula_id",
+        lessonIds
+      )
+      .eq(
+        "status",
+        "publicado"
+      )
+      .order(
+        "ordem",
+        {
+          ascending: true
+        }
+      );
 
 
   if (error) {
@@ -847,6 +1147,7 @@ async function loadMaterials() {
           lessonId
         )
       ) {
+
         materialsByLesson.set(
           lessonId,
           []
@@ -856,7 +1157,9 @@ async function loadMaterials() {
 
       materialsByLesson
         .get(lessonId)
-        .push(material);
+        .push(
+          material
+        );
     }
   );
 }
@@ -890,23 +1193,26 @@ async function loadProgress() {
   const {
     data,
     error
-  } = await supabase
-    .from("progresso_aulas")
-    .select(`
-      id,
-      user_id,
-      aula_id,
-      concluida,
-      concluida_em
-    `)
-    .eq(
-      "user_id",
-      currentUser.id
-    )
-    .in(
-      "aula_id",
-      lessonIds
-    );
+  } =
+    await supabase
+      .from(
+        "progresso_aulas"
+      )
+      .select(`
+        id,
+        user_id,
+        aula_id,
+        concluida,
+        concluida_em
+      `)
+      .eq(
+        "user_id",
+        currentUser.id
+      )
+      .in(
+        "aula_id",
+        lessonIds
+      );
 
 
   if (error) {
@@ -924,7 +1230,9 @@ async function loadProgress() {
     (row) => {
 
       progressByLesson.set(
-        Number(row.aula_id),
+        Number(
+          row.aula_id
+        ),
         row
       );
     }
@@ -933,7 +1241,7 @@ async function loadProgress() {
 
 
 /* =========================================================
-   CARREGAR TODA A ESTRUTURA DO EXCEL
+   CARREGAR CURSO COMPLETO
 ========================================================= */
 
 async function loadExcelCourse() {
@@ -948,12 +1256,6 @@ async function loadExcelCourse() {
 
     await loadLessons();
 
-
-    /*
-      Slides, materiais e progresso podem
-      ser carregados ao mesmo tempo depois
-      que as aulas já estiverem disponíveis.
-    */
 
     await Promise.all([
       loadSlides(),
@@ -1036,6 +1338,7 @@ function renderCourseHeader() {
 
 
   if (breadcrumb) {
+
     breadcrumb.textContent =
       courseName;
   }
@@ -1074,7 +1377,7 @@ function getLessonNumber(
 
 
 /* =========================================================
-   SLIDES DE UMA AULA
+   SLIDES DA AULA
 ========================================================= */
 
 function getLessonSlides(
@@ -1087,14 +1390,17 @@ function getLessonSlides(
 
   return (
     slidesByLesson.get(
-      Number(lesson.id)
-    ) || []
+      Number(
+        lesson.id
+      )
+    ) ||
+    []
   );
 }
 
 
 /* =========================================================
-   MATERIAIS DE UMA AULA
+   MATERIAIS DA AULA
 ========================================================= */
 
 function getLessonMaterials(
@@ -1107,14 +1413,17 @@ function getLessonMaterials(
 
   return (
     materialsByLesson.get(
-      Number(lesson.id)
-    ) || []
+      Number(
+        lesson.id
+      )
+    ) ||
+    []
   );
 }
 
 
 /* =========================================================
-   VERIFICAR SE AULA FOI CONCLUÍDA
+   AULA CONCLUÍDA
 ========================================================= */
 
 function isLessonCompleted(
@@ -1127,7 +1436,9 @@ function isLessonCompleted(
 
   return Boolean(
     progressByLesson.get(
-      Number(lesson.id)
+      Number(
+        lesson.id
+      )
     )?.concluida
   );
 }
@@ -1147,11 +1458,14 @@ function renderLessons() {
   }
 
 
-  container.innerHTML = "";
+  container.innerHTML =
+    "";
 
 
   if (!modules.length) {
+
     renderNoLessons();
+
     return;
   }
 
@@ -1173,12 +1487,6 @@ function renderLessons() {
             )
         );
 
-
-      /*
-        Se o módulo estiver publicado
-        mas ainda não tiver aula publicada,
-        ainda mostramos o módulo.
-      */
 
       const moduleBlock =
         document.createElement(
@@ -1209,7 +1517,9 @@ function renderLessons() {
           )}
         </div>
 
-        <ul class="lesson-list"></ul>
+        <ul
+          class="lesson-list"
+        ></ul>
       `;
 
 
@@ -1226,7 +1536,9 @@ function renderLessons() {
             lessons.findIndex(
               (item) =>
                 Number(item.id) ===
-                Number(lesson.id)
+                Number(
+                  lesson.id
+                )
             );
 
 
@@ -1253,11 +1565,15 @@ function renderLessons() {
 
 
           li.dataset.lessonIndex =
-            String(globalIndex);
+            String(
+              globalIndex
+            );
 
 
           li.dataset.lessonId =
-            String(lesson.id);
+            String(
+              lesson.id
+            );
 
 
           const lessonNumber =
@@ -1284,7 +1600,9 @@ function renderLessons() {
 
 
           li.innerHTML = `
-            <div class="lesson-status">
+            <div
+              class="lesson-status"
+            >
               ${
                 completed
                   ? `
@@ -1408,11 +1726,10 @@ async function selectLesson(
     );
 
 
-  if (
-    !lessonSlides.length
-  ) {
+  if (!lessonSlides.length) {
 
-    currentSlideIndex = 0;
+    currentSlideIndex =
+      0;
 
   } else {
 
@@ -1455,12 +1772,15 @@ function updateLessonSelection() {
 
       const index =
         Number(
-          item.dataset.lessonIndex
+          item.dataset
+            .lessonIndex
         );
 
 
       const lesson =
-        lessons[index];
+        lessons[
+          index
+        ];
 
 
       if (!lesson) {
@@ -1526,6 +1846,7 @@ function updateLessonSelection() {
 
 
 /* =========================================================
+   ETAPA 3
    RENDERIZAR AULA / SLIDE
 ========================================================= */
 
@@ -1568,12 +1889,14 @@ async function renderCurrentLesson() {
 
 
   if (title) {
+
     title.textContent =
       `${lessonNumber} ${lessonName}`;
   }
 
 
   if (description) {
+
     description.textContent =
       lesson.descricao ||
       lesson.module?.descricao ||
@@ -1588,19 +1911,19 @@ async function renderCurrentLesson() {
     );
 
 
-  /*
-    Ainda não há slides cadastrados.
-  */
+  /* AULA SEM SLIDES */
 
   if (!lessonSlides.length) {
 
     currentLesson.innerHTML =
       getSlidePlaceholder();
 
+
     renderSlideCounter(
       0,
       0
     );
+
 
     return;
   }
@@ -1617,105 +1940,172 @@ async function renderCurrentLesson() {
     currentLesson.innerHTML =
       getSlidePlaceholder();
 
+
     return;
   }
 
 
   /*
-    Enquanto buscamos a URL assinada,
-    mostramos um estado de carregamento.
+    Criamos uma versão para esta solicitação.
+
+    Se o usuário clicar rapidamente,
+    um carregamento antigo não substitui
+    o slide atual.
   */
 
   const renderVersion =
     ++slideRenderVersion;
 
 
-  currentLesson.innerHTML = `
-    <div
-      id="slide-stage"
-      class="slide-stage"
-    >
-      <div class="slide-loading">
-        Carregando slide...
-      </div>
-    </div>
-  `;
+  try {
+
+    /*
+      IMPORTANTE:
+
+      Aqui NÃO apagamos o slide atual.
+
+      Ele permanece visível enquanto
+      buscamos a URL do novo slide.
+    */
+
+    const slideUrl =
+      await getSlideUrl(
+        slide
+      );
 
 
-  const slideUrl =
-    await getStorageUrl(
-      SLIDES_BUCKET,
-      slide.imagem_path
+    if (
+      renderVersion !==
+      slideRenderVersion
+    ) {
+      return;
+    }
+
+
+    if (!slideUrl) {
+
+      currentLesson.innerHTML =
+        getSlidePlaceholder(
+          "Não foi possível carregar este slide."
+        );
+
+
+      renderSlideCounter(
+        currentSlideIndex + 1,
+        lessonSlides.length
+      );
+
+
+      return;
+    }
+
+
+    /*
+      Carregamos a imagem em memória
+      antes de trocar a imagem visível.
+    */
+
+    await preloadImage(
+      slideUrl
     );
 
 
-  /*
-    Se o usuário já mudou de slide/aula,
-    ignoramos o resultado antigo.
-  */
-
-  if (
-    renderVersion !==
-    slideRenderVersion
-  ) {
-    return;
-  }
+    if (
+      renderVersion !==
+      slideRenderVersion
+    ) {
+      return;
+    }
 
 
-  if (!slideUrl) {
-
-    currentLesson.innerHTML =
-      getSlidePlaceholder(
-        "Não foi possível carregar este slide."
+    const slideTitle =
+      normalizeText(
+        slide.titulo
       );
+
+
+    /*
+      Só agora substituímos o DOM.
+
+      Como a imagem já está carregada,
+      ela aparece imediatamente e a
+      animação do curso.css fica visível.
+    */
+
+    currentLesson.innerHTML = `
+      <div
+        id="slide-stage"
+        class="slide-stage"
+      >
+
+        <div
+          class="slide-viewer"
+        >
+
+          <img
+            src="${escapeHtml(
+              slideUrl
+            )}"
+            alt="${
+              escapeHtml(
+                slideTitle ||
+                `Slide ${
+                  currentSlideIndex + 1
+                } da aula ${lessonName}`
+              )
+            }"
+            loading="eager"
+            decoding="sync"
+          >
+
+        </div>
+
+      </div>
+    `;
+
 
     renderSlideCounter(
       currentSlideIndex + 1,
       lessonSlides.length
     );
 
-    return;
-  }
 
+    /*
+      Já preparamos as imagens próximas
+      enquanto o usuário lê o slide atual.
+    */
 
-  const slideTitle =
-    normalizeText(
-      slide.titulo
+    preloadNextSlide();
+
+    preloadPreviousSlide();
+
+  } catch (error) {
+
+    console.error(
+      "Erro ao carregar slide:",
+      error
     );
 
 
-  currentLesson.innerHTML = `
-    <div
-      id="slide-stage"
-      class="slide-stage"
-    >
-
-      <div class="slide-viewer">
-
-        <img
-          src="${escapeHtml(slideUrl)}"
-          alt="${
-            escapeHtml(
-              slideTitle ||
-              `Slide ${
-                currentSlideIndex + 1
-              } da aula ${lessonName}`
-            )
-          }"
-          loading="eager"
-          decoding="async"
-        >
-
-      </div>
-
-    </div>
-  `;
+    if (
+      renderVersion !==
+      slideRenderVersion
+    ) {
+      return;
+    }
 
 
-  renderSlideCounter(
-    currentSlideIndex + 1,
-    lessonSlides.length
-  );
+    currentLesson.innerHTML =
+      getSlidePlaceholder(
+        "Não foi possível carregar este slide."
+      );
+
+
+    renderSlideCounter(
+      currentSlideIndex + 1,
+      lessonSlides.length
+    );
+  }
 }
 
 
@@ -1731,19 +2121,16 @@ function renderSlideCounter(
     $("slide-counter");
 
 
-  /*
-    O HTML atual pode ainda não ter esse elemento.
-    Por isso ele é opcional.
-  */
-
   if (!counter) {
     return;
   }
 
 
   if (!total) {
+
     counter.textContent =
       "Nenhum slide";
+
     return;
   }
 
@@ -1997,12 +2384,14 @@ function renderNoLessons() {
 
 
   if (title) {
+
     title.textContent =
       "Conteúdo em preparação";
   }
 
 
   if (description) {
+
     description.textContent =
       "As aulas e slides deste curso serão exibidos aqui.";
   }
@@ -2013,6 +2402,7 @@ function renderNoLessons() {
 
 
   if (currentLesson) {
+
     currentLesson.innerHTML =
       getSlidePlaceholder();
   }
@@ -2026,12 +2416,16 @@ function renderNoLessons() {
 
 
   if (previous) {
-    previous.disabled = true;
+
+    previous.disabled =
+      true;
   }
 
 
   if (next) {
-    next.disabled = true;
+
+    next.disabled =
+      true;
   }
 }
 
@@ -2063,10 +2457,6 @@ async function markLessonCompleted(
     );
 
 
-  /*
-    Já está concluída.
-  */
-
   if (
     existing?.concluida
   ) {
@@ -2081,41 +2471,39 @@ async function markLessonCompleted(
 
   try {
 
-    /*
-      Se já existe uma linha de progresso,
-      atualizamos.
-    */
-
     if (existing?.id) {
 
       const {
         data,
         error
-      } = await supabase
-        .from(
-          "progresso_aulas"
-        )
-        .update({
-          concluida: true,
-          concluida_em:
-            completedAt
-        })
-        .eq(
-          "id",
-          existing.id
-        )
-        .eq(
-          "user_id",
-          currentUser.id
-        )
-        .select(`
-          id,
-          user_id,
-          aula_id,
-          concluida,
-          concluida_em
-        `)
-        .maybeSingle();
+      } =
+        await supabase
+          .from(
+            "progresso_aulas"
+          )
+          .update({
+            concluida:
+              true,
+
+            concluida_em:
+              completedAt
+          })
+          .eq(
+            "id",
+            existing.id
+          )
+          .eq(
+            "user_id",
+            currentUser.id
+          )
+          .select(`
+            id,
+            user_id,
+            aula_id,
+            concluida,
+            concluida_em
+          `)
+          .maybeSingle();
 
 
       if (error) {
@@ -2133,39 +2521,35 @@ async function markLessonCompleted(
 
     } else {
 
-      /*
-        Ainda não existe registro.
-        Criamos um novo.
-      */
-
       const {
         data,
         error
-      } = await supabase
-        .from(
-          "progresso_aulas"
-        )
-        .insert({
-          user_id:
-            currentUser.id,
+      } =
+        await supabase
+          .from(
+            "progresso_aulas"
+          )
+          .insert({
+            user_id:
+              currentUser.id,
 
-          aula_id:
-            lesson.id,
+            aula_id:
+              lesson.id,
 
-          concluida:
-            true,
+            concluida:
+              true,
 
-          concluida_em:
-            completedAt
-        })
-        .select(`
-          id,
-          user_id,
-          aula_id,
-          concluida,
-          concluida_em
-        `)
-        .maybeSingle();
+            concluida_em:
+              completedAt
+          })
+          .select(`
+            id,
+            user_id,
+            aula_id,
+            concluida,
+            concluida_em
+          `)
+          .maybeSingle();
 
 
       if (error) {
@@ -2180,7 +2564,6 @@ async function markLessonCompleted(
           data
         );
       }
-
     }
 
 
@@ -2210,17 +2593,19 @@ function updateNavigation() {
     $("next-lesson");
 
 
-  if (
-    !lessons.length
-  ) {
+  if (!lessons.length) {
 
     if (previous) {
-      previous.disabled = true;
+      previous.disabled =
+        true;
     }
 
+
     if (next) {
-      next.disabled = true;
+      next.disabled =
+        true;
     }
+
 
     return;
   }
@@ -2289,6 +2674,7 @@ function updateNavigation() {
     next.textContent =
       "Próxima →";
 
+
     next.disabled =
       false;
   }
@@ -2309,29 +2695,22 @@ $("prev-lesson")
       }
 
 
-      /*
-        Ainda existem slides anteriores
-        dentro da aula atual.
-      */
-
       if (
         currentSlideIndex > 0
       ) {
 
         currentSlideIndex -= 1;
 
+
         await renderCurrentLesson();
 
+
         updateNavigation();
+
 
         return;
       }
 
-
-      /*
-        Estamos no primeiro slide.
-        Voltamos para a aula anterior.
-      */
 
       if (
         currentLessonIndex <= 0
@@ -2396,11 +2775,6 @@ $("next-lesson")
         );
 
 
-      /*
-        Existem mais slides dentro
-        da mesma aula.
-      */
-
       if (
         lessonSlides.length &&
         currentSlideIndex <
@@ -2409,20 +2783,16 @@ $("next-lesson")
 
         currentSlideIndex += 1;
 
+
         await renderCurrentLesson();
 
+
         updateNavigation();
+
 
         return;
       }
 
-
-      /*
-        Chegamos ao último slide.
-
-        Se existem slides de verdade,
-        registramos a aula como concluída.
-      */
 
       if (
         lessonSlides.length
@@ -2434,10 +2804,6 @@ $("next-lesson")
       }
 
 
-      /*
-        Existe uma próxima aula.
-      */
-
       if (
         currentLessonIndex <
         lessons.length - 1
@@ -2448,13 +2814,10 @@ $("next-lesson")
           0
         );
 
+
         return;
       }
 
-
-      /*
-        Última aula do curso.
-      */
 
       updateNavigation();
     }
@@ -2462,7 +2825,7 @@ $("next-lesson")
 
 
 /* =========================================================
-   PROGRESSO REAL
+   PROGRESSO
 ========================================================= */
 
 function updateProgress() {
@@ -2485,7 +2848,8 @@ function updateProgress() {
           (
             completed /
             total
-          ) * 100
+          ) *
+          100
         )
       : 0;
 
@@ -2565,7 +2929,7 @@ function updateProgress() {
 
 
 /* =========================================================
-   DOWNLOADS / MATERIAIS
+   DOWNLOADS
 ========================================================= */
 
 async function renderDownloads() {
@@ -2586,6 +2950,7 @@ async function renderDownloads() {
         foi cadastrado ainda.
       </li>
     `;
+
 
     return;
   }
@@ -2693,19 +3058,27 @@ async function renderDownloads() {
 
 
           return `
-            <li class="download-item">
+            <li
+              class="download-item"
+            >
 
-              <div class="file-icon">
+              <div
+                class="file-icon"
+              >
                 ↓
               </div>
 
               <div>
 
-                <div class="file-name">
+                <div
+                  class="file-name"
+                >
                   ${name}
                 </div>
 
-                <div class="file-meta">
+                <div
+                  class="file-meta"
+                >
                   ${meta}
                 </div>
 
@@ -2722,7 +3095,7 @@ async function renderDownloads() {
 
 
 /* =========================================================
-   SIDEBARS OFF-CANVAS
+   SIDEBARS
 ========================================================= */
 
 const lessonsSidebar =
@@ -2750,7 +3123,7 @@ const closeMaterialsButton =
 
 
 /* =========================================================
-   FECHAR TODAS AS SIDEBARS
+   FECHAR SIDEBARS
 ========================================================= */
 
 function closeAllSidebars() {
@@ -2819,7 +3192,7 @@ function closeAllSidebars() {
 
 
 /* =========================================================
-   ABRIR SIDEBAR DE AULAS
+   ABRIR AULAS
 ========================================================= */
 
 function openLessonsSidebar() {
@@ -2888,7 +3261,7 @@ function openLessonsSidebar() {
 
 
 /* =========================================================
-   ABRIR SIDEBAR DE MATERIAIS
+   ABRIR MATERIAIS
 ========================================================= */
 
 function openMaterialsSidebar() {
@@ -2957,7 +3330,7 @@ function openMaterialsSidebar() {
 
 
 /* =========================================================
-   EVENTOS DAS SIDEBARS
+   EVENTOS SIDEBARS
 ========================================================= */
 
 openLessonsButton
@@ -3011,62 +3384,57 @@ document.addEventListener(
 
 
 /* =========================================================
-   ALTERAÇÕES DE AUTENTICAÇÃO
+   ALTERAÇÃO DA AUTENTICAÇÃO
 ========================================================= */
 
-supabase.auth.onAuthStateChange(
-  (
-    event,
-    session
-  ) => {
+supabase
+  .auth
+  .onAuthStateChange(
+    (
+      event,
+      session
+    ) => {
 
-    currentUser =
-      session?.user ||
-      null;
-
-
-    const userArea =
-      $("user-area");
+      currentUser =
+        session?.user ||
+        null;
 
 
-    if (userArea) {
+      const userArea =
+        $("user-area");
 
-      if (currentUser) {
 
-        renderUser(
-          userArea,
-          currentUser
-        );
+      if (userArea) {
 
-      } else {
+        if (currentUser) {
 
-        renderGuest(
-          userArea
-        );
+          renderUser(
+            userArea,
+            currentUser
+          );
+
+        } else {
+
+          renderGuest(
+            userArea
+          );
+        }
+      }
+
+
+      if (
+        event ===
+        "SIGNED_OUT"
+      ) {
+
+        progressByLesson.clear();
+
+        updateProgress();
+
+        updateLessonSelection();
       }
     }
-
-
-    /*
-      O logout manual já redireciona.
-
-      Evitamos fazer reload desnecessário
-      durante INITIAL_SESSION.
-    */
-
-    if (
-      event ===
-      "SIGNED_OUT"
-    ) {
-
-      progressByLesson.clear();
-
-      updateProgress();
-
-      updateLessonSelection();
-    }
-  }
-);
+  );
 
 
 /* =========================================================
@@ -3074,30 +3442,7 @@ supabase.auth.onAuthStateChange(
 ========================================================= */
 
 async function init() {
-  /*
-    Primeiro descobrimos quem está logado.
-
-    Isso é importante porque agora:
-    - catalogo
-    - modulos
-    - aulas
-    - slides
-    - materiais
-
-    estão liberados para a role authenticated.
-  */
-
   await loadUserSession();
-
-
-  /*
-    Mesmo se não houver sessão, deixamos a página
-    carregar o estado visual.
-
-    Quando o usuário estiver autenticado,
-    as queries autorizadas pelo RLS retornarão
-    normalmente.
-  */
 
   await loadExcelCourse();
 }
