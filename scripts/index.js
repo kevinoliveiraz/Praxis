@@ -22,6 +22,471 @@ let allCourses = [];
 
 
 /* =========================================================
+   ETAPA 2
+   ESTADO DO CARROSSEL
+========================================================= */
+
+let catalogPreviousButton = null;
+
+let catalogNextButton = null;
+
+let catalogCarousel = null;
+
+
+/* =========================================================
+   ETAPA 2
+   CRIAR CARROSSEL DO CATÁLOGO
+========================================================= */
+
+function setupCatalogCarousel() {
+  if (!grid) {
+    return;
+  }
+
+
+  /*
+    Impede que o carrossel seja criado
+    mais de uma vez.
+  */
+
+  if (
+    grid.parentElement
+      ?.classList
+      .contains(
+        "catalog-carousel"
+      )
+  ) {
+
+    catalogCarousel =
+      grid.parentElement;
+
+
+    catalogPreviousButton =
+      catalogCarousel.querySelector(
+        '[data-carousel-direction="previous"]'
+      );
+
+
+    catalogNextButton =
+      catalogCarousel.querySelector(
+        '[data-carousel-direction="next"]'
+      );
+
+
+    return;
+  }
+
+
+  /* CONTAINER PRINCIPAL */
+
+  catalogCarousel =
+    document.createElement(
+      "div"
+    );
+
+
+  catalogCarousel.className =
+    "catalog-carousel";
+
+
+  /* CONTROLES */
+
+  const controls =
+    document.createElement(
+      "div"
+    );
+
+
+  controls.className =
+    "catalog-carousel-controls";
+
+
+  /* BOTÃO ANTERIOR */
+
+  catalogPreviousButton =
+    document.createElement(
+      "button"
+    );
+
+
+  catalogPreviousButton.type =
+    "button";
+
+
+  catalogPreviousButton.className =
+    "catalog-carousel-btn";
+
+
+  catalogPreviousButton.dataset
+    .carouselDirection =
+    "previous";
+
+
+  catalogPreviousButton.setAttribute(
+    "aria-label",
+    "Ver cursos anteriores"
+  );
+
+
+  catalogPreviousButton.setAttribute(
+    "title",
+    "Cursos anteriores"
+  );
+
+
+  catalogPreviousButton.innerHTML = `
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  `;
+
+
+  /* BOTÃO PRÓXIMO */
+
+  catalogNextButton =
+    document.createElement(
+      "button"
+    );
+
+
+  catalogNextButton.type =
+    "button";
+
+
+  catalogNextButton.className =
+    "catalog-carousel-btn";
+
+
+  catalogNextButton.dataset
+    .carouselDirection =
+    "next";
+
+
+  catalogNextButton.setAttribute(
+    "aria-label",
+    "Ver próximos cursos"
+  );
+
+
+  catalogNextButton.setAttribute(
+    "title",
+    "Próximos cursos"
+  );
+
+
+  catalogNextButton.innerHTML = `
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  `;
+
+
+  controls.append(
+    catalogPreviousButton,
+    catalogNextButton
+  );
+
+
+  /*
+    Colocamos o novo carrossel exatamente
+    onde o #catalog-grid já estava.
+  */
+
+  const originalParent =
+    grid.parentNode;
+
+
+  originalParent.insertBefore(
+    catalogCarousel,
+    grid
+  );
+
+
+  catalogCarousel.appendChild(
+    controls
+  );
+
+
+  catalogCarousel.appendChild(
+    grid
+  );
+
+
+  /* EVENTO ANTERIOR */
+
+  catalogPreviousButton
+    .addEventListener(
+      "click",
+      () => {
+
+        scrollCatalog(
+          -1
+        );
+      }
+    );
+
+
+  /* EVENTO PRÓXIMO */
+
+  catalogNextButton
+    .addEventListener(
+      "click",
+      () => {
+
+        scrollCatalog(
+          1
+        );
+      }
+    );
+
+
+  /*
+    Conforme o usuário arrasta com o dedo
+    ou usa o trackpad, atualizamos as setas.
+  */
+
+  grid.addEventListener(
+    "scroll",
+    updateCatalogControls,
+    {
+      passive: true
+    }
+  );
+
+
+  /*
+    Ao mudar a largura da tela,
+    recalculamos se existe conteúdo
+    suficiente para mostrar as setas.
+  */
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      window.requestAnimationFrame(
+        updateCatalogControls
+      );
+    }
+  );
+
+
+  updateCatalogControls();
+}
+
+
+/* =========================================================
+   ETAPA 2
+   LARGURA DE UM PASSO DO CARROSSEL
+========================================================= */
+
+function getCatalogScrollAmount() {
+  if (!grid) {
+    return 0;
+  }
+
+
+  const firstCard =
+    grid.querySelector(
+      ".course-card"
+    );
+
+
+  /*
+    Enquanto o catálogo ainda estiver
+    carregando, usamos a largura do grid.
+  */
+
+  if (!firstCard) {
+    return grid.clientWidth;
+  }
+
+
+  const gridStyles =
+    window.getComputedStyle(
+      grid
+    );
+
+
+  const gapValue =
+    gridStyles.columnGap ||
+    gridStyles.gap ||
+    "0";
+
+
+  const gap =
+    Number.parseFloat(
+      gapValue
+    ) || 0;
+
+
+  const cardWidth =
+    firstCard
+      .getBoundingClientRect()
+      .width;
+
+
+  /*
+    Um clique = avança exatamente
+    um card.
+
+    Isso deixa a movimentação
+    previsível no desktop e celular.
+  */
+
+  return (
+    cardWidth +
+    gap
+  );
+}
+
+
+/* =========================================================
+   ETAPA 2
+   MOVIMENTAR CARROSSEL
+========================================================= */
+
+function scrollCatalog(
+  direction
+) {
+  if (!grid) {
+    return;
+  }
+
+
+  const amount =
+    getCatalogScrollAmount();
+
+
+  if (!amount) {
+    return;
+  }
+
+
+  grid.scrollBy({
+    left:
+      amount *
+      direction,
+
+    behavior:
+      "smooth"
+  });
+}
+
+
+/* =========================================================
+   ETAPA 2
+   ATUALIZAR SETAS DO CARROSSEL
+========================================================= */
+
+function updateCatalogControls() {
+  if (
+    !grid ||
+    !catalogPreviousButton ||
+    !catalogNextButton
+  ) {
+    return;
+  }
+
+
+  /*
+    Pequena tolerância para evitar
+    erros de arredondamento.
+  */
+
+  const tolerance = 5;
+
+
+  const canScroll =
+    grid.scrollWidth >
+    grid.clientWidth +
+      tolerance;
+
+
+  /*
+    Se todos os cursos couberem
+    na tela, desabilitamos as duas.
+  */
+
+  if (!canScroll) {
+
+    catalogPreviousButton.disabled =
+      true;
+
+
+    catalogNextButton.disabled =
+      true;
+
+
+    return;
+  }
+
+
+  const atStart =
+    grid.scrollLeft <=
+    tolerance;
+
+
+  const atEnd =
+    grid.scrollLeft +
+      grid.clientWidth >=
+    grid.scrollWidth -
+      tolerance;
+
+
+  catalogPreviousButton.disabled =
+    atStart;
+
+
+  catalogNextButton.disabled =
+    atEnd;
+}
+
+
+/* =========================================================
+   ETAPA 2
+   VOLTAR CARROSSEL PARA O INÍCIO
+========================================================= */
+
+function resetCatalogPosition() {
+  if (!grid) {
+    return;
+  }
+
+
+  grid.scrollTo({
+    left: 0,
+    behavior: "auto"
+  });
+
+
+  window.requestAnimationFrame(
+    updateCatalogControls
+  );
+}
+
+
+/* =========================================================
    PÁGINAS ESPECÍFICAS DOS CURSOS
 ========================================================= */
 
@@ -70,7 +535,9 @@ function getCoursePage(course) {
       course.nome || ""
     )
       .trim()
-      .toLocaleLowerCase("pt-BR");
+      .toLocaleLowerCase(
+        "pt-BR"
+      );
 
 
   const category =
@@ -78,7 +545,9 @@ function getCoursePage(course) {
       course.categoria || ""
     )
       .trim()
-      .toLocaleLowerCase("pt-BR");
+      .toLocaleLowerCase(
+        "pt-BR"
+      );
 
 
   /* EXCEL */
@@ -87,6 +556,7 @@ function getCoursePage(course) {
     name.includes("excel") ||
     category.includes("excel")
   ) {
+
     return "excel.html";
   }
 
@@ -97,6 +567,7 @@ function getCoursePage(course) {
     name.includes("word") ||
     category.includes("word")
   ) {
+
     return "word.html";
   }
 
@@ -109,6 +580,7 @@ function getCoursePage(course) {
     category.includes("power point") ||
     category.includes("powerpoint")
   ) {
+
     return "powerpoint.html";
   }
 
@@ -123,14 +595,21 @@ function getCoursePage(course) {
     category.includes("power-bi") ||
     category.includes("powerbi")
   ) {
+
     return "powerbi.html";
   }
 
 
   /*
-    Se ainda não existir página individual
-    para este curso, não tenta mais abrir
-    curso.html?id=...
+    Curso ainda sem página própria.
+
+    Outlook, ChatGPT e Teams,
+    por exemplo, poderão aparecer
+    no catálogo antes das páginas
+    serem construídas.
+
+    Nesse caso não abrimos uma
+    página inexistente.
   */
 
   console.warn(
@@ -160,6 +639,7 @@ async function logout() {
 
       logoutButton.disabled =
         true;
+
 
       logoutButton.textContent =
         "Saindo...";
@@ -191,6 +671,7 @@ async function logout() {
 
       logoutButton.disabled =
         false;
+
 
       logoutButton.textContent =
         "Sair";
@@ -259,7 +740,11 @@ function renderAuthenticatedArea(
   userArea,
   user
 ) {
-  if (!userArea || !user) {
+  if (
+    !userArea ||
+    !user
+  ) {
+
     return;
   }
 
@@ -271,14 +756,22 @@ function renderAuthenticatedArea(
 
 
   const avatarUrl =
-    user.user_metadata?.avatar_url ||
-    user.user_metadata?.picture ||
+    user.user_metadata
+      ?.avatar_url ||
+
+    user.user_metadata
+      ?.picture ||
+
     "";
 
 
   const fullName =
-    user.user_metadata?.full_name ||
-    user.user_metadata?.name ||
+    user.user_metadata
+      ?.full_name ||
+
+    user.user_metadata
+      ?.name ||
+
     "";
 
 
@@ -377,10 +870,14 @@ async function loadUserSession() {
   try {
 
     const {
-      data: { session },
+      data: {
+        session
+      },
       error
     } =
-      await supabase.auth.getSession();
+      await supabase
+        .auth
+        .getSession();
 
 
     if (error) {
@@ -394,6 +891,7 @@ async function loadUserSession() {
         userArea,
         session.user
       );
+
 
       return;
     }
@@ -442,6 +940,9 @@ async function loadCatalog() {
   `;
 
 
+  updateCatalogControls();
+
+
   try {
 
     const {
@@ -449,7 +950,9 @@ async function loadCatalog() {
       error
     } =
       await supabase
-        .from("catalogo")
+        .from(
+          "catalogo"
+        )
         .select(`
           id,
           nome,
@@ -512,11 +1015,19 @@ async function loadCatalog() {
     `;
 
 
+    resetCatalogPosition();
+
+
   } finally {
 
     grid.setAttribute(
       "aria-busy",
       "false"
+    );
+
+
+    window.requestAnimationFrame(
+      updateCatalogControls
     );
   }
 }
@@ -534,6 +1045,17 @@ function renderCourses(
   }
 
 
+  /*
+    Sempre que o catálogo for renderizado
+    novamente, voltamos ao início.
+
+    Isso é importante principalmente
+    durante pesquisas.
+  */
+
+  resetCatalogPosition();
+
+
   if (!courses.length) {
 
     grid.innerHTML = `
@@ -542,141 +1064,171 @@ function renderCourses(
       </div>
     `;
 
+
+    window.requestAnimationFrame(
+      updateCatalogControls
+    );
+
+
     return;
   }
 
 
   grid.innerHTML =
     courses
-      .map((course) => {
+      .map(
+        (course) => {
 
-        const id =
-          escapeHtml(
+          const id =
+            escapeHtml(
+              String(
+                course.id ?? ""
+              )
+            );
+
+
+          const name =
+            escapeHtml(
+              String(
+                course.nome ||
+                "Curso sem nome"
+              )
+                .trim()
+            );
+
+
+          const category =
+            escapeHtml(
+              String(
+                course.categoria ||
+                "Curso"
+              )
+                .trim()
+            );
+
+
+          const coverUrl =
             String(
-              course.id ?? ""
+              course.imagem_capa_url ||
+              ""
             )
-          );
+              .trim();
 
 
-        const name =
-          escapeHtml(
-            String(
-              course.nome ||
-              "Curso sem nome"
-            ).trim()
-          );
+          /*
+            Define qual página
+            este curso abrirá.
+          */
+
+          const coursePage =
+            getCoursePage(
+              course
+            );
 
 
-        const category =
-          escapeHtml(
-            String(
-              course.categoria ||
-              "Curso"
-            ).trim()
-          );
-
-
-        const coverUrl =
-          String(
-            course.imagem_capa_url ||
-            ""
-          ).trim();
-
-
-        /*
-          Define agora qual página
-          este card deverá abrir.
-        */
-
-        const coursePage =
-          getCoursePage(
-            course
-          );
-
-
-        return `
-          <article
-            class="course-card"
-            data-course-id="${id}"
-            data-course-page="${
-              coursePage
-                ? escapeHtml(coursePage)
-                : ""
-            }"
-            tabindex="0"
-            role="link"
-            aria-label="Abrir o curso ${name}"
-            title="${name}"
-          >
-
-            <div class="cover">
-
-              ${
-                coverUrl
-
-                  ? `
-                    <img
-                      src="${escapeHtml(
-                        coverUrl
-                      )}"
-                      alt="Capa do curso ${name}"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  `
-
-                  : `
-                    <div
-                      class="course-cover-placeholder"
-                    >
-                      <span>
-                        ${category}
-                      </span>
-                    </div>
-                  `
-              }
-
-            </div>
-
-
-            <!--
-              Mantém somente o gradiente.
-
-              Os textos já fazem parte
-              da própria arte da capa.
-            -->
-
-            <div
-              class="body"
-              aria-hidden="true"
-            ></div>
-
-
-            <span
-              class="play-btn"
-              aria-hidden="true"
+          return `
+            <article
+              class="course-card"
+              data-course-id="${id}"
+              data-course-page="${
+                coursePage
+                  ? escapeHtml(
+                      coursePage
+                    )
+                  : ""
+              }"
+              tabindex="0"
+              role="link"
+              aria-label="Abrir o curso ${name}"
+              title="${name}"
             >
 
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+              <div class="cover">
+
+                ${
+                  coverUrl
+
+                    ? `
+                      <img
+                        src="${escapeHtml(
+                          coverUrl
+                        )}"
+                        alt="Capa do curso ${name}"
+                        loading="lazy"
+                        decoding="async"
+                      >
+                    `
+
+                    : `
+                      <div
+                        class="course-cover-placeholder"
+                      >
+                        <span>
+                          ${category}
+                        </span>
+                      </div>
+                    `
+                }
+
+              </div>
+
+
+              <!--
+                A capa já possui os textos.
+
+                Mantemos somente o gradiente
+                visual no final do card.
+              -->
+
+              <div
+                class="body"
+                aria-hidden="true"
+              ></div>
+
+
+              <span
+                class="play-btn"
+                aria-hidden="true"
               >
-                <path
-                  d="M8 5v14l11-7z"
-                />
-              </svg>
 
-            </span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M8 5v14l11-7z"
+                  />
+                </svg>
 
-          </article>
-        `;
-      })
+              </span>
+
+            </article>
+          `;
+        }
+      )
       .join("");
 
 
   addCourseEvents();
+
+
+  /*
+    O navegador precisa primeiro calcular
+    a largura dos novos cards.
+
+    Depois disso atualizamos as setas.
+  */
+
+  window.requestAnimationFrame(
+    () => {
+
+      resetCatalogPosition();
+
+      updateCatalogControls();
+    }
+  );
 }
 
 
@@ -701,49 +1253,34 @@ function addCourseEvents() {
 
       const openCourse = () => {
 
-        /*
-          A página já foi calculada
-          no renderCourses().
-        */
-
         const coursePage =
           String(
-            card.dataset.coursePage ||
+            card.dataset
+              .coursePage ||
             ""
-          ).trim();
+          )
+            .trim();
 
 
         if (!coursePage) {
 
           console.warn(
             "O curso não possui uma página configurada:",
-            card.dataset.courseId
+            card.dataset
+              .courseId
           );
+
 
           return;
         }
 
 
-        /*
-          Páginas individuais:
-
-          Excel:
-          excel.html
-
-          Word:
-          word.html
-
-          PowerPoint:
-          powerpoint.html
-
-          Power BI:
-          powerbi.html
-        */
-
         window.location.href =
           coursePage;
       };
 
+
+      /* CLIQUE */
 
       card.addEventListener(
         "click",
@@ -751,16 +1288,22 @@ function addCourseEvents() {
       );
 
 
+      /* TECLADO */
+
       card.addEventListener(
         "keydown",
         (event) => {
 
           if (
-            event.key === "Enter" ||
-            event.key === " "
+            event.key ===
+              "Enter" ||
+
+            event.key ===
+              " "
           ) {
 
             event.preventDefault();
+
 
             openCourse();
           }
@@ -784,18 +1327,25 @@ function searchCourses() {
 
 
   const query =
-    searchInput.value
+    searchInput
+      .value
       .trim()
       .toLocaleLowerCase(
         "pt-BR"
       );
 
 
+  /*
+    Campo vazio:
+    mostra todos novamente.
+  */
+
   if (!query) {
 
     renderCourses(
       allCourses
     );
+
 
     return;
   }
@@ -836,9 +1386,17 @@ function searchCourses() {
 
 
         return (
-          name.includes(query) ||
-          description.includes(query) ||
-          category.includes(query)
+          name.includes(
+            query
+          ) ||
+
+          description.includes(
+            query
+          ) ||
+
+          category.includes(
+            query
+          )
         );
       }
     );
@@ -874,7 +1432,9 @@ if (searchInput) {
     () => {
 
       if (
-        !searchInput.value.trim()
+        !searchInput
+          .value
+          .trim()
       ) {
 
         renderCourses(
@@ -891,7 +1451,8 @@ if (searchInput) {
     (event) => {
 
       if (
-        event.key === "Enter"
+        event.key ===
+          "Enter"
       ) {
 
         searchCourses();
@@ -907,70 +1468,92 @@ if (searchInput) {
 ========================================================= */
 
 document
-  .querySelectorAll(".tag")
-  .forEach((tag) => {
+  .querySelectorAll(
+    ".tag"
+  )
+  .forEach(
+    (tag) => {
 
-    tag.addEventListener(
-      "click",
-      () => {
+      tag.addEventListener(
+        "click",
+        () => {
 
-        if (!searchInput) {
-          return;
+          if (!searchInput) {
+            return;
+          }
+
+
+          searchInput.value =
+            tag.textContent
+              .trim();
+
+
+          searchCourses();
         }
+      );
 
-
-        searchInput.value =
-          tag.textContent.trim();
-
-
-        searchCourses();
-      }
-    );
-
-  });
+    }
+  );
 
 
 /* =========================================================
    ALTERAÇÃO DA AUTENTICAÇÃO
 ========================================================= */
 
-supabase.auth.onAuthStateChange(
-  (_event, session) => {
+supabase
+  .auth
+  .onAuthStateChange(
+    (
+      _event,
+      session
+    ) => {
 
-    const userArea =
-      document.getElementById(
-        "user-area"
-      );
+      const userArea =
+        document.getElementById(
+          "user-area"
+        );
 
 
-    if (!userArea) {
-      return;
+      if (!userArea) {
+        return;
+      }
+
+
+      if (session?.user) {
+
+        renderAuthenticatedArea(
+          userArea,
+          session.user
+        );
+
+
+      } else {
+
+        renderGuestArea(
+          userArea
+        );
+
+      }
+
     }
-
-
-    if (session?.user) {
-
-      renderAuthenticatedArea(
-        userArea,
-        session.user
-      );
-
-    } else {
-
-      renderGuestArea(
-        userArea
-      );
-
-    }
-
-  }
-);
+  );
 
 
 /* =========================================================
    INICIALIZAÇÃO
 ========================================================= */
 
+/*
+  Primeiro montamos a estrutura visual
+  do carrossel.
+
+  Depois carregamos usuário e catálogo.
+*/
+
+setupCatalogCarousel();
+
+
 loadUserSession();
+
 
 loadCatalog();
