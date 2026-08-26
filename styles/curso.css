@@ -27,6 +27,8 @@
 
   --container: 1500px;
 
+  --presentation-bg: #050807;
+
   font-family:
     "Inter",
     -apple-system,
@@ -65,6 +67,11 @@ body {
 
 
 body.sidebar-open {
+  overflow: hidden;
+}
+
+
+body.presentation-mode-active {
   overflow: hidden;
 }
 
@@ -518,7 +525,7 @@ svg {
 
 
 /* =========================================================
-   SIDEBARS OFF-CANVAS
+   SIDEBARS
 ========================================================= */
 
 .course-sidebar {
@@ -548,8 +555,6 @@ svg {
 }
 
 
-/* esquerda */
-
 .course-sidebar-left {
   left: 0;
 
@@ -561,8 +566,6 @@ svg {
 }
 
 
-/* direita */
-
 .course-sidebar-right {
   right: 0;
 
@@ -573,8 +576,6 @@ svg {
     1px solid var(--border);
 }
 
-
-/* aberta */
 
 .course-sidebar.is-open {
   transform:
@@ -626,7 +627,7 @@ svg {
 
 
 /* =========================================================
-   BOTÃO FECHAR SIDEBAR
+   FECHAR SIDEBAR
 ========================================================= */
 
 .sidebar-close {
@@ -668,7 +669,7 @@ svg {
 
 
 /* =========================================================
-   CONTEÚDO INTERNO SIDEBAR
+   CONTEÚDO SIDEBAR
 ========================================================= */
 
 .course-sidebar-content {
@@ -686,8 +687,6 @@ svg {
   overscroll-behavior: contain;
 }
 
-
-/* scrollbar */
 
 .course-sidebar-content::-webkit-scrollbar {
   width: 6px;
@@ -747,7 +746,7 @@ svg {
 
 
 /* =========================================================
-   LISTA DE AULAS
+   AULAS
 ========================================================= */
 
 .lesson-list {
@@ -802,18 +801,8 @@ svg {
   background:
     linear-gradient(
       90deg,
-      rgba(
-        223,
-        255,
-        0,
-        0.22
-      ),
-      rgba(
-        223,
-        255,
-        0,
-        0.05
-      )
+      rgba(223, 255, 0, 0.22),
+      rgba(223, 255, 0, 0.05)
     );
 
   color: var(--text);
@@ -838,7 +827,7 @@ svg {
 
 
 /* =========================================================
-   STATUS DA AULA
+   STATUS
 ========================================================= */
 
 .lesson-status {
@@ -900,10 +889,6 @@ svg {
   font-size: 10px;
 }
 
-
-/* =========================================================
-   BOTÃO DA AULA
-========================================================= */
 
 .lesson-play {
   display: grid;
@@ -1017,13 +1002,12 @@ svg {
   stroke-width: 6;
 
   transition:
-    stroke-dashoffset
-    0.3s ease;
+    stroke-dashoffset 0.3s ease;
 }
 
 
 /* =========================================================
-   SEÇÕES DA SIDEBAR DIREITA
+   SIDEBAR DIREITA
 ========================================================= */
 
 .sidebar-section {
@@ -1145,7 +1129,7 @@ svg {
 
 
 /* =========================================================
-   PÁGINA DO CURSO
+   PÁGINA
 ========================================================= */
 
 .course-page {
@@ -1155,10 +1139,6 @@ svg {
   background: #ffffff;
 }
 
-
-/* =========================================================
-   LAYOUT PRINCIPAL
-========================================================= */
 
 .course-layout {
   display: block;
@@ -1173,10 +1153,6 @@ svg {
   max-width: 980px;
 }
 
-
-/* =========================================================
-   PAINEL CENTRAL
-========================================================= */
 
 .panel {
   border:
@@ -1223,7 +1199,7 @@ svg {
 
 
 /* =========================================================
-   TÍTULO DA AULA
+   TÍTULO
 ========================================================= */
 
 .lesson-header h1 {
@@ -1325,6 +1301,8 @@ svg {
 
 
 .slide-stage {
+  position: relative;
+
   width: 100%;
 }
 
@@ -1374,8 +1352,7 @@ svg {
 
 
 /* =========================================================
-   ETAPA 3
-   ANIMAÇÃO DE TROCA DOS SLIDES
+   CROSSFADE
 ========================================================= */
 
 .slide-viewer {
@@ -1383,13 +1360,18 @@ svg {
 }
 
 
-.slide-viewer img {
+.slide-layer {
   display: block;
+
+  position: absolute;
+
+  inset: 0;
 
   width: 100%;
   height: 100%;
 
   object-fit: contain;
+
   object-position: center;
 
   background: #07110b;
@@ -1400,58 +1382,561 @@ svg {
     opacity,
     transform;
 
-  animation:
-    slide-enter
-    320ms
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    )
-    both;
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
 }
 
 
 /*
-  Sempre que o JavaScript coloca um novo
-  slide no viewer, a nova imagem entra
-  suavemente.
+  O crossfade agora é controlado pelo JavaScript.
 
-  A animação é propositalmente curta para
-  não deixar a navegação lenta.
+  Por isso removemos a animação antiga
+  aplicada automaticamente em cada <img>.
 */
 
-@keyframes slide-enter {
-
-  0% {
-    opacity: 0;
-
-    transform:
-      translateX(18px)
-      scale(0.985);
-
-    filter:
-      blur(1px);
-  }
+.slide-viewer img {
+  animation: none;
+}
 
 
-  55% {
-    opacity: 1;
-  }
+/* =========================================================
+   BOTÃO TELA CHEIA
+========================================================= */
+
+.presentation-toggle {
+  position: absolute;
+
+  z-index: 30;
+
+  top: 14px;
+  right: 14px;
+
+  display: inline-flex;
+
+  min-height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      8,
+      11,
+      9,
+      0.82
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  font-size: 12px;
+  font-weight: 800;
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
 
 
-  100% {
-    opacity: 1;
+.presentation-toggle:hover {
+  border-color:
+    rgba(
+      223,
+      255,
+      0,
+      0.6
+    );
 
-    transform:
-      translateX(0)
-      scale(1);
+  background:
+    rgba(
+      10,
+      15,
+      11,
+      0.94
+    );
+}
 
-    filter:
-      blur(0);
-  }
 
+.presentation-toggle:active {
+  transform:
+    scale(0.96);
+}
+
+
+/* =========================================================
+   CONTROLES DO MODO APRESENTAÇÃO
+========================================================= */
+
+.presentation-controls {
+  position: absolute;
+
+  z-index: 30;
+
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+
+  display: none;
+
+  grid-template-columns:
+    auto
+    minmax(70px, auto)
+    auto;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  pointer-events: none;
+}
+
+
+.presentation-controls.is-visible {
+  display: grid;
+}
+
+
+.presentation-nav-btn {
+  display: inline-flex;
+
+  min-width: 128px;
+  min-height: 48px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    10px 17px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  border-radius: 12px;
+
+  background:
+    rgba(
+      7,
+      9,
+      8,
+      0.82
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 24px
+    rgba(
+      0,
+      0,
+      0,
+      0.2
+    );
+
+  font-size: 13px;
+  font-weight: 800;
+
+  backdrop-filter:
+    blur(12px);
+
+  pointer-events: auto;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.presentation-nav-btn:not(:disabled):hover {
+  border-color:
+    rgba(
+      223,
+      255,
+      0,
+      0.7
+    );
+
+  background:
+    rgba(
+      15,
+      19,
+      14,
+      0.96
+    );
+}
+
+
+.presentation-nav-btn:not(:disabled):active {
+  transform:
+    scale(0.96);
+}
+
+
+.presentation-nav-btn:disabled {
+  opacity: 0.3;
+}
+
+
+.presentation-next {
+  border-color:
+    rgba(
+      223,
+      255,
+      0,
+      0.55
+    );
+
+  background:
+    rgba(
+      223,
+      255,
+      0,
+      0.92
+    );
+
+  color: #090b08;
+}
+
+
+.presentation-next:not(:disabled):hover {
+  background:
+    var(--accent);
+
+  color: #090b08;
+}
+
+
+.presentation-counter {
+  min-width: 76px;
+
+  padding:
+    9px 12px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+
+  border-radius: 999px;
+
+  background:
+    rgba(
+      7,
+      9,
+      8,
+      0.72
+    );
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-align: center;
+
+  backdrop-filter:
+    blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MODO APRESENTAÇÃO
+========================================================= */
+
+/*
+  Essas regras funcionam tanto para:
+  1. Fullscreen API nativa
+  2. fallback criado pelo JavaScript
+*/
+
+.slide-stage.is-presentation,
+.slide-stage.is-presentation-fallback {
+  background:
+    var(--presentation-bg);
+}
+
+
+/* =========================================================
+   FULLSCREEN NATIVO
+========================================================= */
+
+.slide-stage:fullscreen {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  max-width: none;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    64px
+    24px
+    86px;
+
+  background:
+    var(--presentation-bg);
+
+  overflow: hidden;
+}
+
+
+.slide-stage:-webkit-full-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  max-width: none;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    64px
+    24px
+    86px;
+
+  background:
+    var(--presentation-bg);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FALLBACK FULLSCREEN MOBILE
+========================================================= */
+
+.slide-stage.is-presentation-fallback {
+  position: fixed;
+
+  z-index: 99999;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100dvh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    max(
+      60px,
+      env(safe-area-inset-top)
+    )
+    max(
+      18px,
+      env(safe-area-inset-right)
+    )
+    max(
+      82px,
+      env(safe-area-inset-bottom)
+    )
+    max(
+      18px,
+      env(safe-area-inset-left)
+    );
+
+  background:
+    var(--presentation-bg);
+
+  overflow: hidden;
+
+  overscroll-behavior: none;
+}
+
+
+/* =========================================================
+   VIEWER NO FULLSCREEN
+========================================================= */
+
+.slide-stage:fullscreen .slide-viewer,
+.slide-stage:-webkit-full-screen .slide-viewer,
+.slide-stage.is-presentation-fallback .slide-viewer {
+  width: 100%;
+  height: 100%;
+
+  max-width:
+    min(
+      1600px,
+      calc(
+        (100vh - 150px)
+        * 16 / 9
+      )
+    );
+
+  max-height:
+    calc(
+      100vh - 150px
+    );
+
+  aspect-ratio: 16 / 9;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background:
+    var(--presentation-bg);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   IMAGENS NO FULLSCREEN
+========================================================= */
+
+.slide-stage:fullscreen .slide-layer,
+.slide-stage:-webkit-full-screen .slide-layer,
+.slide-stage.is-presentation-fallback .slide-layer {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background:
+    transparent;
+}
+
+
+/* =========================================================
+   BOTÃO SAIR
+========================================================= */
+
+.slide-stage.is-presentation
+.presentation-toggle,
+.slide-stage.is-presentation-fallback
+.presentation-toggle,
+.slide-stage:fullscreen
+.presentation-toggle,
+.slide-stage:-webkit-full-screen
+.presentation-toggle {
+  position: fixed;
+
+  z-index: 100;
+
+  top:
+    max(
+      16px,
+      env(safe-area-inset-top)
+    );
+
+  right:
+    max(
+      16px,
+      env(safe-area-inset-right)
+    );
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.72
+    );
+}
+
+
+/* =========================================================
+   CONTROLES NO FULLSCREEN
+========================================================= */
+
+.slide-stage.is-presentation
+.presentation-controls,
+.slide-stage.is-presentation-fallback
+.presentation-controls,
+.slide-stage:fullscreen
+.presentation-controls,
+.slide-stage:-webkit-full-screen
+.presentation-controls {
+  position: fixed;
+
+  z-index: 100;
+
+  right:
+    max(
+      20px,
+      env(safe-area-inset-right)
+    );
+
+  bottom:
+    max(
+      18px,
+      env(safe-area-inset-bottom)
+    );
+
+  left:
+    max(
+      20px,
+      env(safe-area-inset-left)
+    );
 }
 
 
@@ -1502,7 +1987,7 @@ svg {
 
 
 /* =========================================================
-   NAVEGAÇÃO DA AULA
+   NAVEGAÇÃO NORMAL
 ========================================================= */
 
 .lesson-navigation {
@@ -1672,6 +2157,23 @@ svg {
     padding: 20px;
   }
 
+
+  .presentation-toggle-label {
+    display: none;
+  }
+
+
+  .presentation-toggle {
+    width: 42px;
+    height: 42px;
+
+    min-height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
+  }
+
 }
 
 
@@ -1758,12 +2260,346 @@ svg {
     display: grid;
 
     grid-template-columns:
-      1fr 1fr;
+      1fr
+      1fr;
   }
 
 
   .nav-btn {
     min-width: 0;
+  }
+
+
+  .presentation-toggle {
+    top: 9px;
+    right: 9px;
+
+    width: 38px;
+    height: 38px;
+
+    min-height: 38px;
+  }
+
+
+  .presentation-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   FULLSCREEN — CELULAR VERTICAL
+========================================================= */
+
+@media
+  (max-width: 620px)
+  and
+  (orientation: portrait) {
+
+  .slide-stage:fullscreen,
+  .slide-stage:-webkit-full-screen,
+  .slide-stage.is-presentation-fallback {
+
+    padding:
+      max(
+        58px,
+        env(safe-area-inset-top)
+      )
+      10px
+      max(
+        90px,
+        env(safe-area-inset-bottom)
+      );
+
+  }
+
+
+  .slide-stage:fullscreen .slide-viewer,
+  .slide-stage:-webkit-full-screen .slide-viewer,
+  .slide-stage.is-presentation-fallback .slide-viewer {
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 100%;
+
+    max-height:
+      calc(
+        100dvh - 160px
+      );
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 8px;
+
+  }
+
+
+  .slide-stage.is-presentation
+  .presentation-controls,
+  .slide-stage.is-presentation-fallback
+  .presentation-controls,
+  .slide-stage:fullscreen
+  .presentation-controls,
+  .slide-stage:-webkit-full-screen
+  .presentation-controls {
+
+    grid-template-columns:
+      1fr
+      auto
+      1fr;
+
+    right: 10px;
+
+    bottom:
+      max(
+        14px,
+        env(safe-area-inset-bottom)
+      );
+
+    left: 10px;
+
+    gap: 7px;
+
+  }
+
+
+  .presentation-nav-btn {
+
+    min-width: 0;
+
+    min-height: 48px;
+
+    padding:
+      9px
+      12px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+  }
+
+
+  .presentation-counter {
+
+    min-width: 58px;
+
+    padding:
+      8px
+      8px;
+
+    font-size: 11px;
+
+  }
+
+}
+
+
+/* =========================================================
+   FULLSCREEN — CELULAR HORIZONTAL
+========================================================= */
+
+@media
+  (max-height: 620px)
+  and
+  (orientation: landscape) {
+
+  .slide-stage:fullscreen,
+  .slide-stage:-webkit-full-screen,
+  .slide-stage.is-presentation-fallback {
+
+    padding:
+      max(
+        10px,
+        env(safe-area-inset-top)
+      )
+      max(
+        72px,
+        env(safe-area-inset-right)
+      )
+      max(
+        10px,
+        env(safe-area-inset-bottom)
+      )
+      max(
+        72px,
+        env(safe-area-inset-left)
+      );
+
+  }
+
+
+  .slide-stage:fullscreen .slide-viewer,
+  .slide-stage:-webkit-full-screen .slide-viewer,
+  .slide-stage.is-presentation-fallback .slide-viewer {
+
+    width: auto;
+
+    height: 100%;
+
+    max-width:
+      calc(
+        100vw - 120px
+      );
+
+    max-height:
+      calc(
+        100dvh - 20px
+      );
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 6px;
+
+  }
+
+
+  /*
+    No horizontal os controles ficam nas
+    laterais para não tapar o slide.
+  */
+
+  .slide-stage.is-presentation
+  .presentation-controls,
+  .slide-stage.is-presentation-fallback
+  .presentation-controls,
+  .slide-stage:fullscreen
+  .presentation-controls,
+  .slide-stage:-webkit-full-screen
+  .presentation-controls {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: block;
+
+    pointer-events: none;
+
+  }
+
+
+  .presentation-prev {
+
+    position: absolute;
+
+    top: 50%;
+
+    left:
+      max(
+        8px,
+        env(safe-area-inset-left)
+      );
+
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+    min-height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    transform:
+      translateY(-50%);
+
+  }
+
+
+  .presentation-next {
+
+    position: absolute;
+
+    top: 50%;
+
+    right:
+      max(
+        8px,
+        env(safe-area-inset-right)
+      );
+
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+    min-height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    transform:
+      translateY(-50%);
+
+  }
+
+
+  .presentation-prev:active,
+  .presentation-next:active {
+
+    transform:
+      translateY(-50%)
+      scale(0.94);
+
+  }
+
+
+  .presentation-nav-text {
+
+    display: none;
+
+  }
+
+
+  .presentation-counter {
+
+    position: absolute;
+
+    bottom:
+      max(
+        8px,
+        env(safe-area-inset-bottom)
+      );
+
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+
+  }
+
+
+  .slide-stage.is-presentation
+  .presentation-toggle,
+  .slide-stage.is-presentation-fallback
+  .presentation-toggle,
+  .slide-stage:fullscreen
+  .presentation-toggle,
+  .slide-stage:-webkit-full-screen
+  .presentation-toggle {
+
+    top:
+      max(
+        8px,
+        env(safe-area-inset-top)
+      );
+
+    right:
+      max(
+        8px,
+        env(safe-area-inset-right)
+      );
+
+    width: 38px;
+    height: 38px;
+
+    min-height: 38px;
+
   }
 
 }
@@ -1855,11 +2691,50 @@ svg {
     padding: 20px 0;
   }
 
+
+  .presentation-nav-text {
+    font-size: 11px;
+  }
+
 }
 
 
 /* =========================================================
-   ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
+   SAFE AREA — IPHONE / CELULARES COM NOTCH
+========================================================= */
+
+@supports (
+  padding:
+  env(safe-area-inset-top)
+) {
+
+  .slide-stage.is-presentation-fallback {
+    min-height: 100dvh;
+  }
+
+}
+
+
+/* =========================================================
+   FULLSCREEN API
+========================================================= */
+
+.slide-stage:fullscreen {
+  border: 0;
+
+  outline: none;
+}
+
+
+.slide-stage:-webkit-full-screen {
+  border: 0;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1874,22 +2749,17 @@ svg {
   .course-sidebar,
   .sidebar-overlay,
   .nav-btn,
-  .sidebar-trigger {
+  .sidebar-trigger,
+  .presentation-toggle,
+  .presentation-nav-btn {
     transition: none;
   }
 
 
-  /*
-    Desativa a animação dos slides para
-    usuários que preferem movimento reduzido.
-  */
-
-  .slide-viewer img {
-    animation: none !important;
+  .slide-layer {
+    transition: none !important;
 
     transform: none !important;
-
-    filter: none !important;
   }
 
 }
