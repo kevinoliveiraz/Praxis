@@ -245,6 +245,10 @@ img {
 }
 
 .logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   min-height: 38px;
 
   margin-left: 2px;
@@ -252,6 +256,7 @@ img {
   padding: 8px 14px;
 
   font-size: 13px;
+  line-height: 1;
 }
 
 
@@ -603,22 +608,12 @@ img {
 
 /* =========================================================
    TRILHO DO CARROSSEL
-
-   DESKTOP:
-   5 cards visíveis.
 ========================================================= */
 
 .catalog-grid {
   display: grid;
 
   grid-auto-flow: column;
-
-  /*
-    5 cards visíveis.
-
-    Existem 4 espaços entre os 5 cards.
-    18px x 4 = 72px.
-  */
 
   grid-auto-columns:
     calc((100% - 72px) / 5);
@@ -659,8 +654,6 @@ img {
 
 /* =========================================================
    CARD DO CURSO
-   ETAPA 2:
-   card menor por haver 5 colunas
 ========================================================= */
 
 .course-card {
@@ -974,8 +967,6 @@ img {
 
 /* =========================================================
    NOTEBOOK / DESKTOP MENOR
-
-   4 cards visíveis.
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -1000,16 +991,10 @@ img {
     gap: 40px;
   }
 
-
   .features {
     grid-template-columns:
       1fr 1fr;
   }
-
-
-  /*
-    3 cards visíveis.
-  */
 
   .catalog-grid {
     grid-auto-columns:
@@ -1024,10 +1009,6 @@ img {
 ========================================================= */
 
 @media (max-width: 760px) {
-
-  /*
-    2 cards visíveis.
-  */
 
   .catalog-grid {
     grid-auto-columns:
@@ -1058,33 +1039,37 @@ img {
       14px 0;
   }
 
-
   .header-container {
     gap: 12px;
   }
-
 
   .logo-image {
     height: 38px;
   }
 
-
   .header-actions {
     gap: 8px;
+
+    align-items: center;
   }
 
+  #user-area {
+    align-items: center;
+  }
+
+  .user-info {
+    align-items: center;
+  }
 
   .user-email {
     display: none;
   }
-
 
   .user-avatar,
   .user-avatar-placeholder {
     width: 34px;
     height: 34px;
   }
-
 
   .btn {
     min-height: 40px;
@@ -1095,16 +1080,29 @@ img {
     font-size: 13px;
   }
 
+  /*
+    CORREÇÃO DO BOTÃO SAIR NO CELULAR
+  */
 
   .logout-btn {
     display: inline-flex;
 
+    align-items: center;
+    justify-content: center;
+
     min-height: 40px;
 
-    margin-left: 0;
+    margin: 0;
 
     padding:
       9px 13px;
+
+    font-size: 13px;
+    line-height: 1;
+
+    vertical-align: middle;
+
+    transform: none;
   }
 
 
@@ -1114,7 +1112,6 @@ img {
     padding:
       30px 0 65px;
   }
-
 
   .hero h1 {
     font-size:
@@ -1133,7 +1130,6 @@ img {
       36px 0 50px;
   }
 
-
   .catalog-head {
     align-items: flex-start;
 
@@ -1144,11 +1140,9 @@ img {
     margin-bottom: 12px;
   }
 
-
   .catalog-carousel-controls {
     margin-bottom: 8px;
   }
-
 
   .catalog-carousel-btn {
     width: 36px;
@@ -1172,23 +1166,33 @@ img {
     max-width: 110px;
   }
 
-
   .header-container {
+    align-items: center;
+
     gap: 8px;
   }
 
-
   .header-actions {
+    align-items: center;
+
     flex-shrink: 0;
 
     gap: 6px;
   }
 
+  #user-area {
+    display: flex;
 
-  .user-info {
-    gap: 6px;
+    align-items: center;
   }
 
+  .user-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+  }
 
   .user-avatar,
   .user-avatar-placeholder {
@@ -1200,28 +1204,48 @@ img {
     flex-shrink: 0;
   }
 
-
   .user-avatar {
     display: block;
 
     object-fit: cover;
   }
 
-
   .user-email {
     display: none;
   }
 
 
+  /*
+    BOTÃO SAIR
+    CENTRALIZADO NO CELULAR
+  */
+
   .logout-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: auto;
     min-height: 36px;
+
+    margin: 0;
 
     padding:
       7px 10px;
 
-    font-size: 12px;
-  }
+    border-radius: 10px;
 
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+
+    transform: translateY(0);
+  }
 
   .btn-primary {
     min-width: 38px;
@@ -1231,7 +1255,6 @@ img {
     padding:
       8px 10px;
   }
-
 
   .subscribe-text {
     display: none;
@@ -1244,16 +1267,13 @@ img {
     font-size: 18px;
   }
 
-
   .search-box {
     padding-left: 46px;
   }
 
-
   .search-box .search-ico {
     left: 17px;
   }
-
 
   .search-box input {
     padding-right: 6px;
@@ -1261,7 +1281,6 @@ img {
 
     font-size: 14px;
   }
-
 
   .search-box .search-btn {
     width: 44px;
@@ -1279,11 +1298,6 @@ img {
   /* CARROSSEL */
 
   .catalog-grid {
-    /*
-      No celular continuam aparecendo
-      dois cards, mas menores.
-    */
-
     grid-auto-columns:
       calc((100% - 12px) / 2);
 
@@ -1293,17 +1307,14 @@ img {
       6px 2px 16px;
   }
 
-
   .course-card {
     border-radius: 13px;
   }
-
 
   .course-card .body {
     padding:
       55px 10px 10px;
   }
-
 
   .category-chip {
     margin-bottom: 7px;
@@ -1314,13 +1325,11 @@ img {
     font-size: 8px;
   }
 
-
   .course-card h3 {
     margin-bottom: 5px;
 
     font-size: 13px;
   }
-
 
   .course-card p {
     font-size: 9px;
@@ -1330,7 +1339,6 @@ img {
     -webkit-line-clamp: 2;
   }
 
-
   .play-btn {
     top: 9px;
     right: 9px;
@@ -1338,7 +1346,6 @@ img {
     width: 32px;
     height: 32px;
   }
-
 
   .play-btn svg {
     width: 13px;
@@ -1350,8 +1357,6 @@ img {
 
 /* =========================================================
    CELULAR MUITO PEQUENO
-
-   1 card inteiro + parte do próximo.
 ========================================================= */
 
 @media (max-width: 390px) {
@@ -1362,14 +1367,37 @@ img {
     gap: 12px;
   }
 
-
   .course-card h3 {
     font-size: 16px;
   }
 
-
   .course-card p {
     font-size: 11px;
+  }
+
+
+  /*
+    Mantém o botão Sair perfeitamente
+    centralizado em celulares estreitos.
+  */
+
+  .logout-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    margin: 0;
+
+    padding:
+      6px 9px;
+
+    font-size: 11px;
+    line-height: 1;
+
+    transform: none;
   }
 
 }
