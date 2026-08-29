@@ -210,7 +210,7 @@ googleBtn.addEventListener('click', async () => {
     } else {
       // GitHub Pages / produção
       redirectUrl =
-        'https://kevinoliveiraz.github.io/skill-up/login.html';
+        'https://kevinoliveiraz.github.io/praxis/login.html';
     }
 
     console.log(
