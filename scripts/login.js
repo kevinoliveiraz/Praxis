@@ -210,7 +210,7 @@ googleBtn.addEventListener('click', async () => {
     } else {
       // GitHub Pages / produção
       redirectUrl =
-        'https://kevinoliveiraz.github.io/praxis/login.html';
+        'https://kevinoliveiraz.github.io/Praxis/login.html';
     }
 
     console.log(
