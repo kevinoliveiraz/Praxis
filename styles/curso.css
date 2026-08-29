@@ -44,70 +44,54 @@
 
 * {
   box-sizing: border-box;
-
   margin: 0;
   padding: 0;
 }
-
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
   min-height: 100vh;
-
   overflow-x: hidden;
 
   background: #ffffff;
-
   color: var(--text);
 }
-
 
 body.sidebar-open {
   overflow: hidden;
 }
 
-
 body.presentation-mode-active {
   overflow: hidden;
 }
-
 
 button,
 input {
   font: inherit;
 }
 
-
 button {
   border: 0;
-
   cursor: pointer;
 }
-
 
 button:disabled {
   cursor: default;
 }
 
-
 a {
   color: inherit;
-
   text-decoration: none;
 }
-
 
 img,
 svg {
   display: block;
-
   max-width: 100%;
 }
-
 
 [hidden] {
   display: none !important;
@@ -119,11 +103,10 @@ svg {
 ========================================================= */
 
 .container {
-  width:
-    min(
-      calc(100% - 48px),
-      var(--container)
-    );
+  width: min(
+    calc(100% - 48px),
+    var(--container)
+  );
 
   margin-inline: auto;
 }
@@ -135,18 +118,15 @@ svg {
 
 .site-header {
   position: relative;
-
   z-index: 100;
 
   background: #050609;
-
   color: #ffffff;
 
   box-shadow:
     0 1px 0
     rgba(255, 255, 255, 0.06);
 }
-
 
 .header-inner {
   display: flex;
@@ -159,13 +139,10 @@ svg {
   gap: 24px;
 }
 
-
 .logo {
   display: inline-flex;
-
   align-items: center;
 }
-
 
 .logo img {
   width: auto;
@@ -174,19 +151,15 @@ svg {
   object-fit: contain;
 }
 
-
 .header-actions {
   display: flex;
-
   align-items: center;
 
   gap: 10px;
 }
 
-
 #user-area {
   display: flex;
-
   align-items: center;
 }
 
@@ -219,21 +192,16 @@ svg {
     transform 0.2s ease;
 }
 
-
 .btn:active {
   transform: scale(0.98);
 }
 
-
 .btn-ghost {
-  border:
-    1px solid #2c3038;
+  border: 1px solid #2c3038;
 
   background: transparent;
-
   color: #ffffff;
 }
-
 
 .btn-ghost:hover {
   border-color: #4b515d;
@@ -247,10 +215,8 @@ svg {
     );
 }
 
-
 .btn-primary {
   background: var(--accent);
-
   color: #080a0c;
 }
 
@@ -261,12 +227,10 @@ svg {
 
 .user-info {
   display: flex;
-
   align-items: center;
 
   gap: 10px;
 }
-
 
 .user-avatar,
 .user-avatar-placeholder {
@@ -281,23 +245,18 @@ svg {
 
   overflow: hidden;
 
-  border:
-    1px solid #2d323b;
-
+  border: 1px solid #2d323b;
   border-radius: 50%;
 
   background: #12151b;
-
   color: var(--accent);
 
   font-weight: 800;
 }
 
-
 .user-avatar {
   object-fit: cover;
 }
-
 
 .user-email {
   max-width: 170px;
@@ -307,7 +266,6 @@ svg {
   font-size: 13px;
 
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
 
@@ -319,7 +277,6 @@ svg {
 .breadcrumb-area {
   background: #ffffff;
 }
-
 
 .breadcrumb {
   display: flex;
@@ -335,16 +292,13 @@ svg {
   font-size: 14px;
 }
 
-
 .breadcrumb a {
   transition: color 0.2s ease;
 }
 
-
 .breadcrumb a:hover {
   color: var(--text);
 }
-
 
 .breadcrumb strong {
   overflow: hidden;
@@ -352,13 +306,12 @@ svg {
   color: var(--text);
 
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
 
 
 /* =========================================================
-   TOOLBAR DO CURSO
+   TOOLBAR
 ========================================================= */
 
 .course-toolbar {
@@ -370,11 +323,8 @@ svg {
 
   width: 100%;
 
-  border-top:
-    1px solid #eceef0;
-
-  border-bottom:
-    1px solid #eceef0;
+  border-top: 1px solid #eceef0;
+  border-bottom: 1px solid #eceef0;
 
   background:
     rgba(
@@ -386,7 +336,6 @@ svg {
 
   backdrop-filter: blur(14px);
 }
-
 
 .course-toolbar-inner {
   display: grid;
@@ -403,7 +352,6 @@ svg {
   gap: 16px;
 }
 
-
 .course-toolbar-title {
   display: flex;
 
@@ -419,15 +367,12 @@ svg {
   font-size: 13px;
 }
 
-
 .course-toolbar-title strong {
   overflow: hidden;
 
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
-
 
 .course-toolbar-label {
   color: var(--accent-dark);
@@ -440,7 +385,7 @@ svg {
 
 
 /* =========================================================
-   BOTÕES DAS SIDEBARS
+   BOTÕES SIDEBAR
 ========================================================= */
 
 .sidebar-trigger {
@@ -455,13 +400,10 @@ svg {
 
   padding: 8px 13px;
 
-  border:
-    1px solid #dfe2e6;
-
+  border: 1px solid #dfe2e6;
   border-radius: 10px;
 
   background: #ffffff;
-
   color: #181b20;
 
   font-size: 12px;
@@ -473,13 +415,10 @@ svg {
     transform 0.2s ease;
 }
 
-
 .sidebar-trigger:hover {
   border-color: #c9cdd2;
-
   background: #f7f8f9;
 }
-
 
 .sidebar-trigger:active {
   transform: scale(0.97);
@@ -487,7 +426,7 @@ svg {
 
 
 /* =========================================================
-   OVERLAY DAS SIDEBARS
+   OVERLAY
 ========================================================= */
 
 .sidebar-overlay {
@@ -516,10 +455,8 @@ svg {
     visibility 0.25s ease;
 }
 
-
 .sidebar-overlay.is-visible {
   visibility: visible;
-
   opacity: 1;
 }
 
@@ -536,11 +473,10 @@ svg {
   top: 0;
   bottom: 0;
 
-  width:
-    min(
-      390px,
-      calc(100vw - 24px)
-    );
+  width: min(
+    390px,
+    calc(100vw - 24px)
+  );
 
   overflow: hidden;
 
@@ -550,41 +486,32 @@ svg {
     0 20px 70px
     rgba(0, 0, 0, 0.24);
 
-  transition:
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-
 
 .course-sidebar-left {
   left: 0;
 
-  transform:
-    translateX(-105%);
+  transform: translateX(-105%);
 
-  border-right:
-    1px solid var(--border);
+  border-right: 1px solid var(--border);
 }
-
 
 .course-sidebar-right {
   right: 0;
 
-  transform:
-    translateX(105%);
+  transform: translateX(105%);
 
-  border-left:
-    1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
-
 .course-sidebar.is-open {
-  transform:
-    translateX(0);
+  transform: translateX(0);
 }
 
 
 /* =========================================================
-   HEADER DA SIDEBAR
+   HEADER SIDEBAR
 ========================================================= */
 
 .course-sidebar-header {
@@ -599,12 +526,10 @@ svg {
 
   padding: 18px 20px;
 
-  border-bottom:
-    1px solid #eceef0;
+  border-bottom: 1px solid #eceef0;
 
   background: #ffffff;
 }
-
 
 .course-sidebar-header h2 {
   margin-top: 3px;
@@ -615,7 +540,6 @@ svg {
   line-height: 1.2;
 }
 
-
 .sidebar-eyebrow {
   color: var(--accent-dark);
 
@@ -624,11 +548,6 @@ svg {
 
   letter-spacing: 0.9px;
 }
-
-
-/* =========================================================
-   FECHAR SIDEBAR
-========================================================= */
 
 .sidebar-close {
   display: grid;
@@ -640,13 +559,10 @@ svg {
 
   place-items: center;
 
-  border:
-    1px solid #e1e4e8;
-
+  border: 1px solid #e1e4e8;
   border-radius: 50%;
 
   background: #ffffff;
-
   color: #22272e;
 
   transition:
@@ -655,13 +571,11 @@ svg {
     transform 0.2s ease;
 }
 
-
 .sidebar-close:hover {
   border-color: #cfd3d8;
 
   background: #f5f6f7;
 }
-
 
 .sidebar-close:active {
   transform: scale(0.95);
@@ -673,34 +587,26 @@ svg {
 ========================================================= */
 
 .course-sidebar-content {
-  height:
-    calc(
-      100% - 82px
-    );
+  height: calc(100% - 82px);
 
   overflow-y: auto;
   overflow-x: hidden;
 
-  padding:
-    8px 0 24px;
+  padding: 8px 0 24px;
 
   overscroll-behavior: contain;
 }
-
 
 .course-sidebar-content::-webkit-scrollbar {
   width: 6px;
 }
 
-
 .course-sidebar-content::-webkit-scrollbar-track {
   background: transparent;
 }
 
-
 .course-sidebar-content::-webkit-scrollbar-thumb {
   border-radius: 999px;
-
   background: #d6d9dd;
 }
 
@@ -710,18 +616,14 @@ svg {
 ========================================================= */
 
 .module-block {
-  padding:
-    18px 20px;
+  padding: 18px 20px;
 
-  border-top:
-    1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
-
 
 .module-block:first-child {
   border-top: 0;
 }
-
 
 .module-label {
   margin-bottom: 6px;
@@ -733,7 +635,6 @@ svg {
 
   letter-spacing: 0.7px;
 }
-
 
 .module-title {
   margin-bottom: 14px;
@@ -756,7 +657,6 @@ svg {
 
   list-style: none;
 }
-
 
 .lesson {
   position: relative;
@@ -791,11 +691,9 @@ svg {
     color 0.15s ease;
 }
 
-
 .lesson:hover {
   background: #f7f8f3;
 }
-
 
 .lesson.active {
   background:
@@ -807,7 +705,6 @@ svg {
 
   color: var(--text);
 }
-
 
 .lesson.active::before {
   position: absolute;
@@ -825,11 +722,6 @@ svg {
   content: "";
 }
 
-
-/* =========================================================
-   STATUS
-========================================================= */
-
 .lesson-status {
   display: grid;
 
@@ -838,39 +730,26 @@ svg {
 
   place-items: center;
 
-  border:
-    1px solid #bbbfc6;
-
+  border: 1px solid #bbbfc6;
   border-radius: 50%;
 }
 
-
 .lesson.done .lesson-status,
 .lesson.active .lesson-status {
-  border-color:
-    var(--accent-dark);
+  border-color: var(--accent-dark);
 
-  color:
-    var(--accent-dark);
+  color: var(--accent-dark);
 }
-
 
 .lesson.active .lesson-status {
   background: var(--accent);
-
   color: #101208;
 }
-
-
-/* =========================================================
-   DADOS DA AULA
-========================================================= */
 
 .lesson-num {
   font-size: 11px;
   font-weight: 600;
 }
-
 
 .lesson-name {
   min-width: 0;
@@ -878,17 +757,14 @@ svg {
   overflow: hidden;
 
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
-
 
 .lesson-duration {
   color: #747983;
 
   font-size: 10px;
 }
-
 
 .lesson-play {
   display: grid;
@@ -898,20 +774,15 @@ svg {
 
   place-items: center;
 
-  border:
-    1px solid #d7dadd;
-
+  border: 1px solid #d7dadd;
   border-radius: 50%;
 
   background: #ffffff;
-
   color: #30343b;
 }
 
-
 .lesson.active .lesson-play {
   border-color: var(--accent);
-
   background: var(--accent);
 }
 
@@ -921,10 +792,7 @@ svg {
 ========================================================= */
 
 .progress-card {
-  margin:
-    10px
-    20px
-    20px;
+  margin: 10px 20px 20px;
 
   padding: 18px;
 
@@ -932,7 +800,6 @@ svg {
 
   background: #f8f9f9;
 }
-
 
 .progress-grid {
   display: grid;
@@ -946,7 +813,6 @@ svg {
   gap: 10px;
 }
 
-
 .progress-small {
   margin-bottom: 8px;
 
@@ -955,14 +821,12 @@ svg {
   font-size: 11px;
 }
 
-
 .progress-value {
   font-size: 30px;
   font-weight: 900;
 
   line-height: 1;
 }
-
 
 .progress-count {
   margin-top: 8px;
@@ -973,56 +837,44 @@ svg {
   font-weight: 800;
 }
 
-
 .progress-ring {
   width: 70px;
   height: 70px;
 
-  transform:
-    rotate(-90deg);
+  transform: rotate(-90deg);
 }
-
 
 .progress-ring-bg {
   fill: none;
 
   stroke: #e6e7e8;
-
   stroke-width: 6;
 }
-
 
 .progress-ring-value {
   fill: none;
 
   stroke: var(--accent-dark);
-
   stroke-linecap: round;
-
   stroke-width: 6;
 
-  transition:
-    stroke-dashoffset 0.3s ease;
+  transition: stroke-dashoffset 0.3s ease;
 }
 
 
 /* =========================================================
-   SIDEBAR DIREITA
+   DOWNLOADS
 ========================================================= */
 
 .sidebar-section {
-  padding:
-    22px 20px;
+  padding: 22px 20px;
 
-  border-bottom:
-    1px solid #eceef0;
+  border-bottom: 1px solid #eceef0;
 }
-
 
 .sidebar-section:last-child {
   border-bottom: 0;
 }
-
 
 .sidebar-section h3 {
   margin-bottom: 14px;
@@ -1031,16 +883,10 @@ svg {
   font-weight: 800;
 }
 
-
-/* =========================================================
-   DOWNLOADS
-========================================================= */
-
 .download-list,
 .useful-list {
   list-style: none;
 }
-
 
 .download-item,
 .useful-item {
@@ -1057,16 +903,13 @@ svg {
 
   padding: 15px 0;
 
-  border-top:
-    1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
 }
-
 
 .download-item:first-child,
 .useful-item:first-child {
   border-top: 0;
 }
-
 
 .file-icon {
   display: grid;
@@ -1081,7 +924,6 @@ svg {
   background: #f6f6f6;
 }
 
-
 .file-name {
   overflow: hidden;
 
@@ -1091,10 +933,8 @@ svg {
   font-weight: 700;
 
   text-overflow: ellipsis;
-
   white-space: nowrap;
 }
-
 
 .file-meta {
   margin-top: 4px;
@@ -1103,7 +943,6 @@ svg {
 
   font-size: 10px;
 }
-
 
 .download-action {
   display: grid;
@@ -1115,7 +954,6 @@ svg {
 
   color: #333840;
 }
-
 
 .empty-side {
   padding: 12px 0;
@@ -1133,12 +971,10 @@ svg {
 ========================================================= */
 
 .course-page {
-  padding:
-    28px 0 40px;
+  padding: 28px 0 40px;
 
   background: #ffffff;
 }
-
 
 .course-layout {
   display: block;
@@ -1148,23 +984,16 @@ svg {
   margin-inline: auto;
 }
 
-
 .course-layout-focus {
   max-width: 980px;
 }
 
-
 .panel {
-  border:
-    1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 
-  border-radius:
-    var(--radius-lg);
-
-  background:
-    var(--surface);
+  background: var(--surface);
 }
-
 
 .lesson-main {
   width: 100%;
@@ -1192,7 +1021,6 @@ svg {
   font-weight: 600;
 }
 
-
 .back-course:hover {
   color: #000000;
 }
@@ -1218,10 +1046,8 @@ svg {
 
   line-height: 1.06;
 
-  letter-spacing:
-    -1.2px;
+  letter-spacing: -1.2px;
 }
-
 
 .lesson-header p {
   max-width: 650px;
@@ -1252,7 +1078,6 @@ svg {
   margin: 30px 0;
 }
 
-
 .progress-track {
   height: 8px;
 
@@ -1262,7 +1087,6 @@ svg {
 
   background: #e7e8e9;
 }
-
 
 .progress-fill {
   width: 0;
@@ -1277,10 +1101,8 @@ svg {
       var(--accent)
     );
 
-  transition:
-    width 0.3s ease;
+  transition: width 0.3s ease;
 }
-
 
 .lesson-progress-label {
   color: #444a53;
@@ -1299,13 +1121,11 @@ svg {
   min-height: 0;
 }
 
-
 .slide-stage {
   position: relative;
 
   width: 100%;
 }
-
 
 .slide-placeholder,
 .slide-viewer {
@@ -1317,9 +1137,7 @@ svg {
 
   aspect-ratio: 16 / 9;
 
-  border:
-    1px solid #dfe3e1;
-
+  border: 1px solid #dfe3e1;
   border-radius: 20px;
 
   background: #07110b;
@@ -1342,7 +1160,6 @@ svg {
     );
 }
 
-
 .slide-placeholder-svg {
   display: block;
 
@@ -1359,11 +1176,10 @@ svg {
   isolation: isolate;
 }
 
-
 .slide-layer {
-  display: block;
-
   position: absolute;
+
+  display: block;
 
   inset: 0;
 
@@ -1371,7 +1187,6 @@ svg {
   height: 100%;
 
   object-fit: contain;
-
   object-position: center;
 
   background: #07110b;
@@ -1386,14 +1201,6 @@ svg {
 
   -webkit-backface-visibility: hidden;
 }
-
-
-/*
-  O crossfade agora é controlado pelo JavaScript.
-
-  Por isso removemos a animação antiga
-  aplicada automaticamente em cada <img>.
-*/
 
 .slide-viewer img {
   animation: none;
@@ -1421,8 +1228,7 @@ svg {
 
   gap: 8px;
 
-  padding:
-    9px 13px;
+  padding: 9px 13px;
 
   border:
     1px solid
@@ -1457,8 +1263,7 @@ svg {
   font-size: 12px;
   font-weight: 800;
 
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter: blur(10px);
 
   transition:
     background 0.2s ease,
@@ -1466,7 +1271,6 @@ svg {
     transform 0.2s ease,
     opacity 0.2s ease;
 }
-
 
 .presentation-toggle:hover {
   border-color:
@@ -1486,15 +1290,13 @@ svg {
     );
 }
 
-
 .presentation-toggle:active {
-  transform:
-    scale(0.96);
+  transform: scale(0.96);
 }
 
 
 /* =========================================================
-   CONTROLES DO MODO APRESENTAÇÃO
+   CONTROLES APRESENTAÇÃO
 ========================================================= */
 
 .presentation-controls {
@@ -1521,11 +1323,9 @@ svg {
   pointer-events: none;
 }
 
-
 .presentation-controls.is-visible {
   display: grid;
 }
-
 
 .presentation-nav-btn {
   display: inline-flex;
@@ -1538,8 +1338,7 @@ svg {
 
   gap: 9px;
 
-  padding:
-    10px 17px;
+  padding: 10px 17px;
 
   border:
     1px solid
@@ -1574,8 +1373,7 @@ svg {
   font-size: 13px;
   font-weight: 800;
 
-  backdrop-filter:
-    blur(12px);
+  backdrop-filter: blur(12px);
 
   pointer-events: auto;
 
@@ -1585,7 +1383,6 @@ svg {
     opacity 0.2s ease,
     transform 0.2s ease;
 }
-
 
 .presentation-nav-btn:not(:disabled):hover {
   border-color:
@@ -1605,17 +1402,13 @@ svg {
     );
 }
 
-
 .presentation-nav-btn:not(:disabled):active {
-  transform:
-    scale(0.96);
+  transform: scale(0.96);
 }
-
 
 .presentation-nav-btn:disabled {
   opacity: 0.3;
 }
-
 
 .presentation-next {
   border-color:
@@ -1637,20 +1430,15 @@ svg {
   color: #090b08;
 }
 
-
 .presentation-next:not(:disabled):hover {
-  background:
-    var(--accent);
-
+  background: var(--accent);
   color: #090b08;
 }
-
 
 .presentation-counter {
   min-width: 76px;
 
-  padding:
-    9px 12px;
+  padding: 9px 12px;
 
   border:
     1px solid
@@ -1684,27 +1472,19 @@ svg {
 
   text-align: center;
 
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter: blur(10px);
 
   pointer-events: none;
 }
 
 
 /* =========================================================
-   MODO APRESENTAÇÃO
+   APRESENTAÇÃO
 ========================================================= */
-
-/*
-  Essas regras funcionam tanto para:
-  1. Fullscreen API nativa
-  2. fallback criado pelo JavaScript
-*/
 
 .slide-stage.is-presentation,
 .slide-stage.is-presentation-fallback {
-  background:
-    var(--presentation-bg);
+  background: var(--presentation-bg);
 }
 
 
@@ -1715,12 +1495,12 @@ svg {
 .slide-stage:fullscreen {
   position: relative;
 
+  display: flex;
+
   width: 100vw;
   height: 100vh;
 
   max-width: none;
-
-  display: flex;
 
   align-items: center;
   justify-content: center;
@@ -1730,22 +1510,20 @@ svg {
     24px
     86px;
 
-  background:
-    var(--presentation-bg);
-
   overflow: hidden;
-}
 
+  background: var(--presentation-bg);
+}
 
 .slide-stage:-webkit-full-screen {
   position: relative;
 
+  display: flex;
+
   width: 100vw;
   height: 100vh;
 
   max-width: none;
-
-  display: flex;
 
   align-items: center;
   justify-content: center;
@@ -1755,15 +1533,14 @@ svg {
     24px
     86px;
 
-  background:
-    var(--presentation-bg);
-
   overflow: hidden;
+
+  background: var(--presentation-bg);
 }
 
 
 /* =========================================================
-   FALLBACK FULLSCREEN MOBILE
+   FALLBACK FULLSCREEN
 ========================================================= */
 
 .slide-stage.is-presentation-fallback {
@@ -1773,10 +1550,10 @@ svg {
 
   inset: 0;
 
+  display: flex;
+
   width: 100vw;
   height: 100dvh;
-
-  display: flex;
 
   align-items: center;
   justify-content: center;
@@ -1799,17 +1576,16 @@ svg {
       env(safe-area-inset-left)
     );
 
-  background:
-    var(--presentation-bg);
-
   overflow: hidden;
+
+  background: var(--presentation-bg);
 
   overscroll-behavior: none;
 }
 
 
 /* =========================================================
-   VIEWER NO FULLSCREEN
+   VIEWER FULLSCREEN
 ========================================================= */
 
 .slide-stage:fullscreen .slide-viewer,
@@ -1827,29 +1603,19 @@ svg {
       )
     );
 
-  max-height:
-    calc(
-      100vh - 150px
-    );
+  max-height: calc(100vh - 150px);
 
   aspect-ratio: 16 / 9;
 
   flex-shrink: 0;
 
   border: 0;
-
   border-radius: 12px;
 
-  background:
-    var(--presentation-bg);
+  background: var(--presentation-bg);
 
   box-shadow: none;
 }
-
-
-/* =========================================================
-   IMAGENS NO FULLSCREEN
-========================================================= */
 
 .slide-stage:fullscreen .slide-layer,
 .slide-stage:-webkit-full-screen .slide-layer,
@@ -1858,16 +1624,14 @@ svg {
   height: 100%;
 
   object-fit: contain;
-
   object-position: center;
 
-  background:
-    transparent;
+  background: transparent;
 }
 
 
 /* =========================================================
-   BOTÃO SAIR
+   BOTÃO SAIR — DESKTOP
 ========================================================= */
 
 .slide-stage.is-presentation
@@ -1905,7 +1669,7 @@ svg {
 
 
 /* =========================================================
-   CONTROLES NO FULLSCREEN
+   CONTROLES FULLSCREEN
 ========================================================= */
 
 .slide-stage.is-presentation
@@ -1941,20 +1705,18 @@ svg {
 
 
 /* =========================================================
-   CONTEÚDO COMPLEMENTAR
+   CONTEÚDO
 ========================================================= */
 
 .lesson-text {
   padding-top: 22px;
 }
 
-
 .lesson-text h2 {
   margin-bottom: 10px;
 
   font-size: 23px;
 }
-
 
 .lesson-text p {
   color: #5e646d;
@@ -1963,7 +1725,6 @@ svg {
 
   line-height: 1.7;
 }
-
 
 .material-link {
   display: inline-flex;
@@ -1976,9 +1737,7 @@ svg {
 
   padding: 10px 14px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 9px;
 
   font-size: 12px;
@@ -2001,7 +1760,6 @@ svg {
   margin-top: 26px;
 }
 
-
 .nav-btn {
   display: inline-flex;
 
@@ -2015,13 +1773,10 @@ svg {
 
   padding: 10px 18px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 10px;
 
   background: #ffffff;
-
   color: var(--text);
 
   font-weight: 700;
@@ -2033,35 +1788,27 @@ svg {
     transform 0.2s ease;
 }
 
-
 .nav-btn:not(:disabled):hover {
   border-color: #cbd0d6;
 
   background: #fafafa;
 }
 
-
 .nav-btn:not(:disabled):active {
   transform: scale(0.98);
 }
 
-
 .nav-btn.primary {
-  border-color:
-    var(--accent);
+  border-color: var(--accent);
 
-  background:
-    var(--accent);
+  background: var(--accent);
 }
 
-
 .nav-btn.primary:not(:disabled):hover {
-  border-color:
-    var(--accent-dark);
+  border-color: var(--accent-dark);
 
   background: #d8f500;
 }
-
 
 .nav-btn:disabled {
   opacity: 0.35;
@@ -2078,7 +1825,6 @@ svg {
   color: #ffffff;
 }
 
-
 .footer-inner {
   display: flex;
 
@@ -2093,7 +1839,6 @@ svg {
 
   font-size: 11px;
 }
-
 
 .footer-inner a:hover {
   color: #ffffff;
@@ -2110,11 +1855,9 @@ svg {
     max-width: 100%;
   }
 
-
   .lesson-main {
     padding: 24px;
   }
-
 }
 
 
@@ -2132,48 +1875,89 @@ svg {
       );
   }
 
-
   .header-inner {
     min-height: 64px;
   }
-
 
   .logo img {
     height: 38px;
   }
 
-
   .user-email {
     display: none;
   }
 
-
   .course-toolbar-title {
     font-size: 12px;
   }
-
 
   .lesson-main {
     padding: 20px;
   }
 
 
-  .presentation-toggle-label {
-    display: none;
-  }
+  /* =====================================================
+     MOBILE:
+     ESCONDE "TELA CHEIA" / "SAIR"
+     E MANTÉM APENAS O ÍCONE
+  ===================================================== */
 
+  .presentation-toggle-label {
+    display: none !important;
+  }
 
   .presentation-toggle {
     width: 42px;
     height: 42px;
 
+    min-width: 42px;
     min-height: 42px;
+
+    flex: 0 0 42px;
+
+    padding: 0;
+
+    gap: 0;
+
+    border-radius: 50%;
+  }
+
+  .presentation-toggle svg {
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+  }
+
+
+  /*
+    Em tela cheia continua circular.
+  */
+
+  .slide-stage.is-presentation
+  .presentation-toggle,
+  .slide-stage.is-presentation-fallback
+  .presentation-toggle,
+  .slide-stage:fullscreen
+  .presentation-toggle,
+  .slide-stage:-webkit-full-screen
+  .presentation-toggle {
+
+    display: flex;
+
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+    min-height: 42px;
+
+    align-items: center;
+    justify-content: center;
 
     padding: 0;
 
     border-radius: 50%;
   }
-
 }
 
 
@@ -2189,7 +1973,6 @@ svg {
     font-size: 12px;
   }
 
-
   .course-toolbar-inner {
     grid-template-columns:
       42px
@@ -2198,7 +1981,6 @@ svg {
 
     gap: 8px;
   }
-
 
   .sidebar-trigger {
     width: 42px;
@@ -2209,21 +1991,17 @@ svg {
     padding: 0;
   }
 
-
   .sidebar-trigger span {
     display: none;
   }
-
 
   .course-toolbar-title {
     justify-content: center;
   }
 
-
   .course-toolbar-label {
     display: none;
   }
-
 
   .course-sidebar {
     width:
@@ -2233,16 +2011,13 @@ svg {
       );
   }
 
-
   .lesson-main {
     padding: 18px;
   }
 
-
   .lesson-header h1 {
     font-size: 28px;
   }
-
 
   .lesson-progress-row {
     grid-template-columns: 1fr;
@@ -2250,11 +2025,9 @@ svg {
     gap: 8px;
   }
 
-
   .lesson-progress-label {
     text-align: right;
   }
-
 
   .lesson-navigation {
     display: grid;
@@ -2264,33 +2037,40 @@ svg {
       1fr;
   }
 
-
   .nav-btn {
     min-width: 0;
   }
 
 
+  /* =====================================================
+     BOTÃO FULLSCREEN MOBILE
+  ===================================================== */
+
   .presentation-toggle {
-    top: 9px;
-    right: 9px;
+    top: 10px;
+    right: 10px;
 
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
 
-    min-height: 38px;
+    min-width: 42px;
+    min-height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
   }
-
 
   .presentation-toggle svg {
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
   }
-
 }
 
 
 /* =========================================================
-   FULLSCREEN — CELULAR VERTICAL
+   FULLSCREEN
+   CELULAR VERTICAL
 ========================================================= */
 
 @media
@@ -2312,7 +2092,6 @@ svg {
         90px,
         env(safe-area-inset-bottom)
       );
-
   }
 
 
@@ -2321,7 +2100,6 @@ svg {
   .slide-stage.is-presentation-fallback .slide-viewer {
 
     width: 100%;
-
     height: auto;
 
     max-width: 100%;
@@ -2334,7 +2112,43 @@ svg {
     aspect-ratio: 16 / 9;
 
     border-radius: 8px;
+  }
 
+
+  /*
+    ÍCONE DE SAÍDA
+  */
+
+  .slide-stage.is-presentation
+  .presentation-toggle,
+  .slide-stage.is-presentation-fallback
+  .presentation-toggle,
+  .slide-stage:fullscreen
+  .presentation-toggle,
+  .slide-stage:-webkit-full-screen
+  .presentation-toggle {
+
+    top:
+      max(
+        14px,
+        env(safe-area-inset-top)
+      );
+
+    right:
+      max(
+        14px,
+        env(safe-area-inset-right)
+      );
+
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+    min-height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
   }
 
 
@@ -2363,44 +2177,33 @@ svg {
     left: 10px;
 
     gap: 7px;
-
   }
 
 
   .presentation-nav-btn {
-
     min-width: 0;
-
     min-height: 48px;
 
-    padding:
-      9px
-      12px;
+    padding: 9px 12px;
 
     border-radius: 12px;
 
     font-size: 12px;
-
   }
-
 
   .presentation-counter {
-
     min-width: 58px;
 
-    padding:
-      8px
-      8px;
+    padding: 8px;
 
     font-size: 11px;
-
   }
-
 }
 
 
 /* =========================================================
-   FULLSCREEN — CELULAR HORIZONTAL
+   FULLSCREEN
+   CELULAR HORIZONTAL
 ========================================================= */
 
 @media
@@ -2429,7 +2232,6 @@ svg {
         72px,
         env(safe-area-inset-left)
       );
-
   }
 
 
@@ -2438,7 +2240,6 @@ svg {
   .slide-stage.is-presentation-fallback .slide-viewer {
 
     width: auto;
-
     height: 100%;
 
     max-width:
@@ -2454,14 +2255,8 @@ svg {
     aspect-ratio: 16 / 9;
 
     border-radius: 6px;
-
   }
 
-
-  /*
-    No horizontal os controles ficam nas
-    laterais para não tapar o slide.
-  */
 
   .slide-stage.is-presentation
   .presentation-controls,
@@ -2479,12 +2274,10 @@ svg {
     display: block;
 
     pointer-events: none;
-
   }
 
 
   .presentation-prev {
-
     position: absolute;
 
     top: 50%;
@@ -2507,12 +2300,10 @@ svg {
 
     transform:
       translateY(-50%);
-
   }
 
 
   .presentation-next {
-
     position: absolute;
 
     top: 50%;
@@ -2535,29 +2326,23 @@ svg {
 
     transform:
       translateY(-50%);
-
   }
 
 
   .presentation-prev:active,
   .presentation-next:active {
-
     transform:
       translateY(-50%)
       scale(0.94);
-
   }
 
 
   .presentation-nav-text {
-
     display: none;
-
   }
 
 
   .presentation-counter {
-
     position: absolute;
 
     bottom:
@@ -2570,9 +2355,13 @@ svg {
 
     transform:
       translateX(-50%);
-
   }
 
+
+  /* =====================================================
+     SAIR MOBILE HORIZONTAL
+     MESMO ÍCONE DO VERTICAL
+  ===================================================== */
 
   .slide-stage.is-presentation
   .presentation-toggle,
@@ -2585,23 +2374,43 @@ svg {
 
     top:
       max(
-        8px,
+        10px,
         env(safe-area-inset-top)
       );
 
     right:
       max(
-        8px,
+        10px,
         env(safe-area-inset-right)
       );
 
-    width: 38px;
-    height: 38px;
+    display: flex;
 
-    min-height: 38px;
+    width: 42px;
+    height: 42px;
 
+    min-width: 42px;
+    min-height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
   }
 
+  .slide-stage.is-presentation
+  .presentation-toggle-label,
+  .slide-stage.is-presentation-fallback
+  .presentation-toggle-label,
+  .slide-stage:fullscreen
+  .presentation-toggle-label,
+  .slide-stage:-webkit-full-screen
+  .presentation-toggle-label {
+
+    display: none !important;
+  }
 }
 
 
@@ -2619,39 +2428,27 @@ svg {
       );
   }
 
-
   .course-sidebar {
     width: 94vw;
   }
 
-
   .course-sidebar-header {
     min-height: 72px;
 
-    padding:
-      14px 16px;
+    padding: 14px 16px;
   }
-
 
   .course-sidebar-content {
-    height:
-      calc(
-        100% - 72px
-      );
+    height: calc(100% - 72px);
   }
-
 
   .module-block {
-    padding:
-      16px 14px;
+    padding: 16px 14px;
   }
-
 
   .progress-card {
-    margin:
-      10px 14px 18px;
+    margin: 10px 14px 18px;
   }
-
 
   .lesson {
     grid-template-columns:
@@ -2663,11 +2460,9 @@ svg {
     gap: 5px;
   }
 
-
   .lesson-duration {
     display: none;
   }
-
 
   .lesson-main {
     padding: 15px;
@@ -2675,11 +2470,9 @@ svg {
     border-radius: 16px;
   }
 
-
   .lesson-header h1 {
     font-size: 25px;
   }
-
 
   .footer-inner {
     align-items: flex-start;
@@ -2692,15 +2485,31 @@ svg {
   }
 
 
-  .presentation-nav-text {
-    font-size: 11px;
+  /*
+    Mantém o botão simples também
+    em celulares pequenos.
+  */
+
+  .presentation-toggle {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    padding: 0;
+
+    border-radius: 50%;
   }
 
+  .presentation-toggle-label {
+    display: none !important;
+  }
 }
 
 
 /* =========================================================
-   SAFE AREA — IPHONE / CELULARES COM NOTCH
+   SAFE AREA
 ========================================================= */
 
 @supports (
@@ -2711,7 +2520,6 @@ svg {
   .slide-stage.is-presentation-fallback {
     min-height: 100dvh;
   }
-
 }
 
 
@@ -2721,14 +2529,11 @@ svg {
 
 .slide-stage:fullscreen {
   border: 0;
-
   outline: none;
 }
 
-
 .slide-stage:-webkit-full-screen {
   border: 0;
-
   outline: none;
 }
 
@@ -2745,7 +2550,6 @@ svg {
     scroll-behavior: auto !important;
   }
 
-
   .course-sidebar,
   .sidebar-overlay,
   .nav-btn,
@@ -2755,11 +2559,8 @@ svg {
     transition: none;
   }
 
-
   .slide-layer {
     transition: none !important;
-
     transform: none !important;
   }
-
 }
