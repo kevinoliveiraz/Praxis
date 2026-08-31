@@ -82,8 +82,7 @@ let usingFullscreenFallback = false;
    CACHE
 ========================================================= */
 
-const slideUrlCache =
-  new Map();
+const slideUrlCache = new Map();
 
 const preloadedSlideUrls =
   new Set();
@@ -334,24 +333,6 @@ function preloadImage(url) {
    TELA INICIAL DO CURSO
 ========================================================= */
 
-/*
-  A tela inicial é criada pelo próprio JS.
-
-  Não precisamos criar outro HTML.
-  Também não precisamos criar outra página.
-
-  O fluxo fica:
-
-  tela inicial
-      ↓
-  módulo
-      ↓
-  aula
-      ↓
-  visualizador atual
-*/
-
-
 function getLessonView() {
   return (
     $("lesson-view") ||
@@ -363,7 +344,7 @@ function getLessonView() {
 
 
 /* =========================================================
-   CRIAR TELA INICIAL
+   CRIAR TELA INICIAL DO CURSO
 ========================================================= */
 
 function ensureCourseHome() {
@@ -381,14 +362,14 @@ function ensureCourseHome() {
 
 
   if (!lessonView) {
+
+    console.error(
+      "Não foi possível encontrar .lesson-main."
+    );
+
     return null;
   }
 
-
-  /*
-    Identificamos o conteúdo atual
-    como a tela da aula.
-  */
 
   lessonView.id =
     "lesson-view";
@@ -431,12 +412,15 @@ function ensureCourseHome() {
           Carregando conteúdo...
         </p>
 
+
         <div
           class="course-home-progress"
           aria-label="Progresso geral do curso"
         >
 
-          <div class="course-home-progress-info">
+          <div
+            class="course-home-progress-info"
+          >
 
             <span>
               Seu progresso
@@ -450,7 +434,10 @@ function ensureCourseHome() {
 
           </div>
 
-          <div class="course-home-progress-track">
+
+          <div
+            class="course-home-progress-track"
+          >
 
             <div
               id="course-home-progress-fill"
@@ -469,7 +456,9 @@ function ensureCourseHome() {
         class="course-home-modules"
       >
 
-        <div class="course-home-loading">
+        <div
+          class="course-home-loading"
+        >
           Carregando módulos...
         </div>
 
@@ -479,10 +468,11 @@ function ensureCourseHome() {
   `;
 
 
-  lessonView.parentNode?.insertBefore(
-    home,
-    lessonView
-  );
+  lessonView.parentNode
+    ?.insertBefore(
+      home,
+      lessonView
+    );
 
 
   ensureBackToCourseHomeButton();
@@ -557,11 +547,6 @@ function ensureBackToCourseHomeButton() {
     }
   );
 
-
-  /*
-    Colocamos no início da área
-    principal da aula.
-  */
 
   lessonView.insertBefore(
     button,
@@ -669,7 +654,7 @@ function showLessonView() {
 
 
 /* =========================================================
-   STATUS DA AULA NA HOME
+   STATUS DO CARD
 ========================================================= */
 
 function getCourseHomeLessonStatus(
@@ -724,6 +709,7 @@ function getCourseHomeLessonIcon() {
       stroke-linejoin="round"
       aria-hidden="true"
     >
+
       <path
         d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
       />
@@ -731,13 +717,14 @@ function getCourseHomeLessonIcon() {
       <path
         d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
       />
+
     </svg>
   `;
 }
 
 
 /* =========================================================
-   RENDERIZAR TELA INICIAL
+   RENDERIZAR HOME DO CURSO
 ========================================================= */
 
 function renderCourseHome() {
@@ -786,7 +773,9 @@ function renderCourseHome() {
   if (!modules.length) {
 
     modulesContainer.innerHTML = `
-      <div class="course-home-empty">
+      <div
+        class="course-home-empty"
+      >
         Nenhum módulo publicado
         foi encontrado.
       </div>
@@ -849,6 +838,7 @@ function renderCourseHome() {
             MÓDULO ${moduleNumber}
           </div>
 
+
           <h2
             class="course-home-module-title"
           >
@@ -857,6 +847,7 @@ function renderCourseHome() {
               `Módulo ${moduleNumber}`
             )}
           </h2>
+
 
           ${
             module.descricao
@@ -876,6 +867,7 @@ function renderCourseHome() {
 
         </header>
 
+
         <div
           class="course-home-lessons"
         ></div>
@@ -886,6 +878,11 @@ function renderCourseHome() {
         moduleSection.querySelector(
           ".course-home-lessons"
         );
+
+
+      if (!cardsContainer) {
+        return;
+      }
 
 
       if (!moduleLessons.length) {
@@ -914,6 +911,11 @@ function renderCourseHome() {
                     lesson.id
                   )
               );
+
+
+            if (globalIndex < 0) {
+              return;
+            }
 
 
             const lessonNumber =
@@ -971,10 +973,24 @@ function renderCourseHome() {
             );
 
 
-            const slidesText =
+            let slidesText =
+              "Sem slides";
+
+
+            if (
               lessonSlides.length === 1
-                ? "1 slide"
-                : `${lessonSlides.length} slides`;
+            ) {
+
+              slidesText =
+                "1 slide";
+
+            } else if (
+              lessonSlides.length > 1
+            ) {
+
+              slidesText =
+                `${lessonSlides.length} slides`;
+            }
 
 
             card.innerHTML = `
@@ -1078,7 +1094,7 @@ function renderCourseHome() {
 
 
 /* =========================================================
-   PROGRESSO DA TELA INICIAL
+   PROGRESSO DA HOME
 ========================================================= */
 
 function updateCourseHomeProgress() {
@@ -1175,7 +1191,7 @@ function isPresentationActive() {
 
 
 /* =========================================================
-   SOLICITAR FULLSCREEN NATIVO
+   FULLSCREEN NATIVO
 ========================================================= */
 
 async function requestNativeFullscreen(
@@ -1208,7 +1224,6 @@ async function requestNativeFullscreen(
 
       return true;
     }
-
 
   } catch (error) {
 
@@ -1260,7 +1275,7 @@ async function exitNativeFullscreen() {
 
 
 /* =========================================================
-   ATIVAR FALLBACK
+   FALLBACK FULLSCREEN
 ========================================================= */
 
 function activateFullscreenFallback() {
@@ -1291,10 +1306,6 @@ function activateFullscreenFallback() {
 }
 
 
-/* =========================================================
-   DESATIVAR FALLBACK
-========================================================= */
-
 function deactivateFullscreenFallback() {
   const stage =
     getPresentationStage();
@@ -1319,7 +1330,7 @@ function deactivateFullscreenFallback() {
 
 
 /* =========================================================
-   ENTRAR EM TELA CHEIA
+   ENTRAR NA APRESENTAÇÃO
 ========================================================= */
 
 async function enterPresentationMode() {
@@ -1365,7 +1376,7 @@ async function enterPresentationMode() {
 
 
 /* =========================================================
-   SAIR DA TELA CHEIA
+   SAIR DA APRESENTAÇÃO
 ========================================================= */
 
 async function exitPresentationMode() {
@@ -1392,7 +1403,7 @@ async function exitPresentationMode() {
 
 
 /* =========================================================
-   ALTERNAR TELA CHEIA
+   ALTERNAR APRESENTAÇÃO
 ========================================================= */
 
 async function togglePresentationMode() {
@@ -1410,7 +1421,7 @@ async function togglePresentationMode() {
 
 
 /* =========================================================
-   UI DA APRESENTAÇÃO
+   UI APRESENTAÇÃO
 ========================================================= */
 
 function syncPresentationUI() {
@@ -1493,7 +1504,7 @@ function syncPresentationUI() {
 
 
 /* =========================================================
-   CONTROLES DA APRESENTAÇÃO
+   EVENTOS DA APRESENTAÇÃO
 ========================================================= */
 
 function bindPresentationControls(
@@ -1560,7 +1571,7 @@ function bindPresentationControls(
 
 
 /* =========================================================
-   CRIAR VIEWER PERMANENTE
+   VIEWER PERMANENTE
 ========================================================= */
 
 function ensureSlideViewer() {
@@ -1608,6 +1619,7 @@ function ensureSlideViewer() {
         aria-label="Abrir em tela cheia"
         title="Tela cheia"
       >
+
         <svg
           width="20"
           height="20"
@@ -1625,9 +1637,12 @@ function ensureSlideViewer() {
           <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
         </svg>
 
-        <span class="presentation-toggle-label">
+        <span
+          class="presentation-toggle-label"
+        >
           Tela cheia
         </span>
+
       </button>
 
 
@@ -1660,13 +1675,17 @@ function ensureSlideViewer() {
           data-presentation-previous
           aria-label="Slide anterior"
         >
+
           <span aria-hidden="true">
             ←
           </span>
 
-          <span class="presentation-nav-text">
+          <span
+            class="presentation-nav-text"
+          >
             Anterior
           </span>
+
         </button>
 
 
@@ -1685,13 +1704,17 @@ function ensureSlideViewer() {
           data-presentation-next
           aria-label="Próximo slide"
         >
-          <span class="presentation-nav-text">
+
+          <span
+            class="presentation-nav-text"
+          >
             Próxima
           </span>
 
           <span aria-hidden="true">
             →
           </span>
+
         </button>
 
       </div>
@@ -1790,9 +1813,12 @@ function ensureSlideViewer() {
   );
 
 
-  activeSlideLayer = 0;
+  activeSlideLayer =
+    0;
 
-  visibleSlideKey = "";
+
+  visibleSlideKey =
+    "";
 
 
   bindPresentationControls(
@@ -2014,7 +2040,7 @@ async function crossfadeSlide(
 
 
 /* =========================================================
-   PRÉ-CARREGAR SLIDES VIZINHOS
+   PRÉ-CARREGAR SLIDES
 ========================================================= */
 
 async function preloadSlideAt(
@@ -2132,6 +2158,12 @@ async function loadUserSession() {
       null;
 
 
+    console.log(
+      "Sessão atual:",
+      session
+    );
+
+
     if (userArea) {
 
       if (currentUser) {
@@ -2160,7 +2192,8 @@ async function loadUserSession() {
     );
 
 
-    currentUser = null;
+    currentUser =
+      null;
 
 
     if (userArea) {
@@ -2191,6 +2224,7 @@ function renderGuest(userArea) {
       href="login.html"
       class="btn btn-ghost"
     >
+
       <svg
         width="16"
         height="16"
@@ -2200,6 +2234,7 @@ function renderGuest(userArea) {
         stroke-width="2"
         aria-hidden="true"
       >
+
         <path
           d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
         />
@@ -2209,9 +2244,11 @@ function renderGuest(userArea) {
           cy="7"
           r="4"
         />
+
       </svg>
 
       Entrar
+
     </a>
   `;
 }
@@ -2401,14 +2438,16 @@ function clearDataMaps() {
 
   preloadedSlideUrls.clear();
 
-  visibleSlideKey = "";
+  visibleSlideKey =
+    "";
 
-  activeSlideLayer = 0;
+  activeSlideLayer =
+    0;
 }
 
 
 /* =========================================================
-   CURSO
+   CARREGAR CURSO
 ========================================================= */
 
 async function loadCourse() {
@@ -2445,7 +2484,7 @@ async function loadCourse() {
 
 
 /* =========================================================
-   MÓDULOS
+   CARREGAR MÓDULOS
 ========================================================= */
 
 async function loadModules() {
@@ -2492,7 +2531,7 @@ async function loadModules() {
 
 
 /* =========================================================
-   AULAS
+   CARREGAR AULAS
 ========================================================= */
 
 async function loadLessons() {
@@ -2620,7 +2659,7 @@ async function loadLessons() {
 
 
 /* =========================================================
-   SLIDES
+   CARREGAR SLIDES
 ========================================================= */
 
 async function loadSlides() {
@@ -2735,7 +2774,7 @@ async function loadSlides() {
 
 
 /* =========================================================
-   MATERIAIS
+   CARREGAR MATERIAIS
 ========================================================= */
 
 async function loadMaterials() {
@@ -2832,7 +2871,7 @@ async function loadMaterials() {
 
 
 /* =========================================================
-   PROGRESSO
+   CARREGAR PROGRESSO
 ========================================================= */
 
 async function loadProgress() {
@@ -2907,7 +2946,7 @@ async function loadProgress() {
 
 
 /* =========================================================
-   CARREGAR CURSO
+   CARREGAR EXCEL
 ========================================================= */
 
 async function loadExcelCourse() {
@@ -2938,36 +2977,25 @@ async function loadExcelCourse() {
 
 
     /*
-      NOVO:
+      IMPORTANTE:
 
-      Não abrimos mais automaticamente
+      Não abre automaticamente
       a primeira aula.
 
-      Primeiro mostramos a visão geral
-      do curso.
+      Sempre começa na tela
+      de módulos.
     */
 
     ensureCourseHome();
 
 
-    if (lessons.length) {
+    renderCourseHome();
 
-      renderCourseHome();
+    updateProgress();
 
-      updateProgress();
 
-      await showCourseHome();
+    await showCourseHome();
 
-    } else {
-
-      renderNoLessons();
-
-      renderCourseHome();
-
-      updateProgress();
-
-      await showCourseHome();
-    }
 
   } catch (error) {
 
@@ -3035,7 +3063,7 @@ function renderCourseHeader() {
 
 
   document.title =
-    `${courseName} — SkillUp`;
+    `${courseName} — Praxis`;
 }
 
 
@@ -3135,7 +3163,7 @@ function isLessonCompleted(
 
 
 /* =========================================================
-   LISTA DE AULAS SIDEBAR
+   SIDEBAR DE AULAS
 ========================================================= */
 
 function renderLessons() {
@@ -3207,7 +3235,9 @@ function renderLessons() {
           )}
         </div>
 
-        <ul class="lesson-list"></ul>
+        <ul
+          class="lesson-list"
+        ></ul>
       `;
 
 
@@ -3270,10 +3300,14 @@ function renderLessons() {
             );
 
 
+          const rawLessonName =
+            lesson.nome ||
+            `Aula ${lessonNumber}`;
+
+
           const lessonName =
             escapeHtml(
-              lesson.nome ||
-              `Aula ${lessonNumber}`
+              rawLessonName
             );
 
 
@@ -3314,15 +3348,18 @@ function renderLessons() {
 
             </div>
 
+
             <div class="lesson-num">
               ${escapeHtml(
                 lessonNumber
               )}
             </div>
 
+
             <div class="lesson-name">
               ${lessonName}
             </div>
+
 
             <div class="lesson-duration">
               ${escapeHtml(
@@ -3330,11 +3367,13 @@ function renderLessons() {
               )}
             </div>
 
+
             <button
               type="button"
               class="lesson-play"
               aria-label="Abrir ${lessonName}"
             >
+
               <svg
                 width="10"
                 height="10"
@@ -3346,6 +3385,7 @@ function renderLessons() {
                   d="M8 5v14l11-7z"
                 />
               </svg>
+
             </button>
           `;
 
@@ -3414,12 +3454,6 @@ async function selectLesson(
   }
 
 
-  /*
-    Ao escolher uma aula pela home
-    ou pela sidebar, abrimos a tela
-    do visualizador.
-  */
-
   showLessonView();
 
 
@@ -3457,12 +3491,6 @@ async function selectLesson(
   }
 
 
-  /*
-    Forçamos a atualização correta
-    caso o usuário volte à home
-    e abra outra aula.
-  */
-
   visibleSlideKey =
     "";
 
@@ -3486,7 +3514,7 @@ async function selectLesson(
 
 
 /* =========================================================
-   LISTA VISUAL
+   SELEÇÃO VISUAL
 ========================================================= */
 
 function updateLessonSelection() {
@@ -3575,7 +3603,7 @@ function updateLessonSelection() {
 
 
 /* =========================================================
-   RENDERIZAR SLIDE
+   RENDERIZAR AULA / SLIDE
 ========================================================= */
 
 async function renderCurrentLesson() {
@@ -3643,7 +3671,8 @@ async function renderCurrentLesson() {
 
   if (!lessonSlides.length) {
 
-    visibleSlideKey = "";
+    visibleSlideKey =
+      "";
 
 
     currentLesson.innerHTML =
@@ -4299,11 +4328,6 @@ async function markLessonCompleted(
 
     updateProgress();
 
-    /*
-      Atualiza os cards da tela inicial
-      imediatamente após a conclusão.
-    */
-
     renderCourseHome();
 
   } catch (error) {
@@ -4324,10 +4348,17 @@ function getNavigationState() {
   if (!lessons.length) {
 
     return {
-      canPrevious: false,
-      canNext: false,
-      finalLesson: false,
-      completed: false
+      canPrevious:
+        false,
+
+      canNext:
+        false,
+
+      finalLesson:
+        false,
+
+      completed:
+        false
     };
   }
 
@@ -4507,7 +4538,7 @@ function updateNavigation() {
 
 
 /* =========================================================
-   IR PARA ANTERIOR
+   ANTERIOR
 ========================================================= */
 
 async function goPrevious() {
@@ -4621,7 +4652,7 @@ async function goPrevious() {
 
 
 /* =========================================================
-   IR PARA PRÓXIMO
+   PRÓXIMO
 ========================================================= */
 
 async function goNext() {
@@ -4644,6 +4675,10 @@ async function goNext() {
       lesson
     );
 
+
+  /*
+    Próximo slide da mesma aula.
+  */
 
   if (
     lessonSlides.length &&
@@ -4676,6 +4711,11 @@ async function goNext() {
   }
 
 
+  /*
+    Chegou ao último slide:
+    conclui a aula.
+  */
+
   if (
     lessonSlides.length
   ) {
@@ -4685,6 +4725,10 @@ async function goNext() {
     );
   }
 
+
+  /*
+    Próxima aula.
+  */
 
   if (
     currentLessonIndex <
@@ -4705,6 +4749,10 @@ async function goNext() {
 
     currentSlideIndex =
       0;
+
+
+    visibleSlideKey =
+      "";
 
 
     updateLessonSelection();
@@ -4741,7 +4789,7 @@ async function goNext() {
 
 
 /* =========================================================
-   BOTÃO ANTERIOR NORMAL
+   BOTÕES DE NAVEGAÇÃO
 ========================================================= */
 
 $("prev-lesson")
@@ -4750,10 +4798,6 @@ $("prev-lesson")
     goPrevious
   );
 
-
-/* =========================================================
-   BOTÃO PRÓXIMA NORMAL
-========================================================= */
 
 $("next-lesson")
   ?.addEventListener(
@@ -4870,11 +4914,6 @@ function updateProgress() {
   }
 
 
-  /*
-    Mantém também o progresso
-    da tela inicial sincronizado.
-  */
-
   updateCourseHomeProgress();
 }
 
@@ -4896,4 +4935,753 @@ async function renderDownloads() {
   if (!materials.length) {
 
     list.innerHTML = `
-      <li class
+      <li class="empty-side">
+        Nenhum material complementar
+        foi cadastrado ainda.
+      </li>
+    `;
+
+
+    return;
+  }
+
+
+  list.innerHTML = `
+    <li class="empty-side">
+      Carregando materiais...
+    </li>
+  `;
+
+
+  const renderedMaterials =
+    await Promise.all(
+      materials.map(
+        async (material) => {
+
+          const url =
+            await getStorageUrl(
+              MATERIALS_BUCKET,
+              material.arquivo_path
+            );
+
+
+          const lesson =
+            lessons.find(
+              (item) =>
+                Number(item.id) ===
+                Number(
+                  material.aula_id
+                )
+            );
+
+
+          return {
+            ...material,
+            url,
+            lesson
+          };
+        }
+      )
+    );
+
+
+  list.innerHTML =
+    renderedMaterials
+      .map(
+        (material) => {
+
+          const name =
+            escapeHtml(
+              material.nome ||
+              "Material complementar"
+            );
+
+
+          const type =
+            escapeHtml(
+              material.tipo ||
+              "Arquivo"
+            );
+
+
+          const lessonName =
+            material.lesson
+
+              ? escapeHtml(
+                  material.lesson.nome
+                )
+
+              : "";
+
+
+          const meta =
+            lessonName
+              ? `${type} • ${lessonName}`
+              : type;
+
+
+          const action =
+            material.url
+
+              ? `
+                <a
+                  class="download-action"
+                  href="${escapeHtml(
+                    material.url
+                  )}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir ${name}"
+                >
+                  ↗
+                </a>
+              `
+
+              : `
+                <span
+                  class="download-action"
+                  aria-hidden="true"
+                >
+                  —
+                </span>
+              `;
+
+
+          return `
+            <li class="download-item">
+
+              <div class="file-icon">
+                ↓
+              </div>
+
+              <div>
+
+                <div class="file-name">
+                  ${name}
+                </div>
+
+                <div class="file-meta">
+                  ${meta}
+                </div>
+
+              </div>
+
+              ${action}
+
+            </li>
+          `;
+        }
+      )
+      .join("");
+}
+
+
+/* =========================================================
+   SIDEBARS
+========================================================= */
+
+const lessonsSidebar =
+  $("lessons-sidebar");
+
+
+const materialsSidebar =
+  $("materials-sidebar");
+
+
+const sidebarOverlay =
+  $("sidebar-overlay");
+
+
+const openLessonsButton =
+  $("open-lessons-sidebar");
+
+
+const closeLessonsButton =
+  $("close-lessons-sidebar");
+
+
+const openMaterialsButton =
+  $("open-materials-sidebar");
+
+
+const closeMaterialsButton =
+  $("close-materials-sidebar");
+
+
+/* =========================================================
+   FECHAR SIDEBARS
+========================================================= */
+
+function closeAllSidebars() {
+  lessonsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
+
+
+  materialsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
+
+
+  sidebarOverlay
+    ?.classList
+    .remove(
+      "is-visible"
+    );
+
+
+  document.body
+    .classList
+    .remove(
+      "sidebar-open"
+    );
+
+
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+}
+
+
+/* =========================================================
+   ABRIR SIDEBAR AULAS
+========================================================= */
+
+function openLessonsSidebar() {
+  materialsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
+
+
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  lessonsSidebar
+    ?.classList
+    .add(
+      "is-open"
+    );
+
+
+  sidebarOverlay
+    ?.classList
+    .add(
+      "is-visible"
+    );
+
+
+  document.body
+    .classList
+    .add(
+      "sidebar-open"
+    );
+
+
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+}
+
+
+/* =========================================================
+   ABRIR SIDEBAR MATERIAIS
+========================================================= */
+
+function openMaterialsSidebar() {
+  lessonsSidebar
+    ?.classList
+    .remove(
+      "is-open"
+    );
+
+
+  lessonsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+  materialsSidebar
+    ?.classList
+    .add(
+      "is-open"
+    );
+
+
+  sidebarOverlay
+    ?.classList
+    .add(
+      "is-visible"
+    );
+
+
+  document.body
+    .classList
+    .add(
+      "sidebar-open"
+    );
+
+
+  materialsSidebar
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  sidebarOverlay
+    ?.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+  openLessonsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+  openMaterialsButton
+    ?.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+}
+
+
+/* =========================================================
+   EVENTOS SIDEBARS
+========================================================= */
+
+openLessonsButton
+  ?.addEventListener(
+    "click",
+    openLessonsSidebar
+  );
+
+
+closeLessonsButton
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
+
+
+openMaterialsButton
+  ?.addEventListener(
+    "click",
+    openMaterialsSidebar
+  );
+
+
+closeMaterialsButton
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
+
+
+sidebarOverlay
+  ?.addEventListener(
+    "click",
+    closeAllSidebars
+  );
+
+
+/* =========================================================
+   EVENTOS FULLSCREEN
+========================================================= */
+
+document.addEventListener(
+  "fullscreenchange",
+  () => {
+
+    if (
+      !document.fullscreenElement &&
+      !usingFullscreenFallback
+    ) {
+
+      document.body.classList.remove(
+        "presentation-mode-active"
+      );
+    }
+
+
+    syncPresentationUI();
+  }
+);
+
+
+document.addEventListener(
+  "webkitfullscreenchange",
+  () => {
+
+    if (
+      !document.webkitFullscreenElement &&
+      !usingFullscreenFallback
+    ) {
+
+      document.body.classList.remove(
+        "presentation-mode-active"
+      );
+    }
+
+
+    syncPresentationUI();
+  }
+);
+
+
+/* =========================================================
+   TECLADO
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  async (event) => {
+
+    const activeElement =
+      document.activeElement;
+
+
+    const typing =
+      activeElement &&
+      (
+        activeElement.tagName ===
+          "INPUT" ||
+
+        activeElement.tagName ===
+          "TEXTAREA" ||
+
+        activeElement.isContentEditable
+      );
+
+
+    if (typing) {
+      return;
+    }
+
+
+    if (
+      isPresentationActive()
+    ) {
+
+      if (
+        event.key ===
+        "ArrowRight"
+      ) {
+
+        event.preventDefault();
+
+        await goNext();
+
+        return;
+      }
+
+
+      if (
+        event.key ===
+        "ArrowLeft"
+      ) {
+
+        event.preventDefault();
+
+        await goPrevious();
+
+        return;
+      }
+
+
+      if (
+        event.key ===
+          "Escape" &&
+        usingFullscreenFallback
+      ) {
+
+        event.preventDefault();
+
+        await exitPresentationMode();
+
+        return;
+      }
+    }
+
+
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeAllSidebars();
+    }
+  }
+);
+
+
+/* =========================================================
+   REDIMENSIONAMENTO / ORIENTAÇÃO
+========================================================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    if (
+      isPresentationActive()
+    ) {
+
+      syncPresentationUI();
+    }
+  },
+  {
+    passive: true
+  }
+);
+
+
+window.addEventListener(
+  "orientationchange",
+  () => {
+
+    window.setTimeout(
+      () => {
+
+        if (
+          isPresentationActive()
+        ) {
+
+          syncPresentationUI();
+        }
+      },
+      120
+    );
+  }
+);
+
+
+/* =========================================================
+   ALTERAÇÕES DE AUTENTICAÇÃO
+========================================================= */
+
+supabase
+  .auth
+  .onAuthStateChange(
+    async (
+      event,
+      session
+    ) => {
+
+      currentUser =
+        session?.user ||
+        null;
+
+
+      console.log(
+        "Evento Auth:",
+        event
+      );
+
+
+      console.log(
+        "Sessão Auth:",
+        session
+      );
+
+
+      const userArea =
+        $("user-area");
+
+
+      if (userArea) {
+
+        if (currentUser) {
+
+          renderUser(
+            userArea,
+            currentUser
+          );
+
+        } else {
+
+          renderGuest(
+            userArea
+          );
+        }
+      }
+
+
+      if (
+        event ===
+        "SIGNED_OUT"
+      ) {
+
+        progressByLesson.clear();
+
+
+        updateProgress();
+
+        updateLessonSelection();
+
+        renderCourseHome();
+
+        return;
+      }
+
+
+      if (
+        event ===
+          "SIGNED_IN" &&
+        currentUser &&
+        lessons.length
+      ) {
+
+        try {
+
+          await loadProgress();
+
+          updateProgress();
+
+          updateLessonSelection();
+
+          renderCourseHome();
+
+        } catch (error) {
+
+          console.error(
+            "Erro ao atualizar progresso após login:",
+            error
+          );
+        }
+      }
+    }
+  );
+
+
+/* =========================================================
+   INICIALIZAÇÃO
+========================================================= */
+
+async function init() {
+  try {
+
+    /*
+      Esconde a tela antiga imediatamente,
+      antes de carregar o Supabase.
+
+      Isso evita aparecer rapidamente
+      a primeira aula.
+    */
+
+    const lessonView =
+      getLessonView();
+
+
+    if (lessonView) {
+
+      lessonView.hidden =
+        true;
+    }
+
+
+    /*
+      Cria imediatamente a nova tela.
+    */
+
+    ensureCourseHome();
+
+
+    /*
+      Primeiro verifica a autenticação.
+    */
+
+    await loadUserSession();
+
+
+    /*
+      Depois carrega o curso.
+    */
+
+    await loadExcelCourse();
+
+
+  } catch (error) {
+
+    console.error(
+      "Erro fatal ao inicializar Excel:",
+      error
+    );
+  }
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+init();
