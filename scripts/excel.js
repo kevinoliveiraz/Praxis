@@ -75,14 +75,6 @@ let visibleSlideKey = "";
    TELA CHEIA / APRESENTAÇÃO
 ========================================================= */
 
-/*
-  Alguns navegadores mobile não permitem
-  fullscreen real em todos os elementos.
-
-  Quando isso acontecer, usamos um modo
-  fallback controlado por CSS.
-*/
-
 let usingFullscreenFallback = false;
 
 
@@ -339,6 +331,808 @@ function preloadImage(url) {
 
 
 /* =========================================================
+   TELA INICIAL DO CURSO
+========================================================= */
+
+/*
+  A tela inicial é criada pelo próprio JS.
+
+  Não precisamos criar outro HTML.
+  Também não precisamos criar outra página.
+
+  O fluxo fica:
+
+  tela inicial
+      ↓
+  módulo
+      ↓
+  aula
+      ↓
+  visualizador atual
+*/
+
+
+function getLessonView() {
+  return (
+    $("lesson-view") ||
+    document.querySelector(
+      ".lesson-main"
+    )
+  );
+}
+
+
+/* =========================================================
+   CRIAR TELA INICIAL
+========================================================= */
+
+function ensureCourseHome() {
+  let home =
+    $("course-home");
+
+
+  if (home) {
+    return home;
+  }
+
+
+  const lessonView =
+    getLessonView();
+
+
+  if (!lessonView) {
+    return null;
+  }
+
+
+  /*
+    Identificamos o conteúdo atual
+    como a tela da aula.
+  */
+
+  lessonView.id =
+    "lesson-view";
+
+
+  home =
+    document.createElement(
+      "section"
+    );
+
+
+  home.id =
+    "course-home";
+
+
+  home.className =
+    "course-home";
+
+
+  home.innerHTML = `
+    <div class="course-home-inner">
+
+      <header class="course-home-header">
+
+        <div class="course-home-eyebrow">
+          CONTEÚDO DO CURSO
+        </div>
+
+        <h1
+          id="course-home-title"
+          class="course-home-title"
+        >
+          Excel
+        </h1>
+
+        <p
+          id="course-home-description"
+          class="course-home-description"
+        >
+          Carregando conteúdo...
+        </p>
+
+        <div
+          class="course-home-progress"
+          aria-label="Progresso geral do curso"
+        >
+
+          <div class="course-home-progress-info">
+
+            <span>
+              Seu progresso
+            </span>
+
+            <strong
+              id="course-home-progress-text"
+            >
+              0%
+            </strong>
+
+          </div>
+
+          <div class="course-home-progress-track">
+
+            <div
+              id="course-home-progress-fill"
+              class="course-home-progress-fill"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <div
+        id="course-home-modules"
+        class="course-home-modules"
+      >
+
+        <div class="course-home-loading">
+          Carregando módulos...
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+
+  lessonView.parentNode?.insertBefore(
+    home,
+    lessonView
+  );
+
+
+  ensureBackToCourseHomeButton();
+
+
+  return home;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR AO CONTEÚDO
+========================================================= */
+
+function ensureBackToCourseHomeButton() {
+  const lessonView =
+    getLessonView();
+
+
+  if (!lessonView) {
+    return;
+  }
+
+
+  if (
+    lessonView.querySelector(
+      "[data-back-course-home]"
+    )
+  ) {
+    return;
+  }
+
+
+  const button =
+    document.createElement(
+      "button"
+    );
+
+
+  button.type =
+    "button";
+
+
+  button.className =
+    "back-to-course-home";
+
+
+  button.setAttribute(
+    "data-back-course-home",
+    ""
+  );
+
+
+  button.innerHTML = `
+    <span
+      class="back-to-course-home-icon"
+      aria-hidden="true"
+    >
+      ←
+    </span>
+
+    <span>
+      Voltar ao conteúdo
+    </span>
+  `;
+
+
+  button.addEventListener(
+    "click",
+    async () => {
+
+      await showCourseHome();
+    }
+  );
+
+
+  /*
+    Colocamos no início da área
+    principal da aula.
+  */
+
+  lessonView.insertBefore(
+    button,
+    lessonView.firstChild
+  );
+}
+
+
+/* =========================================================
+   MOSTRAR TELA INICIAL
+========================================================= */
+
+async function showCourseHome() {
+  if (
+    isPresentationActive()
+  ) {
+
+    await exitPresentationMode();
+  }
+
+
+  closeAllSidebars();
+
+
+  const home =
+    ensureCourseHome();
+
+
+  const lessonView =
+    getLessonView();
+
+
+  if (!home) {
+    return;
+  }
+
+
+  home.hidden =
+    false;
+
+
+  home.classList.add(
+    "is-visible"
+  );
+
+
+  if (lessonView) {
+
+    lessonView.hidden =
+      true;
+
+
+    lessonView.classList.remove(
+      "is-visible"
+    );
+  }
+
+
+  renderCourseHome();
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* =========================================================
+   MOSTRAR AULA
+========================================================= */
+
+function showLessonView() {
+  const home =
+    ensureCourseHome();
+
+
+  const lessonView =
+    getLessonView();
+
+
+  if (home) {
+
+    home.hidden =
+      true;
+
+
+    home.classList.remove(
+      "is-visible"
+    );
+  }
+
+
+  if (lessonView) {
+
+    lessonView.hidden =
+      false;
+
+
+    lessonView.classList.add(
+      "is-visible"
+    );
+  }
+}
+
+
+/* =========================================================
+   STATUS DA AULA NA HOME
+========================================================= */
+
+function getCourseHomeLessonStatus(
+  lesson
+) {
+  if (
+    isLessonCompleted(
+      lesson
+    )
+  ) {
+
+    return {
+      className:
+        "is-completed",
+
+      icon:
+        "✓",
+
+      label:
+        "Concluído"
+    };
+  }
+
+
+  return {
+    className:
+      "is-available",
+
+    icon:
+      "•",
+
+    label:
+      "Disponível"
+  };
+}
+
+
+/* =========================================================
+   ÍCONE DO CARD
+========================================================= */
+
+function getCourseHomeLessonIcon() {
+  return `
+    <svg
+      width="38"
+      height="38"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path
+        d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+      />
+
+      <path
+        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+      />
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   RENDERIZAR TELA INICIAL
+========================================================= */
+
+function renderCourseHome() {
+  const home =
+    ensureCourseHome();
+
+
+  if (!home) {
+    return;
+  }
+
+
+  const title =
+    $("course-home-title");
+
+
+  const description =
+    $("course-home-description");
+
+
+  const modulesContainer =
+    $("course-home-modules");
+
+
+  if (title) {
+
+    title.textContent =
+      course?.nome ||
+      "Excel Prático — Básico ao Avançado";
+  }
+
+
+  if (description) {
+
+    description.textContent =
+      course?.descricao ||
+      "Escolha uma aula para começar.";
+  }
+
+
+  if (!modulesContainer) {
+    return;
+  }
+
+
+  if (!modules.length) {
+
+    modulesContainer.innerHTML = `
+      <div class="course-home-empty">
+        Nenhum módulo publicado
+        foi encontrado.
+      </div>
+    `;
+
+
+    updateCourseHomeProgress();
+
+    return;
+  }
+
+
+  modulesContainer.innerHTML =
+    "";
+
+
+  modules.forEach(
+    (
+      module,
+      moduleIndex
+    ) => {
+
+      const moduleLessons =
+        lessons.filter(
+          (lesson) =>
+            Number(
+              lesson.modulo_id
+            ) ===
+            Number(
+              module.id
+            )
+        );
+
+
+      const moduleNumber =
+        normalizeNumber(
+          module.ordem,
+          moduleIndex + 1
+        );
+
+
+      const moduleSection =
+        document.createElement(
+          "section"
+        );
+
+
+      moduleSection.className =
+        "course-home-module";
+
+
+      moduleSection.innerHTML = `
+        <header
+          class="course-home-module-header"
+        >
+
+          <div
+            class="course-home-module-label"
+          >
+            MÓDULO ${moduleNumber}
+          </div>
+
+          <h2
+            class="course-home-module-title"
+          >
+            ${escapeHtml(
+              module.nome ||
+              `Módulo ${moduleNumber}`
+            )}
+          </h2>
+
+          ${
+            module.descricao
+
+              ? `
+                <p
+                  class="course-home-module-description"
+                >
+                  ${escapeHtml(
+                    module.descricao
+                  )}
+                </p>
+              `
+
+              : ""
+          }
+
+        </header>
+
+        <div
+          class="course-home-lessons"
+        ></div>
+      `;
+
+
+      const cardsContainer =
+        moduleSection.querySelector(
+          ".course-home-lessons"
+        );
+
+
+      if (!moduleLessons.length) {
+
+        cardsContainer.innerHTML = `
+          <div
+            class="course-home-empty"
+          >
+            Nenhuma aula publicada
+            neste módulo.
+          </div>
+        `;
+
+      } else {
+
+        moduleLessons.forEach(
+          (lesson) => {
+
+            const globalIndex =
+              lessons.findIndex(
+                (item) =>
+                  Number(
+                    item.id
+                  ) ===
+                  Number(
+                    lesson.id
+                  )
+              );
+
+
+            const lessonNumber =
+              getLessonNumber(
+                lesson
+              );
+
+
+            const lessonName =
+              lesson.nome ||
+              `Aula ${lessonNumber}`;
+
+
+            const lessonSlides =
+              getLessonSlides(
+                lesson
+              );
+
+
+            const status =
+              getCourseHomeLessonStatus(
+                lesson
+              );
+
+
+            const card =
+              document.createElement(
+                "button"
+              );
+
+
+            card.type =
+              "button";
+
+
+            card.className =
+              `course-home-lesson-card ${status.className}`;
+
+
+            card.dataset.lessonIndex =
+              String(
+                globalIndex
+              );
+
+
+            card.dataset.lessonId =
+              String(
+                lesson.id
+              );
+
+
+            card.setAttribute(
+              "aria-label",
+              `Abrir aula ${lessonNumber} ${lessonName}`
+            );
+
+
+            const slidesText =
+              lessonSlides.length === 1
+                ? "1 slide"
+                : `${lessonSlides.length} slides`;
+
+
+            card.innerHTML = `
+              <div
+                class="course-home-lesson-icon"
+              >
+                ${getCourseHomeLessonIcon()}
+              </div>
+
+
+              <div
+                class="course-home-lesson-content"
+              >
+
+                <div
+                  class="course-home-lesson-number"
+                >
+                  ${escapeHtml(
+                    lessonNumber
+                  )}
+                </div>
+
+
+                <h3
+                  class="course-home-lesson-title"
+                >
+                  ${escapeHtml(
+                    lessonName
+                  )}
+                </h3>
+
+
+                <div
+                  class="course-home-lesson-meta"
+                >
+                  ${escapeHtml(
+                    slidesText
+                  )}
+                </div>
+
+              </div>
+
+
+              <div
+                class="course-home-lesson-status ${status.className}"
+              >
+
+                <span
+                  class="course-home-status-icon"
+                  aria-hidden="true"
+                >
+                  ${status.icon}
+                </span>
+
+                <span>
+                  ${escapeHtml(
+                    status.label
+                  )}
+                </span>
+
+              </div>
+            `;
+
+
+            card.addEventListener(
+              "click",
+              async () => {
+
+                if (
+                  isSlideTransitioning
+                ) {
+                  return;
+                }
+
+
+                await selectLesson(
+                  globalIndex,
+                  0
+                );
+              }
+            );
+
+
+            cardsContainer.appendChild(
+              card
+            );
+          }
+        );
+      }
+
+
+      modulesContainer.appendChild(
+        moduleSection
+      );
+    }
+  );
+
+
+  updateCourseHomeProgress();
+}
+
+
+/* =========================================================
+   PROGRESSO DA TELA INICIAL
+========================================================= */
+
+function updateCourseHomeProgress() {
+  const total =
+    lessons.length;
+
+
+  const completed =
+    lessons.filter(
+      (lesson) =>
+        isLessonCompleted(
+          lesson
+        )
+    ).length;
+
+
+  const percentage =
+    total
+
+      ? Math.round(
+          (
+            completed /
+            total
+          ) *
+          100
+        )
+
+      : 0;
+
+
+  const text =
+    $("course-home-progress-text");
+
+
+  const fill =
+    $("course-home-progress-fill");
+
+
+  if (text) {
+
+    text.textContent =
+      `${percentage}%`;
+  }
+
+
+  if (fill) {
+
+    fill.style.width =
+      `${percentage}%`;
+  }
+}
+
+
+/* =========================================================
    TELA CHEIA — HELPERS
 ========================================================= */
 
@@ -466,7 +1260,7 @@ async function exitNativeFullscreen() {
 
 
 /* =========================================================
-   ATIVAR FALLBACK DE TELA CHEIA
+   ATIVAR FALLBACK
 ========================================================= */
 
 function activateFullscreenFallback() {
@@ -785,10 +1579,6 @@ function ensureSlideViewer() {
     );
 
 
-  /*
-    Viewer já existe.
-  */
-
   if (
     viewer &&
     viewer.querySelector(
@@ -804,14 +1594,6 @@ function ensureSlideViewer() {
     return viewer;
   }
 
-
-  /*
-    Cria o visualizador.
-
-    O #slide-stage inteiro será colocado
-    em fullscreen. Por isso os controles
-    ficam DENTRO dele.
-  */
 
   currentLesson.innerHTML = `
     <div
@@ -935,12 +1717,6 @@ function ensureSlideViewer() {
     return null;
   }
 
-
-  /* =======================================================
-     ESTILO ESSENCIAL DAS CAMADAS
-
-     O visual final ficará no curso.css.
-  ======================================================= */
 
   viewer.style.position =
     "relative";
@@ -2161,18 +2937,36 @@ async function loadExcelCourse() {
     await renderDownloads();
 
 
+    /*
+      NOVO:
+
+      Não abrimos mais automaticamente
+      a primeira aula.
+
+      Primeiro mostramos a visão geral
+      do curso.
+    */
+
+    ensureCourseHome();
+
+
     if (lessons.length) {
 
-      await selectLesson(
-        0,
-        0
-      );
+      renderCourseHome();
+
+      updateProgress();
+
+      await showCourseHome();
 
     } else {
 
       renderNoLessons();
 
+      renderCourseHome();
+
       updateProgress();
+
+      await showCourseHome();
     }
 
   } catch (error) {
@@ -2209,6 +3003,12 @@ async function loadExcelCourse() {
     await renderDownloads();
 
     updateProgress();
+
+    ensureCourseHome();
+
+    renderCourseHome();
+
+    await showCourseHome();
   }
 }
 
@@ -2335,7 +3135,7 @@ function isLessonCompleted(
 
 
 /* =========================================================
-   LISTA DE AULAS
+   LISTA DE AULAS SIDEBAR
 ========================================================= */
 
 function renderLessons() {
@@ -2614,6 +3414,15 @@ async function selectLesson(
   }
 
 
+  /*
+    Ao escolher uma aula pela home
+    ou pela sidebar, abrimos a tela
+    do visualizador.
+  */
+
+  showLessonView();
+
+
   currentLessonIndex =
     lessonIndex;
 
@@ -2648,6 +3457,16 @@ async function selectLesson(
   }
 
 
+  /*
+    Forçamos a atualização correta
+    caso o usuário volte à home
+    e abra outra aula.
+  */
+
+  visibleSlideKey =
+    "";
+
+
   updateLessonSelection();
 
 
@@ -2657,6 +3476,12 @@ async function selectLesson(
   updateNavigation();
 
   updateProgress();
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 
@@ -3474,6 +4299,13 @@ async function markLessonCompleted(
 
     updateProgress();
 
+    /*
+      Atualiza os cards da tela inicial
+      imediatamente após a conclusão.
+    */
+
+    renderCourseHome();
+
   } catch (error) {
 
     console.error(
@@ -3813,8 +4645,6 @@ async function goNext() {
     );
 
 
-  /* próximo slide da mesma aula */
-
   if (
     lessonSlides.length &&
     currentSlideIndex <
@@ -3846,10 +4676,6 @@ async function goNext() {
   }
 
 
-  /*
-    Último slide da aula.
-  */
-
   if (
     lessonSlides.length
   ) {
@@ -3859,10 +4685,6 @@ async function goNext() {
     );
   }
 
-
-  /*
-    Próxima aula.
-  */
 
   if (
     currentLessonIndex <
@@ -4046,6 +4868,14 @@ function updateProgress() {
         circumference
       }`;
   }
+
+
+  /*
+    Mantém também o progresso
+    da tela inicial sincronizado.
+  */
+
+  updateCourseHomeProgress();
 }
 
 
@@ -4066,686 +4896,4 @@ async function renderDownloads() {
   if (!materials.length) {
 
     list.innerHTML = `
-      <li class="empty-side">
-        Nenhum material complementar
-        foi cadastrado ainda.
-      </li>
-    `;
-
-
-    return;
-  }
-
-
-  list.innerHTML = `
-    <li class="empty-side">
-      Carregando materiais...
-    </li>
-  `;
-
-
-  const renderedMaterials =
-    await Promise.all(
-      materials.map(
-        async (material) => {
-
-          const url =
-            await getStorageUrl(
-              MATERIALS_BUCKET,
-              material.arquivo_path
-            );
-
-
-          const lesson =
-            lessons.find(
-              (item) =>
-                Number(item.id) ===
-                Number(
-                  material.aula_id
-                )
-            );
-
-
-          return {
-            ...material,
-            url,
-            lesson
-          };
-        }
-      )
-    );
-
-
-  list.innerHTML =
-    renderedMaterials
-      .map(
-        (material) => {
-
-          const name =
-            escapeHtml(
-              material.nome ||
-              "Material complementar"
-            );
-
-
-          const type =
-            escapeHtml(
-              material.tipo ||
-              "Arquivo"
-            );
-
-
-          const lessonName =
-            material.lesson
-
-              ? escapeHtml(
-                  material.lesson.nome
-                )
-
-              : "";
-
-
-          const meta =
-            lessonName
-              ? `${type} • ${lessonName}`
-              : type;
-
-
-          const action =
-            material.url
-
-              ? `
-                <a
-                  class="download-action"
-                  href="${escapeHtml(
-                    material.url
-                  )}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Abrir ${name}"
-                >
-                  ↗
-                </a>
-              `
-
-              : `
-                <span
-                  class="download-action"
-                  aria-hidden="true"
-                >
-                  —
-                </span>
-              `;
-
-
-          return `
-            <li class="download-item">
-
-              <div class="file-icon">
-                ↓
-              </div>
-
-              <div>
-
-                <div class="file-name">
-                  ${name}
-                </div>
-
-                <div class="file-meta">
-                  ${meta}
-                </div>
-
-              </div>
-
-              ${action}
-
-            </li>
-          `;
-        }
-      )
-      .join("");
-}
-
-
-/* =========================================================
-   SIDEBARS
-========================================================= */
-
-const lessonsSidebar =
-  $("lessons-sidebar");
-
-
-const materialsSidebar =
-  $("materials-sidebar");
-
-
-const sidebarOverlay =
-  $("sidebar-overlay");
-
-
-const openLessonsButton =
-  $("open-lessons-sidebar");
-
-
-const closeLessonsButton =
-  $("close-lessons-sidebar");
-
-
-const openMaterialsButton =
-  $("open-materials-sidebar");
-
-
-const closeMaterialsButton =
-  $("close-materials-sidebar");
-
-
-/* =========================================================
-   FECHAR SIDEBARS
-========================================================= */
-
-function closeAllSidebars() {
-  lessonsSidebar
-    ?.classList
-    .remove(
-      "is-open"
-    );
-
-
-  materialsSidebar
-    ?.classList
-    .remove(
-      "is-open"
-    );
-
-
-  sidebarOverlay
-    ?.classList
-    .remove(
-      "is-visible"
-    );
-
-
-  document.body
-    .classList
-    .remove(
-      "sidebar-open"
-    );
-
-
-  lessonsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  materialsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  sidebarOverlay
-    ?.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  openLessonsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-
-  openMaterialsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-}
-
-
-/* =========================================================
-   ABRIR SIDEBAR AULAS
-========================================================= */
-
-function openLessonsSidebar() {
-  materialsSidebar
-    ?.classList
-    .remove(
-      "is-open"
-    );
-
-
-  materialsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  lessonsSidebar
-    ?.classList
-    .add(
-      "is-open"
-    );
-
-
-  sidebarOverlay
-    ?.classList
-    .add(
-      "is-visible"
-    );
-
-
-  document.body
-    .classList
-    .add(
-      "sidebar-open"
-    );
-
-
-  lessonsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-  sidebarOverlay
-    ?.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-  openLessonsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "true"
-    );
-
-
-  openMaterialsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-}
-
-
-/* =========================================================
-   ABRIR MATERIAIS
-========================================================= */
-
-function openMaterialsSidebar() {
-  lessonsSidebar
-    ?.classList
-    .remove(
-      "is-open"
-    );
-
-
-  lessonsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  materialsSidebar
-    ?.classList
-    .add(
-      "is-open"
-    );
-
-
-  sidebarOverlay
-    ?.classList
-    .add(
-      "is-visible"
-    );
-
-
-  document.body
-    .classList
-    .add(
-      "sidebar-open"
-    );
-
-
-  materialsSidebar
-    ?.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-  sidebarOverlay
-    ?.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-  openLessonsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-
-  openMaterialsButton
-    ?.setAttribute(
-      "aria-expanded",
-      "true"
-    );
-}
-
-
-/* =========================================================
-   EVENTOS SIDEBARS
-========================================================= */
-
-openLessonsButton
-  ?.addEventListener(
-    "click",
-    openLessonsSidebar
-  );
-
-
-closeLessonsButton
-  ?.addEventListener(
-    "click",
-    closeAllSidebars
-  );
-
-
-openMaterialsButton
-  ?.addEventListener(
-    "click",
-    openMaterialsSidebar
-  );
-
-
-closeMaterialsButton
-  ?.addEventListener(
-    "click",
-    closeAllSidebars
-  );
-
-
-sidebarOverlay
-  ?.addEventListener(
-    "click",
-    closeAllSidebars
-  );
-
-
-/* =========================================================
-   EVENTOS FULLSCREEN
-========================================================= */
-
-document.addEventListener(
-  "fullscreenchange",
-  () => {
-
-    /*
-      Quando o usuário sai pelo ESC,
-      precisamos sincronizar o estado.
-    */
-
-    if (
-      !document.fullscreenElement &&
-      !usingFullscreenFallback
-    ) {
-
-      document.body.classList.remove(
-        "presentation-mode-active"
-      );
-    }
-
-
-    syncPresentationUI();
-  }
-);
-
-
-document.addEventListener(
-  "webkitfullscreenchange",
-  () => {
-
-    if (
-      !document.webkitFullscreenElement &&
-      !usingFullscreenFallback
-    ) {
-
-      document.body.classList.remove(
-        "presentation-mode-active"
-      );
-    }
-
-
-    syncPresentationUI();
-  }
-);
-
-
-/* =========================================================
-   TECLADO
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  async (event) => {
-
-    const activeElement =
-      document.activeElement;
-
-
-    const typing =
-      activeElement &&
-      (
-        activeElement.tagName === "INPUT" ||
-        activeElement.tagName === "TEXTAREA" ||
-        activeElement.isContentEditable
-      );
-
-
-    if (typing) {
-      return;
-    }
-
-
-    /*
-      Dentro da apresentação:
-      setas do teclado passam os slides.
-    */
-
-    if (
-      isPresentationActive()
-    ) {
-
-      if (
-        event.key ===
-        "ArrowRight"
-      ) {
-
-        event.preventDefault();
-
-        await goNext();
-
-        return;
-      }
-
-
-      if (
-        event.key ===
-        "ArrowLeft"
-      ) {
-
-        event.preventDefault();
-
-        await goPrevious();
-
-        return;
-      }
-
-
-      /*
-        No fallback, ESC precisa ser
-        tratado manualmente.
-
-        No fullscreen nativo o navegador
-        já cuida disso.
-      */
-
-      if (
-        event.key ===
-          "Escape" &&
-        usingFullscreenFallback
-      ) {
-
-        event.preventDefault();
-
-        await exitPresentationMode();
-
-        return;
-      }
-    }
-
-
-    if (
-      event.key ===
-      "Escape"
-    ) {
-
-      closeAllSidebars();
-    }
-  }
-);
-
-
-/* =========================================================
-   ORIENTAÇÃO / REDIMENSIONAMENTO
-
-   Não bloqueamos a orientação.
-
-   O usuário pode usar:
-   - celular vertical;
-   - celular horizontal;
-   - tablet;
-   - desktop.
-========================================================= */
-
-window.addEventListener(
-  "resize",
-  () => {
-
-    if (
-      isPresentationActive()
-    ) {
-
-      syncPresentationUI();
-    }
-  },
-  {
-    passive: true
-  }
-);
-
-
-window.addEventListener(
-  "orientationchange",
-  () => {
-
-    window.setTimeout(
-      () => {
-
-        if (
-          isPresentationActive()
-        ) {
-
-          syncPresentationUI();
-        }
-      },
-      120
-    );
-  }
-);
-
-
-/* =========================================================
-   AUTH CHANGE
-========================================================= */
-
-supabase
-  .auth
-  .onAuthStateChange(
-    (
-      event,
-      session
-    ) => {
-
-      currentUser =
-        session?.user ||
-        null;
-
-
-      const userArea =
-        $("user-area");
-
-
-      if (userArea) {
-
-        if (currentUser) {
-
-          renderUser(
-            userArea,
-            currentUser
-          );
-
-        } else {
-
-          renderGuest(
-            userArea
-          );
-        }
-      }
-
-
-      if (
-        event ===
-        "SIGNED_OUT"
-      ) {
-
-        progressByLesson.clear();
-
-
-        updateProgress();
-
-        updateLessonSelection();
-      }
-    }
-  );
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
-
-async function init() {
-  await loadUserSession();
-
-  await loadExcelCourse();
-}
-
-
-/* =========================================================
-   START
-========================================================= */
-
-init();
+      <li class
