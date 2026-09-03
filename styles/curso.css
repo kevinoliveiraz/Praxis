@@ -687,7 +687,8 @@ svg {
 
   transition:
     background 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .lesson:hover {
@@ -778,11 +779,82 @@ svg {
 
   background: #ffffff;
   color: #30343b;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .lesson.active .lesson-play {
   border-color: var(--accent);
   background: var(--accent);
+}
+
+
+/* =========================================================
+   REGRA 1 — AULA BLOQUEADA NA SIDEBAR
+========================================================= */
+
+.lesson.is-locked {
+  color: #92979f;
+
+  cursor: not-allowed;
+
+  opacity: 0.62;
+
+  background: transparent;
+}
+
+.lesson.is-locked:hover {
+  background: transparent;
+  color: #92979f;
+}
+
+.lesson.is-locked.active {
+  background: transparent;
+  color: #92979f;
+}
+
+.lesson.is-locked.active::before {
+  display: none;
+}
+
+.lesson.is-locked .lesson-status {
+  border-color: #d4d7db;
+
+  background: #f1f2f3;
+  color: #8c9199;
+}
+
+.lesson.is-locked .lesson-num {
+  color: #9a9fa7;
+}
+
+.lesson.is-locked .lesson-name {
+  color: #8d929a;
+}
+
+.lesson.is-locked .lesson-duration {
+  color: #9a9fa7;
+
+  font-weight: 600;
+}
+
+.lesson.is-locked .lesson-play {
+  border-color: #dde0e3;
+
+  background: #f2f3f4;
+  color: #969ba3;
+
+  cursor: not-allowed;
+
+  opacity: 1;
+}
+
+.lesson.is-locked .lesson-play:disabled {
+  cursor: not-allowed;
 }
 
 
@@ -1295,7 +1367,8 @@ svg {
     transform 0.22s ease,
     box-shadow 0.22s ease,
     border-color 0.22s ease,
-    background 0.22s ease;
+    background 0.22s ease,
+    opacity 0.22s ease;
 }
 
 .course-home-lesson-card::before {
@@ -1367,6 +1440,76 @@ svg {
 
 
 /* =========================================================
+   REGRA 1 — CARD BLOQUEADO
+========================================================= */
+
+.course-home-lesson-card.is-locked,
+.course-home-lesson-card:disabled.is-locked {
+  border-color: #e3e5e7;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fafafa 0%,
+      #f4f5f6 100%
+    );
+
+  color: #8f949c;
+
+  cursor: not-allowed;
+
+  opacity: 0.68;
+
+  box-shadow:
+    0 6px 18px
+    rgba(
+      20,
+      24,
+      28,
+      0.025
+    );
+
+  transform: none;
+}
+
+.course-home-lesson-card.is-locked::before {
+  background: #d8dbde;
+}
+
+.course-home-lesson-card.is-locked:hover,
+.course-home-lesson-card:disabled.is-locked:hover {
+  border-color: #e3e5e7;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fafafa 0%,
+      #f4f5f6 100%
+    );
+
+  box-shadow:
+    0 6px 18px
+    rgba(
+      20,
+      24,
+      28,
+      0.025
+    );
+
+  transform: none;
+}
+
+.course-home-lesson-card.is-locked:hover::before {
+  background: #d8dbde;
+}
+
+.course-home-lesson-card.is-locked:active,
+.course-home-lesson-card:disabled.is-locked:active {
+  transform: none;
+}
+
+
+/* =========================================================
    ÍCONE DO CARD
 ========================================================= */
 
@@ -1396,7 +1539,8 @@ svg {
 
   transition:
     transform 0.22s ease,
-    background 0.22s ease;
+    background 0.22s ease,
+    color 0.22s ease;
 }
 
 .course-home-lesson-card:hover
@@ -1415,6 +1559,29 @@ svg {
 .course-home-lesson-icon svg {
   width: 36px;
   height: 36px;
+}
+
+
+/* =========================================================
+   ÍCONE DO CARD BLOQUEADO
+========================================================= */
+
+.course-home-lesson-card.is-locked
+.course-home-lesson-icon {
+  background: #e9ebed;
+
+  color: #8d929a;
+
+  transform: none;
+}
+
+.course-home-lesson-card.is-locked:hover
+.course-home-lesson-icon {
+  background: #e9ebed;
+
+  color: #8d929a;
+
+  transform: none;
 }
 
 
@@ -1468,6 +1635,26 @@ svg {
 
 
 /* =========================================================
+   CONTEÚDO CARD BLOQUEADO
+========================================================= */
+
+.course-home-lesson-card.is-locked
+.course-home-lesson-number {
+  color: #9a9fa6;
+}
+
+.course-home-lesson-card.is-locked
+.course-home-lesson-title {
+  color: #777c84;
+}
+
+.course-home-lesson-card.is-locked
+.course-home-lesson-meta {
+  color: #9ca1a8;
+}
+
+
+/* =========================================================
    STATUS DO CARD
 ========================================================= */
 
@@ -1511,6 +1698,18 @@ svg {
   color: #676d76;
 }
 
+
+/* =========================================================
+   STATUS BLOQUEADO
+========================================================= */
+
+.course-home-lesson-status.is-locked {
+  border: 1px solid #dfe2e4;
+
+  background: #e9ebed;
+  color: #747981;
+}
+
 .course-home-status-icon {
   display: inline-flex;
 
@@ -1519,6 +1718,11 @@ svg {
 
   font-size: 14px;
   font-weight: 900;
+}
+
+.course-home-lesson-status.is-locked
+.course-home-status-icon {
+  color: #777c84;
 }
 
 
@@ -2720,6 +2924,10 @@ svg {
     border-radius: 18px;
   }
 
+  .course-home-lesson-card.is-locked {
+    opacity: 0.7;
+  }
+
   .course-home-lesson-icon {
     width: 58px;
     height: 58px;
@@ -3196,6 +3404,10 @@ svg {
     padding: 22px 15px;
   }
 
+  .course-home-lesson-card.is-locked {
+    opacity: 0.72;
+  }
+
   .course-home-lesson-title {
     font-size: 18px;
   }
@@ -3297,7 +3509,9 @@ svg {
   .course-home-lesson-card,
   .course-home-lesson-icon,
   .back-to-course-home,
-  .course-home-progress-fill {
+  .course-home-progress-fill,
+  .lesson,
+  .lesson-play {
     transition: none;
   }
 
