@@ -14,7 +14,6 @@ const SLIDES_BUCKET = "slides";
 const MATERIALS_BUCKET = "materiais";
 
 const SIGNED_URL_EXPIRES_IN = 60 * 60;
-
 const SLIDE_TRANSITION_MS = 280;
 
 
@@ -67,12 +66,11 @@ let slideRenderVersion = 0;
 let isSlideTransitioning = false;
 
 let activeSlideLayer = 0;
-
 let visibleSlideKey = "";
 
 
 /* =========================================================
-   TELA CHEIA / APRESENTAÇÃO
+   TELA CHEIA
 ========================================================= */
 
 let usingFullscreenFallback = false;
@@ -330,7 +328,7 @@ function preloadImage(url) {
 
 
 /* =========================================================
-   TELA INICIAL DO CURSO
+   VIEW DA AULA
 ========================================================= */
 
 function getLessonView() {
@@ -344,7 +342,7 @@ function getLessonView() {
 
 
 /* =========================================================
-   CRIAR TELA INICIAL DO CURSO
+   CRIAR HOME DO CURSO
 ========================================================= */
 
 function ensureCourseHome() {
@@ -421,7 +419,6 @@ function ensureCourseHome() {
           <div
             class="course-home-progress-info"
           >
-
             <span>
               Seu progresso
             </span>
@@ -431,19 +428,16 @@ function ensureCourseHome() {
             >
               0%
             </strong>
-
           </div>
 
 
           <div
             class="course-home-progress-track"
           >
-
             <div
               id="course-home-progress-fill"
               class="course-home-progress-fill"
             ></div>
-
           </div>
 
         </div>
@@ -455,13 +449,11 @@ function ensureCourseHome() {
         id="course-home-modules"
         class="course-home-modules"
       >
-
         <div
           class="course-home-loading"
         >
           Carregando módulos...
         </div>
-
       </div>
 
     </div>
@@ -483,7 +475,7 @@ function ensureCourseHome() {
 
 
 /* =========================================================
-   BOTÃO VOLTAR AO CONTEÚDO
+   VOLTAR À HOME
 ========================================================= */
 
 function ensureBackToCourseHomeButton() {
@@ -556,7 +548,7 @@ function ensureBackToCourseHomeButton() {
 
 
 /* =========================================================
-   MOSTRAR TELA INICIAL
+   MOSTRAR HOME
 ========================================================= */
 
 async function showCourseHome() {
@@ -654,12 +646,136 @@ function showLessonView() {
 
 
 /* =========================================================
+   CONCLUSÃO
+========================================================= */
+
+function isLessonCompleted(
+  lesson
+) {
+  if (!lesson) {
+    return false;
+  }
+
+
+  return Boolean(
+    progressByLesson.get(
+      Number(
+        lesson.id
+      )
+    )?.concluida
+  );
+}
+
+
+/* =========================================================
+   REGRA 1 — BLOQUEIO SEQUENCIAL
+
+   Aula 1:
+   sempre liberada.
+
+   Aula 2:
+   exige aula 1 concluída.
+
+   Aula 3:
+   exige aulas 1 e 2 concluídas.
+
+   Aula 4:
+   exige aulas 1, 2 e 3 concluídas.
+
+   E assim por diante.
+========================================================= */
+
+function isLessonUnlocked(
+  lessonIndex
+) {
+  if (
+    lessonIndex < 0 ||
+    lessonIndex >= lessons.length
+  ) {
+    return false;
+  }
+
+
+  /*
+    Primeira aula sempre liberada.
+  */
+
+  if (
+    lessonIndex === 0
+  ) {
+    return true;
+  }
+
+
+  /*
+    Verifica TODAS as aulas anteriores.
+
+    Isso evita que uma inconsistência
+    antiga no banco permita pular aulas.
+  */
+
+  for (
+    let index = 0;
+    index < lessonIndex;
+    index += 1
+  ) {
+
+    const previousLesson =
+      lessons[index];
+
+
+    if (
+      !isLessonCompleted(
+        previousLesson
+      )
+    ) {
+
+      return false;
+    }
+  }
+
+
+  return true;
+}
+
+
+/* =========================================================
    STATUS DO CARD
 ========================================================= */
 
 function getCourseHomeLessonStatus(
-  lesson
+  lesson,
+  lessonIndex
 ) {
+  const unlocked =
+    isLessonUnlocked(
+      lessonIndex
+    );
+
+
+  /*
+    Bloqueada tem prioridade.
+  */
+
+  if (!unlocked) {
+
+    return {
+      className:
+        "is-locked",
+
+      label:
+        "Bloqueado",
+
+      locked:
+        true
+    };
+  }
+
+
+  /*
+    Concluída.
+  */
+
   if (
     isLessonCompleted(
       lesson
@@ -670,24 +786,28 @@ function getCourseHomeLessonStatus(
       className:
         "is-completed",
 
-      icon:
-        "✓",
-
       label:
-        "Concluído"
+        "Concluído",
+
+      locked:
+        false
     };
   }
 
+
+  /*
+    Disponível.
+  */
 
   return {
     className:
       "is-available",
 
-    icon:
-      "•",
-
     label:
-      "Disponível"
+      "Disponível",
+
+    locked:
+      false
   };
 }
 
@@ -709,7 +829,6 @@ function getCourseHomeLessonIcon() {
       stroke-linejoin="round"
       aria-hidden="true"
     >
-
       <path
         d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
       />
@@ -717,14 +836,122 @@ function getCourseHomeLessonIcon() {
       <path
         d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
       />
-
     </svg>
   `;
 }
 
 
 /* =========================================================
-   RENDERIZAR HOME DO CURSO
+   ÍCONE DE CADEADO
+========================================================= */
+
+function getLockIcon(
+  size = 18
+) {
+  return `
+    <svg
+      width="${size}"
+      height="${size}"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <rect
+        x="5"
+        y="11"
+        width="14"
+        height="10"
+        rx="2"
+      />
+
+      <path
+        d="M8 11V7a4 4 0 0 1 8 0v4"
+      />
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   ÍCONE CONCLUÍDO
+========================================================= */
+
+function getCompletedIcon(
+  size = 15
+) {
+  return `
+    <svg
+      width="${size}"
+      height="${size}"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <polyline
+        points="20 6 9 17 4 12"
+      />
+    </svg>
+  `;
+}
+
+
+/* =========================================================
+   ÍCONE DISPONÍVEL
+========================================================= */
+
+function getAvailableIcon() {
+  return `
+    <span
+      aria-hidden="true"
+    >
+      •
+    </span>
+  `;
+}
+
+
+/* =========================================================
+   ÍCONE DO STATUS
+========================================================= */
+
+function getStatusIcon(
+  status
+) {
+  if (
+    status.locked
+  ) {
+
+    return getLockIcon(
+      15
+    );
+  }
+
+
+  if (
+    status.className ===
+    "is-completed"
+  ) {
+
+    return getCompletedIcon(
+      15
+    );
+  }
+
+
+  return getAvailableIcon();
+}
+
+
+/* =========================================================
+   HOME DO CURSO
 ========================================================= */
 
 function renderCourseHome() {
@@ -913,7 +1140,9 @@ function renderCourseHome() {
               );
 
 
-            if (globalIndex < 0) {
+            if (
+              globalIndex < 0
+            ) {
               return;
             }
 
@@ -937,7 +1166,8 @@ function renderCourseHome() {
 
             const status =
               getCourseHomeLessonStatus(
-                lesson
+                lesson,
+                globalIndex
               );
 
 
@@ -967,10 +1197,46 @@ function renderCourseHome() {
               );
 
 
-            card.setAttribute(
-              "aria-label",
-              `Abrir aula ${lessonNumber} ${lessonName}`
-            );
+            /*
+              Aula bloqueada não recebe
+              botão funcional.
+            */
+
+            if (
+              status.locked
+            ) {
+
+              card.disabled =
+                true;
+
+
+              card.setAttribute(
+                "aria-disabled",
+                "true"
+              );
+
+
+              card.setAttribute(
+                "aria-label",
+                `Aula ${lessonNumber} ${lessonName} bloqueada. Conclua as aulas anteriores primeiro.`
+              );
+
+            } else {
+
+              card.disabled =
+                false;
+
+
+              card.removeAttribute(
+                "aria-disabled"
+              );
+
+
+              card.setAttribute(
+                "aria-label",
+                `Abrir aula ${lessonNumber} ${lessonName}`
+              );
+            }
 
 
             let slidesText =
@@ -997,7 +1263,15 @@ function renderCourseHome() {
               <div
                 class="course-home-lesson-icon"
               >
-                ${getCourseHomeLessonIcon()}
+                ${
+                  status.locked
+
+                    ? getLockIcon(
+                        38
+                      )
+
+                    : getCourseHomeLessonIcon()
+                }
               </div>
 
 
@@ -1026,9 +1300,15 @@ function renderCourseHome() {
                 <div
                   class="course-home-lesson-meta"
                 >
-                  ${escapeHtml(
-                    slidesText
-                  )}
+                  ${
+                    status.locked
+
+                      ? "Conclua a aula anterior para liberar"
+
+                      : escapeHtml(
+                          slidesText
+                        )
+                  }
                 </div>
 
               </div>
@@ -1042,7 +1322,9 @@ function renderCourseHome() {
                   class="course-home-status-icon"
                   aria-hidden="true"
                 >
-                  ${status.icon}
+                  ${getStatusIcon(
+                    status
+                  )}
                 </span>
 
                 <span>
@@ -1055,23 +1337,32 @@ function renderCourseHome() {
             `;
 
 
-            card.addEventListener(
-              "click",
-              async () => {
+            /*
+              Evento apenas para aula liberada.
+            */
 
-                if (
-                  isSlideTransitioning
-                ) {
-                  return;
+            if (
+              !status.locked
+            ) {
+
+              card.addEventListener(
+                "click",
+                async () => {
+
+                  if (
+                    isSlideTransitioning
+                  ) {
+                    return;
+                  }
+
+
+                  await selectLesson(
+                    globalIndex,
+                    0
+                  );
                 }
-
-
-                await selectLesson(
-                  globalIndex,
-                  0
-                );
-              }
-            );
+              );
+            }
 
 
             cardsContainer.appendChild(
@@ -1149,7 +1440,7 @@ function updateCourseHomeProgress() {
 
 
 /* =========================================================
-   TELA CHEIA — HELPERS
+   FULLSCREEN — HELPERS
 ========================================================= */
 
 function getPresentationStage() {
@@ -1239,7 +1530,7 @@ async function requestNativeFullscreen(
 
 
 /* =========================================================
-   SAIR DO FULLSCREEN NATIVO
+   SAIR DO FULLSCREEN
 ========================================================= */
 
 async function exitNativeFullscreen() {
@@ -1421,7 +1712,7 @@ async function togglePresentationMode() {
 
 
 /* =========================================================
-   UI APRESENTAÇÃO
+   UI DA APRESENTAÇÃO
 ========================================================= */
 
 function syncPresentationUI() {
@@ -1504,7 +1795,7 @@ function syncPresentationUI() {
 
 
 /* =========================================================
-   EVENTOS DA APRESENTAÇÃO
+   CONTROLES DA APRESENTAÇÃO
 ========================================================= */
 
 function bindPresentationControls(
@@ -1571,7 +1862,7 @@ function bindPresentationControls(
 
 
 /* =========================================================
-   VIEWER PERMANENTE
+   VIEWER
 ========================================================= */
 
 function ensureSlideViewer() {
@@ -2040,13 +2331,27 @@ async function crossfadeSlide(
 
 
 /* =========================================================
-   PRÉ-CARREGAR SLIDES
+   PRÉ-CARREGAR SLIDE
 ========================================================= */
 
 async function preloadSlideAt(
   lessonIndex,
   slideIndex
 ) {
+  /*
+    Não fazemos preload
+    de aula bloqueada.
+  */
+
+  if (
+    !isLessonUnlocked(
+      lessonIndex
+    )
+  ) {
+    return;
+  }
+
+
   const lesson =
     lessons[
       lessonIndex
@@ -2113,13 +2418,20 @@ function preloadNearbySlides() {
   );
 
 
+  const nextLessonIndex =
+    currentLessonIndex + 1;
+
+
   if (
-    currentLessonIndex <
-    lessons.length - 1
+    nextLessonIndex <
+      lessons.length &&
+    isLessonUnlocked(
+      nextLessonIndex
+    )
   ) {
 
     preloadSlideAt(
-      currentLessonIndex + 1,
+      nextLessonIndex,
       0
     );
   }
@@ -2234,7 +2546,6 @@ function renderGuest(userArea) {
         stroke-width="2"
         aria-hidden="true"
       >
-
         <path
           d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
         />
@@ -2244,7 +2555,6 @@ function renderGuest(userArea) {
           cy="7"
           r="4"
         />
-
       </svg>
 
       Entrar
@@ -2599,7 +2909,9 @@ async function loadLessons() {
           const module =
             modules.find(
               (item) =>
-                Number(item.id) ===
+                Number(
+                  item.id
+                ) ===
                 Number(
                   lesson.modulo_id
                 )
@@ -2977,17 +3289,11 @@ async function loadExcelCourse() {
 
 
     /*
-      IMPORTANTE:
-
-      Não abre automaticamente
-      a primeira aula.
-
-      Sempre começa na tela
-      de módulos.
+      Sempre começa
+      na tela de módulos.
     */
 
     ensureCourseHome();
-
 
     renderCourseHome();
 
@@ -3011,13 +3317,9 @@ async function loadExcelCourse() {
 
 
     modules = [];
-
     lessons = [];
-
     slides = [];
-
     materials = [];
-
     progressRows = [];
 
 
@@ -3141,28 +3443,6 @@ function getLessonMaterials(
 
 
 /* =========================================================
-   CONCLUSÃO
-========================================================= */
-
-function isLessonCompleted(
-  lesson
-) {
-  if (!lesson) {
-    return false;
-  }
-
-
-  return Boolean(
-    progressByLesson.get(
-      Number(
-        lesson.id
-      )
-    )?.concluida
-  );
-}
-
-
-/* =========================================================
    SIDEBAR DE AULAS
 ========================================================= */
 
@@ -3253,11 +3533,20 @@ function renderLessons() {
           const globalIndex =
             lessons.findIndex(
               (item) =>
-                Number(item.id) ===
+                Number(
+                  item.id
+                ) ===
                 Number(
                   lesson.id
                 )
             );
+
+
+          if (
+            globalIndex < 0
+          ) {
+            return;
+          }
 
 
           const lessonSlides =
@@ -3269,6 +3558,12 @@ function renderLessons() {
           const completed =
             isLessonCompleted(
               lesson
+            );
+
+
+          const unlocked =
+            isLessonUnlocked(
+              globalIndex
             );
 
 
@@ -3292,6 +3587,20 @@ function renderLessons() {
             String(
               lesson.id
             );
+
+
+          li.classList.toggle(
+            "is-locked",
+            !unlocked
+          );
+
+
+          li.setAttribute(
+            "aria-disabled",
+            unlocked
+              ? "false"
+              : "true"
+          );
 
 
           const lessonNumber =
@@ -3324,28 +3633,24 @@ function renderLessons() {
 
 
           li.innerHTML = `
-            <div class="lesson-status">
-
+            <div
+              class="lesson-status"
+            >
               ${
-                completed
-                  ? `
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="3"
-                      aria-hidden="true"
-                    >
-                      <polyline
-                        points="20 6 9 17 4 12"
-                      />
-                    </svg>
-                  `
-                  : ""
-              }
+                !unlocked
 
+                  ? getLockIcon(
+                      12
+                    )
+
+                  : completed
+
+                    ? getCompletedIcon(
+                        10
+                      )
+
+                    : ""
+              }
             </div>
 
 
@@ -3362,54 +3667,87 @@ function renderLessons() {
 
 
             <div class="lesson-duration">
-              ${escapeHtml(
-                slidesLabel
-              )}
+              ${
+                unlocked
+                  ? escapeHtml(
+                      slidesLabel
+                    )
+                  : "Bloqueado"
+              }
             </div>
 
 
             <button
               type="button"
               class="lesson-play"
-              aria-label="Abrir ${lessonName}"
+              aria-label="${
+                unlocked
+                  ? `Abrir ${lessonName}`
+                  : `${lessonName} bloqueada`
+              }"
+              ${
+                unlocked
+                  ? ""
+                  : "disabled"
+              }
             >
 
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 5v14l11-7z"
-                />
-              </svg>
+              ${
+                unlocked
+
+                  ? `
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 5v14l11-7z"
+                      />
+                    </svg>
+                  `
+
+                  : getLockIcon(
+                      11
+                    )
+              }
 
             </button>
           `;
 
 
-          li.addEventListener(
-            "click",
-            async () => {
+          /*
+            Sidebar também respeita
+            o bloqueio.
+          */
 
-              if (
-                isSlideTransitioning
-              ) {
-                return;
+          if (
+            unlocked
+          ) {
+
+            li.addEventListener(
+              "click",
+              async () => {
+
+                if (
+                  isSlideTransitioning
+                ) {
+                  return;
+                }
+
+
+                await selectLesson(
+                  globalIndex,
+                  0
+                );
+
+
+                closeAllSidebars();
               }
-
-
-              await selectLesson(
-                globalIndex,
-                0
-              );
-
-
-              closeAllSidebars();
-            }
-          );
+            );
+          }
 
 
           list?.appendChild(
@@ -3443,6 +3781,28 @@ async function selectLesson(
     lessonIndex >=
       lessons.length
   ) {
+    return;
+  }
+
+
+  /*
+    PROTEÇÃO REAL.
+
+    Mesmo que alguém tente chamar
+    selectLesson manualmente,
+    não consegue abrir aula bloqueada.
+  */
+
+  if (
+    !isLessonUnlocked(
+      lessonIndex
+    )
+  ) {
+
+    console.warn(
+      "Aula bloqueada. Conclua as aulas anteriores primeiro."
+    );
+
     return;
   }
 
@@ -3543,9 +3903,16 @@ function updateLessonSelection() {
         }
 
 
+        const unlocked =
+          isLessonUnlocked(
+            index
+          );
+
+
         const isCurrent =
+          unlocked &&
           index ===
-          currentLessonIndex;
+            currentLessonIndex;
 
 
         const isDone =
@@ -3566,44 +3933,134 @@ function updateLessonSelection() {
         );
 
 
+        item.classList.toggle(
+          "is-locked",
+          !unlocked
+        );
+
+
+        item.setAttribute(
+          "aria-disabled",
+          unlocked
+            ? "false"
+            : "true"
+        );
+
+
         const status =
           item.querySelector(
             ".lesson-status"
           );
 
 
-        if (!status) {
-          return;
+        const playButton =
+          item.querySelector(
+            ".lesson-play"
+          );
+
+
+        const duration =
+          item.querySelector(
+            ".lesson-duration"
+          );
+
+
+        if (status) {
+
+          if (!unlocked) {
+
+            status.innerHTML =
+              getLockIcon(
+                12
+              );
+
+          } else if (isDone) {
+
+            status.innerHTML =
+              getCompletedIcon(
+                10
+              );
+
+          } else {
+
+            status.innerHTML =
+              "";
+          }
         }
 
 
-        status.innerHTML =
-          isDone
+        if (playButton) {
 
-            ? `
+          playButton.disabled =
+            !unlocked;
+
+
+          if (!unlocked) {
+
+            playButton.innerHTML =
+              getLockIcon(
+                11
+              );
+
+          } else {
+
+            playButton.innerHTML = `
               <svg
                 width="10"
                 height="10"
                 viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
+                fill="currentColor"
                 aria-hidden="true"
               >
-                <polyline
-                  points="20 6 9 17 4 12"
+                <path
+                  d="M8 5v14l11-7z"
                 />
               </svg>
-            `
+            `;
+          }
+        }
 
-            : "";
+
+        if (duration) {
+
+          const lessonSlides =
+            getLessonSlides(
+              lesson
+            );
+
+
+          if (!unlocked) {
+
+            duration.textContent =
+              "Bloqueado";
+
+          } else if (
+            lessonSlides.length === 1
+          ) {
+
+            duration.textContent =
+              "1 slide";
+
+          } else if (
+            lessonSlides.length > 1
+          ) {
+
+            duration.textContent =
+              `${lessonSlides.length} slides`;
+
+          } else {
+
+            duration.textContent =
+              "—";
+          }
+        }
       }
     );
 }
 
 
 /* =========================================================
-   RENDERIZAR AULA / SLIDE
+   RENDERIZAR AULA
 ========================================================= */
 
 async function renderCurrentLesson() {
@@ -3614,6 +4071,20 @@ async function renderCurrentLesson() {
 
 
   if (!lesson) {
+    return false;
+  }
+
+
+  /*
+    Segunda proteção.
+  */
+
+  if (
+    !isLessonUnlocked(
+      currentLessonIndex
+    )
+  ) {
+
     return false;
   }
 
@@ -3868,7 +4339,7 @@ async function renderCurrentLesson() {
 
 
 /* =========================================================
-   CONTADOR DE SLIDES
+   CONTADOR
 ========================================================= */
 
 function renderSlideCounter(
@@ -4194,11 +4665,23 @@ function renderNoLessons() {
 async function markLessonCompleted(
   lesson
 ) {
-  if (
-    !lesson ||
-    !currentUser
-  ) {
-    return;
+  if (!lesson) {
+    return false;
+  }
+
+
+  /*
+    Sem usuário não salvamos conclusão
+    e portanto não liberamos a próxima.
+  */
+
+  if (!currentUser) {
+
+    console.warn(
+      "Usuário não autenticado. Não foi possível registrar o progresso."
+    );
+
+    return false;
   }
 
 
@@ -4217,7 +4700,8 @@ async function markLessonCompleted(
   if (
     existing?.concluida
   ) {
-    return;
+
+    return true;
   }
 
 
@@ -4228,7 +4712,13 @@ async function markLessonCompleted(
 
   try {
 
-    if (existing?.id) {
+    let savedRow =
+      null;
+
+
+    if (
+      existing?.id
+    ) {
 
       const {
         data,
@@ -4268,13 +4758,8 @@ async function markLessonCompleted(
       }
 
 
-      if (data) {
-
-        progressByLesson.set(
-          lessonId,
-          data
-        );
-      }
+      savedRow =
+        data;
 
     } else {
 
@@ -4314,15 +4799,33 @@ async function markLessonCompleted(
       }
 
 
-      if (data) {
-
-        progressByLesson.set(
-          lessonId,
-          data
-        );
-      }
+      savedRow =
+        data;
     }
 
+
+    if (!savedRow) {
+
+      console.error(
+        "O Supabase não retornou o progresso salvo."
+      );
+
+      return false;
+    }
+
+
+    progressByLesson.set(
+      lessonId,
+      savedRow
+    );
+
+
+    /*
+      Recria a sidebar para liberar
+      imediatamente a próxima aula.
+    */
+
+    renderLessons();
 
     updateLessonSelection();
 
@@ -4330,12 +4833,18 @@ async function markLessonCompleted(
 
     renderCourseHome();
 
+
+    return true;
+
   } catch (error) {
 
     console.error(
       "Erro ao salvar progresso:",
       error
     );
+
+
+    return false;
   }
 }
 
@@ -4471,7 +4980,9 @@ function updatePresentationNavigation() {
 
     if (text) {
 
-      if (state.finalLesson) {
+      if (
+        state.finalLesson
+      ) {
 
         text.textContent =
           state.completed
@@ -4518,7 +5029,9 @@ function updateNavigation() {
       !state.canNext;
 
 
-    if (state.finalLesson) {
+    if (
+      state.finalLesson
+    ) {
 
       next.textContent =
         state.completed
@@ -4550,6 +5063,11 @@ async function goPrevious() {
   }
 
 
+  /*
+    Slide anterior
+    da mesma aula.
+  */
+
   if (
     currentSlideIndex > 0
   ) {
@@ -4579,8 +5097,25 @@ async function goPrevious() {
   }
 
 
+  /*
+    Aula anterior.
+  */
+
   if (
     currentLessonIndex <= 0
+  ) {
+    return;
+  }
+
+
+  const previousLessonIndex =
+    currentLessonIndex - 1;
+
+
+  if (
+    !isLessonUnlocked(
+      previousLessonIndex
+    )
   ) {
     return;
   }
@@ -4592,10 +5127,6 @@ async function goPrevious() {
 
   const oldSlideIndex =
     currentSlideIndex;
-
-
-  const previousLessonIndex =
-    currentLessonIndex - 1;
 
 
   const previousLesson =
@@ -4622,6 +5153,10 @@ async function goPrevious() {
 
   currentSlideIndex =
     lastSlideIndex;
+
+
+  visibleSlideKey =
+    "";
 
 
   updateLessonSelection();
@@ -4653,6 +5188,10 @@ async function goPrevious() {
 
 /* =========================================================
    PRÓXIMO
+
+   REGRA:
+   só libera a próxima depois
+   de salvar a conclusão da atual.
 ========================================================= */
 
 async function goNext() {
@@ -4670,6 +5209,11 @@ async function goNext() {
     ];
 
 
+  if (!lesson) {
+    return;
+  }
+
+
   const lessonSlides =
     getLessonSlides(
       lesson
@@ -4677,7 +5221,8 @@ async function goNext() {
 
 
   /*
-    Próximo slide da mesma aula.
+    Ainda existem slides
+    dentro da aula.
   */
 
   if (
@@ -4712,79 +5257,147 @@ async function goNext() {
 
 
   /*
-    Chegou ao último slide:
-    conclui a aula.
+    Fim da aula.
+
+    A conclusão precisa ser
+    salva antes de avançar.
   */
 
-  if (
-    lessonSlides.length
-  ) {
-
-    await markLessonCompleted(
+  let completedSuccessfully =
+    isLessonCompleted(
       lesson
     );
+
+
+  if (
+    !completedSuccessfully
+  ) {
+
+    /*
+      Só concluímos automaticamente
+      aulas que possuem slides.
+
+      Mantém o comportamento original
+      do projeto.
+    */
+
+    if (
+      lessonSlides.length
+    ) {
+
+      completedSuccessfully =
+        await markLessonCompleted(
+          lesson
+        );
+    }
   }
 
 
   /*
-    Próxima aula.
+    Se ainda não foi concluída,
+    não pode avançar.
   */
 
   if (
-    currentLessonIndex <
-    lessons.length - 1
+    !completedSuccessfully
   ) {
 
-    const oldLessonIndex =
-      currentLessonIndex;
-
-
-    const oldSlideIndex =
-      currentSlideIndex;
-
-
-    currentLessonIndex +=
-      1;
-
-
-    currentSlideIndex =
-      0;
-
-
-    visibleSlideKey =
-      "";
-
-
-    updateLessonSelection();
-
-
-    const success =
-      await renderCurrentLesson();
-
-
-    if (!success) {
-
-      currentLessonIndex =
-        oldLessonIndex;
-
-
-      currentSlideIndex =
-        oldSlideIndex;
-
-
-      updateLessonSelection();
-    }
+    console.warn(
+      "Conclua a aula atual antes de continuar."
+    );
 
 
     updateNavigation();
-
-    updateProgress();
 
     return;
   }
 
 
+  /*
+    Terminou o curso.
+  */
+
+  if (
+    currentLessonIndex >=
+    lessons.length - 1
+  ) {
+
+    updateNavigation();
+
+    return;
+  }
+
+
+  const nextLessonIndex =
+    currentLessonIndex + 1;
+
+
+  /*
+    Confirma novamente
+    a Regra 1.
+  */
+
+  if (
+    !isLessonUnlocked(
+      nextLessonIndex
+    )
+  ) {
+
+    console.warn(
+      "A próxima aula ainda está bloqueada."
+    );
+
+
+    updateNavigation();
+
+    return;
+  }
+
+
+  const oldLessonIndex =
+    currentLessonIndex;
+
+
+  const oldSlideIndex =
+    currentSlideIndex;
+
+
+  currentLessonIndex =
+    nextLessonIndex;
+
+
+  currentSlideIndex =
+    0;
+
+
+  visibleSlideKey =
+    "";
+
+
+  updateLessonSelection();
+
+
+  const success =
+    await renderCurrentLesson();
+
+
+  if (!success) {
+
+    currentLessonIndex =
+      oldLessonIndex;
+
+
+    currentSlideIndex =
+      oldSlideIndex;
+
+
+    updateLessonSelection();
+  }
+
+
   updateNavigation();
+
+  updateProgress();
 }
 
 
@@ -4968,7 +5581,9 @@ async function renderDownloads() {
           const lesson =
             lessons.find(
               (item) =>
-                Number(item.id) ===
+                Number(
+                  item.id
+                ) ===
                 Number(
                   material.aula_id
                 )
@@ -5178,7 +5793,7 @@ function closeAllSidebars() {
 
 
 /* =========================================================
-   ABRIR SIDEBAR AULAS
+   ABRIR AULAS
 ========================================================= */
 
 function openLessonsSidebar() {
@@ -5247,7 +5862,7 @@ function openLessonsSidebar() {
 
 
 /* =========================================================
-   ABRIR SIDEBAR MATERIAIS
+   ABRIR MATERIAIS
 ========================================================= */
 
 function openMaterialsSidebar() {
@@ -5316,7 +5931,7 @@ function openMaterialsSidebar() {
 
 
 /* =========================================================
-   EVENTOS SIDEBARS
+   EVENTOS DAS SIDEBARS
 ========================================================= */
 
 openLessonsButton
@@ -5355,7 +5970,7 @@ sidebarOverlay
 
 
 /* =========================================================
-   EVENTOS FULLSCREEN
+   FULLSCREEN
 ========================================================= */
 
 document.addEventListener(
@@ -5485,7 +6100,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   REDIMENSIONAMENTO / ORIENTAÇÃO
+   REDIMENSIONAMENTO
 ========================================================= */
 
 window.addEventListener(
@@ -5526,7 +6141,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   ALTERAÇÕES DE AUTENTICAÇÃO
+   ALTERAÇÃO DE AUTENTICAÇÃO
 ========================================================= */
 
 supabase
@@ -5586,6 +6201,15 @@ supabase
 
         updateProgress();
 
+
+        /*
+          Após sair:
+          somente a primeira aula
+          permanece liberada.
+        */
+
+        renderLessons();
+
         updateLessonSelection();
 
         renderCourseHome();
@@ -5606,6 +6230,14 @@ supabase
           await loadProgress();
 
           updateProgress();
+
+
+          /*
+            Recalcula todos
+            os bloqueios.
+          */
+
+          renderLessons();
 
           updateLessonSelection();
 
@@ -5631,11 +6263,8 @@ async function init() {
   try {
 
     /*
-      Esconde a tela antiga imediatamente,
-      antes de carregar o Supabase.
-
-      Isso evita aparecer rapidamente
-      a primeira aula.
+      Esconde a aula antiga
+      imediatamente.
     */
 
     const lessonView =
@@ -5650,21 +6279,21 @@ async function init() {
 
 
     /*
-      Cria imediatamente a nova tela.
+      Cria a home.
     */
 
     ensureCourseHome();
 
 
     /*
-      Primeiro verifica a autenticação.
+      Autenticação primeiro.
     */
 
     await loadUserSession();
 
 
     /*
-      Depois carrega o curso.
+      Curso depois.
     */
 
     await loadExcelCourse();
