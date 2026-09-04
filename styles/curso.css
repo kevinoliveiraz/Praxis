@@ -312,7 +312,7 @@ svg {
 
 /* =========================================================
    TOOLBAR
-   ATUALIZADO — TÍTULO DO CURSO
+   SIMPLIFICADA — AULAS / MATERIAIS
 ========================================================= */
 
 .course-toolbar {
@@ -339,65 +339,26 @@ svg {
 }
 
 .course-toolbar-inner {
-  display: grid;
-
-  grid-template-columns:
-    auto
-    minmax(0, 1fr)
-    auto;
+  display: flex;
 
   min-height: 58px;
 
   align-items: center;
+  justify-content: space-between;
 
   gap: 16px;
 }
 
-.course-toolbar-title {
-  display: flex;
+/*
+  O nome do curso já aparece no conteúdo da página.
+  O elemento continua no HTML por enquanto,
+  mas não é exibido na toolbar.
+*/
 
-  min-width: 0;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
-  color: #23272d;
-
-  font-size: 17px;
-  font-weight: 800;
-
-  line-height: 1.2;
-}
-
-.course-toolbar-title strong {
-  min-width: 0;
-
-  overflow: hidden;
-
-  color: #23272d;
-
-  font-size: 17px;
-  font-weight: 800;
-
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
+.course-toolbar-title,
+.course-toolbar-title strong,
 .course-toolbar-label {
-  display: inline-block;
-
-  flex-shrink: 0;
-
-  color: var(--accent-dark);
-
-  font-size: 11px;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  white-space: nowrap;
+  display: none;
 }
 
 
@@ -2715,30 +2676,6 @@ svg {
     display: none;
   }
 
-
-  /* =====================================================
-     TOOLBAR — TABLET / MOBILE
-  ===================================================== */
-
-  .course-toolbar-title {
-    gap: 7px;
-
-    font-size: 14px;
-  }
-
-  .course-toolbar-title strong {
-    font-size: 14px;
-  }
-
-  .course-toolbar-label {
-    display: inline-block;
-
-    font-size: 9px;
-
-    letter-spacing: 0.7px;
-  }
-
-
   .lesson-main {
     padding: 20px;
   }
@@ -2829,10 +2766,10 @@ svg {
   }
 
   .course-toolbar-inner {
-    grid-template-columns:
-      42px
-      minmax(0, 1fr)
-      42px;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
 
     gap: 8px;
   }
@@ -2849,47 +2786,6 @@ svg {
   .sidebar-trigger span {
     display: none;
   }
-
-
-  /* =====================================================
-     TOOLBAR — MOBILE
-     MANTÉM "CURSO" VISÍVEL
-  ===================================================== */
-
-  .course-toolbar-title {
-    min-width: 0;
-
-    justify-content: center;
-
-    gap: 6px;
-
-    font-size: 13px;
-  }
-
-  .course-toolbar-title strong {
-    min-width: 0;
-
-    font-size: 13px;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .course-toolbar-label {
-    display: inline-block;
-
-    flex-shrink: 0;
-
-    font-size: 8px;
-    font-weight: 900;
-
-    letter-spacing: 0.6px;
-
-    white-space: nowrap;
-  }
-
 
   .course-sidebar {
     width:
@@ -3449,30 +3345,6 @@ svg {
 
   .lesson-header h1 {
     font-size: 25px;
-  }
-
-
-  /* =====================================================
-     TOOLBAR — MOBILE PEQUENO
-  ===================================================== */
-
-  .course-toolbar-title {
-    gap: 5px;
-
-    font-size: 12px;
-  }
-
-  .course-toolbar-title strong {
-    font-size: 12px;
-  }
-
-  .course-toolbar-label {
-    display: inline-block;
-
-    font-size: 7px;
-    font-weight: 900;
-
-    letter-spacing: 0.45px;
   }
 
 
