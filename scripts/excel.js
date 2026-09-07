@@ -132,6 +132,40 @@ function wait(ms) {
 
 
 /* =========================================================
+   VOLTAR PELO HISTÓRICO
+========================================================= */
+
+function goBackInHistory() {
+  /*
+    Se existe uma página anterior
+    no histórico desta aba,
+    voltamos normalmente.
+  */
+
+  if (
+    window.history.length > 1
+  ) {
+
+    window.history.back();
+
+    return;
+  }
+
+
+  /*
+    Se o curso foi aberto diretamente
+    em uma nova aba ou janela,
+    não existe histórico útil.
+
+    Nesse caso voltamos ao catálogo.
+  */
+
+  window.location.href =
+    "index.html";
+}
+
+
+/* =========================================================
    CURSO PADRÃO
 ========================================================= */
 
@@ -696,23 +730,12 @@ function isLessonUnlocked(
   }
 
 
-  /*
-    Primeira aula sempre liberada.
-  */
-
   if (
     lessonIndex === 0
   ) {
     return true;
   }
 
-
-  /*
-    Verifica TODAS as aulas anteriores.
-
-    Isso evita que uma inconsistência
-    antiga no banco permita pular aulas.
-  */
 
   for (
     let index = 0;
@@ -753,10 +776,6 @@ function getCourseHomeLessonStatus(
     );
 
 
-  /*
-    Bloqueada tem prioridade.
-  */
-
   if (!unlocked) {
 
     return {
@@ -771,10 +790,6 @@ function getCourseHomeLessonStatus(
     };
   }
 
-
-  /*
-    Concluída.
-  */
 
   if (
     isLessonCompleted(
@@ -794,10 +809,6 @@ function getCourseHomeLessonStatus(
     };
   }
 
-
-  /*
-    Disponível.
-  */
 
   return {
     className:
@@ -1197,11 +1208,6 @@ function renderCourseHome() {
               );
 
 
-            /*
-              Aula bloqueada não recebe
-              botão funcional.
-            */
-
             if (
               status.locked
             ) {
@@ -1336,10 +1342,6 @@ function renderCourseHome() {
               </div>
             `;
 
-
-            /*
-              Evento apenas para aula liberada.
-            */
 
             if (
               !status.locked
@@ -2338,11 +2340,6 @@ async function preloadSlideAt(
   lessonIndex,
   slideIndex
 ) {
-  /*
-    Não fazemos preload
-    de aula bloqueada.
-  */
-
   if (
     !isLessonUnlocked(
       lessonIndex
@@ -3288,11 +3285,6 @@ async function loadExcelCourse() {
     await renderDownloads();
 
 
-    /*
-      Sempre começa
-      na tela de módulos.
-    */
-
     ensureCourseHome();
 
     renderCourseHome();
@@ -3352,6 +3344,14 @@ function renderCourseHeader() {
     course?.nome ||
     "Excel Prático — Básico ao Avançado";
 
+
+  /*
+    Mantido enquanto o elemento oculto
+    #breadcrumb-course ainda existir
+    no excel.html.
+
+    Ele não aparece visualmente.
+  */
 
   const breadcrumb =
     $("breadcrumb-course");
@@ -3718,11 +3718,6 @@ function renderLessons() {
           `;
 
 
-          /*
-            Sidebar também respeita
-            o bloqueio.
-          */
-
           if (
             unlocked
           ) {
@@ -3784,14 +3779,6 @@ async function selectLesson(
     return;
   }
 
-
-  /*
-    PROTEÇÃO REAL.
-
-    Mesmo que alguém tente chamar
-    selectLesson manualmente,
-    não consegue abrir aula bloqueada.
-  */
 
   if (
     !isLessonUnlocked(
@@ -4074,10 +4061,6 @@ async function renderCurrentLesson() {
     return false;
   }
 
-
-  /*
-    Segunda proteção.
-  */
 
   if (
     !isLessonUnlocked(
@@ -4670,11 +4653,6 @@ async function markLessonCompleted(
   }
 
 
-  /*
-    Sem usuário não salvamos conclusão
-    e portanto não liberamos a próxima.
-  */
-
   if (!currentUser) {
 
     console.warn(
@@ -4819,11 +4797,6 @@ async function markLessonCompleted(
       savedRow
     );
 
-
-    /*
-      Recria a sidebar para liberar
-      imediatamente a próxima aula.
-    */
 
     renderLessons();
 
@@ -5063,11 +5036,6 @@ async function goPrevious() {
   }
 
 
-  /*
-    Slide anterior
-    da mesma aula.
-  */
-
   if (
     currentSlideIndex > 0
   ) {
@@ -5096,10 +5064,6 @@ async function goPrevious() {
     return;
   }
 
-
-  /*
-    Aula anterior.
-  */
 
   if (
     currentLessonIndex <= 0
@@ -5188,10 +5152,6 @@ async function goPrevious() {
 
 /* =========================================================
    PRÓXIMO
-
-   REGRA:
-   só libera a próxima depois
-   de salvar a conclusão da atual.
 ========================================================= */
 
 async function goNext() {
@@ -5219,11 +5179,6 @@ async function goNext() {
       lesson
     );
 
-
-  /*
-    Ainda existem slides
-    dentro da aula.
-  */
 
   if (
     lessonSlides.length &&
@@ -5256,13 +5211,6 @@ async function goNext() {
   }
 
 
-  /*
-    Fim da aula.
-
-    A conclusão precisa ser
-    salva antes de avançar.
-  */
-
   let completedSuccessfully =
     isLessonCompleted(
       lesson
@@ -5272,14 +5220,6 @@ async function goNext() {
   if (
     !completedSuccessfully
   ) {
-
-    /*
-      Só concluímos automaticamente
-      aulas que possuem slides.
-
-      Mantém o comportamento original
-      do projeto.
-    */
 
     if (
       lessonSlides.length
@@ -5292,11 +5232,6 @@ async function goNext() {
     }
   }
 
-
-  /*
-    Se ainda não foi concluída,
-    não pode avançar.
-  */
 
   if (
     !completedSuccessfully
@@ -5313,10 +5248,6 @@ async function goNext() {
   }
 
 
-  /*
-    Terminou o curso.
-  */
-
   if (
     currentLessonIndex >=
     lessons.length - 1
@@ -5331,11 +5262,6 @@ async function goNext() {
   const nextLessonIndex =
     currentLessonIndex + 1;
 
-
-  /*
-    Confirma novamente
-    a Regra 1.
-  */
 
   if (
     !isLessonUnlocked(
@@ -5402,7 +5328,7 @@ async function goNext() {
 
 
 /* =========================================================
-   BOTÕES DE NAVEGAÇÃO
+   BOTÕES DE NAVEGAÇÃO DAS AULAS
 ========================================================= */
 
 $("prev-lesson")
@@ -5416,6 +5342,17 @@ $("next-lesson")
   ?.addEventListener(
     "click",
     goNext
+  );
+
+
+/* =========================================================
+   BOTÃO SVG — VOLTAR PELO HISTÓRICO
+========================================================= */
+
+$("history-back")
+  ?.addEventListener(
+    "click",
+    goBackInHistory
   );
 
 
@@ -6202,12 +6139,6 @@ supabase
         updateProgress();
 
 
-        /*
-          Após sair:
-          somente a primeira aula
-          permanece liberada.
-        */
-
         renderLessons();
 
         updateLessonSelection();
@@ -6231,11 +6162,6 @@ supabase
 
           updateProgress();
 
-
-          /*
-            Recalcula todos
-            os bloqueios.
-          */
 
           renderLessons();
 
