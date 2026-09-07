@@ -271,7 +271,7 @@ svg {
 
 
 /* =========================================================
-   BREADCRUMB
+   NAVEGAÇÃO DE RETORNO
 ========================================================= */
 
 .breadcrumb-area {
@@ -285,28 +285,79 @@ svg {
 
   align-items: center;
 
-  gap: 10px;
-
-  color: var(--muted);
-
-  font-size: 14px;
+  justify-content: flex-start;
 }
 
-.breadcrumb a {
-  transition: color 0.2s ease;
+.history-back {
+  display: inline-grid;
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  place-items: center;
+
+  border: 1px solid #e1e4e8;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #252a31;
+
+  box-shadow:
+    0 3px 10px
+    rgba(
+      10,
+      15,
+      20,
+      0.04
+    );
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.breadcrumb a:hover {
-  color: var(--text);
+.history-back:hover {
+  border-color: #cbd0d6;
+
+  background: #f7f8f9;
+  color: #111318;
+
+  box-shadow:
+    0 5px 14px
+    rgba(
+      10,
+      15,
+      20,
+      0.07
+    );
 }
 
-.breadcrumb strong {
-  overflow: hidden;
+.history-back:active {
+  transform: scale(0.95);
+}
 
-  color: var(--text);
+.history-back:focus-visible {
+  outline: 3px solid
+    rgba(
+      223,
+      255,
+      0,
+      0.45
+    );
 
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  outline-offset: 3px;
+}
+
+.history-back svg {
+  width: 20px;
+  height: 20px;
+
+  pointer-events: none;
 }
 
 
@@ -2761,8 +2812,18 @@ svg {
 
   .breadcrumb {
     min-height: 54px;
+  }
 
-    font-size: 12px;
+  .history-back {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+  .history-back svg {
+    width: 19px;
+    height: 19px;
   }
 
   .course-toolbar-inner {
@@ -3477,7 +3538,8 @@ svg {
   .back-to-course-home,
   .course-home-progress-fill,
   .lesson,
-  .lesson-play {
+  .lesson-play,
+  .history-back {
     transition: none;
   }
 
