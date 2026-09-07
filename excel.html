@@ -97,28 +97,36 @@
 
 
   <!-- =====================================================
-       BREADCRUMB
+       NAVEGAÇÃO — VOLTAR
   ====================================================== -->
 
   <div class="breadcrumb-area">
 
     <div class="container breadcrumb">
 
-      <a href="index.html">
-        Início
-      </a>
+      <button
+        type="button"
+        id="history-back"
+        class="history-back"
+        aria-label="Voltar para a página anterior"
+        title="Voltar"
+      >
 
-      <span>›</span>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
 
-      <a href="index.html#catalog-grid">
-        Catálogo
-      </a>
-
-      <span>›</span>
-
-      <strong id="breadcrumb-course">
-        Excel
-      </strong>
+      </button>
 
     </div>
 
@@ -535,7 +543,6 @@
 
 
     <div class="course-sidebar-content">
-
 
       <!-- =================================================
            DOWNLOADS
