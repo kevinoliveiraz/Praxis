@@ -16,6 +16,9 @@ const MATERIALS_BUCKET = "materiais";
 const SIGNED_URL_EXPIRES_IN = 60 * 60;
 const SLIDE_TRANSITION_MS = 280;
 
+const COURSE_HISTORY_KEY =
+  "praxisCourseView";
+
 
 /* =========================================================
    ELEMENTOS
@@ -57,6 +60,12 @@ let currentLessonIndex = 0;
 let currentSlideIndex = 0;
 
 let slideRenderVersion = 0;
+
+let currentCourseView =
+  "home";
+
+let courseHistoryReady =
+  false;
 
 
 /* =========================================================
@@ -132,17 +141,289 @@ function wait(ms) {
 
 
 /* =========================================================
+   HISTÓRICO INTERNO DO CURSO
+========================================================= */
+
+function getCourseHistoryState() {
+  return (
+    window.history.state?.[
+      COURSE_HISTORY_KEY
+    ] ||
+    null
+  );
+}
+
+
+function isExcelHistoryState(
+  state
+) {
+  return (
+    state &&
+    Number(state.courseId) ===
+      EXCEL_COURSE_ID
+  );
+}
+
+
+/* =========================================================
+   ESTADO HOME
+========================================================= */
+
+function createHomeHistoryState() {
+  return {
+    courseId:
+      EXCEL_COURSE_ID,
+
+    view:
+      "home"
+  };
+}
+
+
+/* =========================================================
+   ESTADO AULA
+========================================================= */
+
+function createLessonHistoryState(
+  lessonIndex,
+  slideIndex = 0
+) {
+  return {
+    courseId:
+      EXCEL_COURSE_ID,
+
+    view:
+      "lesson",
+
+    lessonIndex:
+      normalizeNumber(
+        lessonIndex,
+        0
+      ),
+
+    slideIndex:
+      normalizeNumber(
+        slideIndex,
+        0
+      )
+  };
+}
+
+
+/* =========================================================
+   SUBSTITUIR ESTADO
+========================================================= */
+
+function replaceCourseHistoryState(
+  courseState
+) {
+  window.history.replaceState(
+    {
+      ...(window.history.state || {}),
+
+      [COURSE_HISTORY_KEY]:
+        courseState
+    },
+    "",
+    window.location.href
+  );
+}
+
+
+/* =========================================================
+   ADICIONAR ESTADO
+========================================================= */
+
+function pushCourseHistoryState(
+  courseState
+) {
+  window.history.pushState(
+    {
+      ...(window.history.state || {}),
+
+      [COURSE_HISTORY_KEY]:
+        courseState
+    },
+    "",
+    window.location.href
+  );
+}
+
+
+/* =========================================================
+   INICIALIZAR HISTÓRICO
+========================================================= */
+
+function initializeCourseHistory() {
+  if (
+    courseHistoryReady
+  ) {
+    return;
+  }
+
+
+  const existingState =
+    getCourseHistoryState();
+
+
+  /*
+    Se já existe um estado válido
+    desta página, preservamos.
+
+    Isso é importante quando o
+    navegador usa voltar/avançar.
+  */
+
+  if (
+    !isExcelHistoryState(
+      existingState
+    )
+  ) {
+
+    replaceCourseHistoryState(
+      createHomeHistoryState()
+    );
+  }
+
+
+  courseHistoryReady =
+    true;
+}
+
+
+/* =========================================================
+   ABRIR AULA CRIANDO ETAPA
+========================================================= */
+
+async function openLessonFromUser(
+  lessonIndex,
+  slideIndex = 0
+) {
+  if (
+    lessonIndex < 0 ||
+    lessonIndex >= lessons.length
+  ) {
+    return;
+  }
+
+
+  if (
+    !isLessonUnlocked(
+      lessonIndex
+    )
+  ) {
+    return;
+  }
+
+
+  const state =
+    createLessonHistoryState(
+      lessonIndex,
+      slideIndex
+    );
+
+
+  /*
+    HOME -> AULA
+
+    Criamos uma nova entrada.
+    Assim o voltar retorna à home.
+  */
+
+  if (
+    currentCourseView ===
+    "home"
+  ) {
+
+    pushCourseHistoryState(
+      state
+    );
+
+  } else {
+
+    /*
+      AULA -> OUTRA AULA
+
+      Não criamos várias entradas
+      consecutivas de aula.
+
+      Apenas atualizamos a etapa
+      atual para continuar tendo:
+
+      Aula -> Home -> Catálogo.
+    */
+
+    replaceCourseHistoryState(
+      state
+    );
+  }
+
+
+  await selectLesson(
+    lessonIndex,
+    slideIndex
+  );
+}
+
+
+/* =========================================================
    VOLTAR PELO HISTÓRICO
 ========================================================= */
 
 function goBackInHistory() {
   /*
-    Se existe uma página anterior
-    no histórico desta aba,
-    voltamos normalmente.
+    Dentro de uma aula existe
+    obrigatoriamente a entrada
+    anterior da home do curso.
   */
 
   if (
+    currentCourseView ===
+    "lesson"
+  ) {
+
+    window.history.back();
+
+    return;
+  }
+
+
+  /*
+    Na home, se chegamos aqui através
+    de outra página do próprio site,
+    continuamos o histórico normalmente.
+  */
+
+  let hasUsefulReferrer =
+    false;
+
+
+  try {
+
+    if (document.referrer) {
+
+      const referrerUrl =
+        new URL(
+          document.referrer
+        );
+
+
+      hasUsefulReferrer =
+        referrerUrl.origin ===
+        window.location.origin;
+    }
+
+  } catch (error) {
+
+    console.debug(
+      "Não foi possível analisar o referrer:",
+      error
+    );
+  }
+
+
+  if (
+    hasUsefulReferrer &&
     window.history.length > 1
   ) {
 
@@ -153,11 +434,8 @@ function goBackInHistory() {
 
 
   /*
-    Se o curso foi aberto diretamente
-    em uma nova aba ou janela,
-    não existe histórico útil.
-
-    Nesse caso voltamos ao catálogo.
+    Página aberta diretamente:
+    fallback para o catálogo.
   */
 
   window.location.href =
@@ -565,12 +843,16 @@ function ensureBackToCourseHomeButton() {
   `;
 
 
+  /*
+    Agora o botão também usa
+    o histórico real.
+
+    Aula -> Home.
+  */
+
   button.addEventListener(
     "click",
-    async () => {
-
-      await showCourseHome();
-    }
+    goBackInHistory
   );
 
 
@@ -608,6 +890,10 @@ async function showCourseHome() {
   if (!home) {
     return;
   }
+
+
+  currentCourseView =
+    "home";
 
 
   home.hidden =
@@ -652,6 +938,10 @@ function showLessonView() {
 
   const lessonView =
     getLessonView();
+
+
+  currentCourseView =
+    "lesson";
 
 
   if (home) {
@@ -703,20 +993,6 @@ function isLessonCompleted(
 
 /* =========================================================
    REGRA 1 — BLOQUEIO SEQUENCIAL
-
-   Aula 1:
-   sempre liberada.
-
-   Aula 2:
-   exige aula 1 concluída.
-
-   Aula 3:
-   exige aulas 1 e 2 concluídas.
-
-   Aula 4:
-   exige aulas 1, 2 e 3 concluídas.
-
-   E assim por diante.
 ========================================================= */
 
 function isLessonUnlocked(
@@ -1358,7 +1634,7 @@ function renderCourseHome() {
                   }
 
 
-                  await selectLesson(
+                  await openLessonFromUser(
                     globalIndex,
                     0
                   );
@@ -3292,6 +3568,67 @@ async function loadExcelCourse() {
     updateProgress();
 
 
+    initializeCourseHistory();
+
+
+    const historyState =
+      getCourseHistoryState();
+
+
+    /*
+      Se a página foi restaurada pelo
+      navegador em estado de aula,
+      reabrimos essa aula.
+    */
+
+    if (
+      isExcelHistoryState(
+        historyState
+      ) &&
+      historyState.view ===
+        "lesson"
+    ) {
+
+      const lessonIndex =
+        normalizeNumber(
+          historyState.lessonIndex,
+          0
+        );
+
+
+      const slideIndex =
+        normalizeNumber(
+          historyState.slideIndex,
+          0
+        );
+
+
+      if (
+        isLessonUnlocked(
+          lessonIndex
+        )
+      ) {
+
+        await selectLesson(
+          lessonIndex,
+          slideIndex
+        );
+
+        return;
+      }
+    }
+
+
+    /*
+      Estado padrão:
+      home dos módulos.
+    */
+
+    replaceCourseHistoryState(
+      createHomeHistoryState()
+    );
+
+
     await showCourseHome();
 
 
@@ -3330,6 +3667,15 @@ async function loadExcelCourse() {
 
     renderCourseHome();
 
+
+    initializeCourseHistory();
+
+
+    replaceCourseHistoryState(
+      createHomeHistoryState()
+    );
+
+
     await showCourseHome();
   }
 }
@@ -3344,14 +3690,6 @@ function renderCourseHeader() {
     course?.nome ||
     "Excel Prático — Básico ao Avançado";
 
-
-  /*
-    Mantido enquanto o elemento oculto
-    #breadcrumb-course ainda existir
-    no excel.html.
-
-    Ele não aparece visualmente.
-  */
 
   const breadcrumb =
     $("breadcrumb-course");
@@ -3733,7 +4071,7 @@ function renderLessons() {
                 }
 
 
-                await selectLesson(
+                await openLessonFromUser(
                   globalIndex,
                   0
                 );
@@ -5024,6 +5362,28 @@ function updateNavigation() {
 
 
 /* =========================================================
+   ATUALIZAR ESTADO DA AULA NO HISTÓRICO
+========================================================= */
+
+function syncCurrentLessonHistory() {
+  if (
+    currentCourseView !==
+    "lesson"
+  ) {
+    return;
+  }
+
+
+  replaceCourseHistoryState(
+    createLessonHistoryState(
+      currentLessonIndex,
+      currentSlideIndex
+    )
+  );
+}
+
+
+/* =========================================================
    ANTERIOR
 ========================================================= */
 
@@ -5056,6 +5416,10 @@ async function goPrevious() {
 
       currentSlideIndex =
         oldIndex;
+
+    } else {
+
+      syncCurrentLessonHistory();
     }
 
 
@@ -5141,6 +5505,10 @@ async function goPrevious() {
 
 
     updateLessonSelection();
+
+  } else {
+
+    syncCurrentLessonHistory();
   }
 
 
@@ -5202,6 +5570,10 @@ async function goNext() {
 
       currentSlideIndex =
         oldIndex;
+
+    } else {
+
+      syncCurrentLessonHistory();
     }
 
 
@@ -5254,6 +5626,8 @@ async function goNext() {
   ) {
 
     updateNavigation();
+
+    syncCurrentLessonHistory();
 
     return;
   }
@@ -5318,6 +5692,19 @@ async function goNext() {
 
 
     updateLessonSelection();
+
+  } else {
+
+    /*
+      Avançar para outra aula não cria
+      nova entrada no histórico.
+
+      Continuamos tendo apenas:
+
+      Aula -> Home -> Catálogo.
+    */
+
+    syncCurrentLessonHistory();
   }
 
 
@@ -5346,7 +5733,7 @@ $("next-lesson")
 
 
 /* =========================================================
-   BOTÃO SVG — VOLTAR PELO HISTÓRICO
+   BOTÃO SVG — VOLTAR
 ========================================================= */
 
 $("history-back")
@@ -5354,6 +5741,93 @@ $("history-back")
     "click",
     goBackInHistory
   );
+
+
+/* =========================================================
+   VOLTAR / AVANÇAR DO NAVEGADOR
+========================================================= */
+
+window.addEventListener(
+  "popstate",
+  async (event) => {
+
+    const state =
+      event.state?.[
+        COURSE_HISTORY_KEY
+      ];
+
+
+    /*
+      Se voltamos para a entrada
+      HOME desta própria página,
+      mostramos os módulos.
+    */
+
+    if (
+      isExcelHistoryState(
+        state
+      ) &&
+      state.view ===
+        "home"
+    ) {
+
+      await showCourseHome();
+
+      return;
+    }
+
+
+    /*
+      Se usamos Avançar do navegador
+      para retornar a uma aula,
+      restauramos a aula correta.
+    */
+
+    if (
+      isExcelHistoryState(
+        state
+      ) &&
+      state.view ===
+        "lesson"
+    ) {
+
+      const lessonIndex =
+        normalizeNumber(
+          state.lessonIndex,
+          0
+        );
+
+
+      const slideIndex =
+        normalizeNumber(
+          state.slideIndex,
+          0
+        );
+
+
+      if (
+        isLessonUnlocked(
+          lessonIndex
+        )
+      ) {
+
+        await selectLesson(
+          lessonIndex,
+          slideIndex
+        );
+
+      } else {
+
+        replaceCourseHistoryState(
+          createHomeHistoryState()
+        );
+
+
+        await showCourseHome();
+      }
+    }
+  }
+);
 
 
 /* =========================================================
@@ -6188,11 +6662,6 @@ supabase
 async function init() {
   try {
 
-    /*
-      Esconde a aula antiga
-      imediatamente.
-    */
-
     const lessonView =
       getLessonView();
 
@@ -6204,23 +6673,19 @@ async function init() {
     }
 
 
-    /*
-      Cria a home.
-    */
-
     ensureCourseHome();
 
 
     /*
-      Autenticação primeiro.
+      O estado da entrada atual
+      é preparado antes do conteúdo.
     */
+
+    initializeCourseHistory();
+
 
     await loadUserSession();
 
-
-    /*
-      Curso depois.
-    */
 
     await loadExcelCourse();
 
