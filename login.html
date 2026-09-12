@@ -3,83 +3,369 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Login — SkillUp</title>
-  <meta name="description" content="Acesse sua conta SkillUp e continue evoluindo." />
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/login.css" />
+
+  <meta
+    name="description"
+    content="Acesse sua conta SkillUp e continue evoluindo."
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/logo.png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles/login.css"
+  />
 </head>
+
 <body>
-  <img src="assets/vector1.png" alt="" class="bg-vector" aria-hidden="true" />
+
+  <img
+    src="assets/vector1.png"
+    alt=""
+    class="bg-vector"
+    aria-hidden="true"
+  />
+
 
   <div class="login-wrap">
+
     <div class="login-card">
-      
+
+
       <div class="login-logo">
-        <img src="assets/logo.png" alt="SkillUp" class="login-logo-img">
+
+        <img
+          src="assets/logo.png"
+          alt="SkillUp"
+          class="login-logo-img"
+        >
+
       </div>
 
-      <form class="login-form" id="login-form" novalidate>
-        
-        <div class="field">
-          <label for="email">E-mail</label>
-          <div class="field-input">
-            <svg class="icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
-          </div>
-        </div>
+
+      <form
+        class="login-form"
+        id="login-form"
+        novalidate
+      >
+
+
+        <!-- E-MAIL -->
 
         <div class="field">
-          <label for="password">Senha</label>
+
+          <label for="email">
+            E-mail
+          </label>
+
           <div class="field-input">
-            <svg class="icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required />
-            
-            <button type="button" id="toggle-password" class="btn-toggle-pass" aria-label="Alternar exibição da senha" title="Ver ou ocultar senha">
-              <svg id="eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
-              <svg id="eye-on" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+
+            <svg
+              class="icon-left"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+              />
+
+              <circle
+                cx="12"
+                cy="7"
+                r="4"
+              />
+            </svg>
+
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="seu@email.com"
+              required
+            />
+
+          </div>
+
+        </div>
+
+
+        <!-- SENHA -->
+
+        <div class="field">
+
+          <label for="password">
+            Senha
+          </label>
+
+          <div class="field-input">
+
+            <svg
+              class="icon-left"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect
+                x="3"
+                y="11"
+                width="18"
+                height="11"
+                rx="2"
+              />
+
+              <path
+                d="M7 11V7a5 5 0 0 1 10 0v4"
+              />
+            </svg>
+
+
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Digite sua senha"
+              required
+            />
+
+
+            <button
+              type="button"
+              id="toggle-password"
+              class="btn-toggle-pass"
+              aria-label="Alternar exibição da senha"
+              title="Ver ou ocultar senha"
+            >
+
+              <svg
+                id="eye-off"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                ></path>
+
+                <line
+                  x1="1"
+                  y1="1"
+                  x2="23"
+                  y2="23"
+                ></line>
+              </svg>
+
+
+              <svg
+                id="eye-on"
+                class="hidden"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"
+                ></path>
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="3"
+                ></circle>
+              </svg>
+
             </button>
+
           </div>
+
         </div>
 
-        <a href="#" class="forgot" id="forgot-password">Esqueceu sua senha?</a>
 
-        <div id="login-msg" class="login-msg" aria-live="polite"></div>
+        <!-- ESQUECEU SENHA -->
 
-        <button type="submit" class="btn-login" id="login-submit">LOGIN</button>
+        <a
+          href="#"
+          class="forgot"
+          id="forgot-password"
+        >
+          Esqueceu sua senha?
+        </a>
+
+
+        <!-- MENSAGEM -->
+
+        <div
+          id="login-msg"
+          class="login-msg"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- LOGIN -->
+
+        <button
+          type="submit"
+          class="btn-login"
+          id="login-submit"
+        >
+          LOGIN
+        </button>
+
+
+        <!-- AÇÕES -->
 
         <div class="actions-group">
-          <button type="button" class="btn-register" id="register-btn">Criar conta</button>
-          
-          <button type="button" class="google-btn" id="google-btn" aria-label="Continuar com Google" title="Continuar com Google">
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-            <span>Continuar com Google</span>
+
+
+          <a
+            href="criar-conta.html"
+            class="btn-register"
+            id="register-btn"
+          >
+            Criar conta
+          </a>
+
+
+          <button
+            type="button"
+            class="google-btn"
+            id="google-btn"
+            aria-label="Continuar com Google"
+            title="Continuar com Google"
+          >
+
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="Google"
+            />
+
+            <span>
+              Continuar com Google
+            </span>
+
           </button>
+
         </div>
+
       </form>
+
     </div>
+
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('toggle-password');
-      const passInput = document.getElementById('password');
-      const eyeOn = document.getElementById('eye-on');
-      const eyeOff = document.getElementById('eye-off');
 
-      if (toggleBtn && passInput) {
-        toggleBtn.addEventListener('click', () => {
-          const isPassword = passInput.type === 'password';
-          passInput.type = isPassword ? 'text' : 'password';
-          eyeOn.classList.toggle('hidden', !isPassword);
-          eyeOff.classList.toggle('hidden', isPassword);
-        });
+  <!-- MOSTRAR / OCULTAR SENHA -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        const toggleBtn =
+          document.getElementById(
+            "toggle-password"
+          );
+
+        const passInput =
+          document.getElementById(
+            "password"
+          );
+
+        const eyeOn =
+          document.getElementById(
+            "eye-on"
+          );
+
+        const eyeOff =
+          document.getElementById(
+            "eye-off"
+          );
+
+
+        if (
+          toggleBtn &&
+          passInput
+        ) {
+
+          toggleBtn.addEventListener(
+            "click",
+            () => {
+
+              const isPassword =
+                passInput.type ===
+                "password";
+
+
+              passInput.type =
+                isPassword
+                  ? "text"
+                  : "password";
+
+
+              eyeOn.classList.toggle(
+                "hidden",
+                !isPassword
+              );
+
+
+              eyeOff.classList.toggle(
+                "hidden",
+                isPassword
+              );
+
+            }
+          );
+
+        }
+
       }
-    });
+    );
+
   </script>
 
-  <script type="module" src="scripts/login.js"></script>
+
+  <script
+    type="module"
+    src="scripts/login.js"
+  ></script>
+
 </body>
 </html>
