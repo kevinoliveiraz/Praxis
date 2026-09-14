@@ -31,16 +31,6 @@ const googleBtn =
    CONTROLE DE REDIRECIONAMENTO
 ========================================================= */
 
-/*
-  Evita que:
-
-  - submit do formulário
-  - onAuthStateChange
-  - redirectIfSigned
-
-  tentem redirecionar ao mesmo tempo.
-*/
-
 let isRedirecting = false;
 
 
@@ -64,6 +54,71 @@ function showMsg(
 
 
 /* =========================================================
+   REDIRECIONAMENTO PÓS LOGIN
+========================================================= */
+
+async function handleUserRedirect(
+  user
+) {
+  if (
+    !user ||
+    isRedirecting
+  ) {
+    return;
+  }
+
+
+  isRedirecting = true;
+
+
+  try {
+
+    /*
+      Mantemos exatamente o fluxo que
+      já funcionava anteriormente.
+
+      Sincroniza o usuário na tabela
+      usuarios e entra normalmente.
+    */
+
+    await upsertUserProfile(
+      user
+    );
+
+
+    window.location.replace(
+      'index.html'
+    );
+
+
+  } catch (err) {
+
+    console.error(
+      'Erro ao sincronizar perfil:',
+      err
+    );
+
+
+    showMsg(
+      'Erro ao preparar sua conta. Tente novamente.'
+    );
+
+
+    setLoading(false);
+
+
+    if (googleBtn) {
+      googleBtn.disabled =
+        false;
+    }
+
+
+    isRedirecting = false;
+  }
+}
+
+
+/* =========================================================
    CARREGAMENTO
 ========================================================= */
 
@@ -74,8 +129,10 @@ function setLoading(
     return;
   }
 
+
   submitBtn.disabled =
     isLoading;
+
 
   submitBtn.textContent =
     isLoading
@@ -85,7 +142,7 @@ function setLoading(
 
 
 /* =========================================================
-   VALIDAÇÕES
+   VALIDAR E-MAIL
 ========================================================= */
 
 function validateEmail(
@@ -94,9 +151,16 @@ function validateEmail(
   const re =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  return re.test(email);
+
+  return re.test(
+    email
+  );
 }
 
+
+/* =========================================================
+   VALIDAR SENHA
+========================================================= */
 
 function validatePassword(
   password
@@ -108,7 +172,7 @@ function validatePassword(
 
 
 /* =========================================================
-   TRADUÇÃO DE ERROS
+   TRADUZIR ERROS DO SUPABASE
 ========================================================= */
 
 function translateAuthError(
@@ -117,6 +181,7 @@ function translateAuthError(
   if (!error) {
     return 'Erro inesperado.';
   }
+
 
   const message =
     error.message
@@ -172,318 +237,6 @@ function translateAuthError(
   return (
     'Erro ao realizar login. Tente novamente mais tarde.'
   );
-}
-
-
-/* =========================================================
-   BUSCAR PERFIL DO USUÁRIO
-========================================================= */
-
-async function getUserProfile(
-  userId
-) {
-  if (!userId) {
-    return null;
-  }
-
-
-  const {
-    data,
-    error
-  } =
-    await supabase
-      .from('usuarios')
-      .select(`
-        id,
-        user_id,
-        nome_usuario,
-        nome_completo,
-        email
-      `)
-      .eq(
-        'user_id',
-        userId
-      )
-      .maybeSingle();
-
-
-  if (error) {
-    throw error;
-  }
-
-
-  return data || null;
-}
-
-
-/* =========================================================
-   SINCRONIZAR USERNAME DO AUTH METADATA
-========================================================= */
-
-/*
-  O cadastro novo salva:
-
-  user.user_metadata.nome_usuario
-
-  Isso é importante caso a confirmação
-  de e-mail esteja ativada.
-
-  Quando o usuário finalmente entra,
-  podemos copiar esse username para
-  public.usuarios caso ainda esteja vazio.
-
-  IMPORTANTE:
-
-  Não usamos:
-  - full_name
-  - name
-  - email
-
-  como username automático.
-
-  Isso evita criar nomes de usuário
-  indesejados para login pelo Google.
-*/
-
-async function syncUsernameFromMetadata(
-  user,
-  profile
-) {
-  if (!user?.id) {
-    return profile;
-  }
-
-
-  /*
-    Se já existe username no banco,
-    não fazemos absolutamente nada.
-  */
-
-  if (
-    profile?.nome_usuario
-      ?.trim()
-  ) {
-    return profile;
-  }
-
-
-  const metadataUsername =
-    String(
-      user.user_metadata
-        ?.nome_usuario || ''
-    ).trim();
-
-
-  /*
-    Google normalmente não terá
-    nome_usuario no primeiro acesso.
-
-    Nesse caso deixamos vazio e
-    enviaremos para completar-perfil.html.
-  */
-
-  if (!metadataUsername) {
-    return profile;
-  }
-
-
-  try {
-
-    const {
-      error
-    } =
-      await supabase
-        .from('usuarios')
-        .update({
-          nome_usuario:
-            metadataUsername
-        })
-        .eq(
-          'user_id',
-          user.id
-        );
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    /*
-      Busca novamente o perfil para
-      confirmar que foi atualizado.
-    */
-
-    const updatedProfile =
-      await getUserProfile(
-        user.id
-      );
-
-
-    return (
-      updatedProfile ||
-      profile
-    );
-
-  } catch (error) {
-
-    console.error(
-      'Erro ao sincronizar nome de usuário do metadata:',
-      error
-    );
-
-
-    /*
-      Não derrubamos o login.
-
-      Se não foi possível sincronizar,
-      o fluxo seguinte detectará que
-      nome_usuario continua vazio e
-      enviará para completar-perfil.
-    */
-
-    return profile;
-  }
-}
-
-
-/* =========================================================
-   DECIDIR DESTINO DO USUÁRIO
-========================================================= */
-
-function getUserDestination(
-  profile
-) {
-  const username =
-    String(
-      profile?.nome_usuario || ''
-    ).trim();
-
-
-  /*
-    Perfil completo.
-  */
-
-  if (username) {
-    return 'index.html';
-  }
-
-
-  /*
-    Primeiro acesso / usuário antigo /
-    primeiro login Google.
-  */
-
-  return 'completar-perfil.html';
-}
-
-
-/* =========================================================
-   REDIRECIONAMENTO PÓS-AUTENTICAÇÃO
-========================================================= */
-
-async function handleUserRedirect(
-  user
-) {
-  if (
-    !user ||
-    isRedirecting
-  ) {
-    return;
-  }
-
-
-  isRedirecting = true;
-
-
-  try {
-
-    /* =====================================================
-       1. SINCRONIZA O PERFIL EXISTENTE
-    ====================================================== */
-
-    await upsertUserProfile(
-      user
-    );
-
-
-    /* =====================================================
-       2. BUSCA O PERFIL EM public.usuarios
-    ====================================================== */
-
-    let profile =
-      await getUserProfile(
-        user.id
-      );
-
-
-    /* =====================================================
-       3. RECUPERA USERNAME DO CADASTRO POR E-MAIL
-          SE NECESSÁRIO
-    ====================================================== */
-
-    profile =
-      await syncUsernameFromMetadata(
-        user,
-        profile
-      );
-
-
-    /* =====================================================
-       4. DEFINE O DESTINO
-    ====================================================== */
-
-    const destination =
-      getUserDestination(
-        profile
-      );
-
-
-    console.log(
-      'Perfil autenticado:',
-      profile
-    );
-
-
-    console.log(
-      'Destino pós-login:',
-      destination
-    );
-
-
-    /* =====================================================
-       5. REDIRECIONA
-    ====================================================== */
-
-    window.location.replace(
-      destination
-    );
-
-
-  } catch (err) {
-
-    console.error(
-      'Erro ao sincronizar perfil ou redirecionar:',
-      err
-    );
-
-
-    showMsg(
-      'Erro ao preparar sua conta. Tente novamente.'
-    );
-
-
-    setLoading(false);
-
-
-    if (googleBtn) {
-      googleBtn.disabled =
-        false;
-    }
-
-
-    isRedirecting = false;
-  }
 }
 
 
@@ -549,10 +302,6 @@ form?.addEventListener(
       passInput?.value || '';
 
 
-    /* =====================================================
-       VALIDAÇÃO
-    ====================================================== */
-
     if (
       !email ||
       !password
@@ -599,10 +348,6 @@ form?.addEventListener(
 
     try {
 
-      /* ===================================================
-         LOGIN
-      ==================================================== */
-
       const {
         data,
         error
@@ -641,6 +386,7 @@ form?.addEventListener(
           'Não foi possível identificar o usuário.'
         );
 
+
         setLoading(false);
 
         return;
@@ -652,10 +398,6 @@ form?.addEventListener(
         'success'
       );
 
-
-      /* ===================================================
-         VERIFICA USERNAME E REDIRECIONA
-      ==================================================== */
 
       await handleUserRedirect(
         data.user
@@ -690,10 +432,6 @@ googleBtn?.addEventListener(
   async () => {
 
     try {
-
-      /*
-        Evita múltiplos cliques.
-      */
 
       googleBtn.disabled =
         true;
@@ -775,7 +513,7 @@ googleBtn?.addEventListener(
 
 
 /* =========================================================
-   OBSERVAR ALTERAÇÕES NA AUTENTICAÇÃO
+   ALTERAÇÕES DE AUTENTICAÇÃO
 ========================================================= */
 
 supabase.auth.onAuthStateChange(
@@ -789,15 +527,6 @@ supabase.auth.onAuthStateChange(
       event
     );
 
-
-    /*
-      Depois que o Google retorna para
-      login.html, o Supabase restaura a
-      sessão e dispara SIGNED_IN.
-
-      O mesmo fluxo é utilizado para
-      login por e-mail.
-    */
 
     if (
       event === 'SIGNED_IN' &&
