@@ -101,7 +101,6 @@ function showMessage(
 
 
   if (type) {
-
     messageElement.classList.add(
       type
     );
@@ -145,7 +144,6 @@ function validateUsername(
   username
 ) {
   if (!username) {
-
     return (
       "Digite um nome de usuário."
     );
@@ -155,7 +153,6 @@ function validateUsername(
   if (
     username.length < 3
   ) {
-
     return (
       "O nome de usuário precisa ter pelo menos 3 caracteres."
     );
@@ -165,7 +162,6 @@ function validateUsername(
   if (
     username.length > 30
   ) {
-
     return (
       "O nome de usuário pode ter no máximo 30 caracteres."
     );
@@ -177,7 +173,6 @@ function validateUsername(
       username
     )
   ) {
-
     return (
       "Use apenas letras, números, ponto e underline no nome de usuário."
     );
@@ -196,7 +191,6 @@ function validateEmail(
   email
 ) {
   if (!email) {
-
     return (
       "Digite seu e-mail."
     );
@@ -209,7 +203,6 @@ function validateEmail(
 
 
   if (!valid) {
-
     return (
       "Digite um e-mail válido."
     );
@@ -229,7 +222,6 @@ function validatePassword(
   confirmPassword
 ) {
   if (!password) {
-
     return (
       "Digite uma senha."
     );
@@ -239,7 +231,6 @@ function validatePassword(
   if (
     password.length < 6
   ) {
-
     return (
       "A senha precisa ter pelo menos 6 caracteres."
     );
@@ -250,7 +241,6 @@ function validatePassword(
     password !==
     confirmPassword
   ) {
-
     return (
       "As senhas não coincidem."
     );
@@ -295,12 +285,10 @@ async function checkUsernameAvailable(
     */
 
     if (error) {
-
       console.warn(
         "Não foi possível verificar o nome de usuário antes do cadastro:",
         error
       );
-
 
       return true;
     }
@@ -317,7 +305,6 @@ async function checkUsernameAvailable(
       "Falha ao verificar nome de usuário:",
       error
     );
-
 
     return true;
   }
@@ -375,7 +362,6 @@ async function saveUserProfile({
   email
 }) {
   if (!user?.id) {
-
     throw new Error(
       "Usuário inválido."
     );
@@ -472,18 +458,12 @@ function getProfileErrorMessage(
       .toLowerCase();
 
 
-  /*
-    PostgreSQL:
-    unique violation.
-  */
-
   if (
     error?.code === "23505" ||
     message.includes(
       "duplicate key"
     )
   ) {
-
     return (
       "Esse nome de usuário já está sendo utilizado."
     );
@@ -649,16 +629,6 @@ async function registerWithEmail(
           password,
 
           options: {
-
-            /*
-              Salvamos também no metadata.
-
-              Isso garante que o nome escolhido
-              continue associado ao usuário mesmo
-              quando a confirmação de e-mail
-              estiver habilitada.
-            */
-
             data: {
               nome_usuario:
                 username
@@ -683,7 +653,6 @@ async function registerWithEmail(
 
 
     if (!user) {
-
       throw new Error(
         "O Supabase não retornou o usuário criado."
       );
@@ -842,18 +811,7 @@ function getGoogleRedirectUrl() {
       "localhost";
 
 
-  /*
-    Nesta etapa o Google volta para
-    login.html.
-
-    Na próxima etapa vamos fazer o
-    login verificar se nome_usuario
-    existe e, se estiver vazio,
-    redirecionar para completar-perfil.html.
-  */
-
   if (isLocal) {
-
     return (
       `${window.location.origin}/login.html`
     );
@@ -874,11 +832,13 @@ async function registerWithGoogle() {
   clearMessage();
 
 
-  if (googleButton) {
-
-    googleButton.disabled =
-      true;
+  if (!googleButton) {
+    return;
   }
+
+
+  googleButton.disabled =
+    true;
 
 
   try {
@@ -887,7 +847,19 @@ async function registerWithGoogle() {
       getGoogleRedirectUrl();
 
 
+    console.log(
+      "Iniciando autenticação com Google..."
+    );
+
+
+    console.log(
+      "Redirect URL:",
+      redirectUrl
+    );
+
+
     const {
+      data,
       error
     } =
       await supabase
@@ -908,6 +880,36 @@ async function registerWithGoogle() {
     }
 
 
+    console.log(
+      "Resposta OAuth:",
+      data
+    );
+
+
+    /*
+      O Supabase normalmente inicia
+      o redirecionamento automaticamente.
+
+      Caso a navegação não aconteça
+      automaticamente, usamos a URL
+      retornada pelo OAuth.
+    */
+
+    if (data?.url) {
+
+      window.location.assign(
+        data.url
+      );
+
+      return;
+    }
+
+
+    throw new Error(
+      "O Supabase não retornou a URL de autenticação do Google."
+    );
+
+
   } catch (error) {
 
     console.error(
@@ -922,11 +924,8 @@ async function registerWithGoogle() {
     );
 
 
-    if (googleButton) {
-
-      googleButton.disabled =
-        false;
-    }
+    googleButton.disabled =
+      false;
   }
 }
 
@@ -947,7 +946,7 @@ usernameInput
         porque o usuário pode preferir
         visualizar letras maiúsculas.
 
-        O índice UNIQUE no Supabase já
+        O índice UNIQUE do Supabase
         considera Kevin e kevin iguais.
       */
 
