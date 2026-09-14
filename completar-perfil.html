@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <title>Complete seu perfil — Praxis</title>
+
+  <meta
+    name="description"
+    content="Escolha seu nome de usuário para continuar na Praxis."
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/logo.png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles/login.css"
+  />
+</head>
+
+
+<body>
+
+  <img
+    src="assets/vector1.png"
+    alt=""
+    class="bg-vector"
+    aria-hidden="true"
+  />
+
+
+  <div class="login-wrap">
+
+    <div class="login-card">
+
+
+      <!-- LOGO -->
+
+      <div class="login-logo">
+
+        <img
+          src="assets/logo.png"
+          alt="Praxis"
+          class="login-logo-img"
+        >
+
+      </div>
+
+
+      <!-- FORMULÁRIO -->
+
+      <form
+        class="login-form"
+        id="profile-form"
+        novalidate
+      >
+
+
+        <div
+          style="
+            text-align: center;
+            margin-bottom: 18px;
+          "
+        >
+
+          <h1
+            style="
+              margin: 0 0 8px;
+              font-size: 22px;
+              font-weight: 800;
+            "
+          >
+            Complete seu perfil
+          </h1>
+
+
+          <p
+            style="
+              margin: 0;
+              color: #6b7280;
+              font-size: 14px;
+              line-height: 1.5;
+            "
+          >
+            Escolha um nome de usuário para continuar.
+          </p>
+
+        </div>
+
+
+        <!-- NOME DE USUÁRIO -->
+
+        <div class="field">
+
+          <label for="username">
+            Nome de usuário
+          </label>
+
+          <div class="field-input">
+
+            <svg
+              class="icon-left"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+              />
+
+              <circle
+                cx="12"
+                cy="7"
+                r="4"
+              />
+            </svg>
+
+
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              placeholder="Escolha seu nome de usuário"
+              minlength="3"
+              maxlength="30"
+              pattern="[A-Za-z0-9._]+"
+              required
+            />
+
+          </div>
+
+        </div>
+
+
+        <!-- MENSAGEM -->
+
+        <div
+          id="profile-msg"
+          class="login-msg"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- SALVAR -->
+
+        <button
+          type="submit"
+          class="btn-login"
+          id="profile-submit"
+        >
+          SALVAR E CONTINUAR
+        </button>
+
+
+        <!-- SAIR -->
+
+        <div class="actions-group">
+
+          <button
+            type="button"
+            class="btn-register"
+            id="logout-btn"
+          >
+            Sair da conta
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <script
+    type="module"
+    src="scripts/completar-perfil.js"
+  ></script>
+
+</body>
+
+</html>
