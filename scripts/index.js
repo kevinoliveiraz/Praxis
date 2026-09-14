@@ -44,11 +44,6 @@ function setupCatalogCarousel() {
   }
 
 
-  /*
-    Impede que o carrossel seja criado
-    mais de uma vez.
-  */
-
   if (
     grid.parentElement
       ?.classList
@@ -77,8 +72,6 @@ function setupCatalogCarousel() {
   }
 
 
-  /* CONTAINER PRINCIPAL */
-
   catalogCarousel =
     document.createElement(
       "div"
@@ -89,8 +82,6 @@ function setupCatalogCarousel() {
     "catalog-carousel";
 
 
-  /* CONTROLES */
-
   const controls =
     document.createElement(
       "div"
@@ -100,8 +91,6 @@ function setupCatalogCarousel() {
   controls.className =
     "catalog-carousel-controls";
 
-
-  /* BOTÃO ANTERIOR */
 
   catalogPreviousButton =
     document.createElement(
@@ -150,8 +139,6 @@ function setupCatalogCarousel() {
     </svg>
   `;
 
-
-  /* BOTÃO PRÓXIMO */
 
   catalogNextButton =
     document.createElement(
@@ -207,11 +194,6 @@ function setupCatalogCarousel() {
   );
 
 
-  /*
-    Colocamos o novo carrossel exatamente
-    onde o #catalog-grid já estava.
-  */
-
   const originalParent =
     grid.parentNode;
 
@@ -232,8 +214,6 @@ function setupCatalogCarousel() {
   );
 
 
-  /* EVENTO ANTERIOR */
-
   catalogPreviousButton
     .addEventListener(
       "click",
@@ -245,8 +225,6 @@ function setupCatalogCarousel() {
       }
     );
 
-
-  /* EVENTO PRÓXIMO */
 
   catalogNextButton
     .addEventListener(
@@ -260,11 +238,6 @@ function setupCatalogCarousel() {
     );
 
 
-  /*
-    Conforme o usuário arrasta com o dedo
-    ou usa o trackpad, atualizamos as setas.
-  */
-
   grid.addEventListener(
     "scroll",
     updateCatalogControls,
@@ -273,12 +246,6 @@ function setupCatalogCarousel() {
     }
   );
 
-
-  /*
-    Ao mudar a largura da tela,
-    recalculamos se existe conteúdo
-    suficiente para mostrar as setas.
-  */
 
   window.addEventListener(
     "resize",
@@ -312,11 +279,6 @@ function getCatalogScrollAmount() {
     );
 
 
-  /*
-    Enquanto o catálogo ainda estiver
-    carregando, usamos a largura do grid.
-  */
-
   if (!firstCard) {
     return grid.clientWidth;
   }
@@ -345,14 +307,6 @@ function getCatalogScrollAmount() {
       .getBoundingClientRect()
       .width;
 
-
-  /*
-    Um clique = avança exatamente
-    um card.
-
-    Isso deixa a movimentação
-    previsível no desktop e celular.
-  */
 
   return (
     cardWidth +
@@ -409,11 +363,6 @@ function updateCatalogControls() {
   }
 
 
-  /*
-    Pequena tolerância para evitar
-    erros de arredondamento.
-  */
-
   const tolerance = 5;
 
 
@@ -422,11 +371,6 @@ function updateCatalogControls() {
     grid.clientWidth +
       tolerance;
 
-
-  /*
-    Se todos os cursos couberem
-    na tela, desabilitamos as duas.
-  */
 
   if (!canScroll) {
 
@@ -512,23 +456,10 @@ function getCoursePage(course) {
     Number(course.id);
 
 
-  /*
-    Primeiro verifica o ID cadastrado
-    na tabela catalogo do Supabase.
-  */
-
   if (COURSE_PAGES[courseId]) {
     return COURSE_PAGES[courseId];
   }
 
-
-  /*
-    Proteção extra pelo nome/categoria.
-
-    Caso algum ID seja alterado no futuro,
-    ainda conseguimos localizar a página
-    correta pelo nome ou categoria.
-  */
 
   const name =
     String(
@@ -550,8 +481,6 @@ function getCoursePage(course) {
       );
 
 
-  /* EXCEL */
-
   if (
     name.includes("excel") ||
     category.includes("excel")
@@ -561,8 +490,6 @@ function getCoursePage(course) {
   }
 
 
-  /* WORD */
-
   if (
     name.includes("word") ||
     category.includes("word")
@@ -571,8 +498,6 @@ function getCoursePage(course) {
     return "word.html";
   }
 
-
-  /* POWERPOINT */
 
   if (
     name.includes("power point") ||
@@ -584,8 +509,6 @@ function getCoursePage(course) {
     return "powerpoint.html";
   }
 
-
-  /* POWER BI */
 
   if (
     name.includes("power bi") ||
@@ -599,18 +522,6 @@ function getCoursePage(course) {
     return "powerbi.html";
   }
 
-
-  /*
-    Curso ainda sem página própria.
-
-    Outlook, ChatGPT e Teams,
-    por exemplo, poderão aparecer
-    no catálogo antes das páginas
-    serem construídas.
-
-    Nesse caso não abrimos uma
-    página inexistente.
-  */
 
   console.warn(
     "Curso sem página configurada:",
@@ -733,12 +644,60 @@ function renderGuestArea(
 
 
 /* =========================================================
+   BUSCAR PERFIL DO USUÁRIO
+========================================================= */
+
+async function getUserProfile(
+  userId
+) {
+  if (!userId) {
+    return null;
+  }
+
+
+  const {
+    data,
+    error
+  } =
+    await supabase
+      .from("usuarios")
+      .select(`
+        user_id,
+        nome_usuario,
+        nome_completo,
+        email
+      `)
+      .eq(
+        "user_id",
+        userId
+      )
+      .maybeSingle();
+
+
+  if (error) {
+
+    console.error(
+      "Erro ao carregar perfil do usuário:",
+      error
+    );
+
+
+    return null;
+  }
+
+
+  return data || null;
+}
+
+
+/* =========================================================
    ÁREA DO USUÁRIO LOGADO
 ========================================================= */
 
 function renderAuthenticatedArea(
   userArea,
-  user
+  user,
+  profile = null
 ) {
   if (
     !userArea ||
@@ -750,8 +709,60 @@ function renderAuthenticatedArea(
 
 
   const email =
-    escapeHtml(
+    String(
       user.email || ""
+    ).trim();
+
+
+  const username =
+    String(
+      profile?.nome_usuario ||
+      user.user_metadata
+        ?.nome_usuario ||
+      ""
+    ).trim();
+
+
+  const fullName =
+    String(
+      profile?.nome_completo ||
+      user.user_metadata
+        ?.full_name ||
+      user.user_metadata
+        ?.name ||
+      ""
+    ).trim();
+
+
+  /*
+    PRIORIDADE DO TEXTO DO HEADER:
+
+    1. nome_usuario da tabela usuarios
+    2. nome_usuario do metadata
+    3. nome completo
+    4. e-mail
+
+    Depois que todos os usuários tiverem
+    username, o e-mail deixa de aparecer
+    como fallback.
+  */
+
+  const displayName =
+    username ||
+    fullName ||
+    email ||
+    "Usuário";
+
+
+  const safeDisplayName =
+    escapeHtml(
+      displayName
+    );
+
+
+  const safeEmail =
+    escapeHtml(
+      email
     );
 
 
@@ -765,20 +776,9 @@ function renderAuthenticatedArea(
     "";
 
 
-  const fullName =
-    user.user_metadata
-      ?.full_name ||
-
-    user.user_metadata
-      ?.name ||
-
-    "";
-
-
   const initial =
     String(
-      fullName ||
-      email ||
+      displayName ||
       "U"
     )
       .trim()
@@ -817,9 +817,12 @@ function renderAuthenticatedArea(
 
       <span
         class="user-email"
-        title="${email}"
+        title="${
+          safeEmail ||
+          safeDisplayName
+        }"
       >
-        ${email}
+        ${safeDisplayName}
       </span>
 
       <button
@@ -887,9 +890,16 @@ async function loadUserSession() {
 
     if (session?.user) {
 
+      const profile =
+        await getUserProfile(
+          session.user.id
+        );
+
+
       renderAuthenticatedArea(
         userArea,
-        session.user
+        session.user,
+        profile
       );
 
 
@@ -1045,14 +1055,6 @@ function renderCourses(
   }
 
 
-  /*
-    Sempre que o catálogo for renderizado
-    novamente, voltamos ao início.
-
-    Isso é importante principalmente
-    durante pesquisas.
-  */
-
   resetCatalogPosition();
 
 
@@ -1115,11 +1117,6 @@ function renderCourses(
               .trim();
 
 
-          /*
-            Define qual página
-            este curso abrirá.
-          */
-
           const coursePage =
             getCoursePage(
               course
@@ -1173,13 +1170,6 @@ function renderCourses(
               </div>
 
 
-              <!--
-                A capa já possui os textos.
-
-                Mantemos somente o gradiente
-                visual no final do card.
-              -->
-
               <div
                 class="body"
                 aria-hidden="true"
@@ -1213,13 +1203,6 @@ function renderCourses(
 
   addCourseEvents();
 
-
-  /*
-    O navegador precisa primeiro calcular
-    a largura dos novos cards.
-
-    Depois disso atualizamos as setas.
-  */
 
   window.requestAnimationFrame(
     () => {
@@ -1280,15 +1263,11 @@ function addCourseEvents() {
       };
 
 
-      /* CLIQUE */
-
       card.addEventListener(
         "click",
         openCourse
       );
 
-
-      /* TECLADO */
 
       card.addEventListener(
         "keydown",
@@ -1303,7 +1282,6 @@ function addCourseEvents() {
           ) {
 
             event.preventDefault();
-
 
             openCourse();
           }
@@ -1334,11 +1312,6 @@ function searchCourses() {
         "pt-BR"
       );
 
-
-  /*
-    Campo vazio:
-    mostra todos novamente.
-  */
 
   if (!query) {
 
@@ -1503,7 +1476,7 @@ document
 supabase
   .auth
   .onAuthStateChange(
-    (
+    async (
       _event,
       session
     ) => {
@@ -1521,9 +1494,16 @@ supabase
 
       if (session?.user) {
 
+        const profile =
+          await getUserProfile(
+            session.user.id
+          );
+
+
         renderAuthenticatedArea(
           userArea,
-          session.user
+          session.user,
+          profile
         );
 
 
@@ -1542,13 +1522,6 @@ supabase
 /* =========================================================
    INICIALIZAÇÃO
 ========================================================= */
-
-/*
-  Primeiro montamos a estrutura visual
-  do carrossel.
-
-  Depois carregamos usuário e catálogo.
-*/
 
 setupCatalogCarousel();
 
