@@ -1,567 +1,1254 @@
-<!doctype html> <!-- informa ao navegador que este documento utiliza HTML5 -->
+<!doctype html>
+<!-- informa ao navegador que este documento utiliza HTML5 -->
 
-<html lang="pt-BR"> <!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
+<html lang="pt-BR">
+<!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
 
-<head> <!-- inicia a área de configurações e informações da página -->
 
-  <meta charset="utf-8"> <!-- define a codificação de caracteres como UTF-8 para aceitar acentos e caracteres especiais -->
+<head>
+<!-- inicia a área de configurações e informações da página -->
 
+
+  <!-- define a codificação de caracteres como UTF-8 para aceitar acentos e caracteres especiais -->
+  <meta charset="utf-8">
+
+
+  <!--
+    meta viewport:
+    controla como a página se comporta em diferentes tamanhos de tela
+
+    name="viewport":
+    informa que esta configuração controla a área visível da página
+
+    content="width=device-width":
+    faz a largura da página acompanhar a largura do dispositivo
+
+    initial-scale=1:
+    inicia o nível de zoom da página em 100%
+  -->
   <meta
-    name="viewport" <!-- informa que esta configuração controla o comportamento da página em diferentes tamanhos de tela -->
-    content="width=device-width, initial-scale=1" <!-- faz a largura da página acompanhar a largura do dispositivo e inicia o zoom em 100% -->
+    name="viewport"
+    content="width=device-width, initial-scale=1"
   >
 
-  <title> <!-- inicia o título que aparece na aba do navegador -->
-    SkillUp — Domine novas habilidades <!-- texto exibido na aba do navegador -->
-  </title> <!-- encerra o título da página -->
 
+  <!-- inicia o título exibido na aba do navegador -->
+  <title>
+    <!-- texto exibido na aba do navegador -->
+    Praxis
+  </title>
+  <!-- encerra o título da página -->
+
+
+  <!--
+    meta description:
+    define uma descrição resumida da página para mecanismos de busca
+
+    name="description":
+    informa que esta meta tag representa a descrição da página
+
+    content:
+    contém o texto utilizado como descrição
+  -->
   <meta
-    name="description" <!-- define uma descrição resumida da página para mecanismos de busca -->
-    content="Cursos práticos, diretos e atualizados para você aprender do zero ao avançado." <!-- conteúdo da descrição da página -->
+    name="description"
+    content="Cursos práticos, diretos e atualizados para você aprender do zero ao avançado."
   >
 
+
+  <!--
+    link:
+    permite relacionar este documento HTML com um recurso externo
+
+    rel="preconnect":
+    solicita ao navegador que prepare antecipadamente uma conexão
+
+    href:
+    indica o endereço do servidor que será acessado
+  -->
   <link
-    rel="preconnect" <!-- solicita ao navegador que prepare antecipadamente uma conexão com o servidor externo -->
-    href="https://fonts.googleapis.com" <!-- endereço do servidor utilizado para carregar as fontes do Google -->
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
   >
 
+
+  <!--
+    prepara antecipadamente a conexão com o servidor
+    responsável pelos arquivos físicos das fontes
+
+    crossorigin:
+    permite carregar recursos provenientes de outro domínio
+  -->
   <link
-    rel="preconnect" <!-- prepara antecipadamente a conexão com outro servidor necessário para carregar as fontes -->
-    href="https://fonts.gstatic.com" <!-- endereço onde os arquivos físicos das fontes do Google são hospedados -->
-    crossorigin <!-- permite que os arquivos sejam carregados mesmo estando em outro domínio -->
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
   >
 
+
+  <!--
+    importa a fonte Inter através do Google Fonts
+
+    href:
+    contém o endereço da fonte e os pesos que serão carregados
+
+    rel="stylesheet":
+    informa ao navegador que o recurso carregado é uma folha de estilos
+  -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" <!-- importa a fonte Inter com diferentes pesos -->
-    rel="stylesheet" <!-- informa que o arquivo carregado é uma folha de estilos CSS -->
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
   >
 
+
+  <!--
+    importa o arquivo CSS principal da página
+
+    rel="stylesheet":
+    informa que o arquivo é uma folha de estilos
+
+    href:
+    define o caminho até o arquivo CSS
+  -->
   <link
-    rel="stylesheet" <!-- informa que este arquivo externo contém estilos CSS -->
-    href="styles/main.css" <!-- caminho para o arquivo CSS principal da página -->
+    rel="stylesheet"
+    href="styles/main.css"
   >
 
-</head> <!-- encerra a área de configurações da página -->
+
+</head>
+<!-- encerra a área de configurações da página -->
 
 
-<body> <!-- inicia todo o conteúdo visual exibido para o usuário -->
+
+<body>
+<!-- inicia todo o conteúdo visual exibido para o usuário -->
 
 
   <!-- =====================================================
        HEADER
-       Esta seção representa o cabeçalho principal da página.
+
+       representa o cabeçalho principal da página
   ====================================================== -->
 
-  <header class="site-header"> <!-- cria o cabeçalho principal e aplica a classe usada pelo CSS -->
 
-    <div class="container header-container"> <!-- cria um contêiner que limita e organiza os elementos internos do cabeçalho -->
+  <!--
+    header:
+    cria semanticamente o cabeçalho da página
+
+    class="site-header":
+    permite que o CSS estilize este cabeçalho
+  -->
+  <header class="site-header">
 
 
+    <!--
+      cria um contêiner que limita e organiza
+      os elementos internos do cabeçalho
+
+      container:
+      normalmente controla largura máxima e centralização
+
+      header-container:
+      controla especificamente a organização do cabeçalho
+    -->
+    <div class="container header-container">
+
+
+
+      <!--
+        cria o link da logo
+
+        href="index.html":
+        leva o usuário para a página inicial
+
+        class="logo":
+        permite estilizar o link da logo
+
+        aria-label:
+        descreve a função deste link para leitores de tela
+      -->
       <a
-        href="index.html" <!-- ao clicar na logo o usuário é levado para a página inicial -->
-        class="logo" <!-- classe usada para estilizar o link da logo -->
-        aria-label="Ir para a página inicial da SkillUp" <!-- descrição acessível para leitores de tela -->
+        href="index.html"
+        class="logo"
+        aria-label="Ir para a página inicial da Praxis"
       >
 
+    <!-- a tag <a> serve para crira hiperlinks -->
+        <!--
+          exibe a imagem da logo
+
+          src:
+          indica onde está o arquivo da imagem
+
+          alt:
+          fornece um texto alternativo caso a imagem não carregue
+          e também auxilia leitores de tela
+
+          class:
+          permite controlar o tamanho e aparência da logo pelo CSS
+        -->
         <img
-          src="assets/logo.png" <!-- caminho para a imagem da logo -->
-          alt="SkillUp" <!-- texto alternativo exibido caso a imagem não carregue e utilizado por leitores de tela -->
-          class="logo-image" <!-- classe CSS usada para controlar tamanho e aparência da logo -->
+          src="assets/logo.png"
+          alt="SkillUp"
+          class="logo-image"
         >
 
-      </a> <!-- encerra o link da logo -->
+
+      </a>
+      <!-- encerra o link da logo -->
 
 
-      <div class="header-actions"> <!-- agrupa os elementos de ação localizados no lado direito do cabeçalho -->
+
+      <!-- agrupa os elementos de ação localizados no lado direito do cabeçalho -->
+      <div class="header-actions">
 
 
-        <div id="user-area"> <!-- área que será alterada dinamicamente pelo index.js conforme o usuário esteja logado ou não -->
+
+        <!--
+          área que será alterada dinamicamente pelo index.js
+
+          quando o usuário estiver deslogado:
+          exibe o botão Entrar
+
+          quando estiver logado:
+          o JavaScript substitui esse conteúdo pelos dados do usuário
+        -->
+        <div id="user-area">
 
 
+
+          <!--
+            cria o link para a página de login
+
+            href:
+            define a página que será aberta
+
+            btn:
+            aplica o estilo base de botão
+
+            btn-ghost:
+            aplica o estilo visual secundário
+          -->
           <a
-            href="login.html" <!-- direciona o visitante para a página de login -->
-            class="btn btn-ghost" <!-- aplica as classes visuais utilizadas nos botões secundários -->
+            href="login.html"
+            class="btn btn-ghost"
           >
 
+
+
+            <!--
+              cria um ícone SVG de usuário
+
+              width:
+              define a largura do ícone
+
+              height:
+              define a altura do ícone
+
+              viewBox:
+              define o sistema interno de coordenadas do SVG
+
+              fill="none":
+              remove o preenchimento interno
+
+              stroke="currentColor":
+              faz as linhas utilizarem a cor atual do elemento
+
+              stroke-width:
+              define a espessura das linhas
+
+              aria-hidden:
+              informa aos leitores de tela que o ícone é decorativo
+            -->
             <svg
-              width="16" <!-- define a largura do ícone -->
-              height="16" <!-- define a altura do ícone -->
-              viewBox="0 0 24 24" <!-- define a área interna utilizada para desenhar o SVG -->
-              fill="none" <!-- impede que o interior das formas seja preenchido -->
-              stroke="currentColor" <!-- faz as linhas do ícone usarem a cor atual do elemento -->
-              stroke-width="2" <!-- define a espessura das linhas do ícone -->
-              aria-hidden="true" <!-- informa aos leitores de tela que este ícone é apenas decorativo -->
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
             >
 
+
+              <!-- desenha a parte correspondente ao corpo/ombros do ícone de usuário -->
               <path
-                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" <!-- desenha a parte correspondente aos ombros/corpo do ícone de usuário -->
+                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               />
 
+
+              <!--
+                desenha a cabeça do usuário
+
+                cx:
+                posição horizontal do centro
+
+                cy:
+                posição vertical do centro
+
+                r:
+                raio do círculo
+              -->
               <circle
-                cx="12" <!-- define a posição horizontal do centro do círculo -->
-                cy="7" <!-- define a posição vertical do centro do círculo -->
-                r="4" <!-- define o raio do círculo que representa a cabeça -->
+                cx="12"
+                cy="7"
+                r="4"
               />
 
-            </svg> <!-- encerra o SVG do ícone de usuário -->
 
-            <span> <!-- cria um elemento em linha para o texto do botão -->
-              Entrar <!-- texto exibido para visitantes não autenticados -->
-            </span> <!-- encerra o texto do botão -->
-
-          </a> <!-- encerra o botão/link de login -->
-
-        </div> <!-- encerra a área do usuário -->
+            </svg>
+            <!-- encerra o ícone SVG de usuário -->
 
 
+
+            <!-- cria um elemento em linha para o texto do botão -->
+            <span>
+
+              <!-- texto exibido para visitantes não autenticados -->
+              Entrar
+
+            </span>
+            <!-- encerra o texto do botão -->
+
+
+          </a>
+          <!-- encerra o botão/link de login -->
+
+
+        </div>
+        <!-- encerra a área dinâmica do usuário -->
+
+
+
+        <!--
+          cria o botão de assinatura
+
+          href="#":
+          atualmente não direciona para outra página específica
+
+          btn:
+          aplica o estilo base de botão
+
+          btn-primary:
+          aplica o estilo visual principal
+        -->
         <a
-          href="#" <!-- atualmente o botão não leva para uma página específica porque o destino ainda está como "#" -->
-          class="btn btn-primary" <!-- aplica as classes visuais utilizadas no botão principal -->
+          href="#"
+          class="btn btn-primary"
         >
 
+
+
+          <!--
+            cria o ícone de raio
+
+            width:
+            largura do ícone
+
+            height:
+            altura do ícone
+
+            viewBox:
+            área interna utilizada pelo SVG
+
+            fill="currentColor":
+            usa a cor atual para preencher o desenho
+
+            aria-hidden:
+            indica que o SVG é apenas decorativo
+          -->
           <svg
-            width="16" <!-- define a largura do ícone -->
-            height="16" <!-- define a altura do ícone -->
-            viewBox="0 0 24 24" <!-- define a área interna do desenho SVG -->
-            fill="currentColor" <!-- faz o desenho usar a cor atual do elemento -->
-            aria-hidden="true" <!-- informa que o ícone é apenas visual e não precisa ser lido por leitores de tela -->
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
           >
 
+
+            <!-- define os pontos que formam o desenho do raio -->
             <polygon
-              points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" <!-- define os pontos que formam o desenho de raio -->
+              points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
             />
 
-          </svg> <!-- encerra o ícone de raio -->
 
-          <span class="subscribe-text"> <!-- cria o texto do botão e permite estilização específica pelo CSS -->
-            Assine agora <!-- texto exibido no botão de assinatura -->
-          </span> <!-- encerra o texto do botão -->
+          </svg>
+          <!-- encerra o SVG do raio -->
 
-        </a> <!-- encerra o botão de assinatura -->
 
-      </div> <!-- encerra o agrupamento das ações do cabeçalho -->
 
-    </div> <!-- encerra o contêiner interno do cabeçalho -->
+          <!--
+            cria o texto do botão de assinatura
 
-  </header> <!-- encerra o cabeçalho da página -->
+            subscribe-text:
+            permite controlar especificamente esse texto pelo CSS
+          -->
+          <span class="subscribe-text">
+
+            <!-- texto exibido no botão -->
+            Assine agora
+
+          </span>
+          <!-- encerra o texto do botão -->
+
+
+        </a>
+        <!-- encerra o botão de assinatura -->
+
+
+      </div>
+      <!-- encerra o agrupamento das ações do cabeçalho -->
+
+
+    </div>
+    <!-- encerra o contêiner interno do cabeçalho -->
+
+
+  </header>
+  <!-- encerra o cabeçalho principal da página -->
+
 
 
   <!-- =====================================================
        CONTEÚDO PRINCIPAL
-       Tudo que representa o conteúdo central da página fica
-       dentro da tag main.
+
+       tudo que representa o conteúdo principal da página
+       fica dentro da tag main
   ====================================================== -->
 
-  <main> <!-- inicia o conteúdo principal da página -->
+
+  <!-- inicia o conteúdo principal da página -->
+  <main>
+
 
 
     <!-- ===================================================
          HERO
-         Área principal de apresentação da página.
+
+         área principal de apresentação da página
     ==================================================== -->
 
-    <section class="hero"> <!-- cria a seção inicial de destaque e aplica a classe usada pelo CSS -->
 
-      <div class="container hero-grid"> <!-- cria o contêiner principal do hero e organiza seu conteúdo em grid -->
+    <!--
+      cria a seção inicial de destaque
 
-
-        <div class="hero-content"> <!-- agrupa o texto principal de apresentação -->
-
-
-          <div class="eyebrow"> <!-- cria um pequeno texto de destaque acima do título principal -->
-            APRENDA. PRATIQUE. EVOLUA. <!-- frase de destaque do hero -->
-          </div> <!-- encerra o pequeno texto de destaque -->
+      class="hero":
+      permite aplicar os estilos específicos do hero
+    -->
+    <section class="hero">
 
 
-          <h1> <!-- cria o título principal da página -->
 
-            Domine novas habilidades.<br> <!-- primeira linha do título e quebra de linha manual -->
+      <!--
+        container:
+        centraliza e limita a largura
 
-            <span class="accent"> <!-- envolve parte do título para aplicar uma cor ou estilo diferente -->
-              Transforme sua carreira. <!-- segunda parte destacada do título -->
-            </span> <!-- encerra o trecho destacado do título -->
+        hero-grid:
+        organiza o conteúdo do hero utilizando o layout definido no CSS
+      -->
+      <div class="container hero-grid">
 
-          </h1> <!-- encerra o título principal -->
 
 
-          <p class="hero-desc"> <!-- cria o texto descritivo localizado abaixo do título -->
-            Cursos práticos, diretos e atualizados para você aprender <!-- primeira linha do texto de descrição -->
-            do zero ao avançado. <!-- continuação do texto de descrição -->
-          </p> <!-- encerra o texto descritivo -->
+        <!-- agrupa os textos principais de apresentação -->
+        <div class="hero-content">
 
-        </div> <!-- encerra o conteúdo textual do hero -->
+
+
+          <!-- pequeno texto de destaque acima do título principal -->
+          <div class="eyebrow">
+
+            <!-- frase de destaque -->
+            ENTENDA. PRATIQUE. CRIE.
+
+          </div>
+          <!-- encerra o pequeno texto de destaque -->
+
+
+
+          <!-- cria o título principal da página -->
+          <h1>
+
+
+            <!-- primeira parte do título -->
+            Aprenda ferramentas na prática.
+
+            <!-- força uma quebra de linha -->
+            <br>
+
+
+            <!--
+              destaca uma parte do título
+
+              class="accent":
+              permite aplicar uma aparência diferente pelo CSS
+            -->
+            <span class="accent">
+
+              <!-- segunda parte do título -->
+            
+
+            </span>
+            <!-- encerra a parte destacada -->
+
+
+          </h1>
+          <!-- encerra o título principal -->
+
+
+
+          <!--
+            cria o parágrafo descritivo abaixo do título
+
+            hero-desc:
+            permite estilizar especificamente esta descrição
+          -->
+          <p class="hero-desc">
+
+            <!-- primeira parte do texto -->
+            Cursos práticos, diretos e atualizados para você aprender
+
+            <!-- continuação do texto -->
+            do zero ao avançado.
+
+          </p>
+          <!-- encerra a descrição do hero -->
+
+
+        </div>
+        <!-- encerra o conteúdo textual do hero -->
+
 
 
         <!-- ===============================================
              PESQUISA
-             Área onde o usuário pode pesquisar os cursos.
+
+             área onde o usuário pode pesquisar os cursos
         ================================================ -->
 
-        <div class="search-block"> <!-- cria o bloco visual onde ficam o título e o campo de pesquisa -->
+
+        <!-- cria o bloco que contém o título e o campo de pesquisa -->
+        <div class="search-block">
 
 
-          <h2> <!-- cria o título da área de pesquisa -->
-            O que você quer aprender hoje? <!-- pergunta apresentada ao usuário -->
-          </h2> <!-- encerra o título da área de pesquisa -->
+
+          <!-- cria o título da área de pesquisa -->
+          <h2>
+
+            <!-- pergunta exibida para o usuário -->
+            O que você quer aprender hoje?
+
+          </h2>
+          <!-- encerra o título da pesquisa -->
 
 
-          <div class="search-box"> <!-- cria o contêiner que agrupa ícone, campo e botão de pesquisa -->
+
+          <!-- agrupa o ícone, campo e botão de pesquisa -->
+          <div class="search-box">
 
 
+
+            <!--
+              cria o ícone de lupa localizado no campo
+
+              search-ico:
+              permite posicionar e estilizar o ícone
+
+              width e height:
+              controlam o tamanho do SVG
+
+              viewBox:
+              define sua área interna
+
+              fill="none":
+              remove o preenchimento
+
+              stroke:
+              usa a cor atual
+
+              stroke-width:
+              controla a espessura
+
+              aria-hidden:
+              define o ícone como decorativo
+            -->
             <svg
-              class="search-ico" <!-- classe CSS utilizada para posicionar e estilizar o ícone da pesquisa -->
-              width="20" <!-- largura do ícone -->
-              height="20" <!-- altura do ícone -->
-              viewBox="0 0 24 24" <!-- define a área interna de desenho do SVG -->
-              fill="none" <!-- impede preenchimento interno do desenho -->
-              stroke="currentColor" <!-- usa a cor atual do elemento para as linhas -->
-              stroke-width="2" <!-- define a espessura das linhas -->
-              aria-hidden="true" <!-- esconde o ícone de leitores de tela porque ele é apenas visual -->
+              class="search-ico"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
             >
 
+
+              <!-- desenha o círculo principal da lupa -->
               <circle
-                cx="11" <!-- define a posição horizontal do centro da lupa -->
-                cy="11" <!-- define a posição vertical do centro da lupa -->
-                r="8" <!-- define o raio do círculo principal da lupa -->
+                cx="11"
+                cy="11"
+                r="8"
               />
 
+
+              <!-- desenha a haste da lupa -->
               <line
-                x1="21" <!-- define o ponto inicial horizontal da haste da lupa -->
-                y1="21" <!-- define o ponto inicial vertical da haste da lupa -->
-                x2="16.65" <!-- define o ponto final horizontal da haste da lupa -->
-                y2="16.65" <!-- define o ponto final vertical da haste da lupa -->
+                x1="21"
+                y1="21"
+                x2="16.65"
+                y2="16.65"
               />
 
-            </svg> <!-- encerra o ícone da lupa -->
+
+            </svg>
+            <!-- encerra o ícone da lupa -->
 
 
+
+            <!--
+              cria o campo onde o usuário digita o nome do curso
+
+              id="search-input":
+              permite que o index.js encontre este campo
+
+              type="search":
+              define que este campo é destinado a pesquisas
+
+              placeholder:
+              apresenta exemplos antes de o usuário digitar algo
+
+              autocomplete="off":
+              impede sugestões automáticas anteriores do navegador
+
+              aria-label:
+              fornece uma descrição acessível do campo
+            -->
             <input
-              id="search-input" <!-- identifica o campo para que o JavaScript consiga encontrá-lo -->
-              type="search" <!-- define o campo como entrada específica para pesquisa -->
-              placeholder="Ex: Python, Excel, Marketing Digital..." <!-- texto exibido dentro do campo enquanto ele estiver vazio -->
-              autocomplete="off" <!-- impede o navegador de sugerir valores anteriores automaticamente -->
-              aria-label="Pesquisar cursos" <!-- fornece uma descrição acessível do campo -->
+              id="search-input"
+              type="search"
+              placeholder="Ex: Python, Excel, Marketing Digital..."
+              autocomplete="off"
+              aria-label="Pesquisar cursos"
             >
 
 
+
+            <!--
+              cria o botão que executa a pesquisa
+
+              type="button":
+              impede que o botão envie um formulário automaticamente
+
+              search-btn:
+              classe usada para estilização
+
+              id="search-btn":
+              permite que o index.js encontre este botão
+
+              aria-label:
+              descreve sua função para tecnologias assistivas
+            -->
             <button
-              type="button" <!-- define que o botão não envia nenhum formulário automaticamente -->
-              class="search-btn" <!-- classe utilizada pelo CSS para estilizar o botão -->
-              id="search-btn" <!-- identificador utilizado pelo index.js para adicionar o evento de pesquisa -->
-              aria-label="Buscar cursos" <!-- descrição acessível da função do botão -->
+              type="button"
+              class="search-btn"
+              id="search-btn"
+              aria-label="Buscar cursos"
             >
 
+
+
+              <!-- cria o ícone de lupa dentro do botão -->
               <svg
-                width="18" <!-- largura do ícone da lupa -->
-                height="18" <!-- altura do ícone da lupa -->
-                viewBox="0 0 24 24" <!-- define a área interna de desenho do SVG -->
-                fill="none" <!-- impede preenchimento das formas -->
-                stroke="currentColor" <!-- faz as linhas usarem a cor atual do botão -->
-                stroke-width="2.5" <!-- define a espessura das linhas -->
-                aria-hidden="true" <!-- esconde o SVG de leitores de tela porque o botão já possui aria-label -->
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
               >
 
+
+                <!-- desenha o círculo da lupa -->
                 <circle
-                  cx="11" <!-- posição horizontal do centro do círculo -->
-                  cy="11" <!-- posição vertical do centro do círculo -->
-                  r="8" <!-- raio do círculo da lupa -->
+                  cx="11"
+                  cy="11"
+                  r="8"
                 />
 
+
+                <!-- desenha a haste da lupa -->
                 <line
-                  x1="21" <!-- ponto inicial horizontal da haste -->
-                  y1="21" <!-- ponto inicial vertical da haste -->
-                  x2="16.65" <!-- ponto final horizontal da haste -->
-                  y2="16.65" <!-- ponto final vertical da haste -->
+                  x1="21"
+                  y1="21"
+                  x2="16.65"
+                  y2="16.65"
                 />
 
-              </svg> <!-- encerra o ícone do botão de pesquisa -->
 
-            </button> <!-- encerra o botão responsável por iniciar a pesquisa -->
+              </svg>
+              <!-- encerra o ícone do botão -->
 
-          </div> <!-- encerra a caixa de pesquisa -->
 
-        </div> <!-- encerra o bloco da pesquisa -->
+            </button>
+            <!-- encerra o botão responsável pela pesquisa -->
 
-      </div> <!-- encerra o grid principal do hero -->
 
-    </section> <!-- encerra a seção hero -->
+          </div>
+          <!-- encerra a caixa de pesquisa -->
+
+
+        </div>
+        <!-- encerra o bloco da pesquisa -->
+
+
+      </div>
+      <!-- encerra o grid principal do hero -->
+
+
+    </section>
+    <!-- encerra a seção hero -->
+
 
 
     <!-- ===================================================
          CATÁLOGO
-         Área responsável por exibir os cursos disponíveis.
+
+         área responsável por exibir os cursos disponíveis
     ==================================================== -->
 
+
+    <!--
+      cria a seção do catálogo
+
+      catalog-panel:
+      classe responsável pela aparência visual da seção
+
+      aria-labelledby:
+      relaciona esta seção ao título que possui id="catalog-title"
+    -->
     <section
-      class="catalog-panel" <!-- classe CSS responsável pela aparência do painel do catálogo -->
-      aria-labelledby="catalog-title" <!-- associa esta seção ao título que possui o id catalog-title -->
+      class="catalog-panel"
+      aria-labelledby="catalog-title"
     >
 
-      <div class="container"> <!-- cria o contêiner centralizado do catálogo -->
 
 
-        <div class="catalog-head"> <!-- cria o cabeçalho da área do catálogo -->
+      <!-- cria o contêiner centralizado do catálogo -->
+      <div class="container">
 
 
-          <div> <!-- agrupa o pequeno título e o título principal do catálogo -->
+
+        <!-- cria o cabeçalho da área do catálogo -->
+        <div class="catalog-head">
 
 
-            <div class="eyebrow"> <!-- cria o pequeno texto destacado acima do título -->
-              CATÁLOGO DE CURSOS <!-- identificação da área de catálogo -->
-            </div> <!-- encerra o pequeno título -->
+
+          <!-- agrupa o pequeno título e o título principal -->
+          <div>
 
 
+
+            <!-- cria o pequeno texto de destaque -->
+            <div class="eyebrow">
+
+              <!-- identificação da seção -->
+              CATÁLOGO DE CURSOS
+
+            </div>
+            <!-- encerra o pequeno título -->
+
+
+
+            <!--
+              cria o título principal do catálogo
+
+              id="catalog-title":
+              é utilizado pela propriedade aria-labelledby da section
+
+              catalog-title:
+              classe utilizada pelo CSS
+            -->
             <h2
-              id="catalog-title" <!-- identificador usado pela propriedade aria-labelledby da seção -->
-              class="catalog-title" <!-- classe CSS utilizada para estilizar o título -->
+              id="catalog-title"
+              class="catalog-title"
             >
-              Escolha um curso e comece a praticar <!-- título principal do catálogo -->
-            </h2> <!-- encerra o título do catálogo -->
 
-          </div> <!-- encerra o agrupamento do cabeçalho -->
+              <!-- texto principal do catálogo -->
+              Escolha uma trilha e comece a praticar
 
-        </div> <!-- encerra o cabeçalho do catálogo -->
+            </h2>
+            <!-- encerra o título do catálogo -->
+
+
+          </div>
+          <!-- encerra o agrupamento do cabeçalho -->
+
+
+        </div>
+        <!-- encerra o cabeçalho do catálogo -->
+
 
 
         <!-- =================================================
              CARDS DOS CURSOS
-             Este conteúdo inicial será substituído pelo
-             JavaScript depois que os cursos forem carregados
-             do Supabase.
+
+             o conteúdo inicial abaixo será substituído
+             dinamicamente pelo index.js depois que os cursos
+             forem carregados do Supabase
         ================================================== -->
 
+
+        <!--
+          catalog-grid:
+          classe responsável pela organização visual dos cards
+
+          id="catalog-grid":
+          permite que o index.js encontre esta área
+
+          aria-live="polite":
+          permite anunciar atualizações para leitores de tela
+          sem interromper imediatamente o usuário
+
+          aria-busy="true":
+          informa inicialmente que esta área está carregando conteúdo
+        -->
         <div
-          class="catalog-grid" <!-- classe CSS responsável pela organização visual dos cards -->
-          id="catalog-grid" <!-- identificador utilizado pelo index.js para inserir os cursos -->
-          aria-live="polite" <!-- informa ao leitor de tela que alterações nesse conteúdo podem ser anunciadas sem interromper o usuário -->
-          aria-busy="true" <!-- informa inicialmente que esta região ainda está carregando informações -->
+          class="catalog-grid"
+          id="catalog-grid"
+          aria-live="polite"
+          aria-busy="true"
         >
 
-          <div class="state"> <!-- cria o elemento usado para mostrar mensagens de estado do catálogo -->
-            Carregando cursos... <!-- mensagem mostrada enquanto o JavaScript busca os cursos no Supabase -->
-          </div> <!-- encerra a mensagem de carregamento -->
 
-        </div> <!-- encerra a área onde os cards serão inseridos -->
+
+          <!-- cria o elemento utilizado para exibir mensagens de estado -->
+          <div class="state">
+
+            <!-- mensagem mostrada durante a busca dos cursos -->
+            Carregando cursos...
+
+          </div>
+          <!-- encerra a mensagem de estado -->
+
+
+        </div>
+        <!-- encerra a área onde os cards serão inseridos -->
+
 
 
         <!-- =================================================
              RECURSOS
-             Área que apresenta benefícios da plataforma.
+
+             apresenta alguns benefícios da plataforma
         ================================================== -->
 
-        <div class="features"> <!-- agrupa todos os recursos/benefícios exibidos abaixo do catálogo -->
+
+        <!-- agrupa todos os recursos exibidos abaixo do catálogo -->
+        <div class="features">
 
 
-          <!-- APRENDA NO SEU RITMO -->
 
-          <div class="feature"> <!-- cria o primeiro bloco de benefício -->
-
-
-            <div class="feature-ico"> <!-- cria o contêiner visual do ícone deste benefício -->
+          <!-- =================================================
+               APRENDA NO SEU RITMO
+          ================================================== -->
 
 
+          <!-- cria o primeiro bloco de benefício -->
+          <div class="feature">
+
+
+
+            <!-- cria o contêiner visual do ícone -->
+            <div class="feature-ico">
+
+
+
+              <!--
+                cria o SVG que representa um livro
+
+                width:
+                largura
+
+                height:
+                altura
+
+                viewBox:
+                área interna
+
+                fill="none":
+                sem preenchimento
+
+                stroke:
+                utiliza a cor atual
+
+                stroke-width:
+                espessura das linhas
+
+                aria-hidden:
+                define o SVG como decorativo
+              -->
               <svg
-                width="20" <!-- largura do ícone -->
-                height="20" <!-- altura do ícone -->
-                viewBox="0 0 24 24" <!-- define a área interna do SVG -->
-                fill="none" <!-- remove preenchimento das formas -->
-                stroke="currentColor" <!-- usa a cor atual para desenhar as linhas -->
-                stroke-width="2" <!-- define a espessura das linhas -->
-                aria-hidden="true" <!-- esconde o ícone de tecnologias assistivas porque ele é decorativo -->
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
               >
 
+
+                <!-- desenha o lado esquerdo do livro -->
                 <path
-                  d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" <!-- desenha a parte esquerda do ícone de livro -->
+                  d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
                 />
 
+
+                <!-- desenha o lado direito do livro -->
                 <path
-                  d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" <!-- desenha a parte direita do ícone de livro -->
+                  d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
                 />
 
-              </svg> <!-- encerra o ícone do benefício -->
 
-            </div> <!-- encerra o contêiner do ícone -->
-
-
-            <div> <!-- agrupa o título e a descrição deste benefício -->
+              </svg>
+              <!-- encerra o ícone do livro -->
 
 
-              <h4> <!-- cria o título do benefício -->
-                Aprenda no seu ritmo <!-- nome do benefício -->
-              </h4> <!-- encerra o título do benefício -->
+            </div>
+            <!-- encerra o contêiner do ícone -->
 
 
-              <p> <!-- cria a descrição do benefício -->
-                Acesse quando e onde quiser <!-- explica que o conteúdo pode ser acessado livremente -->
-              </p> <!-- encerra a descrição -->
 
-            </div> <!-- encerra o agrupamento textual do benefício -->
-
-          </div> <!-- encerra o primeiro benefício -->
+            <!-- agrupa o título e a descrição deste benefício -->
+            <div>
 
 
-          <!-- CERTIFICADOS -->
 
-          <div class="feature"> <!-- cria o segundo bloco de benefício -->
+              <!-- cria o título do benefício -->
+              <h4>
+
+                <!-- nome do benefício -->
+                Aprenda no seu ritmo
+
+              </h4>
+              <!-- encerra o título -->
 
 
-            <div class="feature-ico"> <!-- cria o contêiner do ícone de certificados -->
+
+              <!-- cria a descrição -->
+              <p>
+
+                <!-- explica o benefício -->
+                Acesse quando e onde quiser
+
+              </p>
+              <!-- encerra a descrição -->
 
 
+            </div>
+            <!-- encerra os textos do benefício -->
+
+
+          </div>
+          <!-- encerra o primeiro benefício -->
+
+
+
+          <!-- =================================================
+               CERTIFICADOS
+          ================================================== -->
+
+
+          <!-- cria o segundo bloco de benefício -->
+          <div class="feature">
+
+
+
+            <!-- cria o contêiner visual do ícone -->
+            <div class="feature-ico">
+
+
+
+              <!-- cria o SVG utilizado para representar os certificados -->
               <svg
-                width="20" <!-- largura do ícone -->
-                height="20" <!-- altura do ícone -->
-                viewBox="0 0 24 24" <!-- área interna do desenho -->
-                fill="none" <!-- remove preenchimento das formas -->
-                stroke="currentColor" <!-- utiliza a cor atual para as linhas -->
-                stroke-width="2" <!-- define a espessura das linhas -->
-                aria-hidden="true" <!-- faz o leitor de tela ignorar o ícone -->
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
               >
 
+
+                <!-- desenha um escudo -->
                 <path
-                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" <!-- desenha o formato de escudo utilizado neste benefício -->
+                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
                 />
 
-              </svg> <!-- encerra o SVG -->
 
-            </div> <!-- encerra o contêiner do ícone -->
-
-
-            <div> <!-- agrupa os textos deste benefício -->
+              </svg>
+              <!-- encerra o SVG -->
 
 
-              <h4> <!-- cria o título do benefício -->
-                Certificados <!-- nome do benefício -->
-              </h4> <!-- encerra o título -->
+            </div>
+            <!-- encerra o contêiner do ícone -->
 
 
-              <p> <!-- cria a descrição -->
-                Comprove suas conquistas <!-- explica o propósito dos certificados -->
-              </p> <!-- encerra a descrição -->
 
-            </div> <!-- encerra o agrupamento textual -->
-
-          </div> <!-- encerra o benefício de certificados -->
+            <!-- agrupa os textos do benefício -->
+            <div>
 
 
-          <!-- CONTEÚDO ATUALIZADO -->
 
-          <div class="feature"> <!-- cria o terceiro bloco de benefício -->
+              <!-- cria o título -->
+              <h4>
+
+                <!-- nome do benefício -->
+                Certificados
+
+              </h4>
+              <!-- encerra o título -->
 
 
-            <div class="feature-ico"> <!-- cria o contêiner do ícone -->
+
+              <!-- cria a descrição -->
+              <p>
+
+                <!-- explica o propósito dos certificados -->
+                Comprove suas conquistas
+
+              </p>
+              <!-- encerra a descrição -->
 
 
+            </div>
+            <!-- encerra os textos -->
+
+
+          </div>
+          <!-- encerra o benefício de certificados -->
+
+
+
+          <!-- =================================================
+               CONTEÚDO ATUALIZADO
+          ================================================== -->
+
+
+          <!-- cria o terceiro bloco de benefício -->
+          <div class="feature">
+
+
+
+            <!-- cria o contêiner do ícone -->
+            <div class="feature-ico">
+
+
+
+              <!-- cria o SVG que representa um relógio -->
               <svg
-                width="20" <!-- largura do ícone -->
-                height="20" <!-- altura do ícone -->
-                viewBox="0 0 24 24" <!-- área interna do SVG -->
-                fill="none" <!-- remove preenchimento -->
-                stroke="currentColor" <!-- usa a cor atual nas linhas -->
-                stroke-width="2" <!-- define a espessura das linhas -->
-                aria-hidden="true" <!-- remove o ícone da leitura por tecnologias assistivas -->
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
               >
 
+
+                <!-- cria o círculo externo do relógio -->
                 <circle
-                  cx="12" <!-- posição horizontal do centro do círculo -->
-                  cy="12" <!-- posição vertical do centro do círculo -->
-                  r="10" <!-- raio do círculo que representa um relógio -->
+                  cx="12"
+                  cy="12"
+                  r="10"
                 />
 
+
+                <!-- desenha os ponteiros do relógio -->
                 <polyline
-                  points="12 6 12 12 16 14" <!-- desenha os ponteiros do relógio -->
+                  points="12 6 12 12 16 14"
                 />
 
-              </svg> <!-- encerra o ícone -->
 
-            </div> <!-- encerra o contêiner do ícone -->
-
-
-            <div> <!-- agrupa os textos do benefício -->
+              </svg>
+              <!-- encerra o ícone -->
 
 
-              <h4> <!-- cria o título -->
-                Conteúdo atualizado <!-- nome do benefício -->
-              </h4> <!-- encerra o título -->
+            </div>
+            <!-- encerra o contêiner do ícone -->
 
 
-              <p> <!-- cria a descrição -->
-                Sempre atual e relevante <!-- explica o benefício -->
-              </p> <!-- encerra a descrição -->
 
-            </div> <!-- encerra o agrupamento textual -->
-
-          </div> <!-- encerra o terceiro benefício -->
+            <!-- agrupa os textos -->
+            <div>
 
 
-          <!-- SUPORTE -->
 
-          <div class="feature"> <!-- cria o quarto bloco de benefício -->
+              <!-- cria o título -->
+              <h4>
+
+                <!-- nome do benefício -->
+                Conteúdo atualizado
+
+              </h4>
+              <!-- encerra o título -->
 
 
-            <div class="feature-ico"> <!-- cria o contêiner do ícone de suporte -->
+
+              <!-- cria a descrição -->
+              <p>
+
+                <!-- explica o benefício -->
+                Sempre atual e relevante
+
+              </p>
+              <!-- encerra a descrição -->
 
 
+            </div>
+            <!-- encerra os textos -->
+
+
+          </div>
+          <!-- encerra o terceiro benefício -->
+
+
+
+          <!-- =================================================
+               SUPORTE
+          ================================================== -->
+
+
+          <!-- cria o quarto bloco de benefício -->
+          <div class="feature">
+
+
+
+            <!-- cria o contêiner do ícone de suporte -->
+            <div class="feature-ico">
+
+
+
+              <!-- cria o SVG utilizado para representar suporte -->
               <svg
-                width="20" <!-- largura do ícone -->
-                height="20" <!-- altura do ícone -->
-                viewBox="0 0 24 24" <!-- área interna do desenho -->
-                fill="none" <!-- remove preenchimento -->
-                stroke="currentColor" <!-- usa a cor atual para as linhas -->
-                stroke-width="2" <!-- espessura das linhas -->
-                aria-hidden="true" <!-- indica que o ícone é somente decorativo -->
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
               >
 
+
+                <!-- desenha uma parte do ícone -->
                 <path
-                  d="M18 8h1a4 4 0 0 1 0 8h-1" <!-- desenha parte do ícone de suporte -->
+                  d="M18 8h1a4 4 0 0 1 0 8h-1"
                 />
 
+
+                <!-- desenha o restante do ícone -->
                 <path
-                  d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z" <!-- desenha o restante do ícone -->
+                  d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"
                 />
 
-              </svg> <!-- encerra o ícone -->
 
-            </div> <!-- encerra o contêiner do ícone -->
-
-
-            <div> <!-- agrupa os textos -->
+              </svg>
+              <!-- encerra o ícone -->
 
 
-              <h4> <!-- cria o título -->
-                Suporte dedicado <!-- nome do benefício -->
-              </h4> <!-- encerra o título -->
+            </div>
+            <!-- encerra o contêiner do ícone -->
 
 
-              <p> <!-- cria a descrição -->
-                Tire suas dúvidas sempre <!-- explica o objetivo do suporte -->
-              </p> <!-- encerra a descrição -->
 
-            </div> <!-- encerra o agrupamento textual -->
+            <!-- agrupa os textos -->
+            <div>
 
-          </div> <!-- encerra o benefício de suporte -->
 
-        </div> <!-- encerra a área com todos os benefícios -->
 
-      </div> <!-- encerra o contêiner principal do catálogo -->
+              <!-- cria o título -->
+              <h4>
 
-    </section> <!-- encerra a seção do catálogo -->
+                <!-- nome do benefício -->
+                Suporte dedicado
 
-  </main> <!-- encerra o conteúdo principal da página -->
+              </h4>
+              <!-- encerra o título -->
+
+
+
+              <!-- cria a descrição -->
+              <p>
+
+                <!-- explica o benefício -->
+                Tire suas dúvidas sempre
+
+              </p>
+              <!-- encerra a descrição -->
+
+
+            </div>
+            <!-- encerra os textos -->
+
+
+          </div>
+          <!-- encerra o benefício de suporte -->
+
+
+        </div>
+        <!-- encerra a área com todos os benefícios -->
+
+
+      </div>
+      <!-- encerra o contêiner principal do catálogo -->
+
+
+    </section>
+    <!-- encerra a seção do catálogo -->
+
+
+  </main>
+  <!-- encerra o conteúdo principal da página -->
+
 
 
   <!-- =====================================================
        JAVASCRIPT
-       Carrega o arquivo responsável por autenticação,
-       catálogo, pesquisa e interações da página.
+
+       carrega o arquivo responsável por:
+       - autenticação
+       - usuário
+       - catálogo
+       - pesquisa
+       - carrossel
+       - interações da página
   ====================================================== -->
 
+
+  <!--
+    type="module":
+    informa que o JavaScript utiliza módulos ES
+    e permite utilizar import e export
+
+    src:
+    informa o caminho do arquivo JavaScript
+  -->
   <script
-    type="module" <!-- informa que o JavaScript utiliza módulos ES, permitindo import e export -->
-    src="scripts/index.js" <!-- caminho para o arquivo JavaScript responsável pela página -->
+    type="module"
+    src="scripts/index.js"
   ></script>
 
 
-</body> <!-- encerra todo o conteúdo visual da página -->
 
-</html> <!-- encerra o documento HTML -->
+</body>
+<!-- encerra todo o conteúdo visual da página -->
+
+
+</html>
+<!-- encerra o documento HTML -->
