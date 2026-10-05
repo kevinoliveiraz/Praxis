@@ -1,80 +1,245 @@
 <!doctype html>
+<!-- informa ao navegador que este documento utiliza HTML5 -->
+
 <html lang="pt-BR">
+<!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
+
 
 <head>
-  <meta charset="utf-8" />
+<!-- inicia a área de configurações e informações da página -->
 
+
+  <!-- define a codificação UTF-8 para permitir acentos, símbolos e caracteres especiais -->
+  <meta charset="utf-8">
+
+
+  <!--
+    configura a página para funcionar corretamente em diferentes tamanhos de tela
+
+    name="viewport":
+    informa que esta configuração controla a área visível da página
+
+    width=device-width:
+    faz a largura da página acompanhar a largura do dispositivo
+
+    initial-scale=1:
+    inicia o nível de zoom da página em 100%
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
-  />
+  >
 
-  <title>Complete seu perfil — Praxis</title>
 
+  <!-- inicia o título que será exibido na aba do navegador -->
+  <title>
+
+    <!-- texto exibido na aba do navegador -->
+    Complete seu perfil — Praxis
+
+  </title>
+  <!-- encerra o título da página -->
+
+
+  <!--
+    define uma descrição resumida da página
+
+    name="description":
+    informa que esta meta tag representa a descrição da página
+
+    content:
+    contém o texto utilizado como descrição
+  -->
   <meta
     name="description"
     content="Escolha seu nome de usuário para continuar na Praxis."
-  />
+  >
 
+
+  <!--
+    define o ícone exibido na aba do navegador
+
+    rel="icon":
+    informa que o arquivo será utilizado como ícone da página
+
+    type="image/png":
+    informa que o arquivo utilizado é uma imagem PNG
+
+    href:
+    informa o caminho até a imagem
+  -->
   <link
     rel="icon"
     type="image/png"
     href="assets/logo.png"
   >
 
+
+  <!--
+    prepara antecipadamente a conexão com o servidor
+    responsável pelos estilos do Google Fonts
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
   >
 
+
+  <!--
+    prepara antecipadamente a conexão com o servidor
+    responsável pelos arquivos físicos das fontes
+
+    crossorigin:
+    permite carregar recursos provenientes de outro domínio
+  -->
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
 
+
+  <!--
+    importa a fonte Inter através do Google Fonts
+
+    href:
+    contém o endereço da fonte e os pesos que serão utilizados
+
+    rel="stylesheet":
+    informa que o recurso carregado é uma folha de estilos
+  -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
+
+  <!--
+    importa o arquivo CSS utilizado pela página
+
+    rel="stylesheet":
+    informa que o arquivo externo é uma folha de estilos
+
+    href:
+    informa o caminho até o arquivo CSS
+  -->
   <link
     rel="stylesheet"
     href="styles/login.css"
-  />
+  >
+
+
 </head>
+<!-- encerra a área de configurações e informações da página -->
+
 
 
 <body>
+<!-- inicia todo o conteúdo visual exibido para o usuário -->
 
+
+  <!--
+    exibe a imagem decorativa utilizada no plano de fundo
+
+    src:
+    informa o caminho até a imagem
+
+    alt vazio:
+    indica que a imagem não possui conteúdo informativo
+
+    bg-vector:
+    classe utilizada pelo CSS para posicionar e estilizar a imagem
+
+    aria-hidden:
+    impede que leitores de tela anunciem esta imagem decorativa
+  -->
   <img
     src="assets/vector1.png"
     alt=""
     class="bg-vector"
     aria-hidden="true"
-  />
+  >
 
 
+
+  <!-- =====================================================
+       ÁREA PRINCIPAL
+
+       envolve e posiciona o cartão utilizado para
+       completar o perfil do usuário
+  ====================================================== -->
+
+
+  <!--
+    cria o contêiner externo da página
+
+    login-wrap:
+    classe utilizada pelo CSS para posicionar
+    o cartão na tela
+  -->
   <div class="login-wrap">
 
+
+    <!--
+      cria o cartão visual que contém
+      a logo e o formulário
+    -->
     <div class="login-card">
 
 
-      <!-- LOGO -->
 
+      <!-- =================================================
+           LOGO
+      ================================================== -->
+
+
+      <!-- cria a área destinada à logo da Praxis -->
       <div class="login-logo">
 
+
+        <!--
+          exibe a logo da Praxis
+
+          src:
+          informa onde está o arquivo da imagem
+
+          alt:
+          fornece um texto alternativo para a imagem
+
+          login-logo-img:
+          classe utilizada pelo CSS para controlar
+          o tamanho e a aparência da logo
+        -->
         <img
           src="assets/logo.png"
           alt="Praxis"
           class="login-logo-img"
         >
 
+
       </div>
+      <!-- encerra a área da logo -->
 
 
-      <!-- FORMULÁRIO -->
 
+      <!-- =================================================
+           FORMULÁRIO
+      ================================================== -->
+
+
+      <!--
+        cria o formulário utilizado para completar o perfil
+
+        login-form:
+        reutiliza os estilos visuais do formulário de login
+
+        id="profile-form":
+        permite que completar-perfil.js encontre este formulário
+
+        novalidate:
+        desativa as mensagens automáticas de validação do navegador,
+        permitindo que o JavaScript controle essas mensagens
+      -->
       <form
         class="login-form"
         id="profile-form"
@@ -82,6 +247,24 @@
       >
 
 
+
+        <!-- =================================================
+             APRESENTAÇÃO DO FORMULÁRIO
+        ================================================== -->
+
+
+        <!--
+          cria o bloco que contém o título e a descrição
+
+          style:
+          aplica estilos CSS diretamente neste elemento
+
+          text-align: center:
+          centraliza horizontalmente os textos
+
+          margin-bottom: 18px:
+          cria um espaço de 18 pixels abaixo deste bloco
+        -->
         <div
           style="
             text-align: center;
@@ -89,6 +272,20 @@
           "
         >
 
+
+          <!--
+            cria o título principal do formulário
+
+            margin: 0 0 8px:
+            remove as margens superior, direita e esquerda
+            e mantém 8 pixels de margem inferior
+
+            font-size: 22px:
+            define o tamanho do texto em 22 pixels
+
+            font-weight: 800:
+            deixa a fonte com peso forte/negrito
+          -->
           <h1
             style="
               margin: 0 0 8px;
@@ -96,10 +293,31 @@
               font-weight: 800;
             "
           >
+
+            <!-- título apresentado ao usuário -->
             Complete seu perfil
+
           </h1>
+          <!-- encerra o título principal -->
 
 
+
+          <!--
+            cria o texto explicativo abaixo do título
+
+            margin: 0:
+            remove as margens padrão do parágrafo
+
+            color: #6b7280:
+            define a cor do texto
+
+            font-size: 14px:
+            define o tamanho da fonte em 14 pixels
+
+            line-height: 1.5:
+            define o espaçamento vertical entre as linhas
+            como 1,5 vezes o tamanho da fonte
+          -->
           <p
             style="
               margin: 0;
@@ -108,22 +326,84 @@
               line-height: 1.5;
             "
           >
+
+            <!-- orientação apresentada ao usuário -->
             Escolha um nome de usuário para continuar.
+
           </p>
+          <!-- encerra o texto explicativo -->
+
 
         </div>
+        <!-- encerra o bloco de apresentação do formulário -->
 
 
-        <!-- NOME DE USUÁRIO -->
 
+        <!-- =================================================
+             NOME DE USUÁRIO
+        ================================================== -->
+
+
+        <!--
+          cria o grupo responsável pelo
+          campo de nome de usuário
+        -->
         <div class="field">
 
+
+          <!--
+            cria o texto que identifica o campo
+
+            for="username":
+            associa este label ao campo que possui id="username"
+          -->
           <label for="username">
+
+            <!-- texto exibido acima do campo -->
             Nome de usuário
+
           </label>
 
+
+          <!--
+            agrupa o ícone e o campo de nome de usuário
+
+            field-input:
+            classe utilizada para organizar visualmente
+            os elementos do campo
+          -->
           <div class="field-input">
 
+
+
+            <!--
+              cria o ícone de usuário
+
+              class="icon-left":
+              posiciona o ícone no lado esquerdo do campo
+
+              width="18":
+              define a largura do ícone em 18 pixels
+
+              height="18":
+              define a altura do ícone em 18 pixels
+
+              viewBox:
+              define o sistema interno de coordenadas do SVG
+
+              fill="none":
+              remove o preenchimento interno das formas
+
+              stroke="currentColor":
+              faz as linhas utilizarem a cor atual do elemento
+
+              stroke-width="2":
+              define a espessura das linhas
+
+              aria-hidden="true":
+              informa aos leitores de tela que o ícone
+              possui apenas função decorativa
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -134,18 +414,75 @@
               stroke-width="2"
               aria-hidden="true"
             >
+
+
+              <!--
+                desenha a parte inferior do ícone de usuário
+
+                d:
+                contém as instruções utilizadas pelo SVG
+                para desenhar o caminho
+              -->
               <path
                 d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               />
 
+
+              <!--
+                desenha a cabeça do usuário
+
+                cx="12":
+                define a posição horizontal do centro do círculo
+
+                cy="7":
+                define a posição vertical do centro do círculo
+
+                r="4":
+                define o raio do círculo
+              -->
               <circle
                 cx="12"
                 cy="7"
                 r="4"
               />
+
+
             </svg>
+            <!-- encerra o ícone de usuário -->
 
 
+
+            <!--
+              cria o campo onde o usuário escolherá seu nome de usuário
+
+              id="username":
+              permite que o JavaScript encontre este campo
+
+              name="username":
+              identifica o campo dentro do formulário
+
+              type="text":
+              define o campo como uma entrada comum de texto
+
+              autocomplete="username":
+              informa ao navegador que este campo
+              representa um nome de usuário
+
+              placeholder:
+              mostra uma orientação enquanto o campo estiver vazio
+
+              minlength="3":
+              exige no mínimo 3 caracteres
+
+              maxlength="30":
+              permite no máximo 30 caracteres
+
+              pattern="[A-Za-z0-9._]+":
+              permite letras, números, ponto e underline
+
+              required:
+              torna o preenchimento obrigatório
+            -->
             <input
               id="username"
               name="username"
@@ -156,15 +493,37 @@
               maxlength="30"
               pattern="[A-Za-z0-9._]+"
               required
-            />
+            >
+
 
           </div>
+          <!-- encerra o agrupamento do campo de nome de usuário -->
+
 
         </div>
+        <!-- encerra o grupo do nome de usuário -->
 
 
-        <!-- MENSAGEM -->
 
+        <!-- =================================================
+             MENSAGEM
+        ================================================== -->
+
+
+        <!--
+          cria a área onde completar-perfil.js
+          poderá exibir mensagens para o usuário
+
+          id="profile-msg":
+          permite que o JavaScript encontre este elemento
+
+          class="login-msg":
+          reutiliza os estilos das mensagens da página de login
+
+          aria-live="polite":
+          permite que leitores de tela anunciem alterações
+          neste conteúdo sem interromper imediatamente o usuário
+        -->
         <div
           id="profile-msg"
           class="login-msg"
@@ -172,43 +531,125 @@
         ></div>
 
 
-        <!-- SALVAR -->
 
+        <!-- =================================================
+             SALVAR
+        ================================================== -->
+
+
+        <!--
+          cria o botão utilizado para enviar o formulário
+
+          type="submit":
+          faz o botão disparar o evento submit do formulário
+
+          class="btn-login":
+          reutiliza o estilo visual do botão principal do login
+
+          id="profile-submit":
+          permite que completar-perfil.js encontre
+          e controle este botão
+        -->
         <button
           type="submit"
           class="btn-login"
           id="profile-submit"
         >
+
+          <!-- texto apresentado no botão -->
           SALVAR E CONTINUAR
+
         </button>
+        <!-- encerra o botão responsável por salvar o perfil -->
 
 
-        <!-- SAIR -->
 
+        <!-- =================================================
+             SAIR
+        ================================================== -->
+
+
+        <!--
+          agrupa a ação secundária do formulário
+
+          actions-group:
+          classe utilizada pelo CSS para organizar
+          os botões e links de ações adicionais
+        -->
         <div class="actions-group">
 
+
+          <!--
+            cria o botão utilizado para sair da conta
+
+            type="button":
+            impede que o botão envie o formulário
+
+            class="btn-register":
+            reutiliza o estilo visual de uma ação secundária
+
+            id="logout-btn":
+            permite que completar-perfil.js encontre
+            o botão e execute o logout
+          -->
           <button
             type="button"
             class="btn-register"
             id="logout-btn"
           >
+
+            <!-- texto exibido no botão -->
             Sair da conta
+
           </button>
+          <!-- encerra o botão de logout -->
+
 
         </div>
+        <!-- encerra o agrupamento das ações -->
+
 
       </form>
+      <!-- encerra o formulário utilizado para completar o perfil -->
+
 
     </div>
+    <!-- encerra o cartão do formulário -->
+
 
   </div>
+  <!-- encerra o contêiner principal da página -->
 
 
+
+  <!-- =====================================================
+       JAVASCRIPT / COMPLETAR PERFIL
+
+       carrega o arquivo responsável pela lógica da página,
+       incluindo a verificação do usuário, salvamento do
+       nome de usuário e logout
+  ====================================================== -->
+
+
+  <!--
+    type="module":
+    informa que o arquivo utiliza módulos JavaScript
+    e pode trabalhar com import e export
+
+    src:
+    informa o caminho até o arquivo JavaScript
+    responsável pela página
+  -->
   <script
     type="module"
     src="scripts/completar-perfil.js"
   ></script>
 
+
+
 </body>
+<!-- encerra todo o conteúdo visual da página -->
+
 
 </html>
+<!-- encerra o documento HTML -->
