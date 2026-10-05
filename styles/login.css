@@ -1,311 +1,570 @@
-:root {
-  --bg-dark: #06070C;
-  --bg-light: #FFFFFF;
-  --accent: #E0FB38;
-  --accent-hover: #d2f025;
-  --text-dark: #0b0d10;
-  --text-muted: #6a6f7d;
-  --border-line: #d5d7de;
-  --border-focus: #06070C;
-}
+:root { /* cria variáveis CSS globais que podem ser reutilizadas em todo o arquivo */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  --bg-dark: #06070C; /* define a cor escura principal da interface */
 
-html, body {
-  min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  overflow-x: hidden;
-  position: relative;
-}
+  --bg-light: #FFFFFF; /* define a cor clara principal do fundo */
+
+  --accent: #E0FB38; /* define a cor de destaque principal da Praxis */
+
+  --accent-hover: #d2f025; /* define a cor de destaque usada ao passar o mouse */
+
+  --text-dark: #0b0d10; /* define a cor principal dos textos escuros */
+
+  --text-muted: #6a6f7d; /* define uma cor mais suave para textos secundários */
+
+  --border-line: #d5d7de; /* define a cor padrão das bordas e linhas */
+
+  --border-focus: #06070C; /* define a cor da borda quando um campo recebe foco */
+
+} /* encerra a declaração das variáveis globais */
+
+
+* { /* seleciona todos os elementos da página */
+
+  box-sizing: border-box; /* faz largura e altura incluírem padding e borda no cálculo do tamanho */
+
+  margin: 0; /* remove as margens padrão de todos os elementos */
+
+  padding: 0; /* remove os espaçamentos internos padrão de todos os elementos */
+
+} /* encerra as configurações aplicadas a todos os elementos */
+
+
+html, body { /* aplica estas configurações tanto ao documento HTML quanto ao corpo da página */
+
+  min-height: 100vh; /* garante uma altura mínima equivalente a 100% da altura visível da tela */
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* define Inter como fonte principal e outras fontes como alternativas */
+
+  background-color: var(--bg-light); /* utiliza a variável de cor clara como fundo da página */
+
+  color: var(--text-dark); /* utiliza a variável de texto escuro como cor padrão dos textos */
+
+  overflow-x: hidden; /* impede que apareça uma barra de rolagem horizontal */
+
+  position: relative; /* permite posicionar elementos relacionados tomando a página como referência */
+
+} /* encerra as configurações gerais do HTML e do body */
+
 
 /* ---------------------------------- */
 /* Vetor de Fundo (vector1.png)       */
 /* ---------------------------------- */
-.bg-vector {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
+
+.bg-vector { /* seleciona a imagem decorativa de fundo que possui a classe bg-vector */
+
+  position: fixed; /* mantém a imagem fixa em relação à tela mesmo durante a rolagem */
+
+  top: 0; /* posiciona a imagem no limite superior da tela */
+
+  left: 0; /* posiciona a imagem no limite esquerdo da tela */
+
+  width: 100vw; /* faz a imagem ocupar 100% da largura visível da tela */
+
+  height: 100vh; /* faz a imagem ocupar 100% da altura visível da tela */
+
+  object-fit: cover; /* faz a imagem preencher toda a área disponível, podendo cortar partes excedentes */
+
+  object-position: center; /* mantém o centro da imagem como referência durante o ajuste */
+
+  z-index: 0; /* posiciona a imagem na camada base da página */
+
+  pointer-events: none; /* impede que a imagem receba cliques ou outros eventos do mouse */
+
+  user-select: none; /* impede que a imagem seja selecionada pelo usuário */
+
+} /* encerra as configurações da imagem de fundo */
+
 
 /* ---------------------------------- */
 /* Layout Principal                   */
 /* ---------------------------------- */
-.login-wrap {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  z-index: 1;
-}
+
+.login-wrap { /* seleciona o contêiner principal que envolve o cartão de login */
+
+  position: relative; /* permite controlar sua posição e o funcionamento do z-index */
+
+  min-height: 100vh; /* garante que o contêiner ocupe pelo menos toda a altura da tela */
+
+  display: flex; /* transforma o contêiner em um layout flexível */
+
+  align-items: center; /* centraliza verticalmente o conteúdo dentro do contêiner */
+
+  justify-content: center; /* centraliza horizontalmente o conteúdo dentro do contêiner */
+
+  padding: 40px 20px; /* cria 40px de espaço interno vertical e 20px horizontal */
+
+  z-index: 1; /* posiciona este conteúdo acima da imagem de fundo */
+
+} /* encerra as configurações do contêiner principal */
+
 
 /* ---------------------------------- */
 /* Card Central e Logo Circular       */
 /* ---------------------------------- */
-.login-card {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  z-index: 2;
-}
 
-.login-logo {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background: var(--bg-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  padding: 16px;
-}
+.login-card { /* seleciona o cartão que contém a logo e o formulário */
 
-.login-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+  width: 100%; /* permite que o cartão utilize toda a largura disponível */
+
+  max-width: 380px; /* limita a largura máxima do cartão a 380 pixels */
+
+  display: flex; /* transforma o cartão em um contêiner flexível */
+
+  flex-direction: column; /* organiza os elementos internos verticalmente */
+
+  align-items: center; /* centraliza horizontalmente os elementos internos */
+
+  gap: 24px; /* cria um espaço de 24 pixels entre os elementos internos */
+
+  z-index: 2; /* posiciona o cartão em uma camada acima dos elementos com z-index menor */
+
+} /* encerra as configurações do cartão */
+
+
+.login-logo { /* seleciona o contêiner circular que envolve a logo */
+
+  width: 130px; /* define a largura do contêiner da logo */
+
+  height: 130px; /* define a altura do contêiner da logo */
+
+  border-radius: 50%; /* transforma o contêiner quadrado em um círculo */
+
+  background: var(--bg-dark); /* utiliza a cor escura definida nas variáveis como fundo */
+
+  display: flex; /* transforma o contêiner da logo em um layout flexível */
+
+  align-items: center; /* centraliza a logo verticalmente */
+
+  justify-content: center; /* centraliza a logo horizontalmente */
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); /* cria uma sombra abaixo e ao redor do círculo */
+
+  overflow: hidden; /* esconde qualquer parte do conteúdo que ultrapasse o círculo */
+
+  padding: 16px; /* cria um espaço interno de 16 pixels ao redor da logo */
+
+} /* encerra as configurações do contêiner da logo */
+
+
+.login-logo-img { /* seleciona especificamente a imagem da logo */
+
+  width: 100%; /* faz a imagem utilizar toda a largura disponível no contêiner */
+
+  height: 100%; /* faz a imagem utilizar toda a altura disponível no contêiner */
+
+  object-fit: contain; /* mantém toda a imagem visível sem cortar e preserva suas proporções */
+
+} /* encerra as configurações da imagem da logo */
+
 
 /* ---------------------------------- */
 /* Formulário e Campos                */
 /* ---------------------------------- */
-.login-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+.login-form { /* seleciona o formulário utilizado nas páginas de autenticação */
 
-.field label {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
+  width: 100%; /* faz o formulário ocupar toda a largura disponível do cartão */
 
-.field-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1.5px solid var(--border-line);
-  padding: 6px 0;
-  position: relative;
-  transition: border-color 0.2s ease;
-}
+  display: flex; /* transforma o formulário em um contêiner flexível */
 
-.field-input:focus-within {
-  border-color: var(--border-focus);
-}
+  flex-direction: column; /* organiza os campos e botões verticalmente */
 
-.field-input .icon-left {
-  color: var(--text-dark);
-  flex-shrink: 0;
-}
+  gap: 18px; /* cria um espaço de 18 pixels entre os elementos do formulário */
 
-.field-input input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 15px;
-  padding: 4px 0;
-  color: var(--text-dark);
-  font-family: inherit;
-}
+} /* encerra as configurações do formulário */
 
-.field-input input::placeholder {
-  color: #9ea3b0;
-  font-size: 14px;
-}
+
+.field { /* seleciona cada grupo individual de campo do formulário */
+
+  display: flex; /* transforma o grupo do campo em um contêiner flexível */
+
+  flex-direction: column; /* coloca o label e o campo um abaixo do outro */
+
+  gap: 6px; /* cria um espaço de 6 pixels entre o label e o campo */
+
+} /* encerra as configurações de cada grupo de campo */
+
+
+.field label { /* seleciona os elementos label que estão dentro de elementos com a classe field */
+
+  font-size: 13px; /* define o tamanho do texto do label em 13 pixels */
+
+  color: var(--text-muted); /* utiliza a cor secundária para o texto do label */
+
+  font-weight: 500; /* define um peso intermediário para a fonte */
+
+} /* encerra as configurações dos labels */
+
+
+.field-input { /* seleciona o contêiner que agrupa ícone, input e possíveis botões */
+
+  display: flex; /* organiza os elementos internos usando Flexbox */
+
+  align-items: center; /* alinha verticalmente ícone, campo e botão ao centro */
+
+  gap: 10px; /* cria um espaço de 10 pixels entre os elementos internos */
+
+  border-bottom: 1.5px solid var(--border-line); /* cria uma linha de 1,5px na parte inferior do campo */
+
+  padding: 6px 0; /* cria 6px de espaço interno em cima e embaixo e nenhum nas laterais */
+
+  position: relative; /* permite posicionar elementos internos tomando este contêiner como referência */
+
+  transition: border-color 0.2s ease; /* suaviza durante 0,2 segundo a alteração da cor da borda */
+
+} /* encerra as configurações do contêiner dos campos */
+
+
+.field-input:focus-within { /* aplica estas regras quando algum elemento dentro de field-input recebe foco */
+
+  border-color: var(--border-focus); /* altera a linha inferior para a cor definida para foco */
+
+} /* encerra o estado de foco do campo */
+
+
+.field-input .icon-left { /* seleciona os ícones com classe icon-left existentes dentro dos campos */
+
+  color: var(--text-dark); /* define a cor do ícone usando a cor principal de texto */
+
+  flex-shrink: 0; /* impede que o Flexbox diminua o tamanho do ícone quando faltar espaço */
+
+} /* encerra as configurações dos ícones dos campos */
+
+
+.field-input input { /* seleciona os elementos input existentes dentro de field-input */
+
+  flex: 1; /* faz o input ocupar todo o espaço restante disponível na linha */
+
+  border: none; /* remove a borda padrão do campo */
+
+  outline: none; /* remove o contorno padrão exibido pelo navegador ao receber foco */
+
+  background: transparent; /* deixa o fundo do input transparente */
+
+  font-size: 15px; /* define o tamanho do texto digitado em 15 pixels */
+
+  padding: 4px 0; /* cria 4px de espaço interno vertical e nenhum espaço lateral */
+
+  color: var(--text-dark); /* define a cor do texto digitado */
+
+  font-family: inherit; /* faz o campo herdar a mesma fonte utilizada pelo elemento pai */
+
+} /* encerra as configurações dos inputs */
+
+
+.field-input input::placeholder { /* seleciona o texto temporário exibido dentro dos inputs vazios */
+
+  color: #9ea3b0; /* define uma cor mais clara para o texto do placeholder */
+
+  font-size: 14px; /* define o tamanho do texto do placeholder em 14 pixels */
+
+} /* encerra as configurações do placeholder */
+
 
 /* Botão Ver/Ocultar Senha */
-.btn-toggle-pass {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-}
 
-.btn-toggle-pass:hover {
-  color: var(--text-dark);
-}
+.btn-toggle-pass { /* seleciona o botão utilizado para mostrar ou ocultar a senha */
 
-.hidden {
-  display: none !important;
-}
+  background: none; /* remove qualquer fundo padrão do botão */
+
+  border: none; /* remove a borda padrão do botão */
+
+  cursor: pointer; /* transforma o cursor em uma mão ao passar sobre o botão */
+
+  padding: 4px; /* cria 4 pixels de espaço interno ao redor do ícone */
+
+  display: flex; /* utiliza Flexbox para organizar o conteúdo do botão */
+
+  align-items: center; /* centraliza verticalmente o ícone */
+
+  justify-content: center; /* centraliza horizontalmente o ícone */
+
+  color: var(--text-muted); /* utiliza a cor secundária no ícone */
+
+  transition: color 0.2s ease; /* suaviza a mudança de cor durante 0,2 segundo */
+
+} /* encerra as configurações do botão de visualizar senha */
+
+
+.btn-toggle-pass:hover { /* aplica estas regras quando o mouse estiver sobre o botão de visualizar senha */
+
+  color: var(--text-dark); /* deixa o ícone mais escuro quando o usuário passa o mouse */
+
+} /* encerra o estado hover do botão de visualizar senha */
+
+
+.hidden { /* seleciona qualquer elemento que possua a classe hidden */
+
+  display: none !important; /* esconde completamente o elemento e força esta regra a ter prioridade */
+
+} /* encerra as configurações da classe usada para esconder elementos */
+
 
 /* ---------------------------------- */
 /* Link Esqueceu sua senha?           */
 /* ---------------------------------- */
-.forgot {
-  align-self: flex-end;
-  font-size: 12px;
-  color: var(--text-muted);
-  text-decoration: none;
-  margin-top: -6px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
 
-.forgot:hover {
-  color: var(--text-dark);
-  text-decoration: underline;
-}
+.forgot { /* seleciona o link "Esqueceu sua senha?" */
+
+  align-self: flex-end; /* posiciona o próprio link no final horizontal do contêiner flexível */
+
+  font-size: 12px; /* define o tamanho do texto em 12 pixels */
+
+  color: var(--text-muted); /* utiliza a cor secundária para o texto */
+
+  text-decoration: none; /* remove o sublinhado padrão dos links */
+
+  margin-top: -6px; /* desloca o link 6 pixels para cima */
+
+  font-weight: 500; /* define um peso intermediário para a fonte */
+
+  transition: color 0.2s ease; /* suaviza a mudança de cor quando o estado do link muda */
+
+} /* encerra as configurações do link de recuperação de senha */
+
+
+.forgot:hover { /* aplica estas regras quando o mouse passa sobre o link */
+
+  color: var(--text-dark); /* altera a cor do texto para a cor escura principal */
+
+  text-decoration: underline; /* adiciona um sublinhado ao link */
+
+} /* encerra o estado hover do link */
+
 
 /* ---------------------------------- */
 /* Mensagens de Alerta                */
 /* ---------------------------------- */
-.login-msg {
-  font-size: 13px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  text-align: center;
-  width: 100%;
-  display: none;
-  font-weight: 500;
-}
 
-.login-msg.error {
-  background: #fde8e8;
-  color: #9b1c1c;
-  display: block;
-}
+.login-msg { /* seleciona a área utilizada para exibir mensagens ao usuário */
 
-.login-msg.success {
-  background: #f3face;
-  color: #3b5000;
-  display: block;
-}
+  font-size: 13px; /* define o tamanho do texto da mensagem */
+
+  padding: 10px 12px; /* cria 10px de espaço vertical e 12px de espaço horizontal */
+
+  border-radius: 8px; /* arredonda os cantos da caixa da mensagem */
+
+  text-align: center; /* centraliza o texto da mensagem */
+
+  width: 100%; /* faz a mensagem ocupar toda a largura disponível */
+
+  display: none; /* mantém a mensagem escondida por padrão */
+
+  font-weight: 500; /* define um peso intermediário para o texto */
+
+} /* encerra as configurações gerais das mensagens */
+
+
+.login-msg.error { /* seleciona uma mensagem que possui ao mesmo tempo as classes login-msg e error */
+
+  background: #fde8e8; /* define um fundo avermelhado para indicar erro */
+
+  color: #9b1c1c; /* define uma cor vermelha escura para o texto do erro */
+
+  display: block; /* torna a mensagem de erro visível */
+
+} /* encerra as configurações das mensagens de erro */
+
+
+.login-msg.success { /* seleciona uma mensagem que possui ao mesmo tempo as classes login-msg e success */
+
+  background: #f3face; /* define um fundo claro esverdeado para indicar sucesso */
+
+  color: #3b5000; /* define uma cor verde escura para o texto de sucesso */
+
+  display: block; /* torna a mensagem de sucesso visível */
+
+} /* encerra as configurações das mensagens de sucesso */
+
 
 /* ---------------------------------- */
 /* Botão Entrar Principal             */
 /* ---------------------------------- */
-.btn-login {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: var(--text-dark);
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: 1px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease, filter 0.2s ease;
-  font-family: inherit;
-  margin-top: 6px;
-}
 
-.btn-login:hover {
-  background: var(--accent-hover);
-  filter: brightness(1.03);
-}
+.btn-login { /* seleciona o botão principal utilizado para login, cadastro ou confirmação */
 
-.btn-login:active {
-  transform: translateY(1px);
-}
+  width: 100%; /* faz o botão ocupar toda a largura disponível */
 
-.btn-login:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
+  padding: 14px; /* cria 14 pixels de espaço interno em todos os lados */
+
+  background: var(--accent); /* utiliza a cor de destaque definida nas variáveis */
+
+  color: var(--text-dark); /* define a cor escura para o texto do botão */
+
+  border-radius: 8px; /* arredonda os cantos do botão */
+
+  font-weight: 800; /* deixa o texto do botão em negrito forte */
+
+  font-size: 15px; /* define o tamanho do texto em 15 pixels */
+
+  letter-spacing: 1px; /* aumenta em 1 pixel o espaço entre as letras */
+
+  border: none; /* remove a borda padrão do botão */
+
+  cursor: pointer; /* mostra o cursor de clique ao passar sobre o botão */
+
+  transition: background-color 0.2s ease, transform 0.1s ease, filter 0.2s ease; /* suaviza mudanças de fundo, posição e brilho */
+
+  font-family: inherit; /* faz o botão utilizar a mesma fonte do elemento pai */
+
+  margin-top: 6px; /* cria um espaço de 6 pixels acima do botão */
+
+} /* encerra as configurações do botão principal */
+
+
+.btn-login:hover { /* aplica estas regras quando o mouse passa sobre o botão principal */
+
+  background: var(--accent-hover); /* altera o fundo para a cor definida para hover */
+
+  filter: brightness(1.03); /* aumenta levemente o brilho do botão */
+
+} /* encerra o estado hover do botão principal */
+
+
+.btn-login:active { /* aplica estas regras enquanto o botão estiver sendo pressionado */
+
+  transform: translateY(1px); /* desloca o botão 1 pixel para baixo para simular o clique */
+
+} /* encerra o estado ativo do botão principal */
+
+
+.btn-login:disabled { /* aplica estas regras quando o botão estiver desabilitado */
+
+  opacity: 0.65; /* deixa o botão parcialmente transparente */
+
+  cursor: wait; /* altera o cursor para indicar que existe uma operação em andamento */
+
+} /* encerra o estado desabilitado do botão principal */
+
 
 /* ---------------------------------- */
 /* Ações Secundárias                  */
 /* ---------------------------------- */
-.actions-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  align-items: center;
-}
 
-.btn-register {
-  width: 100%;
-  padding: 11px;
-  background: transparent;
-  color: var(--text-dark);
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  border: 1.5px solid var(--border-line);
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  font-family: inherit;
-}
+.actions-group { /* seleciona o contêiner que agrupa as ações secundárias */
 
-.btn-register:hover {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: var(--border-focus);
-}
+  display: flex; /* transforma o grupo em um contêiner Flexbox */
 
-.google-btn {
-  width: 100%;
-  height: 44px;
-  border-radius: 8px;
-  background: #ffffff;
-  border: 1.5px solid var(--border-line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-dark);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
+  flex-direction: column; /* organiza os elementos verticalmente */
 
-.google-btn:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #c5c8d2;
-}
+  gap: 10px; /* cria um espaço de 10 pixels entre as ações */
 
-.google-btn img {
-  width: 20px;
-  height: 20px;
-}
+  width: 100%; /* faz o grupo ocupar toda a largura disponível */
+
+  align-items: center; /* centraliza horizontalmente os elementos internos */
+
+} /* encerra as configurações do grupo de ações */
+
+
+.btn-register { /* seleciona o botão ou link utilizado como ação secundária de cadastro */
+
+  width: 100%; /* faz o elemento ocupar toda a largura disponível */
+
+  padding: 11px; /* cria 11 pixels de espaço interno */
+
+  background: transparent; /* deixa o fundo transparente */
+
+  color: var(--text-dark); /* utiliza a cor escura principal no texto */
+
+  border-radius: 8px; /* arredonda os cantos */
+
+  font-weight: 600; /* deixa o texto em seminegrito */
+
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+
+  border: 1.5px solid var(--border-line); /* cria uma borda de 1,5px usando a cor padrão das bordas */
+
+  cursor: pointer; /* exibe o cursor de clique ao passar sobre o elemento */
+
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* suaviza alterações do fundo e da borda */
+
+  font-family: inherit; /* utiliza a mesma fonte definida no elemento pai */
+
+} /* encerra as configurações do botão secundário */
+
+
+.btn-register:hover { /* aplica estas regras quando o mouse passa sobre o botão secundário */
+
+  background: rgba(0, 0, 0, 0.04); /* adiciona um fundo preto com apenas 4% de opacidade */
+
+  border-color: var(--border-focus); /* deixa a borda com a cor utilizada para destaque/foco */
+
+} /* encerra o estado hover do botão secundário */
+
+
+.google-btn { /* seleciona o botão utilizado para continuar com o Google */
+
+  width: 100%; /* faz o botão ocupar toda a largura disponível */
+
+  height: 44px; /* define a altura do botão em 44 pixels */
+
+  border-radius: 8px; /* arredonda os cantos do botão */
+
+  background: #ffffff; /* define o fundo do botão como branco */
+
+  border: 1.5px solid var(--border-line); /* cria uma borda utilizando a cor padrão */
+
+  display: flex; /* transforma o botão em um contêiner Flexbox */
+
+  align-items: center; /* centraliza verticalmente o ícone e o texto */
+
+  justify-content: center; /* centraliza horizontalmente o conteúdo */
+
+  gap: 10px; /* cria 10 pixels de espaço entre o ícone e o texto */
+
+  cursor: pointer; /* exibe o cursor de clique */
+
+  font-family: inherit; /* utiliza a mesma fonte definida no elemento pai */
+
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+
+  font-weight: 600; /* deixa o texto em seminegrito */
+
+  color: var(--text-dark); /* utiliza a cor principal de texto */
+
+  transition: background-color 0.2s ease, box-shadow 0.2s ease; /* suaviza alterações de fundo e sombra */
+
+} /* encerra as configurações do botão do Google */
+
+
+.google-btn:hover { /* aplica estas regras quando o mouse passa sobre o botão do Google */
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* adiciona uma sombra suave abaixo do botão */
+
+  border-color: #c5c8d2; /* altera levemente a cor da borda */
+
+} /* encerra o estado hover do botão do Google */
+
+
+.google-btn img { /* seleciona a imagem existente dentro do botão do Google */
+
+  width: 20px; /* define a largura do ícone do Google em 20 pixels */
+
+  height: 20px; /* define a altura do ícone do Google em 20 pixels */
+
+} /* encerra as configurações da imagem do Google */
+
 
 /* ---------------------------------- */
 /* Responsividade                     */
 /* ---------------------------------- */
-@media (max-width: 768px) {
-  .login-card {
-    max-width: 320px;
-  }
-  .login-logo {
-    width: 110px;
-    height: 110px;
-  }
-}
+
+@media (max-width: 768px) { /* aplica as regras abaixo somente quando a tela tiver no máximo 768 pixels de largura */
+
+  .login-card { /* seleciona o cartão de login dentro da regra responsiva */
+
+    max-width: 320px; /* reduz a largura máxima do cartão para 320 pixels em telas menores */
+
+  } /* encerra as configurações responsivas do cartão */
+
+
+  .login-logo { /* seleciona o contêiner da logo em telas menores */
+
+    width: 110px; /* reduz a largura da logo para 110 pixels */
+
+    height: 110px; /* reduz a altura da logo para 110 pixels */
+
+  } /* encerra as configurações responsivas da logo */
+
+} /* encerra a regra de responsividade para telas de até 768 pixels */
