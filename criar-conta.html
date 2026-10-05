@@ -1,86 +1,235 @@
 <!doctype html>
+<!-- informa ao navegador que este documento utiliza HTML5 -->
+
 <html lang="pt-BR">
+<!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
+
 
 <head>
-  <meta charset="utf-8" />
+<!-- inicia a área de configurações e informações da página -->
 
+
+  <!-- define a codificação UTF-8 para permitir acentos, símbolos e caracteres especiais -->
+  <meta charset="utf-8">
+
+
+  <!--
+    configura a página para funcionar corretamente em diferentes tamanhos de tela
+
+    name="viewport":
+    informa que esta configuração controla a área visível da página
+
+    width=device-width:
+    faz a largura da página acompanhar a largura do dispositivo
+
+    initial-scale=1:
+    inicia o nível de zoom da página em 100%
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
-  />
+  >
 
+
+  <!-- inicia o título exibido na aba do navegador -->
+   <!-- texto exibido na aba do navegador -->
   <title>
-    Criar conta — SkillUp
-  </title>
 
+    
+    Criar conta — Praxis
+
+  </title>
+  <!-- encerra o título da página -->
+
+
+  <!--
+    define uma descrição resumida da página
+
+    name="description":
+    informa que esta meta tag representa a descrição da página
+
+    content:
+    contém o texto utilizado como descrição
+  -->
   <meta
     name="description"
-    content="Crie sua conta SkillUp e comece a aprender."
-  />
+    content="Crie sua conta Praxis e comece a aprender."
+  >
 
+
+  <!--
+    define o ícone exibido na aba do navegador
+
+    rel="icon":
+    informa que o arquivo será utilizado como ícone
+
+    type="image/png":
+    informa que o arquivo é uma imagem PNG
+
+    href:
+    informa onde a imagem está localizada
+  -->
   <link
     rel="icon"
     type="image/png"
     href="assets/logo.png"
   >
 
+
+  <!--
+    prepara antecipadamente a conexão com o servidor
+    responsável pelos estilos do Google Fonts
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
   >
 
+
+  <!--
+    prepara antecipadamente a conexão com o servidor
+    responsável pelos arquivos físicos das fontes
+
+    crossorigin:
+    permite carregar recursos provenientes de outro domínio
+  -->
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
 
+
+  <!--
+    importa a fonte Inter através do Google Fonts
+
+    href:
+    contém o endereço da fonte e os pesos utilizados
+
+    rel="stylesheet":
+    informa que o recurso carregado é uma folha de estilos
+  -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
+
+  <!--
+    importa o mesmo arquivo CSS utilizado pela página de login
+
+    rel="stylesheet":
+    informa que o arquivo é uma folha de estilos
+
+    href:
+    informa o caminho até o arquivo CSS
+  -->
   <link
     rel="stylesheet"
     href="styles/login.css"
-  />
+  >
+
+
 </head>
+<!-- encerra a área de configurações da página -->
+
 
 
 <body>
+<!-- inicia todo o conteúdo visual exibido para o usuário -->
 
+
+  <!--
+    exibe a imagem decorativa utilizada no plano de fundo
+
+    src:
+    caminho até a imagem
+
+    alt vazio:
+    informa que a imagem é apenas decorativa
+
+    bg-vector:
+    classe utilizada pelo CSS para posicionar a imagem
+
+    aria-hidden:
+    impede que leitores de tela anunciem esta imagem
+  -->
   <img
     src="assets/vector1.png"
     alt=""
     class="bg-vector"
     aria-hidden="true"
-  />
+  >
 
 
+
+  <!-- =====================================================
+       ÁREA PRINCIPAL
+
+       envolve e posiciona o cartão de criação da conta
+  ====================================================== -->
+
+
+  <!-- cria o contêiner externo responsável pelo posicionamento do cartão -->
   <div class="login-wrap">
 
+
+    <!-- cria o cartão que contém a logo e o formulário -->
     <div class="login-card">
+
 
 
       <!-- =================================================
            LOGO
       ================================================== -->
 
+
+      <!-- cria a área destinada à logo -->
       <div class="login-logo">
 
+
+        <!--
+          exibe a logo da Praxis
+
+          src:
+          informa onde está o arquivo da imagem
+
+          alt:
+          fornece um texto alternativo para a imagem
+
+          login-logo-img:
+          classe utilizada pelo CSS para controlar sua aparência
+        -->
         <img
           src="assets/logo.png"
-          alt="SkillUp"
+          alt="Praxis"
           class="login-logo-img"
         >
 
+
       </div>
+      <!-- encerra a área da logo -->
+
 
 
       <!-- =================================================
            FORMULÁRIO
       ================================================== -->
 
+
+      <!--
+        cria o formulário responsável pelo cadastro
+
+        login-form:
+        reutiliza os estilos do formulário de login
+
+        id="register-form":
+        permite que criar-conta.js encontre o formulário
+
+        novalidate:
+        desativa as mensagens automáticas de validação do navegador,
+        permitindo que o JavaScript controle as mensagens
+      -->
       <form
         class="login-form"
         id="register-form"
@@ -88,18 +237,62 @@
       >
 
 
+
         <!-- =================================================
              NOME DE USUÁRIO
         ================================================== -->
 
+
+        <!-- cria o grupo do campo de nome de usuário -->
         <div class="field">
 
+
+          <!--
+            a tag label é a tag que cria o texto que identifica o campo
+
+            for="username":
+            associa este label ao elemento que possui id="username"
+          -->
           <label for="username">
+
+            <!-- texto exibido acima do campo -->
             Nome de usuário
+
           </label>
 
+
+          <!-- agrupa o ícone e o campo de nome de usuário -->
           <div class="field-input">
 
+
+
+            <!--
+              cria o ícone de usuário
+
+              icon-left:
+              classe utilizada para posicionar o ícone
+
+              width:
+              largura do ícone
+
+              height:
+              altura do ícone
+
+              viewBox:
+              define o sistema interno de coordenadas
+
+              fill="none":
+              remove o preenchimento
+
+              stroke="currentColor":
+              utiliza a cor atual nas linhas
+
+              stroke-width:
+              define a espessura das linhas
+
+              aria-hidden:
+              informa que o ícone é apenas decorativo
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -110,18 +303,68 @@
               stroke-width="2"
               aria-hidden="true"
             >
+
+
+              <!-- desenha a parte inferior do ícone de usuário -->
               <path
                 d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               />
 
+
+              <!--
+                desenha a cabeça do usuário
+
+                cx:
+                posição horizontal do centro
+
+                cy:
+                posição vertical do centro
+
+                r:
+                raio do círculo
+              -->
               <circle
                 cx="12"
                 cy="7"
                 r="4"
               />
+
+
             </svg>
+            <!-- encerra o ícone de usuário -->
 
 
+
+            <!--
+              cria o campo onde será digitado o nome de usuário
+
+              id:
+              permite que o JavaScript encontre este campo
+
+              name:
+              identifica o campo dentro do formulário
+
+              type="text":
+              permite entrada de texto comum
+
+              autocomplete="username":
+              informa ao navegador que o campo representa um nome de usuário
+
+              placeholder:
+              apresenta uma orientação enquanto o campo estiver vazio
+
+              minlength="3":
+              define o mínimo de 3 caracteres
+
+              maxlength="30":
+              define o máximo de 30 caracteres
+
+              pattern:
+              permite letras, números, ponto e underline
+
+              required:
+              torna o preenchimento obrigatório
+            -->
             <input
               id="username"
               name="username"
@@ -132,25 +375,42 @@
               maxlength="30"
               pattern="[A-Za-z0-9._]+"
               required
-            />
+            >
+
 
           </div>
+          <!-- encerra o agrupamento do campo de nome de usuário -->
+
 
         </div>
+        <!-- encerra o grupo do nome de usuário -->
+
 
 
         <!-- =================================================
              E-MAIL
         ================================================== -->
 
+
+        <!-- cria o grupo responsável pelo campo de e-mail -->
         <div class="field">
 
+
+          <!-- associa este texto ao campo que possui id="email" -->
           <label for="email">
+
+            <!-- texto exibido acima do campo -->
             E-mail
+
           </label>
 
+
+          <!-- agrupa o ícone e o campo de e-mail -->
           <div class="field-input">
 
+
+
+            <!-- cria o ícone visual utilizado no campo de e-mail -->
             <svg
               class="icon-left"
               width="18"
@@ -161,16 +421,46 @@
               stroke-width="2"
               aria-hidden="true"
             >
+
+
+              <!-- desenha o formato externo do ícone -->
               <path
                 d="M4 4h16v16H4z"
               />
 
+
+              <!-- desenha as linhas internas que representam o envelope -->
               <path
                 d="m4 6 8 6 8-6"
               />
+
+
             </svg>
+            <!-- encerra o ícone do e-mail -->
 
 
+
+            <!--
+              cria o campo onde o e-mail será digitado
+
+              id:
+              permite que o JavaScript encontre o campo
+
+              name:
+              identifica o campo dentro do formulário
+
+              type="email":
+              informa que o valor esperado é um endereço de e-mail
+
+              autocomplete="email":
+              permite sugestões de e-mails armazenados pelo navegador
+
+              placeholder:
+              apresenta um exemplo de endereço
+
+              required:
+              torna o campo obrigatório
+            -->
             <input
               id="email"
               name="email"
@@ -178,25 +468,42 @@
               autocomplete="email"
               placeholder="seu@email.com"
               required
-            />
+            >
+
 
           </div>
+          <!-- encerra o agrupamento do campo de e-mail -->
+
 
         </div>
+        <!-- encerra o grupo do e-mail -->
+
 
 
         <!-- =================================================
              SENHA
         ================================================== -->
 
+
+        <!-- cria o grupo responsável pelo campo de senha -->
         <div class="field">
 
+
+          <!-- associa este texto ao campo que possui id="password" -->
           <label for="password">
+
+            <!-- texto exibido acima do campo -->
             Senha
+
           </label>
 
+
+          <!-- agrupa ícone, campo e botão de mostrar/ocultar senha -->
           <div class="field-input">
 
+
+
+            <!-- cria o ícone de cadeado -->
             <svg
               class="icon-left"
               width="18"
@@ -207,6 +514,9 @@
               stroke-width="2"
               aria-hidden="true"
             >
+
+
+              <!-- desenha a parte inferior do cadeado -->
               <rect
                 x="3"
                 y="11"
@@ -215,12 +525,42 @@
                 rx="2"
               />
 
+
+              <!-- desenha a parte superior do cadeado -->
               <path
                 d="M7 11V7a5 5 0 0 1 10 0v4"
               />
+
+
             </svg>
+            <!-- encerra o ícone de cadeado -->
 
 
+
+            <!--
+              cria o campo onde a nova senha será digitada
+
+              id:
+              permite que o JavaScript encontre o campo
+
+              name:
+              identifica o campo dentro do formulário
+
+              type="password":
+              esconde visualmente os caracteres digitados
+
+              autocomplete="new-password":
+              informa ao navegador que esta é uma nova senha
+
+              placeholder:
+              apresenta uma orientação
+
+              minlength="6":
+              exige pelo menos 6 caracteres
+
+              required:
+              torna o campo obrigatório
+            -->
             <input
               id="password"
               name="password"
@@ -229,9 +569,28 @@
               placeholder="Crie uma senha"
               minlength="6"
               required
-            />
+            >
 
 
+
+            <!--
+              cria o botão responsável por mostrar ou esconder a senha
+
+              type="button":
+              impede o envio do formulário ao clicar
+
+              id:
+              permite que o JavaScript encontre o botão
+
+              btn-toggle-pass:
+              classe responsável pela aparência
+
+              aria-label:
+              descreve sua função para leitores de tela
+
+              title:
+              mostra uma descrição ao passar o mouse
+            -->
             <button
               type="button"
               id="toggle-password"
@@ -240,6 +599,9 @@
               title="Ver ou ocultar senha"
             >
 
+
+
+              <!-- cria o ícone de olho riscado -->
               <svg
                 id="eye-off"
                 width="18"
@@ -250,19 +612,37 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+
+
+                <!-- desenha o formato principal do olho riscado -->
                 <path
                   d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
                 ></path>
 
+
+                <!-- desenha a linha diagonal que corta o olho -->
                 <line
                   x1="1"
                   y1="1"
                   x2="23"
                   y2="23"
                 ></line>
+
+
               </svg>
+              <!-- encerra o ícone de olho riscado -->
 
 
+
+              <!--
+                cria o ícone de olho aberto
+
+                id:
+                permite que o JavaScript encontre o ícone
+
+                hidden:
+                faz o elemento começar escondido
+              -->
               <svg
                 id="eye-on"
                 class="hidden"
@@ -274,36 +654,63 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+
+
+                <!-- desenha o contorno do olho -->
                 <path
                   d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"
                 ></path>
 
+
+                <!-- desenha a pupila -->
                 <circle
                   cx="12"
                   cy="12"
                   r="3"
                 ></circle>
+
+
               </svg>
+              <!-- encerra o ícone de olho aberto -->
+
 
             </button>
+            <!-- encerra o botão de mostrar/ocultar senha -->
+
 
           </div>
+          <!-- encerra o agrupamento do campo de senha -->
+
 
         </div>
+        <!-- encerra o grupo da senha -->
+
 
 
         <!-- =================================================
              CONFIRMAR SENHA
         ================================================== -->
 
+
+        <!-- cria o grupo responsável pela confirmação da senha -->
         <div class="field">
 
+
+          <!-- associa o texto ao campo que possui id="confirm-password" -->
           <label for="confirm-password">
+
+            <!-- texto exibido acima do campo -->
             Confirmar senha
+
           </label>
 
+
+          <!-- agrupa ícone, campo e botão de visualizar a confirmação -->
           <div class="field-input">
 
+
+
+            <!-- cria outro ícone de cadeado -->
             <svg
               class="icon-left"
               width="18"
@@ -314,6 +721,9 @@
               stroke-width="2"
               aria-hidden="true"
             >
+
+
+              <!-- desenha a parte inferior do cadeado -->
               <rect
                 x="3"
                 y="11"
@@ -322,12 +732,42 @@
                 rx="2"
               />
 
+
+              <!-- desenha a parte superior do cadeado -->
               <path
                 d="M7 11V7a5 5 0 0 1 10 0v4"
               />
+
+
             </svg>
+            <!-- encerra o ícone -->
 
 
+
+            <!--
+              cria o campo utilizado para repetir a senha
+
+              id:
+              permite que o JavaScript encontre o campo
+
+              name:
+              identifica o campo
+
+              type="password":
+              esconde os caracteres digitados
+
+              autocomplete="new-password":
+              informa que o conteúdo está relacionado a uma nova senha
+
+              placeholder:
+              orienta o usuário a repetir a senha
+
+              minlength="6":
+              exige pelo menos 6 caracteres
+
+              required:
+              torna o preenchimento obrigatório
+            -->
             <input
               id="confirm-password"
               name="confirm-password"
@@ -336,9 +776,14 @@
               placeholder="Digite a senha novamente"
               minlength="6"
               required
-            />
+            >
 
 
+
+            <!--
+              cria o botão responsável por mostrar ou ocultar
+              a confirmação da senha
+            -->
             <button
               type="button"
               id="toggle-confirm-password"
@@ -347,6 +792,9 @@
               title="Ver ou ocultar senha"
             >
 
+
+
+              <!-- cria o ícone de olho riscado da confirmação -->
               <svg
                 id="confirm-eye-off"
                 width="18"
@@ -357,19 +805,29 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+
+
+                <!-- desenha o formato principal do olho riscado -->
                 <path
                   d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
                 ></path>
 
+
+                <!-- desenha a linha diagonal que corta o olho -->
                 <line
                   x1="1"
                   y1="1"
                   x2="23"
                   y2="23"
                 ></line>
+
+
               </svg>
+              <!-- encerra o ícone de olho riscado -->
 
 
+
+              <!-- cria o ícone de olho aberto da confirmação -->
               <svg
                 id="confirm-eye-on"
                 class="hidden"
@@ -381,28 +839,57 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+
+
+                <!-- desenha o contorno do olho -->
                 <path
                   d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"
                 ></path>
 
+
+                <!-- desenha a pupila -->
                 <circle
                   cx="12"
                   cy="12"
                   r="3"
                 ></circle>
+
+
               </svg>
+              <!-- encerra o ícone de olho aberto -->
+
 
             </button>
+            <!-- encerra o botão de mostrar/ocultar confirmação -->
+
 
           </div>
+          <!-- encerra o agrupamento do campo -->
+
 
         </div>
+        <!-- encerra o grupo de confirmação de senha -->
+
 
 
         <!-- =================================================
              MENSAGEM
         ================================================== -->
 
+
+        <!--
+          área utilizada pelo criar-conta.js para exibir mensagens
+
+          id="register-msg":
+          permite que o JavaScript encontre esta área
+
+          login-msg:
+          reutiliza o estilo das mensagens do login
+
+          aria-live="polite":
+          permite que leitores de tela anunciem alterações
+          sem interromper imediatamente o usuário
+        -->
         <div
           id="register-msg"
           class="login-msg"
@@ -410,34 +897,88 @@
         ></div>
 
 
+
         <!-- =================================================
              CRIAR CONTA
         ================================================== -->
 
+
+        <!--
+          cria o botão que envia o formulário
+
+          type="submit":
+          dispara o evento submit do formulário
+
+          btn-login:
+          reutiliza o estilo do botão principal da página de login
+
+          id="register-submit":
+          permite que criar-conta.js encontre e controle o botão
+        -->
         <button
           type="submit"
           class="btn-login"
           id="register-submit"
         >
+
+          <!-- texto exibido no botão -->
           CRIAR CONTA
+
         </button>
+        <!-- encerra o botão de criação de conta -->
+
 
 
         <!-- =================================================
              AÇÕES
         ================================================== -->
 
+
+        <!-- agrupa as opções de login existente e cadastro com Google -->
         <div class="actions-group">
 
 
+
+          <!--
+            cria o link para voltar à página de login
+
+            href:
+            informa a página que será aberta
+
+            btn-register:
+            classe utilizada para sua aparência
+          -->
           <a
             href="login.html"
             class="btn-register"
           >
+
+            <!-- texto exibido no link -->
             Já tenho uma conta
+
           </a>
+          <!-- encerra o link para a página de login -->
 
 
+
+          <!--
+            cria o botão de cadastro/autenticação pelo Google
+
+            type="button":
+            impede o envio tradicional do formulário
+
+            google-btn:
+            classe responsável pelo visual
+
+            id="google-register-btn":
+            permite que criar-conta.js encontre o botão
+
+            aria-label:
+            descreve sua função para leitores de tela
+
+            title:
+            mostra uma descrição ao passar o mouse
+          -->
           <button
             type="button"
             class="google-btn"
@@ -446,180 +987,402 @@
             title="Continuar com Google"
           >
 
+
+
+            <!--
+              carrega o ícone utilizado no botão do Google
+
+              src:
+              endereço externo da imagem
+
+              alt:
+              texto alternativo da imagem
+            -->
             <img
               src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
               alt="Google"
-            />
+            >
 
+
+
+            <!-- envolve o texto do botão -->
             <span>
+
+              <!-- texto exibido -->
               Continuar com Google
+
             </span>
+            <!-- encerra o texto -->
+
 
           </button>
+          <!-- encerra o botão do Google -->
+
 
         </div>
+        <!-- encerra o agrupamento das ações -->
+
 
       </form>
+      <!-- encerra o formulário de cadastro -->
+
 
     </div>
+    <!-- encerra o cartão de cadastro -->
+
 
   </div>
+  <!-- encerra o contêiner principal -->
+
 
 
   <!-- =====================================================
        MOSTRAR / OCULTAR SENHAS
+
+       este JavaScript controla os botões que permitem
+       visualizar ou esconder as duas senhas
   ====================================================== -->
 
+
+  <!-- inicia o JavaScript executado diretamente nesta página -->
   <script>
 
+
+    // Adiciona um evento que aguarda o HTML terminar de ser carregado.
     document.addEventListener(
+
+      // Nome do evento disparado quando a estrutura HTML estiver pronta.
       "DOMContentLoaded",
+
+      // Função executada depois que o DOM estiver carregado.
       () => {
+
+
 
         /* ===============================================
            SENHA PRINCIPAL
+
+           controla o campo onde a senha é criada
         ================================================ */
 
+
+        // Procura o botão responsável por mostrar ou ocultar a senha principal.
         const togglePassword =
+
+          // Busca no documento um elemento através do seu ID.
           document.getElementById(
+
+            // ID do botão de mostrar/ocultar senha.
             "toggle-password"
+
           );
 
 
+
+        // Procura o campo da senha principal.
         const password =
+
+          // Busca um elemento através do seu ID.
           document.getElementById(
+
+            // ID do campo de senha.
             "password"
+
           );
 
 
+
+        // Procura o ícone de olho aberto da senha principal.
         const eyeOn =
+
+          // Busca o elemento através do ID.
           document.getElementById(
+
+            // ID do ícone de olho aberto.
             "eye-on"
+
           );
 
 
+
+        // Procura o ícone de olho riscado da senha principal.
         const eyeOff =
+
+          // Busca o elemento através do ID.
           document.getElementById(
+
+            // ID do ícone de olho riscado.
             "eye-off"
+
           );
 
 
+
+        // Verifica se o botão e o campo realmente existem antes de adicionar o evento.
         if (
+
+          // Confirma que togglePassword foi encontrado.
           togglePassword &&
+
+          // Confirma que password foi encontrado.
           password
+
         ) {
 
+
+          // Adiciona um evento de clique ao botão da senha principal.
           togglePassword.addEventListener(
+
+            // Define que o evento observado será um clique.
             "click",
+
+            // Função executada sempre que o botão for clicado.
             () => {
 
+
+              // Cria uma variável que verifica se a senha está atualmente escondida.
               const isPassword =
+
+                // Compara o tipo atual do campo.
                 password.type ===
+
+                // "password" significa que os caracteres estão escondidos.
                 "password";
 
 
+
+              // Altera o tipo do campo.
               password.type =
+
+                // Verifica o valor verdadeiro ou falso armazenado em isPassword.
                 isPassword
+
+                  // Se estava escondida, muda para text e mostra a senha.
                   ? "text"
+
+                  // Caso contrário, volta para password e esconde a senha.
                   : "password";
 
 
+
+              // Tenta acessar o ícone de olho aberto e alternar sua classe hidden.
               eyeOn?.classList.toggle(
+
+                // Nome da classe CSS que esconde o elemento.
                 "hidden",
+
+                // Define se a classe hidden deve permanecer ou ser removida.
                 !isPassword
+
               );
 
 
+
+              // Tenta acessar o ícone de olho riscado e alternar sua classe hidden.
               eyeOff?.classList.toggle(
+
+                // Nome da classe que esconde o elemento.
                 "hidden",
+
+                // Esconde o olho riscado quando a senha estiver sendo exibida.
                 isPassword
+
               );
+
 
             }
+            // encerra a função executada ao clicar
+
           );
+          // encerra o registro do evento de clique
+
 
         }
+        // encerra a verificação da existência dos elementos
+
 
 
         /* ===============================================
            CONFIRMAR SENHA
+
+           controla o segundo campo utilizado para
+           confirmar a senha escolhida
         ================================================ */
 
+
+        // Procura o botão de mostrar ou ocultar a confirmação da senha.
         const toggleConfirm =
+
+          // Busca um elemento através do ID.
           document.getElementById(
+
+            // ID do botão da confirmação.
             "toggle-confirm-password"
+
           );
 
 
+
+        // Procura o campo onde a senha é digitada novamente.
         const confirmPassword =
+
+          // Busca o elemento através do seu ID.
           document.getElementById(
+
+            // ID do campo de confirmação.
             "confirm-password"
+
           );
 
 
+
+        // Procura o ícone de olho aberto da confirmação.
         const confirmEyeOn =
+
+          // Busca o elemento pelo ID.
           document.getElementById(
+
+            // ID do olho aberto.
             "confirm-eye-on"
+
           );
 
 
+
+        // Procura o ícone de olho riscado da confirmação.
         const confirmEyeOff =
+
+          // Busca o elemento pelo ID.
           document.getElementById(
+
+            // ID do olho riscado.
             "confirm-eye-off"
+
           );
 
 
+
+        // Confirma que o botão e o campo existem antes de registrar o evento.
         if (
+
+          // Verifica se o botão foi encontrado.
           toggleConfirm &&
+
+          // Verifica se o campo foi encontrado.
           confirmPassword
+
         ) {
 
+
+          // Adiciona um evento de clique ao botão da confirmação.
           toggleConfirm.addEventListener(
+
+            // Define o clique como evento observado.
             "click",
+
+            // Função executada quando o usuário clicar.
             () => {
 
+
+              // Verifica se a confirmação está atualmente escondida.
               const isPassword =
+
+                // Compara o tipo atual do input.
                 confirmPassword.type ===
+
+                // O tipo password significa que os caracteres estão escondidos.
                 "password";
 
 
+
+              // Altera o tipo do campo de confirmação.
               confirmPassword.type =
+
+                // Verifica o estado atual.
                 isPassword
+
+                  // Se estava escondido, passa para texto.
                   ? "text"
+
+                  // Se estava visível, volta para senha.
                   : "password";
 
 
+
+              // Alterna a classe hidden do olho aberto.
               confirmEyeOn?.classList.toggle(
+
+                // Classe responsável por esconder o elemento.
                 "hidden",
+
+                // Define quando o olho aberto deve ficar escondido.
                 !isPassword
+
               );
 
 
+
+              // Alterna a classe hidden do olho riscado.
               confirmEyeOff?.classList.toggle(
+
+                // Classe responsável por esconder o elemento.
                 "hidden",
+
+                // Define quando o olho riscado deve ficar escondido.
                 isPassword
+
               );
+
 
             }
+            // encerra a função executada ao clicar
+
           );
+          // encerra o registro do evento
+
 
         }
+        // encerra a verificação da confirmação de senha
+
 
       }
+      // encerra a função executada após o carregamento do DOM
+
     );
+    // encerra o registro do evento DOMContentLoaded
+
 
   </script>
+  <!-- encerra o JavaScript de mostrar/ocultar senhas -->
+
 
 
   <!-- =====================================================
        SUPABASE / CADASTRO
+
+       o arquivo criar-conta.js contém a lógica principal
+       responsável pelo cadastro e integração com o Supabase
   ====================================================== -->
 
+
+  <!--
+    type="module":
+    permite utilizar recursos de módulos JavaScript,
+    incluindo import e export
+
+    src:
+    informa o caminho do arquivo JavaScript
+  -->
   <script
     type="module"
     src="scripts/criar-conta.js"
   ></script>
 
+
+
 </body>
+<!-- encerra todo o conteúdo visual da página -->
+
 
 </html>
+<!-- encerra o documento HTML -->
