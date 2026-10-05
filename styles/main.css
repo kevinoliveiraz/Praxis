@@ -1,65 +1,95 @@
-:root {
-  --bg-dark: #06070c;
-  --bg-light: #fbfafb;
-  --accent: #e0fb38;
-  --card: #12141d;
-  --border: #222634;
-  --text-muted: #8a8f9e;
-  --radius: 14px;
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+:root { /* cria variáveis CSS globais que podem ser reutilizadas em todo o site */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  --bg-dark: #06070c; /* define a cor escura principal utilizada como fundo do site */
+  --bg-light: #fbfafb; /* define a cor clara principal utilizada em textos e áreas claras */
+  --accent: #e0fb38; /* define a cor de destaque principal da Praxis */
+  --card: #12141d; /* define a cor de fundo utilizada em cartões e elementos escuros */
+  --border: #222634; /* define a cor padrão utilizada nas bordas */
+  --text-muted: #8a8f9e; /* define uma cor mais suave para textos secundários */
+  --radius: 14px; /* define um valor padrão de arredondamento que pode ser reutilizado */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* define a família de fontes principal e fontes alternativas */
 
-html {
-  scroll-behavior: smooth;
-}
+} /* encerra as variáveis globais */
+
+
+* { /* seleciona todos os elementos existentes na página */
+
+  box-sizing: border-box; /* inclui padding e borda no cálculo da largura e altura dos elementos */
+  margin: 0; /* remove as margens padrão adicionadas pelo navegador */
+  padding: 0; /* remove os espaçamentos internos padrão adicionados pelo navegador */
+
+} /* encerra as configurações aplicadas a todos os elementos */
+
+
+html { /* seleciona o elemento raiz do documento HTML */
+
+  scroll-behavior: smooth; /* faz a rolagem entre âncoras da página acontecer suavemente */
+
+} /* encerra as configurações do elemento html */
+
 
 html,
-body {
-  min-height: 100vh;
-  background: var(--bg-dark);
-  color: var(--bg-light);
-  font-family: var(--font);
-  -webkit-font-smoothing: antialiased;
-}
+body { /* aplica as mesmas configurações ao html e ao body */
 
-body {
-  overflow-x: hidden;
-}
+  min-height: 100vh; /* garante uma altura mínima equivalente a toda a altura visível da tela */
+  background: var(--bg-dark); /* utiliza a cor escura global como fundo da página */
+  color: var(--bg-light); /* utiliza a cor clara global como cor padrão dos textos */
+  font-family: var(--font); /* utiliza a família de fontes definida na variável --font */
+  -webkit-font-smoothing: antialiased; /* melhora a suavização visual das fontes em navegadores baseados em WebKit */
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+} /* encerra as configurações compartilhadas entre html e body */
+
+
+body { /* seleciona especificamente o corpo visível da página */
+
+  overflow-x: hidden; /* impede o aparecimento de rolagem horizontal */
+
+} /* encerra as configurações do body */
+
+
+a { /* seleciona todos os links da página */
+
+  color: inherit; /* faz o link herdar a cor de texto do elemento pai */
+  text-decoration: none; /* remove o sublinhado padrão dos links */
+
+} /* encerra as configurações dos links */
+
 
 button,
-input {
-  font-family: inherit;
-}
+input { /* aplica as mesmas configurações aos botões e campos de entrada */
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: inherit;
-}
+  font-family: inherit; /* faz botões e inputs herdarem a fonte utilizada pelo elemento pai */
 
-img {
-  display: block;
-  max-width: 100%;
-}
+} /* encerra as configurações compartilhadas */
 
-.container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
+
+button { /* seleciona todos os botões da página */
+
+  cursor: pointer; /* exibe o cursor de clique ao passar o mouse sobre o botão */
+  border: none; /* remove a borda padrão adicionada pelo navegador */
+  background: none; /* remove o fundo padrão dos botões */
+  color: inherit; /* faz o botão herdar a cor do texto do elemento pai */
+
+} /* encerra as configurações gerais dos botões */
+
+
+img { /* seleciona todas as imagens da página */
+
+  display: block; /* remove o espaço de linha que imagens inline normalmente deixam abaixo delas */
+  max-width: 100%; /* impede que uma imagem ultrapasse a largura disponível no elemento pai */
+
+} /* encerra as configurações gerais das imagens */
+
+
+.container { /* seleciona os contêineres principais utilizados para limitar e centralizar o conteúdo */
+
+  width: 100%; /* permite que o contêiner utilize toda a largura disponível */
+  max-width: 1440px; /* limita a largura máxima do conteúdo a 1440 pixels */
+  margin: 0 auto; /* remove margens verticais e centraliza horizontalmente o contêiner */
+  padding: 0 32px; /* adiciona 32 pixels de espaço interno nas laterais */
+
+} /* encerra as configurações do contêiner principal */
+
 
 
 /* =========================================================
@@ -67,458 +97,587 @@ img {
    ETAPA 1
 ========================================================= */
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.site-header { /* seleciona o cabeçalho principal do site */
 
-  width: 100%;
-  padding: 20px 0;
+  position: sticky; /* mantém o cabeçalho preso ao topo durante a rolagem quando necessário */
+  top: 0; /* posiciona o cabeçalho no limite superior da tela */
+  z-index: 1000; /* mantém o cabeçalho acima da maior parte dos outros elementos */
 
-  background: rgba(6, 7, 12, 0.96);
+  width: 100%; /* faz o cabeçalho ocupar toda a largura disponível */
+  padding: 20px 0; /* adiciona 20 pixels de espaço interno em cima e embaixo */
+
+  background: rgba(6, 7, 12, 0.96); /* cria um fundo escuro com pequena transparência */
 
   border-bottom:
-    1px solid rgba(255, 255, 255, 0.06);
+    1px solid rgba(255, 255, 255, 0.06); /* cria uma linha inferior branca com baixa opacidade */
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
+  backdrop-filter: blur(14px); /* aplica desfoque ao conteúdo visual localizado atrás do cabeçalho */
+  -webkit-backdrop-filter: blur(14px); /* fornece compatibilidade do efeito de desfoque com navegadores WebKit */
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+} /* encerra as configurações do cabeçalho */
 
-  gap: 24px;
-}
 
-.logo {
-  display: inline-flex;
-  align-items: center;
+.header-container { /* seleciona o contêiner interno que organiza os elementos do cabeçalho */
 
-  flex-shrink: 0;
-}
+  display: flex; /* utiliza Flexbox para organizar os elementos */
+  align-items: center; /* centraliza verticalmente os elementos do cabeçalho */
+  justify-content: space-between; /* coloca espaço entre a logo e as ações do usuário */
 
-.logo-image {
-  display: block;
+  gap: 24px; /* cria um espaço mínimo de 24 pixels entre os elementos */
 
-  width: auto;
-  height: 60px;
+} /* encerra as configurações do contêiner do cabeçalho */
 
-  object-fit: contain;
-}
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.logo { /* seleciona o link que envolve a logo */
 
-  gap: 10px;
+  display: inline-flex; /* permite organizar o conteúdo da logo com Flexbox mantendo comportamento inline */
+  align-items: center; /* centraliza verticalmente a imagem da logo */
 
-  min-width: 0;
-}
+  flex-shrink: 0; /* impede que a logo seja comprimida quando faltar espaço */
 
-#user-area {
-  display: flex;
-  align-items: center;
+} /* encerra as configurações do link da logo */
 
-  min-width: 0;
-}
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.logo-image { /* seleciona a imagem principal da logo */
 
-  gap: 8px;
+  display: block; /* trata a imagem como elemento de bloco e remove espaços inline indesejados */
 
-  min-height: 44px;
+  width: auto; /* calcula automaticamente a largura mantendo a proporção original */
+  height: 60px; /* define a altura da logo em 60 pixels */
 
-  padding: 11px 20px;
+  object-fit: contain; /* mantém toda a logo visível sem cortar sua imagem */
 
-  border: 1px solid transparent;
-  border-radius: 12px;
+} /* encerra as configurações da imagem da logo */
 
-  font-size: 14px;
-  font-weight: 600;
 
-  white-space: nowrap;
+.header-actions { /* seleciona o grupo de ações localizado no lado direito do cabeçalho */
+
+  display: flex; /* utiliza Flexbox para organizar os elementos */
+  align-items: center; /* centraliza verticalmente as ações */
+  justify-content: flex-end; /* posiciona as ações no final horizontal do contêiner */
+
+  gap: 10px; /* cria 10 pixels de espaço entre as ações */
+
+  min-width: 0; /* permite que o contêiner diminua corretamente dentro de layouts flexíveis */
+
+} /* encerra as configurações das ações do cabeçalho */
+
+
+#user-area { /* seleciona especificamente a área do usuário através do seu id */
+
+  display: flex; /* utiliza Flexbox para organizar os elementos do usuário */
+  align-items: center; /* centraliza verticalmente os elementos */
+
+  min-width: 0; /* permite que a área diminua sem forçar largura mínima indesejada */
+
+} /* encerra as configurações da área do usuário */
+
+
+.btn { /* seleciona todos os elementos que utilizam a classe geral de botão */
+
+  display: inline-flex; /* permite alinhar o conteúdo interno com Flexbox mantendo o botão inline */
+  align-items: center; /* centraliza verticalmente o conteúdo do botão */
+  justify-content: center; /* centraliza horizontalmente o conteúdo do botão */
+
+  gap: 8px; /* cria 8 pixels de espaço entre ícones e textos */
+
+  min-height: 44px; /* garante que o botão tenha pelo menos 44 pixels de altura */
+
+  padding: 11px 20px; /* adiciona 11 pixels verticalmente e 20 pixels horizontalmente */
+
+  border: 1px solid transparent; /* cria uma borda transparente para manter o tamanho estável quando a cor mudar */
+  border-radius: 12px; /* arredonda os cantos do botão em 12 pixels */
+
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+  font-weight: 600; /* deixa o texto em seminegrito */
+
+  white-space: nowrap; /* impede que o texto do botão seja quebrado em várias linhas */
 
   transition:
-    transform 0.15s ease,
-    filter 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
+    transform 0.15s ease, /* suaviza alterações de posição ou transformação durante 0,15 segundo */
+    filter 0.2s ease, /* suaviza alterações de filtros visuais durante 0,2 segundo */
+    background 0.2s ease, /* suaviza alterações da cor ou imagem de fundo */
+    border-color 0.2s ease; /* suaviza alterações na cor da borda */
 
-.btn:hover {
-  filter: brightness(1.08);
-}
+} /* encerra as configurações gerais dos botões */
 
-.btn:active {
-  transform: translateY(1px);
-}
+
+.btn:hover { /* aplica estas regras quando o mouse passa sobre um botão */
+
+  filter: brightness(1.08); /* aumenta levemente o brilho do botão */
+
+} /* encerra o estado hover dos botões */
+
+
+.btn:active { /* aplica estas regras enquanto um botão está sendo pressionado */
+
+  transform: translateY(1px); /* desloca o botão 1 pixel para baixo para criar sensação de clique */
+
+} /* encerra o estado ativo dos botões */
+
 
 .btn:focus-visible,
 .search-btn:focus-visible,
 .tag:focus-visible,
 .search-box input:focus-visible,
 .course-card:focus-visible,
-.catalog-carousel-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+.catalog-carousel-btn:focus-visible { /* seleciona elementos interativos quando recebem foco visível pelo teclado */
 
-.btn-ghost {
-  color: var(--bg-light);
-  background: transparent;
+  outline: 2px solid var(--accent); /* cria um contorno de 2 pixels usando a cor de destaque */
+  outline-offset: 3px; /* afasta o contorno 3 pixels da borda do elemento */
 
-  border-color: var(--border);
-}
+} /* encerra as configurações de foco visível */
 
-.btn-ghost:hover {
-  background: var(--card);
-}
 
-.btn-primary {
-  color: #0b0d10;
-  background: var(--accent);
-}
+.btn-ghost { /* seleciona os botões com estilo transparente */
 
-.btn-primary svg {
-  flex-shrink: 0;
-}
+  color: var(--bg-light); /* utiliza a cor clara para o texto */
+  background: transparent; /* deixa o fundo do botão transparente */
+
+  border-color: var(--border); /* utiliza a cor padrão definida para a borda */
+
+} /* encerra as configurações do botão transparente */
+
+
+.btn-ghost:hover { /* aplica estas regras quando o mouse passa sobre o botão transparente */
+
+  background: var(--card); /* adiciona a cor dos cartões ao fundo durante o hover */
+
+} /* encerra o hover do botão transparente */
+
+
+.btn-primary { /* seleciona o botão de ação principal */
+
+  color: #0b0d10; /* define uma cor escura para o texto do botão */
+  background: var(--accent); /* utiliza a cor de destaque como fundo */
+
+} /* encerra as configurações do botão principal */
+
+
+.btn-primary svg { /* seleciona ícones SVG existentes dentro do botão principal */
+
+  flex-shrink: 0; /* impede que o ícone seja reduzido pelo Flexbox */
+
+} /* encerra as configurações dos ícones do botão principal */
+
 
 
 /* =========================================================
    USUÁRIO
 ========================================================= */
 
-.user-info {
-  display: flex;
-  align-items: center;
+.user-info { /* seleciona o grupo que contém informações do usuário autenticado */
 
-  gap: 10px;
+  display: flex; /* utiliza Flexbox para organizar avatar, nome e demais elementos */
+  align-items: center; /* centraliza verticalmente os elementos */
 
-  min-width: 0;
-}
+  gap: 10px; /* cria 10 pixels de espaço entre os elementos */
+
+  min-width: 0; /* permite que o conteúdo diminua corretamente quando houver pouco espaço */
+
+} /* encerra as configurações das informações do usuário */
+
 
 .user-avatar,
-.user-avatar-placeholder {
-  width: 36px;
-  height: 36px;
+.user-avatar-placeholder { /* aplica as mesmas dimensões ao avatar real e ao avatar substituto */
 
-  flex-shrink: 0;
+  width: 36px; /* define a largura do avatar em 36 pixels */
+  height: 36px; /* define a altura do avatar em 36 pixels */
 
-  border: 1px solid var(--border);
-  border-radius: 50%;
-}
+  flex-shrink: 0; /* impede que o avatar seja comprimido */
 
-.user-avatar {
-  object-fit: cover;
-}
+  border: 1px solid var(--border); /* adiciona uma borda utilizando a cor padrão */
+  border-radius: 50%; /* transforma o elemento em um círculo */
 
-.user-avatar-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+} /* encerra as configurações compartilhadas dos avatares */
 
-  color: var(--accent);
-  background: var(--card);
 
-  font-size: 14px;
-  font-weight: 700;
-}
+.user-avatar { /* seleciona especificamente a imagem real do avatar */
 
-.user-email {
-  max-width: 180px;
+  object-fit: cover; /* faz a imagem preencher o círculo podendo cortar pequenas partes excedentes */
 
-  overflow: hidden;
+} /* encerra as configurações da imagem do avatar */
 
-  color: var(--bg-light);
 
-  font-size: 14px;
-  font-weight: 500;
+.user-avatar-placeholder { /* seleciona o avatar substituto usado quando não existe uma imagem */
 
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+  display: flex; /* utiliza Flexbox para organizar o conteúdo interno */
+  align-items: center; /* centraliza verticalmente o conteúdo */
+  justify-content: center; /* centraliza horizontalmente o conteúdo */
 
-.logout-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--accent); /* utiliza a cor de destaque no conteúdo do avatar */
+  background: var(--card); /* utiliza a cor dos cartões como fundo */
 
-  min-height: 38px;
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+  font-weight: 700; /* deixa o texto em negrito */
 
-  margin-left: 2px;
+} /* encerra as configurações do avatar substituto */
 
-  padding: 8px 14px;
 
-  font-size: 13px;
-  line-height: 1;
-}
+.user-email { /* seleciona o texto utilizado para identificar o usuário no cabeçalho */
+
+  max-width: 180px; /* limita a largura máxima do texto a 180 pixels */
+
+  overflow: hidden; /* esconde o conteúdo que ultrapassar a largura disponível */
+
+  color: var(--bg-light); /* utiliza a cor clara para o texto */
+
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+  font-weight: 500; /* define um peso intermediário para a fonte */
+
+  text-overflow: ellipsis; /* adiciona reticências quando o texto não couber */
+  white-space: nowrap; /* impede que o texto seja quebrado em outra linha */
+
+} /* encerra as configurações do texto do usuário */
+
+
+.logout-btn { /* seleciona o botão utilizado para sair da conta */
+
+  display: inline-flex; /* utiliza Flexbox para organizar o conteúdo do botão */
+  align-items: center; /* centraliza verticalmente o conteúdo */
+  justify-content: center; /* centraliza horizontalmente o conteúdo */
+
+  min-height: 38px; /* garante altura mínima de 38 pixels */
+
+  margin-left: 2px; /* cria 2 pixels de espaço à esquerda */
+
+  padding: 8px 14px; /* cria 8 pixels verticalmente e 14 pixels horizontalmente */
+
+  font-size: 13px; /* define o tamanho do texto em 13 pixels */
+  line-height: 1; /* define a altura da linha igual ao tamanho da fonte */
+
+} /* encerra as configurações do botão de logout */
+
 
 
 /* =========================================================
    HERO
 ========================================================= */
 
-.hero {
-  position: relative;
+.hero { /* seleciona a seção principal de apresentação da página */
 
-  overflow: hidden;
+  position: relative; /* permite posicionar elementos internos em relação à seção */
 
-  padding: 40px 0 80px;
-}
+  overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites da seção */
 
-.hero-grid {
-  display: grid;
+  padding: 40px 0 80px; /* adiciona 40px acima, nenhum nas laterais e 80px abaixo */
+
+} /* encerra as configurações da seção hero */
+
+
+.hero-grid { /* seleciona a grade utilizada para organizar o conteúdo do hero */
+
+  display: grid; /* transforma o elemento em um layout CSS Grid */
 
   grid-template-columns:
-    1fr 1.15fr;
+    1fr 1.15fr; /* cria duas colunas, sendo a segunda ligeiramente maior que a primeira */
 
-  align-items: center;
+  align-items: center; /* centraliza verticalmente os conteúdos das colunas */
 
-  gap: 60px;
-}
+  gap: 60px; /* cria um espaço de 60 pixels entre as colunas */
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
+} /* encerra as configurações da grade do hero */
 
-  gap: 8px;
 
-  margin-bottom: 22px;
+.eyebrow { /* seleciona o pequeno texto de destaque utilizado acima de títulos */
 
-  color: var(--accent);
+  display: inline-flex; /* utiliza Flexbox mantendo o elemento com largura baseada no conteúdo */
+  align-items: center; /* centraliza verticalmente o texto e o indicador */
 
-  font-size: 12px;
-  font-weight: 700;
+  gap: 8px; /* cria 8 pixels entre o indicador e o texto */
 
-  letter-spacing: 1.2px;
-}
+  margin-bottom: 22px; /* cria 22 pixels de espaço abaixo do elemento */
 
-.eyebrow::before {
-  width: 8px;
-  height: 8px;
+  color: var(--accent); /* utiliza a cor de destaque */
 
-  border-radius: 50%;
+  font-size: 12px; /* define o tamanho do texto em 12 pixels */
+  font-weight: 700; /* deixa o texto em negrito */
 
-  background: var(--accent);
+  letter-spacing: 1.2px; /* aumenta o espaço entre as letras em 1,2 pixel */
+
+} /* encerra as configurações do eyebrow */
+
+
+.eyebrow::before { /* cria um pseudo-elemento antes do texto do eyebrow */
+
+  width: 8px; /* define a largura do indicador em 8 pixels */
+  height: 8px; /* define a altura do indicador em 8 pixels */
+
+  border-radius: 50%; /* transforma o indicador em um círculo */
+
+  background: var(--accent); /* utiliza a cor de destaque como fundo */
 
   box-shadow:
-    0 0 10px var(--accent);
+    0 0 10px var(--accent); /* cria um brilho ao redor do indicador */
 
-  content: "";
-}
+  content: ""; /* cria o pseudo-elemento vazio necessário para que ele seja exibido */
 
-.hero h1 {
+} /* encerra o pseudo-elemento do eyebrow */
+
+
+.hero h1 { /* seleciona o título principal existente dentro da seção hero */
+
   font-size:
-    clamp(40px, 5vw, 68px);
+    clamp(40px, 5vw, 68px); /* cria um tamanho responsivo com mínimo de 40px, valor ideal de 5vw e máximo de 68px */
 
-  font-weight: 800;
+  font-weight: 800; /* deixa o título com peso forte */
 
-  line-height: 1.02;
+  line-height: 1.02; /* reduz o espaço vertical entre as linhas do título */
 
-  letter-spacing: -1.5px;
-}
+  letter-spacing: -1.5px; /* aproxima as letras do título em 1,5 pixel */
 
-.hero h1 .accent {
-  color: var(--accent);
-}
+} /* encerra as configurações do título principal */
 
-.hero-desc {
-  max-width: 460px;
 
-  margin-top: 22px;
+.hero h1 .accent { /* seleciona a parte do título que possui a classe accent */
 
-  color: #b6bac6;
+  color: var(--accent); /* aplica a cor de destaque ao trecho do título */
 
-  font-size: 16px;
+} /* encerra as configurações do destaque do título */
 
-  line-height: 1.55;
-}
+
+.hero-desc { /* seleciona o texto descritivo abaixo do título do hero */
+
+  max-width: 460px; /* limita a largura do texto para facilitar a leitura */
+
+  margin-top: 22px; /* cria 22 pixels de espaço acima da descrição */
+
+  color: #b6bac6; /* define uma cor clara e secundária para o texto */
+
+  font-size: 16px; /* define o tamanho da fonte em 16 pixels */
+
+  line-height: 1.55; /* aumenta o espaço entre as linhas para melhorar a leitura */
+
+} /* encerra as configurações da descrição do hero */
+
 
 
 /* =========================================================
    PESQUISA
 ========================================================= */
 
-.search-block h2 {
-  margin-bottom: 18px;
+.search-block h2 { /* seleciona o título h2 existente dentro do bloco de pesquisa */
 
-  font-size: 20px;
-  font-weight: 700;
-}
+  margin-bottom: 18px; /* cria 18 pixels de espaço abaixo do título */
 
-.search-box {
-  position: relative;
+  font-size: 20px; /* define o tamanho do texto em 20 pixels */
+  font-weight: 700; /* deixa o título em negrito */
 
-  display: flex;
-  align-items: center;
+} /* encerra as configurações do título da pesquisa */
+
+
+.search-box { /* seleciona o contêiner principal da barra de pesquisa */
+
+  position: relative; /* permite posicionar o ícone de pesquisa em relação a este elemento */
+
+  display: flex; /* utiliza Flexbox para organizar campo e botão */
+  align-items: center; /* centraliza verticalmente os elementos */
 
   padding:
     8px
     8px
     8px
-    58px;
+    58px; /* cria 8px em cima, direita e baixo e 58px à esquerda para reservar espaço ao ícone */
 
   border:
-    1px solid var(--border);
+    1px solid var(--border); /* cria uma borda de 1 pixel utilizando a cor padrão */
 
-  border-radius: 999px;
+  border-radius: 999px; /* cria um formato completamente arredondado semelhante a uma cápsula */
 
-  background: #191b25;
-}
+  background: #191b25; /* define o fundo escuro da barra de pesquisa */
 
-.search-box:focus-within {
+} /* encerra as configurações da barra de pesquisa */
+
+
+.search-box:focus-within { /* aplica estas regras quando algum elemento interno da pesquisa recebe foco */
+
   border-color:
-    rgba(224, 251, 56, 0.65);
+    rgba(224, 251, 56, 0.65); /* altera a borda para a cor de destaque com transparência */
 
   box-shadow:
     0 0 0 3px
-    rgba(224, 251, 56, 0.08);
-}
+    rgba(224, 251, 56, 0.08); /* cria um brilho suave ao redor da pesquisa quando ela recebe foco */
 
-.search-box .search-ico {
-  position: absolute;
+} /* encerra o estado de foco da pesquisa */
 
-  top: 50%;
-  left: 22px;
 
-  color: var(--text-muted);
+.search-box .search-ico { /* seleciona o ícone localizado dentro da barra de pesquisa */
+
+  position: absolute; /* permite posicionar o ícone livremente dentro da barra */
+
+  top: 50%; /* posiciona o início do ícone na metade vertical do contêiner */
+  left: 22px; /* posiciona o ícone a 22 pixels da borda esquerda */
+
+  color: var(--text-muted); /* utiliza a cor secundária para o ícone */
 
   transform:
-    translateY(-50%);
-}
+    translateY(-50%); /* desloca o ícone metade de sua altura para cima e o centraliza verticalmente */
 
-.search-box input {
-  flex: 1;
+} /* encerra as configurações do ícone de pesquisa */
 
-  min-width: 0;
 
-  padding: 14px 12px;
+.search-box input { /* seleciona o campo de texto existente dentro da barra de pesquisa */
 
-  border: none;
+  flex: 1; /* faz o input ocupar todo o espaço restante */
 
-  outline: none;
+  min-width: 0; /* permite que o input diminua corretamente dentro do Flexbox */
 
-  background: transparent;
+  padding: 14px 12px; /* cria 14 pixels verticalmente e 12 pixels horizontalmente */
 
-  color: var(--bg-light);
+  border: none; /* remove a borda padrão do input */
 
-  font-size: 16px;
-}
+  outline: none; /* remove o contorno padrão exibido pelo navegador */
 
-.search-box input::placeholder {
-  color: #6a6f7d;
-}
+  background: transparent; /* deixa o fundo do campo transparente */
 
-.search-box .search-btn {
-  display: grid;
+  color: var(--bg-light); /* utiliza a cor clara para o texto digitado */
 
-  width: 48px;
-  height: 48px;
+  font-size: 16px; /* define o tamanho do texto digitado em 16 pixels */
 
-  flex-shrink: 0;
+} /* encerra as configurações do campo de pesquisa */
 
-  place-items: center;
 
-  border-radius: 50%;
+.search-box input::placeholder { /* seleciona o texto temporário exibido no campo de pesquisa vazio */
 
-  background: var(--accent);
+  color: #6a6f7d; /* define uma cor secundária para o placeholder */
 
-  color: #0b0d10;
-}
+} /* encerra as configurações do placeholder */
 
-.popular {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
 
-  gap: 10px;
+.search-box .search-btn { /* seleciona o botão de pesquisa localizado dentro da barra */
 
-  margin-top: 18px;
-}
+  display: grid; /* utiliza CSS Grid para facilitar a centralização do ícone */
 
-.popular-label {
-  color: #a3a8b6;
+  width: 48px; /* define a largura do botão em 48 pixels */
+  height: 48px; /* define a altura do botão em 48 pixels */
 
-  font-size: 13px;
-}
+  flex-shrink: 0; /* impede que o botão seja comprimido */
 
-.tag {
-  padding: 7px 14px;
+  place-items: center; /* centraliza o conteúdo horizontal e verticalmente */
+
+  border-radius: 50%; /* transforma o botão em um círculo */
+
+  background: var(--accent); /* utiliza a cor de destaque como fundo */
+
+  color: #0b0d10; /* define uma cor escura para o ícone */
+
+} /* encerra as configurações do botão de pesquisa */
+
+
+.popular { /* seleciona o grupo de pesquisas ou tags populares */
+
+  display: flex; /* utiliza Flexbox para organizar as tags */
+  flex-wrap: wrap; /* permite que as tags passem para outra linha quando necessário */
+  align-items: center; /* centraliza verticalmente os elementos */
+
+  gap: 10px; /* cria 10 pixels de espaço entre os elementos */
+
+  margin-top: 18px; /* cria 18 pixels de espaço acima do grupo */
+
+} /* encerra as configurações das pesquisas populares */
+
+
+.popular-label { /* seleciona o texto que identifica as pesquisas populares */
+
+  color: #a3a8b6; /* define uma cor secundária para o texto */
+
+  font-size: 13px; /* define o tamanho do texto em 13 pixels */
+
+} /* encerra as configurações do texto das pesquisas populares */
+
+
+.tag { /* seleciona cada botão ou elemento utilizado como tag */
+
+  padding: 7px 14px; /* cria 7 pixels verticalmente e 14 pixels horizontalmente */
 
   border:
-    1px solid var(--border);
+    1px solid var(--border); /* cria uma borda utilizando a cor padrão */
 
-  border-radius: 999px;
+  border-radius: 999px; /* deixa a tag completamente arredondada */
 
-  background: #191b25;
+  background: #191b25; /* define um fundo escuro para a tag */
 
-  color: #d8dbe4;
+  color: #d8dbe4; /* define uma cor clara para o texto */
 
-  font-size: 13px;
-}
+  font-size: 13px; /* define o tamanho do texto em 13 pixels */
 
-.tag:hover {
-  border-color: #343847;
+} /* encerra as configurações das tags */
 
-  background: var(--card);
-}
+
+.tag:hover { /* aplica estas regras quando o mouse passa sobre uma tag */
+
+  border-color: #343847; /* deixa a borda um pouco mais clara */
+
+  background: var(--card); /* utiliza a cor dos cartões como fundo */
+
+} /* encerra o hover das tags */
+
 
 
 /* =========================================================
    CATÁLOGO
 ========================================================= */
 
-.catalog-panel {
-  margin-top: -10px;
+.catalog-panel { /* seleciona a seção clara que contém o catálogo de cursos */
+
+  margin-top: -10px; /* desloca o catálogo 10 pixels para cima */
 
   padding:
-    42px 0 60px;
+    42px 0 60px; /* cria 42px acima, nenhum espaço lateral e 60px abaixo */
 
   border-radius:
-    24px 24px 0 0;
+    24px 24px 0 0; /* arredonda apenas os cantos superiores do painel */
 
-  background: var(--bg-light);
+  background: var(--bg-light); /* utiliza a cor clara como fundo do catálogo */
 
-  color: #0b0d10;
-}
+  color: #0b0d10; /* define uma cor escura para os textos do catálogo */
 
-.catalog-head {
-  display: flex;
+} /* encerra as configurações do painel do catálogo */
 
-  align-items: center;
-  justify-content: space-between;
 
-  gap: 20px;
+.catalog-head { /* seleciona o cabeçalho interno do catálogo */
 
-  margin-bottom: 20px;
-}
+  display: flex; /* utiliza Flexbox para organizar seus elementos */
 
-.catalog-head .eyebrow {
-  margin-bottom: 0;
+  align-items: center; /* centraliza verticalmente os elementos */
+  justify-content: space-between; /* coloca os elementos nas extremidades disponíveis */
 
-  color: #0b0d10;
-}
+  gap: 20px; /* cria 20 pixels de espaço mínimo entre os elementos */
 
-.catalog-head .eyebrow::before {
-  box-shadow: none;
-}
+  margin-bottom: 20px; /* cria 20 pixels de espaço abaixo do cabeçalho */
 
-.see-all {
-  display: inline-flex;
+} /* encerra as configurações do cabeçalho do catálogo */
 
-  align-items: center;
 
-  color: #0b0d10;
+.catalog-head .eyebrow { /* seleciona o eyebrow utilizado especificamente dentro do catálogo */
 
-  font-size: 14px;
-  font-weight: 600;
-}
+  margin-bottom: 0; /* remove a margem inferior utilizada no eyebrow geral */
+
+  color: #0b0d10; /* altera o texto para uma cor escura */
+
+} /* encerra as configurações do eyebrow do catálogo */
+
+
+.catalog-head .eyebrow::before { /* seleciona o círculo decorativo do eyebrow do catálogo */
+
+  box-shadow: none; /* remove o efeito de brilho aplicado no eyebrow geral */
+
+} /* encerra as configurações do indicador do catálogo */
+
+
+.see-all { /* seleciona o link utilizado para visualizar todos os cursos */
+
+  display: inline-flex; /* utiliza Flexbox mantendo a largura baseada no conteúdo */
+
+  align-items: center; /* centraliza verticalmente seu conteúdo */
+
+  color: #0b0d10; /* define uma cor escura para o texto */
+
+  font-size: 14px; /* define o tamanho do texto em 14 pixels */
+  font-weight: 600; /* deixa o texto em seminegrito */
+
+} /* encerra as configurações do link */
+
 
 
 /* =========================================================
@@ -526,878 +685,1106 @@ img {
    CARROSSEL DO CATÁLOGO
 ========================================================= */
 
-.catalog-carousel {
-  position: relative;
+.catalog-carousel { /* seleciona o contêiner principal do carrossel de cursos */
 
-  width: 100%;
-}
+  position: relative; /* permite posicionar elementos do carrossel tomando este contêiner como referência */
+
+  width: 100%; /* faz o carrossel ocupar toda a largura disponível */
+
+} /* encerra as configurações do carrossel */
+
 
 
 /* =========================================================
    CONTROLES DO CARROSSEL
 ========================================================= */
 
-.catalog-carousel-controls {
-  display: flex;
+.catalog-carousel-controls { /* seleciona o grupo que contém os botões de navegação do carrossel */
 
-  align-items: center;
-  justify-content: flex-end;
+  display: flex; /* utiliza Flexbox para organizar os botões */
 
-  gap: 8px;
+  align-items: center; /* centraliza verticalmente os controles */
+  justify-content: flex-end; /* posiciona os controles no lado direito */
 
-  width: 100%;
+  gap: 8px; /* cria 8 pixels de espaço entre os botões */
 
-  margin-bottom: 12px;
-}
+  width: 100%; /* faz o grupo ocupar toda a largura disponível */
 
-.catalog-carousel-btn {
-  display: grid;
+  margin-bottom: 12px; /* cria 12 pixels de espaço abaixo dos controles */
 
-  width: 40px;
-  height: 40px;
+} /* encerra as configurações dos controles */
 
-  flex-shrink: 0;
 
-  place-items: center;
+.catalog-carousel-btn { /* seleciona cada botão de navegação do carrossel */
+
+  display: grid; /* utiliza Grid para centralizar seu conteúdo */
+
+  width: 40px; /* define a largura do botão */
+  height: 40px; /* define a altura do botão */
+
+  flex-shrink: 0; /* impede que o botão seja comprimido */
+
+  place-items: center; /* centraliza o conteúdo horizontal e verticalmente */
 
   border:
-    1px solid #d9dce2;
+    1px solid #d9dce2; /* cria uma borda clara de 1 pixel */
 
-  border-radius: 50%;
+  border-radius: 50%; /* transforma o botão em um círculo */
 
-  background: #ffffff;
+  background: #ffffff; /* define o fundo branco */
 
-  color: #0b0d10;
+  color: #0b0d10; /* define a cor escura para a seta */
 
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 20px; /* define o tamanho do símbolo em 20 pixels */
+  font-weight: 800; /* deixa o símbolo com peso forte */
 
-  line-height: 1;
+  line-height: 1; /* evita espaço vertical adicional ao redor do símbolo */
 
   box-shadow:
     0 6px 18px
-    rgba(0, 0, 0, 0.08);
+    rgba(0, 0, 0, 0.08); /* cria uma sombra suave abaixo do botão */
 
   transition:
-    transform 0.15s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    opacity 0.2s ease;
-}
+    transform 0.15s ease, /* suaviza movimentos do botão */
+    background 0.2s ease, /* suaviza alterações do fundo */
+    border-color 0.2s ease, /* suaviza alterações da borda */
+    opacity 0.2s ease; /* suaviza alterações de transparência */
 
-.catalog-carousel-btn:hover:not(:disabled) {
-  border-color: var(--accent);
+} /* encerra as configurações dos botões do carrossel */
 
-  background: var(--accent);
+
+.catalog-carousel-btn:hover:not(:disabled) { /* aplica hover somente aos botões do carrossel que não estão desabilitados */
+
+  border-color: var(--accent); /* altera a borda para a cor de destaque */
+
+  background: var(--accent); /* altera o fundo para a cor de destaque */
 
   transform:
-    translateY(-2px);
-}
+    translateY(-2px); /* desloca o botão 2 pixels para cima */
 
-.catalog-carousel-btn:active:not(:disabled) {
+} /* encerra o hover dos controles ativos */
+
+
+.catalog-carousel-btn:active:not(:disabled) { /* aplica estas regras durante o clique em um controle habilitado */
+
   transform:
-    translateY(0);
-}
+    translateY(0); /* retorna o botão para sua posição original durante o clique */
 
-.catalog-carousel-btn:disabled {
-  cursor: default;
+} /* encerra o estado ativo dos controles */
 
-  opacity: 0.28;
-}
+
+.catalog-carousel-btn:disabled { /* seleciona os controles que estão desabilitados */
+
+  cursor: default; /* utiliza o cursor padrão em vez do cursor de clique */
+
+  opacity: 0.28; /* deixa o botão bastante transparente para indicar que está indisponível */
+
+} /* encerra as configurações dos controles desabilitados */
+
 
 
 /* =========================================================
    TRILHO DO CARROSSEL
 ========================================================= */
 
-.catalog-grid {
-  display: grid;
+.catalog-grid { /* seleciona o trilho horizontal onde os cards dos cursos são exibidos */
 
-  grid-auto-flow: column;
+  display: grid; /* utiliza CSS Grid para organizar os cards */
+
+  grid-auto-flow: column; /* faz novos cards serem adicionados horizontalmente em colunas */
 
   grid-auto-columns:
-    calc((100% - 72px) / 5);
+    calc((100% - 72px) / 5); /* calcula a largura para exibir aproximadamente cinco cards no espaço disponível */
 
-  grid-template-columns: none;
+  grid-template-columns: none; /* remove uma definição fixa de colunas para utilizar as colunas automáticas */
 
-  gap: 18px;
+  gap: 18px; /* cria 18 pixels de espaço entre os cards */
 
-  width: 100%;
+  width: 100%; /* faz o trilho ocupar toda a largura disponível */
 
-  align-items: start;
+  align-items: start; /* alinha os cards pelo início vertical */
 
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: auto; /* permite rolagem horizontal quando os cards ultrapassarem a largura */
+  overflow-y: hidden; /* impede rolagem vertical dentro do trilho */
 
   padding:
-    8px 3px 22px;
+    8px 3px 22px; /* cria espaço interno de 8px acima, 3px nas laterais e 22px abaixo */
 
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* deixa a movimentação horizontal do carrossel suave */
 
   scroll-snap-type:
-    x mandatory;
+    x mandatory; /* faz a rolagem horizontal encaixar obrigatoriamente nos pontos definidos pelos cards */
 
   overscroll-behavior-inline:
-    contain;
+    contain; /* evita que a rolagem horizontal do carrossel afete outros elementos externos */
 
-  scrollbar-width: none;
+  scrollbar-width: none; /* esconde a barra de rolagem em navegadores compatíveis como Firefox */
 
-  -ms-overflow-style: none;
+  -ms-overflow-style: none; /* esconde a barra de rolagem em versões antigas de navegadores Microsoft */
 
-  -webkit-overflow-scrolling: touch;
-}
+  -webkit-overflow-scrolling: touch; /* melhora a rolagem por toque em navegadores WebKit móveis */
 
-.catalog-grid::-webkit-scrollbar {
-  display: none;
-}
+} /* encerra as configurações do trilho do carrossel */
+
+
+.catalog-grid::-webkit-scrollbar { /* seleciona a barra de rolagem do carrossel em navegadores WebKit */
+
+  display: none; /* esconde visualmente a barra de rolagem */
+
+} /* encerra as configurações da barra de rolagem */
+
 
 
 /* =========================================================
    CARD DO CURSO
 ========================================================= */
 
-.course-card {
-  position: relative;
+.course-card { /* seleciona cada cartão individual de curso */
 
-  width: 100%;
+  position: relative; /* permite posicionar capa, conteúdo e botão play dentro do card */
 
-  min-width: 0;
+  width: 100%; /* faz o card utilizar toda a largura da coluna */
 
-  overflow: hidden;
+  min-width: 0; /* permite que o card diminua corretamente dentro do Grid */
 
-  aspect-ratio: 3 / 4;
+  overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites do card */
 
-  scroll-snap-align: start;
+  aspect-ratio: 3 / 4; /* mantém o card no formato vertical de proporção 3 por 4 */
+
+  scroll-snap-align: start; /* faz o início do card funcionar como ponto de encaixe do carrossel */
 
   border:
-    1px solid #222634;
+    1px solid #222634; /* cria uma borda escura de 1 pixel */
 
-  border-radius: 15px;
+  border-radius: 15px; /* arredonda os cantos do card */
 
-  background: #0b0d10;
+  background: #0b0d10; /* define uma cor escura como fundo */
 
-  color: #fff;
+  color: #fff; /* define branco como cor padrão dos textos internos */
 
-  cursor: pointer;
+  cursor: pointer; /* mostra que o card pode ser clicado */
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
+    transform 0.2s ease, /* suaviza o movimento do card */
+    box-shadow 0.2s ease, /* suaviza alterações da sombra */
+    border-color 0.2s ease; /* suaviza alterações da cor da borda */
 
-.course-card:hover {
-  border-color: var(--accent);
+} /* encerra as configurações do card */
+
+
+.course-card:hover { /* aplica estas regras quando o mouse passa sobre um card */
+
+  border-color: var(--accent); /* altera a borda para a cor de destaque */
 
   box-shadow:
     0 18px 36px
-    rgba(0, 0, 0, 0.25);
+    rgba(0, 0, 0, 0.25); /* cria uma sombra abaixo do card */
 
   transform:
-    translateY(-4px);
-}
+    translateY(-4px); /* move o card 4 pixels para cima */
 
-.course-card .cover {
-  position: absolute;
+} /* encerra o hover do card */
 
-  inset: 0;
 
-  z-index: 0;
+.course-card .cover { /* seleciona o contêiner da capa dentro de cada card */
 
-  background: #0b0d10;
-}
+  position: absolute; /* posiciona a capa livremente dentro do card */
 
-.course-card .cover img {
-  width: 100%;
-  height: 100%;
+  inset: 0; /* equivale a top, right, bottom e left iguais a zero, preenchendo todo o card */
 
-  object-fit: contain;
-  object-position: center;
+  z-index: 0; /* coloca a capa na camada de fundo do card */
 
-  background: #0b0d10;
-}
+  background: #0b0d10; /* define fundo escuro caso a imagem não ocupe alguma área */
+
+} /* encerra as configurações do contêiner da capa */
+
+
+.course-card .cover img { /* seleciona especificamente a imagem da capa do curso */
+
+  width: 100%; /* faz a imagem utilizar toda a largura do contêiner */
+  height: 100%; /* faz a imagem utilizar toda a altura do contêiner */
+
+  object-fit: contain; /* mantém a capa inteira visível sem aplicar corte */
+  object-position: center; /* centraliza a capa dentro do espaço disponível */
+
+  background: #0b0d10; /* utiliza fundo escuro nas áreas eventualmente vazias */
+
+} /* encerra as configurações da imagem da capa */
+
 
 
 /* =========================================================
    CAPA SEM IMAGEM
 ========================================================= */
 
-.course-cover-placeholder {
-  display: flex;
+.course-cover-placeholder { /* seleciona o conteúdo substituto exibido quando o curso não possui imagem */
 
-  width: 100%;
-  height: 100%;
+  display: flex; /* utiliza Flexbox para organizar o conteúdo */
 
-  align-items: center;
-  justify-content: center;
+  width: 100%; /* ocupa toda a largura disponível */
+  height: 100%; /* ocupa toda a altura disponível */
 
-  padding: 20px;
+  align-items: center; /* centraliza verticalmente o conteúdo */
+  justify-content: center; /* centraliza horizontalmente o conteúdo */
+
+  padding: 20px; /* cria 20 pixels de espaço interno */
 
   background:
     radial-gradient(
-      circle at top right,
-      rgba(224, 251, 56, 0.2),
-      transparent 38%
+      circle at top right, /* posiciona o centro do gradiente circular no canto superior direito */
+      rgba(224, 251, 56, 0.2), /* inicia o gradiente com a cor de destaque transparente */
+      transparent 38% /* torna o gradiente completamente transparente após 38% */
     ),
-    #10131a;
+    #10131a; /* utiliza uma cor escura como fundo base */
 
-  color: var(--accent);
+  color: var(--accent); /* utiliza a cor de destaque para o texto */
 
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 22px; /* define o tamanho do texto em 22 pixels */
+  font-weight: 800; /* deixa o texto com peso forte */
 
-  text-align: center;
-}
+  text-align: center; /* centraliza o texto */
+
+} /* encerra as configurações da capa substituta */
+
 
 
 /* =========================================================
    GRADIENTE DO CARD
 ========================================================= */
 
-.course-card .body {
-  position: absolute;
+.course-card .body { /* seleciona a área de conteúdo sobreposta na parte inferior do card */
 
-  z-index: 2;
+  position: absolute; /* posiciona o conteúdo sobre a imagem da capa */
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+  z-index: 2; /* mantém o conteúdo acima da capa */
 
-  display: flex;
+  left: 0; /* encosta o conteúdo na lateral esquerda */
+  right: 0; /* encosta o conteúdo na lateral direita */
+  bottom: 0; /* posiciona o conteúdo na parte inferior */
 
-  flex-direction: column;
+  display: flex; /* utiliza Flexbox para organizar os elementos internos */
 
-  justify-content: flex-end;
+  flex-direction: column; /* organiza os elementos verticalmente */
+
+  justify-content: flex-end; /* posiciona o conteúdo na parte inferior da área */
 
   padding:
-    70px 16px 16px;
+    70px 16px 16px; /* cria espaço maior acima para o gradiente e 16px nas laterais e abaixo */
 
   background:
     linear-gradient(
-      180deg,
-      rgba(6, 7, 12, 0) 0%,
-      rgba(6, 7, 12, 0.08) 28%,
-      rgba(6, 7, 12, 0.46) 60%,
-      rgba(6, 7, 12, 0.78) 82%,
-      rgba(6, 7, 12, 0.92) 100%
+      180deg, /* cria o gradiente na direção vertical de cima para baixo */
+      rgba(6, 7, 12, 0) 0%, /* inicia completamente transparente */
+      rgba(6, 7, 12, 0.08) 28%, /* adiciona uma pequena sombra em 28% */
+      rgba(6, 7, 12, 0.46) 60%, /* aumenta a escuridão em 60% */
+      rgba(6, 7, 12, 0.78) 82%, /* deixa a parte inferior ainda mais escura */
+      rgba(6, 7, 12, 0.92) 100% /* termina quase completamente escuro */
     );
 
-  pointer-events: none;
-}
+  pointer-events: none; /* permite que cliques atravessem esta camada e sejam recebidos pelo card */
 
-.category-chip {
-  display: inline-flex;
+} /* encerra as configurações do conteúdo sobreposto */
 
-  align-self: flex-start;
 
-  margin-bottom: 10px;
+.category-chip { /* seleciona a pequena etiqueta de categoria do curso */
 
-  padding: 5px 10px;
+  display: inline-flex; /* utiliza Flexbox mantendo a largura baseada no conteúdo */
 
-  border-radius: 7px;
+  align-self: flex-start; /* mantém a etiqueta alinhada ao início do card */
+
+  margin-bottom: 10px; /* cria 10 pixels de espaço abaixo da etiqueta */
+
+  padding: 5px 10px; /* cria 5px verticalmente e 10px horizontalmente */
+
+  border-radius: 7px; /* arredonda os cantos da etiqueta */
 
   background:
-    rgba(224, 251, 56, 0.16);
+    rgba(224, 251, 56, 0.16); /* utiliza a cor de destaque com transparência no fundo */
 
-  color: var(--accent);
+  color: var(--accent); /* utiliza a cor de destaque no texto */
 
-  font-size: 10px;
+  font-size: 10px; /* define o tamanho do texto em 10 pixels */
 
-  font-weight: 800;
+  font-weight: 800; /* deixa o texto com peso forte */
 
-  letter-spacing: 0.7px;
+  letter-spacing: 0.7px; /* aumenta o espaço entre as letras */
 
-  text-transform: uppercase;
-}
+  text-transform: uppercase; /* transforma visualmente todas as letras em maiúsculas */
 
-.course-card h3 {
-  max-width: 100%;
+} /* encerra as configurações da categoria */
 
-  margin-bottom: 8px;
 
-  color: #fff;
+.course-card h3 { /* seleciona os títulos h3 existentes dentro dos cards */
 
-  font-size: 18px;
+  max-width: 100%; /* impede que o título ultrapasse a largura do card */
 
-  font-weight: 800;
+  margin-bottom: 8px; /* cria 8 pixels de espaço abaixo do título */
 
-  line-height: 1.15;
-}
+  color: #fff; /* define o texto como branco */
 
-.course-card p {
-  display: -webkit-box;
+  font-size: 18px; /* define o tamanho da fonte em 18 pixels */
 
-  max-width: 100%;
+  font-weight: 800; /* deixa o título em negrito forte */
 
-  margin: 0;
+  line-height: 1.15; /* controla o espaço vertical entre as linhas do título */
 
-  overflow: hidden;
+} /* encerra as configurações do título do curso */
 
-  color: #d0d3db;
 
-  font-size: 11px;
+.course-card p { /* seleciona os parágrafos existentes dentro dos cards */
 
-  line-height: 1.45;
+  display: -webkit-box; /* utiliza um modelo de caixa necessário para limitar linhas em navegadores WebKit */
 
-  -webkit-box-orient: vertical;
+  max-width: 100%; /* impede que o texto ultrapasse a largura do card */
 
-  -webkit-line-clamp: 3;
-}
+  margin: 0; /* remove a margem padrão do parágrafo */
 
-.card-footer {
-  display: none;
-}
+  overflow: hidden; /* esconde o texto que ultrapassar o limite definido */
+
+  color: #d0d3db; /* utiliza uma cor clara secundária */
+
+  font-size: 11px; /* define o tamanho do texto em 11 pixels */
+
+  line-height: 1.45; /* define o espaçamento entre as linhas */
+
+  -webkit-box-orient: vertical; /* organiza as linhas verticalmente para permitir o corte */
+
+  -webkit-line-clamp: 3; /* limita o texto a no máximo três linhas */
+  line-clamp: 3;
+
+} /* encerra as configurações da descrição do curso */
+
+
+.card-footer { /* seleciona o rodapé interno dos cards */
+
+  display: none; /* esconde completamente o rodapé do card */
+
+} /* encerra as configurações do rodapé */
+
 
 
 /* =========================================================
    BOTÃO PLAY
 ========================================================= */
 
-.play-btn {
-  position: absolute;
+.play-btn { /* seleciona o botão visual de reprodução existente no card */
 
-  z-index: 3;
+  position: absolute; /* permite posicionar o botão sobre a capa */
 
-  top: 13px;
-  right: 13px;
+  z-index: 3; /* mantém o botão acima da capa e do conteúdo */
 
-  display: grid;
+  top: 13px; /* posiciona o botão a 13 pixels do topo */
+  right: 13px; /* posiciona o botão a 13 pixels da lateral direita */
 
-  width: 38px;
-  height: 38px;
+  display: grid; /* utiliza Grid para centralizar o ícone */
 
-  place-items: center;
+  width: 38px; /* define a largura do botão */
+  height: 38px; /* define a altura do botão */
 
-  border-radius: 50%;
+  place-items: center; /* centraliza o ícone horizontal e verticalmente */
 
-  background: var(--accent);
+  border-radius: 50%; /* transforma o botão em um círculo */
 
-  color: #0b0d10;
+  background: var(--accent); /* utiliza a cor de destaque como fundo */
+
+  color: #0b0d10; /* utiliza uma cor escura para o ícone */
 
   box-shadow:
     0 8px 20px
-    rgba(0, 0, 0, 0.28);
+    rgba(0, 0, 0, 0.28); /* cria uma sombra abaixo do botão */
 
-  pointer-events: none;
-}
+  pointer-events: none; /* faz o botão ser apenas visual e deixa o clique ser recebido pelo card */
 
-.play-btn svg {
-  width: 16px;
-  height: 16px;
-}
+} /* encerra as configurações do botão play */
+
+
+.play-btn svg { /* seleciona o SVG existente dentro do botão play */
+
+  width: 16px; /* define a largura do ícone */
+  height: 16px; /* define a altura do ícone */
+
+} /* encerra as configurações do ícone play */
+
 
 
 /* =========================================================
    BENEFÍCIOS
 ========================================================= */
 
-.features {
-  display: grid;
+.features { /* seleciona o bloco que apresenta os benefícios da plataforma */
+
+  display: grid; /* utiliza CSS Grid para organizar os benefícios */
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(4, minmax(0, 1fr)); /* cria quatro colunas de largura igual permitindo que diminuam corretamente */
 
-  gap: 24px;
+  gap: 24px; /* cria 24 pixels de espaço entre os benefícios */
 
-  margin-top: 28px;
+  margin-top: 28px; /* cria 28 pixels de espaço acima do bloco */
 
-  padding: 22px;
+  padding: 22px; /* cria 22 pixels de espaço interno */
 
-  border-radius: 16px;
+  border-radius: 16px; /* arredonda os cantos do bloco */
 
-  background: #fff;
+  background: #fff; /* define o fundo como branco */
 
-  color: #0b0d10;
-}
+  color: #0b0d10; /* define uma cor escura para os textos */
 
-.feature {
-  display: flex;
+} /* encerra as configurações do bloco de benefícios */
 
-  align-items: center;
 
-  gap: 14px;
-}
+.feature { /* seleciona cada benefício individual */
 
-.feature-ico {
-  display: grid;
+  display: flex; /* utiliza Flexbox para organizar ícone e texto */
 
-  width: 44px;
-  height: 44px;
+  align-items: center; /* centraliza verticalmente ícone e texto */
 
-  flex-shrink: 0;
+  gap: 14px; /* cria 14 pixels de espaço entre o ícone e o texto */
 
-  place-items: center;
+} /* encerra as configurações de cada benefício */
 
-  border-radius: 50%;
+
+.feature-ico { /* seleciona o contêiner circular do ícone de cada benefício */
+
+  display: grid; /* utiliza Grid para centralizar o ícone */
+
+  width: 44px; /* define a largura do círculo */
+  height: 44px; /* define a altura do círculo */
+
+  flex-shrink: 0; /* impede que o círculo seja comprimido */
+
+  place-items: center; /* centraliza o ícone horizontal e verticalmente */
+
+  border-radius: 50%; /* transforma o elemento em um círculo */
 
   background:
-    rgba(224, 251, 56, 0.2);
-}
+    rgba(224, 251, 56, 0.2); /* utiliza a cor de destaque com transparência como fundo */
 
-.feature h4 {
-  font-size: 15px;
+} /* encerra as configurações do ícone dos benefícios */
 
-  font-weight: 700;
-}
 
-.feature p {
-  margin-top: 2px;
+.feature h4 { /* seleciona o título de cada benefício */
 
-  color: #5f6472;
+  font-size: 15px; /* define o tamanho do título em 15 pixels */
 
-  font-size: 13px;
-}
+  font-weight: 700; /* deixa o título em negrito */
+
+} /* encerra as configurações dos títulos dos benefícios */
+
+
+.feature p { /* seleciona a descrição de cada benefício */
+
+  margin-top: 2px; /* cria 2 pixels de espaço acima do texto */
+
+  color: #5f6472; /* utiliza uma cor secundária para a descrição */
+
+  font-size: 13px; /* define o tamanho do texto em 13 pixels */
+
+} /* encerra as configurações das descrições */
+
 
 
 /* =========================================================
    ESTADOS
 ========================================================= */
 
-.state {
-  width: 100%;
+.state { /* seleciona elementos utilizados para apresentar estados como carregamento ou ausência de conteúdo */
+
+  width: 100%; /* faz o elemento ocupar toda a largura disponível */
 
   padding:
-    60px 20px;
+    60px 20px; /* cria 60 pixels verticalmente e 20 pixels horizontalmente */
 
-  color: #6a6f7d;
+  color: #6a6f7d; /* utiliza uma cor secundária para o texto */
 
-  text-align: center;
-}
+  text-align: center; /* centraliza o texto */
+
+} /* encerra as configurações dos estados */
+
 
 
 /* =========================================================
    NOTEBOOK / DESKTOP MENOR
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /* aplica as regras abaixo quando a tela tiver no máximo 1200 pixels */
 
-  .catalog-grid {
+  .catalog-grid { /* ajusta o trilho do catálogo para telas menores */
+
     grid-auto-columns:
-      calc((100% - 54px) / 4);
-  }
+      calc((100% - 54px) / 4); /* calcula a largura para exibir aproximadamente quatro cards por vez */
 
-}
+  } /* encerra o ajuste do catálogo */
+
+} /* encerra a responsividade para telas de até 1200 pixels */
+
 
 
 /* =========================================================
    TABLET GRANDE
 ========================================================= */
 
-@media (max-width: 980px) {
+@media (max-width: 980px) { /* aplica as regras abaixo quando a tela tiver no máximo 980 pixels */
 
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero-grid { /* ajusta a grade principal do hero */
 
-    gap: 40px;
-  }
+    grid-template-columns: 1fr; /* transforma as duas colunas do hero em apenas uma coluna */
 
-  .features {
+    gap: 40px; /* reduz o espaço entre os conteúdos para 40 pixels */
+
+  } /* encerra os ajustes do hero */
+
+
+  .features { /* ajusta o bloco de benefícios */
+
     grid-template-columns:
-      1fr 1fr;
-  }
+      1fr 1fr; /* organiza os benefícios em duas colunas iguais */
 
-  .catalog-grid {
+  } /* encerra os ajustes dos benefícios */
+
+
+  .catalog-grid { /* ajusta o carrossel de cursos */
+
     grid-auto-columns:
-      calc((100% - 36px) / 3);
-  }
+      calc((100% - 36px) / 3); /* calcula a largura para exibir aproximadamente três cards por vez */
 
-}
+  } /* encerra os ajustes do carrossel */
+
+} /* encerra a responsividade para telas de até 980 pixels */
+
 
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 760px) { /* aplica as regras abaixo quando a tela tiver no máximo 760 pixels */
 
-  .catalog-grid {
+  .catalog-grid { /* ajusta o catálogo para tablets menores */
+
     grid-auto-columns:
-      calc((100% - 14px) / 2);
+      calc((100% - 14px) / 2); /* calcula a largura para exibir aproximadamente dois cards por vez */
 
-    gap: 14px;
-  }
+    gap: 14px; /* reduz o espaço entre os cards para 14 pixels */
 
-}
+  } /* encerra os ajustes do catálogo */
+
+} /* encerra a responsividade para telas de até 760 pixels */
+
 
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 700px) { /* aplica as regras abaixo quando a tela tiver no máximo 700 pixels */
 
-  .container {
+  .container { /* ajusta o espaçamento lateral dos contêineres */
+
     padding:
-      0 18px;
-  }
+      0 18px; /* reduz o espaço lateral para 18 pixels */
+
+  } /* encerra os ajustes do contêiner */
 
 
   /* HEADER FIXO */
 
-  .site-header {
+  .site-header { /* ajusta o cabeçalho para telas de celular */
+
     padding:
-      14px 0;
-  }
+      14px 0; /* reduz o espaçamento vertical do cabeçalho para 14 pixels */
 
-  .header-container {
-    gap: 12px;
-  }
+  } /* encerra os ajustes do cabeçalho */
 
-  .logo-image {
-    height: 38px;
-  }
 
-  .header-actions {
-    gap: 8px;
+  .header-container { /* ajusta o contêiner interno do cabeçalho */
 
-    align-items: center;
-  }
+    gap: 12px; /* reduz o espaço entre os elementos para 12 pixels */
 
-  #user-area {
-    align-items: center;
-  }
+  } /* encerra os ajustes do contêiner do cabeçalho */
 
-  .user-info {
-    align-items: center;
-  }
 
-  .user-email {
-    display: none;
-  }
+  .logo-image { /* ajusta a logo para telas menores */
+
+    height: 38px; /* reduz a altura da logo para 38 pixels */
+
+  } /* encerra os ajustes da logo */
+
+
+  .header-actions { /* ajusta o grupo de ações do cabeçalho */
+
+    gap: 8px; /* reduz o espaço entre as ações para 8 pixels */
+
+    align-items: center; /* mantém as ações centralizadas verticalmente */
+
+  } /* encerra os ajustes das ações */
+
+
+  #user-area { /* ajusta a área do usuário */
+
+    align-items: center; /* centraliza verticalmente os elementos do usuário */
+
+  } /* encerra os ajustes da área do usuário */
+
+
+  .user-info { /* ajusta as informações do usuário */
+
+    align-items: center; /* centraliza verticalmente avatar e demais elementos */
+
+  } /* encerra os ajustes das informações do usuário */
+
+
+  .user-email { /* seleciona o texto que identifica o usuário */
+
+    display: none; /* esconde o texto no celular para economizar espaço no cabeçalho */
+
+  } /* encerra os ajustes do texto do usuário */
+
 
   .user-avatar,
-  .user-avatar-placeholder {
-    width: 34px;
-    height: 34px;
-  }
+  .user-avatar-placeholder { /* ajusta tanto o avatar real quanto o avatar substituto */
 
-  .btn {
-    min-height: 40px;
+    width: 34px; /* reduz a largura para 34 pixels */
+    height: 34px; /* reduz a altura para 34 pixels */
+
+  } /* encerra os ajustes dos avatares */
+
+
+  .btn { /* ajusta os botões gerais para telas menores */
+
+    min-height: 40px; /* reduz a altura mínima para 40 pixels */
 
     padding:
-      9px 13px;
+      9px 13px; /* reduz o espaço interno para 9px vertical e 13px horizontal */
 
-    font-size: 13px;
-  }
+    font-size: 13px; /* reduz o tamanho do texto para 13 pixels */
+
+  } /* encerra os ajustes dos botões */
+
 
   /*
-    CORREÇÃO DO BOTÃO SAIR NO CELULAR
+     CORREÇÃO DO BOTÃO SAIR NO CELULAR
   */
 
-  .logout-btn {
-    display: inline-flex;
+  .logout-btn { /* ajusta especificamente o botão de logout no celular */
 
-    align-items: center;
-    justify-content: center;
+    display: inline-flex; /* mantém o botão usando Flexbox */
 
-    min-height: 40px;
+    align-items: center; /* centraliza verticalmente o texto */
+    justify-content: center; /* centraliza horizontalmente o texto */
 
-    margin: 0;
+    min-height: 40px; /* garante altura mínima de 40 pixels */
+
+    margin: 0; /* remove margens que poderiam deslocar o botão */
 
     padding:
-      9px 13px;
+      9px 13px; /* cria 9px verticalmente e 13px horizontalmente */
 
-    font-size: 13px;
-    line-height: 1;
+    font-size: 13px; /* define o tamanho do texto em 13 pixels */
+    line-height: 1; /* evita espaço vertical extra na linha */
 
-    vertical-align: middle;
+    vertical-align: middle; /* mantém o botão alinhado ao centro quando comparado a elementos inline */
 
-    transform: none;
-  }
+    transform: none; /* remove transformações que poderiam deslocar o botão */
+
+  } /* encerra a correção do botão de logout */
 
 
   /* HERO */
 
-  .hero {
-    padding:
-      30px 0 65px;
-  }
+  .hero { /* ajusta a seção hero para celulares */
 
-  .hero h1 {
+    padding:
+      30px 0 65px; /* reduz o espaço superior para 30px e inferior para 65px */
+
+  } /* encerra os ajustes do hero */
+
+
+  .hero h1 { /* ajusta o título principal do hero */
+
     font-size:
       clamp(
-        35px,
-        11vw,
-        50px
+        35px 
+        11vw, 
+        50px 
       );
-  }
+
+      /* 35px: impede que o título fique menor que 35 pixels */
+      /*11vw: utiliza 11% da largura da tela como tamanho responsivo ideal */
+      /*50px: impede que o título ultrapasse 50 pixels */
+
+  } /* encerra os ajustes do título */
 
 
   /* CATÁLOGO */
 
-  .catalog-panel {
+  .catalog-panel { /* ajusta o painel do catálogo */
+
     padding:
-      36px 0 50px;
-  }
+      36px 0 50px; /* reduz o espaço interno superior e inferior */
 
-  .catalog-head {
-    align-items: flex-start;
+  } /* encerra os ajustes do painel */
 
-    flex-direction: column;
 
-    gap: 12px;
+  .catalog-head { /* ajusta o cabeçalho do catálogo */
 
-    margin-bottom: 12px;
-  }
+    align-items: flex-start; /* alinha os elementos ao início horizontal */
 
-  .catalog-carousel-controls {
-    margin-bottom: 8px;
-  }
+    flex-direction: column; /* coloca os elementos um abaixo do outro */
 
-  .catalog-carousel-btn {
-    width: 36px;
-    height: 36px;
+    gap: 12px; /* cria 12 pixels entre os elementos */
 
-    font-size: 18px;
-  }
+    margin-bottom: 12px; /* reduz o espaço abaixo do cabeçalho */
 
-}
+  } /* encerra os ajustes do cabeçalho do catálogo */
+
+
+  .catalog-carousel-controls { /* ajusta os controles do carrossel */
+
+    margin-bottom: 8px; /* reduz o espaço abaixo dos controles */
+
+  } /* encerra os ajustes dos controles */
+
+
+  .catalog-carousel-btn { /* ajusta os botões do carrossel */
+
+    width: 36px; /* reduz a largura para 36 pixels */
+    height: 36px; /* reduz a altura para 36 pixels */
+
+    font-size: 18px; /* reduz o tamanho do símbolo para 18 pixels */
+
+  } /* encerra os ajustes dos botões do carrossel */
+
+} /* encerra a responsividade para telas de até 700 pixels */
+
 
 
 /* =========================================================
    MOBILE PEQUENO
 ========================================================= */
 
-@media (max-width: 520px) {
+@media (max-width: 520px) { /* aplica as regras abaixo quando a tela tiver no máximo 520 pixels */
 
-  .logo-image {
-    height: 34px;
+  .logo-image { /* ajusta novamente a logo para celulares menores */
 
-    max-width: 110px;
-  }
+    height: 34px; /* reduz a altura da logo para 34 pixels */
 
-  .header-container {
-    align-items: center;
+    max-width: 110px; /* impede que a largura da logo ultrapasse 110 pixels */
 
-    gap: 8px;
-  }
+  } /* encerra os ajustes da logo */
 
-  .header-actions {
-    align-items: center;
 
-    flex-shrink: 0;
+  .header-container { /* ajusta o contêiner interno do cabeçalho */
 
-    gap: 6px;
-  }
+    align-items: center; /* mantém os elementos centralizados verticalmente */
 
-  #user-area {
-    display: flex;
+    gap: 8px; /* reduz o espaço entre os elementos para 8 pixels */
 
-    align-items: center;
-  }
+  } /* encerra os ajustes do cabeçalho */
 
-  .user-info {
-    display: flex;
 
-    align-items: center;
+  .header-actions { /* ajusta as ações do cabeçalho */
 
-    gap: 6px;
-  }
+    align-items: center; /* centraliza verticalmente as ações */
+
+    flex-shrink: 0; /* impede que o grupo de ações seja comprimido */
+
+    gap: 6px; /* reduz o espaço entre as ações para 6 pixels */
+
+  } /* encerra os ajustes das ações */
+
+
+  #user-area { /* ajusta a área do usuário */
+
+    display: flex; /* garante que a área utilize Flexbox */
+
+    align-items: center; /* centraliza verticalmente seus elementos */
+
+  } /* encerra os ajustes da área do usuário */
+
+
+  .user-info { /* ajusta as informações do usuário */
+
+    display: flex; /* garante a utilização do Flexbox */
+
+    align-items: center; /* centraliza verticalmente seus elementos */
+
+    gap: 6px; /* reduz o espaço entre avatar e ações */
+
+  } /* encerra os ajustes das informações do usuário */
+
 
   .user-avatar,
-  .user-avatar-placeholder {
-    display: flex;
+  .user-avatar-placeholder { /* ajusta os dois tipos de avatar */
 
-    width: 32px;
-    height: 32px;
+    display: flex; /* utiliza Flexbox para manter o conteúdo interno centralizável */
 
-    flex-shrink: 0;
-  }
+    width: 32px; /* reduz a largura para 32 pixels */
+    height: 32px; /* reduz a altura para 32 pixels */
 
-  .user-avatar {
-    display: block;
+    flex-shrink: 0; /* impede que o avatar seja comprimido */
 
-    object-fit: cover;
-  }
+  } /* encerra os ajustes dos avatares */
 
-  .user-email {
-    display: none;
-  }
+
+  .user-avatar { /* ajusta especificamente a imagem real do avatar */
+
+    display: block; /* mantém a imagem como elemento de bloco */
+
+    object-fit: cover; /* faz a imagem preencher completamente o círculo */
+
+  } /* encerra os ajustes da imagem do avatar */
+
+
+  .user-email { /* seleciona o texto do usuário */
+
+    display: none; /* mantém o texto escondido em celulares pequenos */
+
+  } /* encerra os ajustes do texto do usuário */
 
 
   /*
-    BOTÃO SAIR
-    CENTRALIZADO NO CELULAR
+     BOTÃO SAIR
+     CENTRALIZADO NO CELULAR
   */
 
-  .logout-btn {
-    display: inline-flex;
+  .logout-btn { /* ajusta o botão de logout em celulares pequenos */
 
-    align-items: center;
-    justify-content: center;
+    display: inline-flex; /* mantém o botão utilizando Flexbox */
 
-    min-width: auto;
-    min-height: 36px;
+    align-items: center; /* centraliza verticalmente o conteúdo */
+    justify-content: center; /* centraliza horizontalmente o conteúdo */
 
-    margin: 0;
+    min-width: auto; /* deixa a largura mínima ser determinada automaticamente */
+    min-height: 36px; /* garante altura mínima de 36 pixels */
 
-    padding:
-      7px 10px;
-
-    border-radius: 10px;
-
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-
-    white-space: nowrap;
-
-    vertical-align: middle;
-
-    transform: translateY(0);
-  }
-
-  .btn-primary {
-    min-width: 38px;
-
-    min-height: 38px;
+    margin: 0; /* remove margens externas */
 
     padding:
-      8px 10px;
-  }
+      7px 10px; /* cria 7px verticalmente e 10px horizontalmente */
 
-  .subscribe-text {
-    display: none;
-  }
+    border-radius: 10px; /* arredonda os cantos em 10 pixels */
+
+    font-size: 12px; /* reduz o texto para 12 pixels */
+    font-weight: 600; /* deixa o texto em seminegrito */
+    line-height: 1; /* evita espaço vertical extra */
+
+    white-space: nowrap; /* impede que o texto "Sair" seja quebrado em outra linha */
+
+    vertical-align: middle; /* mantém o botão alinhado verticalmente */
+
+    transform: translateY(0); /* garante que não exista deslocamento vertical */
+
+  } /* encerra os ajustes do botão de logout */
+
+
+  .btn-primary { /* ajusta o botão principal do cabeçalho */
+
+    min-width: 38px; /* garante uma largura mínima de 38 pixels */
+
+    min-height: 38px; /* garante uma altura mínima de 38 pixels */
+
+    padding:
+      8px 10px; /* reduz o espaço interno do botão */
+
+  } /* encerra os ajustes do botão principal */
+
+
+  .subscribe-text { /* seleciona o texto existente dentro do botão de assinatura */
+
+    display: none; /* esconde o texto e mantém somente o ícone em telas pequenas */
+
+  } /* encerra os ajustes do texto da assinatura */
 
 
   /* PESQUISA */
 
-  .search-block h2 {
-    font-size: 18px;
-  }
+  .search-block h2 { /* ajusta o título da pesquisa */
 
-  .search-box {
-    padding-left: 46px;
-  }
+    font-size: 18px; /* reduz o tamanho do título para 18 pixels */
 
-  .search-box .search-ico {
-    left: 17px;
-  }
+  } /* encerra os ajustes do título */
 
-  .search-box input {
-    padding-right: 6px;
-    padding-left: 6px;
 
-    font-size: 14px;
-  }
+  .search-box { /* ajusta a barra de pesquisa */
 
-  .search-box .search-btn {
-    width: 44px;
-    height: 44px;
-  }
+    padding-left: 46px; /* reduz o espaço reservado ao ícone no lado esquerdo */
+
+  } /* encerra os ajustes da barra de pesquisa */
+
+
+  .search-box .search-ico { /* ajusta a posição do ícone de pesquisa */
+
+    left: 17px; /* aproxima o ícone da lateral esquerda */
+
+  } /* encerra os ajustes do ícone */
+
+
+  .search-box input { /* ajusta o campo de pesquisa */
+
+    padding-right: 6px; /* reduz o espaço interno do lado direito */
+    padding-left: 6px; /* reduz o espaço interno do lado esquerdo */
+
+    font-size: 14px; /* reduz o tamanho do texto digitado */
+
+  } /* encerra os ajustes do campo */
+
+
+  .search-box .search-btn { /* ajusta o botão circular da pesquisa */
+
+    width: 44px; /* reduz a largura para 44 pixels */
+    height: 44px; /* reduz a altura para 44 pixels */
+
+  } /* encerra os ajustes do botão de pesquisa */
 
 
   /* BENEFÍCIOS */
 
-  .features {
-    grid-template-columns: 1fr;
-  }
+  .features { /* ajusta o bloco de benefícios */
+
+    grid-template-columns: 1fr; /* organiza todos os benefícios em apenas uma coluna */
+
+  } /* encerra os ajustes dos benefícios */
 
 
   /* CARROSSEL */
 
-  .catalog-grid {
+  .catalog-grid { /* ajusta o carrossel para celulares pequenos */
+
     grid-auto-columns:
-      calc((100% - 12px) / 2);
+      calc((100% - 12px) / 2); /* calcula a largura para exibir dois cards por vez */
 
-    gap: 12px;
-
-    padding:
-      6px 2px 16px;
-  }
-
-  .course-card {
-    border-radius: 13px;
-  }
-
-  .course-card .body {
-    padding:
-      55px 10px 10px;
-  }
-
-  .category-chip {
-    margin-bottom: 7px;
+    gap: 12px; /* cria 12 pixels de espaço entre os cards */
 
     padding:
-      3px 7px;
+      6px 2px 16px; /* reduz o espaço interno do trilho */
 
-    font-size: 8px;
-  }
+  } /* encerra os ajustes do carrossel */
 
-  .course-card h3 {
-    margin-bottom: 5px;
 
-    font-size: 13px;
-  }
+  .course-card { /* ajusta os cards dos cursos */
 
-  .course-card p {
-    font-size: 9px;
+    border-radius: 13px; /* reduz o arredondamento dos cards para 13 pixels */
 
-    line-height: 1.35;
+  } /* encerra os ajustes dos cards */
 
-    -webkit-line-clamp: 2;
-  }
 
-  .play-btn {
-    top: 9px;
-    right: 9px;
+  .course-card .body { /* ajusta o conteúdo sobreposto nos cards */
 
-    width: 32px;
-    height: 32px;
-  }
+    padding:
+      55px 10px 10px; /* reduz os espaços internos do conteúdo */
 
-  .play-btn svg {
-    width: 13px;
-    height: 13px;
-  }
+  } /* encerra os ajustes do conteúdo do card */
 
-}
+
+  .category-chip { /* ajusta a etiqueta de categoria */
+
+    margin-bottom: 7px; /* reduz o espaço abaixo da etiqueta */
+
+    padding:
+      3px 7px; /* reduz o espaço interno da etiqueta */
+
+    font-size: 8px; /* reduz o texto para 8 pixels */
+
+  } /* encerra os ajustes da categoria */
+
+
+  .course-card h3 { /* ajusta o título dos cursos */
+
+    margin-bottom: 5px; /* reduz o espaço abaixo do título */
+
+    font-size: 13px; /* reduz o tamanho do título para 13 pixels */
+
+  } /* encerra os ajustes dos títulos */
+
+
+  .course-card p { /* ajusta a descrição dos cursos */
+
+    font-size: 9px; /* reduz o tamanho do texto para 9 pixels */
+
+    line-height: 1.35; /* reduz levemente o espaço entre as linhas */
+
+    -webkit-line-clamp: 2;  /* limita a descrição a no máximo duas linhas */
+    line-clamp: 2;
+
+  } /* encerra os ajustes das descrições */
+
+
+  .play-btn { /* ajusta o botão play dos cards */
+
+    top: 9px; /* aproxima o botão do topo */
+    right: 9px; /* aproxima o botão da lateral direita */
+
+    width: 32px; /* reduz a largura para 32 pixels */
+    height: 32px; /* reduz a altura para 32 pixels */
+
+  } /* encerra os ajustes do botão play */
+
+
+  .play-btn svg { /* ajusta o ícone dentro do botão play */
+
+    width: 13px; /* reduz a largura do ícone para 13 pixels */
+    height: 13px; /* reduz a altura do ícone para 13 pixels */
+
+  } /* encerra os ajustes do ícone play */
+
+} /* encerra a responsividade para telas de até 520 pixels */
+
 
 
 /* =========================================================
    CELULAR MUITO PEQUENO
 ========================================================= */
 
-@media (max-width: 390px) {
+@media (max-width: 390px) { /* aplica as regras abaixo quando a tela tiver no máximo 390 pixels */
 
-  .catalog-grid {
-    grid-auto-columns: 78%;
+  .catalog-grid { /* ajusta o carrossel para telas extremamente estreitas */
 
-    gap: 12px;
-  }
+    grid-auto-columns: 78%; /* faz cada card ocupar 78% da largura do trilho, deixando parte do próximo visível */
 
-  .course-card h3 {
-    font-size: 16px;
-  }
+    gap: 12px; /* mantém 12 pixels de espaço entre os cards */
 
-  .course-card p {
-    font-size: 11px;
-  }
+  } /* encerra os ajustes do carrossel */
+
+
+  .course-card h3 { /* ajusta novamente o título do curso */
+
+    font-size: 16px; /* aumenta o título para 16 pixels nesta configuração de card maior */
+
+  } /* encerra os ajustes do título */
+
+
+  .course-card p { /* ajusta novamente a descrição do curso */
+
+    font-size: 11px; /* aumenta a descrição para 11 pixels */
+
+  } /* encerra os ajustes da descrição */
 
 
   /*
-    Mantém o botão Sair perfeitamente
-    centralizado em celulares estreitos.
+     Mantém o botão Sair perfeitamente
+     centralizado em celulares estreitos.
   */
 
-  .logout-btn {
-    display: inline-flex;
+  .logout-btn { /* ajusta o botão de logout para celulares muito estreitos */
 
-    align-items: center;
-    justify-content: center;
+    display: inline-flex; /* mantém o botão utilizando Flexbox */
 
-    min-height: 34px;
+    align-items: center; /* centraliza verticalmente o conteúdo */
+    justify-content: center; /* centraliza horizontalmente o conteúdo */
 
-    margin: 0;
+    min-height: 34px; /* reduz a altura mínima para 34 pixels */
+
+    margin: 0; /* remove margens externas */
 
     padding:
-      6px 9px;
+      6px 9px; /* reduz o espaço interno para 6px vertical e 9px horizontal */
 
-    font-size: 11px;
-    line-height: 1;
+    font-size: 11px; /* reduz o tamanho do texto para 11 pixels */
+    line-height: 1; /* mantém a linha sem espaço vertical adicional */
 
-    transform: none;
-  }
+    transform: none; /* remove qualquer transformação que possa deslocar o botão */
 
-}
+  } /* encerra os ajustes do botão de logout */
+
+} /* encerra a responsividade para telas de até 390 pixels */
