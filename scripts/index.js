@@ -431,106 +431,31 @@ function resetCatalogPosition() {
 
 
 /* =========================================================
-   PÁGINAS ESPECÍFICAS DOS CURSOS
+   PÁGINA ÚNICA DOS CURSOS
 ========================================================= */
 
-const COURSE_PAGES = {
-  1: "excel.html",
-  2: "word.html",
-  3: "powerpoint.html",
-  4: "powerbi.html"
-};
+function getCoursePage(course) { // cria a função que monta o endereço da página única de cursos
+  if (!course) { // verifica se nenhum curso foi recebido pela função
+    return null; // encerra a função sem criar um endereço quando não existe curso
+  } // encerra a validação da existência do curso
 
+  const courseId = // cria uma constante para armazenar o ID numérico do curso
+    Number(course.id); // converte o ID recebido do catálogo para o tipo Number
 
-/* =========================================================
-   DESCOBRE QUAL PÁGINA DEVE ABRIR
-========================================================= */
+  if ( // inicia a validação do identificador do curso
+    !Number.isInteger(courseId) || // verifica se o ID não é um número inteiro
+    courseId <= 0 // verifica se o ID é zero ou negativo
+  ) { // inicia o bloco executado quando o identificador é inválido
+    console.warn( // registra no console que o curso não possui um ID utilizável
+      "Curso sem ID válido:", // adiciona uma descrição antes dos dados do curso
+      course // exibe no console o objeto recebido para facilitar a identificação do problema
+    ); // encerra o aviso no console
 
-function getCoursePage(course) {
-  if (!course) {
-    return null;
-  }
+    return null; // impede a criação de uma URL inválida
+  } // encerra a validação do identificador
 
-
-  const courseId =
-    Number(course.id);
-
-
-  if (COURSE_PAGES[courseId]) {
-    return COURSE_PAGES[courseId];
-  }
-
-
-  const name =
-    String(
-      course.nome || ""
-    )
-      .trim()
-      .toLocaleLowerCase(
-        "pt-BR"
-      );
-
-
-  const category =
-    String(
-      course.categoria || ""
-    )
-      .trim()
-      .toLocaleLowerCase(
-        "pt-BR"
-      );
-
-
-  if (
-    name.includes("excel") ||
-    category.includes("excel")
-  ) {
-
-    return "excel.html";
-  }
-
-
-  if (
-    name.includes("word") ||
-    category.includes("word")
-  ) {
-
-    return "word.html";
-  }
-
-
-  if (
-    name.includes("power point") ||
-    name.includes("powerpoint") ||
-    category.includes("power point") ||
-    category.includes("powerpoint")
-  ) {
-
-    return "powerpoint.html";
-  }
-
-
-  if (
-    name.includes("power bi") ||
-    name.includes("power-bi") ||
-    name.includes("powerbi") ||
-    category.includes("power bi") ||
-    category.includes("power-bi") ||
-    category.includes("powerbi")
-  ) {
-
-    return "powerbi.html";
-  }
-
-
-  console.warn(
-    "Curso sem página configurada:",
-    course
-  );
-
-
-  return null;
-}
+  return `curso.html?id=${courseId}`; // direciona qualquer curso para curso.html e informa seu ID pela URL
+} // encerra a função responsável por montar a página do curso
 
 
 /* =========================================================

@@ -1,20 +1,20 @@
 :root { /* cria variáveis CSS globais que podem ser reutilizadas em todo o arquivo */
 
-  --bg-dark: #06070C; /* define a cor escura principal da interface */
+  --bg-dark: var(--praxis-color-background); /* define a cor escura principal da interface */
 
-  --bg-light: #FFFFFF; /* define a cor clara principal do fundo */
+  --bg-light: var(--praxis-color-white); /* define a cor clara principal do fundo */
 
-  --accent: #E0FB38; /* define a cor de destaque principal da Praxis */
+  --accent: var(--praxis-color-accent); /* define a cor de destaque principal da Praxis */
 
-  --accent-hover: #d2f025; /* define a cor de destaque usada ao passar o mouse */
+  --accent-hover: var(--praxis-color-accent-hover); /* define a cor de destaque usada ao passar o mouse */
 
-  --text-dark: #0b0d10; /* define a cor principal dos textos escuros */
+  --text-dark: var(--praxis-color-ink); /* define a cor principal dos textos escuros */
 
-  --text-muted: #6a6f7d; /* define uma cor mais suave para textos secundários */
+  --text-muted: var(--praxis-color-muted-dark); /* define uma cor mais suave para textos secundários */
 
-  --border-line: #d5d7de; /* define a cor padrão das bordas e linhas */
+  --border-line: var(--praxis-color-border-light); /* define a cor padrão das bordas e linhas */
 
-  --border-focus: #06070C; /* define a cor da borda quando um campo recebe foco */
+  --border-focus: var(--praxis-color-background); /* define a cor da borda quando um campo recebe foco */
 
 } /* encerra a declaração das variáveis globais */
 

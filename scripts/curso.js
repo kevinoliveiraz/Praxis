@@ -8,7 +8,31 @@ import {
    CONFIGURAÇÃO
 ========================================================= */
 
-const EXCEL_COURSE_ID = 1;
+/* =========================================================
+   IDENTIFICAR O CURSO PELA URL
+========================================================= */
+
+function getCourseIdFromUrl() { // cria uma função que descobre qual curso deve ser carregado a partir da URL
+  const params = // cria uma constante para armazenar os parâmetros presentes na URL
+    new URLSearchParams( // cria um objeto próprio do navegador para leitura dos parâmetros da URL
+      window.location.search // envia somente a parte da URL que começa após o caractere ?
+    ); // encerra a criação do leitor de parâmetros
+
+  const courseId = // cria uma constante que armazenará o identificador numérico do curso
+    Number( // converte o valor recebido pela URL para o tipo Number
+      params.get("id") // lê o parâmetro chamado id, como em curso.html?id=1
+    ); // encerra a conversão para número
+
+  return ( // retorna o ID somente quando ele for um número inteiro positivo
+    Number.isInteger(courseId) && // verifica se o valor convertido é um número inteiro
+    courseId > 0 // verifica se o identificador é maior que zero
+  )
+    ? courseId // devolve o ID válido para ser usado nas consultas do Supabase
+    : null; // devolve null quando a URL não contém um ID de curso válido
+} // encerra a função que identifica o curso pela URL
+
+const COURSE_ID = // cria a constante usada por toda a página para identificar o curso atual
+  getCourseIdFromUrl(); // executa a leitura do parâmetro id assim que o módulo JavaScript é carregado
 
 const SLIDES_BUCKET = "slides";
 const MATERIALS_BUCKET = "materiais";
@@ -154,13 +178,13 @@ function getCourseHistoryState() {
 }
 
 
-function isExcelHistoryState(
+function isCourseHistoryState(
   state
 ) {
   return (
     state &&
     Number(state.courseId) ===
-      EXCEL_COURSE_ID
+      COURSE_ID
   );
 }
 
@@ -172,7 +196,7 @@ function isExcelHistoryState(
 function createHomeHistoryState() {
   return {
     courseId:
-      EXCEL_COURSE_ID,
+      COURSE_ID,
 
     view:
       "home"
@@ -190,7 +214,7 @@ function createLessonHistoryState(
 ) {
   return {
     courseId:
-      EXCEL_COURSE_ID,
+      COURSE_ID,
 
     view:
       "lesson",
@@ -275,7 +299,7 @@ function initializeCourseHistory() {
   */
 
   if (
-    !isExcelHistoryState(
+    !isCourseHistoryState(
       existingState
     )
   ) {
@@ -449,16 +473,16 @@ function goBackInHistory() {
 
 function getDefaultCourse() {
   return {
-    id: EXCEL_COURSE_ID,
+    id: COURSE_ID,
 
     nome:
-      "Excel Prático — Básico ao Avançado",
+      "Curso Praxis",
 
     descricao:
-      "Aprenda Excel do básico ao avançado com aulas práticas, exercícios e projetos aplicados ao dia a dia.",
+      "Conteúdo prático do curso selecionado.",
 
     categoria:
-      "Excel"
+      "Curso"
   };
 }
 
@@ -712,7 +736,7 @@ function ensureCourseHome() {
           id="course-home-title"
           class="course-home-title"
         >
-          Excel
+          Curso
         </h1>
 
         <p
@@ -1267,7 +1291,7 @@ function renderCourseHome() {
 
     title.textContent =
       course?.nome ||
-      "Excel Prático — Básico ao Avançado";
+      "Curso Praxis";
   }
 
 
@@ -3050,7 +3074,7 @@ async function loadCourse() {
       `)
       .eq(
         "id",
-        EXCEL_COURSE_ID
+        COURSE_ID
       )
       .maybeSingle();
 
@@ -3087,7 +3111,7 @@ async function loadModules() {
       `)
       .eq(
         "curso_id",
-        EXCEL_COURSE_ID
+        COURSE_ID
       )
       .eq(
         "status",
@@ -3531,10 +3555,10 @@ async function loadProgress() {
 
 
 /* =========================================================
-   CARREGAR EXCEL
+   CARREGAR CURSO SELECIONADO
 ========================================================= */
 
-async function loadExcelCourse() {
+async function loadSelectedCourse() {
   try {
 
     clearDataMaps();
@@ -3582,7 +3606,7 @@ async function loadExcelCourse() {
     */
 
     if (
-      isExcelHistoryState(
+      isCourseHistoryState(
         historyState
       ) &&
       historyState.view ===
@@ -3688,7 +3712,7 @@ async function loadExcelCourse() {
 function renderCourseHeader() {
   const courseName =
     course?.nome ||
-    "Excel Prático — Básico ao Avançado";
+    "Curso Praxis";
 
 
   const breadcrumb =
@@ -4451,7 +4475,7 @@ async function renderCurrentLesson() {
       lesson.descricao ||
       lesson.module?.descricao ||
       course?.descricao ||
-      "Conteúdo prático do curso de Excel.";
+      "Conteúdo prático do curso selecionado.";
   }
 
 
@@ -5764,7 +5788,7 @@ window.addEventListener(
     */
 
     if (
-      isExcelHistoryState(
+      isCourseHistoryState(
         state
       ) &&
       state.view ===
@@ -5784,7 +5808,7 @@ window.addEventListener(
     */
 
     if (
-      isExcelHistoryState(
+      isCourseHistoryState(
         state
       ) &&
       state.view ===
@@ -6659,8 +6683,16 @@ supabase
    INICIALIZAÇÃO
 ========================================================= */
 
-async function init() {
-  try {
+async function init() { // cria a função assíncrona responsável por iniciar toda a página de curso
+  try { // inicia o bloco protegido da inicialização para permitir o tratamento de erros
+
+    if (!COURSE_ID) { // verifica se a URL não possui um parâmetro id válido para identificar o curso
+      window.location.replace( // substitui a página atual pelo catálogo quando não existe um curso válido
+        "index.html" // define a página inicial como destino seguro do redirecionamento
+      ); // encerra a chamada responsável pelo redirecionamento
+
+      return; // interrompe a inicialização para impedir consultas ao Supabase sem um ID válido
+    } // encerra a validação do identificador recebido pela URL
 
     const lessonView =
       getLessonView();
@@ -6687,13 +6719,13 @@ async function init() {
     await loadUserSession();
 
 
-    await loadExcelCourse();
+    await loadSelectedCourse();
 
 
   } catch (error) {
 
     console.error(
-      "Erro fatal ao inicializar Excel:",
+      "Erro fatal ao inicializar o curso:",
       error
     );
   }

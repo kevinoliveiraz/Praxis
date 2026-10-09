@@ -10,12 +10,12 @@
   >
 
   <title>
-    Excel Prático — SkillUp
+    Curso — Praxis
   </title>
 
   <meta
     name="description"
-    content="Curso prático de PowerPoint com conteúdo direto e aplicado."
+    content="Curso prático da Praxis com conteúdo direto e aplicado."
   >
 
   <link
@@ -43,6 +43,8 @@
     rel="stylesheet"
     href="styles/curso.css"
   >
+  <!-- Tokens compartilhados da identidade Praxis. -->
+  <link rel="stylesheet" href="styles/tokens.css">
 </head>
 
 
@@ -63,20 +65,12 @@
       >
         <img
           src="assets/logo.png"
-          alt="SkillUp"
+          alt="Praxis"
         >
       </a>
 
 
       <div class="header-actions">
-
-        <a
-          href="index.html"
-          class="btn btn-ghost"
-        >
-          Catálogo
-        </a>
-
 
         <div id="user-area">
 
@@ -97,28 +91,36 @@
 
 
   <!-- =====================================================
-       BREADCRUMB
+       NAVEGAÇÃO — VOLTAR
   ====================================================== -->
 
   <div class="breadcrumb-area">
 
     <div class="container breadcrumb">
 
-      <a href="index.html">
-        Início
-      </a>
+      <button
+        type="button"
+        id="history-back"
+        class="history-back"
+        aria-label="Voltar para a página anterior"
+        title="Voltar"
+      >
 
-      <span>›</span>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
 
-      <a href="index.html#catalog-grid">
-        Catálogo
-      </a>
-
-      <span>›</span>
-
-      <strong id="breadcrumb-course">
-        Excel
-      </strong>
+      </button>
 
     </div>
 
@@ -173,7 +175,7 @@
         </span>
 
         <strong>
-          Excel Prático
+          Curso
         </strong>
 
       </div>
@@ -293,7 +295,7 @@
           </div>
 
           <div class="module-title">
-            Primeiros passos no Excel
+            Módulo do curso
           </div>
 
 
@@ -310,7 +312,7 @@
               </div>
 
               <div class="lesson-name">
-                Interface do Excel
+                Aula do curso
               </div>
 
               <div class="lesson-duration">
@@ -320,7 +322,7 @@
               <button
                 type="button"
                 class="lesson-play"
-                aria-label="Abrir aula Interface do Excel"
+                aria-label="Abrir aula do curso"
               >
                 <svg
                   width="10"
@@ -498,7 +500,7 @@
       <div>
 
         <span class="sidebar-eyebrow">
-          EXCEL
+          CURSO
         </span>
 
         <h2>
@@ -535,7 +537,6 @@
 
 
     <div class="course-sidebar-content">
-
 
       <!-- =================================================
            DOWNLOADS
@@ -614,7 +615,7 @@
           <header class="lesson-header">
 
             <h1 id="lesson-title">
-              1.1 PowerPoint
+              Aula do curso
             </h1>
 
             <p id="lesson-description">
@@ -914,7 +915,7 @@
     <div class="container footer-inner">
 
       <span>
-        © SkillUp. Todos os direitos reservados.
+        © Praxis. Todos os direitos reservados.
       </span>
 
       <a href="index.html">
@@ -932,7 +933,7 @@
 
   <script
     type="module"
-    src="scripts/powerpoint.js"
+    src="scripts/curso.js"
   ></script>
 
 </body>

@@ -1,0 +1,11 @@
+{
+  "name": "praxis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plataforma Praxis com design system e página de assinatura",
+  "scripts": {
+    "dev": "node tools/dev-server.cjs",
+    "check": "node --check scripts/assine-agora.js && node --check scripts/planos.js && node --check tools/dev-server.cjs"
+  },
+  "type": "module"
+}

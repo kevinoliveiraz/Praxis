@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System — Praxis</title>
+  <meta name="description" content="Fundamentos e componentes reutilizáveis da identidade visual Praxis.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css"><link rel="stylesheet" href="styles/components.css"><link rel="stylesheet" href="styles/design-system.css">
+</head>
+<body class="px-page ds-page">
+  <a class="px-skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="px-header"><div class="px-container px-header__inner">
+    <a class="px-logo" href="index.html" aria-label="Praxis — página inicial"><img src="assets/logo.png" alt="" width="54" height="54"><span class="px-logo__word">Praxis</span></a>
+    <nav class="px-nav" aria-label="Navegação principal"><a class="px-nav__link" href="index.html">Projeto</a><a class="px-button px-button--primary" href="assine-agora.html">Ver Assine Agora <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
+  </div></header>
+  <div class="px-container ds-layout">
+    <aside class="ds-sidebar"><div class="ds-sidebar__title"><span class="px-tag px-tag--soft">v1.0</span><strong>Design System</strong></div><nav aria-label="Seções do design system">
+      <a href="#visao-geral">Visão geral</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#espacamento">Espaçamento</a><a href="#botoes">Botões e estados</a><a href="#campos">Campos</a><a href="#componentes">Componentes</a><a href="#uso">Como usar</a>
+    </nav><p>Uma base consistente para continuar construindo o Praxis.</p></aside>
+    <main class="ds-content px-light" id="conteudo">
+      <section class="ds-overview" id="visao-geral"><span class="px-eyebrow">Praxis · Fundamentos e componentes</span><h1>Clareza para aprender.<br>Consistência para criar.</h1><p class="px-muted">O design system nasce da identidade existente do Praxis: preto profundo, verde-lima, Inter e interfaces diretas. Esta é a referência visual para as próximas páginas do projeto.</p><div class="ds-meta"><span class="px-tag">HTML + CSS</span><span class="px-tag">Responsivo</span><span class="px-tag">Foco visível</span><span class="px-tag">Movimento reduzido</span></div></section>
+      <section class="ds-section" id="cores"><div class="ds-section__head"><span>01 / FUNDAMENTOS</span><h2>Cores com propósito.</h2><p>O verde destaca a ação. O fundo escuro apresenta a marca. Superfícies claras tornam a leitura e a comparação mais fáceis.</p></div><div class="ds-palette"><article class="ds-swatch"><div class="ds-swatch__color swatch--dark" style="background:var(--praxis-color-background)"><span>#06070C</span></div><div class="ds-swatch__label"><strong>Background</strong><code>--praxis-color-background</code></div></article>
+<article class="ds-swatch"><div class="ds-swatch__color swatch--dark" style="background:var(--praxis-color-surface)"><span>#12141D</span></div><div class="ds-swatch__label"><strong>Surface</strong><code>--praxis-color-surface</code></div></article>
+<article class="ds-swatch"><div class="ds-swatch__color " style="background:var(--praxis-color-accent)"><span>#E0FB38</span></div><div class="ds-swatch__label"><strong>Accent</strong><code>--praxis-color-accent</code></div></article>
+<article class="ds-swatch"><div class="ds-swatch__color " style="background:var(--praxis-color-paper)"><span>#FBFAFB</span></div><div class="ds-swatch__label"><strong>Paper</strong><code>--praxis-color-paper</code></div></article>
+<article class="ds-swatch"><div class="ds-swatch__color swatch--dark" style="background:var(--praxis-color-ink)"><span>#0B0D10</span></div><div class="ds-swatch__label"><strong>Ink</strong><code>--praxis-color-ink</code></div></article>
+<article class="ds-swatch"><div class="ds-swatch__color " style="background:var(--praxis-color-muted)"><span>#B6BAC6</span></div><div class="ds-swatch__label"><strong>Muted</strong><code>--praxis-color-muted</code></div></article></div><div class="ds-rule"><strong>Regra de contraste</strong><p>Use texto escuro sobre verde-lima e superfícies claras. Em fundo escuro, use Paper para títulos e Muted para textos de apoio. Nunca use verde-lima como texto sobre branco.</p></div></section>
+      <section class="ds-section" id="tipografia"><div class="ds-section__head"><span>02 / FUNDAMENTOS</span><h2>Uma fonte. Uma hierarquia clara.</h2><p>Inter, com fallback para as fontes do sistema. Títulos compactos e fortes; textos de apoio com espaço para respirar.</p></div>
+        <div class="ds-type-row"><div><code>Display</code><small>40–64 px · 800 · 1,08</small></div><p class="ds-display">Entenda. Pratique. Crie.</p></div>
+        <div class="ds-type-row"><div><code>Heading</code><small>28–44 px · 800 · 1,14</small></div><p class="px-heading">Seu próximo passo.</p></div>
+        <div class="ds-type-row"><div><code>Body</code><small>16 px · 400 · 1,6</small></div><p>Conhecimento que você pode colocar em prática.</p></div>
+        <div class="ds-type-row"><div><code>Small</code><small>14 px · 500 · 1,6</small></div><p class="ds-small">Aprenda no seu ritmo e continue evoluindo.</p></div>
+        <div class="ds-type-row"><div><code>Eyebrow</code><small>12 px · 700 · 1,4 px tracking</small></div><p class="px-eyebrow">Conhecimento que vira ação</p></div>
+      </section>
+      <section class="ds-section" id="espacamento"><div class="ds-section__head"><span>03 / FUNDAMENTOS</span><h2>Ritmo, espaço e forma.</h2><p>Escala baseada em 4 px. Use 12–24 px entre elementos relacionados e 48–80 px entre seções.</p></div><div class="ds-spacing"><div class="ds-space"><span>4 px</span><i style="width:4px"></i></div><div class="ds-space"><span>8 px</span><i style="width:8px"></i></div><div class="ds-space"><span>12 px</span><i style="width:12px"></i></div><div class="ds-space"><span>16 px</span><i style="width:16px"></i></div><div class="ds-space"><span>24 px</span><i style="width:24px"></i></div><div class="ds-space"><span>32 px</span><i style="width:32px"></i></div><div class="ds-space"><span>48 px</span><i style="width:48px"></i></div><div class="ds-space"><span>64 px</span><i style="width:64px"></i></div></div><div class="ds-radii"><div style="border-radius:var(--praxis-radius-button)"><strong>12 px</strong><span>Botões e campos</span></div><div style="border-radius:var(--praxis-radius-lg)"><strong>22 px</strong><span>Cards e dialog</span></div><div style="border-radius:var(--praxis-radius-section)"><strong>32 px</strong><span>Seções</span></div><div style="border-radius:var(--praxis-radius-pill)"><strong>999 px</strong><span>Tags e pílulas</span></div></div></section>
+      <section class="ds-section" id="botoes"><div class="ds-section__head"><span>04 / COMPONENTES</span><h2>A próxima ação, sempre clara.</h2><p>Botões com 48 px de altura mínima. Tab mostra o foco; hover realça a ação; disabled remove a interação.</p></div><div class="ds-button-stage ds-stage--dark">
+        <a class="px-button px-button--primary" href="assine-agora.html">Ação principal <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="px-button px-button--secondary" href="index.html">Ação secundária</a><button class="px-button px-button--primary" type="button" disabled>Indisponível</button>
+      </div><div class="ds-button-stage"><a class="px-button px-button--outline" href="assine-agora.html#planos">Ação em superfície clara <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="ds-caption">Use Tab para verificar o contorno de foco.</span></div></section>
+      <section class="ds-section" id="campos"><div class="ds-section__head"><span>05 / COMPONENTES</span><h2>Campos que orientam.</h2><p>Rótulos persistentes, ajuda associada e erros descritos em texto. Os campos abaixo são exemplos locais e não enviam dados.</p></div><div class="ds-fields">
+        <div class="px-field"><label for="sample-email">E-mail</label><input class="px-input" id="sample-email" type="email" placeholder="voce@exemplo.com" aria-describedby="sample-email-help" autocomplete="off"><span class="px-help" id="sample-email-help">Digite o endereço usado na sua conta.</span></div>
+        <div class="px-field"><label for="sample-error">E-mail — exemplo de erro</label><input class="px-input" id="sample-error" type="email" value="email-incompleto" aria-invalid="true" aria-describedby="sample-error-help" autocomplete="off"><span class="px-help px-help--error" id="sample-error-help">Digite um endereço de e-mail válido.</span></div>
+      </div></section>
+      <section class="ds-section" id="componentes"><div class="ds-section__head"><span>06 / COMPONENTES</span><h2>Peças para continuar construindo.</h2><p>Cards, etiquetas, avisos, acordeões e ícones compartilham a mesma linguagem visual.</p></div>
+        <div class="ds-component-grid"><article class="px-card"><span class="px-tag px-tag--soft">Aprendizado</span><span class="ds-card-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 4 4 3 5v14c3-2 6-2 9 1 3-3 6-3 9-1V5c-3-2-6-2-9 0z"/></svg></span><h3>Da teoria à prática.</h3><p class="px-muted">Um card reúne conteúdos relacionados, com título claro e uma ação principal.</p><a class="px-button px-button--outline" href="index.html">Explorar cursos <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="px-card px-card--dark"><span class="px-tag px-tag--accent">Praxis</span><span class="ds-card-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><h3>Uma possibilidade a mais.</h3><p class="px-muted">A variante escura cria destaque sem mudar a hierarquia ou os componentes.</p><a class="px-button px-button--primary" href="assine-agora.html">Conhecer os planos <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article></div>
+        <div class="ds-tag-row"><span class="px-tag">Padrão</span><span class="px-tag px-tag--soft">Suave</span><span class="px-tag px-tag--accent">Destaque</span></div>
+        <div class="px-notice"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><p>Avise com clareza. Combine um ícone com uma mensagem que explica o próximo passo.</p></div>
+        <details class="px-details ds-demo-details"><summary>Como funciona o acordeão?</summary><p>Usamos details e summary nativos: funcionam sem JavaScript, por clique ou teclado, e comunicam o estado aberto ou fechado às tecnologias assistivas.</p></details>
+      </section>
+      <section class="ds-section" id="uso"><div class="ds-section__head"><span>07 / IMPLEMENTAÇÃO</span><h2>Uma base única para cada página.</h2><p>Carregue os tokens antes dos componentes e deixe o CSS de composição por último. As páginas existentes também recebem os tokens compartilhados.</p></div>
+        <pre><code>&lt;link rel="stylesheet" href="styles/tokens.css"&gt;
+&lt;link rel="stylesheet" href="styles/components.css"&gt;
+&lt;link rel="stylesheet" href="styles/sua-pagina.css"&gt;</code></pre>
+        <div class="ds-rule"><strong>Separação de responsabilidades</strong><p>tokens.css define os fundamentos; components.css define componentes com prefixo px; o CSS da página organiza o layout. A configuração provisória dos planos fica em scripts/planos.js.</p></div>
+        <a class="px-button px-button--primary" href="assine-agora.html">Ver o sistema aplicado <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </section>
+    </main>
+  </div>
+  <footer class="px-footer"><div class="px-container px-footer__inner"><p>Praxis Design System · v1.0 · 8 de outubro de 2026</p><a href="DESIGN-SYSTEM.md">Ler documentação técnica</a></div></footer>
+</body>
+</html>

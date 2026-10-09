@@ -9,17 +9,17 @@
 ========================================================= */
 
 :root {
-  --bg-dark: #06070c;
+  --bg-dark: var(--praxis-color-background);
 
-  --surface: #ffffff;
+  --surface: var(--praxis-color-white);
   --surface-soft: #f8f9fa;
 
-  --border: #e5e7eb;
+  --border: var(--praxis-color-border-light);
 
-  --text: #111318;
-  --muted: #6b7280;
+  --text: var(--praxis-color-ink);
+  --muted: var(--praxis-color-muted-dark);
 
-  --accent: #dfff00;
+  --accent: var(--praxis-color-accent);
   --accent-dark: #9fbd00;
 
   --radius-lg: 22px;

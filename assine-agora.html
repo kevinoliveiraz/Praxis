@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assine Agora — Praxis</title>
+  <meta name="description" content="Escolha seu plano Praxis e dê o próximo passo com cursos práticos de ferramentas, produtividade e inteligência artificial.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/assine-agora.css">
+</head>
+<body class="px-page">
+  <a class="px-skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="px-header">
+    <div class="px-container px-header__inner">
+      <a href="index.html" class="px-logo" aria-label="Praxis — página inicial">
+        <img src="assets/logo.png" alt="" width="54" height="54"><span class="px-logo__word">Praxis</span>
+      </a>
+      <nav class="px-nav" aria-label="Navegação principal">
+        <a class="px-nav__link px-nav__catalog" href="index.html#catalog-title">Explorar cursos</a>
+        <a class="px-nav__link" href="#planos" aria-current="page">Assine agora</a>
+        <a class="px-button px-button--secondary header-login" href="login.html"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Entrar</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Apresentação: os mesmos fundamentos visuais da home em uma composição nova. -->
+    <section class="subscription-hero" aria-labelledby="hero-title">
+      <div class="px-container hero-layout">
+        <div class="hero-copy">
+          <span class="px-eyebrow">Entenda. Pratique. Crie.</span>
+          <h1 id="hero-title">Seu próximo passo<br>começa na <span>prática.</span></h1>
+          <p class="hero-description">Menos “um dia eu aprendo”. Mais “eu sei fazer”.<br class="desktop-break"> Evolua com cursos diretos, no seu ritmo, e transforme conhecimento em novas possibilidades.</p>
+          <a class="px-button px-button--primary hero-cta" href="#planos">Encontrar meu plano <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="hero-footnote"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 4 4 3 5v14c3-2 6-2 9 1 3-3 6-3 9-1V5c-3-2-6-2-9 0z"/></svg>Ferramentas, produtividade e inteligência artificial.</p>
+        </div>
+
+        <!-- Ilustração em HTML/CSS; não simula botões ou progresso real do usuário. -->
+        <div class="practice-board" role="img" aria-label="Ilustração de uma trilha de aprendizado: entender, praticar e criar com Excel, ChatGPT e Power BI.">
+          <div class="board-heading"><span>DA IDEIA À PRÁTICA</span><span class="board-dot"></span><span>PRAXIS</span></div>
+          <div class="board-grid" aria-hidden="true">
+            <div class="board-orbit"></div><div class="board-orbit board-orbit--inner"></div>
+            <div class="skill-card skill-card--excel"><span class="tool-mark">X</span><div><strong>Excel</strong><small>Organize suas ideias.</small></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="skill-card skill-card--ai"><span class="tool-mark"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><div><strong>ChatGPT</strong><small>Amplie suas possibilidades.</small></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="skill-card skill-card--bi"><span class="tool-mark"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12M3 15h18"/></svg></span><div><strong>Power BI</strong><small>Transforme dados em ação.</small></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <span class="board-spark"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span>
+          </div>
+          <div class="board-footer"><span>01 <b>Entenda</b></span><i></i><span>02 <b>Pratique</b></span><i></i><span>03 <b>Crie</b></span></div>
+        </div>
+      </div>
+      <div class="px-container hero-bottom"><span>Uma assinatura. Novas possibilidades.</span><a href="#planos">Conheça os planos <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <!-- Os dois planos usam a mesma lista de benefícios; muda apenas o período. -->
+    <section id="planos" class="pricing-section px-light" aria-labelledby="plans-title">
+      <div class="px-container">
+        <div class="section-intro">
+          <div><span class="px-eyebrow">Escolha como evoluir</span><h2 id="plans-title" class="px-heading">Invista no que você<br>pode fazer amanhã.</h2></div>
+          <p class="px-muted">O mesmo aprendizado.<br>O plano que combina com seu momento.</p>
+        </div>
+        <div class="pricing-notice" data-provisional><span class="notice-dot"></span><p>Página em demonstração · valores provisórios, sujeitos à definição.</p></div>
+        <div class="plans-grid">
+          <article class="px-card plan-card" aria-labelledby="monthly-title">
+            <div class="plan-card__head"><span class="plan-symbol"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="plan-period">Um passo de cada vez</span></div>
+            <h3 id="monthly-title">Praxis Mensal</h3>
+            <p class="plan-description">Para começar e construir seu ritmo.</p>
+            <div class="plan-price"><strong data-monthly-price>R$ 59,90</strong><span>/ mês</span></div>
+            <p class="plan-billing">Valor mensal provisório.</p>
+            <a class="px-button px-button--outline plan-action" href="criar-conta.html" data-plan="mensal" aria-haspopup="dialog">Escolher mensal <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="plan-divider"></div>
+            <p class="plan-includes">O que você encontra na Praxis</p>
+            <ul class="plan-benefits"><li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Cursos práticos do zero ao avançado</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Aprenda no seu próprio ritmo</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Certificados para suas conquistas</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Conteúdo atualizado e suporte</span></li></ul>
+          </article>
+
+          <article class="px-card px-card--dark plan-card plan-card--annual" aria-labelledby="annual-title">
+            <div class="annual-ribbon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg><span>Mais tempo para ir além</span><span class="annual-discount">Economize <span data-saving-percent>33%</span></span></div>
+            <div class="plan-card__head"><span class="plan-symbol"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><span class="plan-period">Seu próximo ano de evolução</span></div>
+            <h3 id="annual-title">Praxis Anual</h3>
+            <p class="plan-description">Para fazer da prática um hábito.</p>
+            <div class="plan-price"><strong data-annual-average>R$ 39,90</strong><span>/ mês em média</span></div>
+            <p class="plan-billing"><span data-annual-total>R$ 478,80</span> por ano, em pagamento único.</p>
+            <a class="px-button px-button--primary plan-action" href="criar-conta.html" data-plan="anual" aria-haspopup="dialog">Escolher anual <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div class="plan-divider"></div>
+            <p class="plan-includes">O que você encontra na Praxis</p>
+            <ul class="plan-benefits"><li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Cursos práticos do zero ao avançado</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Aprenda no seu próprio ritmo</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Certificados para suas conquistas</span></li>
+<li><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><span>Conteúdo atualizado e suporte</span></li></ul>
+            <p class="annual-saving">Você economiza <strong data-saving-amount>R$ 240,00</strong> em relação a 12 meses do plano mensal.</p>
+          </article>
+        </div>
+        <p class="plans-caption">Os planos estão em prévia. A escolha não gera cobrança. Condições comerciais e pagamento serão disponibilizados após a definição dos planos.</p>
+        <noscript><p class="px-notice">Ative o JavaScript para ver a prévia dos planos. Os links acima permitem criar uma conta; o cadastro não ativa uma assinatura.</p></noscript>
+
+        <div class="benefits-section" aria-labelledby="benefits-title">
+          <div class="benefits-heading"><span class="px-eyebrow">Feito para o seu dia a dia</span><h2 class="px-heading" id="benefits-title">Aprender é só o começo.</h2></div>
+          <div class="benefits-grid">
+            <article class="benefit"><span class="benefit-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 4 4 3 5v14c3-2 6-2 9 1 3-3 6-3 9-1V5c-3-2-6-2-9 0z"/></svg></span><h3>Aprenda fazendo</h3><p>Cursos que conectam a explicação ao uso das ferramentas na prática.</p></article>
+            <article class="benefit"><span class="benefit-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Seu ritmo, sua rotina</h3><p>Escolha o que aprender e encaixe cada passo no seu dia.</p></article>
+            <article class="benefit"><span class="benefit-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8 12-2 9 6-3 6 3-2-9"/></svg></span><h3>Mostre sua evolução</h3><p>Certificados para registrar o conhecimento que você construiu.</p></article>
+            <article class="benefit"><span class="benefit-icon"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H8l-5 3V11a9 9 0 0 1 18 0zM8 10h8M8 14h5"/></svg></span><h3>Continue avançando</h3><p>Conteúdo atualizado e suporte para acompanhar seu aprendizado.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-section" aria-labelledby="learning-title">
+      <div class="px-container learning-layout">
+        <div><span class="px-eyebrow">Conhecimento que vira ação</span><h2 class="px-heading" id="learning-title">Uma ferramenta nova.<br>Uma possibilidade a mais.</h2><p class="px-muted">Da planilha que simplifica sua rotina à IA que ajuda a tirar uma ideia do papel. Encontre seu próximo passo no catálogo Praxis.</p><a href="index.html#catalog-title" class="text-link">Explorar os cursos <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="learning-steps">
+          <div class="learning-step"><span>01</span><div><h3>Entenda o essencial</h3><p>Comece pela base e conheça a ferramenta.</p></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 4 4 3 5v14c3-2 6-2 9 1 3-3 6-3 9-1V5c-3-2-6-2-9 0z"/></svg></div>
+          <div class="learning-step"><span>02</span><div><h3>Coloque em prática</h3><p>Conecte o conteúdo aos desafios do seu dia.</p></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12M3 15h18"/></svg></div>
+          <div class="learning-step"><span>03</span><div><h3>Crie novas possibilidades</h3><p>Use o que aprendeu para seguir evoluindo.</p></div><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section px-light" aria-labelledby="faq-title">
+      <div class="px-container faq-layout">
+        <div class="faq-intro"><span class="px-eyebrow">Antes de começar</span><h2 id="faq-title" class="px-heading">Ficou alguma<br>dúvida?</h2><p class="px-muted">Conheça os planos e o jeito Praxis de aprender.</p></div>
+        <div class="faq-list">
+          <details class="px-details"><summary>Qual é a diferença entre os planos?</summary><p>Os dois planos apresentam os mesmos benefícios. O mensal considera um mês de acesso; o anual considera 12 meses, com um valor médio mensal menor. Os valores exibidos são provisórios.</p></details>
+          <details class="px-details"><summary>Preciso ter experiência para começar?</summary><p>A Praxis apresenta cursos do zero ao avançado. Escolha um curso adequado ao seu momento e avance no seu ritmo.</p></details>
+          <details class="px-details"><summary>Quais ferramentas posso aprender?</summary><p>O catálogo apresenta cursos como Excel, Word, PowerPoint, Power BI e ferramentas de inteligência artificial. Confira na página inicial os cursos publicados e disponíveis.</p></details>
+          <details class="px-details"><summary>Como funciona o valor do plano anual?</summary><p>O preço por mês é uma média: o total anual dividido por 12. A prévia considera um pagamento único por ano, e não 12 parcelas. O valor final e as condições ainda serão definidos.</p></details>
+          <details class="px-details"><summary>Já posso concluir a assinatura?</summary><p>A página está em demonstração, com preços provisórios e sem pagamento ativo. Você pode comparar os planos e criar uma conta. O cadastro não ativa uma assinatura nem gera cobrança.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="px-container closing-inner"><div><span class="px-eyebrow">Seu próximo passo</span><h2 class="px-heading" id="closing-title">O que você vai criar agora?</h2></div><a class="px-button px-button--primary" href="#planos">Escolher meu plano <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </section>
+  </main>
+
+  <footer class="px-footer"><div class="px-container px-footer__inner"><p>© Praxis · Entenda. Pratique. Crie.</p><nav class="px-footer__links" aria-label="Navegação do rodapé"><a href="index.html">Cursos</a><a href="login.html">Minha conta</a><a href="#faq-title">Perguntas frequentes</a></nav></div></footer>
+
+  <!-- Prévia acessível. Não cria assinatura nem envia dados financeiros. -->
+  <dialog id="plan-dialog" class="px-dialog" aria-labelledby="plan-dialog-title" aria-describedby="plan-dialog-note">
+    <div class="px-dialog__top"><span class="px-tag px-tag--accent">Prévia da assinatura</span><button type="button" class="px-close" id="plan-dialog-close" aria-label="Fechar prévia"><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <h2 id="plan-dialog-title">Seu plano Praxis</h2>
+    <p class="px-dialog__description">O próximo passo da sua jornada de aprendizado.</p>
+    <dl class="px-dialog__summary"><dt>Período</dt><dd id="plan-dialog-period">12 meses</dd><dt id="plan-dialog-price-label">Valor provisório</dt><dd id="plan-dialog-total">R$ 478,80</dd></dl>
+    <p class="px-dialog__note" id="plan-dialog-note"></p>
+    <div class="px-dialog__actions"><a class="px-button px-button--primary" id="plan-continue" href="criar-conta.html">Criar minha conta <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="px-button px-button--secondary" href="index.html#catalog-title">Explorar os cursos</a></div>
+  </dialog>
+  <script type="module" src="scripts/assine-agora.js"></script>
+</body>
+</html>

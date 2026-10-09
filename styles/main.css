@@ -1,13 +1,13 @@
 :root { /* cria variáveis CSS globais que podem ser reutilizadas em todo o site */
 
-  --bg-dark: #06070c; /* define a cor escura principal utilizada como fundo do site */
-  --bg-light: #fbfafb; /* define a cor clara principal utilizada em textos e áreas claras */
-  --accent: #e0fb38; /* define a cor de destaque principal da Praxis */
-  --card: #12141d; /* define a cor de fundo utilizada em cartões e elementos escuros */
-  --border: #222634; /* define a cor padrão utilizada nas bordas */
+  --bg-dark: var(--praxis-color-background); /* define a cor escura principal utilizada como fundo do site */
+  --bg-light: var(--praxis-color-paper); /* define a cor clara principal utilizada em textos e áreas claras */
+  --accent: var(--praxis-color-accent); /* define a cor de destaque principal da Praxis */
+  --card: var(--praxis-color-surface); /* define a cor de fundo utilizada em cartões e elementos escuros */
+  --border: var(--praxis-color-border); /* define a cor padrão utilizada nas bordas */
   --text-muted: #8a8f9e; /* define uma cor mais suave para textos secundários */
   --radius: 14px; /* define um valor padrão de arredondamento que pode ser reutilizado */
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* define a família de fontes principal e fontes alternativas */
+  --font: var(--praxis-font); /* define a família de fontes principal e fontes alternativas */
 
 } /* encerra as variáveis globais */
 
@@ -360,7 +360,8 @@ img { /* seleciona todas as imagens da página */
 
   overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites da seção */
 
-  padding: 40px 0 80px; /* adiciona 40px acima, nenhum nas laterais e 80px abaixo */
+  padding: 0px; /* adiciona 40px acima, nenhum nas laterais e 80px abaixo */
+  padding-bottom: 80px;
 
 } /* encerra as configurações da seção hero */
 

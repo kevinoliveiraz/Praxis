@@ -1,0 +1,63 @@
+# CHANGELOG — Praxis
+
+Este arquivo registra as alterações estruturais e funcionais relevantes do projeto.
+
+## 2026-10-08 — Design system e Assine Agora
+
+### Adicionado
+- Tokens compartilhados de cor, tipografia, espaçamento, raios, foco e movimento em styles/tokens.css.
+- Componentes reutilizáveis em styles/components.css, com prefixo px e variantes claras/escuras.
+- Catálogo visual em design-system.html e documentação em DESIGN-SYSTEM.md.
+- Página assine-agora.html com apresentação, planos mensal/anual, benefícios, FAQ e prévia acessível do plano.
+- Configuração única em scripts/planos.js, com preços provisórios explicitamente identificados e checkout desativado.
+- Preview local via npm run dev, sem dependências adicionais, na porta 5502.
+
+### Alterado
+- O botão Assine agora da home agora abre a nova página e possui nome acessível no celular.
+- Variáveis principais dos CSS existentes passaram a apontar para os tokens do design system.
+- O verde de destaque da área de curso foi alinhado ao verde-lima da identidade principal.
+
+### Mantido
+- Supabase, autenticação e lógica de catálogo/cursos existentes.
+- As pastas originais do computador: esta entrega está na cópia de trabalho Praxis.
+
+## 2026-10-06 — Unificação da página de cursos
+
+### Alterado
+- As páginas individuais de Excel, Word, PowerPoint e Power BI foram substituídas por uma única `curso.html`.
+- Os JavaScripts individuais dos quatro cursos foram substituídos por `scripts/curso.js`.
+- `styles/curso.css` permanece como o único CSS específico da área de cursos.
+- `scripts/index.js` agora direciona qualquer curso válido para `curso.html?id=ID_DO_CURSO`.
+- `scripts/curso.js` lê o parâmetro `id` da URL e utiliza esse ID nas consultas ao mesmo Supabase já configurado em `scripts/supabaseClient.js`.
+- A versão mais completa da lógica de curso, que estava em `scripts/excel.js`, foi adotada como base compartilhada para preservar navegação, slides, materiais, progresso, cache e tela cheia.
+- Textos fixos específicos de Excel na estrutura compartilhada foram substituídos por textos genéricos; nome, descrição, categoria, módulos e aulas continuam vindo do Supabase.
+- Referências textuais restantes de `SkillUp` foram atualizadas para `Praxis`.
+
+### Removido
+- `excel.html`
+- `word.html`
+- `powerpoint.html`
+- `powerbi.html`
+- `scripts/excel.js`
+- `scripts/word.js`
+- `scripts/powerpoint.js`
+- `scripts/powerbi.js`
+
+### Mantido
+- A configuração existente do Supabase.
+- As consultas às tabelas `catalogo`, `modulos`, `aulas`, `slides`, `materiais` e `progresso_aulas`.
+- Os buckets existentes de slides e materiais.
+- O CSS compartilhado `styles/curso.css`.
+
+### Novo padrão de URL
+- Excel: `curso.html?id=1`
+- Word: `curso.html?id=2`
+- PowerPoint: `curso.html?id=3`
+- Power BI: `curso.html?id=4`
+- Cursos futuros podem utilizar a mesma página e o mesmo JavaScript, bastando existir no Supabase com um ID válido.
+
+### Padrão de organização e comentários
+- O código deve permanecer dividido em seções claras e previsíveis.
+- Novas implementações devem receber comentários didáticos explicando sua finalidade e funcionamento.
+- Comentários devem ficar em posições seguras, sem invalidar HTML, CSS ou JavaScript.
+- Mudanças futuras relevantes devem ser adicionadas a este CHANGELOG.
