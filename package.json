@@ -5,7 +5,8 @@
   "description": "Plataforma Praxis com design system e página de assinatura",
   "scripts": {
     "dev": "node tools/dev-server.cjs",
-    "check": "node --check scripts/assine-agora.js && node --check scripts/planos.js && node --check tools/dev-server.cjs"
+    "check": "node --check scripts/theme.js && node --check scripts/header.js && node --check scripts/header-session.js && node --check scripts/account-menu.js && node --check scripts/perfil.js && node --check scripts/supabaseClient.js && node --check scripts/index.js && node --check scripts/curso.js && node --check scripts/login-ui.js && node --check scripts/login.js && node --check scripts/assine-agora.js && node --check scripts/planos.js && node --check tools/dev-server.cjs",
+    "test": "node --experimental-vm-modules --experimental-test-isolation=none --test tests/*.test.cjs"
   },
   "type": "module"
 }

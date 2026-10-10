@@ -2,6 +2,33 @@
 
 Este arquivo registra as alterações estruturais e funcionais relevantes do projeto.
 
+## 2026-10-09 — Perfil e configurações da conta
+
+- Menu ao clicar na foto/nome, com Meu perfil, Aparência, Segurança, Sessões da conta e Sair. Suporte a teclado, Escape e fechamento fora do menu.
+- Nova página perfil.html, com navegação lateral, cartões responsivos e os dois temas.
+- Edição de nome completo, usuário e foto por link HTTPS ou iniciais, persistida no Supabase existente e refletida no cabeçalho.
+- Preferência de tema claro, escuro ou sistema; recuperação de senha para o e-mail autenticado; encerramento separado da sessão atual e de outras sessões.
+- O login preserva nome e foto editados no perfil. Falhas de gravação ou sincronização parcial recebem mensagens próprias.
+- Testes locais de perfil, menu, sessões e aparência; auditoria agora inclui oito páginas e o menu autenticado.
+
+## 2026-10-09 — Cabeçalho compartilhado
+
+- Home e cursos usam um único componente em scripts/header.js, styles/header.css e scripts/header-session.js.
+- Logo, altura, margens, controles, nome do perfil e avatar seguem as mesmas regras nas duas páginas, inclusive no celular e nos dois temas.
+- Assine agora aparece somente na home, mantendo o hover de cor, sombra e elevação.
+- Removidas as cópias de estilos e da renderização de perfil das páginas. A barra de aulas fica abaixo do cabeçalho ao rolar.
+- Testes locais verificam o componente, a integração com o tema, perfil, saída, consulta pendente e atualização do progresso do curso.
+
+## 2026-10-09 — Login e temas claro/escuro
+
+- Login com logo Praxis, cartão central, campos arredondados e os dois fundos originais fornecidos pelo usuário.
+- Tema claro com texto escuro, foco contrastante e cores adequadas para preenchimento automático e mensagens.
+- Alternância em todas as sete páginas, com preferência salva, integração com o tema do sistema e sincronização entre abas.
+- Cadastro e completar perfil seguem o mesmo estilo da autenticação.
+- Opção para lembrar somente o e-mail e controle acessível para mostrar/ocultar senha.
+- Recuperação e redefinição de senha na página de login, usando o Supabase existente.
+- Testes locais de tema/login e auditoria de estrutura, referências e contraste. Nenhuma conta real foi usada nos testes.
+
 ## 2026-10-08 — Design system e Assine Agora
 
 ### Adicionado

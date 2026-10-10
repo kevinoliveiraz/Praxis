@@ -1,11 +1,13 @@
 <!doctype html>
 <!-- informa ao navegador que este documento utiliza HTML5 -->
 
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
 
 
 <head>
+  <meta name="theme-color" content="#06070c">
+  <script src="scripts/theme.js"></script>
 <!-- inicia a área de configurações e informações da página -->
 
 
@@ -110,20 +112,22 @@
     href:
     define o caminho até o arquivo CSS
   -->
-  <link
-    rel="stylesheet"
-    href="styles/main.css"
-  >
+
 
 
   <!-- Tokens compartilhados da identidade Praxis. -->
-  <link rel="stylesheet" href="styles/tokens.css">
+
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/theme.css">
+<link rel="stylesheet" href="styles/header.css">
+<script src="scripts/header.js" defer></script>
 </head>
 <!-- encerra a área de configurações da página -->
 
 
 
-<body>
+<body class="home-page">
 <!-- inicia todo o conteúdo visual exibido para o usuário -->
 
 
@@ -141,273 +145,7 @@
     class="site-header":
     permite que o CSS estilize este cabeçalho
   -->
-  <header class="site-header">
-
-
-    <!--
-      cria um contêiner que limita e organiza
-      os elementos internos do cabeçalho
-
-      container:
-      normalmente controla largura máxima e centralização
-
-      header-container:
-      controla especificamente a organização do cabeçalho
-    -->
-    <div class="container header-container">
-
-
-
-      <!--
-        cria o link da logo
-
-        href="index.html":
-        leva o usuário para a página inicial
-
-        class="logo":
-        permite estilizar o link da logo
-
-        aria-label:
-        descreve a função deste link para leitores de tela
-      -->
-      <a
-        href="index.html"
-        class="logo"
-        aria-label="Ir para a página inicial da Praxis"
-      >
-
-    <!-- a tag <a> serve para crira hiperlinks -->
-        <!--
-          exibe a imagem da logo
-
-          src:
-          indica onde está o arquivo da imagem
-
-          alt:
-          fornece um texto alternativo caso a imagem não carregue
-          e também auxilia leitores de tela
-
-          class:
-          permite controlar o tamanho e aparência da logo pelo CSS
-        -->
-        <img
-          src="assets/logo.png"
-          alt="Praxis"
-          class="logo-image"
-        >
-
-
-      </a>
-      <!-- encerra o link da logo -->
-
-
-
-      <!-- agrupa os elementos de ação localizados no lado direito do cabeçalho -->
-      <div class="header-actions">
-
-
-
-        <!--
-          área que será alterada dinamicamente pelo index.js
-
-          quando o usuário estiver deslogado:
-          exibe o botão Entrar
-
-          quando estiver logado:
-          o JavaScript substitui esse conteúdo pelos dados do usuário
-        -->
-        <div id="user-area">
-
-
-
-          <!--
-            cria o link para a página de login
-
-            href:
-            define a página que será aberta
-
-            btn:
-            aplica o estilo base de botão
-
-            btn-ghost:
-            aplica o estilo visual secundário
-          -->
-          <a
-            href="login.html"
-            class="btn btn-ghost"
-          >
-
-
-
-            <!--
-              cria um ícone SVG de usuário
-
-              width:
-              define a largura do ícone
-
-              height:
-              define a altura do ícone
-
-              viewBox:
-              define o sistema interno de coordenadas do SVG
-
-              fill="none":
-              remove o preenchimento interno
-
-              stroke="currentColor":
-              faz as linhas utilizarem a cor atual do elemento
-
-              stroke-width:
-              define a espessura das linhas
-
-              aria-hidden:
-              informa aos leitores de tela que o ícone é decorativo
-            -->
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              aria-hidden="true"
-            >
-
-
-              <!-- desenha a parte correspondente ao corpo/ombros do ícone de usuário -->
-              <path
-                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-              />
-
-
-              <!--
-                desenha a cabeça do usuário
-
-                cx:
-                posição horizontal do centro
-
-                cy:
-                posição vertical do centro
-
-                r:
-                raio do círculo
-              -->
-              <circle
-                cx="12"
-                cy="7"
-                r="4"
-              />
-
-
-            </svg>
-            <!-- encerra o ícone SVG de usuário -->
-
-
-
-            <!-- cria um elemento em linha para o texto do botão -->
-            <span>
-
-              <!-- texto exibido para visitantes não autenticados -->
-              Entrar
-
-            </span>
-            <!-- encerra o texto do botão -->
-
-
-          </a>
-          <!-- encerra o botão/link de login -->
-
-
-        </div>
-        <!-- encerra a área dinâmica do usuário -->
-
-
-
-        <!--
-          cria o botão de assinatura
-
-          href="assine-agora.html":
-          direciona para a página de planos da Praxis
-
-          btn:
-          aplica o estilo base de botão
-
-          btn-primary:
-          aplica o estilo visual principal
-        -->
-        <a
-          href="assine-agora.html"
-          class="btn btn-primary" aria-label="Assine agora"
-        >
-
-
-
-          <!--
-            cria o ícone de raio
-
-            width:
-            largura do ícone
-
-            height:
-            altura do ícone
-
-            viewBox:
-            área interna utilizada pelo SVG
-
-            fill="currentColor":
-            usa a cor atual para preencher o desenho
-
-            aria-hidden:
-            indica que o SVG é apenas decorativo
-          -->
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-
-
-            <!-- define os pontos que formam o desenho do raio -->
-            <polygon
-              points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
-            />
-
-
-          </svg>
-          <!-- encerra o SVG do raio -->
-
-
-
-          <!--
-            cria o texto do botão de assinatura
-
-            subscribe-text:
-            permite controlar especificamente esse texto pelo CSS
-          -->
-          <span class="subscribe-text">
-
-            <!-- texto exibido no botão -->
-            Assine agora
-
-          </span>
-          <!-- encerra o texto do botão -->
-
-
-        </a>
-        <!-- encerra o botão de assinatura -->
-
-
-      </div>
-      <!-- encerra o agrupamento das ações do cabeçalho -->
-
-
-    </div>
-    <!-- encerra o contêiner interno do cabeçalho -->
-
-
-  </header>
+  <header class="site-header" data-site-header data-subscription="true"></header>
   <!-- encerra o cabeçalho principal da página -->
 
 

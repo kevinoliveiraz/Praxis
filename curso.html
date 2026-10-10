@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 
 <head>
+  <meta name="theme-color" content="#06070c">
+  <script src="scripts/theme.js"></script>
   <meta charset="utf-8">
 
   <meta
@@ -34,60 +36,26 @@
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="styles/main.css"
-  >
 
-  <link
-    rel="stylesheet"
-    href="styles/curso.css"
-  >
+
+
   <!-- Tokens compartilhados da identidade Praxis. -->
-  <link rel="stylesheet" href="styles/tokens.css">
+
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/curso.css">
+<link rel="stylesheet" href="styles/theme.css">
+<link rel="stylesheet" href="styles/header.css">
+<script src="scripts/header.js" defer></script>
 </head>
 
 
-<body>
+<body class="course-shell">
 
   <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header class="site-header">
-
-    <div class="container header-inner">
-
-      <a
-        href="index.html"
-        class="logo"
-        aria-label="Voltar para a página inicial"
-      >
-        <img
-          src="assets/logo.png"
-          alt="Praxis"
-        >
-      </a>
-
-
-      <div class="header-actions">
-
-        <div id="user-area">
-
-          <a
-            href="login.html"
-            class="btn btn-ghost"
-          >
-            Entrar
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </header>
+  <header class="site-header" data-site-header data-subscription="false"></header>
 
 
   <!-- =====================================================

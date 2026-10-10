@@ -1,18 +1,45 @@
-# Praxis Design System — v1.0
+# Praxis Design System — v1.1
 
 Referência visual: `design-system.html`. Aplicação: `assine-agora.html`.
 
 ## Origem e direção
-O sistema foi extraído da identidade existente do Praxis, com os cursos unificados em curso.html. Preserva a identidade da home: fundo #06070C, verde-lima #E0FB38 e Inter. As superfícies claras facilitam leitura e comparação; o escuro apresenta a marca e destaca o plano anual.
+O sistema foi extraído da identidade existente do Praxis, com os cursos unificados em curso.html. Preserva preto profundo, verde-lima #E0FB38 e Inter. A interface inteira acompanha o tema claro ou escuro escolhido pelo usuário.
 
 ## Arquitetura
 - styles/tokens.css: fonte única dos tokens, com prefixo --praxis.
 - styles/components.css: componentes compartilhados com prefixo px.
+- styles/theme.css: seletor de tema e integração com os estilos existentes da home e dos cursos.
+- scripts/theme.js: inicia o tema antes do CSS e sincroniza a preferência entre páginas e abas.
 - styles/assine-agora.css e styles/design-system.css: composição de cada página.
 - main.css, login.css e curso.css: continuam específicos das telas existentes; suas variáveis principais apontam para os tokens.
 - scripts/planos.js: configuração dos preços provisórios e URLs futuras de checkout.
 
-Carregue tokens.css antes dos componentes e do CSS específico. Use body.px-page nas novas páginas. Use .px-light para superfícies claras. Os nomes antigos continuam disponíveis nos CSS existentes.
+Carregue scripts/theme.js no head antes das folhas de estilo. Carregue tokens.css, componentes, CSS da página e theme.css nessa ordem. Use body.px-page nas novas páginas. A classe histórica .px-light agora representa uma superfície alternativa que também acompanha o tema. Os nomes antigos continuam disponíveis nos CSS existentes.
+
+## Temas
+A paleta --praxis-color-* permanece fixa para a marca, capas e exemplos de cores. Para interfaces, use os papéis semânticos abaixo:
+
+| Papel | Token | Escuro | Claro |
+| --- | --- | --- | --- |
+| Página | --praxis-page | #06070C | #FBFAFB |
+| Card/campo | --praxis-panel | #12141D | #FFFFFF |
+| Seção alternativa | --praxis-panel-alt | #0E1017 | #F2F4EF |
+| Superfície elevada | --praxis-panel-raised | #191D28 | #F1F3F6 |
+| Texto | --praxis-text | #FBFAFB | #15191F |
+| Apoio | --praxis-muted | #B6BAC6 | #535B68 |
+| Destaque em texto/foco | --praxis-accent-text / --praxis-focus | #E0FB38 | #4A5900 |
+| Borda | --praxis-line | #343A48 | #CCD1D8 |
+
+O controlador define data-theme no html. Sem escolha salva, segue prefers-color-scheme. O botão data-theme-toggle alterna e salva light/dark em localStorage.praxis-theme. O tema continua funcionando se o armazenamento estiver bloqueado. Mudanças da preferência do sistema só se aplicam até o usuário fazer uma escolha; alterações em outra aba são sincronizadas.
+
+Verde-lima continua no fundo das ações principais, com texto --praxis-color-ink fixo. O destaque textual do tema claro usa verde escuro. Capas e slides mantêm as cores de seu conteúdo.
+
+## Autenticação
+login.html segue o cartão central e os campos arredondados da referência da aula. Os arquivos assets/login-light.png e assets/login-dark.png são cópias das duas imagens originais fornecidas pelo usuário. Cadastro e completar perfil usam a mesma composição e tema.
+
+A logo recebe uma base escura no modo claro. Texto, placeholder, preenchimento automático, erros, campos e foco têm cores próprias por tema. Em telas baixas, o login fica mais compacto; no celular, a página pode rolar sem cortar o formulário.
+
+scripts/login-ui.js controla exibição de senha, validação nativa e a opção Lembrar meu e-mail. Salva apenas o e-mail quando a opção é marcada e remove a preferência quando desmarcada. scripts/login.js mantém autenticação por senha/Google e sincronização do perfil. A recuperação usa a mesma página: ?modo=recuperar solicita o link e ?modo=redefinir permite criar a nova senha quando há uma sessão válida.
 
 ## Fundamentos
 | Papel | Token | Valor |
@@ -33,9 +60,13 @@ Espaçamento: escala de 4 px (4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80). Contain
 Raios: 8 px pequeno, 12 px botões/campos, 14 px médio, 22 px cards/dialog, 32 px seções, 999 px pílulas. As páginas antigas mantêm os raios já usados para evitar mudanças desnecessárias de composição.
 
 ## Componentes
+- Home e cursos montam o mesmo cabeçalho com scripts/header.js e styles/header.css. Use `<header class="site-header" data-site-header data-subscription="true"></header>` na home e `data-subscription="false"` nos cursos; carregue header.js com defer e header.css após theme.css.
+- scripts/header-session.js é a única implementação do perfil no cabeçalho: prioriza nome de usuário, depois nome completo e e-mail; mantém avatar, entrada e saída. A preferência de tema usa o controlador compartilhado já existente.
+- A foto e o nome abrem um menu de conta com links para perfil, aparência, segurança e sessões, além de sair. scripts/account-menu.js controla clique, setas, Escape, foco e fechamento ao clicar fora; o menu usa links nativos e aria-expanded/aria-controls.
+- perfil.html usa o mesmo cabeçalho sem assinatura, navegação lateral e cartões de configurações. No celular, a navegação vira uma linha de atalhos. Nome/foto são dados da conta; a aparência é uma preferência deste navegador. window.PraxisTheme permite escolher light, dark ou system.
 - .px-button + --primary / --secondary / --outline: altura mínima 48 px; variantes, hover, active, disabled e foco.
 - .px-header, .px-logo, .px-nav, .px-footer: navegação.
-- .px-card + --dark: cards claros e escuros.
+- .px-card + --dark: card padrão e variante de destaque; ambos acompanham o tema.
 - .px-eyebrow e .px-tag + --accent / --soft: hierarquia e etiquetas.
 - .px-field, .px-input, .px-help: labels, campos, ajuda e erro.
 - .px-notice: aviso.

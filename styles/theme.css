@@ -1,0 +1,113 @@
+/* Integração dos temas com a home e a área de cursos existentes. */
+:root {
+  --bg-dark: var(--praxis-page);
+  --bg-light: var(--praxis-text);
+  --card: var(--praxis-panel);
+  --surface: var(--praxis-panel);
+  --surface-soft: var(--praxis-panel-raised);
+  --border: var(--praxis-line);
+  --text: var(--praxis-text);
+  --muted: var(--praxis-muted);
+  --text-muted: var(--praxis-muted);
+  --accent-dark: var(--praxis-accent-text);
+}
+body { background: var(--praxis-page); color: var(--praxis-text); }
+[hidden] { display: none !important; }
+:where(a, button, input, select, summary):focus-visible {
+  outline: 3px solid var(--praxis-focus);
+  outline-offset: 4px;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--praxis-line);
+  border-radius: 50%;
+  background: var(--praxis-panel);
+  color: var(--praxis-text);
+  cursor: pointer;
+  font: 600 13px var(--praxis-font);
+  transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast);
+}
+.theme-toggle:hover { background: var(--praxis-panel-raised); border-color: var(--praxis-accent-text); }
+.theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle__label { display: none; }
+.theme-icon-dark, [data-theme="light"] .theme-icon-light { display: none; }
+[data-theme="light"] .theme-icon-dark { display: block; }
+.site-footer { background: var(--praxis-page); color: var(--praxis-text); border-color: var(--praxis-line); }
+.search-btn:focus-visible, .tag:focus-visible,
+.search-box input:focus-visible, .course-card:focus-visible,
+.catalog-carousel-btn:focus-visible, .history-back:focus-visible {
+  outline-color: var(--praxis-focus);
+}
+/* Une base da marca no tema claro, sem alterar o arquivo da logo. */
+[data-theme="light"] :is(.logo img, .px-logo img) { background: #06070c; border-radius: 10px; }
+.eyebrow, .hero h1 .accent { color: var(--praxis-accent-text); }
+.hero-desc, .popular-label, .feature p, .state { color: var(--praxis-muted); }
+.search-box, .tag { background: var(--praxis-panel-raised); color: var(--praxis-text); }
+.search-box input::placeholder { color: var(--praxis-muted); }
+.search-box:focus-within { border-color: var(--praxis-focus); box-shadow: none; }
+.catalog-panel { background: var(--praxis-panel-alt); color: var(--praxis-text); }
+.catalog-head .eyebrow, .see-all { color: var(--praxis-text); }
+.features, .catalog-carousel-btn { background: var(--praxis-panel); color: var(--praxis-text); border-color: var(--praxis-line); }
+.catalog-carousel-btn:hover:not(:disabled) { color: var(--praxis-color-ink); }
+.feature-ico { background: var(--praxis-accent-tint); color: var(--praxis-accent-text); }
+/* As capas dos cursos e o palco dos slides mantêm as cores do conteúdo. */
+.breadcrumb-area, .course-page { background: var(--praxis-page); }
+.course-toolbar { background: var(--praxis-panel); border-color: var(--praxis-line); }
+.course-sidebar, .course-sidebar-header { background: var(--praxis-panel); color: var(--praxis-text); }
+:is(.course-sidebar-header, .module-block, .sidebar-section, .download-item, .useful-item) { border-color: var(--praxis-line); }
+:is(.history-back, .sidebar-trigger, .sidebar-close, .lesson-play, .nav-btn, .back-to-course-home) {
+  background: var(--praxis-panel);
+  color: var(--praxis-text);
+  border-color: var(--praxis-line);
+}
+:is(.history-back, .sidebar-trigger, .sidebar-close, .nav-btn):hover { background: var(--praxis-panel-raised); color: var(--praxis-text); border-color: var(--praxis-muted); }
+:is(.module-title, .file-name, .course-home-module-title, .course-home-lesson-title, .lesson-header h1, .back-course) { color: var(--praxis-text); }
+:is(.lesson, .lesson-duration, .file-meta, .empty-side, .course-home-progress-info, .course-home-lesson-meta, .lesson-header p, .lesson-text p, .lesson-progress-label) { color: var(--praxis-muted); }
+.lesson:hover, .progress-card, .file-icon, .course-home-empty, .course-home-loading { background: var(--praxis-panel-raised); }
+.lesson.active { background: var(--praxis-accent-tint); color: var(--praxis-text); }
+.lesson-status, .course-home-empty, .course-home-loading { border-color: var(--praxis-line); }
+.lesson.active .lesson-play, .nav-btn.primary { background: var(--praxis-color-accent); color: var(--praxis-color-ink); border-color: var(--praxis-color-accent); }
+.nav-btn.primary:not(:disabled):hover { background: var(--praxis-color-accent-hover); color: var(--praxis-color-ink); }
+.lesson.is-locked :is(.lesson-status, .lesson-play) { background: var(--praxis-panel-raised); color: var(--praxis-muted); border-color: var(--praxis-line); }
+.lesson.is-locked :is(.lesson-num, .lesson-name, .lesson-duration) { color: var(--praxis-muted); }
+.progress-ring-bg { stroke: var(--praxis-line); }
+.progress-count, .course-home-progress-info strong, .download-action, .back-to-course-home-icon { color: var(--praxis-accent-text); }
+.course-home-progress-track, .progress-track { background: var(--praxis-line); }
+.course-home-header { background: var(--praxis-panel); }
+.course-home-lesson-card { background: var(--praxis-panel); border-color: var(--praxis-line); }
+.course-home-lesson-card.is-completed { background: var(--praxis-panel); border-color: var(--praxis-accent-text); }
+.course-home-lesson-icon, .course-home-lesson-status.is-completed { background: var(--praxis-accent-tint); color: var(--praxis-accent-text); }
+.course-home-lesson-status, .course-home-lesson-status.is-available { background: var(--praxis-panel-raised); color: var(--praxis-muted); }
+.course-home-lesson-card.is-locked, .course-home-lesson-card:disabled.is-locked,
+.course-home-lesson-card.is-locked:hover, .course-home-lesson-card:disabled.is-locked:hover {
+  background: var(--praxis-panel-raised); border-color: var(--praxis-line); color: var(--praxis-muted);
+}
+.course-home-lesson-card.is-locked :is(.course-home-lesson-number, .course-home-lesson-title, .course-home-lesson-meta, .course-home-status-icon) { color: var(--praxis-muted); }
+.course-home-lesson-card.is-locked .course-home-lesson-icon,
+.course-home-lesson-card.is-locked:hover .course-home-lesson-icon,
+.course-home-lesson-status.is-locked { background: var(--praxis-panel); border-color: var(--praxis-line); color: var(--praxis-muted); }
+.back-course:hover { color: var(--praxis-accent-text); }
+.footer-inner { color: var(--praxis-muted); }
+.footer-inner a:hover { color: var(--praxis-text); }
+@media (max-width: 520px) {
+  .theme-toggle { width: 40px; height: 40px; }
+  .px-header__inner { gap: 10px; }
+  .px-nav { gap: 10px; }
+  .px-header .px-logo__word { display: none; }
+  .ds-page .px-nav__link { display: none; }
+}
+@media (max-width: 360px) {
+  .px-logo__word { display: none; }
+  .px-nav__link[aria-current="page"] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

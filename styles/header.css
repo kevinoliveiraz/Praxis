@@ -1,0 +1,172 @@
+/* Layout único para a home e os cursos, independente dos contêineres de cada página. */
+:root { --praxis-header-height: 101px; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  min-height: var(--praxis-header-height);
+  background: var(--praxis-page);
+  color: var(--praxis-text);
+  border-bottom: 1px solid var(--praxis-line);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  max-width: 1440px;
+  min-height: calc(var(--praxis-header-height) - 1px);
+  margin: 0 auto;
+  padding: 20px 32px;
+}
+.site-header .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.site-header .logo-image { display: block; width: auto; height: 60px; object-fit: contain; }
+.site-header .header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+}
+.site-header #user-area, .site-header .user-info { display: flex; align-items: center; min-width: 0; }
+.site-header .user-info { gap: 10px; }
+.site-header .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font: 600 14px/1.4 var(--praxis-font);
+  white-space: nowrap;
+  transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast),
+    box-shadow var(--praxis-duration-fast), transform var(--praxis-duration-fast);
+}
+.site-header .btn:focus-visible { outline: 3px solid var(--praxis-focus); outline-offset: 4px; }
+.site-header .btn-ghost { background: transparent; color: var(--praxis-text); border-color: var(--praxis-line); }
+.site-header .btn-ghost:hover { background: var(--praxis-panel-raised); border-color: var(--praxis-muted); }
+.site-header .btn-primary { background: var(--praxis-color-accent); color: var(--praxis-color-ink); }
+.site-header .btn-primary svg { flex-shrink: 0; }
+.site-header .btn-subscribe:focus-visible {
+  background: var(--praxis-color-accent-hover);
+  box-shadow: 0 8px 24px rgb(224 251 56 / 24%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .site-header .btn-subscribe:hover {
+    background: var(--praxis-color-accent-hover);
+    box-shadow: 0 8px 24px rgb(224 251 56 / 24%);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .site-header .btn-subscribe:hover { transform: translateY(-2px); }
+}
+.site-header .btn-subscribe:active { transform: translateY(0); box-shadow: 0 3px 10px rgb(224 251 56 / 16%); }
+.site-header .user-avatar, .site-header .user-avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid var(--praxis-line);
+  border-radius: 50%;
+  background: var(--praxis-panel);
+}
+.site-header .user-avatar { object-fit: cover; }
+.site-header .user-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--praxis-accent-text);
+  font: 700 14px var(--praxis-font);
+}
+.site-header .user-email {
+  max-width: 180px;
+  overflow: hidden;
+  color: var(--praxis-text);
+  font: 500 14px var(--praxis-font);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.site-header .user-account { position: relative; }
+.site-header .account-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 4px 8px 4px 4px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--praxis-text);
+  font: inherit;
+  cursor: pointer;
+}
+.site-header .account-toggle:hover, .site-header .account-toggle[aria-expanded="true"] { background: var(--praxis-panel-raised); border-color: var(--praxis-line); }
+.site-header .account-chevron { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform var(--praxis-duration-fast); }
+.site-header .account-toggle[aria-expanded="true"] .account-chevron { transform: rotate(180deg); }
+.site-header .account-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 14px);
+  z-index: 1;
+  width: min(290px, calc(100vw - 36px));
+  padding: 8px;
+  border: 1px solid var(--praxis-line);
+  border-radius: 16px;
+  background: var(--praxis-panel);
+  color: var(--praxis-text);
+  box-shadow: 0 18px 48px rgb(0 0 0 / 24%);
+}
+.site-header .account-menu__identity { display: grid; gap: 3px; padding: 12px; }
+.site-header .account-menu__identity :is(strong, span) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.site-header .account-menu__identity strong { font: 600 14px/1.5 var(--praxis-font); }
+.site-header .account-menu__identity span { color: var(--praxis-muted); font: 400 12px/1.5 var(--praxis-font); }
+.site-header .account-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--praxis-text);
+  font: 500 14px/1.5 var(--praxis-font);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.site-header .account-menu__item:hover { background: var(--praxis-panel-raised); }
+.site-header .account-menu__item:disabled { opacity: .5; cursor: wait; }
+.site-header .account-menu__item svg { width: 19px; height: 19px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.site-header .account-menu__separator { height: 1px; margin: 8px 12px; background: var(--praxis-line); }
+/* A barra de aulas permanece abaixo do cabeçalho durante a rolagem. */
+.course-toolbar { top: var(--praxis-header-height); }
+@media (max-width: 700px) {
+  :root { --praxis-header-height: 73px; }
+  .site-header__inner { gap: 12px; padding: 14px 18px; }
+  .site-header .logo-image { height: 38px; }
+  .site-header .header-actions { gap: 8px; }
+  .site-header .user-email { display: none; }
+  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 34px; height: 34px; }
+  .site-header .btn { min-height: 40px; padding: 9px 13px; font-size: 13px; }
+}
+@media (max-width: 520px) {
+  :root { --praxis-header-height: 69px; }
+  .site-header__inner { gap: 8px; }
+  .site-header .logo-image { height: 34px; max-width: 110px; }
+  .site-header .header-actions, .site-header .user-info { gap: 6px; }
+  .site-header .header-actions { flex-shrink: 0; }
+  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 32px; height: 32px; }
+  .site-header .account-toggle { gap: 6px; min-height: 40px; }
+  .site-header .account-menu { position: fixed; top: calc(var(--praxis-header-height) + 8px); right: 18px; }
+  .site-header .btn-primary { min-width: 38px; min-height: 38px; padding: 8px 10px; }
+  .site-header .subscribe-text { display: none; }
+}
+@media (max-width: 360px) {
+  .site-header__inner { gap: 6px; }
+  .site-header .btn { padding-inline: 9px; }
+}

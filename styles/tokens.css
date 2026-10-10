@@ -55,3 +55,53 @@
   --praxis-duration-fast: 160ms;
   --praxis-duration-normal: 240ms;
 }
+
+/* Papéis de interface. A paleta da marca acima permanece fixa. */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --praxis-page: #06070c;
+  --praxis-panel: #12141d;
+  --praxis-panel-alt: #0e1017;
+  --praxis-panel-raised: #191d28;
+  --praxis-text: #fbfafb;
+  --praxis-muted: #b6bac6;
+  --praxis-line: #343a48;
+  --praxis-accent-text: #e0fb38;
+  --praxis-accent-tint: #262e17;
+  --praxis-focus: #e0fb38;
+  --praxis-error-text: #ffb4b9;
+  --praxis-error-bg: #381c24;
+  --praxis-success-text: #d6efa5;
+  --praxis-success-bg: #243019;
+  --praxis-auth-card: rgb(6 7 12 / 78%);
+  --praxis-auth-field: rgb(25 29 40 / 90%);
+  --praxis-auth-border: rgb(255 255 255 / 23%);
+  --praxis-auth-field-border: #626877;
+  --praxis-auth-shadow: 0 24px 80px rgb(0 0 0 / 32%);
+  --praxis-auth-background: url("../assets/login-dark.png");
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --praxis-page: #fbfafb;
+  --praxis-panel: #ffffff;
+  --praxis-panel-alt: #f2f4ef;
+  --praxis-panel-raised: #f1f3f6;
+  --praxis-text: #15191f;
+  --praxis-muted: #535b68;
+  --praxis-line: #ccd1d8;
+  --praxis-accent-text: #4a5900;
+  --praxis-accent-tint: #edf4ce;
+  --praxis-focus: #4a5900;
+  --praxis-error-text: #a21d2c;
+  --praxis-error-bg: #fff0f1;
+  --praxis-success-text: #365400;
+  --praxis-success-bg: #edf6d8;
+  --praxis-auth-card: rgb(255 255 255 / 90%);
+  --praxis-auth-field: rgb(241 243 246 / 96%);
+  --praxis-auth-border: rgb(21 25 31 / 22%);
+  --praxis-auth-field-border: #7c8491;
+  --praxis-auth-shadow: 0 24px 80px rgb(37 44 21 / 12%);
+  --praxis-auth-background: url("../assets/login-light.png");
+}

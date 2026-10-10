@@ -2740,300 +2740,19 @@ function preloadNearbySlides() {
 ========================================================= */
 
 async function loadUserSession() {
-  const userArea =
-    $("user-area");
-
-
   try {
-
-    const {
-      data: {
-        session
-      },
-      error
-    } =
-      await supabase
-        .auth
-        .getSession();
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    currentUser =
-      session?.user ||
-      null;
-
-
-    console.log(
-      "Sessão atual:",
-      session
-    );
-
-
-    if (userArea) {
-
-      if (currentUser) {
-
-        renderUser(
-          userArea,
-          currentUser
-        );
-
-      } else {
-
-        renderGuest(
-          userArea
-        );
-      }
-    }
-
-
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error) throw error;
+    currentUser = session?.user || null;
     return currentUser;
-
   } catch (error) {
-
-    console.error(
-      "Erro ao carregar sessão:",
-      error
-    );
-
-
-    currentUser =
-      null;
-
-
-    if (userArea) {
-
-      renderGuest(
-        userArea
-      );
-    }
-
-
+    console.error('Erro ao carregar sessão:', error);
+    currentUser = null;
     return null;
   }
 }
 
-
-/* =========================================================
-   VISITANTE
-========================================================= */
-
-function renderGuest(userArea) {
-  if (!userArea) {
-    return;
-  }
-
-
-  userArea.innerHTML = `
-    <a
-      href="login.html"
-      class="btn btn-ghost"
-    >
-
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        aria-hidden="true"
-      >
-        <path
-          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-        />
-
-        <circle
-          cx="12"
-          cy="7"
-          r="4"
-        />
-      </svg>
-
-      Entrar
-
-    </a>
-  `;
-}
-
-
-/* =========================================================
-   USUÁRIO
-========================================================= */
-
-function renderUser(
-  userArea,
-  user
-) {
-  if (
-    !userArea ||
-    !user
-  ) {
-    return;
-  }
-
-
-  const email =
-    escapeHtml(
-      user.email ||
-      ""
-    );
-
-
-  const avatarUrl =
-    user.user_metadata
-      ?.avatar_url ||
-    user.user_metadata
-      ?.picture ||
-    "";
-
-
-  const name =
-    user.user_metadata
-      ?.full_name ||
-    user.user_metadata
-      ?.name ||
-    user.email ||
-    "U";
-
-
-  const initial =
-    escapeHtml(
-      String(name)
-        .trim()
-        .charAt(0)
-        .toUpperCase()
-    );
-
-
-  const avatar =
-    avatarUrl
-
-      ? `
-        <img
-          src="${escapeHtml(
-            avatarUrl
-          )}"
-          alt="Foto do usuário"
-          class="user-avatar"
-          referrerpolicy="no-referrer"
-        >
-      `
-
-      : `
-        <div
-          class="user-avatar-placeholder"
-          aria-hidden="true"
-        >
-          ${initial}
-        </div>
-      `;
-
-
-  userArea.innerHTML = `
-    <div class="user-info">
-
-      ${avatar}
-
-      <span
-        class="user-email"
-        title="${email}"
-      >
-        ${email}
-      </span>
-
-      <button
-        type="button"
-        id="logout-btn"
-        class="btn btn-ghost"
-      >
-        Sair
-      </button>
-
-    </div>
-  `;
-
-
-  $("logout-btn")
-    ?.addEventListener(
-      "click",
-      logout
-    );
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-async function logout() {
-  const button =
-    $("logout-btn");
-
-
-  try {
-
-    if (button) {
-
-      button.disabled =
-        true;
-
-
-      button.textContent =
-        "Saindo...";
-    }
-
-
-    const {
-      error
-    } =
-      await supabase
-        .auth
-        .signOut();
-
-
-    if (error) {
-      throw error;
-    }
-
-
-    window.location.href =
-      "login.html";
-
-  } catch (error) {
-
-    console.error(
-      "Erro ao sair:",
-      error
-    );
-
-
-    if (button) {
-
-      button.disabled =
-        false;
-
-
-      button.textContent =
-        "Sair";
-    }
-
-
-    alert(
-      "Não foi possível sair da conta."
-    );
-  }
-}
-
-
-/* =========================================================
-   LIMPAR MAPAS
-========================================================= */
-
+/* LIMPAR MAPAS */
 function clearDataMaps() {
   slidesByLesson.clear();
 
@@ -6579,109 +6298,31 @@ window.addEventListener(
    ALTERAÇÃO DE AUTENTICAÇÃO
 ========================================================= */
 
-supabase
-  .auth
-  .onAuthStateChange(
-    async (
-      event,
-      session
-    ) => {
-
-      currentUser =
-        session?.user ||
-        null;
-
-
-      console.log(
-        "Evento Auth:",
-        event
-      );
-
-
-      console.log(
-        "Sessão Auth:",
-        session
-      );
-
-
-      const userArea =
-        $("user-area");
-
-
-      if (userArea) {
-
-        if (currentUser) {
-
-          renderUser(
-            userArea,
-            currentUser
-          );
-
-        } else {
-
-          renderGuest(
-            userArea
-          );
-        }
-      }
-
-
-      if (
-        event ===
-        "SIGNED_OUT"
-      ) {
-
-        progressByLesson.clear();
-
-
+supabase.auth.onAuthStateChange((event, session) => {
+  currentUser = session?.user || null;
+  if (event === 'SIGNED_OUT') {
+    progressByLesson.clear();
+    updateProgress();
+    renderLessons();
+    updateLessonSelection();
+    renderCourseHome();
+    return;
+  }
+  if (event === 'SIGNED_IN' && currentUser && lessons.length) {
+    // Carrega o progresso fora do callback de autenticação do Supabase.
+    window.setTimeout(async () => {
+      try {
+        await loadProgress();
         updateProgress();
-
-
         renderLessons();
-
         updateLessonSelection();
-
         renderCourseHome();
-
-        return;
+      } catch (error) {
+        console.error('Erro ao atualizar progresso após login:', error);
       }
-
-
-      if (
-        event ===
-          "SIGNED_IN" &&
-        currentUser &&
-        lessons.length
-      ) {
-
-        try {
-
-          await loadProgress();
-
-          updateProgress();
-
-
-          renderLessons();
-
-          updateLessonSelection();
-
-          renderCourseHome();
-
-        } catch (error) {
-
-          console.error(
-            "Erro ao atualizar progresso após login:",
-            error
-          );
-        }
-      }
-    }
-  );
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
+    }, 0);
+  }
+});
 
 async function init() { // cria a função assíncrona responsável por iniciar toda a página de curso
   try { // inicia o bloco protegido da inicialização para permitir o tratamento de erros

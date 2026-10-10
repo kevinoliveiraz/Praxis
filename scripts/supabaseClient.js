@@ -31,7 +31,8 @@ export async function upsertUserProfile(user) {
     nome_completo: user.user_metadata?.full_name || user.user_metadata?.name || '',
     email: user.email,
     provedor_login: user.app_metadata?.provider || 'email',
-    avatar_url: user.user_metadata?.avatar_url || null,
+    avatar_url: user.user_metadata?.praxis_avatar_mode === 'initials' ? null :
+      user.user_metadata?.avatar_url || user.user_metadata?.picture || null,
     ultimo_login: new Date().toISOString(),
   };
   const { data: existing } = await supabase
@@ -41,7 +42,9 @@ export async function upsertUserProfile(user) {
     .maybeSingle();
 
   if (existing) {
-    await supabase.from('usuarios').update(payload).eq('user_id', user.id);
+    // O login sincroniza o acesso sem substituir nome e foto editados no perfil.
+    const { email, provedor_login, ultimo_login } = payload;
+    await supabase.from('usuarios').update({ email, provedor_login, ultimo_login }).eq('user_id', user.id);
   } else {
     await supabase.from('usuarios').insert(payload);
   }

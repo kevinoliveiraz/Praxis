@@ -1,570 +1,107 @@
-:root { /* cria variáveis CSS globais que podem ser reutilizadas em todo o arquivo */
-
-  --bg-dark: var(--praxis-color-background); /* define a cor escura principal da interface */
-
-  --bg-light: var(--praxis-color-white); /* define a cor clara principal do fundo */
-
-  --accent: var(--praxis-color-accent); /* define a cor de destaque principal da Praxis */
-
-  --accent-hover: var(--praxis-color-accent-hover); /* define a cor de destaque usada ao passar o mouse */
-
-  --text-dark: var(--praxis-color-ink); /* define a cor principal dos textos escuros */
-
-  --text-muted: var(--praxis-color-muted-dark); /* define uma cor mais suave para textos secundários */
-
-  --border-line: var(--praxis-color-border-light); /* define a cor padrão das bordas e linhas */
-
-  --border-focus: var(--praxis-color-background); /* define a cor da borda quando um campo recebe foco */
-
-} /* encerra a declaração das variáveis globais */
-
-
-* { /* seleciona todos os elementos da página */
-
-  box-sizing: border-box; /* faz largura e altura incluírem padding e borda no cálculo do tamanho */
-
-  margin: 0; /* remove as margens padrão de todos os elementos */
-
-  padding: 0; /* remove os espaçamentos internos padrão de todos os elementos */
-
-} /* encerra as configurações aplicadas a todos os elementos */
-
-
-html, body { /* aplica estas configurações tanto ao documento HTML quanto ao corpo da página */
-
-  min-height: 100vh; /* garante uma altura mínima equivalente a 100% da altura visível da tela */
-
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* define Inter como fonte principal e outras fontes como alternativas */
-
-  background-color: var(--bg-light); /* utiliza a variável de cor clara como fundo da página */
-
-  color: var(--text-dark); /* utiliza a variável de texto escuro como cor padrão dos textos */
-
-  overflow-x: hidden; /* impede que apareça uma barra de rolagem horizontal */
-
-  position: relative; /* permite posicionar elementos relacionados tomando a página como referência */
-
-} /* encerra as configurações gerais do HTML e do body */
-
-
-/* ---------------------------------- */
-/* Vetor de Fundo (vector1.png)       */
-/* ---------------------------------- */
-
-.bg-vector { /* seleciona a imagem decorativa de fundo que possui a classe bg-vector */
-
-  position: fixed; /* mantém a imagem fixa em relação à tela mesmo durante a rolagem */
-
-  top: 0; /* posiciona a imagem no limite superior da tela */
-
-  left: 0; /* posiciona a imagem no limite esquerdo da tela */
-
-  width: 100vw; /* faz a imagem ocupar 100% da largura visível da tela */
-
-  height: 100vh; /* faz a imagem ocupar 100% da altura visível da tela */
-
-  object-fit: cover; /* faz a imagem preencher toda a área disponível, podendo cortar partes excedentes */
-
-  object-position: center; /* mantém o centro da imagem como referência durante o ajuste */
-
-  z-index: 0; /* posiciona a imagem na camada base da página */
-
-  pointer-events: none; /* impede que a imagem receba cliques ou outros eventos do mouse */
-
-  user-select: none; /* impede que a imagem seja selecionada pelo usuário */
-
-} /* encerra as configurações da imagem de fundo */
-
-
-/* ---------------------------------- */
-/* Layout Principal                   */
-/* ---------------------------------- */
-
-.login-wrap { /* seleciona o contêiner principal que envolve o cartão de login */
-
-  position: relative; /* permite controlar sua posição e o funcionamento do z-index */
-
-  min-height: 100vh; /* garante que o contêiner ocupe pelo menos toda a altura da tela */
-
-  display: flex; /* transforma o contêiner em um layout flexível */
-
-  align-items: center; /* centraliza verticalmente o conteúdo dentro do contêiner */
-
-  justify-content: center; /* centraliza horizontalmente o conteúdo dentro do contêiner */
-
-  padding: 40px 20px; /* cria 40px de espaço interno vertical e 20px horizontal */
-
-  z-index: 1; /* posiciona este conteúdo acima da imagem de fundo */
-
-} /* encerra as configurações do contêiner principal */
-
-
-/* ---------------------------------- */
-/* Card Central e Logo Circular       */
-/* ---------------------------------- */
-
-.login-card { /* seleciona o cartão que contém a logo e o formulário */
-
-  width: 100%; /* permite que o cartão utilize toda a largura disponível */
-
-  max-width: 380px; /* limita a largura máxima do cartão a 380 pixels */
-
-  display: flex; /* transforma o cartão em um contêiner flexível */
-
-  flex-direction: column; /* organiza os elementos internos verticalmente */
-
-  align-items: center; /* centraliza horizontalmente os elementos internos */
-
-  gap: 24px; /* cria um espaço de 24 pixels entre os elementos internos */
-
-  z-index: 2; /* posiciona o cartão em uma camada acima dos elementos com z-index menor */
-
-} /* encerra as configurações do cartão */
-
-
-.login-logo { /* seleciona o contêiner circular que envolve a logo */
-
-  width: 130px; /* define a largura do contêiner da logo */
-
-  height: 130px; /* define a altura do contêiner da logo */
-
-  border-radius: 50%; /* transforma o contêiner quadrado em um círculo */
-
-  background: var(--bg-dark); /* utiliza a cor escura definida nas variáveis como fundo */
-
-  display: flex; /* transforma o contêiner da logo em um layout flexível */
-
-  align-items: center; /* centraliza a logo verticalmente */
-
-  justify-content: center; /* centraliza a logo horizontalmente */
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); /* cria uma sombra abaixo e ao redor do círculo */
-
-  overflow: hidden; /* esconde qualquer parte do conteúdo que ultrapasse o círculo */
-
-  padding: 16px; /* cria um espaço interno de 16 pixels ao redor da logo */
-
-} /* encerra as configurações do contêiner da logo */
-
-
-.login-logo-img { /* seleciona especificamente a imagem da logo */
-
-  width: 100%; /* faz a imagem utilizar toda a largura disponível no contêiner */
-
-  height: 100%; /* faz a imagem utilizar toda a altura disponível no contêiner */
-
-  object-fit: contain; /* mantém toda a imagem visível sem cortar e preserva suas proporções */
-
-} /* encerra as configurações da imagem da logo */
-
-
-/* ---------------------------------- */
-/* Formulário e Campos                */
-/* ---------------------------------- */
-
-.login-form { /* seleciona o formulário utilizado nas páginas de autenticação */
-
-  width: 100%; /* faz o formulário ocupar toda a largura disponível do cartão */
-
-  display: flex; /* transforma o formulário em um contêiner flexível */
-
-  flex-direction: column; /* organiza os campos e botões verticalmente */
-
-  gap: 18px; /* cria um espaço de 18 pixels entre os elementos do formulário */
-
-} /* encerra as configurações do formulário */
-
-
-.field { /* seleciona cada grupo individual de campo do formulário */
-
-  display: flex; /* transforma o grupo do campo em um contêiner flexível */
-
-  flex-direction: column; /* coloca o label e o campo um abaixo do outro */
-
-  gap: 6px; /* cria um espaço de 6 pixels entre o label e o campo */
-
-} /* encerra as configurações de cada grupo de campo */
-
-
-.field label { /* seleciona os elementos label que estão dentro de elementos com a classe field */
-
-  font-size: 13px; /* define o tamanho do texto do label em 13 pixels */
-
-  color: var(--text-muted); /* utiliza a cor secundária para o texto do label */
-
-  font-weight: 500; /* define um peso intermediário para a fonte */
-
-} /* encerra as configurações dos labels */
-
-
-.field-input { /* seleciona o contêiner que agrupa ícone, input e possíveis botões */
-
-  display: flex; /* organiza os elementos internos usando Flexbox */
-
-  align-items: center; /* alinha verticalmente ícone, campo e botão ao centro */
-
-  gap: 10px; /* cria um espaço de 10 pixels entre os elementos internos */
-
-  border-bottom: 1.5px solid var(--border-line); /* cria uma linha de 1,5px na parte inferior do campo */
-
-  padding: 6px 0; /* cria 6px de espaço interno em cima e embaixo e nenhum nas laterais */
-
-  position: relative; /* permite posicionar elementos internos tomando este contêiner como referência */
-
-  transition: border-color 0.2s ease; /* suaviza durante 0,2 segundo a alteração da cor da borda */
-
-} /* encerra as configurações do contêiner dos campos */
-
-
-.field-input:focus-within { /* aplica estas regras quando algum elemento dentro de field-input recebe foco */
-
-  border-color: var(--border-focus); /* altera a linha inferior para a cor definida para foco */
-
-} /* encerra o estado de foco do campo */
-
-
-.field-input .icon-left { /* seleciona os ícones com classe icon-left existentes dentro dos campos */
-
-  color: var(--text-dark); /* define a cor do ícone usando a cor principal de texto */
-
-  flex-shrink: 0; /* impede que o Flexbox diminua o tamanho do ícone quando faltar espaço */
-
-} /* encerra as configurações dos ícones dos campos */
-
-
-.field-input input { /* seleciona os elementos input existentes dentro de field-input */
-
-  flex: 1; /* faz o input ocupar todo o espaço restante disponível na linha */
-
-  border: none; /* remove a borda padrão do campo */
-
-  outline: none; /* remove o contorno padrão exibido pelo navegador ao receber foco */
-
-  background: transparent; /* deixa o fundo do input transparente */
-
-  font-size: 15px; /* define o tamanho do texto digitado em 15 pixels */
-
-  padding: 4px 0; /* cria 4px de espaço interno vertical e nenhum espaço lateral */
-
-  color: var(--text-dark); /* define a cor do texto digitado */
-
-  font-family: inherit; /* faz o campo herdar a mesma fonte utilizada pelo elemento pai */
-
-} /* encerra as configurações dos inputs */
-
-
-.field-input input::placeholder { /* seleciona o texto temporário exibido dentro dos inputs vazios */
-
-  color: #9ea3b0; /* define uma cor mais clara para o texto do placeholder */
-
-  font-size: 14px; /* define o tamanho do texto do placeholder em 14 pixels */
-
-} /* encerra as configurações do placeholder */
-
-
-/* Botão Ver/Ocultar Senha */
-
-.btn-toggle-pass { /* seleciona o botão utilizado para mostrar ou ocultar a senha */
-
-  background: none; /* remove qualquer fundo padrão do botão */
-
-  border: none; /* remove a borda padrão do botão */
-
-  cursor: pointer; /* transforma o cursor em uma mão ao passar sobre o botão */
-
-  padding: 4px; /* cria 4 pixels de espaço interno ao redor do ícone */
-
-  display: flex; /* utiliza Flexbox para organizar o conteúdo do botão */
-
-  align-items: center; /* centraliza verticalmente o ícone */
-
-  justify-content: center; /* centraliza horizontalmente o ícone */
-
-  color: var(--text-muted); /* utiliza a cor secundária no ícone */
-
-  transition: color 0.2s ease; /* suaviza a mudança de cor durante 0,2 segundo */
-
-} /* encerra as configurações do botão de visualizar senha */
-
-
-.btn-toggle-pass:hover { /* aplica estas regras quando o mouse estiver sobre o botão de visualizar senha */
-
-  color: var(--text-dark); /* deixa o ícone mais escuro quando o usuário passa o mouse */
-
-} /* encerra o estado hover do botão de visualizar senha */
-
-
-.hidden { /* seleciona qualquer elemento que possua a classe hidden */
-
-  display: none !important; /* esconde completamente o elemento e força esta regra a ter prioridade */
-
-} /* encerra as configurações da classe usada para esconder elementos */
-
-
-/* ---------------------------------- */
-/* Link Esqueceu sua senha?           */
-/* ---------------------------------- */
-
-.forgot { /* seleciona o link "Esqueceu sua senha?" */
-
-  align-self: flex-end; /* posiciona o próprio link no final horizontal do contêiner flexível */
-
-  font-size: 12px; /* define o tamanho do texto em 12 pixels */
-
-  color: var(--text-muted); /* utiliza a cor secundária para o texto */
-
-  text-decoration: none; /* remove o sublinhado padrão dos links */
-
-  margin-top: -6px; /* desloca o link 6 pixels para cima */
-
-  font-weight: 500; /* define um peso intermediário para a fonte */
-
-  transition: color 0.2s ease; /* suaviza a mudança de cor quando o estado do link muda */
-
-} /* encerra as configurações do link de recuperação de senha */
-
-
-.forgot:hover { /* aplica estas regras quando o mouse passa sobre o link */
-
-  color: var(--text-dark); /* altera a cor do texto para a cor escura principal */
-
-  text-decoration: underline; /* adiciona um sublinhado ao link */
-
-} /* encerra o estado hover do link */
-
-
-/* ---------------------------------- */
-/* Mensagens de Alerta                */
-/* ---------------------------------- */
-
-.login-msg { /* seleciona a área utilizada para exibir mensagens ao usuário */
-
-  font-size: 13px; /* define o tamanho do texto da mensagem */
-
-  padding: 10px 12px; /* cria 10px de espaço vertical e 12px de espaço horizontal */
-
-  border-radius: 8px; /* arredonda os cantos da caixa da mensagem */
-
-  text-align: center; /* centraliza o texto da mensagem */
-
-  width: 100%; /* faz a mensagem ocupar toda a largura disponível */
-
-  display: none; /* mantém a mensagem escondida por padrão */
-
-  font-weight: 500; /* define um peso intermediário para o texto */
-
-} /* encerra as configurações gerais das mensagens */
-
-
-.login-msg.error { /* seleciona uma mensagem que possui ao mesmo tempo as classes login-msg e error */
-
-  background: #fde8e8; /* define um fundo avermelhado para indicar erro */
-
-  color: #9b1c1c; /* define uma cor vermelha escura para o texto do erro */
-
-  display: block; /* torna a mensagem de erro visível */
-
-} /* encerra as configurações das mensagens de erro */
-
-
-.login-msg.success { /* seleciona uma mensagem que possui ao mesmo tempo as classes login-msg e success */
-
-  background: #f3face; /* define um fundo claro esverdeado para indicar sucesso */
-
-  color: #3b5000; /* define uma cor verde escura para o texto de sucesso */
-
-  display: block; /* torna a mensagem de sucesso visível */
-
-} /* encerra as configurações das mensagens de sucesso */
-
-
-/* ---------------------------------- */
-/* Botão Entrar Principal             */
-/* ---------------------------------- */
-
-.btn-login { /* seleciona o botão principal utilizado para login, cadastro ou confirmação */
-
-  width: 100%; /* faz o botão ocupar toda a largura disponível */
-
-  padding: 14px; /* cria 14 pixels de espaço interno em todos os lados */
-
-  background: var(--accent); /* utiliza a cor de destaque definida nas variáveis */
-
-  color: var(--text-dark); /* define a cor escura para o texto do botão */
-
-  border-radius: 8px; /* arredonda os cantos do botão */
-
-  font-weight: 800; /* deixa o texto do botão em negrito forte */
-
-  font-size: 15px; /* define o tamanho do texto em 15 pixels */
-
-  letter-spacing: 1px; /* aumenta em 1 pixel o espaço entre as letras */
-
-  border: none; /* remove a borda padrão do botão */
-
-  cursor: pointer; /* mostra o cursor de clique ao passar sobre o botão */
-
-  transition: background-color 0.2s ease, transform 0.1s ease, filter 0.2s ease; /* suaviza mudanças de fundo, posição e brilho */
-
-  font-family: inherit; /* faz o botão utilizar a mesma fonte do elemento pai */
-
-  margin-top: 6px; /* cria um espaço de 6 pixels acima do botão */
-
-} /* encerra as configurações do botão principal */
-
-
-.btn-login:hover { /* aplica estas regras quando o mouse passa sobre o botão principal */
-
-  background: var(--accent-hover); /* altera o fundo para a cor definida para hover */
-
-  filter: brightness(1.03); /* aumenta levemente o brilho do botão */
-
-} /* encerra o estado hover do botão principal */
-
-
-.btn-login:active { /* aplica estas regras enquanto o botão estiver sendo pressionado */
-
-  transform: translateY(1px); /* desloca o botão 1 pixel para baixo para simular o clique */
-
-} /* encerra o estado ativo do botão principal */
-
-
-.btn-login:disabled { /* aplica estas regras quando o botão estiver desabilitado */
-
-  opacity: 0.65; /* deixa o botão parcialmente transparente */
-
-  cursor: wait; /* altera o cursor para indicar que existe uma operação em andamento */
-
-} /* encerra o estado desabilitado do botão principal */
-
-
-/* ---------------------------------- */
-/* Ações Secundárias                  */
-/* ---------------------------------- */
-
-.actions-group { /* seleciona o contêiner que agrupa as ações secundárias */
-
-  display: flex; /* transforma o grupo em um contêiner Flexbox */
-
-  flex-direction: column; /* organiza os elementos verticalmente */
-
-  gap: 10px; /* cria um espaço de 10 pixels entre as ações */
-
-  width: 100%; /* faz o grupo ocupar toda a largura disponível */
-
-  align-items: center; /* centraliza horizontalmente os elementos internos */
-
-} /* encerra as configurações do grupo de ações */
-
-
-.btn-register { /* seleciona o botão ou link utilizado como ação secundária de cadastro */
-
-  width: 100%; /* faz o elemento ocupar toda a largura disponível */
-
-  padding: 11px; /* cria 11 pixels de espaço interno */
-
-  background: transparent; /* deixa o fundo transparente */
-
-  color: var(--text-dark); /* utiliza a cor escura principal no texto */
-
-  border-radius: 8px; /* arredonda os cantos */
-
-  font-weight: 600; /* deixa o texto em seminegrito */
-
-  font-size: 14px; /* define o tamanho do texto em 14 pixels */
-
-  border: 1.5px solid var(--border-line); /* cria uma borda de 1,5px usando a cor padrão das bordas */
-
-  cursor: pointer; /* exibe o cursor de clique ao passar sobre o elemento */
-
-  transition: background-color 0.2s ease, border-color 0.2s ease; /* suaviza alterações do fundo e da borda */
-
-  font-family: inherit; /* utiliza a mesma fonte definida no elemento pai */
-
-} /* encerra as configurações do botão secundário */
-
-
-.btn-register:hover { /* aplica estas regras quando o mouse passa sobre o botão secundário */
-
-  background: rgba(0, 0, 0, 0.04); /* adiciona um fundo preto com apenas 4% de opacidade */
-
-  border-color: var(--border-focus); /* deixa a borda com a cor utilizada para destaque/foco */
-
-} /* encerra o estado hover do botão secundário */
-
-
-.google-btn { /* seleciona o botão utilizado para continuar com o Google */
-
-  width: 100%; /* faz o botão ocupar toda a largura disponível */
-
-  height: 44px; /* define a altura do botão em 44 pixels */
-
-  border-radius: 8px; /* arredonda os cantos do botão */
-
-  background: #ffffff; /* define o fundo do botão como branco */
-
-  border: 1.5px solid var(--border-line); /* cria uma borda utilizando a cor padrão */
-
-  display: flex; /* transforma o botão em um contêiner Flexbox */
-
-  align-items: center; /* centraliza verticalmente o ícone e o texto */
-
-  justify-content: center; /* centraliza horizontalmente o conteúdo */
-
-  gap: 10px; /* cria 10 pixels de espaço entre o ícone e o texto */
-
-  cursor: pointer; /* exibe o cursor de clique */
-
-  font-family: inherit; /* utiliza a mesma fonte definida no elemento pai */
-
-  font-size: 14px; /* define o tamanho do texto em 14 pixels */
-
-  font-weight: 600; /* deixa o texto em seminegrito */
-
-  color: var(--text-dark); /* utiliza a cor principal de texto */
-
-  transition: background-color 0.2s ease, box-shadow 0.2s ease; /* suaviza alterações de fundo e sombra */
-
-} /* encerra as configurações do botão do Google */
-
-
-.google-btn:hover { /* aplica estas regras quando o mouse passa sobre o botão do Google */
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* adiciona uma sombra suave abaixo do botão */
-
-  border-color: #c5c8d2; /* altera levemente a cor da borda */
-
-} /* encerra o estado hover do botão do Google */
-
-
-.google-btn img { /* seleciona a imagem existente dentro do botão do Google */
-
-  width: 20px; /* define a largura do ícone do Google em 20 pixels */
-
-  height: 20px; /* define a altura do ícone do Google em 20 pixels */
-
-} /* encerra as configurações da imagem do Google */
-
-
-/* ---------------------------------- */
-/* Responsividade                     */
-/* ---------------------------------- */
-
-@media (max-width: 768px) { /* aplica as regras abaixo somente quando a tela tiver no máximo 768 pixels de largura */
-
-  .login-card { /* seleciona o cartão de login dentro da regra responsiva */
-
-    max-width: 320px; /* reduz a largura máxima do cartão para 320 pixels em telas menores */
-
-  } /* encerra as configurações responsivas do cartão */
-
-
-  .login-logo { /* seleciona o contêiner da logo em telas menores */
-
-    width: 110px; /* reduz a largura da logo para 110 pixels */
-
-    height: 110px; /* reduz a altura da logo para 110 pixels */
-
-  } /* encerra as configurações responsivas da logo */
-
-} /* encerra a regra de responsividade para telas de até 768 pixels */
+/* Autenticação: cartão central e os fundos originais da aula. */
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body.auth-page {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--praxis-page);
+  background-image: var(--praxis-auth-background);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--praxis-text);
+  font-family: var(--praxis-font);
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+.auth-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 32px 8px; }
+.auth-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
+.auth-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.auth-back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.auth-topbar .theme-toggle { width: auto; padding-inline: 14px; border-radius: 999px; background: var(--praxis-auth-card); }
+.auth-topbar .theme-toggle__label { display: inline; }
+.login-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px 20px; }
+.login-card { width: 100%; max-width: 420px; padding: 24px 36px 30px; border: 1px solid var(--praxis-auth-border); border-radius: 16px; background: var(--praxis-auth-card); color: var(--praxis-text); box-shadow: var(--praxis-auth-shadow); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.login-logo { display: flex; align-items: center; justify-content: center; width: 176px; height: 128px; overflow: hidden; margin: 0 auto 14px; border-radius: 12px; }
+.login-logo-img { display: block; width: 176px; height: 176px; object-fit: contain; flex-shrink: 0; }
+[data-theme="light"] .login-logo { background: #06070c; }
+.auth-title { margin: 0; text-align: center; font-size: 20px; line-height: 1.3; font-weight: 700; letter-spacing: -.5px; }
+.login-page .auth-title { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.auth-subtitle { margin: 0 0 24px; text-align: center; font-size: 13px; line-height: 1.6; color: var(--praxis-muted); }
+.auth-title:not(:first-child) + .auth-subtitle { margin-top: 8px; }
+.login-form { display: flex; flex-direction: column; gap: 18px; width: 100%; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { padding-left: 4px; font-size: 12px; font-weight: 600; color: var(--praxis-text); }
+.field-input { display: flex; align-items: center; position: relative; min-height: 52px; border-radius: 999px; background: var(--praxis-auth-field); border: 1px solid var(--praxis-auth-field-border); }
+.field-input:focus-within { border-color: var(--praxis-focus); outline: 2px solid var(--praxis-focus); outline-offset: 3px; }
+.field-input input { width: 100%; min-width: 0; height: 50px; border: 0; border-radius: inherit; background: transparent; padding: 0 54px 0 20px; color: var(--praxis-text); font-size: 14px; outline: none; }
+.field-input input:focus-visible { outline: none; }
+.field-input input::placeholder { color: var(--praxis-muted); opacity: 1; }
+.field-input input:-webkit-autofill, .field-input input:-webkit-autofill:hover, .field-input input:-webkit-autofill:focus { -webkit-text-fill-color: var(--praxis-text); caret-color: var(--praxis-text); -webkit-box-shadow: 0 0 0 1000px var(--praxis-panel-raised) inset; }
+.field-input .icon-left, .field-icon { position: absolute; right: 18px; width: 18px; height: 18px; color: var(--praxis-muted); pointer-events: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.field-input:has(.btn-toggle-pass) .icon-left { display: none; }
+.btn-toggle-pass { position: absolute; right: 7px; display: grid; place-items: center; width: 38px; height: 38px; padding: 9px; border: 0; border-radius: 50%; background: transparent; color: var(--praxis-muted); cursor: pointer; }
+.btn-toggle-pass:hover { background: var(--praxis-panel); color: var(--praxis-text); }
+.btn-toggle-pass svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hidden, [hidden] { display: none !important; }
+.login-options { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+.remember-email { display: inline-flex; gap: 7px; align-items: center; cursor: pointer; }
+.remember-email input { width: 16px; height: 16px; margin: 0; accent-color: var(--praxis-accent-text); cursor: pointer; }
+.forgot { color: var(--praxis-text); font-size: 12px; font-weight: 600; }
+.forgot:hover { text-decoration: underline; text-underline-offset: 3px; }
+.login-msg { display: none; margin: 0; padding: 12px 14px; border: 1px solid transparent; border-radius: 10px; font-size: 13px; line-height: 1.6; text-align: center; overflow-wrap: anywhere; }
+.login-msg.error { display: block; background: var(--praxis-error-bg); color: var(--praxis-error-text); }
+.login-msg.success { display: block; background: var(--praxis-success-bg); color: var(--praxis-success-text); }
+.btn-login { width: 100%; min-height: 50px; padding: 13px 20px; border: 1px solid transparent; border-radius: 999px; background: var(--praxis-color-accent); color: var(--praxis-color-ink); font-size: 14px; font-weight: 700; cursor: pointer; transition: background var(--praxis-duration-fast), transform var(--praxis-duration-fast); }
+.btn-login:hover { background: var(--praxis-color-accent-hover); }
+.btn-login:active { transform: translateY(1px); }
+.btn-login:disabled, .google-btn:disabled { opacity: .65; cursor: wait; }
+.auth-divider { display: flex; align-items: center; gap: 12px; color: var(--praxis-muted); font-size: 11px; }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--praxis-auth-border); }
+.google-btn, .btn-register { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; padding: 12px 18px; border: 1px solid var(--praxis-auth-border); border-radius: 999px; background: var(--praxis-auth-field); color: var(--praxis-text); font-size: 13px; font-weight: 600; text-align: center; cursor: pointer; }
+.google-btn:hover, .btn-register:hover { background: var(--praxis-panel-raised); border-color: var(--praxis-muted); }
+.google-btn img { width: 20px; height: 20px; }
+.actions-group { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 12px; }
+.auth-register { margin: 22px 0 0; text-align: center; font-size: 12px; line-height: 1.8; color: var(--praxis-muted); }
+.auth-register a, .auth-return { color: var(--praxis-text); font-weight: 600; }
+.auth-register a:hover, .auth-return:hover { text-decoration: underline; text-underline-offset: 3px; }
+.auth-return { display: block; margin-top: 22px; font-size: 13px; text-align: center; }
+.auth-footer { padding: 0 20px 20px; text-align: center; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--praxis-text); }
+.profile-intro { text-align: center; }
+.profile-intro h1 { margin: 0 0 8px; font-size: 22px; }
+.profile-intro p { margin: 0; color: var(--praxis-muted); font-size: 14px; line-height: 1.5; }
+.login-page.is-recovery .auth-title { position: static; width: auto; height: auto; clip-path: none; white-space: normal; }
+.login-page.is-recovery .auth-subtitle { margin-top: 10px; }
+@media (max-height: 760px) and (min-width: 521px) {
+  .login-page .auth-topbar { padding-top: 12px; }
+  .login-page .login-wrap { padding-block: 16px; }
+  .login-page .login-card { padding-block: 20px 24px; }
+  .login-page .auth-subtitle { display: none; }
+  .login-page .field > label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .login-page .login-form { gap: 14px; }
+  .login-page .auth-register { margin-top: 16px; }
+  .login-page .auth-footer { padding-bottom: 12px; }
+  .login-page.is-recovery .auth-subtitle { display: block; }
+  .login-page.is-recovery .field > label { position: static; width: auto; height: auto; padding-left: 4px; clip-path: none; }
+}
+@media (max-width: 520px) {
+  .auth-topbar { padding: 16px 18px 4px; gap: 10px; }
+  .auth-back { font-size: 12px; }
+  .auth-topbar .theme-toggle { padding-inline: 12px; }
+  .login-wrap { padding: 20px 18px; }
+  .login-card { padding: 24px; }
+  body.auth-page { background-attachment: scroll; }
+  .login-options { gap: 10px; }
+}
+@media (max-width: 360px) {
+  .auth-topbar .theme-toggle { width: 40px; padding: 0; }
+  .auth-topbar .theme-toggle__label { display: none; }
+  .login-card { padding-inline: 20px; }
+  .login-options { font-size: 11px; }
+  .forgot { font-size: 11px; }
+}
