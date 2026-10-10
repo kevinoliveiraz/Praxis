@@ -1,0 +1,38 @@
+{
+  "source_files": 482,
+  "courses": 23,
+  "lessons": 64,
+  "slides": 485,
+  "materials": 27,
+  "uploads": 387,
+  "source_gaps": [
+    {
+      "course": "PowerPoint",
+      "type": "course_source_gap",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "course": "Power BI",
+      "type": "course_source_gap",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "course": "Vibe Coding",
+      "type": "course_source_gap",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "preserved_existing_ids": {
+    "catalogo": 15,
+    "modulos": 4,
+    "aulas": 17,
+    "slides": 104,
+    "materiais": 0
+  }
+}

@@ -1,0 +1,2243 @@
+{
+  "modulos": [
+    {
+      "id": 1,
+      "nome": "Excel — Conteúdo Prático",
+      "ordem": 1,
+      "status": "publicado",
+      "curso_id": 1,
+      "descricao": "Curso prático de Excel do básico ao avançado",
+      "created_at": "2026-08-14T20:59:48.005783-03:00"
+    },
+    {
+      "id": 2,
+      "nome": "Word — Conteúdo Prático",
+      "ordem": 1,
+      "status": "publicado",
+      "curso_id": 2,
+      "descricao": "Curso prático de Word",
+      "created_at": "2026-08-15T21:49:54.767457-03:00"
+    },
+    {
+      "id": 3,
+      "nome": "PowerPoint — Conteúdo Prático",
+      "ordem": 1,
+      "status": "publicado",
+      "curso_id": 3,
+      "descricao": "Curso prático de PowerPoint",
+      "created_at": "2026-08-16T13:46:35.904364-03:00"
+    },
+    {
+      "id": 4,
+      "nome": "Power BI — Conteúdo Prático",
+      "ordem": 1,
+      "status": "publicado",
+      "curso_id": 4,
+      "descricao": "Curso prático de Power BI",
+      "created_at": "2026-08-16T13:46:35.904364-03:00"
+    }
+  ],
+  "materiais": null,
+  "objects": [
+    {
+      "name": "chat-gpt/conteudo/pratica-01/01.png",
+      "size": "1828973",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/02.png",
+      "size": "1840519",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/03.png",
+      "size": "1874311",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/04.png",
+      "size": "1757946",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/05.png",
+      "size": "1950848",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/06.png",
+      "size": "1667051",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/07.png",
+      "size": "1516699",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/08.png",
+      "size": "1709128",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/09.png",
+      "size": "1891756",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/10.png",
+      "size": "1638521",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/11.png",
+      "size": "1481941",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/12.png",
+      "size": "1624595",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/13.png",
+      "size": "1507857",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "chat-gpt/conteudo/pratica-01/14.png",
+      "size": "1524582",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/1.jpg",
+      "size": "153046",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/2.jpg",
+      "size": "184307",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/3.jpg",
+      "size": "217453",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/4.jpg",
+      "size": "163649",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/5.jpg",
+      "size": "213431",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/conhecendo-excel/6.jpg",
+      "size": "226925",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/1.jpg",
+      "size": "191701",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/2.jpg",
+      "size": "154284",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/3.jpg",
+      "size": "160801",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/4.jpg",
+      "size": "203298",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/5.jpg",
+      "size": "244652",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/6.jpg",
+      "size": "217359",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/7.jpg",
+      "size": "230678",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/introducao/8.jpg",
+      "size": "232045",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/1.jpg",
+      "size": "238570",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/10.jpg",
+      "size": "219544",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/11.jpg",
+      "size": "229582",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/2.jpg",
+      "size": "230221",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/3.jpg",
+      "size": "226694",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/4.jpg",
+      "size": "225484",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/5.jpg",
+      "size": "235436",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/6.jpg",
+      "size": "225409",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/7.jpg",
+      "size": "215160",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/8.jpg",
+      "size": "222940",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-01/9.jpg",
+      "size": "237466",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-02/1.jpg",
+      "size": "223638",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-02/2.jpg",
+      "size": "249249",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-02/3.jpg",
+      "size": "240428",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-02/4.jpg",
+      "size": "248084",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-02/5.jpg",
+      "size": "228881",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/1.jpg",
+      "size": "241433",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/2.jpg",
+      "size": "252358",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/3.jpg",
+      "size": "261072",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/4.jpg",
+      "size": "261034",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/5.jpg",
+      "size": "252994",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-03/6.jpg",
+      "size": "272945",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/1.jpg",
+      "size": "313274",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/2.jpg",
+      "size": "254177",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/3.jpg",
+      "size": "271069",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/4.jpg",
+      "size": "258337",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/5.jpg",
+      "size": "258577",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/6.jpg",
+      "size": "303505",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-04/7.jpg",
+      "size": "277428",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/1.jpg",
+      "size": "262056",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/10.jpg",
+      "size": "333295",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/2.jpg",
+      "size": "259531",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/3.jpg",
+      "size": "268612",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/4.jpg",
+      "size": "278475",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/5.jpg",
+      "size": "234577",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/6.jpg",
+      "size": "279679",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/7.jpg",
+      "size": "238127",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/8.jpg",
+      "size": "293726",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "excel/conteudo/pratica-05/9.jpg",
+      "size": "273116",
+      "bucket": "slides",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/01.png",
+      "size": "1397550",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/02.png",
+      "size": "1496361",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/03.png",
+      "size": "1449651",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/04.png",
+      "size": "1462199",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/05.png",
+      "size": "1482102",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/06.png",
+      "size": "1503371",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/07.png",
+      "size": "1530565",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/08.png",
+      "size": "1621001",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/09.png",
+      "size": "1437066",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "outlook/conteudo/pratica-01/10.png",
+      "size": "1449780",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/introducao/01-24.png",
+      "size": "1655820",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/introducao/02-24.png",
+      "size": "1731434",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/introducao/03-24.png",
+      "size": "1605799",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-01/04-24.png",
+      "size": "1777177",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-01/05-24.png",
+      "size": "1654622",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-01/06-24.png",
+      "size": "1614312",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-01/08-24.png",
+      "size": "1631846",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-01/09-24.png",
+      "size": "1623079",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-02/09-24.png",
+      "size": "1553212",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-02/10-24.png",
+      "size": "1690283",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-02/11-24.png",
+      "size": "1786660",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-02/12-24.png",
+      "size": "1719779",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-02/13-24.png",
+      "size": "1638370",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-03/14-24.png",
+      "size": "1445381",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-03/15-24.png",
+      "size": "1547092",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-03/16-24.png",
+      "size": "1357902",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-03/17-24.png",
+      "size": "1444884",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-03/18-24.png",
+      "size": "1271099",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/19-24.png",
+      "size": "1390383",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/20-24.png",
+      "size": "1327360",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/21-24.png",
+      "size": "1417530",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/22-24.png",
+      "size": "1502740",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/23-24.png",
+      "size": "1586448",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-bi/conteudo/pratica-04/24-24.png",
+      "size": "1279485",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-point/conteudo/introducao/.emptyFolderPlaceholder",
+      "size": "0",
+      "bucket": "slides",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "name": "power-point/conteudo/pratica-01/.emptyFolderPlaceholder",
+      "size": "0",
+      "bucket": "slides",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "name": "power-point/conteudo/pratica-02/.emptyFolderPlaceholder",
+      "size": "0",
+      "bucket": "slides",
+      "mimetype": "application/octet-stream"
+    },
+    {
+      "name": "power-point/conteudo/pratica-03/14-17.png",
+      "size": "2016523",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-point/conteudo/pratica-03/15-17.png",
+      "size": "1825888",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-point/conteudo/pratica-03/16-17.png",
+      "size": "1940412",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "power-point/conteudo/pratica-03/17-17.png",
+      "size": "2087731",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/introducao/01-28.png",
+      "size": "1415070",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/introducao/02-28.png",
+      "size": "1435811",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/introducao/03-28.png",
+      "size": "1476584",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/introducao/04-28.png",
+      "size": "1464557",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-01/05-28.png",
+      "size": "1443477",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-01/06.-28.png",
+      "size": "1408424",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-01/07-28.png",
+      "size": "1431222",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-01/08-28.png",
+      "size": "1436810",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-01/09-28.png",
+      "size": "1436928",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/10-28.png",
+      "size": "1459954",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/11-28.png",
+      "size": "1651757",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/12-28.png",
+      "size": "1537558",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/13-28.png",
+      "size": "1591981",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/14-28.png",
+      "size": "1549318",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-02/15-28.png",
+      "size": "1526910",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-03/16-28.png",
+      "size": "1515664",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-03/17-28.png",
+      "size": "1595255",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-03/18-28.png",
+      "size": "1654801",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-03/19-28.png",
+      "size": "1512493",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-03/20-28.png",
+      "size": "1672433",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/21-28.png",
+      "size": "1585675",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/22-28.png",
+      "size": "1606130",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/23-28.png",
+      "size": "1561869",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/24-28.png",
+      "size": "1510204",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/25-28.png",
+      "size": "1597075",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/26-28.png",
+      "size": "1665149",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/27-28.png",
+      "size": "1531403",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "word/conteudo/pratica-04/28-28.png",
+      "size": "1750161",
+      "bucket": "slides",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "capa excel.jpeg",
+      "size": "229845",
+      "bucket": "storage capas",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "chatgpt.png",
+      "size": "2180988",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "CLAUDE NA PRATICA.png",
+      "size": "2177484",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "COPILOT.png",
+      "size": "1982457",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "GEMINI NA PRATICA.png",
+      "size": "2164753",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "INVESTIMENTOS PESSOAL.png",
+      "size": "1760399",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "ORATORIA.png",
+      "size": "1849684",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "OUTLOOK NA          PRATICA.png",
+      "size": "1907685",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "POWER BI NA PRATICA.png",
+      "size": "2779875",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "POWERPOINT NA PRATICA.jpg",
+      "size": "209420",
+      "bucket": "storage capas",
+      "mimetype": "image/jpeg"
+    },
+    {
+      "name": "PROJETOS PRATICOS.png",
+      "size": "2120810",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "SOFT SKILLS NA PRATICA.png",
+      "size": "2049463",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "teams.png",
+      "size": "2166188",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "VIBE CODING.png",
+      "size": "2153583",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    },
+    {
+      "name": "Word na pratica.png",
+      "size": "2139985",
+      "bucket": "storage capas",
+      "mimetype": "image/png"
+    }
+  ],
+  "aulas": [
+    {
+      "id": 1,
+      "nome": "Conhecendo Excel",
+      "ordem": 1,
+      "status": "publicado",
+      "descricao": "Conheça a interface do Excel e os principais elementos da ferramenta.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:10:43.419551-03:00"
+    },
+    {
+      "id": 2,
+      "nome": "Introdução",
+      "ordem": 2,
+      "status": "publicado",
+      "descricao": "Introdução aos conceitos básicos e primeiros passos no Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:12:06.7258-03:00"
+    },
+    {
+      "id": 3,
+      "nome": "Prática 01",
+      "ordem": 3,
+      "status": "publicado",
+      "descricao": "Primeira atividade prática de Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:14:58.432694-03:00"
+    },
+    {
+      "id": 4,
+      "nome": "Prática 02",
+      "ordem": 4,
+      "status": "publicado",
+      "descricao": "Segunda atividade prática de Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:16:30.099746-03:00"
+    },
+    {
+      "id": 5,
+      "nome": "Prática 03",
+      "ordem": 5,
+      "status": "publicado",
+      "descricao": "Terceira atividade prática de Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:17:07.177863-03:00"
+    },
+    {
+      "id": 6,
+      "nome": "Prática 04",
+      "ordem": 6,
+      "status": "publicado",
+      "descricao": "Quarta atividade prática de Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:17:47.886646-03:00"
+    },
+    {
+      "id": 7,
+      "nome": "Prática 05",
+      "ordem": 7,
+      "status": "publicado",
+      "descricao": "Quinta atividade prática de Excel.",
+      "modulo_id": 1,
+      "created_at": "2026-08-14T21:18:24.801327-03:00"
+    },
+    {
+      "id": 8,
+      "nome": "Introdução",
+      "ordem": 1,
+      "status": "publicado",
+      "descricao": "Introdução ao Word e aos conceitos básicos.",
+      "modulo_id": 2,
+      "created_at": "2026-08-15T21:52:59.53531-03:00"
+    },
+    {
+      "id": 9,
+      "nome": "Prática 01",
+      "ordem": 2,
+      "status": "publicado",
+      "descricao": "Primeira atividade prática de Word.",
+      "modulo_id": 2,
+      "created_at": "2026-08-15T21:52:59.53531-03:00"
+    },
+    {
+      "id": 10,
+      "nome": "Prática 02",
+      "ordem": 3,
+      "status": "publicado",
+      "descricao": "Segunda atividade prática de Word.",
+      "modulo_id": 2,
+      "created_at": "2026-08-15T21:52:59.53531-03:00"
+    },
+    {
+      "id": 11,
+      "nome": "Prática 03",
+      "ordem": 4,
+      "status": "publicado",
+      "descricao": "Terceira atividade prática de Word.",
+      "modulo_id": 2,
+      "created_at": "2026-08-15T21:52:59.53531-03:00"
+    },
+    {
+      "id": 12,
+      "nome": "Prática 04",
+      "ordem": 5,
+      "status": "publicado",
+      "descricao": "Quarta atividade prática de Word.",
+      "modulo_id": 2,
+      "created_at": "2026-08-15T21:52:59.53531-03:00"
+    },
+    {
+      "id": 13,
+      "nome": "Introdução",
+      "ordem": 1,
+      "status": "publicado",
+      "descricao": "Introdução ao Power BI e aos principais recursos da ferramenta.",
+      "modulo_id": 4,
+      "created_at": "2026-08-18T21:29:39.967729-03:00"
+    },
+    {
+      "id": 14,
+      "nome": "Prática 01",
+      "ordem": 2,
+      "status": "publicado",
+      "descricao": "Primeira atividade prática de Power BI.",
+      "modulo_id": 4,
+      "created_at": "2026-08-18T21:29:39.967729-03:00"
+    },
+    {
+      "id": 15,
+      "nome": "Prática 02",
+      "ordem": 3,
+      "status": "publicado",
+      "descricao": "Segunda atividade prática de Power BI.",
+      "modulo_id": 4,
+      "created_at": "2026-08-18T21:29:39.967729-03:00"
+    },
+    {
+      "id": 16,
+      "nome": "Prática 03",
+      "ordem": 4,
+      "status": "publicado",
+      "descricao": "Terceira atividade prática de Power BI.",
+      "modulo_id": 4,
+      "created_at": "2026-08-18T21:29:39.967729-03:00"
+    },
+    {
+      "id": 17,
+      "nome": "Prática 04",
+      "ordem": 5,
+      "status": "publicado",
+      "descricao": "Quarta atividade prática de Power BI.",
+      "modulo_id": 4,
+      "created_at": "2026-08-18T21:29:39.967729-03:00"
+    }
+  ],
+  "identity": [
+    {
+      "table": "aulas",
+      "column": "id",
+      "identity": "YES",
+      "sequence": "public.aulas_id_seq",
+      "generation": "BY DEFAULT"
+    },
+    {
+      "table": "catalogo",
+      "column": "id",
+      "identity": "YES",
+      "sequence": "public.catalogo_id_seq",
+      "generation": "BY DEFAULT"
+    },
+    {
+      "table": "materiais",
+      "column": "id",
+      "identity": "YES",
+      "sequence": "public.materiais_id_seq",
+      "generation": "BY DEFAULT"
+    },
+    {
+      "table": "modulos",
+      "column": "id",
+      "identity": "YES",
+      "sequence": "public.modulos_id_seq",
+      "generation": "BY DEFAULT"
+    },
+    {
+      "table": "slides",
+      "column": "id",
+      "identity": "YES",
+      "sequence": "public.slides_id_seq",
+      "generation": "BY DEFAULT"
+    }
+  ],
+  "slides": [
+    {
+      "id": 1,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 1",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/1.jpg"
+    },
+    {
+      "id": 2,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 2",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/2.jpg"
+    },
+    {
+      "id": 3,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 3",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/3.jpg"
+    },
+    {
+      "id": 4,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 4",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/4.jpg"
+    },
+    {
+      "id": 5,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 5",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/5.jpg"
+    },
+    {
+      "id": 6,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Conhecendo Excel - Slide 6",
+      "aula_id": 1,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/conhecendo-excel/6.jpg"
+    },
+    {
+      "id": 7,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 1",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/1.jpg"
+    },
+    {
+      "id": 8,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 2",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/2.jpg"
+    },
+    {
+      "id": 9,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 3",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/3.jpg"
+    },
+    {
+      "id": 10,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 4",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/4.jpg"
+    },
+    {
+      "id": 11,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 5",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/5.jpg"
+    },
+    {
+      "id": 12,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 6",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/6.jpg"
+    },
+    {
+      "id": 13,
+      "ordem": 7,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 7",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/7.jpg"
+    },
+    {
+      "id": 14,
+      "ordem": 8,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 8",
+      "aula_id": 2,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/introducao/8.jpg"
+    },
+    {
+      "id": 15,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 1",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/1.jpg"
+    },
+    {
+      "id": 16,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 2",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/2.jpg"
+    },
+    {
+      "id": 17,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 3",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/3.jpg"
+    },
+    {
+      "id": 18,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 4",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/4.jpg"
+    },
+    {
+      "id": 19,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 5",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/5.jpg"
+    },
+    {
+      "id": 20,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 6",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/6.jpg"
+    },
+    {
+      "id": 21,
+      "ordem": 7,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 7",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/7.jpg"
+    },
+    {
+      "id": 22,
+      "ordem": 8,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 8",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/8.jpg"
+    },
+    {
+      "id": 23,
+      "ordem": 9,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 9",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/9.jpg"
+    },
+    {
+      "id": 24,
+      "ordem": 10,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 10",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/10.jpg"
+    },
+    {
+      "id": 25,
+      "ordem": 11,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 11",
+      "aula_id": 3,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-01/11.jpg"
+    },
+    {
+      "id": 26,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 1",
+      "aula_id": 4,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-02/1.jpg"
+    },
+    {
+      "id": 27,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 2",
+      "aula_id": 4,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-02/2.jpg"
+    },
+    {
+      "id": 28,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 3",
+      "aula_id": 4,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-02/3.jpg"
+    },
+    {
+      "id": 29,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 4",
+      "aula_id": 4,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-02/4.jpg"
+    },
+    {
+      "id": 30,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 1",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/1.jpg"
+    },
+    {
+      "id": 31,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 2",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/2.jpg"
+    },
+    {
+      "id": 32,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 3",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/3.jpg"
+    },
+    {
+      "id": 33,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 4",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/4.jpg"
+    },
+    {
+      "id": 34,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 5",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/5.jpg"
+    },
+    {
+      "id": 35,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 6",
+      "aula_id": 5,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-03/6.jpg"
+    },
+    {
+      "id": 36,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 1",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/1.jpg"
+    },
+    {
+      "id": 37,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 2",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/2.jpg"
+    },
+    {
+      "id": 38,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 3",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/3.jpg"
+    },
+    {
+      "id": 39,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 4",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/4.jpg"
+    },
+    {
+      "id": 40,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 5",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/5.jpg"
+    },
+    {
+      "id": 41,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 6",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/6.jpg"
+    },
+    {
+      "id": 42,
+      "ordem": 7,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 7",
+      "aula_id": 6,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-04/7.jpg"
+    },
+    {
+      "id": 43,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 1",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/1.jpg"
+    },
+    {
+      "id": 44,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 2",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/2.jpg"
+    },
+    {
+      "id": 45,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 3",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/3.jpg"
+    },
+    {
+      "id": 46,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 4",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/4.jpg"
+    },
+    {
+      "id": 47,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 5",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/5.jpg"
+    },
+    {
+      "id": 48,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 6",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/6.jpg"
+    },
+    {
+      "id": 49,
+      "ordem": 7,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 7",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/7.jpg"
+    },
+    {
+      "id": 50,
+      "ordem": 8,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 8",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/8.jpg"
+    },
+    {
+      "id": 51,
+      "ordem": 9,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 9",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/9.jpg"
+    },
+    {
+      "id": 52,
+      "ordem": 10,
+      "status": "publicado",
+      "titulo": "Prática 05 - Slide 10",
+      "aula_id": 7,
+      "created_at": "2026-08-14T21:49:21.357274-03:00",
+      "imagem_path": "excel/conteudo/pratica-05/10.jpg"
+    },
+    {
+      "id": 53,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 1",
+      "aula_id": 8,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/introducao/01-28.png"
+    },
+    {
+      "id": 54,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 2",
+      "aula_id": 8,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/introducao/02-28.png"
+    },
+    {
+      "id": 55,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 3",
+      "aula_id": 8,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/introducao/03-28.png"
+    },
+    {
+      "id": 56,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 4",
+      "aula_id": 8,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/introducao/04-28.png"
+    },
+    {
+      "id": 57,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 1",
+      "aula_id": 9,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-01/05-28.png"
+    },
+    {
+      "id": 58,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 2",
+      "aula_id": 9,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-01/06-28.png"
+    },
+    {
+      "id": 59,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 3",
+      "aula_id": 9,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-01/07-28.png"
+    },
+    {
+      "id": 60,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 4",
+      "aula_id": 9,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-01/08-28.png"
+    },
+    {
+      "id": 61,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 5",
+      "aula_id": 9,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-01/09-28.png"
+    },
+    {
+      "id": 62,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 1",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/10-28.png"
+    },
+    {
+      "id": 63,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 2",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/11-28.png"
+    },
+    {
+      "id": 64,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 3",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/12-28.png"
+    },
+    {
+      "id": 65,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 4",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/13-28.png"
+    },
+    {
+      "id": 66,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 5",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/14-28.png"
+    },
+    {
+      "id": 67,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 6",
+      "aula_id": 10,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-02/15-28.png"
+    },
+    {
+      "id": 68,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 1",
+      "aula_id": 11,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-03/16-28.png"
+    },
+    {
+      "id": 69,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 2",
+      "aula_id": 11,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-03/17-28.png"
+    },
+    {
+      "id": 70,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 3",
+      "aula_id": 11,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-03/18-28.png"
+    },
+    {
+      "id": 71,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 4",
+      "aula_id": 11,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-03/19-28.png"
+    },
+    {
+      "id": 72,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 5",
+      "aula_id": 11,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-03/20-28.png"
+    },
+    {
+      "id": 73,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 1",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/21-28.png"
+    },
+    {
+      "id": 74,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 2",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/22-28.png"
+    },
+    {
+      "id": 75,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 3",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/23-28.png"
+    },
+    {
+      "id": 76,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 4",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/24-28.png"
+    },
+    {
+      "id": 77,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 5",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/25-28.png"
+    },
+    {
+      "id": 78,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 6",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/26-28.png"
+    },
+    {
+      "id": 79,
+      "ordem": 7,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 7",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/27-28.png"
+    },
+    {
+      "id": 80,
+      "ordem": 8,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 8",
+      "aula_id": 12,
+      "created_at": "2026-08-15T21:58:46.009-03:00",
+      "imagem_path": "word/conteudo/pratica-04/28-28.png"
+    },
+    {
+      "id": 81,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 1",
+      "aula_id": 13,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/introducao/01-24.png"
+    },
+    {
+      "id": 82,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 2",
+      "aula_id": 13,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/introducao/02-24.png"
+    },
+    {
+      "id": 83,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Introdução - Slide 3",
+      "aula_id": 13,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/introducao/03-24.png"
+    },
+    {
+      "id": 84,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 1",
+      "aula_id": 14,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-01/04-24.png"
+    },
+    {
+      "id": 85,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 2",
+      "aula_id": 14,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-01/05-24.png"
+    },
+    {
+      "id": 86,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 3",
+      "aula_id": 14,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-01/06-24.png"
+    },
+    {
+      "id": 87,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 4",
+      "aula_id": 14,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-01/07-24.png"
+    },
+    {
+      "id": 88,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 01 - Slide 5",
+      "aula_id": 14,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-01/08-24.png"
+    },
+    {
+      "id": 89,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 1",
+      "aula_id": 15,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-02/09-24.png"
+    },
+    {
+      "id": 90,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 2",
+      "aula_id": 15,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-02/10-24.png"
+    },
+    {
+      "id": 91,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 3",
+      "aula_id": 15,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-02/11-24.png"
+    },
+    {
+      "id": 92,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 4",
+      "aula_id": 15,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-02/12-24.png"
+    },
+    {
+      "id": 93,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 02 - Slide 5",
+      "aula_id": 15,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-02/13-24.png"
+    },
+    {
+      "id": 94,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 1",
+      "aula_id": 16,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-03/14-24.png"
+    },
+    {
+      "id": 95,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 2",
+      "aula_id": 16,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-03/15-24.png"
+    },
+    {
+      "id": 96,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 3",
+      "aula_id": 16,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-03/16-24.png"
+    },
+    {
+      "id": 97,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 4",
+      "aula_id": 16,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-03/17-24.png"
+    },
+    {
+      "id": 98,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 03 - Slide 5",
+      "aula_id": 16,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-03/18-24.png"
+    },
+    {
+      "id": 99,
+      "ordem": 1,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 1",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/19-24.png"
+    },
+    {
+      "id": 100,
+      "ordem": 2,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 2",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/20-24.png"
+    },
+    {
+      "id": 101,
+      "ordem": 3,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 3",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/21-24.png"
+    },
+    {
+      "id": 102,
+      "ordem": 4,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 4",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/22-24.png"
+    },
+    {
+      "id": 103,
+      "ordem": 5,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 5",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/23-24.png"
+    },
+    {
+      "id": 104,
+      "ordem": 6,
+      "status": "publicado",
+      "titulo": "Prática 04 - Slide 6",
+      "aula_id": 17,
+      "created_at": "2026-08-18T21:42:26.422497-03:00",
+      "imagem_path": "power-bi/conteudo/pratica-04/24-24.png"
+    }
+  ],
+  "catalogo": [
+    {
+      "id": 1,
+      "nome": "Excel Prático — Básico ao Avançado",
+      "status": "publicado",
+      "categoria": "Excel",
+      "descricao": "\nAprenda Excel do básico ao avançado com aulas práticas, exercícios e projetos aplicados ao dia a dia.",
+      "created_at": "2026-07-29T13:35:31.396653-03:00",
+      "ordem_exibicao": 1,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/capa%20excel.jpeg"
+    },
+    {
+      "id": 2,
+      "nome": "Word",
+      "status": "publicado",
+      "categoria": "word",
+      "descricao": "Word na pratica",
+      "created_at": "2026-08-15T20:53:58.212019-03:00",
+      "ordem_exibicao": 2,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/Word%20na%20pratica.png"
+    },
+    {
+      "id": 3,
+      "nome": "Power Point",
+      "status": "publicado",
+      "categoria": "powerpoint",
+      "descricao": "powerpoint na pratica",
+      "created_at": "2026-08-15T20:56:04.88202-03:00",
+      "ordem_exibicao": 3,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWERPOINT%20NA%20PRATICA.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Power-BL",
+      "status": "publicado",
+      "categoria": "power-bl",
+      "descricao": "power-bl na prática",
+      "created_at": "2026-08-15T21:00:30.431353-03:00",
+      "ordem_exibicao": 4,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWER%20BI%20NA%20PRATICA.png"
+    },
+    {
+      "id": 5,
+      "nome": "Outlook",
+      "status": "publicado",
+      "categoria": "outlook",
+      "descricao": "Outlook na prática",
+      "created_at": "2026-08-18T22:33:41.964876-03:00",
+      "ordem_exibicao": 5,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/OUTLOOK%20NA%20%20%20%20%20%20%20%20%20%20PRATICA.png"
+    },
+    {
+      "id": 6,
+      "nome": "ChatGPT",
+      "status": "publicado",
+      "categoria": "chat-gpt",
+      "descricao": "ChatGPT na prática",
+      "created_at": "2026-08-18T22:33:41.964876-03:00",
+      "ordem_exibicao": 6,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/chatgpt.png"
+    },
+    {
+      "id": 7,
+      "nome": "Teams",
+      "status": "publicado",
+      "categoria": "teams",
+      "descricao": "Teams na prática",
+      "created_at": "2026-08-18T22:33:41.964876-03:00",
+      "ordem_exibicao": 7,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/teams.png"
+    },
+    {
+      "id": 8,
+      "nome": "Claude na Prática",
+      "status": "publicado",
+      "categoria": "claude",
+      "descricao": "Aprenda a usar o Claude na prática.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 8,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/CLAUDE%20NA%20PRATICA.png"
+    },
+    {
+      "id": 9,
+      "nome": "Copilot na Prática",
+      "status": "publicado",
+      "categoria": "copilot",
+      "descricao": "Aprenda a usar o Copilot na prática.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 9,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/COPILOT.png"
+    },
+    {
+      "id": 10,
+      "nome": "Gemini na Prática",
+      "status": "publicado",
+      "categoria": "gemini",
+      "descricao": "Aprenda a usar o Gemini na prática.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 10,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/GEMINI%20NA%20PRATICA.png"
+    },
+    {
+      "id": 11,
+      "nome": "Investimentos Pessoal",
+      "status": "publicado",
+      "categoria": "investimentos-pessoal",
+      "descricao": "Aprenda conceitos práticos para organizar e desenvolver seus investimentos pessoais.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 11,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/INVESTIMENTOS%20PESSOAL.png"
+    },
+    {
+      "id": 12,
+      "nome": "Oratória na Prática",
+      "status": "publicado",
+      "categoria": "oratoria",
+      "descricao": "Desenvolva sua comunicação e oratória através da prática.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 12,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/ORATORIA.png"
+    },
+    {
+      "id": 13,
+      "nome": "Projetos Práticos",
+      "status": "publicado",
+      "categoria": "projetos-praticos",
+      "descricao": "Aprenda através do desenvolvimento de projetos práticos.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 13,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/PROJETOS%20PRATICOS.png"
+    },
+    {
+      "id": 14,
+      "nome": "Soft Skills na Prática",
+      "status": "publicado",
+      "categoria": "soft-skills",
+      "descricao": "Desenvolva habilidades comportamentais importantes para sua carreira.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 14,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/SOFT%20SKILLS%20NA%20PRATICA.png"
+    },
+    {
+      "id": 15,
+      "nome": "Vibe Coding",
+      "status": "publicado",
+      "categoria": "vibe-coding",
+      "descricao": "Aprenda desenvolvimento na prática utilizando Vibe Coding.",
+      "created_at": "2026-08-29T13:38:48.985874-03:00",
+      "ordem_exibicao": 15,
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/VIBE%20CODING.png"
+    }
+  ],
+  "policies": {
+    "cmd": "SELECT",
+    "qual": "(bucket_id = 'slides'::text)",
+    "roles": [
+      "authenticated"
+    ],
+    "tablename": "objects",
+    "permissive": "PERMISSIVE",
+    "policyname": "Usuários autenticados podem visualizar slides 1k5hhpe_0",
+    "schemaname": "storage",
+    "with_check": null
+  }
+}

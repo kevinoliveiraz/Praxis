@@ -2,6 +2,17 @@
 
 Este arquivo registra as alterações estruturais e funcionais relevantes do projeto.
 
+## 2026-10-09 — Conteúdo dos cursos importado do Drive
+
+- Catálogo publicado no Supabase com 23 cursos, 23 módulos, 64 aulas, 485 slides e 27 materiais de apoio.
+- Envio de 387 arquivos e reutilização dos arquivos existentes, com os 53 slides de Excel conferidos contra os sete ZIPs originais.
+- Preservação dos IDs e vínculos antigos, incluindo os usados pelo progresso dos alunos.
+- Correção de caminhos de slides de Word e Power BI, da capa de Outlook e do nome Power BI no catálogo.
+- Materiais associados às práticas e disponíveis em bucket privado para alunos autenticados.
+- Ferramentas de importação, SQL, inventários, recibos e relatório em `tools/content-import/`.
+- Verificação de todos os valores publicados e dos 535 arquivos referenciados; sem referências publicadas a arquivos ausentes.
+- Registradas três lacunas na origem: PowerPoint 13, Power BI 7 e Vibe Coding 6.
+
 ## 2026-10-09 — Perfil e configurações da conta
 
 - Menu ao clicar na foto/nome, com Meu perfil, Aparência, Segurança, Sessões da conta e Sair. Suporte a teclado, Escape e fechamento fora do menu.

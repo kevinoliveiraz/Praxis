@@ -1,0 +1,228 @@
+{
+  "verified_at": "2026-10-10T01:11:05.790365+00:00",
+  "counts": {
+    "catalogo": 23,
+    "modulos": 23,
+    "aulas": 64,
+    "slides": 485,
+    "materiais": 27
+  },
+  "all_planned_values_match": true,
+  "existing_ids_and_parents_preserved": true,
+  "duplicate_slide_order": 0,
+  "verified_upload_receipts": 387,
+  "upload_buckets": {
+    "materiais": 27,
+    "slides": 352,
+    "storage capas": 8
+  },
+  "source_gaps": [
+    {
+      "course": "PowerPoint",
+      "type": "course_source_gap",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "course": "Power BI",
+      "type": "course_source_gap",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "course": "Vibe Coding",
+      "type": "course_source_gap",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "nome": "Excel Prático — Básico ao Avançado",
+      "modulos": 1,
+      "aulas": 7,
+      "slides": 53,
+      "materiais": 12
+    },
+    {
+      "id": 2,
+      "nome": "Word",
+      "modulos": 1,
+      "aulas": 5,
+      "slides": 28,
+      "materiais": 3
+    },
+    {
+      "id": 3,
+      "nome": "Power Point",
+      "modulos": 1,
+      "aulas": 4,
+      "slides": 16,
+      "materiais": 2
+    },
+    {
+      "id": 4,
+      "nome": "Power BI",
+      "modulos": 1,
+      "aulas": 5,
+      "slides": 24,
+      "materiais": 4
+    },
+    {
+      "id": 5,
+      "nome": "Outlook",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 10,
+      "materiais": 0
+    },
+    {
+      "id": 6,
+      "nome": "ChatGPT",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 14,
+      "materiais": 0
+    },
+    {
+      "id": 7,
+      "nome": "Teams",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 8,
+      "materiais": 0
+    },
+    {
+      "id": 8,
+      "nome": "Claude na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 21,
+      "materiais": 1
+    },
+    {
+      "id": 9,
+      "nome": "Copilot na Prática",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 10,
+      "materiais": 0
+    },
+    {
+      "id": 10,
+      "nome": "Gemini na Prática",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 9,
+      "materiais": 2
+    },
+    {
+      "id": 11,
+      "nome": "Investimentos Pessoal",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 12,
+      "materiais": 0
+    },
+    {
+      "id": 12,
+      "nome": "Oratória na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 30,
+      "materiais": 0
+    },
+    {
+      "id": 13,
+      "nome": "Projetos Práticos",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 27,
+      "materiais": 3
+    },
+    {
+      "id": 14,
+      "nome": "Soft Skills na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 30,
+      "materiais": 0
+    },
+    {
+      "id": 15,
+      "nome": "Vibe Coding",
+      "modulos": 1,
+      "aulas": 1,
+      "slides": 19,
+      "materiais": 0
+    },
+    {
+      "id": 16,
+      "nome": "Transição de Carreira",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 17,
+      "nome": "LinkedIn, Currículo e Entrevistas",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 24,
+      "materiais": 0
+    },
+    {
+      "id": 18,
+      "nome": "Power Automate na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 19,
+      "nome": "Sucesso do Cliente",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 20,
+      "nome": "Processos e Melhoria Contínua",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 21,
+      "nome": "Comunicação Escrita Corporativa",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 22,
+      "nome": "Agentes de IA na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 20,
+      "materiais": 0
+    },
+    {
+      "id": 23,
+      "nome": "Storytelling na Prática",
+      "modulos": 1,
+      "aulas": 3,
+      "slides": 30,
+      "materiais": 0
+    }
+  ]
+}

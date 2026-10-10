@@ -1,0 +1,3485 @@
+{
+  "1hcs7DBvwsX6QVTsyZERT1nyEn4gMKJpF": {
+    "drive_id": "1hcs7DBvwsX6QVTsyZERT1nyEn4gMKJpF",
+    "source": "EXCEL/CONTEUDO/INTRODUÇÃO/MATERIAL EXTERNO/Desafio_Excel_na_Pratica.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1hcs7DBvwsX6QVTsyZERT1nyEn4gMKJpF.xlsx",
+    "size": 35556,
+    "sha256": "7310501364b0ed6be505d1ddd8ca5ebdf34c1bed837449f35961125e413e3267",
+    "action": "already_uploaded"
+  },
+  "1p3EY5FoDE8piuYuG1shm7a_hSzIoN-zb": {
+    "drive_id": "1p3EY5FoDE8piuYuG1shm7a_hSzIoN-zb",
+    "source": "EXCEL/CONTEUDO/CONHECENDO EXCEL/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/1p3EY5FoDE8piuYuG1shm7a_hSzIoN-zb.zip",
+    "size": 1159937,
+    "sha256": "b7c7d9f8359e5674d9472547a804a72468a17f7de99a8cffb3e67bfa55dd207f",
+    "action": "already_uploaded"
+  },
+  "1uyW2hfJKfeUqJR9zUDBIoquGKAzR7su6": {
+    "drive_id": "1uyW2hfJKfeUqJR9zUDBIoquGKAzR7su6",
+    "source": "EXCEL/CONTEUDO/INTRODUÇÃO/CONTEUDO/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/1uyW2hfJKfeUqJR9zUDBIoquGKAzR7su6.zip",
+    "size": 1636312,
+    "sha256": "de7b041ebedfa5fad8cd023c4e8e0485219ff1d7cf25d4ce357f1e88bcdd0003",
+    "action": "already_uploaded"
+  },
+  "18wboxrmOukumKnbyIcpqDCij8PIZekki": {
+    "drive_id": "18wboxrmOukumKnbyIcpqDCij8PIZekki",
+    "source": "EXCEL/CONTEUDO/PRATICA 01/01.png",
+    "bucket": "materiais",
+    "path": "drive-import/18wboxrmOukumKnbyIcpqDCij8PIZekki.png",
+    "size": 1392354,
+    "sha256": "068a6e1508feed0bf2ea4d4b9301e861b7e2bff74111d6387397d319e339a179",
+    "action": "already_uploaded"
+  },
+  "1C3E3oHf3o_ZH3wZxQ5DzPZjCkfUHK2i8": {
+    "drive_id": "1C3E3oHf3o_ZH3wZxQ5DzPZjCkfUHK2i8",
+    "source": "EXCEL/CONTEUDO/PRATICA 01/ChatGPT Image 9_08_2026, 17_31_12.png",
+    "bucket": "materiais",
+    "path": "drive-import/1C3E3oHf3o_ZH3wZxQ5DzPZjCkfUHK2i8.png",
+    "size": 1276805,
+    "sha256": "6515d72bf81c41f1abbfa6bad7db71d97668192f85d87b639acd8c13f1d24864",
+    "action": "already_uploaded"
+  },
+  "1ad4PXjC0XC9U9gArpWJsa1QBlTobl7xv": {
+    "drive_id": "1ad4PXjC0XC9U9gArpWJsa1QBlTobl7xv",
+    "source": "EXCEL/CONTEUDO/PRATICA 02/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/1ad4PXjC0XC9U9gArpWJsa1QBlTobl7xv.zip",
+    "size": 1191222,
+    "sha256": "837733c747ba2505b8ca5f06130e4d80dcc38a09afc7b279b9b16f63191af673",
+    "action": "already_uploaded"
+  },
+  "1NQFwPLO3RYlO4KJ0thSJyDtsZaJ4zZAm": {
+    "drive_id": "1NQFwPLO3RYlO4KJ0thSJyDtsZaJ4zZAm",
+    "source": "EXCEL/CONTEUDO/PRATICA 03/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/1NQFwPLO3RYlO4KJ0thSJyDtsZaJ4zZAm.zip",
+    "size": 1542962,
+    "sha256": "c5aad436333dc2e0723c48c68e8dd7a4b1d567385b82c855180d43ae2c70dc75",
+    "action": "already_uploaded"
+  },
+  "16iFMCAobA8IhLd6EAjwCwQjIA00AIaI9": {
+    "drive_id": "16iFMCAobA8IhLd6EAjwCwQjIA00AIaI9",
+    "source": "EXCEL/CONTEUDO/PRATICA 04/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/16iFMCAobA8IhLd6EAjwCwQjIA00AIaI9.zip",
+    "size": 1937677,
+    "sha256": "8fdea6a395dc57a8defd7f3b3ece968118d7225a145eb13a7bb618e18e0f6ebd",
+    "action": "already_uploaded"
+  },
+  "1N20jahlnvNzsW5-UEQ8QH3-ebslSH9o0": {
+    "drive_id": "1N20jahlnvNzsW5-UEQ8QH3-ebslSH9o0",
+    "source": "EXCEL/CONTEUDO/PRATICA 01/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/1N20jahlnvNzsW5-UEQ8QH3-ebslSH9o0.zip",
+    "size": 2508556,
+    "sha256": "c8097ca589964d16d52e3410b3f464f093ac9913394334ab2922fbf1e4339ffa",
+    "action": "already_uploaded"
+  },
+  "1E1E2K85oIWf_sCLRv-FnkDZhJitSdQG4": {
+    "drive_id": "1E1E2K85oIWf_sCLRv-FnkDZhJitSdQG4",
+    "source": "EXCEL/EXTERNO/Praxis_Distribuidora_Vendas.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1E1E2K85oIWf_sCLRv-FnkDZhJitSdQG4.xlsx",
+    "size": 42447,
+    "sha256": "051a13ff3eab0fd9b3c4c218fd5272b34f0c507ec8f54a4ea44e86ed3f275bb1",
+    "action": "already_uploaded"
+  },
+  "1jiji2ntmFEbVCjz21qGLfGJoyGEpcLas": {
+    "drive_id": "1jiji2ntmFEbVCjz21qGLfGJoyGEpcLas",
+    "source": "EXCEL/EXTERNO/PRAXIS_Excel_na_Pratica_Exercicios.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1jiji2ntmFEbVCjz21qGLfGJoyGEpcLas.xlsx",
+    "size": 123424,
+    "sha256": "fd3eece5bb273fac24d2771da2f440b94016fe3d8ab665b35afe1599081fb796",
+    "action": "already_uploaded"
+  },
+  "1y6xSxWirdzwR-3vh7HAobiJmn_g6FTod": {
+    "drive_id": "1y6xSxWirdzwR-3vh7HAobiJmn_g6FTod",
+    "source": "WORD/MATERIAL EXTERNO/Comunicado_Interno_Sem_Formatacao.docx",
+    "bucket": "materiais",
+    "path": "drive-import/1y6xSxWirdzwR-3vh7HAobiJmn_g6FTod.docx",
+    "size": 9260,
+    "sha256": "7bbcef19404db23126fe78690376dd07b7bd71336cb95b85b21d0ad1c5851532",
+    "action": "already_uploaded"
+  },
+  "1ke8Z3btRMX-870TeWmVs8xfxiivJ0rOc": {
+    "drive_id": "1ke8Z3btRMX-870TeWmVs8xfxiivJ0rOc",
+    "source": "WORD/MATERIAL EXTERNO/Relatorio_Cliente_Para_Revisao.docx",
+    "bucket": "materiais",
+    "path": "drive-import/1ke8Z3btRMX-870TeWmVs8xfxiivJ0rOc.docx",
+    "size": 30667,
+    "sha256": "bd0ac6164822f6b6c4b063bb3be09e9ef66753309ce9504c1b3171dbf7828310",
+    "action": "already_uploaded"
+  },
+  "1CbG3C-pkox3mG7ifpssCp0AP6F5Mk_Il": {
+    "drive_id": "1CbG3C-pkox3mG7ifpssCp0AP6F5Mk_Il",
+    "source": "WORD/MATERIAL EXTERNO/Relatorio_Institucional_Para_Correcao.docx",
+    "bucket": "materiais",
+    "path": "drive-import/1CbG3C-pkox3mG7ifpssCp0AP6F5Mk_Il.docx",
+    "size": 41067,
+    "sha256": "972de180216b6f71e4069068c91c5942f07b1d673f883d50c340ddeb4be9faa7",
+    "action": "already_uploaded"
+  },
+  "19X_gyTKAuBKKse7ElLqHyD6_o44yaswC": {
+    "drive_id": "19X_gyTKAuBKKse7ElLqHyD6_o44yaswC",
+    "source": "EXCEL/CONTEUDO/PRATICA 05/Green Abstract Organic Group Project Presentation.zip",
+    "bucket": "materiais",
+    "path": "drive-import/19X_gyTKAuBKKse7ElLqHyD6_o44yaswC.zip",
+    "size": 2723058,
+    "sha256": "78944ef676b8b3e07d54eec8078b06f62561777cac090a50b530cf8631019701",
+    "action": "already_uploaded"
+  },
+  "1vY3h2Lz8PbOhddZYS15YLqvxMGfJ8HH4": {
+    "drive_id": "1vY3h2Lz8PbOhddZYS15YLqvxMGfJ8HH4",
+    "source": "POWER POINT/CONTEUDO/PRATICA 01/04-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1vY3h2Lz8PbOhddZYS15YLqvxMGfJ8HH4.png",
+    "size": 1820521,
+    "sha256": "92ff4fbff1886a34ffcf1225ec9fdac187b6d039031f2cedf210f076823b3c04",
+    "action": "already_uploaded"
+  },
+  "1Ua1qgllHVmO7Q1DSbUnDajgY_yDSWYxz": {
+    "drive_id": "1Ua1qgllHVmO7Q1DSbUnDajgY_yDSWYxz",
+    "source": "POWER POINT/CONTEUDO/PRATICA 01/05-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1Ua1qgllHVmO7Q1DSbUnDajgY_yDSWYxz.png",
+    "size": 1502839,
+    "sha256": "0e615f18909ab7fc087bd5592c175fa7667af050c20395c37f639073a915664f",
+    "action": "already_uploaded"
+  },
+  "1IboYw22kUjIMBm8smaV3qMl5teM3aDQu": {
+    "drive_id": "1IboYw22kUjIMBm8smaV3qMl5teM3aDQu",
+    "source": "POWER POINT/CONTEUDO/INTRODUÇÃO/01-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1IboYw22kUjIMBm8smaV3qMl5teM3aDQu.png",
+    "size": 1362720,
+    "sha256": "0069f9b4e0774a377d4e37d7d83b8d4f3a5df72c980c6bd1ee016d7d2265add9",
+    "action": "already_uploaded"
+  },
+  "15BUc6ddlOQlmVfB4_NrJkVNcz6yx7A6I": {
+    "drive_id": "15BUc6ddlOQlmVfB4_NrJkVNcz6yx7A6I",
+    "source": "POWER POINT/CONTEUDO/PRATICA 01/07-17.png",
+    "bucket": "slides",
+    "path": "drive-import/15BUc6ddlOQlmVfB4_NrJkVNcz6yx7A6I.png",
+    "size": 1967153,
+    "sha256": "3efbb6babea414b8e2910f8b9672f6a464c90633496351f994b701693b5622bb",
+    "action": "already_uploaded"
+  },
+  "1XA9nhiOcAH6hxjCuCkSi2u3E7Y9RDwI0": {
+    "drive_id": "1XA9nhiOcAH6hxjCuCkSi2u3E7Y9RDwI0",
+    "source": "POWER POINT/CONTEUDO/INTRODUÇÃO/02-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1XA9nhiOcAH6hxjCuCkSi2u3E7Y9RDwI0.png",
+    "size": 1741161,
+    "sha256": "77a68ed4292c57d603b54d5322d56d1113a35e305bcfb11d86b8c0cdcc21942f",
+    "action": "already_uploaded"
+  },
+  "1nYf1-c4T05eq1toBvBsezRdCZ5YFYYOw": {
+    "drive_id": "1nYf1-c4T05eq1toBvBsezRdCZ5YFYYOw",
+    "source": "POWER POINT/CONTEUDO/INTRODUÇÃO/03-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1nYf1-c4T05eq1toBvBsezRdCZ5YFYYOw.png",
+    "size": 1835164,
+    "sha256": "de5e44868553766d9e4c6b30381abb904b82f80e27dee2a055d9d74ea8defddf",
+    "action": "already_uploaded"
+  },
+  "16LO5fToKGThve9yaiaNnXiCAgX2u_zRV": {
+    "drive_id": "16LO5fToKGThve9yaiaNnXiCAgX2u_zRV",
+    "source": "POWER POINT/CONTEUDO/PRATICA 01/08-17.png",
+    "bucket": "slides",
+    "path": "drive-import/16LO5fToKGThve9yaiaNnXiCAgX2u_zRV.png",
+    "size": 1779631,
+    "sha256": "eb7535e960d37ee664be8e5a5486e7566280ade90e7a47dcc889f19e1050094b",
+    "action": "already_uploaded"
+  },
+  "1gMSj9XHiHOhWbfLet3yjlun0kmM1ICo7": {
+    "drive_id": "1gMSj9XHiHOhWbfLet3yjlun0kmM1ICo7",
+    "source": "POWER POINT/CONTEUDO/PRATICA 01/06-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1gMSj9XHiHOhWbfLet3yjlun0kmM1ICo7.png",
+    "size": 2081991,
+    "sha256": "7d4f9d404749d26f47043a92c4db2cde609d8ae088bbfef832ec4cf6888020db",
+    "action": "already_uploaded"
+  },
+  "1zUGTDsqyX2iMUAiF4bq8iReX9O4Yvd8_": {
+    "drive_id": "1zUGTDsqyX2iMUAiF4bq8iReX9O4Yvd8_",
+    "source": "POWER POINT/CONTEUDO/PRATICA 02/09-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1zUGTDsqyX2iMUAiF4bq8iReX9O4Yvd8_.png",
+    "size": 1688839,
+    "sha256": "df3061dccf9a083aa0b3e56c628bb99ce2ef2ce75e7760a64b85c665d6e42aa2",
+    "action": "already_uploaded"
+  },
+  "177i2xqbByuKGzehPN2668g9zbSEv0-z7": {
+    "drive_id": "177i2xqbByuKGzehPN2668g9zbSEv0-z7",
+    "source": "POWER POINT/CONTEUDO/MATERIAIS EXTERNOS/pratica 02.pptx",
+    "bucket": "materiais",
+    "path": "drive-import/177i2xqbByuKGzehPN2668g9zbSEv0-z7.pptx",
+    "size": 50613,
+    "sha256": "bade524c495ed277645f358ec09fdd11223f51300ff341eb263553ff70510b78",
+    "action": "already_uploaded"
+  },
+  "1QAaaLx8d-sLzeyy1bZXs-nJu6R9DYSGT": {
+    "drive_id": "1QAaaLx8d-sLzeyy1bZXs-nJu6R9DYSGT",
+    "source": "POWER POINT/CONTEUDO/MATERIAIS EXTERNOS/PRATICA 03.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1QAaaLx8d-sLzeyy1bZXs-nJu6R9DYSGT.xlsx",
+    "size": 16966,
+    "sha256": "4438f58119aa7fa72f55be92b3fda8575bcc317f4698e98dedc9a71e6ac6ad08",
+    "action": "already_uploaded"
+  },
+  "16_20jDqsnRKLc5C0BBY8fEpRUg4ahPZb": {
+    "drive_id": "16_20jDqsnRKLc5C0BBY8fEpRUg4ahPZb",
+    "source": "POWER BI/MATERIAL EXTERNO/PRATICA 01.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/16_20jDqsnRKLc5C0BBY8fEpRUg4ahPZb.xlsx",
+    "size": 36821,
+    "sha256": "659a329567f95be70fef3836733ffa8a33b8376621b27c35fadf62ace91ff923",
+    "action": "already_uploaded"
+  },
+  "1YLTJlU9TVGDzLSzk2gB_V1DMsAX0uOL7": {
+    "drive_id": "1YLTJlU9TVGDzLSzk2gB_V1DMsAX0uOL7",
+    "source": "POWER BI/MATERIAL EXTERNO/PRATICA 02.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1YLTJlU9TVGDzLSzk2gB_V1DMsAX0uOL7.xlsx",
+    "size": 35341,
+    "sha256": "72138b8ed00a5c4132562988f4f8954b7aebe709286f71c501fd6bc0269c9ed0",
+    "action": "already_uploaded"
+  },
+  "14oDW_zJpB9UKWZ8iBKFkLjUINSLvAAqw": {
+    "drive_id": "14oDW_zJpB9UKWZ8iBKFkLjUINSLvAAqw",
+    "source": "POWER BI/MATERIAL EXTERNO/PRATICA 03.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/14oDW_zJpB9UKWZ8iBKFkLjUINSLvAAqw.xlsx",
+    "size": 94512,
+    "sha256": "eb359980a490971c79be16553051e3068a1d9689c9ed977757460c3df3b2b0d4",
+    "action": "already_uploaded"
+  },
+  "15o_ivRG1qarBfVzAXuhZpKyxzpAZXhfp": {
+    "drive_id": "15o_ivRG1qarBfVzAXuhZpKyxzpAZXhfp",
+    "source": "POWER BI/MATERIAL EXTERNO/PRATICA 04.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/15o_ivRG1qarBfVzAXuhZpKyxzpAZXhfp.xlsx",
+    "size": 198153,
+    "sha256": "8a7aefb70a682ee392679ee1f884541770496298bdb4a26d568a1d5f00894ed8",
+    "action": "already_uploaded"
+  },
+  "1QKFW_MVN6bsWZhc6I2zPLO8abnkA5JNi": {
+    "drive_id": "1QKFW_MVN6bsWZhc6I2zPLO8abnkA5JNi",
+    "source": "POWER POINT/CONTEUDO/PRATICA 02/11-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1QKFW_MVN6bsWZhc6I2zPLO8abnkA5JNi.png",
+    "size": 1992013,
+    "sha256": "84fd9b0075162762ef3dbc8b603c293630afc4f204d2205e623d35732f80451c",
+    "action": "already_uploaded"
+  },
+  "14DJcV4zxwfxfGjyfA_mi-Nz0S5rRUJUq": {
+    "drive_id": "14DJcV4zxwfxfGjyfA_mi-Nz0S5rRUJUq",
+    "source": "POWER POINT/CONTEUDO/PRATICA 02/12-17.png",
+    "bucket": "slides",
+    "path": "drive-import/14DJcV4zxwfxfGjyfA_mi-Nz0S5rRUJUq.png",
+    "size": 2016203,
+    "sha256": "4117501317a92be115efb3917835b08e9e7d72b5951594c4c08da6690f735b82",
+    "action": "already_uploaded"
+  },
+  "1HFBQ68oqHZ_b126Gco3ots6WY8VDBoiI": {
+    "drive_id": "1HFBQ68oqHZ_b126Gco3ots6WY8VDBoiI",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/01-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1HFBQ68oqHZ_b126Gco3ots6WY8VDBoiI.png",
+    "size": 1415771,
+    "sha256": "fdad2fd729571d0d68b9529207c5d99034cf310ef8314e3bec8b794ad4793b4b",
+    "action": "already_uploaded"
+  },
+  "1SniuHKyRkmuwNE2tsJA-fVr8weN62l36": {
+    "drive_id": "1SniuHKyRkmuwNE2tsJA-fVr8weN62l36",
+    "source": "POWER POINT/CONTEUDO/PRATICA 02/10-17.png",
+    "bucket": "slides",
+    "path": "drive-import/1SniuHKyRkmuwNE2tsJA-fVr8weN62l36.png",
+    "size": 1987331,
+    "sha256": "35ee76e3879c4be20a774d07997e57aba5107036d0fbbcbbba9074e44808a721",
+    "action": "already_uploaded"
+  },
+  "1mj302eiOWiV2RR6__BSQACoZGBaXfWyA": {
+    "drive_id": "1mj302eiOWiV2RR6__BSQACoZGBaXfWyA",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/03-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1mj302eiOWiV2RR6__BSQACoZGBaXfWyA.png",
+    "size": 1468512,
+    "sha256": "cc729efc70c38715386507382018d73ba40722fce73264d7d63d080d41447c3e",
+    "action": "already_uploaded"
+  },
+  "1HY9cX1paEgwPK6JJDHxHVq4XuNarL_I4": {
+    "drive_id": "1HY9cX1paEgwPK6JJDHxHVq4XuNarL_I4",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/06-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1HY9cX1paEgwPK6JJDHxHVq4XuNarL_I4.png",
+    "size": 1467141,
+    "sha256": "66029d899a6294af9bb17b630c6108beb2b67fb998b81ba7a519973ff03220c2",
+    "action": "already_uploaded"
+  },
+  "1zKU4m3tuK03D1YysnP-I2do4jQbqbPM7": {
+    "drive_id": "1zKU4m3tuK03D1YysnP-I2do4jQbqbPM7",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/05-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1zKU4m3tuK03D1YysnP-I2do4jQbqbPM7.png",
+    "size": 1488905,
+    "sha256": "7cf4c9bfa71a50a272b0cf91c184c975bfd901d8d2684f12b34c6ecdcf6a9824",
+    "action": "already_uploaded"
+  },
+  "1wKQbD1Vz-qnto7mi07UrWa1_5KNBfYT3": {
+    "drive_id": "1wKQbD1Vz-qnto7mi07UrWa1_5KNBfYT3",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/07-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1wKQbD1Vz-qnto7mi07UrWa1_5KNBfYT3.png",
+    "size": 1720482,
+    "sha256": "3257ba94e26b2f2e422028963744f096fe7a701e95b2f350f247197afb716a99",
+    "action": "already_uploaded"
+  },
+  "1qbA4LC9-HEphv1ER8namHtKTkZtJR_FR": {
+    "drive_id": "1qbA4LC9-HEphv1ER8namHtKTkZtJR_FR",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/BONUS.png",
+    "bucket": "slides",
+    "path": "drive-import/1qbA4LC9-HEphv1ER8namHtKTkZtJR_FR.png",
+    "size": 1704773,
+    "sha256": "d9933d5d9f1713dbfdd6a7714453709b6b5fcab1fb5b13fb77e176d59816fc5f",
+    "action": "already_uploaded"
+  },
+  "1YwxeM4JDLRATNZSjZhT07eNnGum5NsTC": {
+    "drive_id": "1YwxeM4JDLRATNZSjZhT07eNnGum5NsTC",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1YwxeM4JDLRATNZSjZhT07eNnGum5NsTC.png",
+    "size": 1206370,
+    "sha256": "773759181d276831511b977a53a1cc275628a02dceedfeca9f6c28f5fdb22845",
+    "action": "already_uploaded"
+  },
+  "1RtVLyj2MzvSZ3gwl6Aid3q1MGAFjdY-F": {
+    "drive_id": "1RtVLyj2MzvSZ3gwl6Aid3q1MGAFjdY-F",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1RtVLyj2MzvSZ3gwl6Aid3q1MGAFjdY-F.png",
+    "size": 1621168,
+    "sha256": "b1a36dc3b61d3741bbd7fe8b3315d040e3ee2dbec47c2683f2b8335a14356406",
+    "action": "already_uploaded"
+  },
+  "1eZtsuB2tMI_DO1bwa1xvhOdee8ipBoYk": {
+    "drive_id": "1eZtsuB2tMI_DO1bwa1xvhOdee8ipBoYk",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1eZtsuB2tMI_DO1bwa1xvhOdee8ipBoYk.png",
+    "size": 1493143,
+    "sha256": "887848230e27628a9d6bf29d4949dcfa68337cc911687cfccdf8551f97be06bc",
+    "action": "already_uploaded"
+  },
+  "1VytZ7X6F0aryIwMRhFgrRnk-l2UWtYMt": {
+    "drive_id": "1VytZ7X6F0aryIwMRhFgrRnk-l2UWtYMt",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/04-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1VytZ7X6F0aryIwMRhFgrRnk-l2UWtYMt.png",
+    "size": 1502528,
+    "sha256": "5afe65910692d1056bb74c7f816d1d76381be4432313d9744abea2a9f96a2e32",
+    "action": "already_uploaded"
+  },
+  "10RfVwf4ZFHbwxCMaiLFLurlMgcJR1C4_": {
+    "drive_id": "10RfVwf4ZFHbwxCMaiLFLurlMgcJR1C4_",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/10RfVwf4ZFHbwxCMaiLFLurlMgcJR1C4_.png",
+    "size": 1660263,
+    "sha256": "98b3f8c8af864c536e59d3028cb836b8b4fa54ba6b56d63eb2cbe687f8cbd109",
+    "action": "already_uploaded"
+  },
+  "1WjuGDqLom6GpizWo0DydogblYdYvLBTC": {
+    "drive_id": "1WjuGDqLom6GpizWo0DydogblYdYvLBTC",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1WjuGDqLom6GpizWo0DydogblYdYvLBTC.png",
+    "size": 1680461,
+    "sha256": "9497d3dc4eced5b084610cdcd8a97f6e82930908c0e9a9556641dae16106048b",
+    "action": "already_uploaded"
+  },
+  "1EBhPZrfeujzhlXSnU6RNApFWG07yiYzq": {
+    "drive_id": "1EBhPZrfeujzhlXSnU6RNApFWG07yiYzq",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1EBhPZrfeujzhlXSnU6RNApFWG07yiYzq.png",
+    "size": 1594917,
+    "sha256": "83b4b0b0359cf2dc524ceca60f2325c03dabaf74b1792b8bd726eac891f06329",
+    "action": "already_uploaded"
+  },
+  "1CpjqbWvXC2iS1XzfsKK0AXwGt9PJCGYt": {
+    "drive_id": "1CpjqbWvXC2iS1XzfsKK0AXwGt9PJCGYt",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1CpjqbWvXC2iS1XzfsKK0AXwGt9PJCGYt.png",
+    "size": 1687297,
+    "sha256": "0b1ad2c2e7f42f93fa9c1e0064e9b74255cbf07b34d490c86c88817bd469abce",
+    "action": "already_uploaded"
+  },
+  "1LisqlHHk7sqzSJaPi6GJqV6G6GN_dBaW": {
+    "drive_id": "1LisqlHHk7sqzSJaPi6GJqV6G6GN_dBaW",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1LisqlHHk7sqzSJaPi6GJqV6G6GN_dBaW.png",
+    "size": 1367035,
+    "sha256": "727adc563e362a385c7a8068194edcd727431dfdbaad6b967f2211a489498991",
+    "action": "already_uploaded"
+  },
+  "1nvk352QnE-QfXWHJfRWOpf7GD0pVyU5C": {
+    "drive_id": "1nvk352QnE-QfXWHJfRWOpf7GD0pVyU5C",
+    "source": "CLAUDE/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1nvk352QnE-QfXWHJfRWOpf7GD0pVyU5C.png",
+    "size": 1559900,
+    "sha256": "8ae34d40dea600fb51afdf22ec9eb7daa81d7b02579ff5b805ad542ef2a49d5c",
+    "action": "already_uploaded"
+  },
+  "1r0v740DQEPX8IzbADuZMTgRJWwyNMWW_": {
+    "drive_id": "1r0v740DQEPX8IzbADuZMTgRJWwyNMWW_",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1r0v740DQEPX8IzbADuZMTgRJWwyNMWW_.png",
+    "size": 1623307,
+    "sha256": "26b2b63d68dfaa4a016daec215a3679a16b57e8ab37f04fc433dc9116a6a8547",
+    "action": "already_uploaded"
+  },
+  "1s2vZ-6ispcZ56LIXQmxu9Fnsl78OTdsj": {
+    "drive_id": "1s2vZ-6ispcZ56LIXQmxu9Fnsl78OTdsj",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1s2vZ-6ispcZ56LIXQmxu9Fnsl78OTdsj.png",
+    "size": 1539181,
+    "sha256": "00b65d6c03c6443bd97cbf532d1b8cdf6db89c08873114b4203c8f378abbb983",
+    "action": "already_uploaded"
+  },
+  "1eKRA2_b1aNpZ5zartG997pI5em7q27Qu": {
+    "drive_id": "1eKRA2_b1aNpZ5zartG997pI5em7q27Qu",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1eKRA2_b1aNpZ5zartG997pI5em7q27Qu.png",
+    "size": 1674305,
+    "sha256": "0eef15429d56957b0fb54824ee1504725566bce15bb90d52440e64f760db7dcb",
+    "action": "already_uploaded"
+  },
+  "1aMHFJFkH9BCyDQc7FYUsxAFhr-5kUpkA": {
+    "drive_id": "1aMHFJFkH9BCyDQc7FYUsxAFhr-5kUpkA",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1aMHFJFkH9BCyDQc7FYUsxAFhr-5kUpkA.png",
+    "size": 1515673,
+    "sha256": "a471f97d95bfe4780d85da0dc9043af5c8dddbb72162d4d68e29bf9bf7e05b70",
+    "action": "already_uploaded"
+  },
+  "1HtcTV9zGNT_LOnVCUMzVrlG4d6lVnIwA": {
+    "drive_id": "1HtcTV9zGNT_LOnVCUMzVrlG4d6lVnIwA",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1HtcTV9zGNT_LOnVCUMzVrlG4d6lVnIwA.png",
+    "size": 1706711,
+    "sha256": "364ef057529b6ce4c48f3967419167477920f01254ab4c8631f5bb4175dd3213",
+    "action": "already_uploaded"
+  },
+  "1iX3qm9LKkGC9xxuQbbUMBpM9eeQBoIb-": {
+    "drive_id": "1iX3qm9LKkGC9xxuQbbUMBpM9eeQBoIb-",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1iX3qm9LKkGC9xxuQbbUMBpM9eeQBoIb-.png",
+    "size": 1671478,
+    "sha256": "7d0c77e2a4f059ad8ac5c6bbe968b8ac724790b21630ab67579e3160884c5f65",
+    "action": "already_uploaded"
+  },
+  "1KVThz90NVJ7hEgDdbhOS_CQ6Ub0e5qZs": {
+    "drive_id": "1KVThz90NVJ7hEgDdbhOS_CQ6Ub0e5qZs",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1KVThz90NVJ7hEgDdbhOS_CQ6Ub0e5qZs.png",
+    "size": 1596380,
+    "sha256": "5effc969c22ee686bbb57782a1c8723f187bbb034bb203da77fe9b62f4fa3071",
+    "action": "already_uploaded"
+  },
+  "1VNIRxHm_w9ax_vDkj1nYY99oySnCeqTy": {
+    "drive_id": "1VNIRxHm_w9ax_vDkj1nYY99oySnCeqTy",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1VNIRxHm_w9ax_vDkj1nYY99oySnCeqTy.png",
+    "size": 1644202,
+    "sha256": "5d87087f99d0aed27fdd54d458e97568012d1dac136c4938f7cb4a5ee42917fa",
+    "action": "already_uploaded"
+  },
+  "1ip963hDOGTl__jUrO7JcQtlPdIdMpPAP": {
+    "drive_id": "1ip963hDOGTl__jUrO7JcQtlPdIdMpPAP",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ip963hDOGTl__jUrO7JcQtlPdIdMpPAP.png",
+    "size": 1459802,
+    "sha256": "69370b2c9f6e16920e47ac2fa2701bc92b545784c95606c696ce556143d2585c",
+    "action": "already_uploaded"
+  },
+  "1NoIoMiwFUmFnScFCMGnwKkHOKy3p9k5J": {
+    "drive_id": "1NoIoMiwFUmFnScFCMGnwKkHOKy3p9k5J",
+    "source": "CLAUDE/MATERIAL/PRT03-base_sala_decisao_operacoes.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1NoIoMiwFUmFnScFCMGnwKkHOKy3p9k5J.xlsx",
+    "size": 79393,
+    "sha256": "9cd3cb250c1917e31b8684bb968affb94ccd21eb7b6ae5c88ddb67c992c06de0",
+    "action": "already_uploaded"
+  },
+  "1FeKs9dEl3iPZ2CSO-beqd4vWUaSNBQFQ": {
+    "drive_id": "1FeKs9dEl3iPZ2CSO-beqd4vWUaSNBQFQ",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/BONUS.png",
+    "bucket": "slides",
+    "path": "drive-import/1FeKs9dEl3iPZ2CSO-beqd4vWUaSNBQFQ.png",
+    "size": 1333687,
+    "sha256": "1525d000fcfcdc6d52ea1aacb99f3eaf1e81f1dacd4af13ccec8f5ddfd3ad859",
+    "action": "already_uploaded"
+  },
+  "1zVu-Yi-996dSB5IPVI84Z9WcdxVvv413": {
+    "drive_id": "1zVu-Yi-996dSB5IPVI84Z9WcdxVvv413",
+    "source": "TEAMS/CONTEUDO/PRATICA 01/02-07.png",
+    "bucket": "slides",
+    "path": "drive-import/1zVu-Yi-996dSB5IPVI84Z9WcdxVvv413.png",
+    "size": 1561044,
+    "sha256": "1049e0fc9f4712f2861bdc0be53e1d57871b78292a251fa3ee9bb0aca66fb933",
+    "action": "already_uploaded"
+  },
+  "1OycZk-7nhkrNqThxd-PRPHWhrsPWUVQr": {
+    "drive_id": "1OycZk-7nhkrNqThxd-PRPHWhrsPWUVQr",
+    "source": "COPILOT/CONTEUDO/04-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1OycZk-7nhkrNqThxd-PRPHWhrsPWUVQr.png",
+    "size": 1650940,
+    "sha256": "f7afa5f47cbc0ff6d6e06f6c3fd4ea38a3dab6bf7cfd10382c55748820be6efb",
+    "action": "already_uploaded"
+  },
+  "1PvhoB7Qxd2IVGUBl8iHE3ghe4wa7YF_l": {
+    "drive_id": "1PvhoB7Qxd2IVGUBl8iHE3ghe4wa7YF_l",
+    "source": "COPILOT/CONTEUDO/05-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1PvhoB7Qxd2IVGUBl8iHE3ghe4wa7YF_l.png",
+    "size": 1569130,
+    "sha256": "951020f015a81f60df52014f7897f7d062c67af38321b3983b8532ffb5fabdcc",
+    "action": "already_uploaded"
+  },
+  "1zNDJCdHBe6HOK-TaCVXji12Se8K6DbPC": {
+    "drive_id": "1zNDJCdHBe6HOK-TaCVXji12Se8K6DbPC",
+    "source": "COPILOT/CONTEUDO/06-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1zNDJCdHBe6HOK-TaCVXji12Se8K6DbPC.png",
+    "size": 1607505,
+    "sha256": "bb6a34f6aa1e343e57c33604258c08a1c29f99e303680fb3ea56e05b4977f856",
+    "action": "already_uploaded"
+  },
+  "1i2y6gtxG2I4rug9c9cKJsN4EuJuapyEH": {
+    "drive_id": "1i2y6gtxG2I4rug9c9cKJsN4EuJuapyEH",
+    "source": "COPILOT/CONTEUDO/07-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1i2y6gtxG2I4rug9c9cKJsN4EuJuapyEH.png",
+    "size": 1663494,
+    "sha256": "dfffaff7fe8a8026edfe3ce48dea6f04a22fab158c47f54e8733205afbe3c66a",
+    "action": "already_uploaded"
+  },
+  "1J3huGNR9n0seevVv9GPrbpGnCVacZm0D": {
+    "drive_id": "1J3huGNR9n0seevVv9GPrbpGnCVacZm0D",
+    "source": "CLAUDE/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1J3huGNR9n0seevVv9GPrbpGnCVacZm0D.png",
+    "size": 1383088,
+    "sha256": "4dc392f981ce354bd0699b43b0a1c463861f35bc4ed051da53b8e9dd32ebf822",
+    "action": "already_uploaded"
+  },
+  "189oKbTlPbx39WZv3OCgegtPCbD8padtr": {
+    "drive_id": "189oKbTlPbx39WZv3OCgegtPCbD8padtr",
+    "source": "COPILOT/CONTEUDO/08-10.png",
+    "bucket": "slides",
+    "path": "drive-import/189oKbTlPbx39WZv3OCgegtPCbD8padtr.png",
+    "size": 1628619,
+    "sha256": "74a18f71ed7153047e0c39903c0374776962e7c690a28c0d3f0a61d1f4b6d0b1",
+    "action": "already_uploaded"
+  },
+  "1b_DsOUGASLmLgwZ4cx-biYHryjnolOgD": {
+    "drive_id": "1b_DsOUGASLmLgwZ4cx-biYHryjnolOgD",
+    "source": "COPILOT/CONTEUDO/09-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1b_DsOUGASLmLgwZ4cx-biYHryjnolOgD.png",
+    "size": 1589198,
+    "sha256": "0b0c9f836a64cbe380dc0d2850d79f192513745a634db415508a819efd9202ef",
+    "action": "already_uploaded"
+  },
+  "1LEM1nuA3VoQ-ilFhXKBbAUSsW2IcK6HC": {
+    "drive_id": "1LEM1nuA3VoQ-ilFhXKBbAUSsW2IcK6HC",
+    "source": "COPILOT/CONTEUDO/03-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1LEM1nuA3VoQ-ilFhXKBbAUSsW2IcK6HC.png",
+    "size": 1753482,
+    "sha256": "27f0553e94cb1e54a4589cf9c7e44b45792917bbc1855f9737d7dc14ce943fc1",
+    "action": "already_uploaded"
+  },
+  "1KYrG7TrlaGC39MILRZZK4Uhv7KOduCGK": {
+    "drive_id": "1KYrG7TrlaGC39MILRZZK4Uhv7KOduCGK",
+    "source": "COPILOT/CONTEUDO/10-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1KYrG7TrlaGC39MILRZZK4Uhv7KOduCGK.png",
+    "size": 1608932,
+    "sha256": "bd9ede9bee09b0c6e95860ac496fa931b79b54f6a247c86d46f6ab8b61fbd04c",
+    "action": "already_uploaded"
+  },
+  "1LnML5MTj8myvDJqIBnoQxT4-wZOlYOfB": {
+    "drive_id": "1LnML5MTj8myvDJqIBnoQxT4-wZOlYOfB",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/01-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1LnML5MTj8myvDJqIBnoQxT4-wZOlYOfB.png",
+    "size": 1375445,
+    "sha256": "6a5b87334048fc9d0fef468e78c429017914fdfcc4d5c626537e3717d81b4f05",
+    "action": "already_uploaded"
+  },
+  "1iRZvS1OU5q73iY9agOTgGRC3KK43revJ": {
+    "drive_id": "1iRZvS1OU5q73iY9agOTgGRC3KK43revJ",
+    "source": "COPILOT/CONTEUDO/02-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1iRZvS1OU5q73iY9agOTgGRC3KK43revJ.png",
+    "size": 1650847,
+    "sha256": "a58d6de619e287ead7bcd5f8b4f3f3a94936a473a2fed4407cd5fc056d7a848a",
+    "action": "already_uploaded"
+  },
+  "1DdyyAwf2NgBkzAr9iUIVpDjPh8GXjFs8": {
+    "drive_id": "1DdyyAwf2NgBkzAr9iUIVpDjPh8GXjFs8",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/02-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1DdyyAwf2NgBkzAr9iUIVpDjPh8GXjFs8.png",
+    "size": 1223396,
+    "sha256": "685877df5bad3100ea9dd9e11325d921d322a97ef2765e5f1697a87d1bd7c229",
+    "action": "already_uploaded"
+  },
+  "1rfJJoAuHQB59ogAxVQHFTienSoPJ-fVk": {
+    "drive_id": "1rfJJoAuHQB59ogAxVQHFTienSoPJ-fVk",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/03-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1rfJJoAuHQB59ogAxVQHFTienSoPJ-fVk.png",
+    "size": 1598205,
+    "sha256": "a2280d8cea4b1b26fcea5a199a404149e57b90b3791070246886d92854b7755d",
+    "action": "already_uploaded"
+  },
+  "150uOcY9HgitEwzHqWaM608X36kILVkfA": {
+    "drive_id": "150uOcY9HgitEwzHqWaM608X36kILVkfA",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/07-09.png",
+    "bucket": "slides",
+    "path": "drive-import/150uOcY9HgitEwzHqWaM608X36kILVkfA.png",
+    "size": 1253834,
+    "sha256": "25893c0147864199e9880fa0fb7e8a593c8e1d32c3ea5108f402fb359617ac16",
+    "action": "already_uploaded"
+  },
+  "1mL5j5nEA1rCcD_DzWE3Sj4BwBY8iCL96": {
+    "drive_id": "1mL5j5nEA1rCcD_DzWE3Sj4BwBY8iCL96",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/05-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1mL5j5nEA1rCcD_DzWE3Sj4BwBY8iCL96.png",
+    "size": 1268527,
+    "sha256": "75bc378009dbc2d400cd9c060beee4a20c09d3079e0f7a5a3ab6d1c50c9276ec",
+    "action": "already_uploaded"
+  },
+  "1-uWbn4_PJ3xPhPOBrVWxTi9rPEyf3bxk": {
+    "drive_id": "1-uWbn4_PJ3xPhPOBrVWxTi9rPEyf3bxk",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/04-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1-uWbn4_PJ3xPhPOBrVWxTi9rPEyf3bxk.png",
+    "size": 1188652,
+    "sha256": "6c86b0afc04f7f90bac43b940aaa452e9c7f0b261baff38049c960dbdec38f5f",
+    "action": "already_uploaded"
+  },
+  "1zyWKRzt_WRlytKK4yAoDir_d-tThM4qp": {
+    "drive_id": "1zyWKRzt_WRlytKK4yAoDir_d-tThM4qp",
+    "source": "GEMINI/MATERIAL/06-09-Base_Satisfacao_Clientes.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1zyWKRzt_WRlytKK4yAoDir_d-tThM4qp.xlsx",
+    "size": 28774,
+    "sha256": "c0b42286c4c8d08698095ac1f851cb78089a798b7320a42cd153d439f35c5515",
+    "action": "already_uploaded"
+  },
+  "1Q-UDyuG8Qay-WPHvsTqa2-dV6TJNmTLE": {
+    "drive_id": "1Q-UDyuG8Qay-WPHvsTqa2-dV6TJNmTLE",
+    "source": "GEMINI/MATERIAL/08-9-Base_Projetos_NovaDesk.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1Q-UDyuG8Qay-WPHvsTqa2-dV6TJNmTLE.xlsx",
+    "size": 44113,
+    "sha256": "ef7d94441eb458dde656e889f71c37a338640881e4226a13efd3a79e84bfdfbf",
+    "action": "already_uploaded"
+  },
+  "1Y7DeeQkPq8VIyZmX5EE8GS10TqELNu2R": {
+    "drive_id": "1Y7DeeQkPq8VIyZmX5EE8GS10TqELNu2R",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/09-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1Y7DeeQkPq8VIyZmX5EE8GS10TqELNu2R.png",
+    "size": 1336104,
+    "sha256": "92740f3d93f34764dcd7deb0e39c2bf58aac02dd2befca24c235fd69db618292",
+    "action": "already_uploaded"
+  },
+  "1kEeNs5FClUShnb7fssPj5AG4e7-U7BLT": {
+    "drive_id": "1kEeNs5FClUShnb7fssPj5AG4e7-U7BLT",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/06-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1kEeNs5FClUShnb7fssPj5AG4e7-U7BLT.png",
+    "size": 1662639,
+    "sha256": "6f0356403cd2fed2c07100bd7455c9800640ac82e9047e48c468157ceb8ada4f",
+    "action": "already_uploaded"
+  },
+  "19bBxJVsXefrgp3M9rpf7-H4hPSVnH_2e": {
+    "drive_id": "19bBxJVsXefrgp3M9rpf7-H4hPSVnH_2e",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/03-12.png",
+    "bucket": "slides",
+    "path": "drive-import/19bBxJVsXefrgp3M9rpf7-H4hPSVnH_2e.png",
+    "size": 1310432,
+    "sha256": "6e48c2e2a6d09a027b3a42461b5e40b5f29766442a781fdc472583bf0f20e635",
+    "action": "already_uploaded"
+  },
+  "1Ny3OHY-CRbEMaXpKjtIxtfaAIDr_JtfD": {
+    "drive_id": "1Ny3OHY-CRbEMaXpKjtIxtfaAIDr_JtfD",
+    "source": "GEMINI/CONTEUDO/PRATICA 01/08-09.png",
+    "bucket": "slides",
+    "path": "drive-import/1Ny3OHY-CRbEMaXpKjtIxtfaAIDr_JtfD.png",
+    "size": 1245834,
+    "sha256": "c2e6c2bbb448ee4c2ef24fd2b1d315e689b46b8dfd8f5c154ca61beb00003fe7",
+    "action": "already_uploaded"
+  },
+  "1kWz0-LWoyjqoINmRW3y0nzNRVxzObYAR": {
+    "drive_id": "1kWz0-LWoyjqoINmRW3y0nzNRVxzObYAR",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/01-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1kWz0-LWoyjqoINmRW3y0nzNRVxzObYAR.png",
+    "size": 1269834,
+    "sha256": "432f6b54b90969a61cc96e6443e4ecd947b16feafb42b164458bbbadc846fa1c",
+    "action": "already_uploaded"
+  },
+  "1essdNVb7Ddf5u-2LeYY2e7WXqoImnZTg": {
+    "drive_id": "1essdNVb7Ddf5u-2LeYY2e7WXqoImnZTg",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/02-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1essdNVb7Ddf5u-2LeYY2e7WXqoImnZTg.png",
+    "size": 1376829,
+    "sha256": "e8203f872f952eee3094cc04c38f7d59b1cab3fc5a26187bcc3623777d54cb31",
+    "action": "already_uploaded"
+  },
+  "1sZrT6c7CrVtbKaMOZV3GfUZJznp9XjEU": {
+    "drive_id": "1sZrT6c7CrVtbKaMOZV3GfUZJznp9XjEU",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/04-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1sZrT6c7CrVtbKaMOZV3GfUZJznp9XjEU.png",
+    "size": 1449462,
+    "sha256": "ba915a8b91345562e7163856bc85a9a539b7aa938d2b7a953f9478c1136758bb",
+    "action": "already_uploaded"
+  },
+  "1Dz2K_DordewOiZ9OXJNK_403Ve80galP": {
+    "drive_id": "1Dz2K_DordewOiZ9OXJNK_403Ve80galP",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/06-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1Dz2K_DordewOiZ9OXJNK_403Ve80galP.png",
+    "size": 1445020,
+    "sha256": "bcb9ce2219e16e1cadc60a14ca424d30b91dd41c678c6aa19a53fccd93c80680",
+    "action": "already_uploaded"
+  },
+  "1v4pmwzGl6Q06Q7PPicoZHkFOMl6B7Dyj": {
+    "drive_id": "1v4pmwzGl6Q06Q7PPicoZHkFOMl6B7Dyj",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/09-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1v4pmwzGl6Q06Q7PPicoZHkFOMl6B7Dyj.png",
+    "size": 1586551,
+    "sha256": "6f05b9dc7006aab1e907f5f1ced862d8ccebc036d33a2ffca116fbf2f35eb36d",
+    "action": "already_uploaded"
+  },
+  "1oN3CKN_SkBySD05LvTzR2NB-ZEYFMc4y": {
+    "drive_id": "1oN3CKN_SkBySD05LvTzR2NB-ZEYFMc4y",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/07-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1oN3CKN_SkBySD05LvTzR2NB-ZEYFMc4y.png",
+    "size": 1453659,
+    "sha256": "8f6fa271f5d88bc2a8dc0f5681f6f26f6999378d5cd852e5354f09a7351938f0",
+    "action": "already_uploaded"
+  },
+  "1dy3PJi-YyHXhZhCG1wYZJZrT0NJXlT6T": {
+    "drive_id": "1dy3PJi-YyHXhZhCG1wYZJZrT0NJXlT6T",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/05-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1dy3PJi-YyHXhZhCG1wYZJZrT0NJXlT6T.png",
+    "size": 1436214,
+    "sha256": "bd9806fbd020f5ac47090ae73676eb9c3a6c1aa1adbbfa1fe8f49f548c69ded1",
+    "action": "already_uploaded"
+  },
+  "190cFXCKGmUFdOMxhFxhX0VOiUZgUdLu5": {
+    "drive_id": "190cFXCKGmUFdOMxhFxhX0VOiUZgUdLu5",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/08-12.png",
+    "bucket": "slides",
+    "path": "drive-import/190cFXCKGmUFdOMxhFxhX0VOiUZgUdLu5.png",
+    "size": 1485910,
+    "sha256": "fee282a7272cbfa1a9a062bbb80c31d739fa4ccf4f4d96792f6bb0735fb73ec8",
+    "action": "already_uploaded"
+  },
+  "1t8lA1dPC5bo0ylmmayogLtxL0B7NueG8": {
+    "drive_id": "1t8lA1dPC5bo0ylmmayogLtxL0B7NueG8",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/11-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1t8lA1dPC5bo0ylmmayogLtxL0B7NueG8.png",
+    "size": 1394100,
+    "sha256": "1883aa0f52836e32c7343a2e9f527633c932adbd1de818d8306d7470fd5e311d",
+    "action": "already_uploaded"
+  },
+  "1lbBwPd7dnSTwShOzlbv5O1dzm7zp4In5": {
+    "drive_id": "1lbBwPd7dnSTwShOzlbv5O1dzm7zp4In5",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/10-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1lbBwPd7dnSTwShOzlbv5O1dzm7zp4In5.png",
+    "size": 1431146,
+    "sha256": "1674c7aa75139075c486302a1296a7364d2904c8365a2657e0527b5c50342c25",
+    "action": "already_uploaded"
+  },
+  "1kRAGmqwiLs9odPFDA194ZHyPeHHDRrst": {
+    "drive_id": "1kRAGmqwiLs9odPFDA194ZHyPeHHDRrst",
+    "source": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/12-12.png",
+    "bucket": "slides",
+    "path": "drive-import/1kRAGmqwiLs9odPFDA194ZHyPeHHDRrst.png",
+    "size": 1569653,
+    "sha256": "2432ac26f37f37f201eca90eb22c88b8752517c69852b73b5409e1d83fa70a70",
+    "action": "already_uploaded"
+  },
+  "1CqusBSacFsPnp6OR9g5_y6WdvCYgd88a": {
+    "drive_id": "1CqusBSacFsPnp6OR9g5_y6WdvCYgd88a",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/02-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1CqusBSacFsPnp6OR9g5_y6WdvCYgd88a.png",
+    "size": 1338673,
+    "sha256": "66ac88967955b62810f1f40dd92c9845744f784503940721c7bd33b508891753",
+    "action": "already_uploaded"
+  },
+  "1_MqjfPqN0P3iIxHn-gWt8GgxczIKrlLt": {
+    "drive_id": "1_MqjfPqN0P3iIxHn-gWt8GgxczIKrlLt",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/03-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1_MqjfPqN0P3iIxHn-gWt8GgxczIKrlLt.png",
+    "size": 1506677,
+    "sha256": "43ee52453d51a9a23b6add8248998dc814753164284057624b6a45cda6d7ecab",
+    "action": "already_uploaded"
+  },
+  "1tJ6aqGapqaweXZzXyHKdJi7F2nQGZMOR": {
+    "drive_id": "1tJ6aqGapqaweXZzXyHKdJi7F2nQGZMOR",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/04-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1tJ6aqGapqaweXZzXyHKdJi7F2nQGZMOR.png",
+    "size": 1464609,
+    "sha256": "e717d7e2760b8f2192adaf9139c60caafe32cdeedef56e93f0d5ec5178dd1c7e",
+    "action": "already_uploaded"
+  },
+  "1xFCoTYPEFN6yUdL0SeMw-N4M4e9w0Kpg": {
+    "drive_id": "1xFCoTYPEFN6yUdL0SeMw-N4M4e9w0Kpg",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/01-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1xFCoTYPEFN6yUdL0SeMw-N4M4e9w0Kpg.png",
+    "size": 1589548,
+    "sha256": "6f19f932deb90965f0c8bcac76be53d66f9505090543d38bae3691a53d15f4ff",
+    "action": "already_uploaded"
+  },
+  "1Pzz2AiXPl9GDRb4ma3P6HePSAqfQRXFM": {
+    "drive_id": "1Pzz2AiXPl9GDRb4ma3P6HePSAqfQRXFM",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/07-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1Pzz2AiXPl9GDRb4ma3P6HePSAqfQRXFM.png",
+    "size": 1681673,
+    "sha256": "5715ef84fd1acf382d994cfdd5ecea5e2e9bb0ffc361f51a8a4d36d286f4bbfc",
+    "action": "already_uploaded"
+  },
+  "1hD9CMya09TH4IHmr4RiQ4o24yxUG6iMi": {
+    "drive_id": "1hD9CMya09TH4IHmr4RiQ4o24yxUG6iMi",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/09-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1hD9CMya09TH4IHmr4RiQ4o24yxUG6iMi.png",
+    "size": 1610333,
+    "sha256": "1feaffe71b6dd77a3c5e8207c7253385773d0fceecda9e17c00c8750ead778f5",
+    "action": "already_uploaded"
+  },
+  "1pAfqmGNpQJ07FvFEPJyKuUW6FuFIVByq": {
+    "drive_id": "1pAfqmGNpQJ07FvFEPJyKuUW6FuFIVByq",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/08-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1pAfqmGNpQJ07FvFEPJyKuUW6FuFIVByq.png",
+    "size": 1503597,
+    "sha256": "0c9b06ac998c69fd9cbb910517e0f4f202b1734768cb27fecb4b25d049f6a1b5",
+    "action": "already_uploaded"
+  },
+  "1xCuZwutUw24ehSbigD6GOpK9gs4hVfyY": {
+    "drive_id": "1xCuZwutUw24ehSbigD6GOpK9gs4hVfyY",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/10-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1xCuZwutUw24ehSbigD6GOpK9gs4hVfyY.png",
+    "size": 1620444,
+    "sha256": "5c9750812ca1688f3dd33f104f5dcedaa9c6b95f83e40b62bd5a8c699a2c36db",
+    "action": "already_uploaded"
+  },
+  "1J2z1hFxHY8PBUUrUHhWMgZ4T8SdhdYN4": {
+    "drive_id": "1J2z1hFxHY8PBUUrUHhWMgZ4T8SdhdYN4",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/06-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1J2z1hFxHY8PBUUrUHhWMgZ4T8SdhdYN4.png",
+    "size": 1429193,
+    "sha256": "030b64fee1fd25ca3817f8f1adde2173deeca06803f9f5c02583374f3a91815a",
+    "action": "already_uploaded"
+  },
+  "1EaIOcXKVV5rFtW4I7SXRCfYApR2rqQIo": {
+    "drive_id": "1EaIOcXKVV5rFtW4I7SXRCfYApR2rqQIo",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/12-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1EaIOcXKVV5rFtW4I7SXRCfYApR2rqQIo.png",
+    "size": 1701200,
+    "sha256": "db421f46ba96bbede4aa2e0a18bd29b6d5c057ca3de71cfbc97b014781cb47de",
+    "action": "already_uploaded"
+  },
+  "1DYZ7NztzjWBIJEt34jlc_xv0JvyMrwnI": {
+    "drive_id": "1DYZ7NztzjWBIJEt34jlc_xv0JvyMrwnI",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/14-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1DYZ7NztzjWBIJEt34jlc_xv0JvyMrwnI.png",
+    "size": 1762168,
+    "sha256": "32d18ea13c918f54c3747e0a30d556963ba7492769cb21fd224233c94352444a",
+    "action": "already_uploaded"
+  },
+  "1BPwywv5cGp8nK-_u8Yin6nZizwxenAvO": {
+    "drive_id": "1BPwywv5cGp8nK-_u8Yin6nZizwxenAvO",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/13-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1BPwywv5cGp8nK-_u8Yin6nZizwxenAvO.png",
+    "size": 1586682,
+    "sha256": "be2798dcb0f9350384c6e0fe7e9798d8a8942a2e58cd96bd693a9ca9647c7a60",
+    "action": "already_uploaded"
+  },
+  "1snuUaAfZpN3DccJjjn4a_p2_yk509JEe": {
+    "drive_id": "1snuUaAfZpN3DccJjjn4a_p2_yk509JEe",
+    "source": "ORATORIA/CONTEUDO/PRATICA 01/05-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1snuUaAfZpN3DccJjjn4a_p2_yk509JEe.png",
+    "size": 1338244,
+    "sha256": "588c2bac29b230078279a2b96a9405bc7d651aeff9f21ceab6d176086f78cfab",
+    "action": "already_uploaded"
+  },
+  "1JHb5Hw74HEXUtg-6q-XjvQ4VRwpTdXbV": {
+    "drive_id": "1JHb5Hw74HEXUtg-6q-XjvQ4VRwpTdXbV",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/16-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1JHb5Hw74HEXUtg-6q-XjvQ4VRwpTdXbV.png",
+    "size": 1833860,
+    "sha256": "9234545bf4c71d019c6ae8bf5ad80c03b392066a8430e2d100baa3cdf4ece288",
+    "action": "already_uploaded"
+  },
+  "1N1EsIHoWH8Vrln_6Azbut5JmNSP9f0NS": {
+    "drive_id": "1N1EsIHoWH8Vrln_6Azbut5JmNSP9f0NS",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/17-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1N1EsIHoWH8Vrln_6Azbut5JmNSP9f0NS.png",
+    "size": 1779352,
+    "sha256": "bda5e43401034ba7949b82e3b83a3c03baee67bf6e4c44a38d2952a5bd61b951",
+    "action": "already_uploaded"
+  },
+  "12oMER94q6vX404tjtt-Wx6TDhkGqOJ_l": {
+    "drive_id": "12oMER94q6vX404tjtt-Wx6TDhkGqOJ_l",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/19-30.png",
+    "bucket": "slides",
+    "path": "drive-import/12oMER94q6vX404tjtt-Wx6TDhkGqOJ_l.png",
+    "size": 1826533,
+    "sha256": "90ca4c93bbbf37da70734ca5579223ee9b098bdb4ff2d9507476f499a4abb5c1",
+    "action": "already_uploaded"
+  },
+  "1j4Zf3_a4lxnYQfG-7Q19p1qd9W0AKHW6": {
+    "drive_id": "1j4Zf3_a4lxnYQfG-7Q19p1qd9W0AKHW6",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/21-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1j4Zf3_a4lxnYQfG-7Q19p1qd9W0AKHW6.png",
+    "size": 1604327,
+    "sha256": "2390932b6969b450a0760314b343427f4ca23c734af34f0b9209435f9dffb029",
+    "action": "already_uploaded"
+  },
+  "1jx36Br78_BNl97gcRmtawZw2wDcvaqjU": {
+    "drive_id": "1jx36Br78_BNl97gcRmtawZw2wDcvaqjU",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/20-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1jx36Br78_BNl97gcRmtawZw2wDcvaqjU.png",
+    "size": 1811146,
+    "sha256": "8de29d15fa8bf6479b0fd61dfafbe2f42435428a8828bf286a29d51fb824b649",
+    "action": "already_uploaded"
+  },
+  "1XFWeq4y8BTKFfkwmFKVkJ_00L9RRS-2f": {
+    "drive_id": "1XFWeq4y8BTKFfkwmFKVkJ_00L9RRS-2f",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/18-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1XFWeq4y8BTKFfkwmFKVkJ_00L9RRS-2f.png",
+    "size": 1780834,
+    "sha256": "413f2358508e703dba42c4a0211f6d7f754c35f377090e64d01b7033929a2cee",
+    "action": "already_uploaded"
+  },
+  "1U78fKmhgOVls87pImu7nOZ5X6O9cMRX-": {
+    "drive_id": "1U78fKmhgOVls87pImu7nOZ5X6O9cMRX-",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/15-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1U78fKmhgOVls87pImu7nOZ5X6O9cMRX-.png",
+    "size": 1819905,
+    "sha256": "f7168342f033cb7eff411cce9e8c3e18a463c8793f0b7e897665285dad2a3d6b",
+    "action": "already_uploaded"
+  },
+  "12WBC57D6VVyVzN03SdhfqLK_R9r9Z1TQ": {
+    "drive_id": "12WBC57D6VVyVzN03SdhfqLK_R9r9Z1TQ",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/24-30.png",
+    "bucket": "slides",
+    "path": "drive-import/12WBC57D6VVyVzN03SdhfqLK_R9r9Z1TQ.png",
+    "size": 1820383,
+    "sha256": "0d04f61e92ea3e164760fdaf13c1bcdc2f315360b876415c8d0c5965d9b7bf95",
+    "action": "already_uploaded"
+  },
+  "19YdQ5t7sZ7LkzkwfRI0eBHQhfLTDwM0M": {
+    "drive_id": "19YdQ5t7sZ7LkzkwfRI0eBHQhfLTDwM0M",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/22-30.png",
+    "bucket": "slides",
+    "path": "drive-import/19YdQ5t7sZ7LkzkwfRI0eBHQhfLTDwM0M.png",
+    "size": 1510312,
+    "sha256": "b66997bfefa99ecf76aae90d5d13febe73ef46deca29ee860d48b7a22396e48e",
+    "action": "already_uploaded"
+  },
+  "1BX_TVry7fW07m_TA5xCNV2cMKPjeDjNI": {
+    "drive_id": "1BX_TVry7fW07m_TA5xCNV2cMKPjeDjNI",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/25-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1BX_TVry7fW07m_TA5xCNV2cMKPjeDjNI.png",
+    "size": 1830223,
+    "sha256": "a889cf40072181dc8a225c57cf49db0fd6e31a69a244634b3fa1ba34230e7a95",
+    "action": "already_uploaded"
+  },
+  "1eOko0YSl8U6gyXfYkXf4b_Rp4m6_gRAE": {
+    "drive_id": "1eOko0YSl8U6gyXfYkXf4b_Rp4m6_gRAE",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/26-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1eOko0YSl8U6gyXfYkXf4b_Rp4m6_gRAE.png",
+    "size": 1828819,
+    "sha256": "e704f1b03c338e08367860ddc6b3cbec27316ae24623cca37c6a562f259553a5",
+    "action": "already_uploaded"
+  },
+  "1Jgbjat8ngZOoA3Fx99b-FlGXemHLjjqt": {
+    "drive_id": "1Jgbjat8ngZOoA3Fx99b-FlGXemHLjjqt",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/27-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1Jgbjat8ngZOoA3Fx99b-FlGXemHLjjqt.png",
+    "size": 1763589,
+    "sha256": "c515b3a36ab48b22a0f95604f695a5cc5384e1bf169df08e6b2a2a78e07bcf39",
+    "action": "already_uploaded"
+  },
+  "1bMUiriDucEmtSEh79lFFfdC1jCjcVeQS": {
+    "drive_id": "1bMUiriDucEmtSEh79lFFfdC1jCjcVeQS",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/23-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1bMUiriDucEmtSEh79lFFfdC1jCjcVeQS.png",
+    "size": 1545259,
+    "sha256": "f3d23c6fc52877b82ca2d64b88ad7f335de39d23cd6a1cc2216f2e5f9b9a53da",
+    "action": "already_uploaded"
+  },
+  "1SBcvIQbQKtY2rl7NKvpUC5DY0kY_VvJi": {
+    "drive_id": "1SBcvIQbQKtY2rl7NKvpUC5DY0kY_VvJi",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/30-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1SBcvIQbQKtY2rl7NKvpUC5DY0kY_VvJi.png",
+    "size": 1834299,
+    "sha256": "b58a82c63baff1d8c8242c65235199c2bc8482e876f622e6e69698c09eae55fd",
+    "action": "already_uploaded"
+  },
+  "18NqFMFYJ1tXgFaDQNIQVVr1wQwCYy6ez": {
+    "drive_id": "18NqFMFYJ1tXgFaDQNIQVVr1wQwCYy6ez",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/29-30.png",
+    "bucket": "slides",
+    "path": "drive-import/18NqFMFYJ1tXgFaDQNIQVVr1wQwCYy6ez.png",
+    "size": 1727811,
+    "sha256": "94a66f7c7fcc4ae55a0f98d800b3e102a3a89aa2b3ad998da31c6004b65c5e0c",
+    "action": "already_uploaded"
+  },
+  "11KfsZwkhyGTZFeZTGL-FOrKgBTkcLzbP": {
+    "drive_id": "11KfsZwkhyGTZFeZTGL-FOrKgBTkcLzbP",
+    "source": "PROJETOS PRATICOS/PRATICA 01/02-27.png",
+    "bucket": "slides",
+    "path": "drive-import/11KfsZwkhyGTZFeZTGL-FOrKgBTkcLzbP.png",
+    "size": 1771132,
+    "sha256": "85ea9169fe38ca43c255674e86a5311288c8cb7a84667e90fc91f10726b91402",
+    "action": "already_uploaded"
+  },
+  "1tF4x-KK0xs8frEOF1bXWojNmMUYWBVNV": {
+    "drive_id": "1tF4x-KK0xs8frEOF1bXWojNmMUYWBVNV",
+    "source": "PROJETOS PRATICOS/PRATICA 01/03-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1tF4x-KK0xs8frEOF1bXWojNmMUYWBVNV.png",
+    "size": 1701365,
+    "sha256": "a00eacfeea6b05877d6d232a26cc91406fe82e15d73f12dda4f23bd8974f64cb",
+    "action": "already_uploaded"
+  },
+  "1lMgp6puMhMK51NUN6UFW-M_CsOsK6_VF": {
+    "drive_id": "1lMgp6puMhMK51NUN6UFW-M_CsOsK6_VF",
+    "source": "ORATORIA/CONTEUDO/PRATICA 03/28-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1lMgp6puMhMK51NUN6UFW-M_CsOsK6_VF.png",
+    "size": 1774484,
+    "sha256": "a8ba3bcb1dd17856a561a6a208bab2f07d9dcb842b2e6cd5f9d86c0897bd8aa1",
+    "action": "already_uploaded"
+  },
+  "1iYKhBadhx13TNBwwivONj3aCVpbwYR7k": {
+    "drive_id": "1iYKhBadhx13TNBwwivONj3aCVpbwYR7k",
+    "source": "PROJETOS PRATICOS/PRATICA 01/04-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1iYKhBadhx13TNBwwivONj3aCVpbwYR7k.png",
+    "size": 1662728,
+    "sha256": "cf3d695492b029c08996efe71bcf4c2b9d7d36e152dee618d9390e1739d595e8",
+    "action": "already_uploaded"
+  },
+  "1u5tXieC-CjX_eDOrYUH9ODk7hbHroK00": {
+    "drive_id": "1u5tXieC-CjX_eDOrYUH9ODk7hbHroK00",
+    "source": "PROJETOS PRATICOS/PRATICA 01/05-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1u5tXieC-CjX_eDOrYUH9ODk7hbHroK00.png",
+    "size": 1632042,
+    "sha256": "38f0b204c10370abeab05101b890caeef359d1cb54f3f1e84859acae4d3478ca",
+    "action": "already_uploaded"
+  },
+  "1nr1uOKD7HHaYlBKjCkfa_RIhXaBEO-Wl": {
+    "drive_id": "1nr1uOKD7HHaYlBKjCkfa_RIhXaBEO-Wl",
+    "source": "PROJETOS PRATICOS/PRATICA 01/06-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1nr1uOKD7HHaYlBKjCkfa_RIhXaBEO-Wl.png",
+    "size": 1710844,
+    "sha256": "d62ce01b3ced9f62a38d0f96638b75ff5f79ed1d571f74072678c55433c80228",
+    "action": "already_uploaded"
+  },
+  "1wWje9QMKV7HY6RE2LVcKLRLqO6XXR_zM": {
+    "drive_id": "1wWje9QMKV7HY6RE2LVcKLRLqO6XXR_zM",
+    "source": "PROJETOS PRATICOS/PRATICA 01/08-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1wWje9QMKV7HY6RE2LVcKLRLqO6XXR_zM.png",
+    "size": 1686543,
+    "sha256": "ab0d02b9f1d96da7c9c9fc9288d21a4f3090f9c1ac080807b4f350b466a32752",
+    "action": "already_uploaded"
+  },
+  "163wimLXT6akfdRdymR4LgjxDlCjFZ0rl": {
+    "drive_id": "163wimLXT6akfdRdymR4LgjxDlCjFZ0rl",
+    "source": "PROJETOS PRATICOS/PRATICA 02/10-27.png",
+    "bucket": "slides",
+    "path": "drive-import/163wimLXT6akfdRdymR4LgjxDlCjFZ0rl.png",
+    "size": 1566849,
+    "sha256": "1bb693e5b028604570b61136fe4e7faddd72c66a24253772c813ce5fcb5a2007",
+    "action": "already_uploaded"
+  },
+  "1Pw5a0MMVvfRjwuJxtCl4YPU2wD5qs78q": {
+    "drive_id": "1Pw5a0MMVvfRjwuJxtCl4YPU2wD5qs78q",
+    "source": "PROJETOS PRATICOS/PRATICA 01/01-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1Pw5a0MMVvfRjwuJxtCl4YPU2wD5qs78q.png",
+    "size": 1853923,
+    "sha256": "860d60c046b0f8f9bf931f13823cab3da95cae44f8148db4dc21586779f3720f",
+    "action": "already_uploaded"
+  },
+  "1wUPji9A-6ENXymKQDJN-gj6iXFo0Nkyi": {
+    "drive_id": "1wUPji9A-6ENXymKQDJN-gj6iXFo0Nkyi",
+    "source": "PROJETOS PRATICOS/PRATICA 01/09-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1wUPji9A-6ENXymKQDJN-gj6iXFo0Nkyi.png",
+    "size": 1723018,
+    "sha256": "ceb05746575f29150d954f9e7122b479e9747b749993a2d01240efbeb196cea0",
+    "action": "already_uploaded"
+  },
+  "1d70TyVUyErSk171lOXIlLeSLGh7g26k3": {
+    "drive_id": "1d70TyVUyErSk171lOXIlLeSLGh7g26k3",
+    "source": "PROJETOS PRATICOS/PRATICA 02/11-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1d70TyVUyErSk171lOXIlLeSLGh7g26k3.png",
+    "size": 1687634,
+    "sha256": "5fa81002d26f18932d00e6fe8f2fee404d8dbe656304d9d578c48855a7988ac8",
+    "action": "already_uploaded"
+  },
+  "1dJRWx6DxwaNgV_bNQDeBUomkL-KQxz2N": {
+    "drive_id": "1dJRWx6DxwaNgV_bNQDeBUomkL-KQxz2N",
+    "source": "PROJETOS PRATICOS/PRATICA 02/12-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1dJRWx6DxwaNgV_bNQDeBUomkL-KQxz2N.png",
+    "size": 1696503,
+    "sha256": "8531608105b5ff2f557b01c0fce1ad939d4cde3b85086fd913ce6f1b19e5e002",
+    "action": "already_uploaded"
+  },
+  "1WK1rMVlU_Au676QrvAiTpm8DSI1fTK1h": {
+    "drive_id": "1WK1rMVlU_Au676QrvAiTpm8DSI1fTK1h",
+    "source": "PROJETOS PRATICOS/PRATICA 01/07-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1WK1rMVlU_Au676QrvAiTpm8DSI1fTK1h.png",
+    "size": 1736671,
+    "sha256": "6b37694337d99b1054f5642fcfe6a869b8c21fd2e3e17b26fe365634e75a5adb",
+    "action": "already_uploaded"
+  },
+  "1yvAjldS_26JuzQbQ5GvEfPl9Wut7_oaK": {
+    "drive_id": "1yvAjldS_26JuzQbQ5GvEfPl9Wut7_oaK",
+    "source": "PROJETOS PRATICOS/PRATICA 02/14-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1yvAjldS_26JuzQbQ5GvEfPl9Wut7_oaK.png",
+    "size": 1770110,
+    "sha256": "5174b8e3b99794fbd4a273d83ca7440861e8422d147073de8725774147dddf47",
+    "action": "already_uploaded"
+  },
+  "1FXm5m-jCZ9Rjz7rzh2VO641_E61UZ7Zv": {
+    "drive_id": "1FXm5m-jCZ9Rjz7rzh2VO641_E61UZ7Zv",
+    "source": "PROJETOS PRATICOS/PRATICA 02/15-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1FXm5m-jCZ9Rjz7rzh2VO641_E61UZ7Zv.png",
+    "size": 1715359,
+    "sha256": "8a7024114b9a0a392003751febb1fa0f258d9486c2de2a7187f58fb7ba0e3c96",
+    "action": "already_uploaded"
+  },
+  "1cjd3dMegSF2b_zoQvBBD2SvDaBFx0n_h": {
+    "drive_id": "1cjd3dMegSF2b_zoQvBBD2SvDaBFx0n_h",
+    "source": "PROJETOS PRATICOS/PRATICA 02/17-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1cjd3dMegSF2b_zoQvBBD2SvDaBFx0n_h.png",
+    "size": 1736707,
+    "sha256": "23851ff5d33e1d46016f1c105f44cb79556da3a2f011dd97731dc6bfeaed14c5",
+    "action": "already_uploaded"
+  },
+  "1d-G6XXpK5_p1d8-on0vu1SXGjT8TJC-p": {
+    "drive_id": "1d-G6XXpK5_p1d8-on0vu1SXGjT8TJC-p",
+    "source": "PROJETOS PRATICOS/PRATICA 02/18-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1d-G6XXpK5_p1d8-on0vu1SXGjT8TJC-p.png",
+    "size": 1632985,
+    "sha256": "301a1641eea327bec8ea00e6a557237dadabcfde72a01688d886a163498ca284",
+    "action": "already_uploaded"
+  },
+  "1kVSkfOm_FYiTZ_f7tFnztBO_TMXPjIqF": {
+    "drive_id": "1kVSkfOm_FYiTZ_f7tFnztBO_TMXPjIqF",
+    "source": "PROJETOS PRATICOS/PRATICA 02/13-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1kVSkfOm_FYiTZ_f7tFnztBO_TMXPjIqF.png",
+    "size": 1672048,
+    "sha256": "6e7f285b0e2545a361344b6d86f7638dd81fc062a1e77a121af4b49accdf9057",
+    "action": "already_uploaded"
+  },
+  "1nleYVeAQx6QHQ-CjEsjTQyY_HvB1NLXW": {
+    "drive_id": "1nleYVeAQx6QHQ-CjEsjTQyY_HvB1NLXW",
+    "source": "PROJETOS PRATICOS/PRATICA 03/19-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1nleYVeAQx6QHQ-CjEsjTQyY_HvB1NLXW.png",
+    "size": 1876353,
+    "sha256": "19eeb47f05131ff49c7a1cb144e4051666a7245e5e2ca2546728d889d42eee39",
+    "action": "already_uploaded"
+  },
+  "18fvFKTCBT7njbcQ6XD5jJdyOIXgPP9OD": {
+    "drive_id": "18fvFKTCBT7njbcQ6XD5jJdyOIXgPP9OD",
+    "source": "PROJETOS PRATICOS/PRATICA 03/21-27.png",
+    "bucket": "slides",
+    "path": "drive-import/18fvFKTCBT7njbcQ6XD5jJdyOIXgPP9OD.png",
+    "size": 1843408,
+    "sha256": "c8b376098253ec172bf20631e37940916789ea38859731579e017c7091c90ac0",
+    "action": "already_uploaded"
+  },
+  "1VBfLxKOf9Ov5YGAGQ95Am16VFAoKYj70": {
+    "drive_id": "1VBfLxKOf9Ov5YGAGQ95Am16VFAoKYj70",
+    "source": "PROJETOS PRATICOS/PRATICA 02/16-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1VBfLxKOf9Ov5YGAGQ95Am16VFAoKYj70.png",
+    "size": 1658652,
+    "sha256": "bd13191c9a4f9d2259552eb295fff698c33bce25e8585f3044566b4b6caa921a",
+    "action": "already_uploaded"
+  },
+  "1knwdCQoII51jgFVcQ2ekhUvnQPFDK7aB": {
+    "drive_id": "1knwdCQoII51jgFVcQ2ekhUvnQPFDK7aB",
+    "source": "PROJETOS PRATICOS/PRATICA 03/22-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1knwdCQoII51jgFVcQ2ekhUvnQPFDK7aB.png",
+    "size": 1635704,
+    "sha256": "d3cbfda256b6986a71743c4b2e6d1968ef88e8b5c118172c1b9a9052f902bdc0",
+    "action": "already_uploaded"
+  },
+  "1hTysCBTgLIcrI0vQLOptOOCwbPs1h79V": {
+    "drive_id": "1hTysCBTgLIcrI0vQLOptOOCwbPs1h79V",
+    "source": "PROJETOS PRATICOS/PRATICA 03/23-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1hTysCBTgLIcrI0vQLOptOOCwbPs1h79V.png",
+    "size": 1761048,
+    "sha256": "532b22fcee28d60e9e444915bc752ca47f1a37dba142c7000be12dfdf2a4d42e",
+    "action": "already_uploaded"
+  },
+  "1qmU91FHBjlbMbVjyAyXmYYoKbVkFndBU": {
+    "drive_id": "1qmU91FHBjlbMbVjyAyXmYYoKbVkFndBU",
+    "source": "PROJETOS PRATICOS/PRATICA 03/24-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1qmU91FHBjlbMbVjyAyXmYYoKbVkFndBU.png",
+    "size": 1588170,
+    "sha256": "938b4baac1df833a476c8f1f49d5fc89d75df90cb9f46503f41ed2fb250ea04a",
+    "action": "already_uploaded"
+  },
+  "1_EDXWP6oLNgUK4Clf4aFWNCErhrBh8LW": {
+    "drive_id": "1_EDXWP6oLNgUK4Clf4aFWNCErhrBh8LW",
+    "source": "PROJETOS PRATICOS/PRATICA 03/26-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1_EDXWP6oLNgUK4Clf4aFWNCErhrBh8LW.png",
+    "size": 1718208,
+    "sha256": "4434c7424efe51ee410aca93ac83c27c64e0f12b4a8b2c5b95a431c84a521173",
+    "action": "already_uploaded"
+  },
+  "1f1rg3vcJPACOmtcExwWO9dzTAxNnIU8J": {
+    "drive_id": "1f1rg3vcJPACOmtcExwWO9dzTAxNnIU8J",
+    "source": "PROJETOS PRATICOS/MATERIAL/10-27.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1f1rg3vcJPACOmtcExwWO9dzTAxNnIU8J.xlsx",
+    "size": 89498,
+    "sha256": "adfe1c0f384e98a40a6b0526800532703e82f2c11fac86c6875d749a4e7c7b3e",
+    "action": "already_uploaded"
+  },
+  "11e1aFZXxSDJ_idjPguezQvM_ijDGmO3S": {
+    "drive_id": "11e1aFZXxSDJ_idjPguezQvM_ijDGmO3S",
+    "source": "PROJETOS PRATICOS/MATERIAL/11-27.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/11e1aFZXxSDJ_idjPguezQvM_ijDGmO3S.xlsx",
+    "size": 21519,
+    "sha256": "4317c3e523f604a519af0243f115eb805b02e95bf64f33b3b57fbc7ab60b8ae3",
+    "action": "already_uploaded"
+  },
+  "1h_n1crNic0ilrkb5FMZpjCGnDucfy-k-": {
+    "drive_id": "1h_n1crNic0ilrkb5FMZpjCGnDucfy-k-",
+    "source": "PROJETOS PRATICOS/MATERIAL/12-17.xlsx",
+    "bucket": "materiais",
+    "path": "drive-import/1h_n1crNic0ilrkb5FMZpjCGnDucfy-k-.xlsx",
+    "size": 146222,
+    "sha256": "8e32264df4a48e16ff6403daf5b66714dc736a97dfd8bd29ab2b156d563d81b1",
+    "action": "already_uploaded"
+  },
+  "1ktx5Ezo8t-2wMwynN-KKQdCZ9-ZkGcJw": {
+    "drive_id": "1ktx5Ezo8t-2wMwynN-KKQdCZ9-ZkGcJw",
+    "source": "PROJETOS PRATICOS/PRATICA 03/20-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1ktx5Ezo8t-2wMwynN-KKQdCZ9-ZkGcJw.png",
+    "size": 1763514,
+    "sha256": "348b5ecdb4abec90ea05031ae2e89a34ea77a2035f83eaaa6398f231030f9ab7",
+    "action": "already_uploaded"
+  },
+  "1CDfxnziuZ0K0NzGN59Y9jMZnzUgiuT4d": {
+    "drive_id": "1CDfxnziuZ0K0NzGN59Y9jMZnzUgiuT4d",
+    "source": "PROJETOS PRATICOS/PRATICA 03/27-27.png",
+    "bucket": "slides",
+    "path": "drive-import/1CDfxnziuZ0K0NzGN59Y9jMZnzUgiuT4d.png",
+    "size": 2068526,
+    "sha256": "7ee8e87742132f5d44d5e6caec191c2abbcbc0c834aa27504ff88c9cd4766fcf",
+    "action": "already_uploaded"
+  },
+  "13eo8dA7PfBHOXsH9PjPAm-_-7AWGjo3X": {
+    "drive_id": "13eo8dA7PfBHOXsH9PjPAm-_-7AWGjo3X",
+    "source": "PROJETOS PRATICOS/PRATICA 03/25-27.png",
+    "bucket": "slides",
+    "path": "drive-import/13eo8dA7PfBHOXsH9PjPAm-_-7AWGjo3X.png",
+    "size": 1567936,
+    "sha256": "65e11e1119d8394c32e5996a58979045f101d310fb36091263b893ed8b1a4101",
+    "action": "already_uploaded"
+  },
+  "1KkL83aUcmhONn3zTov2KAHRjJ-pRLwYS": {
+    "drive_id": "1KkL83aUcmhONn3zTov2KAHRjJ-pRLwYS",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/01-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1KkL83aUcmhONn3zTov2KAHRjJ-pRLwYS.png",
+    "size": 1915937,
+    "sha256": "16c9563c7436be9b3570c52d71e1d962ddcdac59aa236e2096c63cbc1c8d0646",
+    "action": "already_uploaded"
+  },
+  "1S7VuohsBDQQrZ9j3BPkmkzBn2Y42D78_": {
+    "drive_id": "1S7VuohsBDQQrZ9j3BPkmkzBn2Y42D78_",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/02-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1S7VuohsBDQQrZ9j3BPkmkzBn2Y42D78_.png",
+    "size": 1951005,
+    "sha256": "2c75515cf5067ef8246ae62eac04363a2738f22ccd99e33a8e0333c6d1666069",
+    "action": "already_uploaded"
+  },
+  "1yax9IO-Ay8zzYWlRp7qkuA5vQhtvmPvf": {
+    "drive_id": "1yax9IO-Ay8zzYWlRp7qkuA5vQhtvmPvf",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/03-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1yax9IO-Ay8zzYWlRp7qkuA5vQhtvmPvf.png",
+    "size": 1882429,
+    "sha256": "f34f2027d96665f5ed6ca3012a7cbf15caafd161498cfca0f11082a446cddd00",
+    "action": "already_uploaded"
+  },
+  "1aLY2PtieAfybfLP-KpEoXoAnfa13-u9W": {
+    "drive_id": "1aLY2PtieAfybfLP-KpEoXoAnfa13-u9W",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/05-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1aLY2PtieAfybfLP-KpEoXoAnfa13-u9W.png",
+    "size": 1786632,
+    "sha256": "f4ce4a66f75786b0d36c5cbee8a476591460c408fb7a1b900bbacf734f93a628",
+    "action": "already_uploaded"
+  },
+  "1RbH2GHiJe8vtzhXYEmOtH6gvXA1zUAtd": {
+    "drive_id": "1RbH2GHiJe8vtzhXYEmOtH6gvXA1zUAtd",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/08-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1RbH2GHiJe8vtzhXYEmOtH6gvXA1zUAtd.png",
+    "size": 1579086,
+    "sha256": "f1674fff93cd913b495d714c4f81da749dd63522d66dff22099f1f476da661e4",
+    "action": "already_uploaded"
+  },
+  "1CqI0hkfqMEFWd1Wja-tmwufYCQYGlg5G": {
+    "drive_id": "1CqI0hkfqMEFWd1Wja-tmwufYCQYGlg5G",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/04-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1CqI0hkfqMEFWd1Wja-tmwufYCQYGlg5G.png",
+    "size": 1898966,
+    "sha256": "c314c3e581cb7706cd45a07bd8023be3edb53fe9e3873e7048ea704381e8444f",
+    "action": "already_uploaded"
+  },
+  "1ZGpW3lYHNlaV6q42YjDCQx9-cyB3mtpM": {
+    "drive_id": "1ZGpW3lYHNlaV6q42YjDCQx9-cyB3mtpM",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/09-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1ZGpW3lYHNlaV6q42YjDCQx9-cyB3mtpM.png",
+    "size": 1470641,
+    "sha256": "535cb1f1bcb9a22bf7df5c1b2b301bb8f8fd457798d845d82c37178f5399fef2",
+    "action": "already_uploaded"
+  },
+  "1pXIbOVa_ksIc2j0GC15CCRsATeNyJ8LE": {
+    "drive_id": "1pXIbOVa_ksIc2j0GC15CCRsATeNyJ8LE",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/07-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1pXIbOVa_ksIc2j0GC15CCRsATeNyJ8LE.png",
+    "size": 1688790,
+    "sha256": "49c99be44d23c844da235b2f08efeccaf4387736637acb198eb6847e8877877c",
+    "action": "already_uploaded"
+  },
+  "1LnWF7hE64012aZq_3HUPySJpw1KpnLQs": {
+    "drive_id": "1LnWF7hE64012aZq_3HUPySJpw1KpnLQs",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/10-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1LnWF7hE64012aZq_3HUPySJpw1KpnLQs.png",
+    "size": 1408023,
+    "sha256": "a37db3b9baf4ec0849be20e1361a5bf3fcd8615765552aa1a2ef50c41467d297",
+    "action": "already_uploaded"
+  },
+  "18Oz244x3YXN759GZa6tTR7TWw3p9yvGl": {
+    "drive_id": "18Oz244x3YXN759GZa6tTR7TWw3p9yvGl",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/13-30.png",
+    "bucket": "slides",
+    "path": "drive-import/18Oz244x3YXN759GZa6tTR7TWw3p9yvGl.png",
+    "size": 1444674,
+    "sha256": "cd2f6f24ce37b068e8f08be4ee9ff62c441c1a634f73edfca98a3b229f05604c",
+    "action": "already_uploaded"
+  },
+  "1lw5sipni2l018dgcRzrABxt1oPzBooMP": {
+    "drive_id": "1lw5sipni2l018dgcRzrABxt1oPzBooMP",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/11-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1lw5sipni2l018dgcRzrABxt1oPzBooMP.png",
+    "size": 1432451,
+    "sha256": "38f8fd21bdc3f0f715c4f2b768b471c0002801047b3f28b9f58e51a94fdb3cb0",
+    "action": "already_uploaded"
+  },
+  "1-r731MBdhQqWxToIOSf4FqrVUOC8GSZq": {
+    "drive_id": "1-r731MBdhQqWxToIOSf4FqrVUOC8GSZq",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/12-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1-r731MBdhQqWxToIOSf4FqrVUOC8GSZq.png",
+    "size": 1625738,
+    "sha256": "1822a0fe9e9baf126afdbdbf0abd01033313cc66d986badb940dd9508072436c",
+    "action": "already_uploaded"
+  },
+  "1d3emBVjD9g0lQ1wmv6_FKpuLnKhBhg41": {
+    "drive_id": "1d3emBVjD9g0lQ1wmv6_FKpuLnKhBhg41",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/15-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1d3emBVjD9g0lQ1wmv6_FKpuLnKhBhg41.png",
+    "size": 1508460,
+    "sha256": "6aa8cdba08e292477510064eda32f55122dfc9c81186096b4d8267795e6a174b",
+    "action": "already_uploaded"
+  },
+  "1EpGbaG9ytSVmeZvn1ffUMrZcMIGAhDO8": {
+    "drive_id": "1EpGbaG9ytSVmeZvn1ffUMrZcMIGAhDO8",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/16-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1EpGbaG9ytSVmeZvn1ffUMrZcMIGAhDO8.png",
+    "size": 1493239,
+    "sha256": "df5a4af23b65dde8200ecef7d291d0cadbf8cf00670c6f1a7a7b648ca4c5fb6f",
+    "action": "already_uploaded"
+  },
+  "1AqOC1GrhhEa0EQ2mqWhPsWp8fCqzOz1p": {
+    "drive_id": "1AqOC1GrhhEa0EQ2mqWhPsWp8fCqzOz1p",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/18-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1AqOC1GrhhEa0EQ2mqWhPsWp8fCqzOz1p.png",
+    "size": 1592731,
+    "sha256": "93c6c534130e0d5c0ec1a9253fa9b756c68f3f76bca2a3a85b9de0b410b2d9df",
+    "action": "already_uploaded"
+  },
+  "1EjH6j0C6SphJ3UV9nz6mQ6M880QC7o8y": {
+    "drive_id": "1EjH6j0C6SphJ3UV9nz6mQ6M880QC7o8y",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/19-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1EjH6j0C6SphJ3UV9nz6mQ6M880QC7o8y.png",
+    "size": 1558976,
+    "sha256": "266aaef3911728c3691125cbaedd6877a1bcfd2f4b5b1729ce4f4840bae18472",
+    "action": "already_uploaded"
+  },
+  "16Tlb06cx1yCJuEEYA54YFgsmI5ot1S_d": {
+    "drive_id": "16Tlb06cx1yCJuEEYA54YFgsmI5ot1S_d",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/17-30.png",
+    "bucket": "slides",
+    "path": "drive-import/16Tlb06cx1yCJuEEYA54YFgsmI5ot1S_d.png",
+    "size": 1485056,
+    "sha256": "44211d0765452c8073a6fa8fa9ff462b09864fe18ffcf9d3ba358c4679148833",
+    "action": "already_uploaded"
+  },
+  "1n6JcP9KSBis0ybR6nL42ef1GsbE2ZoBn": {
+    "drive_id": "1n6JcP9KSBis0ybR6nL42ef1GsbE2ZoBn",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/21-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1n6JcP9KSBis0ybR6nL42ef1GsbE2ZoBn.png",
+    "size": 1725169,
+    "sha256": "86dd91fd7b618bb9c4c8b81d54ebcd11615f13dedf224e223fa356458dbc99de",
+    "action": "already_uploaded"
+  },
+  "1nOhpnmNZ-LDoF0qigwUW9fhGU9pcmcnS": {
+    "drive_id": "1nOhpnmNZ-LDoF0qigwUW9fhGU9pcmcnS",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/14-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1nOhpnmNZ-LDoF0qigwUW9fhGU9pcmcnS.png",
+    "size": 1528379,
+    "sha256": "c3ec715c066e6e4068e4d8d81dfeaf0fba7d3dd58f639182e9e5695b0c668bb0",
+    "action": "already_uploaded"
+  },
+  "1dcgH3T3i-pHWDDNxZs6djJrlSHybbRH9": {
+    "drive_id": "1dcgH3T3i-pHWDDNxZs6djJrlSHybbRH9",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/22-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1dcgH3T3i-pHWDDNxZs6djJrlSHybbRH9.png",
+    "size": 1517744,
+    "sha256": "65e8bd233e9e9f036b2b596c85985e62261b0e438ea55781fa7dda9bf750d6e0",
+    "action": "already_uploaded"
+  },
+  "1DF6rbAlAbC37G81zV3OahaRe3RWD5EX5": {
+    "drive_id": "1DF6rbAlAbC37G81zV3OahaRe3RWD5EX5",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/24-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1DF6rbAlAbC37G81zV3OahaRe3RWD5EX5.png",
+    "size": 1452257,
+    "sha256": "70c0960e543db24b7ee2ea7bdddd03fd0451b74d4346f37fec93891a5dc1ad23",
+    "action": "already_uploaded"
+  },
+  "1_CWFIIllgGmjdhGKCgJtEjlfBh4wYWW3": {
+    "drive_id": "1_CWFIIllgGmjdhGKCgJtEjlfBh4wYWW3",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/23-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1_CWFIIllgGmjdhGKCgJtEjlfBh4wYWW3.png",
+    "size": 1447348,
+    "sha256": "fe7d37494ca9b23affbcc791b8911319e842c6449e4aa92e5aa2789e24c7e487",
+    "action": "already_uploaded"
+  },
+  "1EaeuqetNNjiOlKAhSwf_wV9d6F2CQD_B": {
+    "drive_id": "1EaeuqetNNjiOlKAhSwf_wV9d6F2CQD_B",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 02/20-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1EaeuqetNNjiOlKAhSwf_wV9d6F2CQD_B.png",
+    "size": 1681456,
+    "sha256": "6999c3a3c19060f670998532ec14590bdc5ee148e8e2a33a88a747faa76c4f6f",
+    "action": "already_uploaded"
+  },
+  "1i5ISL9DpGppiHSsvhA1ieFLrNyr19DcP": {
+    "drive_id": "1i5ISL9DpGppiHSsvhA1ieFLrNyr19DcP",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/26-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1i5ISL9DpGppiHSsvhA1ieFLrNyr19DcP.png",
+    "size": 1488182,
+    "sha256": "e368c6f0b3625c0a636ae59893ebfbe2628a8a1644f7d62eb2036c852befbe4a",
+    "action": "already_uploaded"
+  },
+  "1qqWGLUAkKBSQrq-bd1QFw9vv6HqAQOTF": {
+    "drive_id": "1qqWGLUAkKBSQrq-bd1QFw9vv6HqAQOTF",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/25-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1qqWGLUAkKBSQrq-bd1QFw9vv6HqAQOTF.png",
+    "size": 1462551,
+    "sha256": "d9fbcb06791949bcd3fd7a7f8f540269b7a57659dcd52fbb290fe7e8fe25506d",
+    "action": "already_uploaded"
+  },
+  "1-xTBfye6Qec8CDc4MC9S74MH5hL4rbT_": {
+    "drive_id": "1-xTBfye6Qec8CDc4MC9S74MH5hL4rbT_",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/28-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1-xTBfye6Qec8CDc4MC9S74MH5hL4rbT_.png",
+    "size": 1575074,
+    "sha256": "7e7769102e316740484d7ab4754f55c85e0416659d83b60342b009bc222a0012",
+    "action": "already_uploaded"
+  },
+  "14ac8xLoexgwFcz1u1XNC82LpyzrvUJXJ": {
+    "drive_id": "14ac8xLoexgwFcz1u1XNC82LpyzrvUJXJ",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 01/06-30.png",
+    "bucket": "slides",
+    "path": "drive-import/14ac8xLoexgwFcz1u1XNC82LpyzrvUJXJ.png",
+    "size": 1684003,
+    "sha256": "9360f7eccb47da7a15f1caf13382b3d1c3ea5a05853938d8639b90373ddc88f5",
+    "action": "already_uploaded"
+  },
+  "1Z-MowloAnvMt3CSPZ4m5qxM395o74cer": {
+    "drive_id": "1Z-MowloAnvMt3CSPZ4m5qxM395o74cer",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Z-MowloAnvMt3CSPZ4m5qxM395o74cer.png",
+    "size": 1194635,
+    "sha256": "909063a84344da8dc17f7440fb068f5d50fcd0c61942e4611ad9a567e9abd388",
+    "action": "already_uploaded"
+  },
+  "1wu-icrqlomZurV6TBs7looSSEWQJZsNM": {
+    "drive_id": "1wu-icrqlomZurV6TBs7looSSEWQJZsNM",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/27-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1wu-icrqlomZurV6TBs7looSSEWQJZsNM.png",
+    "size": 1537380,
+    "sha256": "d5635b39da165a8fdb5e676b4f4634618167e9acd6bea829b5239d9eefaaeead",
+    "action": "already_uploaded"
+  },
+  "1D_eyCdtghWH0i0oHHYTZVVjHhTo-mm1b": {
+    "drive_id": "1D_eyCdtghWH0i0oHHYTZVVjHhTo-mm1b",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1D_eyCdtghWH0i0oHHYTZVVjHhTo-mm1b.png",
+    "size": 1088908,
+    "sha256": "f74a2661ee3e801e96a3e45930f2ba30d83002392f69d3592ee3d579f605b550",
+    "action": "already_uploaded"
+  },
+  "1xCpGActvfSjVfhP2aR_3LsJZyOjM6S4-": {
+    "drive_id": "1xCpGActvfSjVfhP2aR_3LsJZyOjM6S4-",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1xCpGActvfSjVfhP2aR_3LsJZyOjM6S4-.png",
+    "size": 1159351,
+    "sha256": "6433323b6c0aed61447a67d3c0160d3a65112d6cd5bf85233edad5e915316615",
+    "action": "already_uploaded"
+  },
+  "1TcgensHvtTCbWS6gtCeYwIPfPitFloH1": {
+    "drive_id": "1TcgensHvtTCbWS6gtCeYwIPfPitFloH1",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1TcgensHvtTCbWS6gtCeYwIPfPitFloH1.png",
+    "size": 1166723,
+    "sha256": "a76a013e53eec4941f9a3da61906209ee4b757a64f899e14d942a762bfa83d3e",
+    "action": "already_uploaded"
+  },
+  "1eAXXConIGC0-kP8cNQK3H1UevmgunlHc": {
+    "drive_id": "1eAXXConIGC0-kP8cNQK3H1UevmgunlHc",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/29-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1eAXXConIGC0-kP8cNQK3H1UevmgunlHc.png",
+    "size": 1538774,
+    "sha256": "c34131a4b6b3d6ad507c2d38dd451d4ce78ea3f18c1f09444019158fb8bd9d39",
+    "action": "already_uploaded"
+  },
+  "1AwcRVXE1WrVz-yAZOuFmFJrlzSSENbOG": {
+    "drive_id": "1AwcRVXE1WrVz-yAZOuFmFJrlzSSENbOG",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1AwcRVXE1WrVz-yAZOuFmFJrlzSSENbOG.png",
+    "size": 1279525,
+    "sha256": "ececbf24807eb7146a02d0676ed20e80d60644c0da7e127f4807ef44908a99ab",
+    "action": "already_uploaded"
+  },
+  "1VxgMcJDg5827SQja3_fAWjdpJo_WF5Fq": {
+    "drive_id": "1VxgMcJDg5827SQja3_fAWjdpJo_WF5Fq",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1VxgMcJDg5827SQja3_fAWjdpJo_WF5Fq.png",
+    "size": 1340772,
+    "sha256": "50f1f9eeb4ff7c44c7a3c81af5c2e2173acdfc0a297987133d39288aa67183c9",
+    "action": "already_uploaded"
+  },
+  "1CuX_RUbbdarex2xCyXulgC-EaB4jQVPV": {
+    "drive_id": "1CuX_RUbbdarex2xCyXulgC-EaB4jQVPV",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1CuX_RUbbdarex2xCyXulgC-EaB4jQVPV.png",
+    "size": 1226597,
+    "sha256": "4a381a54dd77c560c1e8d956c1dde53695431293df9292505c4b82891cbce802",
+    "action": "already_uploaded"
+  },
+  "1dVYd3k0FWJh6jrhK_Q5HE4-ayoHZhziR": {
+    "drive_id": "1dVYd3k0FWJh6jrhK_Q5HE4-ayoHZhziR",
+    "source": "SOFT SKILLS/CONTEUDO/PRATICA 03/30-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1dVYd3k0FWJh6jrhK_Q5HE4-ayoHZhziR.png",
+    "size": 1671844,
+    "sha256": "abe77f51b92c8df9a85a11f9ec721d4b37301023fca74935dff3953640faa2a9",
+    "action": "already_uploaded"
+  },
+  "18aS1T1UomDfxTqeQH6l_9PoO7HlTn5VS": {
+    "drive_id": "18aS1T1UomDfxTqeQH6l_9PoO7HlTn5VS",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/18aS1T1UomDfxTqeQH6l_9PoO7HlTn5VS.png",
+    "size": 1418934,
+    "sha256": "783a81c63b7813eb7169a67dfaeec9440584d127b3e545a752808f5a17493e22",
+    "action": "already_uploaded"
+  },
+  "19HAL9ETs4bDPx1RPaF7zMSGqlYoj0ysa": {
+    "drive_id": "19HAL9ETs4bDPx1RPaF7zMSGqlYoj0ysa",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/19HAL9ETs4bDPx1RPaF7zMSGqlYoj0ysa.png",
+    "size": 1324274,
+    "sha256": "22c6c5305cc99e116b1ba35e58e79784bd1ba00b91f8769604099fb8eb88dea6",
+    "action": "already_uploaded"
+  },
+  "16RP0nEiAC5AW8NMPF0iloti9fhshO7OH": {
+    "drive_id": "16RP0nEiAC5AW8NMPF0iloti9fhshO7OH",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/16RP0nEiAC5AW8NMPF0iloti9fhshO7OH.png",
+    "size": 1411853,
+    "sha256": "de2a9f8d0101680f552e2b0635ec9269ad4870d55e56d13ab4c0db5407b60cf1",
+    "action": "already_uploaded"
+  },
+  "1Wi9_XQS8LidztjTxeskieq5bNtVLoAJc": {
+    "drive_id": "1Wi9_XQS8LidztjTxeskieq5bNtVLoAJc",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Wi9_XQS8LidztjTxeskieq5bNtVLoAJc.png",
+    "size": 1312224,
+    "sha256": "0d3e5db397a5c7a8602ff7f1d48c613466ea70c75298d18ef0dabd886ea75564",
+    "action": "already_uploaded"
+  },
+  "1kuEuMCplmBM3tNwTQ2G6DYKEd82-vhIr": {
+    "drive_id": "1kuEuMCplmBM3tNwTQ2G6DYKEd82-vhIr",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1kuEuMCplmBM3tNwTQ2G6DYKEd82-vhIr.png",
+    "size": 1424550,
+    "sha256": "8cc3e08a2749f095c04af00537dd8f7c1387c660ba07c2ba9edd64423ec54a9d",
+    "action": "already_uploaded"
+  },
+  "13j6sOdsSt_xMoJhALXNBkvPvsPmmMQL1": {
+    "drive_id": "13j6sOdsSt_xMoJhALXNBkvPvsPmmMQL1",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/13j6sOdsSt_xMoJhALXNBkvPvsPmmMQL1.png",
+    "size": 1541745,
+    "sha256": "ea340d21d5443b83d5236d75fc1978ee027e4f71b99047d818fa6ce0bdc2db84",
+    "action": "already_uploaded"
+  },
+  "1hdqP51MKy73aK6ZeEnh3n4pHhpMvBYaU": {
+    "drive_id": "1hdqP51MKy73aK6ZeEnh3n4pHhpMvBYaU",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1hdqP51MKy73aK6ZeEnh3n4pHhpMvBYaU.png",
+    "size": 1251324,
+    "sha256": "f14bf5d121f63ccd7d4c17e556f45376f0bd64b1e45fd21ae8d2e02f9b901d17",
+    "action": "already_uploaded"
+  },
+  "15cIp2BG5zcarrY-30hFjxKeBRseVKV0k": {
+    "drive_id": "15cIp2BG5zcarrY-30hFjxKeBRseVKV0k",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/15cIp2BG5zcarrY-30hFjxKeBRseVKV0k.png",
+    "size": 1501234,
+    "sha256": "f587cd83cd9de6f1a3efdb518f978f4a54dec30453e47b46f4f6aeacf6f5394c",
+    "action": "already_uploaded"
+  },
+  "1yYe4L15xAjIKWI7CxWuKhtCmjFopEs9p": {
+    "drive_id": "1yYe4L15xAjIKWI7CxWuKhtCmjFopEs9p",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1yYe4L15xAjIKWI7CxWuKhtCmjFopEs9p.png",
+    "size": 1468799,
+    "sha256": "e0c5fe2e274a931b47952f091284b5b155b7b97afee7f8a5e01b438d7fc5aaa2",
+    "action": "already_uploaded"
+  },
+  "1v30qSEWryWjlHOF2ZfjJZv3ecppgHv8T": {
+    "drive_id": "1v30qSEWryWjlHOF2ZfjJZv3ecppgHv8T",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1v30qSEWryWjlHOF2ZfjJZv3ecppgHv8T.png",
+    "size": 1368146,
+    "sha256": "a176a3848932b22dba0a4e2a5cfed868c24795f6fb409544c38ec0536f9edf53",
+    "action": "already_uploaded"
+  },
+  "17VNf-kq-46UACUm85ZmoJlQDs31zFtv_": {
+    "drive_id": "17VNf-kq-46UACUm85ZmoJlQDs31zFtv_",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/17VNf-kq-46UACUm85ZmoJlQDs31zFtv_.png",
+    "size": 1329128,
+    "sha256": "b8676e9f1d878243886bf337e8294cae7655f0240005bba9537299ec414fa0f5",
+    "action": "already_uploaded"
+  },
+  "1j3XED_jdYaAhlctxbCxrUec7kIQhcxKt": {
+    "drive_id": "1j3XED_jdYaAhlctxbCxrUec7kIQhcxKt",
+    "source": "TRANSIÇÃO DE CARREIRA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/1j3XED_jdYaAhlctxbCxrUec7kIQhcxKt.png",
+    "size": 2024753,
+    "sha256": "8124a18bba7cc46bdaeff3dfed34017ab679be3f554695c4bff46db28ae1a36c",
+    "action": "already_uploaded"
+  },
+  "1kSnW5pbBJqo722HTdkmu_u1WHLenySGE": {
+    "drive_id": "1kSnW5pbBJqo722HTdkmu_u1WHLenySGE",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1kSnW5pbBJqo722HTdkmu_u1WHLenySGE.png",
+    "size": 1238524,
+    "sha256": "b45f18db78190190590822250c6110eca2b925fe506273bec7273045426abdb7",
+    "action": "already_uploaded"
+  },
+  "1gpoAqXREXjKuHiW4anb0mXNSfgc0Phci": {
+    "drive_id": "1gpoAqXREXjKuHiW4anb0mXNSfgc0Phci",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1gpoAqXREXjKuHiW4anb0mXNSfgc0Phci.png",
+    "size": 1339039,
+    "sha256": "1e1697e7a95720a77c6ca7d83831bea40ff8700394856202024419f5c1893f27",
+    "action": "already_uploaded"
+  },
+  "1wnmPUcHLXyYHd2kYGDJQj6qWtrekOeXE": {
+    "drive_id": "1wnmPUcHLXyYHd2kYGDJQj6qWtrekOeXE",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1wnmPUcHLXyYHd2kYGDJQj6qWtrekOeXE.png",
+    "size": 1326236,
+    "sha256": "18468a922c3dca681d54d0380820e0b2d0462da1baf78e012810a77e87feb76d",
+    "action": "already_uploaded"
+  },
+  "1OZ-fELJ6SN8fEGyo8TOSSMWYIciJpvXN": {
+    "drive_id": "1OZ-fELJ6SN8fEGyo8TOSSMWYIciJpvXN",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1OZ-fELJ6SN8fEGyo8TOSSMWYIciJpvXN.png",
+    "size": 1669070,
+    "sha256": "051d71c7c8010c6784c7a55af82b19c63c909267f244eeed4d32255a41f6d1a5",
+    "action": "already_uploaded"
+  },
+  "1Pq3YKjccATGRSTxuyV69RD_-GZWTv8tH": {
+    "drive_id": "1Pq3YKjccATGRSTxuyV69RD_-GZWTv8tH",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Pq3YKjccATGRSTxuyV69RD_-GZWTv8tH.png",
+    "size": 1575464,
+    "sha256": "e636721246ff1c1f136f481f0a49f503307257ac04aad8b32e8eddfbcdb27bbe",
+    "action": "already_uploaded"
+  },
+  "1uB6tEVMu0FHQTYXFDp6P6TkKP1lVX4O2": {
+    "drive_id": "1uB6tEVMu0FHQTYXFDp6P6TkKP1lVX4O2",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1uB6tEVMu0FHQTYXFDp6P6TkKP1lVX4O2.png",
+    "size": 1180059,
+    "sha256": "fa5f64209ac9c31be13162aac50e7d9f24ce5b48633e0ae3ffcf0c4ce1c263df",
+    "action": "already_uploaded"
+  },
+  "1MwmgsDZFE83imTP4E3_fPr5KONhcYMAJ": {
+    "drive_id": "1MwmgsDZFE83imTP4E3_fPr5KONhcYMAJ",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1MwmgsDZFE83imTP4E3_fPr5KONhcYMAJ.png",
+    "size": 1504370,
+    "sha256": "ee3eb80ffbfdfd65055b5e173a7ed6357014277cc796f5d96712bbbd4a030d26",
+    "action": "already_uploaded"
+  },
+  "1eCtpE1zGF5a-Sg3L4EvqS_1oeunmIeC2": {
+    "drive_id": "1eCtpE1zGF5a-Sg3L4EvqS_1oeunmIeC2",
+    "source": "VIBE CODING/CONTEUDO/PRATICA 01/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1eCtpE1zGF5a-Sg3L4EvqS_1oeunmIeC2.png",
+    "size": 1568311,
+    "sha256": "fee45f80a5a5bd872edbe7a3a10b73fa0d3b3f97ebcbfdb6576ae727b7f02376",
+    "action": "already_uploaded"
+  },
+  "1GLx10q-vUIKGwgoNpRtSjd3Dwdw6p4F6": {
+    "drive_id": "1GLx10q-vUIKGwgoNpRtSjd3Dwdw6p4F6",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1GLx10q-vUIKGwgoNpRtSjd3Dwdw6p4F6.png",
+    "size": 1175411,
+    "sha256": "8eef8a68164ca79962f57e7ffba9e6f460bde5f471cf1ee53c6bad9e91b75fcb",
+    "action": "already_uploaded"
+  },
+  "1YJtX4bXwrFh9J8AjZdBbw3eFTlnIMmWi": {
+    "drive_id": "1YJtX4bXwrFh9J8AjZdBbw3eFTlnIMmWi",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1YJtX4bXwrFh9J8AjZdBbw3eFTlnIMmWi.png",
+    "size": 1470508,
+    "sha256": "a1eccfe58597caf6947cc5dd5d177c9306d1b71ae7f744c478212323b5fb2140",
+    "action": "already_uploaded"
+  },
+  "1ohLQeAyyjt4ohZ_tlS4dhgtPv-ivjm4g": {
+    "drive_id": "1ohLQeAyyjt4ohZ_tlS4dhgtPv-ivjm4g",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ohLQeAyyjt4ohZ_tlS4dhgtPv-ivjm4g.png",
+    "size": 1768995,
+    "sha256": "8902c88d4cf03b96ddf513c7ed8acc6f9af40efee887f5302166296e273cfb09",
+    "action": "already_uploaded"
+  },
+  "1k6X0PD-R1Z0Qycth9dhaQw8D695dUi0W": {
+    "drive_id": "1k6X0PD-R1Z0Qycth9dhaQw8D695dUi0W",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1k6X0PD-R1Z0Qycth9dhaQw8D695dUi0W.png",
+    "size": 1441564,
+    "sha256": "857850969d03cef642d7304ac8d4eac566e9a89354d311f9e5d57696dd5e8829",
+    "action": "already_uploaded"
+  },
+  "1FUThoiFnfd7H4exp4SWcVlwHqQtgauxa": {
+    "drive_id": "1FUThoiFnfd7H4exp4SWcVlwHqQtgauxa",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 01/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1FUThoiFnfd7H4exp4SWcVlwHqQtgauxa.png",
+    "size": 1711212,
+    "sha256": "3180021bc57a21214e66c2d7b43669bee5cd1c766dffaffd1d157d7608ad30ac",
+    "action": "already_uploaded"
+  },
+  "1BZxbBMwMHEqakeCvTASOQTcj-dyH_Do7": {
+    "drive_id": "1BZxbBMwMHEqakeCvTASOQTcj-dyH_Do7",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1BZxbBMwMHEqakeCvTASOQTcj-dyH_Do7.png",
+    "size": 1499490,
+    "sha256": "5379c2d02f49010bb55cc810f47afcf3ecc15dc99eae9df5fd2aff854174fa6b",
+    "action": "already_uploaded"
+  },
+  "1On17HUL9MplXUDDF2c5ePpE3DjEH67jb": {
+    "drive_id": "1On17HUL9MplXUDDF2c5ePpE3DjEH67jb",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1On17HUL9MplXUDDF2c5ePpE3DjEH67jb.png",
+    "size": 1557779,
+    "sha256": "78145dd27c877a3fec89e6a49613ae5ebdcf43389027dfa5a1eedc536ba96dca",
+    "action": "already_uploaded"
+  },
+  "1dBnhDjP42HV-gYidbwGhnIj-s7otRBcT": {
+    "drive_id": "1dBnhDjP42HV-gYidbwGhnIj-s7otRBcT",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1dBnhDjP42HV-gYidbwGhnIj-s7otRBcT.png",
+    "size": 1342114,
+    "sha256": "ac909403ad1b532dfe0873d77b2b71bfdca8b0e9ddc64759eb2a664f9cc3078f",
+    "action": "already_uploaded"
+  },
+  "15VIfsHn6BqXxGg6xda17uy4fD8lQKHYu": {
+    "drive_id": "15VIfsHn6BqXxGg6xda17uy4fD8lQKHYu",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 02/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/15VIfsHn6BqXxGg6xda17uy4fD8lQKHYu.png",
+    "size": 1214279,
+    "sha256": "a14191fd80efc294046c6b4bebe77deb4a89a25893284cf32168a994e18d8933",
+    "action": "already_uploaded"
+  },
+  "1nvfzp2ctbgxZyHArtw1MbvW_fiNPFn_H": {
+    "drive_id": "1nvfzp2ctbgxZyHArtw1MbvW_fiNPFn_H",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1nvfzp2ctbgxZyHArtw1MbvW_fiNPFn_H.png",
+    "size": 1333163,
+    "sha256": "66d8f5e8707312421c624be12028dacb0fb2cb9d8ffb5adee28e2c8a2d5824fa",
+    "action": "already_uploaded"
+  },
+  "1dhthgipmVWtaXEpZ6SaEaeb_a4OEtwYB": {
+    "drive_id": "1dhthgipmVWtaXEpZ6SaEaeb_a4OEtwYB",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1dhthgipmVWtaXEpZ6SaEaeb_a4OEtwYB.png",
+    "size": 1298982,
+    "sha256": "8b9f30874365c02475ca780bc8d0136e5e52b3b457a065ab4087f4168f597cff",
+    "action": "already_uploaded"
+  },
+  "1TVpwdJAftIlYNEB8Txo7EUY_DP9Kgwh-": {
+    "drive_id": "1TVpwdJAftIlYNEB8Txo7EUY_DP9Kgwh-",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1TVpwdJAftIlYNEB8Txo7EUY_DP9Kgwh-.png",
+    "size": 1226298,
+    "sha256": "0ed158e62e7d5adc8f63d712e35a70f59885f7babe22f069502451def569a0b6",
+    "action": "already_uploaded"
+  },
+  "13c3VKcGb4dWGd-UNJaRx-VDTn4uemjQw": {
+    "drive_id": "13c3VKcGb4dWGd-UNJaRx-VDTn4uemjQw",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/13c3VKcGb4dWGd-UNJaRx-VDTn4uemjQw.png",
+    "size": 1884220,
+    "sha256": "56c3b9465302750ef0ecf056ec8171fab0f4c5ab1c84cafb583e75b19a9122b9",
+    "action": "already_uploaded"
+  },
+  "1DS37Xhi6RbhHh9UNz4EUdulPrJK5HPRi": {
+    "drive_id": "1DS37Xhi6RbhHh9UNz4EUdulPrJK5HPRi",
+    "source": "TRANSIÇÃO DE CARREIRA/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1DS37Xhi6RbhHh9UNz4EUdulPrJK5HPRi.png",
+    "size": 1603756,
+    "sha256": "feb4f13a2c240bb018bb6b3bc271a6cd9b9bc304b4dff47931215c2ec345ce83",
+    "action": "already_uploaded"
+  },
+  "1DBIVbI1-foR6ZYlUYchk_hsyDUn4PMlO": {
+    "drive_id": "1DBIVbI1-foR6ZYlUYchk_hsyDUn4PMlO",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/01-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1DBIVbI1-foR6ZYlUYchk_hsyDUn4PMlO.png",
+    "size": 1735773,
+    "sha256": "75f2aee0ed9c3a6b9ad25e52199e7ee41c192ba1bd213ef99e3f574e9203cde5",
+    "action": "already_uploaded"
+  },
+  "179lk32bBdSUXqLnEGXKl3aTbI5EIuYp5": {
+    "drive_id": "179lk32bBdSUXqLnEGXKl3aTbI5EIuYp5",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/03-24.png",
+    "bucket": "slides",
+    "path": "drive-import/179lk32bBdSUXqLnEGXKl3aTbI5EIuYp5.png",
+    "size": 1769218,
+    "sha256": "f9bb866267e826d124d8a473c3efa27cef5bef4f481901b9f8c5a4b4d64efa6d",
+    "action": "already_uploaded"
+  },
+  "1m6SZwAvuC1epWLAijylmsCQPscxWh2QO": {
+    "drive_id": "1m6SZwAvuC1epWLAijylmsCQPscxWh2QO",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/06-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1m6SZwAvuC1epWLAijylmsCQPscxWh2QO.png",
+    "size": 1663280,
+    "sha256": "ce48c64ae54f9f1d5071c34e94da6f88148a1a7517345b86fe103d76ec8e8c7e",
+    "action": "already_uploaded"
+  },
+  "1qfHDCYrACWQWw4r0eYy_xrwUJukLuXvJ": {
+    "drive_id": "1qfHDCYrACWQWw4r0eYy_xrwUJukLuXvJ",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/05-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1qfHDCYrACWQWw4r0eYy_xrwUJukLuXvJ.png",
+    "size": 1614618,
+    "sha256": "e3cbc64804f1dfe034da84d8b1900879aa5a78c07f1236d3f660b11e12032246",
+    "action": "already_uploaded"
+  },
+  "1Q_DaiPmMQvdHUKWW2NSuTBwt81kSSnXL": {
+    "drive_id": "1Q_DaiPmMQvdHUKWW2NSuTBwt81kSSnXL",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/04-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1Q_DaiPmMQvdHUKWW2NSuTBwt81kSSnXL.png",
+    "size": 1733749,
+    "sha256": "0b2839ec0d5c0c01d48bceb68901600b70d07b447fa6c86ccf2c91ffffabb11a",
+    "action": "already_uploaded"
+  },
+  "1O-FsTn8wL37b8EWqdVF6xpmz8ldzSjNr": {
+    "drive_id": "1O-FsTn8wL37b8EWqdVF6xpmz8ldzSjNr",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/02-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1O-FsTn8wL37b8EWqdVF6xpmz8ldzSjNr.png",
+    "size": 1677730,
+    "sha256": "fb3ce0ad74edefe8732856e5c7faa12450b6966dc025cbfe9d3bf2992be9ca68",
+    "action": "already_uploaded"
+  },
+  "1qx_AM1i9PxY3LqJFGEaKbyBfG8ddnb9R": {
+    "drive_id": "1qx_AM1i9PxY3LqJFGEaKbyBfG8ddnb9R",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/08-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1qx_AM1i9PxY3LqJFGEaKbyBfG8ddnb9R.png",
+    "size": 1548477,
+    "sha256": "8f37157e54bd9f3bd2d208218789fec5e9f35d6fc8d548113eab0f983b32f3a2",
+    "action": "already_uploaded"
+  },
+  "16LoGWm3ruZrKNCNx3jE2Cw-SJuL_sW35": {
+    "drive_id": "16LoGWm3ruZrKNCNx3jE2Cw-SJuL_sW35",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/11-24.png",
+    "bucket": "slides",
+    "path": "drive-import/16LoGWm3ruZrKNCNx3jE2Cw-SJuL_sW35.png",
+    "size": 1686136,
+    "sha256": "a25ab15a4da816f80cb0660a25c9a521d22a6a8bc330e76431b37b21aa2f2680",
+    "action": "already_uploaded"
+  },
+  "1sv39hc_oVCW9RRaAn2Rgs_2h2rvvh_Iq": {
+    "drive_id": "1sv39hc_oVCW9RRaAn2Rgs_2h2rvvh_Iq",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/10-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1sv39hc_oVCW9RRaAn2Rgs_2h2rvvh_Iq.png",
+    "size": 1639336,
+    "sha256": "ac0e37b2a8eacfa0b9db5bc2e3965643758daeae1f2d612f6d94930d899a7fa3",
+    "action": "already_uploaded"
+  },
+  "1LZqTuBRUIkNt14nY-sqyaVoY3xhU34np": {
+    "drive_id": "1LZqTuBRUIkNt14nY-sqyaVoY3xhU34np",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/12-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1LZqTuBRUIkNt14nY-sqyaVoY3xhU34np.png",
+    "size": 1613375,
+    "sha256": "b8e7924a92a887dc827ecc6487950b6e8358b17f66dff081adba376bb9cdc539",
+    "action": "already_uploaded"
+  },
+  "1yJf1vIKZxU56m14n6Koa3ilXFbfd-Ha9": {
+    "drive_id": "1yJf1vIKZxU56m14n6Koa3ilXFbfd-Ha9",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/09-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1yJf1vIKZxU56m14n6Koa3ilXFbfd-Ha9.png",
+    "size": 1588667,
+    "sha256": "1b75abf8e4e127d9294c3e4a4951c1b58568eba61c0ab716ded961ff2bf1882d",
+    "action": "already_uploaded"
+  },
+  "1ayN0ZcXjdsS38GyeauSSjZEcMbdWe8Yv": {
+    "drive_id": "1ayN0ZcXjdsS38GyeauSSjZEcMbdWe8Yv",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/14-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1ayN0ZcXjdsS38GyeauSSjZEcMbdWe8Yv.png",
+    "size": 1552006,
+    "sha256": "2f44fb95cabc446fe795272a4080f3588a1a3357baad1d23de06be3c755b6f6d",
+    "action": "already_uploaded"
+  },
+  "16uVgqqLvmiOSlxv9RPpYUNyMSR5ktn8-": {
+    "drive_id": "16uVgqqLvmiOSlxv9RPpYUNyMSR5ktn8-",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/15-24.png",
+    "bucket": "slides",
+    "path": "drive-import/16uVgqqLvmiOSlxv9RPpYUNyMSR5ktn8-.png",
+    "size": 1685840,
+    "sha256": "929388fe6f36bf609e8f1b4efca1b53fa8ebd22b7350c8273e792fb51d1bf7f0",
+    "action": "already_uploaded"
+  },
+  "1DhCUosypm4WIA4qenIkKO1hHWcvfHtx3": {
+    "drive_id": "1DhCUosypm4WIA4qenIkKO1hHWcvfHtx3",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/16-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1DhCUosypm4WIA4qenIkKO1hHWcvfHtx3.png",
+    "size": 1546097,
+    "sha256": "0725362f84c85ac7ba6d7513924160c147924dcb59d2041f7a1abd2625edca1a",
+    "action": "already_uploaded"
+  },
+  "16QigI6aNTAPsZch_iIvhejfpDd9S6JdW": {
+    "drive_id": "16QigI6aNTAPsZch_iIvhejfpDd9S6JdW",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/07-24.png",
+    "bucket": "slides",
+    "path": "drive-import/16QigI6aNTAPsZch_iIvhejfpDd9S6JdW.png",
+    "size": 1511271,
+    "sha256": "25bbd039241aa5db11b6cf6c7fc791714bad3fe3d0153b4765eaa4008162a104",
+    "action": "already_uploaded"
+  },
+  "1lmhZ-joe2ACBe6XhSvYcpdE0SU8Zyrj2": {
+    "drive_id": "1lmhZ-joe2ACBe6XhSvYcpdE0SU8Zyrj2",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/17-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1lmhZ-joe2ACBe6XhSvYcpdE0SU8Zyrj2.png",
+    "size": 1641929,
+    "sha256": "99f0cd4120b7ee8923f03a9b92880703bb2ef49431839f1932de3088b477db43",
+    "action": "already_uploaded"
+  },
+  "1sa8fagYj5ve49du4eWno0PxXK5knc2gI": {
+    "drive_id": "1sa8fagYj5ve49du4eWno0PxXK5knc2gI",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/18-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1sa8fagYj5ve49du4eWno0PxXK5knc2gI.png",
+    "size": 1609143,
+    "sha256": "a452161dac57e9c7da2751a4ed9476063b4311f862a45ee075b1ba0debb85582",
+    "action": "already_uploaded"
+  },
+  "1K8HGhZA-EV7oGi2MEdzTzXBHh0kmQTdm": {
+    "drive_id": "1K8HGhZA-EV7oGi2MEdzTzXBHh0kmQTdm",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/13-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1K8HGhZA-EV7oGi2MEdzTzXBHh0kmQTdm.png",
+    "size": 1577452,
+    "sha256": "0deb819191e564514f6e7e97eaf2105a8ae29ebb8b6b66ea00e26a22e8074aab",
+    "action": "already_uploaded"
+  },
+  "1F_qp-VhDaAJrfnbF5JxmiNl6y6fCwy52": {
+    "drive_id": "1F_qp-VhDaAJrfnbF5JxmiNl6y6fCwy52",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/19-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1F_qp-VhDaAJrfnbF5JxmiNl6y6fCwy52.png",
+    "size": 1741707,
+    "sha256": "9377942e230c5a9ff48716fc9efd0c5af7cbc1eb794cca472a017d795fff82c4",
+    "action": "already_uploaded"
+  },
+  "1aASu7g8jUjuIARUMnH8BUFXCIkKn4Q3B": {
+    "drive_id": "1aASu7g8jUjuIARUMnH8BUFXCIkKn4Q3B",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/22-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1aASu7g8jUjuIARUMnH8BUFXCIkKn4Q3B.png",
+    "size": 1751103,
+    "sha256": "3b49c859c0f4c8593b8a3322b6e8d157130ede781dfde7b1f70b80b4d3f77187",
+    "action": "already_uploaded"
+  },
+  "1ouULXiM8J9QdvsVT9HDI2gYCTSFhb3zB": {
+    "drive_id": "1ouULXiM8J9QdvsVT9HDI2gYCTSFhb3zB",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/23-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1ouULXiM8J9QdvsVT9HDI2gYCTSFhb3zB.png",
+    "size": 1693032,
+    "sha256": "dd2639a6a76f1bf2c105861132ff82879b8f8f26ee9082f92d3952edb9962e88",
+    "action": "already_uploaded"
+  },
+  "1sSxEuAkvcaOc8j1LyXZCitDBbyp3OyjU": {
+    "drive_id": "1sSxEuAkvcaOc8j1LyXZCitDBbyp3OyjU",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/21-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1sSxEuAkvcaOc8j1LyXZCitDBbyp3OyjU.png",
+    "size": 1719519,
+    "sha256": "6c09a72341e491d34c19a8e7bbf4394c417764e1f33e6421ba36709ee2198da4",
+    "action": "already_uploaded"
+  },
+  "1QzkDwleZhAUtM2_Sf1Kp7pvpGqToV24C": {
+    "drive_id": "1QzkDwleZhAUtM2_Sf1Kp7pvpGqToV24C",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/20-24.png",
+    "bucket": "slides",
+    "path": "drive-import/1QzkDwleZhAUtM2_Sf1Kp7pvpGqToV24C.png",
+    "size": 1768832,
+    "sha256": "a349c4dc86c8ef6ef8a6259b1aecc65c191561238a4b90593c5757320f804faa",
+    "action": "already_uploaded"
+  },
+  "14axKhkljuvF_RpOrGtsyjsAZXeaHYm6U": {
+    "drive_id": "14axKhkljuvF_RpOrGtsyjsAZXeaHYm6U",
+    "source": "POWE AUTOMATE/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/14axKhkljuvF_RpOrGtsyjsAZXeaHYm6U.png",
+    "size": 2252288,
+    "sha256": "1d930a0e9c63f807b131621706109a566f26557e5047d5087e966e262cf7da1c",
+    "action": "already_uploaded"
+  },
+  "16WIXVCET39zZT14bskmzkyrN_g70RUp1": {
+    "drive_id": "16WIXVCET39zZT14bskmzkyrN_g70RUp1",
+    "source": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/24-24.png",
+    "bucket": "slides",
+    "path": "drive-import/16WIXVCET39zZT14bskmzkyrN_g70RUp1.png",
+    "size": 1959371,
+    "sha256": "ecc6bf0e6189ba490aad00b00467763d0ce97e36b9e4fb48b909c96a10a88ca0",
+    "action": "already_uploaded"
+  },
+  "1vOWXjCGGu_wH0Eo-w3voQebumVSiuyMJ": {
+    "drive_id": "1vOWXjCGGu_wH0Eo-w3voQebumVSiuyMJ",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1vOWXjCGGu_wH0Eo-w3voQebumVSiuyMJ.png",
+    "size": 1639404,
+    "sha256": "4e256adab46b8d4fe4b0a370a170e965e3a009ccb174f4b4fa1e28945b5d3b67",
+    "action": "already_uploaded"
+  },
+  "1isWAJrquOZAUI2tGXhHiTx-nhTilMOjY": {
+    "drive_id": "1isWAJrquOZAUI2tGXhHiTx-nhTilMOjY",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1isWAJrquOZAUI2tGXhHiTx-nhTilMOjY.png",
+    "size": 1692044,
+    "sha256": "f14b88cf165cd815070b8d482b71c0847bc12f2ce7e3ee06a8f657afd8e5812c",
+    "action": "already_uploaded"
+  },
+  "1Mw1ZLZvbc0UjYyW5iYIiGsJvtek_NZdJ": {
+    "drive_id": "1Mw1ZLZvbc0UjYyW5iYIiGsJvtek_NZdJ",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Mw1ZLZvbc0UjYyW5iYIiGsJvtek_NZdJ.png",
+    "size": 1276560,
+    "sha256": "d80d24a680035a66ae7a03a5cee4ee7295f1117402e2badb60d3d8c6ded1e142",
+    "action": "already_uploaded"
+  },
+  "10n3-emSuZItzvzC0FXQmpUJUgiu9M_BL": {
+    "drive_id": "10n3-emSuZItzvzC0FXQmpUJUgiu9M_BL",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/10n3-emSuZItzvzC0FXQmpUJUgiu9M_BL.png",
+    "size": 1625511,
+    "sha256": "3aa91fff1634900f9ed882af097a8a8c1b7d6d21341342bfd9216a3596aafda8",
+    "action": "already_uploaded"
+  },
+  "1ZO7cexw2GqpDnEZTNW_6cjLF6cv3KeQp": {
+    "drive_id": "1ZO7cexw2GqpDnEZTNW_6cjLF6cv3KeQp",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ZO7cexw2GqpDnEZTNW_6cjLF6cv3KeQp.png",
+    "size": 1464859,
+    "sha256": "5d0a2b78179c03595d638b2d98cd448213eb2c6d5bb79dff1917f98ab97a25a8",
+    "action": "already_uploaded"
+  },
+  "1jGHrr5HsdtYKebeTpVmnJ69DDKBR3_Qf": {
+    "drive_id": "1jGHrr5HsdtYKebeTpVmnJ69DDKBR3_Qf",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1jGHrr5HsdtYKebeTpVmnJ69DDKBR3_Qf.png",
+    "size": 1719101,
+    "sha256": "95603db60505ef3ea2b4ce71f305810fc3881df6b61f3987c20fe95deffc8856",
+    "action": "already_uploaded"
+  },
+  "1NOXjO2eH9G1pjnJXFiOdMQ546kwB7s8l": {
+    "drive_id": "1NOXjO2eH9G1pjnJXFiOdMQ546kwB7s8l",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1NOXjO2eH9G1pjnJXFiOdMQ546kwB7s8l.png",
+    "size": 1431528,
+    "sha256": "35a8c9876c38f831fa4e4fb392d7ddd59c7dec0cf525499231f13633c09cf1cd",
+    "action": "already_uploaded"
+  },
+  "1MZEkyhD0EKNxIfpnNYovZG4pdxbbEJwa": {
+    "drive_id": "1MZEkyhD0EKNxIfpnNYovZG4pdxbbEJwa",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1MZEkyhD0EKNxIfpnNYovZG4pdxbbEJwa.png",
+    "size": 1525969,
+    "sha256": "c24f1743b92c373c9ec729330dc4c2d8b008846343c1fb5297feb7d0559f5897",
+    "action": "already_uploaded"
+  },
+  "1nRD7720zh63aKfOejng_OyHyIN2Sbjpp": {
+    "drive_id": "1nRD7720zh63aKfOejng_OyHyIN2Sbjpp",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1nRD7720zh63aKfOejng_OyHyIN2Sbjpp.png",
+    "size": 1333448,
+    "sha256": "59aa5fa38850677923605735f405326e2d97ff9166d32f7ab0ae0fe62725a14e",
+    "action": "already_uploaded"
+  },
+  "1kIa3a3iMTZhsZ8nI4uWUqu8Zuq9C0QKK": {
+    "drive_id": "1kIa3a3iMTZhsZ8nI4uWUqu8Zuq9C0QKK",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1kIa3a3iMTZhsZ8nI4uWUqu8Zuq9C0QKK.png",
+    "size": 1607784,
+    "sha256": "bb79db4280899ec41edcf38d0ceaf121970c2c3772615b5c101a275aa906d0ec",
+    "action": "already_uploaded"
+  },
+  "1UHEIsP3dam_XB61qwKqfNVwb1gKF2G7p": {
+    "drive_id": "1UHEIsP3dam_XB61qwKqfNVwb1gKF2G7p",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1UHEIsP3dam_XB61qwKqfNVwb1gKF2G7p.png",
+    "size": 1364320,
+    "sha256": "5f0d052f3f1c855fa80c7fcf7e50dd2fe4c120274f4a857e7b46942c936092bc",
+    "action": "already_uploaded"
+  },
+  "1AwtWMu_49QSb7_-Bs64IfVlSPLyNMOzx": {
+    "drive_id": "1AwtWMu_49QSb7_-Bs64IfVlSPLyNMOzx",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1AwtWMu_49QSb7_-Bs64IfVlSPLyNMOzx.png",
+    "size": 1499278,
+    "sha256": "b30846cea55dd1ca740edf477e591b67e68d503f24fc3ceba912d226256d8536",
+    "action": "already_uploaded"
+  },
+  "1uSU13st5MZO0m6mXneiPWah9qL5lQrKO": {
+    "drive_id": "1uSU13st5MZO0m6mXneiPWah9qL5lQrKO",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1uSU13st5MZO0m6mXneiPWah9qL5lQrKO.png",
+    "size": 1459538,
+    "sha256": "7d82c3a917b20b5655bf9b80e4ccc1ed1d6ed6e4fc758f95156f6d1764844f1a",
+    "action": "already_uploaded"
+  },
+  "1aNS074vS9kUs8MSg0lJeLDOOvexBkpMe": {
+    "drive_id": "1aNS074vS9kUs8MSg0lJeLDOOvexBkpMe",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1aNS074vS9kUs8MSg0lJeLDOOvexBkpMe.png",
+    "size": 1471978,
+    "sha256": "26ecad6b146b7610186f015f7e5ea7ad90c8622caf512bb92e59703b8f005633",
+    "action": "already_uploaded"
+  },
+  "1W8xKuVeMh0Zhru54Ey4PtV961KWGj9pU": {
+    "drive_id": "1W8xKuVeMh0Zhru54Ey4PtV961KWGj9pU",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1W8xKuVeMh0Zhru54Ey4PtV961KWGj9pU.png",
+    "size": 1507768,
+    "sha256": "d6be74a78246ae12216e10a3db44d40226459ae42a0015435719d8e8a819ae22",
+    "action": "already_uploaded"
+  },
+  "1s4oW2lkDRckP48ByKUBShv8Oy1fUklO_": {
+    "drive_id": "1s4oW2lkDRckP48ByKUBShv8Oy1fUklO_",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 02/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1s4oW2lkDRckP48ByKUBShv8Oy1fUklO_.png",
+    "size": 1450935,
+    "sha256": "284591fcf4e345f5b58cd095d71113fd4a98bef1850f4d5031efb2721e5cba50",
+    "action": "already_uploaded"
+  },
+  "1KGrl9ZV4ccxGiaN4h0gWYvERTX0RvAcT": {
+    "drive_id": "1KGrl9ZV4ccxGiaN4h0gWYvERTX0RvAcT",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1KGrl9ZV4ccxGiaN4h0gWYvERTX0RvAcT.png",
+    "size": 1622601,
+    "sha256": "3a5f41756f66ad2206c8d278e9fdf7f68ed35c7c9bf6f149768bab7969a602a4",
+    "action": "already_uploaded"
+  },
+  "1zX2OyNLedsvV6KTkVDJdtpPurYm_hIpI": {
+    "drive_id": "1zX2OyNLedsvV6KTkVDJdtpPurYm_hIpI",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1zX2OyNLedsvV6KTkVDJdtpPurYm_hIpI.png",
+    "size": 1474140,
+    "sha256": "e2f981f043adecf4cdf324d18b1d4c02e76ba3b100193632abda17403fbeebfb",
+    "action": "already_uploaded"
+  },
+  "1M2xWcngTxNfs5_jCHve-yTDH4iNmsYKw": {
+    "drive_id": "1M2xWcngTxNfs5_jCHve-yTDH4iNmsYKw",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1M2xWcngTxNfs5_jCHve-yTDH4iNmsYKw.png",
+    "size": 1429328,
+    "sha256": "82b586f1fb6bd9b23d32d0d35d1ab52b335e04ceef09ec3b055713b9e14f2d4f",
+    "action": "already_uploaded"
+  },
+  "1SKQFmByW_Sp3sXk0Elr09iH5rBgE0Gh_": {
+    "drive_id": "1SKQFmByW_Sp3sXk0Elr09iH5rBgE0Gh_",
+    "source": "POWE AUTOMATE/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1SKQFmByW_Sp3sXk0Elr09iH5rBgE0Gh_.png",
+    "size": 1495534,
+    "sha256": "642380404c4ddacd4ed0fa756478571d721459e5e5f8ec86968a3081a51b560c",
+    "action": "already_uploaded"
+  },
+  "1Nmx82jh8f-ojAi3xSmQDI2ZaytFSQUvD": {
+    "drive_id": "1Nmx82jh8f-ojAi3xSmQDI2ZaytFSQUvD",
+    "source": "SUCESSO DO CLIENTE/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/1Nmx82jh8f-ojAi3xSmQDI2ZaytFSQUvD.png",
+    "size": 1557246,
+    "sha256": "ef077d88ae1509665a3230e8d476e20d0ebc7e241990da6a25940c09ee47189d",
+    "action": "already_uploaded"
+  },
+  "1jTLGzBjSjjv9LmZHgYgTQ8Ji8k2g6lJg": {
+    "drive_id": "1jTLGzBjSjjv9LmZHgYgTQ8Ji8k2g6lJg",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1jTLGzBjSjjv9LmZHgYgTQ8Ji8k2g6lJg.png",
+    "size": 1337451,
+    "sha256": "f31577ad4ec802165fcccea1adfcfb60d7df632b86231f1341755f15c69025da",
+    "action": "already_uploaded"
+  },
+  "1QRP_d4cmoPpBM27fzQwsqlkpmw8JUr0C": {
+    "drive_id": "1QRP_d4cmoPpBM27fzQwsqlkpmw8JUr0C",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1QRP_d4cmoPpBM27fzQwsqlkpmw8JUr0C.png",
+    "size": 1296241,
+    "sha256": "07a8de3583b1ed7045dbb672315766ccc2f9ef60f7e0e126175b19a739c31bc0",
+    "action": "already_uploaded"
+  },
+  "1RHt5ULaF9unLhR9Qy2X-QaiLzWu-HFSV": {
+    "drive_id": "1RHt5ULaF9unLhR9Qy2X-QaiLzWu-HFSV",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1RHt5ULaF9unLhR9Qy2X-QaiLzWu-HFSV.png",
+    "size": 1361333,
+    "sha256": "bb7e198f00138488cae5654cbb29429380762d92c97cd34218b19da69f92a4f4",
+    "action": "already_uploaded"
+  },
+  "1ivottAeFL3CFGGslCiWfgdoLCEmRuraK": {
+    "drive_id": "1ivottAeFL3CFGGslCiWfgdoLCEmRuraK",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ivottAeFL3CFGGslCiWfgdoLCEmRuraK.png",
+    "size": 1213377,
+    "sha256": "ce7e1a818edd79ebd9e9efbbfeba93764e35074c866a2576963f4ba4134048a1",
+    "action": "already_uploaded"
+  },
+  "14w0EbXnrB8roqQGkGwpz1e-n_IrL53U7": {
+    "drive_id": "14w0EbXnrB8roqQGkGwpz1e-n_IrL53U7",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/14w0EbXnrB8roqQGkGwpz1e-n_IrL53U7.png",
+    "size": 1484810,
+    "sha256": "489bb87e3404b150ddf4136c1b2f6ca288b2a4a23c910ad0a87486efd9478474",
+    "action": "already_uploaded"
+  },
+  "1naEphuTovWbpNYRFEnUhshrsVWyLe9Rz": {
+    "drive_id": "1naEphuTovWbpNYRFEnUhshrsVWyLe9Rz",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1naEphuTovWbpNYRFEnUhshrsVWyLe9Rz.png",
+    "size": 1317137,
+    "sha256": "7dba9b3c5773d569318001b5bd4af6eaa18da579d7ea7b083617187bc821f158",
+    "action": "already_uploaded"
+  },
+  "1oJfj7i12UOZmimvHsURSyJRK8QcHvwk8": {
+    "drive_id": "1oJfj7i12UOZmimvHsURSyJRK8QcHvwk8",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1oJfj7i12UOZmimvHsURSyJRK8QcHvwk8.png",
+    "size": 1367270,
+    "sha256": "8189c08faf481ca5ae5bc85f29c6e97614c0dfcdcdef7d4b99b0952f603cef5c",
+    "action": "already_uploaded"
+  },
+  "1g1IOjpuhTBOklzn6undZNtPYznlOmO1f": {
+    "drive_id": "1g1IOjpuhTBOklzn6undZNtPYznlOmO1f",
+    "source": "SUCESSO DO CLIENTE/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1g1IOjpuhTBOklzn6undZNtPYznlOmO1f.png",
+    "size": 1400545,
+    "sha256": "6878da5b100ba76c577b7b230233f30f3fd65a1f3ba875bf8433a9bf70affa36",
+    "action": "already_uploaded"
+  },
+  "10an3kNcet6ReF0wdZZGH4E-5yYSn_dZy": {
+    "drive_id": "10an3kNcet6ReF0wdZZGH4E-5yYSn_dZy",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/10an3kNcet6ReF0wdZZGH4E-5yYSn_dZy.png",
+    "size": 1332817,
+    "sha256": "c42e69bfcf38ead5be366aada642458d2543b9a1c310a988f0ec9db98f7cdc9d",
+    "action": "already_uploaded"
+  },
+  "1FYacIdZPuB59lw1sLaC13VrodrRo9Pj2": {
+    "drive_id": "1FYacIdZPuB59lw1sLaC13VrodrRo9Pj2",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1FYacIdZPuB59lw1sLaC13VrodrRo9Pj2.png",
+    "size": 1484761,
+    "sha256": "5150065c78570ff6989cdcd5599d28f97c7e31bb353f36fb712ad88c72dc2a81",
+    "action": "already_uploaded"
+  },
+  "1lFUjJymSuslwyGJsBs5dKeBpXpIyIUDZ": {
+    "drive_id": "1lFUjJymSuslwyGJsBs5dKeBpXpIyIUDZ",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1lFUjJymSuslwyGJsBs5dKeBpXpIyIUDZ.png",
+    "size": 1452969,
+    "sha256": "6f717e050bc1ca4164e74b68322eb109425e74a206b11b51a79d260fa9e022b0",
+    "action": "already_uploaded"
+  },
+  "1Us0s7UJhgYYivrvFYFBXvBUXdxRc9UAP": {
+    "drive_id": "1Us0s7UJhgYYivrvFYFBXvBUXdxRc9UAP",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Us0s7UJhgYYivrvFYFBXvBUXdxRc9UAP.png",
+    "size": 1327320,
+    "sha256": "fb9fa32e375fc61858f43d26cb2dd1036bdaaf2af72296ab893f1a4f3fcdb5b5",
+    "action": "already_uploaded"
+  },
+  "1VsHDSC7witWCtAuyP9bQFeQjJdCmro_A": {
+    "drive_id": "1VsHDSC7witWCtAuyP9bQFeQjJdCmro_A",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1VsHDSC7witWCtAuyP9bQFeQjJdCmro_A.png",
+    "size": 1533918,
+    "sha256": "625157b1b0dd4d4ad46aab403621d7094ed3eeff96765eced023dbc15522f645",
+    "action": "already_uploaded"
+  },
+  "1sR-mZWTkyu2V96GkgDOzs45HAF5tJVjN": {
+    "drive_id": "1sR-mZWTkyu2V96GkgDOzs45HAF5tJVjN",
+    "source": "SUCESSO DO CLIENTE/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1sR-mZWTkyu2V96GkgDOzs45HAF5tJVjN.png",
+    "size": 1374178,
+    "sha256": "efd8102c92541e335bd3b051ebd077e9ef8e8543a28aea2dc74a2034046df191",
+    "action": "already_uploaded"
+  },
+  "1IRk5oT6eQjlWK8AN2GvmrVCWvE0WkUi5": {
+    "drive_id": "1IRk5oT6eQjlWK8AN2GvmrVCWvE0WkUi5",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/15-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1IRk5oT6eQjlWK8AN2GvmrVCWvE0WkUi5.png",
+    "size": 1498134,
+    "sha256": "b1dbf24074fe65cbb3d4145a210bfbe0eb54b2f1c15c459f9f71178540e1dd7c",
+    "action": "already_uploaded"
+  },
+  "1NYWBdq0XUgOr2r88dGs-A5cFZzs2j6dh": {
+    "drive_id": "1NYWBdq0XUgOr2r88dGs-A5cFZzs2j6dh",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1NYWBdq0XUgOr2r88dGs-A5cFZzs2j6dh.png",
+    "size": 1574607,
+    "sha256": "19b7bbc5b5246263c31285a480cfcd5204ddf0468137ae1e50d367003371fe56",
+    "action": "already_uploaded"
+  },
+  "1u3kMgjwKW9KosVCCuB_fmeZi9giJzATV": {
+    "drive_id": "1u3kMgjwKW9KosVCCuB_fmeZi9giJzATV",
+    "source": "CLAUDE/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1u3kMgjwKW9KosVCCuB_fmeZi9giJzATV.png",
+    "size": 1384388,
+    "sha256": "d709a811a840af70278c6dbea8439da2685e6de73c2ef95fd5577a68c4cb2bd0",
+    "action": "uploaded"
+  },
+  "1UIO8yxfloyO4Mve0XIfZg1SsQ6RkZMGV": {
+    "drive_id": "1UIO8yxfloyO4Mve0XIfZg1SsQ6RkZMGV",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1UIO8yxfloyO4Mve0XIfZg1SsQ6RkZMGV.png",
+    "size": 1480273,
+    "sha256": "98f5c582e32b225f0d43984a6b8ec7ad37eead1b382eccbbcd2a9ee95d6ea9db",
+    "action": "uploaded"
+  },
+  "1r7g6FoRJJ3NeDs8R1Xro9Sk6MAoL_oq7": {
+    "drive_id": "1r7g6FoRJJ3NeDs8R1Xro9Sk6MAoL_oq7",
+    "source": "COPILOT/CONTEUDO/01-10.png",
+    "bucket": "slides",
+    "path": "drive-import/1r7g6FoRJJ3NeDs8R1Xro9Sk6MAoL_oq7.png",
+    "size": 1578073,
+    "sha256": "41fff00e303cb6d08a90ad7f8ba12cf2070718907e2591a4e6652f9971eaf8a7",
+    "action": "uploaded"
+  },
+  "1WHEDCb5GaaqV21b7W8M9UW9WwPHpGtk8": {
+    "drive_id": "1WHEDCb5GaaqV21b7W8M9UW9WwPHpGtk8",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1WHEDCb5GaaqV21b7W8M9UW9WwPHpGtk8.png",
+    "size": 1277748,
+    "sha256": "17e6db9f8792f1bc7a90ae27b963b7ce96d5324281359a586703ee0f626e7b5b",
+    "action": "uploaded"
+  },
+  "1vyQwHRO_8eSQ7Hsy6IGP_YhkkbkEuMHp": {
+    "drive_id": "1vyQwHRO_8eSQ7Hsy6IGP_YhkkbkEuMHp",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1vyQwHRO_8eSQ7Hsy6IGP_YhkkbkEuMHp.png",
+    "size": 1446711,
+    "sha256": "33e718e4ac5c4f66f6751ac64178028de20a06ca6834ec95365225ea434adcc4",
+    "action": "uploaded"
+  },
+  "1Qy4EHIcE6y7RLkyuLauKW_FXPcpaP2Kr": {
+    "drive_id": "1Qy4EHIcE6y7RLkyuLauKW_FXPcpaP2Kr",
+    "source": "ORATORIA/CONTEUDO/PRATICA 02/11-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1Qy4EHIcE6y7RLkyuLauKW_FXPcpaP2Kr.png",
+    "size": 1678027,
+    "sha256": "717987add962f3549608bd33a332e2416d7fe85b002320d7528e73d8e34c17c7",
+    "action": "uploaded"
+  },
+  "1wf5E9NKvcWYP0cWnONCMToJsBfUQFHf-": {
+    "drive_id": "1wf5E9NKvcWYP0cWnONCMToJsBfUQFHf-",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1wf5E9NKvcWYP0cWnONCMToJsBfUQFHf-.png",
+    "size": 1447027,
+    "sha256": "dec631a061cee1305e0a6741528d42820f13b5724eca3d7092697508058875d1",
+    "action": "uploaded"
+  },
+  "1dxD1bbBmqsXeSclpSDu4lwGUvenAETAp": {
+    "drive_id": "1dxD1bbBmqsXeSclpSDu4lwGUvenAETAp",
+    "source": "SUCESSO DO CLIENTE/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1dxD1bbBmqsXeSclpSDu4lwGUvenAETAp.png",
+    "size": 1406646,
+    "sha256": "c2d5227e8bc8464cd9c22a733bbb1399e9e491a95c924f3e542bd2a6b86cbd5f",
+    "action": "uploaded"
+  },
+  "1kU7QsaMLdUx1sHxLgDfJQVf3ViKF5DW8": {
+    "drive_id": "1kU7QsaMLdUx1sHxLgDfJQVf3ViKF5DW8",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1kU7QsaMLdUx1sHxLgDfJQVf3ViKF5DW8.png",
+    "size": 1543208,
+    "sha256": "82c30dfe3b655d036593e968440d8c1a186b15a602d99e1443dfb0866ac4cc9a",
+    "action": "uploaded"
+  },
+  "1R71HP1JpE90xubEtOyekYg9S85X3Ef8o": {
+    "drive_id": "1R71HP1JpE90xubEtOyekYg9S85X3Ef8o",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1R71HP1JpE90xubEtOyekYg9S85X3Ef8o.png",
+    "size": 1342583,
+    "sha256": "1c7151f5c1b21989913155b6f5d7fd845fba811b51caacedeb630f79c9d708ed",
+    "action": "uploaded"
+  },
+  "1bMtCjRIrfvYMM2hh1DhjNttOLsXLNGRP": {
+    "drive_id": "1bMtCjRIrfvYMM2hh1DhjNttOLsXLNGRP",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1bMtCjRIrfvYMM2hh1DhjNttOLsXLNGRP.png",
+    "size": 1230109,
+    "sha256": "51a962b08836f745d4af0164082a5dfdb150a2d9db1831996f016250aa68be8f",
+    "action": "uploaded"
+  },
+  "1xOOoYFsGZfM9PcsvJX9fVaxksAlXQbI3": {
+    "drive_id": "1xOOoYFsGZfM9PcsvJX9fVaxksAlXQbI3",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/1xOOoYFsGZfM9PcsvJX9fVaxksAlXQbI3.png",
+    "size": 1756073,
+    "sha256": "a8dd84112fa1e2ece5d6420cb0a07fffca698273ffd5afdcb83ef03deddb1ef8",
+    "action": "uploaded"
+  },
+  "1ZNvvSKoducIDsvTNv_khsBstQaFXNyjj": {
+    "drive_id": "1ZNvvSKoducIDsvTNv_khsBstQaFXNyjj",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ZNvvSKoducIDsvTNv_khsBstQaFXNyjj.png",
+    "size": 1524365,
+    "sha256": "d8f086110fca7fdbc85f33314b48e13b538b1f85cfe5abd902d9425a9f187033",
+    "action": "uploaded"
+  },
+  "19Sx6w0KDSUcC70PsFh5JPRmM5llZRCfA": {
+    "drive_id": "19Sx6w0KDSUcC70PsFh5JPRmM5llZRCfA",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/19Sx6w0KDSUcC70PsFh5JPRmM5llZRCfA.png",
+    "size": 1316293,
+    "sha256": "8594f6dbdc9bc84d99f1fb8f315b6b444befb218677da1d8285e55823819328d",
+    "action": "uploaded"
+  },
+  "1TYEirQ_dfba6Qlt9rpDUiO8j2dvyWcNT": {
+    "drive_id": "1TYEirQ_dfba6Qlt9rpDUiO8j2dvyWcNT",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1TYEirQ_dfba6Qlt9rpDUiO8j2dvyWcNT.png",
+    "size": 1509139,
+    "sha256": "132c969b228ab4b74c2d0d296876fa25dedfde14a547d2212d15a3acbfd94211",
+    "action": "uploaded"
+  },
+  "1s2KsRK9CQe4eoBgnEuDXY0Dykpl4-D0u": {
+    "drive_id": "1s2KsRK9CQe4eoBgnEuDXY0Dykpl4-D0u",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1s2KsRK9CQe4eoBgnEuDXY0Dykpl4-D0u.png",
+    "size": 1374616,
+    "sha256": "0eaa03ef6a76ffb917544fc244f311f6fee71731c781b0b64069269e5ffabc58",
+    "action": "uploaded"
+  },
+  "1p1k1PYTT_3Qy7_bT1IWJVWYYA09qE00h": {
+    "drive_id": "1p1k1PYTT_3Qy7_bT1IWJVWYYA09qE00h",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1p1k1PYTT_3Qy7_bT1IWJVWYYA09qE00h.png",
+    "size": 1518891,
+    "sha256": "a35737c533da9ff3582f050e39024975e86c1bb2dd11fd8ca0a31aacada6aced",
+    "action": "uploaded"
+  },
+  "1KCFSLbONVmWJpclwv1dPrpudADlyI2Fo": {
+    "drive_id": "1KCFSLbONVmWJpclwv1dPrpudADlyI2Fo",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1KCFSLbONVmWJpclwv1dPrpudADlyI2Fo.png",
+    "size": 1362937,
+    "sha256": "5cff8c3328d239859d8151a3738df684a2e424dd86c484467397dc6f511a0449",
+    "action": "uploaded"
+  },
+  "1EIHMklHcxCTOz1sB6FvAn_dJkOX059yK": {
+    "drive_id": "1EIHMklHcxCTOz1sB6FvAn_dJkOX059yK",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1EIHMklHcxCTOz1sB6FvAn_dJkOX059yK.png",
+    "size": 1450504,
+    "sha256": "5dcaaf05b5463a06798e2305e8a8919fa1a10660dc128297d2e7df600356e31d",
+    "action": "uploaded"
+  },
+  "1HnlBUDxyliEPW0VYMip2nFaQSoBk150y": {
+    "drive_id": "1HnlBUDxyliEPW0VYMip2nFaQSoBk150y",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1HnlBUDxyliEPW0VYMip2nFaQSoBk150y.png",
+    "size": 1517393,
+    "sha256": "6693f03da7d1800241e34d40f591e4ef06e6621c3a3191911100c6a6a2541741",
+    "action": "uploaded"
+  },
+  "18D8HNzmQy6QskKgrqqd0iIRC8a_2YIpC": {
+    "drive_id": "18D8HNzmQy6QskKgrqqd0iIRC8a_2YIpC",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/18D8HNzmQy6QskKgrqqd0iIRC8a_2YIpC.png",
+    "size": 1381259,
+    "sha256": "410b0dddd7d64ce72599e153abbb2255b9bbcabec77d3de7b0d9d952b92480c0",
+    "action": "uploaded"
+  },
+  "1wlkwvYA6iNH8Qw0MyZKQZPnqD45ctuej": {
+    "drive_id": "1wlkwvYA6iNH8Qw0MyZKQZPnqD45ctuej",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1wlkwvYA6iNH8Qw0MyZKQZPnqD45ctuej.png",
+    "size": 1493021,
+    "sha256": "a86fcf86c546f60301e5b1b5a2b4675dba3b72bb2e520ce9a5bd97cc7767fe5e",
+    "action": "uploaded"
+  },
+  "1VF0qZ-MzNe9rTXbLsJ-wh8CnmH1NLg2Q": {
+    "drive_id": "1VF0qZ-MzNe9rTXbLsJ-wh8CnmH1NLg2Q",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1VF0qZ-MzNe9rTXbLsJ-wh8CnmH1NLg2Q.png",
+    "size": 1630875,
+    "sha256": "92d231a42a55923c2abc44a742b7113ff3e6cdec9ed64fa3983c2429a5dc9906",
+    "action": "uploaded"
+  },
+  "1cYvrhaPw18Bmh7NASpJcZeWPSXgWh5QF": {
+    "drive_id": "1cYvrhaPw18Bmh7NASpJcZeWPSXgWh5QF",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1cYvrhaPw18Bmh7NASpJcZeWPSXgWh5QF.png",
+    "size": 1489887,
+    "sha256": "e9e1989af1485adf3e19987a32fa20b68ca882e030b0ee27653141dc72084a18",
+    "action": "uploaded"
+  },
+  "1EX9Obqt1fPKkosNxuAFKB1berNvBLQCI": {
+    "drive_id": "1EX9Obqt1fPKkosNxuAFKB1berNvBLQCI",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1EX9Obqt1fPKkosNxuAFKB1berNvBLQCI.png",
+    "size": 1634900,
+    "sha256": "14dd81fc664630919c3c98d769be28b98c40ead154016483937840cd5dff31d7",
+    "action": "uploaded"
+  },
+  "1nyEPuoOU4rm0NGpAsKl07lnyOIjXHgUd": {
+    "drive_id": "1nyEPuoOU4rm0NGpAsKl07lnyOIjXHgUd",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1nyEPuoOU4rm0NGpAsKl07lnyOIjXHgUd.png",
+    "size": 1440883,
+    "sha256": "60f39b7e6be61bc56662436e0c765126a115af22bb0683d89329fad6d5c2b3f4",
+    "action": "uploaded"
+  },
+  "1q1IRG206f3KvEc_KhKqCqorN5j_wmeMA": {
+    "drive_id": "1q1IRG206f3KvEc_KhKqCqorN5j_wmeMA",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1q1IRG206f3KvEc_KhKqCqorN5j_wmeMA.png",
+    "size": 1346311,
+    "sha256": "64135c2681b1ed4542a77f412622d8917a1c1e758be4f59442848a247b30490a",
+    "action": "uploaded"
+  },
+  "13sItKG7fNDm4ozy9x2AnqD6KbkPBoGpq": {
+    "drive_id": "13sItKG7fNDm4ozy9x2AnqD6KbkPBoGpq",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/13sItKG7fNDm4ozy9x2AnqD6KbkPBoGpq.png",
+    "size": 1552663,
+    "sha256": "6c028a3538e36e358a768d5abd776ac5ecb6524a5a95630cf174c3ae6992e547",
+    "action": "uploaded"
+  },
+  "1njemglSuvgn0RwWZThXCJ5COYs8xVgVs": {
+    "drive_id": "1njemglSuvgn0RwWZThXCJ5COYs8xVgVs",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1njemglSuvgn0RwWZThXCJ5COYs8xVgVs.png",
+    "size": 1431994,
+    "sha256": "6d66beec1edfd967a73939e190670dfadbb0931b5fca76f334b8d1ff141ad754",
+    "action": "uploaded"
+  },
+  "1lVnV_z6_4kYtUE8wojoXreTv8d7C-Y1M": {
+    "drive_id": "1lVnV_z6_4kYtUE8wojoXreTv8d7C-Y1M",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/1lVnV_z6_4kYtUE8wojoXreTv8d7C-Y1M.png",
+    "size": 1689349,
+    "sha256": "2867480d6f3dd021923c303407996fc5efe6767a87fdc26deec63f12ebdb02c8",
+    "action": "uploaded"
+  },
+  "19HaGwlsRVQKYB1-EbOfVivzA9zVxijAp": {
+    "drive_id": "19HaGwlsRVQKYB1-EbOfVivzA9zVxijAp",
+    "source": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/19HaGwlsRVQKYB1-EbOfVivzA9zVxijAp.png",
+    "size": 1524516,
+    "sha256": "2652c5fd75cbc19510ab88b3da47206b261541c0539bed9cabb25db667980814",
+    "action": "uploaded"
+  },
+  "1VNjBKuGzuhFekjNOM0Jz7yzlUQ6hMeb1": {
+    "drive_id": "1VNjBKuGzuhFekjNOM0Jz7yzlUQ6hMeb1",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1VNjBKuGzuhFekjNOM0Jz7yzlUQ6hMeb1.png",
+    "size": 1666879,
+    "sha256": "e15c541d508690bd92267bb67e52f7df88ab9dc804072c69c9a96a6bd59dbd53",
+    "action": "uploaded"
+  },
+  "1glGgDH4iWVSgJ1XU5ysrxPfudwponCLe": {
+    "drive_id": "1glGgDH4iWVSgJ1XU5ysrxPfudwponCLe",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1glGgDH4iWVSgJ1XU5ysrxPfudwponCLe.png",
+    "size": 1557245,
+    "sha256": "83fdcfdcd2c364045467d41bd4ffc500fcf3a5202bfbc82a807e9f6c89633fda",
+    "action": "uploaded"
+  },
+  "1DI4sPXI3udXb5lhXXKp5OYEcHmE8q_BZ": {
+    "drive_id": "1DI4sPXI3udXb5lhXXKp5OYEcHmE8q_BZ",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1DI4sPXI3udXb5lhXXKp5OYEcHmE8q_BZ.png",
+    "size": 1688998,
+    "sha256": "214bd73688c22417b0207fbfb33949447e08488030e7f4c44582da761992e115",
+    "action": "uploaded"
+  },
+  "1_kS65VZMqCCBsgneF0l-igT-r32WczNG": {
+    "drive_id": "1_kS65VZMqCCBsgneF0l-igT-r32WczNG",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1_kS65VZMqCCBsgneF0l-igT-r32WczNG.png",
+    "size": 1440910,
+    "sha256": "154f3632725582ff87c3080ca8f6122a1f3bff8a18389335a5bbd7df3e50e74e",
+    "action": "uploaded"
+  },
+  "1IB4nV_4N0P91mBH0kHF0_iCi2A9LCpqT": {
+    "drive_id": "1IB4nV_4N0P91mBH0kHF0_iCi2A9LCpqT",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1IB4nV_4N0P91mBH0kHF0_iCi2A9LCpqT.png",
+    "size": 1531855,
+    "sha256": "8f7ddbafcb13b0e1e3be6a5c5155952d27c05072bf836b00eea11dc1a0c8bdc7",
+    "action": "uploaded"
+  },
+  "17eMti4uKNwjmtG4m0ZZ_i__FTzCysZjF": {
+    "drive_id": "17eMti4uKNwjmtG4m0ZZ_i__FTzCysZjF",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/17eMti4uKNwjmtG4m0ZZ_i__FTzCysZjF.png",
+    "size": 1570830,
+    "sha256": "4a392484b2a1f80aa2392eb6c6de1baabf7447b94390b00f31c2fe8cd2ac8a25",
+    "action": "uploaded"
+  },
+  "1cLUxV49gB9w5uGxaB9bl0tfVMC5_pvHL": {
+    "drive_id": "1cLUxV49gB9w5uGxaB9bl0tfVMC5_pvHL",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1cLUxV49gB9w5uGxaB9bl0tfVMC5_pvHL.png",
+    "size": 1594135,
+    "sha256": "9e46ba54cadf18636bcd8c92e28e499cd1cc4878fdf2101d5324049988b679c0",
+    "action": "uploaded"
+  },
+  "1Fyh-8w4_GlnDF4VW1Kipo5o61aDnU-3_": {
+    "drive_id": "1Fyh-8w4_GlnDF4VW1Kipo5o61aDnU-3_",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1Fyh-8w4_GlnDF4VW1Kipo5o61aDnU-3_.png",
+    "size": 1662019,
+    "sha256": "45c4208fc645d73742a192da1faa8454e7a7dd7e739cd23e253a5dde70cc4f29",
+    "action": "uploaded"
+  },
+  "12ofE-s1UEXC9Hp9xYdDe-IsYttYpWZZF": {
+    "drive_id": "12ofE-s1UEXC9Hp9xYdDe-IsYttYpWZZF",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/12ofE-s1UEXC9Hp9xYdDe-IsYttYpWZZF.png",
+    "size": 1899741,
+    "sha256": "c14936f3ef6b8f533e2979255563c6afb69de9a77f33593339bed3395a66cf9e",
+    "action": "uploaded"
+  },
+  "1EkhBSKnGPmZA1JsrGQJmCmP3rHaIf_mo": {
+    "drive_id": "1EkhBSKnGPmZA1JsrGQJmCmP3rHaIf_mo",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1EkhBSKnGPmZA1JsrGQJmCmP3rHaIf_mo.png",
+    "size": 1629639,
+    "sha256": "4a11f5b4bfc7ef705fc7639f4fd52309d8922c69ed8d06e4a6e8992e491481ee",
+    "action": "uploaded"
+  },
+  "1pxvNay3Ma48mtKflHqNvz-LTlwbWaeCg": {
+    "drive_id": "1pxvNay3Ma48mtKflHqNvz-LTlwbWaeCg",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1pxvNay3Ma48mtKflHqNvz-LTlwbWaeCg.png",
+    "size": 1571605,
+    "sha256": "94fcc22bb04f3868c75724e6a0032588e6b3e2c3c4c0747154665b83bcb6a4c9",
+    "action": "uploaded"
+  },
+  "1lGD9QQYVFVaQ_9ap0GhtY45ySUjLqe2l": {
+    "drive_id": "1lGD9QQYVFVaQ_9ap0GhtY45ySUjLqe2l",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1lGD9QQYVFVaQ_9ap0GhtY45ySUjLqe2l.png",
+    "size": 1662876,
+    "sha256": "5e79f73dd1a227fa80970760644b41490ee9c60e3911e4f4db193df4a45560f5",
+    "action": "uploaded"
+  },
+  "1JX9N3h2t58olfbhZycb9KvODoOnfB1_c": {
+    "drive_id": "1JX9N3h2t58olfbhZycb9KvODoOnfB1_c",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1JX9N3h2t58olfbhZycb9KvODoOnfB1_c.png",
+    "size": 1747539,
+    "sha256": "0e5205752c9d0c006e10a8a3f65102539048a6f4672c787f9a3473ba3df84a62",
+    "action": "uploaded"
+  },
+  "10glTflLeH1ksvbGAxyenhZQlyCoqQvZs": {
+    "drive_id": "10glTflLeH1ksvbGAxyenhZQlyCoqQvZs",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/10glTflLeH1ksvbGAxyenhZQlyCoqQvZs.png",
+    "size": 1637253,
+    "sha256": "580e843c74774596e21368ad44f810469be3bf0268ccf48fa257513fdaf7b85d",
+    "action": "uploaded"
+  },
+  "17mGejMTf6Lzz8RhT2U3RqL-TDy94HOQ2": {
+    "drive_id": "17mGejMTf6Lzz8RhT2U3RqL-TDy94HOQ2",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/17mGejMTf6Lzz8RhT2U3RqL-TDy94HOQ2.png",
+    "size": 1719672,
+    "sha256": "2d7b6cd38c5669a9a81b129e837de160533bf985b539bfcd4315be658f6205ed",
+    "action": "uploaded"
+  },
+  "1QwUvf-A5Yn1BvMNHWey7Vcz6UG2c0l0s": {
+    "drive_id": "1QwUvf-A5Yn1BvMNHWey7Vcz6UG2c0l0s",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1QwUvf-A5Yn1BvMNHWey7Vcz6UG2c0l0s.png",
+    "size": 1701145,
+    "sha256": "1bac36a5c88528f4008a1d556afa32645ce90f62c86d61f6cd98124232f7f4ac",
+    "action": "uploaded"
+  },
+  "1RwVMZxg-A88ZbpA0yFg2Mmf_1YRH2ogQ": {
+    "drive_id": "1RwVMZxg-A88ZbpA0yFg2Mmf_1YRH2ogQ",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1RwVMZxg-A88ZbpA0yFg2Mmf_1YRH2ogQ.png",
+    "size": 1877575,
+    "sha256": "3ee4dfb63270b7a71e0cff5c458a2f07193a23d4c1b6bb7cc793f89eaff4745f",
+    "action": "uploaded"
+  },
+  "1ztJoQ0FYJeVPuLNAz73-BRa-mRlaeYUB": {
+    "drive_id": "1ztJoQ0FYJeVPuLNAz73-BRa-mRlaeYUB",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1ztJoQ0FYJeVPuLNAz73-BRa-mRlaeYUB.png",
+    "size": 1731051,
+    "sha256": "52413aae62ca421778059e62ca34c3b8f6f2051078723005668eebafb05b7227",
+    "action": "uploaded"
+  },
+  "1Ts-dfgxHHZ0m22rtmIj8Fed3Sydl02h-": {
+    "drive_id": "1Ts-dfgxHHZ0m22rtmIj8Fed3Sydl02h-",
+    "source": "AGENTES DE IA NA PRATICA/CAPA/CAPA.png",
+    "bucket": "storage capas",
+    "path": "drive-import/1Ts-dfgxHHZ0m22rtmIj8Fed3Sydl02h-.png",
+    "size": 1479199,
+    "sha256": "6ff3078fd9d1bef4e2512b28fe8447a539d6d41396a4a35b1b4698fe469aea1f",
+    "action": "uploaded"
+  },
+  "1gKoGCCBLW9z92tKkPMYJwDGoiHIvbqco": {
+    "drive_id": "1gKoGCCBLW9z92tKkPMYJwDGoiHIvbqco",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/02-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1gKoGCCBLW9z92tKkPMYJwDGoiHIvbqco.png",
+    "size": 1431818,
+    "sha256": "d4c16b7207aea6ff74cb9d33dfd8d8d264191b3bba5b72cbf4237e1bdf25ece1",
+    "action": "uploaded"
+  },
+  "1v36UHeqntO7LL13vIfbyTyKINSkxHZEb": {
+    "drive_id": "1v36UHeqntO7LL13vIfbyTyKINSkxHZEb",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/01-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1v36UHeqntO7LL13vIfbyTyKINSkxHZEb.png",
+    "size": 1495503,
+    "sha256": "3f7e665964c8c37813723b9b0458a71fadff36186e79bda9467d0233e1670f39",
+    "action": "uploaded"
+  },
+  "1EiYOk7_nkB3BAuKbz9nOpb8hcye2YQNT": {
+    "drive_id": "1EiYOk7_nkB3BAuKbz9nOpb8hcye2YQNT",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/04-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1EiYOk7_nkB3BAuKbz9nOpb8hcye2YQNT.png",
+    "size": 1417569,
+    "sha256": "37eafdee1894316d91ccb3dd7cf8a45f756e8939d5241f43b7826d6907c63cc8",
+    "action": "uploaded"
+  },
+  "1mqFwZi7qW52iloP93lXAHb7aTY6ktpr2": {
+    "drive_id": "1mqFwZi7qW52iloP93lXAHb7aTY6ktpr2",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/03-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1mqFwZi7qW52iloP93lXAHb7aTY6ktpr2.png",
+    "size": 1388465,
+    "sha256": "94f9bf48928a0bb393a0de630821eae7a51608aeb014b3a2f453a6791d0078ba",
+    "action": "uploaded"
+  },
+  "1BIt6jVKngaotfScnSYbxm0wnEqQzCQky": {
+    "drive_id": "1BIt6jVKngaotfScnSYbxm0wnEqQzCQky",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/06-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1BIt6jVKngaotfScnSYbxm0wnEqQzCQky.png",
+    "size": 1404064,
+    "sha256": "4b03c477146d7bae4195841c4696645888ce8d547edbffc11e3d415593a3236c",
+    "action": "uploaded"
+  },
+  "1aHE8oF_i22TWVMJm8cgliqrPfuT9ukUQ": {
+    "drive_id": "1aHE8oF_i22TWVMJm8cgliqrPfuT9ukUQ",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/05-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1aHE8oF_i22TWVMJm8cgliqrPfuT9ukUQ.png",
+    "size": 1428322,
+    "sha256": "0e876f2696da23b6c7b868c18a431b7b722478bb3f687f6e8b017a857a761c57",
+    "action": "uploaded"
+  },
+  "18JM2WmSx81dPFFgGP4WdgGTd9SBdNgSD": {
+    "drive_id": "18JM2WmSx81dPFFgGP4WdgGTd9SBdNgSD",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/07-20.png",
+    "bucket": "slides",
+    "path": "drive-import/18JM2WmSx81dPFFgGP4WdgGTd9SBdNgSD.png",
+    "size": 1430890,
+    "sha256": "d6b1f0b8e63586495b0895a5f7d3cfe0ad6c57cb8e84cefbfc467f4a57a00330",
+    "action": "uploaded"
+  },
+  "14mF40cssF_DfefV0B2lg9BMbso_WJSZr": {
+    "drive_id": "14mF40cssF_DfefV0B2lg9BMbso_WJSZr",
+    "source": "COMUNICAÇÃO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/14mF40cssF_DfefV0B2lg9BMbso_WJSZr.png",
+    "size": 1689341,
+    "sha256": "0210aaed601ab7c00a8ee2eeff8488b523463db55bd0838eb6a6ed08c098a00c",
+    "action": "uploaded"
+  },
+  "1K4EyC0PEXfKniD9rM7UYxOTQ1rQ2vyH7": {
+    "drive_id": "1K4EyC0PEXfKniD9rM7UYxOTQ1rQ2vyH7",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/09-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1K4EyC0PEXfKniD9rM7UYxOTQ1rQ2vyH7.png",
+    "size": 1494696,
+    "sha256": "7e57e78871ccdd5365a40fbb3227c2faeddb76603a30b6db736192d7908046c5",
+    "action": "uploaded"
+  },
+  "13pAZaLMtmJsZFbDfxwlaHY31oBPT5on4": {
+    "drive_id": "13pAZaLMtmJsZFbDfxwlaHY31oBPT5on4",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/11-20.png",
+    "bucket": "slides",
+    "path": "drive-import/13pAZaLMtmJsZFbDfxwlaHY31oBPT5on4.png",
+    "size": 1440538,
+    "sha256": "eb690092bb1df78f0b7231d9a71e8c4938a9270dce3b160ebb962346a09e2c7d",
+    "action": "uploaded"
+  },
+  "15MoC6N4dZG5Nku2eTTS2Ml2HMbSEy8OS": {
+    "drive_id": "15MoC6N4dZG5Nku2eTTS2Ml2HMbSEy8OS",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/10-20.png",
+    "bucket": "slides",
+    "path": "drive-import/15MoC6N4dZG5Nku2eTTS2Ml2HMbSEy8OS.png",
+    "size": 1505805,
+    "sha256": "e25ab285ecf41630b47ed87787710ae66de90a6bf6d855a2910bae06e7ebc87b",
+    "action": "uploaded"
+  },
+  "1LGcGF3ejPpTTvmgvzejauJTh8Qucpi2_": {
+    "drive_id": "1LGcGF3ejPpTTvmgvzejauJTh8Qucpi2_",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/12-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1LGcGF3ejPpTTvmgvzejauJTh8Qucpi2_.png",
+    "size": 1372130,
+    "sha256": "c909fce42339737c27e26d483c0e574a668107e9a378ebbfd5df9e1516a0451d",
+    "action": "uploaded"
+  },
+  "1kgv4lLNu67mdkAHhrJTpdfn6TDv6SiHg": {
+    "drive_id": "1kgv4lLNu67mdkAHhrJTpdfn6TDv6SiHg",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/08-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1kgv4lLNu67mdkAHhrJTpdfn6TDv6SiHg.png",
+    "size": 1410269,
+    "sha256": "c940ee9f343ef16c9c7b367ee25f90df05b8a1c1dd5a40193188642e7baccfca",
+    "action": "uploaded"
+  },
+  "1YI-MqIRbSJ3UDHNNj4eQe76jVEnnPAL1": {
+    "drive_id": "1YI-MqIRbSJ3UDHNNj4eQe76jVEnnPAL1",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/15-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1YI-MqIRbSJ3UDHNNj4eQe76jVEnnPAL1.png",
+    "size": 1549129,
+    "sha256": "4d06fc06100050b156f6dbc83fee3d9629da37af0390e6b9eda19dcd5df67cdf",
+    "action": "uploaded"
+  },
+  "1tue1vHztPsPyRH4im1MZ0uGYQJFWlFTU": {
+    "drive_id": "1tue1vHztPsPyRH4im1MZ0uGYQJFWlFTU",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/16-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1tue1vHztPsPyRH4im1MZ0uGYQJFWlFTU.png",
+    "size": 1512697,
+    "sha256": "e15a34768deae768fbde5c9dd94d7dea3ee7816879acbf963b162c5752be35c3",
+    "action": "uploaded"
+  },
+  "19TjDFAeDNdLnBNpj0X3bGe3J8isx1CWu": {
+    "drive_id": "19TjDFAeDNdLnBNpj0X3bGe3J8isx1CWu",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/17-20.png",
+    "bucket": "slides",
+    "path": "drive-import/19TjDFAeDNdLnBNpj0X3bGe3J8isx1CWu.png",
+    "size": 1449328,
+    "sha256": "8d9888838942f992a43a2e333e65e171bc850891a18420af7b38e1c464769e68",
+    "action": "uploaded"
+  },
+  "19pITzTiY6-46GSyH3K6kRq9b7-8i_LVt": {
+    "drive_id": "19pITzTiY6-46GSyH3K6kRq9b7-8i_LVt",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/18-20.png",
+    "bucket": "slides",
+    "path": "drive-import/19pITzTiY6-46GSyH3K6kRq9b7-8i_LVt.png",
+    "size": 1432636,
+    "sha256": "09b0acbed621c022309092e637e16b9a4673805dbc7fe7ee299dbcba981ac828",
+    "action": "uploaded"
+  },
+  "1dq2r5dJpW1RkFC8vaSCunI1hoz9H5n8U": {
+    "drive_id": "1dq2r5dJpW1RkFC8vaSCunI1hoz9H5n8U",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/19-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1dq2r5dJpW1RkFC8vaSCunI1hoz9H5n8U.png",
+    "size": 1520869,
+    "sha256": "530681189d48818269f0e47fac7450d71d59fba9d805305abb95ef802733941e",
+    "action": "uploaded"
+  },
+  "1tWj10V91R4oZN6YrAtlsuzxY8yV4JSOu": {
+    "drive_id": "1tWj10V91R4oZN6YrAtlsuzxY8yV4JSOu",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/13-20.png",
+    "bucket": "slides",
+    "path": "drive-import/1tWj10V91R4oZN6YrAtlsuzxY8yV4JSOu.png",
+    "size": 1410877,
+    "sha256": "18737d0844438fb797f6b56b3882409134359fdb703b88552a8aa3872f947a2f",
+    "action": "uploaded"
+  },
+  "1HQWyAiDOXl4_hu2oKf6WOCCaBNubgOLQ": {
+    "drive_id": "1HQWyAiDOXl4_hu2oKf6WOCCaBNubgOLQ",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/01-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1HQWyAiDOXl4_hu2oKf6WOCCaBNubgOLQ.png",
+    "size": 1510703,
+    "sha256": "a7683a6590b19c1334ae22f6af7bb2bd21613230848e1d83dc1b262565dfdf04",
+    "action": "uploaded"
+  },
+  "1Uj83I5S1OehGpjHxiAMO8uzrXKzilrKb": {
+    "drive_id": "1Uj83I5S1OehGpjHxiAMO8uzrXKzilrKb",
+    "source": "STORYTELLING NA PRATICA/CAPA/CAPA (2).png",
+    "bucket": "storage capas",
+    "path": "drive-import/1Uj83I5S1OehGpjHxiAMO8uzrXKzilrKb.png",
+    "size": 1605745,
+    "sha256": "f8202d17db107313ea345aaea7071010e6c7e170e02e688b6343780cf33cb15d",
+    "action": "uploaded"
+  },
+  "19qbAeNaOvmVHic0QNqIIFp9GXcokebTI": {
+    "drive_id": "19qbAeNaOvmVHic0QNqIIFp9GXcokebTI",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/03-30.png",
+    "bucket": "slides",
+    "path": "drive-import/19qbAeNaOvmVHic0QNqIIFp9GXcokebTI.png",
+    "size": 1454230,
+    "sha256": "1c799d02af52ba71e75aa6ca1bdb5c0043b7fb3bb74da7a775c3432299cabc99",
+    "action": "uploaded"
+  },
+  "18n60rm6I-HkTveFmJgAKWO2Mf0ma7Hge": {
+    "drive_id": "18n60rm6I-HkTveFmJgAKWO2Mf0ma7Hge",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/14-20.png",
+    "bucket": "slides",
+    "path": "drive-import/18n60rm6I-HkTveFmJgAKWO2Mf0ma7Hge.png",
+    "size": 1509973,
+    "sha256": "ee9370ad87e0dc6ac6f9ce72dd355c6130cc555ff147b4fdcc5b0e0adcf8e8bd",
+    "action": "uploaded"
+  },
+  "138vqQ_IEQmykfYPXB7hBfYp55bnl_CWv": {
+    "drive_id": "138vqQ_IEQmykfYPXB7hBfYp55bnl_CWv",
+    "source": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/20-20.png",
+    "bucket": "slides",
+    "path": "drive-import/138vqQ_IEQmykfYPXB7hBfYp55bnl_CWv.png",
+    "size": 1661846,
+    "sha256": "6d953eeec2612c12f85ea6810bd216459d53e100a6e3b0bb56083ff6e03a650c",
+    "action": "uploaded"
+  },
+  "19xjl2Ib5rEMGyZ4E8_CAwTmydkexS1KJ": {
+    "drive_id": "19xjl2Ib5rEMGyZ4E8_CAwTmydkexS1KJ",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/04-30.png",
+    "bucket": "slides",
+    "path": "drive-import/19xjl2Ib5rEMGyZ4E8_CAwTmydkexS1KJ.png",
+    "size": 1464823,
+    "sha256": "840ce83df8e3fa9ba0d96aa7901f0348f24bc0290a8953764ce86ba8bfa2f580",
+    "action": "uploaded"
+  },
+  "1UxxBcJtn2lbxkfooxrM9UyPi1gBsk0DN": {
+    "drive_id": "1UxxBcJtn2lbxkfooxrM9UyPi1gBsk0DN",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/05-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1UxxBcJtn2lbxkfooxrM9UyPi1gBsk0DN.png",
+    "size": 1498113,
+    "sha256": "bd2f7a2c7ab74038ab8ab7e6f468183e601cd4037b83502e021c84fc04894a4f",
+    "action": "uploaded"
+  },
+  "1N7C0zerS48wMaAp8UXkOADzQA1QoEQBN": {
+    "drive_id": "1N7C0zerS48wMaAp8UXkOADzQA1QoEQBN",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/07-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1N7C0zerS48wMaAp8UXkOADzQA1QoEQBN.png",
+    "size": 1413671,
+    "sha256": "525e568399a5592675fa5eb19a4f1cf8c9553bbced05ee504907eb2a7622251d",
+    "action": "uploaded"
+  },
+  "1eHQv-piH39eHXZ0SFNHriScEowDbOdcE": {
+    "drive_id": "1eHQv-piH39eHXZ0SFNHriScEowDbOdcE",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/02-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1eHQv-piH39eHXZ0SFNHriScEowDbOdcE.png",
+    "size": 1397216,
+    "sha256": "5614fb69ec1c2b8d8b6c61719918886ff90e864d1b3f414d39bce49aedcdf2a6",
+    "action": "uploaded"
+  },
+  "1VM1r4begRljwE_Qz4WZLiTSjgeK_lXgA": {
+    "drive_id": "1VM1r4begRljwE_Qz4WZLiTSjgeK_lXgA",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/08-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1VM1r4begRljwE_Qz4WZLiTSjgeK_lXgA.png",
+    "size": 1554302,
+    "sha256": "e19938928e769261c53c4a9a919ef271a61501166abfab0a45aedaf03f46aec3",
+    "action": "uploaded"
+  },
+  "1HCkpFMABHZUsJZnDJICQInXasp1dhp3L": {
+    "drive_id": "1HCkpFMABHZUsJZnDJICQInXasp1dhp3L",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/06-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1HCkpFMABHZUsJZnDJICQInXasp1dhp3L.png",
+    "size": 1360155,
+    "sha256": "70b47a5e11206ae5b6a2a00a5eeb7d64ffc342b8e79a883405e87c7b46e30d4b",
+    "action": "uploaded"
+  },
+  "1OEKjOeivTRtshatFX-kl99ovO_OWiSM4": {
+    "drive_id": "1OEKjOeivTRtshatFX-kl99ovO_OWiSM4",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/10-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1OEKjOeivTRtshatFX-kl99ovO_OWiSM4.png",
+    "size": 1506323,
+    "sha256": "fc5e155dea398a7730cb2b5c6695ae41caed25668691800ff7ef0004d4638f17",
+    "action": "uploaded"
+  },
+  "1FDQ-d8wEnYbePKSs8ViRGeDty5AJWIFv": {
+    "drive_id": "1FDQ-d8wEnYbePKSs8ViRGeDty5AJWIFv",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/11-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1FDQ-d8wEnYbePKSs8ViRGeDty5AJWIFv.png",
+    "size": 1463560,
+    "sha256": "ab994cde6c20c22203d6ec43f6fe84e08d067b86721f4164430fd0d7d54317fc",
+    "action": "uploaded"
+  },
+  "1vS6a4aKOFRiwT1O91RdtkQHY1Tia0fhe": {
+    "drive_id": "1vS6a4aKOFRiwT1O91RdtkQHY1Tia0fhe",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/14-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1vS6a4aKOFRiwT1O91RdtkQHY1Tia0fhe.png",
+    "size": 1462012,
+    "sha256": "855775fe017d3f04faabcdd6c04accf345852b619baed62da3b15dd4e9429e0d",
+    "action": "uploaded"
+  },
+  "1cYHfXN5AGhFm0zTonJFaUhZev69Wzrzk": {
+    "drive_id": "1cYHfXN5AGhFm0zTonJFaUhZev69Wzrzk",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/13-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1cYHfXN5AGhFm0zTonJFaUhZev69Wzrzk.png",
+    "size": 1491596,
+    "sha256": "5d88bee3e8ee86ea188dbfcb2f9d95a269e8a9057029974d868699b86cf1f021",
+    "action": "uploaded"
+  },
+  "1eCfbQ4aX5-fQgeBri_ne0ZGAvPtKCr_1": {
+    "drive_id": "1eCfbQ4aX5-fQgeBri_ne0ZGAvPtKCr_1",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/09-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1eCfbQ4aX5-fQgeBri_ne0ZGAvPtKCr_1.png",
+    "size": 1487239,
+    "sha256": "0cfef7bcd8b9290dd2f28408d3db67072f7df73aab18879eca0f83bb14254693",
+    "action": "uploaded"
+  },
+  "1BNedflNUxECsEXh0zrRIwB3UxgWjOYov": {
+    "drive_id": "1BNedflNUxECsEXh0zrRIwB3UxgWjOYov",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/16-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1BNedflNUxECsEXh0zrRIwB3UxgWjOYov.png",
+    "size": 1519717,
+    "sha256": "5e69cb813b32adde226646425d0000f1b7f78d6207959e0ed753989f57e14f6f",
+    "action": "uploaded"
+  },
+  "1L4HXNDwm-X5jx2NjOufs-b584k317sa5": {
+    "drive_id": "1L4HXNDwm-X5jx2NjOufs-b584k317sa5",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/18-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1L4HXNDwm-X5jx2NjOufs-b584k317sa5.png",
+    "size": 1481493,
+    "sha256": "330469d1286440dfca465f7b5829b8f9f121bb84623398bb93ecc9d5950966a5",
+    "action": "uploaded"
+  },
+  "1eLKRs8ELWfd_xxdoots6BoFkXPw_ZSUz": {
+    "drive_id": "1eLKRs8ELWfd_xxdoots6BoFkXPw_ZSUz",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/19-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1eLKRs8ELWfd_xxdoots6BoFkXPw_ZSUz.png",
+    "size": 1529607,
+    "sha256": "acb156bae32b9fd2e09ceba6bdbee735d2a6562003703055350dd65787198dcc",
+    "action": "uploaded"
+  },
+  "1hiCqfQnRb9bfbGh1Cm2g4wto3Fp6qKFc": {
+    "drive_id": "1hiCqfQnRb9bfbGh1Cm2g4wto3Fp6qKFc",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/20-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1hiCqfQnRb9bfbGh1Cm2g4wto3Fp6qKFc.png",
+    "size": 1492427,
+    "sha256": "eb57e6c5381423e4fae6aac7c91050ffb575304b42fb00daea3fc7ec1910cd11",
+    "action": "uploaded"
+  },
+  "1FYxKnfO9wAjW3ZMwA3C6CfmEaawGfbON": {
+    "drive_id": "1FYxKnfO9wAjW3ZMwA3C6CfmEaawGfbON",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/21-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1FYxKnfO9wAjW3ZMwA3C6CfmEaawGfbON.png",
+    "size": 1427988,
+    "sha256": "c71c197d056f103579f43b9c96066a788f4b6ded64e730d457e2fd0753514714",
+    "action": "uploaded"
+  },
+  "1ac5ed1d1tiK85_rAQAvEd3oKH_AP5tXr": {
+    "drive_id": "1ac5ed1d1tiK85_rAQAvEd3oKH_AP5tXr",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/22-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1ac5ed1d1tiK85_rAQAvEd3oKH_AP5tXr.png",
+    "size": 1474387,
+    "sha256": "514d0c028660f1d0fe38af1e272688cbfeda4e1781a6bf19444f0a830bfe7228",
+    "action": "uploaded"
+  },
+  "1BNR3ohH7Ag8cbV0HCKNF-vtnCGLgURK9": {
+    "drive_id": "1BNR3ohH7Ag8cbV0HCKNF-vtnCGLgURK9",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/24-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1BNR3ohH7Ag8cbV0HCKNF-vtnCGLgURK9.png",
+    "size": 1573427,
+    "sha256": "7462586b98555de6cf9ad5c41050d024777b85b96c396dc71d75012f3571c32b",
+    "action": "uploaded"
+  },
+  "1svPozuH5G04SI8yxG4EJn7xeL3ArcECx": {
+    "drive_id": "1svPozuH5G04SI8yxG4EJn7xeL3ArcECx",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/12-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1svPozuH5G04SI8yxG4EJn7xeL3ArcECx.png",
+    "size": 1473097,
+    "sha256": "203da102ce6c5d53e0936fe62a2105996b7c6cc89e6f32dc0ab45d0c47fdd8aa",
+    "action": "uploaded"
+  },
+  "15rQp8QE53m8l9PO1lbGMEyo7xp41o4AU": {
+    "drive_id": "15rQp8QE53m8l9PO1lbGMEyo7xp41o4AU",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/17-30.png",
+    "bucket": "slides",
+    "path": "drive-import/15rQp8QE53m8l9PO1lbGMEyo7xp41o4AU.png",
+    "size": 1454317,
+    "sha256": "56c6d48de31e1bbfde236342dc8d63cb6a22157d9d0981238754406688ed1e09",
+    "action": "uploaded"
+  },
+  "1hmJdSeMZSWVrj0q5Nt-kpREK_jzr82Fk": {
+    "drive_id": "1hmJdSeMZSWVrj0q5Nt-kpREK_jzr82Fk",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/23-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1hmJdSeMZSWVrj0q5Nt-kpREK_jzr82Fk.png",
+    "size": 1564179,
+    "sha256": "3c7c2a75dec3ef2ac3b35b9a75988f35971f1e4cdef5e0dcfe6a301bdb357a0e",
+    "action": "uploaded"
+  },
+  "1TWz1VG7VwgGaVsGDOVSxEoU06DA3yxOp": {
+    "drive_id": "1TWz1VG7VwgGaVsGDOVSxEoU06DA3yxOp",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/25-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1TWz1VG7VwgGaVsGDOVSxEoU06DA3yxOp.png",
+    "size": 1584419,
+    "sha256": "1c4920ffc12f7f41cbf8c48a554b7fea5e08a0a8d92cc0a09027f78f3897945f",
+    "action": "uploaded"
+  },
+  "1sQjYkCTmhh_lbgs12XocQe5ixlXQMTLd": {
+    "drive_id": "1sQjYkCTmhh_lbgs12XocQe5ixlXQMTLd",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/26-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1sQjYkCTmhh_lbgs12XocQe5ixlXQMTLd.png",
+    "size": 1585959,
+    "sha256": "43bef731043f942eabd797502e9e468ee81faa38543b9d4b8118326a59ae9d6c",
+    "action": "uploaded"
+  },
+  "1gpwaxzMdyV4lhe18PGoZccZt4GmAzSqG": {
+    "drive_id": "1gpwaxzMdyV4lhe18PGoZccZt4GmAzSqG",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/30-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1gpwaxzMdyV4lhe18PGoZccZt4GmAzSqG.png",
+    "size": 1506109,
+    "sha256": "de7e19484d474e7a1818d7150edea47aa883df6c505ad3f01f18e80553b80649",
+    "action": "uploaded"
+  },
+  "1O8_3B_AjANNv4c5pytaADFKCzuV7KfIg": {
+    "drive_id": "1O8_3B_AjANNv4c5pytaADFKCzuV7KfIg",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/29-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1O8_3B_AjANNv4c5pytaADFKCzuV7KfIg.png",
+    "size": 1599880,
+    "sha256": "042b89ce78466c1dcaf6909df83d8dc82ad43ed9d3d9206480e5d09f2a11f8d9",
+    "action": "uploaded"
+  },
+  "1z65bjNl0XOi6vEYVRa5PPPIiidGTHSDC": {
+    "drive_id": "1z65bjNl0XOi6vEYVRa5PPPIiidGTHSDC",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/27-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1z65bjNl0XOi6vEYVRa5PPPIiidGTHSDC.png",
+    "size": 1585319,
+    "sha256": "63a3aca16ddcb62fa634156fa14835fd44a996c3fccb61af51c8cdb44f46bc91",
+    "action": "uploaded"
+  },
+  "1WUiTcwO31jKvFnnbU45OeIah0zdb6Jod": {
+    "drive_id": "1WUiTcwO31jKvFnnbU45OeIah0zdb6Jod",
+    "source": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/28-30.png",
+    "bucket": "slides",
+    "path": "drive-import/1WUiTcwO31jKvFnnbU45OeIah0zdb6Jod.png",
+    "size": 1624734,
+    "sha256": "6c7b5001b54edb6135efe3503cfe271a92528c6e910058254dcbd231db140db3",
+    "action": "uploaded"
+  }
+}
