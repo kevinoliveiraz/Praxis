@@ -115,30 +115,32 @@ img { /* seleciona todas as imagens da página */
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.2px;
+  &::before {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    content: "";
+  }
 }
-.eyebrow::before {
-  width: 8px;
-  height: 8px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
-  content: "";
-}
-.home-page .hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #070b09 url("../assets/hero-workspace.png") center / cover no-repeat;
-  color: #ffffff;
-}
-.home-page .hero::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%),
+.home-page {
+  & .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #070b09 url("../assets/hero-workspace.png") center / cover no-repeat;
+    color: #ffffff;
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%),
     linear-gradient(0deg, rgb(3 8 7 / 25%), transparent 45%);
-  content: "";
+      content: "";
+    }
+  }
 }
 .hero-inner {
   display: flex;
@@ -147,29 +149,39 @@ img { /* seleciona todas as imagens da página */
   padding-block: 88px;
 }
 .hero-content { width: min(760px, 62%); }
-.home-page .hero .eyebrow {
-  margin-bottom: 28px;
-  color: var(--praxis-color-accent);
-  font-size: clamp(12px, 1.1vw, 16px);
-  letter-spacing: 1.4px;
-}
-.home-page .hero h1 {
-  color: #ffffff;
-  font-size: clamp(48px, 6.3vw, 104px);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+.home-page {
+  & .hero {
+    & .eyebrow {
+      margin-bottom: 28px;
+      color: var(--praxis-color-accent);
+      font-size: clamp(12px, 1.1vw, 16px);
+      letter-spacing: 1.4px;
+    }
+    & h1 {
+      color: #ffffff;
+      font-size: clamp(48px, 6.3vw, 104px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+  }
 }
 .hero-title-line { display: block; }
-.home-page .hero h1 .accent { color: var(--praxis-color-accent); }
-.home-page .hero-desc {
-  max-width: 640px;
-  margin-top: 30px;
-  color: #dce1df;
-  font-size: clamp(17px, 1.5vw, 24px);
-  line-height: 1.55;
+.home-page {
+  & .hero h1 .accent {
+    color: var(--praxis-color-accent);
+  }
+  & .hero-desc {
+    max-width: 640px;
+    margin-top: 30px;
+    color: #dce1df;
+    font-size: clamp(17px, 1.5vw, 24px);
+    line-height: 1.55;
+  }
+  & .catalog-panel {
+    margin-top: 0;
+  }
 }
-.home-page .catalog-panel { margin-top: 0; }
 #catalog-title { scroll-margin-top: calc(var(--praxis-header-height) + 24px); }
 .catalog-search-status { margin-bottom: 20px; color: var(--praxis-muted); font-size: 14px; }
 @media (max-width: 980px) {
@@ -177,16 +189,32 @@ img { /* seleciona todas as imagens da página */
   .hero-content { width: min(600px, 75%); }
 }
 @media (max-width: 700px) {
-  .home-page .hero { background-position: 62% center; }
-  .home-page .hero::before {
-    background: linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)),
+  .home-page {
+    & .hero {
+      background-position: 62% center;
+      &::before {
+        background: linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)),
       linear-gradient(0deg, rgb(3 8 7 / 40%), transparent 70%);
+      }
+    }
   }
   .hero-inner { min-height: 510px; padding-block: 64px; }
   .hero-content { width: 100%; }
-  .home-page .hero h1 { font-size: clamp(40px, 8.7vw, 60px); }
-  .home-page .hero .eyebrow { margin-bottom: 24px; }
-  .home-page .hero-desc { max-width: 420px; margin-top: 24px; font-size: 17px; }
+  .home-page {
+    & .hero {
+      & h1 {
+        font-size: clamp(40px, 8.7vw, 60px);
+      }
+      & .eyebrow {
+        margin-bottom: 24px;
+      }
+    }
+    & .hero-desc {
+      max-width: 420px;
+      margin-top: 24px;
+      font-size: 17px;
+    }
+  }
 }
 
 
@@ -211,33 +239,32 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações do painel do catálogo */
 
 
-.catalog-head { /* seleciona o cabeçalho interno do catálogo */
-
-  display: flex; /* utiliza Flexbox para organizar seus elementos */
-
-  align-items: center; /* centraliza verticalmente os elementos */
-  justify-content: space-between; /* coloca os elementos nas extremidades disponíveis */
-
-  gap: 20px; /* cria 20 pixels de espaço mínimo entre os elementos */
-
-  margin-bottom: 20px; /* cria 20 pixels de espaço abaixo do cabeçalho */
-
-} /* encerra as configurações do cabeçalho do catálogo */
-
-
-.catalog-head .eyebrow { /* seleciona o eyebrow utilizado especificamente dentro do catálogo */
-
-  margin-bottom: 0; /* remove a margem inferior utilizada no eyebrow geral */
-
-  color: #0b0d10; /* altera o texto para uma cor escura */
-
-} /* encerra as configurações do eyebrow do catálogo */
-
-
-.catalog-head .eyebrow::before { /* seleciona o círculo decorativo do eyebrow do catálogo */
-
-  box-shadow: none; /* remove o efeito de brilho aplicado no eyebrow geral */
-
+.catalog-head {
+  /* seleciona o cabeçalho interno do catálogo */
+  display: flex;
+  /* utiliza Flexbox para organizar seus elementos */
+  align-items: center;
+  /* centraliza verticalmente os elementos */
+  justify-content: space-between;
+  /* coloca os elementos nas extremidades disponíveis */
+  gap: 20px;
+  /* cria 20 pixels de espaço mínimo entre os elementos */
+  margin-bottom: 20px;
+  /* cria 20 pixels de espaço abaixo do cabeçalho */
+  /* encerra as configurações do cabeçalho do catálogo */
+  & .eyebrow {
+    /* seleciona o eyebrow utilizado especificamente dentro do catálogo */
+    margin-bottom: 0;
+    /* remove a margem inferior utilizada no eyebrow geral */
+    color: #0b0d10;
+    /* altera o texto para uma cor escura */
+    /* encerra as configurações do eyebrow do catálogo */
+    &::before {
+      /* seleciona o círculo decorativo do eyebrow do catálogo */
+      box-shadow: none;
+      /* remove o efeito de brilho aplicado no eyebrow geral */
+    }
+  }
 } /* encerra as configurações do indicador do catálogo */
 
 
@@ -291,70 +318,69 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações dos controles */
 
 
-.catalog-carousel-btn { /* seleciona cada botão de navegação do carrossel */
-
-  display: grid; /* utiliza Grid para centralizar seu conteúdo */
-
-  width: 40px; /* define a largura do botão */
-  height: 40px; /* define a altura do botão */
-
-  flex-shrink: 0; /* impede que o botão seja comprimido */
-
-  place-items: center; /* centraliza o conteúdo horizontal e verticalmente */
-
+.catalog-carousel-btn {
+  /* seleciona cada botão de navegação do carrossel */
+  display: grid;
+  /* utiliza Grid para centralizar seu conteúdo */
+  width: 40px;
+  /* define a largura do botão */
+  height: 40px;
+  /* define a altura do botão */
+  flex-shrink: 0;
+  /* impede que o botão seja comprimido */
+  place-items: center;
+  /* centraliza o conteúdo horizontal e verticalmente */
   border:
-    1px solid #d9dce2; /* cria uma borda clara de 1 pixel */
-
-  border-radius: 50%; /* transforma o botão em um círculo */
-
-  background: #ffffff; /* define o fundo branco */
-
-  color: #0b0d10; /* define a cor escura para a seta */
-
-  font-size: 20px; /* define o tamanho do símbolo em 20 pixels */
-  font-weight: 800; /* deixa o símbolo com peso forte */
-
-  line-height: 1; /* evita espaço vertical adicional ao redor do símbolo */
-
+    1px solid #d9dce2;
+  /* cria uma borda clara de 1 pixel */
+  border-radius: 50%;
+  /* transforma o botão em um círculo */
+  background: #ffffff;
+  /* define o fundo branco */
+  color: #0b0d10;
+  /* define a cor escura para a seta */
+  font-size: 20px;
+  /* define o tamanho do símbolo em 20 pixels */
+  font-weight: 800;
+  /* deixa o símbolo com peso forte */
+  line-height: 1;
+  /* evita espaço vertical adicional ao redor do símbolo */
   box-shadow:
     0 6px 18px
-    rgba(0, 0, 0, 0.08); /* cria uma sombra suave abaixo do botão */
-
+    rgba(0, 0, 0, 0.08);
+  /* cria uma sombra suave abaixo do botão */
   transition:
     transform 0.15s ease, /* suaviza movimentos do botão */
     background 0.2s ease, /* suaviza alterações do fundo */
     border-color 0.2s ease, /* suaviza alterações da borda */
-    opacity 0.2s ease; /* suaviza alterações de transparência */
-
-} /* encerra as configurações dos botões do carrossel */
-
-
-.catalog-carousel-btn:hover:not(:disabled) { /* aplica hover somente aos botões do carrossel que não estão desabilitados */
-
-  border-color: var(--accent); /* altera a borda para a cor de destaque */
-
-  background: var(--accent); /* altera o fundo para a cor de destaque */
-
-  transform:
-    translateY(-2px); /* desloca o botão 2 pixels para cima */
-
-} /* encerra o hover dos controles ativos */
-
-
-.catalog-carousel-btn:active:not(:disabled) { /* aplica estas regras durante o clique em um controle habilitado */
-
-  transform:
-    translateY(0); /* retorna o botão para sua posição original durante o clique */
-
-} /* encerra o estado ativo dos controles */
-
-
-.catalog-carousel-btn:disabled { /* seleciona os controles que estão desabilitados */
-
-  cursor: default; /* utiliza o cursor padrão em vez do cursor de clique */
-
-  opacity: 0.28; /* deixa o botão bastante transparente para indicar que está indisponível */
-
+    opacity 0.2s ease;
+  /* suaviza alterações de transparência */
+  /* encerra as configurações dos botões do carrossel */
+  &:hover:not(:disabled) {
+    /* aplica hover somente aos botões do carrossel que não estão desabilitados */
+    border-color: var(--accent);
+    /* altera a borda para a cor de destaque */
+    background: var(--accent);
+    /* altera o fundo para a cor de destaque */
+    transform:
+    translateY(-2px);
+    /* desloca o botão 2 pixels para cima */
+  }
+  /* encerra o hover dos controles ativos */
+  &:active:not(:disabled) {
+    /* aplica estas regras durante o clique em um controle habilitado */
+    transform:
+    translateY(0);
+    /* retorna o botão para sua posição original durante o clique */
+  }
+  /* encerra o estado ativo dos controles */
+  &:disabled {
+    /* seleciona os controles que estão desabilitados */
+    cursor: default;
+    /* utiliza o cursor padrão em vez do cursor de clique */
+    opacity: 0.28;
+    /* deixa o botão bastante transparente para indicar que está indisponível */
+  }
 } /* encerra as configurações dos controles desabilitados */
 
 
@@ -363,50 +389,50 @@ img { /* seleciona todas as imagens da página */
    TRILHO DO CARROSSEL
 ========================================================= */
 
-.catalog-grid { /* seleciona o trilho horizontal onde os cards dos cursos são exibidos */
-
-  display: grid; /* utiliza CSS Grid para organizar os cards */
-
-  grid-auto-flow: column; /* faz novos cards serem adicionados horizontalmente em colunas */
-
+.catalog-grid {
+  /* seleciona o trilho horizontal onde os cards dos cursos são exibidos */
+  display: grid;
+  /* utiliza CSS Grid para organizar os cards */
+  grid-auto-flow: column;
+  /* faz novos cards serem adicionados horizontalmente em colunas */
   grid-auto-columns:
-    calc((100% - 72px) / 5); /* calcula a largura para exibir aproximadamente cinco cards no espaço disponível */
-
-  grid-template-columns: none; /* remove uma definição fixa de colunas para utilizar as colunas automáticas */
-
-  gap: 18px; /* cria 18 pixels de espaço entre os cards */
-
-  width: 100%; /* faz o trilho ocupar toda a largura disponível */
-
-  align-items: start; /* alinha os cards pelo início vertical */
-
-  overflow-x: auto; /* permite rolagem horizontal quando os cards ultrapassarem a largura */
-  overflow-y: hidden; /* impede rolagem vertical dentro do trilho */
-
+    calc((100% - 72px) / 5);
+  /* calcula a largura para exibir aproximadamente cinco cards no espaço disponível */
+  grid-template-columns: none;
+  /* remove uma definição fixa de colunas para utilizar as colunas automáticas */
+  gap: 18px;
+  /* cria 18 pixels de espaço entre os cards */
+  width: 100%;
+  /* faz o trilho ocupar toda a largura disponível */
+  align-items: start;
+  /* alinha os cards pelo início vertical */
+  overflow-x: auto;
+  /* permite rolagem horizontal quando os cards ultrapassarem a largura */
+  overflow-y: hidden;
+  /* impede rolagem vertical dentro do trilho */
   padding:
-    8px 3px 22px; /* cria espaço interno de 8px acima, 3px nas laterais e 22px abaixo */
-
-  scroll-behavior: smooth; /* deixa a movimentação horizontal do carrossel suave */
-
+    8px 3px 22px;
+  /* cria espaço interno de 8px acima, 3px nas laterais e 22px abaixo */
+  scroll-behavior: smooth;
+  /* deixa a movimentação horizontal do carrossel suave */
   scroll-snap-type:
-    x mandatory; /* faz a rolagem horizontal encaixar obrigatoriamente nos pontos definidos pelos cards */
-
+    x mandatory;
+  /* faz a rolagem horizontal encaixar obrigatoriamente nos pontos definidos pelos cards */
   overscroll-behavior-inline:
-    contain; /* evita que a rolagem horizontal do carrossel afete outros elementos externos */
-
-  scrollbar-width: none; /* esconde a barra de rolagem em navegadores compatíveis como Firefox */
-
-  -ms-overflow-style: none; /* esconde a barra de rolagem em versões antigas de navegadores Microsoft */
-
-  -webkit-overflow-scrolling: touch; /* melhora a rolagem por toque em navegadores WebKit móveis */
-
-} /* encerra as configurações do trilho do carrossel */
-
-
-.catalog-grid::-webkit-scrollbar { /* seleciona a barra de rolagem do carrossel em navegadores WebKit */
-
-  display: none; /* esconde visualmente a barra de rolagem */
-
+    contain;
+  /* evita que a rolagem horizontal do carrossel afete outros elementos externos */
+  scrollbar-width: none;
+  /* esconde a barra de rolagem em navegadores compatíveis como Firefox */
+  -ms-overflow-style: none;
+  /* esconde a barra de rolagem em versões antigas de navegadores Microsoft */
+  -webkit-overflow-scrolling: touch;
+  /* melhora a rolagem por toque em navegadores WebKit móveis */
+  /* encerra as configurações do trilho do carrossel */
+  &::-webkit-scrollbar {
+    /* seleciona a barra de rolagem do carrossel em navegadores WebKit */
+    display: none;
+    /* esconde visualmente a barra de rolagem */
+  }
 } /* encerra as configurações da barra de rolagem */
 
 
@@ -415,76 +441,75 @@ img { /* seleciona todas as imagens da página */
    CARD DO CURSO
 ========================================================= */
 
-.course-card { /* seleciona cada cartão individual de curso */
-
-  position: relative; /* permite posicionar capa, conteúdo e botão play dentro do card */
-
-  width: 100%; /* faz o card utilizar toda a largura da coluna */
-
-  min-width: 0; /* permite que o card diminua corretamente dentro do Grid */
-
-  overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites do card */
-
-  aspect-ratio: 3 / 4; /* mantém o card no formato vertical de proporção 3 por 4 */
-
-  scroll-snap-align: start; /* faz o início do card funcionar como ponto de encaixe do carrossel */
-
+.course-card {
+  /* seleciona cada cartão individual de curso */
+  position: relative;
+  /* permite posicionar capa, conteúdo e botão play dentro do card */
+  width: 100%;
+  /* faz o card utilizar toda a largura da coluna */
+  min-width: 0;
+  /* permite que o card diminua corretamente dentro do Grid */
+  overflow: hidden;
+  /* esconde qualquer conteúdo que ultrapasse os limites do card */
+  aspect-ratio: 3 / 4;
+  /* mantém o card no formato vertical de proporção 3 por 4 */
+  scroll-snap-align: start;
+  /* faz o início do card funcionar como ponto de encaixe do carrossel */
   border:
-    1px solid #222634; /* cria uma borda escura de 1 pixel */
-
-  border-radius: 15px; /* arredonda os cantos do card */
-
-  background: #0b0d10; /* define uma cor escura como fundo */
-
-  color: #fff; /* define branco como cor padrão dos textos internos */
-
-  cursor: pointer; /* mostra que o card pode ser clicado */
-
+    1px solid #222634;
+  /* cria uma borda escura de 1 pixel */
+  border-radius: 15px;
+  /* arredonda os cantos do card */
+  background: #0b0d10;
+  /* define uma cor escura como fundo */
+  color: #fff;
+  /* define branco como cor padrão dos textos internos */
+  cursor: pointer;
+  /* mostra que o card pode ser clicado */
   transition:
     transform 0.2s ease, /* suaviza o movimento do card */
     box-shadow 0.2s ease, /* suaviza alterações da sombra */
-    border-color 0.2s ease; /* suaviza alterações da cor da borda */
-
-} /* encerra as configurações do card */
-
-
-.course-card:hover { /* aplica estas regras quando o mouse passa sobre um card */
-
-  border-color: var(--accent); /* altera a borda para a cor de destaque */
-
-  box-shadow:
+    border-color 0.2s ease;
+  /* suaviza alterações da cor da borda */
+  /* encerra as configurações do card */
+  &:hover {
+    /* aplica estas regras quando o mouse passa sobre um card */
+    border-color: var(--accent);
+    /* altera a borda para a cor de destaque */
+    box-shadow:
     0 18px 36px
-    rgba(0, 0, 0, 0.25); /* cria uma sombra abaixo do card */
-
-  transform:
-    translateY(-4px); /* move o card 4 pixels para cima */
-
-} /* encerra o hover do card */
-
-
-.course-card .cover { /* seleciona o contêiner da capa dentro de cada card */
-
-  position: absolute; /* posiciona a capa livremente dentro do card */
-
-  inset: 0; /* equivale a top, right, bottom e left iguais a zero, preenchendo todo o card */
-
-  z-index: 0; /* coloca a capa na camada de fundo do card */
-
-  background: #0b0d10; /* define fundo escuro caso a imagem não ocupe alguma área */
-
-} /* encerra as configurações do contêiner da capa */
-
-
-.course-card .cover img { /* seleciona especificamente a imagem da capa do curso */
-
-  width: 100%; /* faz a imagem utilizar toda a largura do contêiner */
-  height: 100%; /* faz a imagem utilizar toda a altura do contêiner */
-
-  object-fit: contain; /* mantém a capa inteira visível sem aplicar corte */
-  object-position: center; /* centraliza a capa dentro do espaço disponível */
-
-  background: #0b0d10; /* utiliza fundo escuro nas áreas eventualmente vazias */
-
+    rgba(0, 0, 0, 0.25);
+    /* cria uma sombra abaixo do card */
+    transform:
+    translateY(-4px);
+    /* move o card 4 pixels para cima */
+  }
+  /* encerra o hover do card */
+  & .cover {
+    /* seleciona o contêiner da capa dentro de cada card */
+    position: absolute;
+    /* posiciona a capa livremente dentro do card */
+    inset: 0;
+    /* equivale a top, right, bottom e left iguais a zero, preenchendo todo o card */
+    z-index: 0;
+    /* coloca a capa na camada de fundo do card */
+    background: #0b0d10;
+    /* define fundo escuro caso a imagem não ocupe alguma área */
+    /* encerra as configurações do contêiner da capa */
+    & img {
+      /* seleciona especificamente a imagem da capa do curso */
+      width: 100%;
+      /* faz a imagem utilizar toda a largura do contêiner */
+      height: 100%;
+      /* faz a imagem utilizar toda a altura do contêiner */
+      object-fit: contain;
+      /* mantém a capa inteira visível sem aplicar corte */
+      object-position: center;
+      /* centraliza a capa dentro do espaço disponível */
+      background: #0b0d10;
+      /* utiliza fundo escuro nas áreas eventualmente vazias */
+    }
+  }
 } /* encerra as configurações da imagem da capa */
 
 
@@ -590,44 +615,45 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações da categoria */
 
 
-.course-card h3 { /* seleciona os títulos h3 existentes dentro dos cards */
-
-  max-width: 100%; /* impede que o título ultrapasse a largura do card */
-
-  margin-bottom: 8px; /* cria 8 pixels de espaço abaixo do título */
-
-  color: #fff; /* define o texto como branco */
-
-  font-size: 18px; /* define o tamanho da fonte em 18 pixels */
-
-  font-weight: 800; /* deixa o título em negrito forte */
-
-  line-height: 1.15; /* controla o espaço vertical entre as linhas do título */
-
-} /* encerra as configurações do título do curso */
-
-
-.course-card p { /* seleciona os parágrafos existentes dentro dos cards */
-
-  display: -webkit-box; /* utiliza um modelo de caixa necessário para limitar linhas em navegadores WebKit */
-
-  max-width: 100%; /* impede que o texto ultrapasse a largura do card */
-
-  margin: 0; /* remove a margem padrão do parágrafo */
-
-  overflow: hidden; /* esconde o texto que ultrapassar o limite definido */
-
-  color: #d0d3db; /* utiliza uma cor clara secundária */
-
-  font-size: 11px; /* define o tamanho do texto em 11 pixels */
-
-  line-height: 1.45; /* define o espaçamento entre as linhas */
-
-  -webkit-box-orient: vertical; /* organiza as linhas verticalmente para permitir o corte */
-
-  -webkit-line-clamp: 3; /* limita o texto a no máximo três linhas */
-  line-clamp: 3;
-
+.course-card {
+  & h3 {
+    /* seleciona os títulos h3 existentes dentro dos cards */
+    max-width: 100%;
+    /* impede que o título ultrapasse a largura do card */
+    margin-bottom: 8px;
+    /* cria 8 pixels de espaço abaixo do título */
+    color: #fff;
+    /* define o texto como branco */
+    font-size: 18px;
+    /* define o tamanho da fonte em 18 pixels */
+    font-weight: 800;
+    /* deixa o título em negrito forte */
+    line-height: 1.15;
+    /* controla o espaço vertical entre as linhas do título */
+  }
+  /* encerra as configurações do título do curso */
+  & p {
+    /* seleciona os parágrafos existentes dentro dos cards */
+    display: -webkit-box;
+    /* utiliza um modelo de caixa necessário para limitar linhas em navegadores WebKit */
+    max-width: 100%;
+    /* impede que o texto ultrapasse a largura do card */
+    margin: 0;
+    /* remove a margem padrão do parágrafo */
+    overflow: hidden;
+    /* esconde o texto que ultrapassar o limite definido */
+    color: #d0d3db;
+    /* utiliza uma cor clara secundária */
+    font-size: 11px;
+    /* define o tamanho do texto em 11 pixels */
+    line-height: 1.45;
+    /* define o espaçamento entre as linhas */
+    -webkit-box-orient: vertical;
+    /* organiza as linhas verticalmente para permitir o corte */
+    -webkit-line-clamp: 3;
+    /* limita o texto a no máximo três linhas */
+    line-clamp: 3;
+  }
 } /* encerra as configurações da descrição do curso */
 
 
@@ -643,42 +669,44 @@ img { /* seleciona todas as imagens da página */
    BOTÃO PLAY
 ========================================================= */
 
-.play-btn { /* seleciona o botão visual de reprodução existente no card */
-
-  position: absolute; /* permite posicionar o botão sobre a capa */
-
-  z-index: 3; /* mantém o botão acima da capa e do conteúdo */
-
-  top: 13px; /* posiciona o botão a 13 pixels do topo */
-  right: 13px; /* posiciona o botão a 13 pixels da lateral direita */
-
-  display: grid; /* utiliza Grid para centralizar o ícone */
-
-  width: 38px; /* define a largura do botão */
-  height: 38px; /* define a altura do botão */
-
-  place-items: center; /* centraliza o ícone horizontal e verticalmente */
-
-  border-radius: 50%; /* transforma o botão em um círculo */
-
-  background: var(--accent); /* utiliza a cor de destaque como fundo */
-
-  color: #0b0d10; /* utiliza uma cor escura para o ícone */
-
+.play-btn {
+  /* seleciona o botão visual de reprodução existente no card */
+  position: absolute;
+  /* permite posicionar o botão sobre a capa */
+  z-index: 3;
+  /* mantém o botão acima da capa e do conteúdo */
+  top: 13px;
+  /* posiciona o botão a 13 pixels do topo */
+  right: 13px;
+  /* posiciona o botão a 13 pixels da lateral direita */
+  display: grid;
+  /* utiliza Grid para centralizar o ícone */
+  width: 38px;
+  /* define a largura do botão */
+  height: 38px;
+  /* define a altura do botão */
+  place-items: center;
+  /* centraliza o ícone horizontal e verticalmente */
+  border-radius: 50%;
+  /* transforma o botão em um círculo */
+  background: var(--accent);
+  /* utiliza a cor de destaque como fundo */
+  color: #0b0d10;
+  /* utiliza uma cor escura para o ícone */
   box-shadow:
     0 8px 20px
-    rgba(0, 0, 0, 0.28); /* cria uma sombra abaixo do botão */
-
-  pointer-events: none; /* faz o botão ser apenas visual e deixa o clique ser recebido pelo card */
-
-} /* encerra as configurações do botão play */
-
-
-.play-btn svg { /* seleciona o SVG existente dentro do botão play */
-
-  width: 16px; /* define a largura do ícone */
-  height: 16px; /* define a altura do ícone */
-
+    rgba(0, 0, 0, 0.28);
+  /* cria uma sombra abaixo do botão */
+  pointer-events: none;
+  /* faz o botão ser apenas visual e deixa o clique ser recebido pelo card */
+  /* encerra as configurações do botão play */
+  & svg {
+    /* seleciona o SVG existente dentro do botão play */
+    width: 16px;
+    /* define a largura do ícone */
+    height: 16px;
+    /* define a altura do ícone */
+  }
 } /* encerra as configurações do ícone play */
 
 
@@ -739,23 +767,24 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações do ícone dos benefícios */
 
 
-.feature h4 { /* seleciona o título de cada benefício */
-
-  font-size: 15px; /* define o tamanho do título em 15 pixels */
-
-  font-weight: 700; /* deixa o título em negrito */
-
-} /* encerra as configurações dos títulos dos benefícios */
-
-
-.feature p { /* seleciona a descrição de cada benefício */
-
-  margin-top: 2px; /* cria 2 pixels de espaço acima do texto */
-
-  color: #5f6472; /* utiliza uma cor secundária para a descrição */
-
-  font-size: 13px; /* define o tamanho do texto em 13 pixels */
-
+.feature {
+  & h4 {
+    /* seleciona o título de cada benefício */
+    font-size: 15px;
+    /* define o tamanho do título em 15 pixels */
+    font-weight: 700;
+    /* deixa o título em negrito */
+  }
+  /* encerra as configurações dos títulos dos benefícios */
+  & p {
+    /* seleciona a descrição de cada benefício */
+    margin-top: 2px;
+    /* cria 2 pixels de espaço acima do texto */
+    color: #5f6472;
+    /* utiliza uma cor secundária para a descrição */
+    font-size: 13px;
+    /* define o tamanho do texto em 13 pixels */
+  }
 } /* encerra as configurações das descrições */
 
 
@@ -928,18 +957,17 @@ img { /* seleciona todas as imagens da página */
   } /* encerra os ajustes do carrossel */
 
 
-  .course-card { /* ajusta os cards dos cursos */
-
-    border-radius: 13px; /* reduz o arredondamento dos cards para 13 pixels */
-
-  } /* encerra os ajustes dos cards */
-
-
-  .course-card .body { /* ajusta o conteúdo sobreposto nos cards */
-
-    padding:
-      55px 10px 10px; /* reduz os espaços internos do conteúdo */
-
+  .course-card {
+    /* ajusta os cards dos cursos */
+    border-radius: 13px;
+    /* reduz o arredondamento dos cards para 13 pixels */
+    /* encerra os ajustes dos cards */
+    & .body {
+      /* ajusta o conteúdo sobreposto nos cards */
+      padding:
+      55px 10px 10px;
+      /* reduz os espaços internos do conteúdo */
+    }
   } /* encerra os ajustes do conteúdo do card */
 
 
@@ -955,43 +983,46 @@ img { /* seleciona todas as imagens da página */
   } /* encerra os ajustes da categoria */
 
 
-  .course-card h3 { /* ajusta o título dos cursos */
-
-    margin-bottom: 5px; /* reduz o espaço abaixo do título */
-
-    font-size: 13px; /* reduz o tamanho do título para 13 pixels */
-
-  } /* encerra os ajustes dos títulos */
-
-
-  .course-card p { /* ajusta a descrição dos cursos */
-
-    font-size: 9px; /* reduz o tamanho do texto para 9 pixels */
-
-    line-height: 1.35; /* reduz levemente o espaço entre as linhas */
-
-    -webkit-line-clamp: 2;  /* limita a descrição a no máximo duas linhas */
-    line-clamp: 2;
-
+  .course-card {
+    & h3 {
+      /* ajusta o título dos cursos */
+      margin-bottom: 5px;
+      /* reduz o espaço abaixo do título */
+      font-size: 13px;
+      /* reduz o tamanho do título para 13 pixels */
+    }
+    /* encerra os ajustes dos títulos */
+    & p {
+      /* ajusta a descrição dos cursos */
+      font-size: 9px;
+      /* reduz o tamanho do texto para 9 pixels */
+      line-height: 1.35;
+      /* reduz levemente o espaço entre as linhas */
+      -webkit-line-clamp: 2;
+      /* limita a descrição a no máximo duas linhas */
+      line-clamp: 2;
+    }
   } /* encerra os ajustes das descrições */
 
 
-  .play-btn { /* ajusta o botão play dos cards */
-
-    top: 9px; /* aproxima o botão do topo */
-    right: 9px; /* aproxima o botão da lateral direita */
-
-    width: 32px; /* reduz a largura para 32 pixels */
-    height: 32px; /* reduz a altura para 32 pixels */
-
-  } /* encerra os ajustes do botão play */
-
-
-  .play-btn svg { /* ajusta o ícone dentro do botão play */
-
-    width: 13px; /* reduz a largura do ícone para 13 pixels */
-    height: 13px; /* reduz a altura do ícone para 13 pixels */
-
+  .play-btn {
+    /* ajusta o botão play dos cards */
+    top: 9px;
+    /* aproxima o botão do topo */
+    right: 9px;
+    /* aproxima o botão da lateral direita */
+    width: 32px;
+    /* reduz a largura para 32 pixels */
+    height: 32px;
+    /* reduz a altura para 32 pixels */
+    /* encerra os ajustes do botão play */
+    & svg {
+      /* ajusta o ícone dentro do botão play */
+      width: 13px;
+      /* reduz a largura do ícone para 13 pixels */
+      height: 13px;
+      /* reduz a altura do ícone para 13 pixels */
+    }
   } /* encerra os ajustes do ícone play */
 
 } /* encerra a responsividade para telas de até 520 pixels */
@@ -1013,17 +1044,18 @@ img { /* seleciona todas as imagens da página */
   } /* encerra os ajustes do carrossel */
 
 
-  .course-card h3 { /* ajusta novamente o título do curso */
-
-    font-size: 16px; /* aumenta o título para 16 pixels nesta configuração de card maior */
-
-  } /* encerra os ajustes do título */
-
-
-  .course-card p { /* ajusta novamente a descrição do curso */
-
-    font-size: 11px; /* aumenta a descrição para 11 pixels */
-
+  .course-card {
+    & h3 {
+      /* ajusta novamente o título do curso */
+      font-size: 16px;
+      /* aumenta o título para 16 pixels nesta configuração de card maior */
+    }
+    /* encerra os ajustes do título */
+    & p {
+      /* ajusta novamente a descrição do curso */
+      font-size: 11px;
+      /* aumenta a descrição para 11 pixels */
+    }
   } /* encerra os ajustes do botão de logout */
 
 } /* encerra a responsividade para telas de até 390 pixels */

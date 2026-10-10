@@ -33,9 +33,20 @@ body { background: var(--praxis-page); color: var(--praxis-text); }
   cursor: pointer;
   font: 600 13px var(--praxis-font);
   transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast);
+  &:hover {
+    background: var(--praxis-panel-raised);
+    border-color: var(--praxis-accent-text);
+  }
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
-.theme-toggle:hover { background: var(--praxis-panel-raised); border-color: var(--praxis-accent-text); }
-.theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .theme-toggle__label { display: none; }
 .theme-icon-dark, [data-theme="light"] .theme-icon-light { display: none; }
 [data-theme="light"] .theme-icon-dark { display: block; }
@@ -50,8 +61,15 @@ body { background: var(--praxis-page); color: var(--praxis-text); }
 .eyebrow, .hero h1 .accent { color: var(--praxis-accent-text); }
 .hero-desc, .popular-label, .feature p, .state { color: var(--praxis-muted); }
 .search-box, .tag { background: var(--praxis-panel-raised); color: var(--praxis-text); }
-.search-box input::placeholder { color: var(--praxis-muted); }
-.search-box:focus-within { border-color: var(--praxis-focus); box-shadow: none; }
+.search-box {
+  & input::placeholder {
+    color: var(--praxis-muted);
+  }
+  &:focus-within {
+    border-color: var(--praxis-focus);
+    box-shadow: none;
+  }
+}
 .catalog-panel { background: var(--praxis-panel-alt); color: var(--praxis-text); }
 .catalog-head .eyebrow, .see-all { color: var(--praxis-text); }
 .features, .catalog-carousel-btn { background: var(--praxis-panel); color: var(--praxis-text); border-color: var(--praxis-line); }
@@ -75,14 +93,28 @@ body { background: var(--praxis-page); color: var(--praxis-text); }
 .lesson-status, .course-home-empty, .course-home-loading { border-color: var(--praxis-line); }
 .lesson.active .lesson-play, .nav-btn.primary { background: var(--praxis-color-accent); color: var(--praxis-color-ink); border-color: var(--praxis-color-accent); }
 .nav-btn.primary:not(:disabled):hover { background: var(--praxis-color-accent-hover); color: var(--praxis-color-ink); }
-.lesson.is-locked :is(.lesson-status, .lesson-play) { background: var(--praxis-panel-raised); color: var(--praxis-muted); border-color: var(--praxis-line); }
-.lesson.is-locked :is(.lesson-num, .lesson-name, .lesson-duration) { color: var(--praxis-muted); }
+.lesson {
+  &.is-locked :is(.lesson-status,.lesson-play) {
+    background: var(--praxis-panel-raised);
+    color: var(--praxis-muted);
+    border-color: var(--praxis-line);
+  }
+  &.is-locked :is(.lesson-num,.lesson-name,.lesson-duration) {
+    color: var(--praxis-muted);
+  }
+}
 .progress-ring-bg { stroke: var(--praxis-line); }
 .progress-count, .course-home-progress-info strong, .download-action, .back-to-course-home-icon { color: var(--praxis-accent-text); }
 .course-home-progress-track, .progress-track { background: var(--praxis-line); }
 .course-home-header { background: var(--praxis-panel); }
-.course-home-lesson-card { background: var(--praxis-panel); border-color: var(--praxis-line); }
-.course-home-lesson-card.is-completed { background: var(--praxis-panel); border-color: var(--praxis-accent-text); }
+.course-home-lesson-card {
+  background: var(--praxis-panel);
+  border-color: var(--praxis-line);
+  &.is-completed {
+    background: var(--praxis-panel);
+    border-color: var(--praxis-accent-text);
+  }
+}
 .course-home-lesson-icon, .course-home-lesson-status.is-completed { background: var(--praxis-accent-tint); color: var(--praxis-accent-text); }
 .course-home-lesson-status, .course-home-lesson-status.is-available { background: var(--praxis-panel-raised); color: var(--praxis-muted); }
 .course-home-lesson-card.is-locked, .course-home-lesson-card:disabled.is-locked,
@@ -94,8 +126,12 @@ body { background: var(--praxis-page); color: var(--praxis-text); }
 .course-home-lesson-card.is-locked:hover .course-home-lesson-icon,
 .course-home-lesson-status.is-locked { background: var(--praxis-panel); border-color: var(--praxis-line); color: var(--praxis-muted); }
 .back-course:hover { color: var(--praxis-accent-text); }
-.footer-inner { color: var(--praxis-muted); }
-.footer-inner a:hover { color: var(--praxis-text); }
+.footer-inner {
+  color: var(--praxis-muted);
+  & a:hover {
+    color: var(--praxis-text);
+  }
+}
 @media (max-width: 520px) {
   .theme-toggle { width: 40px; height: 40px; }
   .px-header__inner { gap: 10px; }

@@ -1,19 +1,71 @@
 /* Composição da página de assinatura; fundamentos e estados vêm do design system. */
 .subscription-hero { padding-top: var(--praxis-space-16); }
 .hero-layout { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 72px; }
-.hero-copy .px-eyebrow { margin-bottom: 24px; }
-.hero-copy h1 { font-size: var(--praxis-text-display); line-height: var(--praxis-leading-heading); letter-spacing: -2.3px; font-weight: var(--praxis-weight-display); }
-.hero-copy h1 span { color: var(--praxis-accent-text); }
+.hero-copy {
+  & .px-eyebrow {
+    margin-bottom: 24px;
+  }
+  & h1 {
+    font-size: var(--praxis-text-display);
+    line-height: var(--praxis-leading-heading);
+    letter-spacing: -2.3px;
+    font-weight: var(--praxis-weight-display);
+    & .hero-accent {
+      color: var(--praxis-accent-text);
+    }
+  }
+}
 .hero-description { max-width: 550px; margin-top: 24px !important; font-size: var(--praxis-text-base); color: var(--praxis-muted); line-height: 1.75; }
 .hero-cta { margin-top: 30px; min-height: 52px; padding-inline: 24px; }
-.hero-footnote { display: flex; align-items: center; gap: 8px; margin-top: 16px !important; font-size: var(--praxis-text-xs); color: var(--praxis-muted); }
-.hero-footnote .px-icon { width: 16px; height: 16px; }
-.hero-bottom { margin-top: 56px; border-top: 1px solid var(--praxis-line); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px 26px; color: var(--praxis-muted); font-size: var(--praxis-text-xs); }
-.hero-bottom a { display: flex; align-items: center; gap: 24px; }
-.hero-bottom a span { color: var(--praxis-accent-text); font-size: 20px; }
+.hero-footnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px !important;
+  font-size: var(--praxis-text-xs);
+  color: var(--praxis-muted);
+  & .px-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+.hero-bottom {
+  margin-top: 56px;
+  border-top: 1px solid var(--praxis-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px 26px;
+  color: var(--praxis-muted);
+  font-size: var(--praxis-text-xs);
+  & a {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    & span {
+      color: var(--praxis-accent-text);
+      font-size: 20px;
+    }
+  }
+}
 .practice-board { position: relative; width: 100%; max-width: 465px; justify-self: end; background: var(--praxis-panel-raised); border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-lg); transform: rotate(2deg); box-shadow: 12px 14px 0 var(--praxis-panel-raised); }
-.board-heading { display: flex; align-items: center; gap: 8px; padding: 20px 24px; border-bottom: 1px solid var(--praxis-line); font-size: 9px; letter-spacing: 1.3px; font-weight: 600; color: var(--praxis-muted); }
-.board-heading > :last-child { margin-left: auto; font-size: 9px; color: var(--praxis-accent-text); }
+.board-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--praxis-line);
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  color: var(--praxis-muted);
+  &>:last-child {
+    margin-left: auto;
+    font-size: 9px;
+    color: var(--praxis-accent-text);
+  }
+}
 .board-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--praxis-color-accent); }
 .board-grid { position: relative; min-height: 276px; overflow: hidden; background-image: radial-gradient(var(--praxis-line) 1px, transparent 1px); background-size: 20px 20px; }
 .board-orbit { position: absolute; width: 310px; height: 310px; border: 1px solid var(--praxis-line); border-radius: 50%; top: -19px; left: 72px; }
@@ -22,23 +74,67 @@
 .skill-card--excel { top: 27px; left: 25px; transform: rotate(-5deg); }
 .skill-card--ai { top: 108px; right: 21px; transform: rotate(1deg); background: var(--praxis-color-accent); border-color: var(--praxis-accent-text); color: var(--praxis-color-ink); z-index: 2; }
 .skill-card--bi { bottom: 25px; left: 39px; transform: rotate(-3deg); }
-.skill-card strong { display: block; font-size: var(--praxis-text-sm); line-height: 1.5; }
-.skill-card small { display: block; color: var(--praxis-muted); font-size: 10px; }
+.skill-card {
+  & strong {
+    display: block;
+    font-size: var(--praxis-text-sm);
+    line-height: 1.5;
+  }
+  & small {
+    display: block;
+    color: var(--praxis-muted);
+    font-size: 10px;
+  }
+}
 .skill-card--ai small { color: #343d13; }
 .skill-card > .px-icon { width: 16px; height: 16px; margin-left: auto; }
 .tool-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--praxis-accent-tint); color: var(--praxis-accent-text); font-size: 22px; font-weight: 700; flex-shrink: 0; }
 .skill-card--ai .tool-mark { background: rgb(6 7 12 / 8%); color: var(--praxis-color-ink); }
-.board-spark { position: absolute; right: 33px; top: 24px; color: var(--praxis-accent-text); }
-.board-spark .px-icon { width: 28px; height: 28px; }
-.board-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 24px; border-top: 1px solid var(--praxis-line); color: var(--praxis-accent-text); font-size: 10px; }
-.board-footer b { color: var(--praxis-muted); font-weight: 500; margin-left: 5px; }
-.board-footer i { height: 1px; background: var(--praxis-line); flex: 1; }
+.board-spark {
+  position: absolute;
+  right: 33px;
+  top: 24px;
+  color: var(--praxis-accent-text);
+  & .px-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+.board-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  border-top: 1px solid var(--praxis-line);
+  color: var(--praxis-accent-text);
+  font-size: 10px;
+  & b {
+    color: var(--praxis-muted);
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  & i {
+    height: 1px;
+    background: var(--praxis-line);
+    flex: 1;
+  }
+}
 .pricing-section { border-radius: var(--praxis-radius-section) var(--praxis-radius-section) 0 0; padding: 64px 0 70px; }
 .section-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
 .section-intro .px-eyebrow, .benefits-heading .px-eyebrow, .faq-intro .px-eyebrow { margin-bottom: 16px; }
 .section-intro > p { font-size: var(--praxis-text-sm); text-align: right; padding-bottom: 3px; }
-.pricing-notice { display: flex; align-items: center; gap: 8px; margin: 28px 0 30px; color: var(--praxis-muted); font-size: var(--praxis-text-xs); }
-.pricing-notice[hidden] { display: none; }
+.pricing-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 28px 0 30px;
+  color: var(--praxis-muted);
+  font-size: var(--praxis-text-xs);
+  &[hidden] {
+    display: none;
+  }
+}
 .notice-dot { height: 6px; width: 6px; background: var(--praxis-muted); border-radius: 50%; flex-shrink: 0; }
 .plans-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 .plan-card { position: relative; padding: 36px; display: flex; flex-direction: column; }
@@ -47,53 +143,190 @@
 .plan-period { font-size: var(--praxis-text-xs); color: var(--praxis-muted); }
 .plan-card h3 { font-size: 24px; letter-spacing: -.5px; line-height: 1.3; font-weight: 700; }
 .plan-description { font-size: var(--praxis-text-sm); color: var(--praxis-muted); margin-top: 8px !important; }
-.plan-price { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 9px; margin-top: 30px; line-height: 1.1; }
-.plan-price strong { font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; letter-spacing: -1.9px; white-space: nowrap; }
-.plan-price > span { color: var(--praxis-muted); font-size: var(--praxis-text-sm); }
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 9px;
+  margin-top: 30px;
+  line-height: 1.1;
+  & strong {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -1.9px;
+    white-space: nowrap;
+  }
+  &>span {
+    color: var(--praxis-muted);
+    font-size: var(--praxis-text-sm);
+  }
+}
 .plan-billing { font-size: var(--praxis-text-xs); color: var(--praxis-muted); margin-top: 12px !important; min-height: 20px; }
 .plan-action { margin-top: 26px; width: 100%; min-height: 52px; justify-content: space-between; padding-inline: 20px; }
 .plan-divider { height: 1px; background: var(--praxis-line); margin: 28px 0 22px; }
 .plan-includes { font-size: var(--praxis-text-xs); font-weight: 600; }
-.plan-benefits { display: grid; gap: 14px; list-style: none; margin: 20px 0 0; padding: 0; font-size: var(--praxis-text-sm); color: var(--praxis-muted); }
-.plan-benefits li { display: flex; align-items: flex-start; gap: 12px; }
-.plan-benefits .px-icon { width: 17px; height: 20px; color: var(--praxis-accent-text); }
+.plan-benefits {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  font-size: var(--praxis-text-sm);
+  color: var(--praxis-muted);
+  & li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  & .px-icon {
+    width: 17px;
+    height: 20px;
+    color: var(--praxis-accent-text);
+  }
+}
 .plan-card--annual { border-color: var(--praxis-panel-raised); padding-top: 76px; }
-.annual-ribbon { position: absolute; top: -1px; left: -1px; right: -1px; height: 40px; padding: 0 24px; display: flex; align-items: center; gap: 8px; background: var(--praxis-color-accent); border-radius: var(--praxis-radius-lg) var(--praxis-radius-lg) 0 0; color: var(--praxis-color-ink); font-size: 11px; font-weight: 600; }
-.annual-ribbon .px-icon { width: 16px; height: 16px; }
+.annual-ribbon {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 40px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--praxis-color-accent);
+  border-radius: var(--praxis-radius-lg) var(--praxis-radius-lg) 0 0;
+  color: var(--praxis-color-ink);
+  font-size: 11px;
+  font-weight: 600;
+  & .px-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
 .annual-discount { margin-left: auto; font-size: 10px; }
-.plan-card--annual .plan-card__head { margin-bottom: 24px; }
-.plan-card--annual .plan-symbol { background: var(--praxis-accent-tint); color: var(--praxis-accent-text); border-color: var(--praxis-line); }
-.plan-card--annual :is(.plan-period, .plan-description, .plan-price > span, .plan-billing, .plan-benefits) { color: var(--praxis-muted); }
-.plan-card--annual .plan-divider { background: var(--praxis-line); }
-.plan-card--annual .plan-benefits .px-icon { color: var(--praxis-accent-text); }
-.annual-saving { margin-top: 22px !important; font-size: 11px; line-height: 1.6; color: var(--praxis-muted); padding-top: 20px; border-top: 1px solid var(--praxis-line); }
-.annual-saving strong { color: var(--praxis-accent-text); font-weight: 600; }
+.plan-card--annual {
+  & .plan-card__head {
+    margin-bottom: 24px;
+  }
+  & .plan-symbol {
+    background: var(--praxis-accent-tint);
+    color: var(--praxis-accent-text);
+    border-color: var(--praxis-line);
+  }
+  & :is(.plan-period,.plan-description,.plan-price>span,.plan-billing,.plan-benefits) {
+    color: var(--praxis-muted);
+  }
+  & .plan-divider {
+    background: var(--praxis-line);
+  }
+  & .plan-benefits .px-icon {
+    color: var(--praxis-accent-text);
+  }
+}
+.annual-saving {
+  margin-top: 22px !important;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--praxis-muted);
+  padding-top: 20px;
+  border-top: 1px solid var(--praxis-line);
+  & strong {
+    color: var(--praxis-accent-text);
+    font-weight: 600;
+  }
+}
 .plans-caption { margin: 20px auto 0 !important; color: var(--praxis-muted); max-width: 760px; text-align: center; font-size: 11px; line-height: 1.7; }
 .benefits-section { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--praxis-line); }
 .benefits-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 36px; }
 .benefit-icon { display: grid; place-items: center; width: 44px; height: 44px; background: var(--praxis-accent-tint); border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-button); margin-bottom: 18px; }
-.benefit h3 { font-size: var(--praxis-text-base); font-weight: 700; letter-spacing: -.3px; }
-.benefit p { margin-top: 10px !important; color: var(--praxis-muted); font-size: var(--praxis-text-sm); }
+.benefit {
+  & h3 {
+    font-size: var(--praxis-text-base);
+    font-weight: 700;
+    letter-spacing: -.3px;
+  }
+  & p {
+    margin-top: 10px !important;
+    color: var(--praxis-muted);
+    font-size: var(--praxis-text-sm);
+  }
+}
 .learning-section { padding: 76px 0; }
-.learning-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.learning-layout .px-eyebrow { margin-bottom: 20px; }
-.learning-layout .px-muted { font-size: var(--praxis-text-sm); max-width: 420px; margin-top: 20px; }
-.text-link { display: inline-flex; gap: 20px; align-items: center; font-size: var(--praxis-text-sm); font-weight: 600; color: var(--praxis-accent-text) !important; margin-top: 26px; }
-.text-link:hover { text-decoration: underline; }
-.learning-step { display: flex; gap: 20px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--praxis-line); }
-.learning-step:first-child { padding-top: 0; }
-.learning-step > span { align-self: flex-start; font-size: 12px; font-weight: 600; color: var(--praxis-accent-text); margin-top: 3px; }
-.learning-step h3 { font-size: var(--praxis-text-base); font-weight: 600; }
-.learning-step p { font-size: var(--praxis-text-xs); color: var(--praxis-muted); margin-top: 5px; }
-.learning-step > .px-icon { margin-left: auto; color: var(--praxis-muted); }
+.learning-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  & .px-eyebrow {
+    margin-bottom: 20px;
+  }
+  & .px-muted {
+    font-size: var(--praxis-text-sm);
+    max-width: 420px;
+    margin-top: 20px;
+  }
+}
+.text-link {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  font-size: var(--praxis-text-sm);
+  font-weight: 600;
+  color: var(--praxis-accent-text) !important;
+  margin-top: 26px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.learning-step {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--praxis-line);
+  &:first-child {
+    padding-top: 0;
+  }
+  &>span {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--praxis-accent-text);
+    margin-top: 3px;
+  }
+  & h3 {
+    font-size: var(--praxis-text-base);
+    font-weight: 600;
+  }
+  & p {
+    font-size: var(--praxis-text-xs);
+    color: var(--praxis-muted);
+    margin-top: 5px;
+  }
+  &>.px-icon {
+    margin-left: auto;
+    color: var(--praxis-muted);
+  }
+}
 .faq-section { padding: 72px 0; }
 .faq-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
 .faq-intro p { max-width: 250px; font-size: var(--praxis-text-sm); margin-top: 20px; }
 .faq-list .px-details:first-child summary { padding-top: 0; }
 .closing-section { padding: 52px 0; }
-.closing-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.closing-inner .px-eyebrow { margin-bottom: 12px; }
-.closing-inner .px-heading { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.closing-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  & .px-eyebrow {
+    margin-bottom: 12px;
+  }
+  & .px-heading {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+}
 @media (max-width: 1000px) {
   .hero-layout { gap: 32px; }
   .hero-copy h1 { font-size: 48px; }
@@ -102,8 +335,13 @@
   .skill-card--ai { right: 12px; }
   .skill-card--bi { left: 20px; }
   .board-heading { padding-inline: 18px; }
-  .board-footer { padding-inline: 18px; gap: 7px; }
-  .board-footer b { margin-left: 2px; }
+  .board-footer {
+    padding-inline: 18px;
+    gap: 7px;
+    & b {
+      margin-left: 2px;
+    }
+  }
   .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
   .learning-layout, .faq-layout { gap: 40px; }
   .plan-card { padding: 28px; }
@@ -112,8 +350,13 @@
 @media (max-width: 760px) {
   .subscription-hero { padding-top: 40px; }
   .hero-layout { grid-template-columns: 1fr; gap: 40px; }
-  .hero-copy { max-width: 600px; }
-  .hero-copy h1 { font-size: clamp(36px, 7vw, 52px); letter-spacing: -1.5px; }
+  .hero-copy {
+    max-width: 600px;
+    & h1 {
+      font-size: clamp(36px, 7vw, 52px);
+      letter-spacing: -1.5px;
+    }
+  }
   .practice-board { max-width: 470px; justify-self: center; width: calc(100% - 12px); }
   .skill-card { width: 300px; }
   .skill-card--excel { left: 25px; }
@@ -121,47 +364,95 @@
   .skill-card--bi { left: 39px; }
   .hero-bottom { margin-top: 40px; }
   .pricing-section { padding-top: 44px; }
-  .section-intro { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .section-intro > p { text-align: left; }
-  .section-intro > p br { display: none; }
+  .section-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    &>p {
+      text-align: left;
+    }
+    &>p br {
+      display: none;
+    }
+  }
   .plans-grid { grid-template-columns: 1fr; gap: 24px; }
   .plan-card { padding: 28px; }
   .plan-card--annual { padding-top: 68px; }
   .plan-price strong { font-size: 44px; }
   .learning-layout, .faq-layout { grid-template-columns: 1fr; gap: 40px; }
   .learning-section, .faq-section { padding: 52px 0; }
-  .faq-intro h2 br { display: none; }
-  .faq-intro p { max-width: none; margin-top: 14px; }
+  .faq-intro {
+    & h2 br {
+      display: none;
+    }
+    & p {
+      max-width: none;
+      margin-top: 14px;
+    }
+  }
   .closing-inner { align-items: flex-start; flex-direction: column; gap: 24px; }
 }
 @media (max-width: 450px) {
-  .header-login { min-height: 42px; padding: 10px 12px; }
-  .header-login .px-icon { display: none; }
+  .header-login {
+    min-height: 42px;
+    padding: 10px 12px;
+    & .px-icon {
+      display: none;
+    }
+  }
   .px-nav { gap: 14px; }
   .px-nav__link { font-size: 12px; }
   .hero-description { font-size: 14px; }
   .desktop-break { display: none; }
   .hero-footnote { font-size: 10px; gap: 6px; }
-  .hero-bottom { font-size: 10px; gap: 10px; }
-  .hero-bottom a { gap: 10px; }
+  .hero-bottom {
+    font-size: 10px;
+    gap: 10px;
+    & a {
+      gap: 10px;
+    }
+  }
   .board-grid { min-height: 258px; }
   .skill-card { width: 248px; padding: 12px; gap: 10px; }
   .skill-card--excel { left: 13px; top: 22px; }
   .skill-card--ai { right: 11px; top: 100px; }
   .skill-card--bi { left: 19px; bottom: 17px; }
-  .board-heading { font-size: 8px; padding: 16px; }
-  .board-heading > :last-child { font-size: 8px; }
+  .board-heading {
+    font-size: 8px;
+    padding: 16px;
+    &>:last-child {
+      font-size: 8px;
+    }
+  }
   .board-footer { padding: 16px 12px; font-size: 9px; gap: 5px; }
   .tool-mark { width: 34px; height: 34px; }
-  .board-spark { right: 22px; top: 15px; }
-  .board-spark .px-icon { width: 20px; height: 20px; }
+  .board-spark {
+    right: 22px;
+    top: 15px;
+    & .px-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
   .benefits-grid { gap: 28px 20px; }
-  .benefit h3 { font-size: 14px; }
-  .benefit p { font-size: 12px; }
+  .benefit {
+    & h3 {
+      font-size: 14px;
+    }
+    & p {
+      font-size: 12px;
+    }
+  }
   .plan-card { padding: 24px; }
   .plan-card--annual { padding-top: 64px; }
-  .plan-price strong { font-size: 40px; }
-  .plan-price > span { font-size: 12px; }
+  .plan-price {
+    & strong {
+      font-size: 40px;
+    }
+    &>span {
+      font-size: 12px;
+    }
+  }
   .annual-ribbon { padding-inline: 16px; font-size: 10px; }
   .annual-discount { font-size: 9px; }
   .plan-benefits { font-size: 12px; }

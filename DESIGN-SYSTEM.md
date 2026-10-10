@@ -59,6 +59,22 @@ Espaçamento: escala de 4 px (4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80). Contain
 
 Raios: 8 px pequeno, 12 px botões/campos, 14 px médio, 22 px cards/dialog, 32 px seções, 999 px pílulas. As páginas antigas mantêm os raios já usados para evitar mudanças desnecessárias de composição.
 
+## Organização do CSS
+
+Os estilos usam [aninhamento nativo de CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using), sem Sass ou etapa de compilação. `&` representa o seletor do bloco atual e agrupa estados e elementos relacionados:
+
+```css
+.px-button--primary {
+  background: var(--praxis-color-accent);
+
+  &:hover {
+    background: var(--praxis-color-accent-hover);
+  }
+}
+```
+
+Use `&:hover`, `&:focus-visible`, `&.is-active` e `& .elemento`. Classes com nomes próprios, como `.px-button--primary`, permanecem completas; CSS nativo não aceita concatenar nomes com `&--primary`. Mantenha a ordem das regras e evite agrupar seletores de especificidades diferentes no bloco pai. Os tokens continuam definidos em `styles/tokens.css`.
+
 ## Componentes
 - Home e cursos montam o mesmo cabeçalho com scripts/header.js e styles/header.css. Use `<header class="site-header" data-site-header data-subscription="true"></header>` na home e `data-subscription="false"` nos cursos; carregue header.js com defer e header.css após theme.css.
 - scripts/header-session.js é a única implementação do perfil no cabeçalho: prioriza nome de usuário, depois nome completo e e-mail; mantém avatar, entrada e saída. A preferência de tema usa o controlador compartilhado já existente.

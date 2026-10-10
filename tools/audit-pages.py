@@ -70,7 +70,8 @@ for file, page in [*pages.items(), ('menu da conta', account_component)]:
 css = '\n'.join(file.read_text(encoding='utf-8') for file in (root / 'styles').glob('*.css'))
 css = re.sub(r'/\*[\s\S]*?\*/', '', css)
 definitions = set(re.findall(r'(--[\w-]+)\s*:', css))
-used = set(re.findall(r'var\((--[\w-]+)', css))
+# Variáveis de movimento podem ser definidas pelo JavaScript; seu fallback já é válido.
+used = set(re.findall(r'var\(\s*(--[\w-]+)\s*\)', css))
 assert not used - definitions, f'Tokens indefinidos: {used - definitions}'
 for file in (root / 'styles').glob('*.css'):
     source = re.sub(r'/\*[\s\S]*?\*/', '', file.read_text(encoding='utf-8'))

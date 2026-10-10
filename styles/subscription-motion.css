@@ -1,0 +1,450 @@
+/* Movimento e acabamento da assinatura, usando os mesmos tokens da Praxis. */
+.subscription-page {
+  overflow-x: clip;
+  & .px-skip {
+    z-index: 120;
+  }
+  & :is(#planos,#faq-title) {
+    scroll-margin-top: calc(var(--praxis-header-height) + 24px);
+  }
+}
+.subscription-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 110;
+  height: 3px;
+  background: var(--praxis-color-accent);
+  transform: scaleX(var(--page-progress, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+.subscription-page {
+  & .subscription-hero {
+    position: relative;
+    isolation: isolate;
+    padding-top: 80px;
+    &::before {
+      position: absolute;
+      inset: -15% -10% 0 30%;
+      z-index: -1;
+      background: radial-gradient(ellipse at 65% 35%, rgb(224 251 56 / 12%), transparent 56%);
+      content: "";
+      pointer-events: none;
+    }
+  }
+  & .hero-copy h1 {
+    font-size: clamp(42px, 4.7vw, 68px);
+  }
+}
+.hero-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.hero-line__text { display: inline-block; }
+.hero-accent { font-style: normal; }
+.practice-scene {
+  position: relative;
+  width: 100%;
+  max-width: 465px;
+  justify-self: end;
+  &::before {
+    position: absolute;
+    inset: -60px;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgb(224 251 56 / 17%), transparent 64%);
+    content: "";
+  }
+}
+.subscription-page {
+  & .practice-board {
+    box-shadow: 12px 14px 0 var(--praxis-accent-tint), 0 28px 72px rgb(0 0 0 / 16%);
+  }
+  & .board-grid {
+    background-size: 24px 24px;
+    &::before {
+      position: absolute;
+      inset: -85px 0 auto;
+      height: 80px;
+      background: linear-gradient(transparent, rgb(224 251 56 / 9%), transparent);
+      content: "";
+      pointer-events: none;
+    }
+  }
+  & .board-orbit::after {
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--praxis-color-accent);
+    box-shadow: 0 0 18px rgb(224 251 56 / 65%);
+    content: "";
+  }
+}
+.tools-rail { margin-top: 10px; border-block: 1px solid var(--praxis-line); background: var(--praxis-panel); }
+.tools-rail__inner { display: flex; align-items: center; gap: 28px; }
+.tools-rail__caption {
+  flex: 0 0 214px;
+  display: grid;
+  gap: 5px;
+  padding-block: 24px;
+  & .px-eyebrow {
+    font-size: 10px;
+  }
+  &>:last-child {
+    color: var(--praxis-muted);
+    font-size: 12px;
+  }
+}
+.tools-rail__window { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); }
+.tools-rail__track { display: flex; width: max-content; }
+.tools-rail__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  padding: 24px 16px;
+  margin: 0;
+  & li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+.subscription-page {
+  &:not(.motion-enabled) .tools-rail__track {
+    width: 100%;
+  }
+  &:not(.motion-enabled) .tools-rail__list {
+    flex-wrap: wrap;
+  }
+  &:not(.motion-enabled) .tools-rail__duplicate {
+    display: none;
+  }
+  &:not(.motion-enabled) .tools-rail__window {
+    mask-image: none;
+  }
+}
+.tool-rail-mark { display: grid; place-items: center; min-width: 32px; height: 32px; padding-inline: 5px; border: 1px solid var(--praxis-line); border-radius: 8px; background: var(--praxis-accent-tint); color: var(--praxis-accent-text); font-size: 11px; }
+.tool-rail-dot { width: 4px; height: 4px; margin-left: 12px; border-radius: 50%; background: var(--praxis-line); }
+.subscription-page {
+  & .pricing-section {
+    position: relative;
+    padding-top: 80px;
+  }
+  & .plan-card {
+    isolation: isolate;
+    transition: transform 320ms ease, box-shadow 320ms ease, border-color 240ms ease;
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: inherit;
+      background: radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 30%), var(--praxis-accent-tint), transparent 72%);
+      opacity: 0;
+      transition: opacity 320ms ease;
+      content: "";
+      pointer-events: none;
+    }
+  }
+}
+.subscription-page .plan-card:focus-within::before, .subscription-page .plan-card.is-pointer-active::before { opacity: .8; }
+.subscription-page {
+  & .plan-card {
+    &:focus-within {
+      border-color: var(--praxis-accent-text);
+    }
+    &.is-pointer-active {
+      transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
+      border-color: var(--praxis-accent-text);
+      box-shadow: 0 24px 60px rgb(0 0 0 / 15%);
+    }
+  }
+}
+.plan-trace {
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  overflow: visible;
+  pointer-events: none;
+  & rect {
+    fill: none;
+    stroke: var(--praxis-color-accent);
+    stroke-width: 1.5;
+    stroke-dasharray: 36 364;
+  }
+}
+.subscription-page {
+  & .annual-ribbon {
+    overflow: hidden;
+    &::after {
+      position: absolute;
+      inset: 0 auto 0 -40%;
+      width: 32%;
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 55%), transparent);
+      transform: skewX(-18deg);
+      content: "";
+      pointer-events: none;
+    }
+  }
+  & .benefit {
+    padding: 20px 18px;
+    margin: -20px -18px;
+    border-radius: 16px;
+    transition: background 240ms ease, transform 240ms ease;
+    &:hover {
+      background: var(--praxis-panel);
+      transform: translateY(-4px);
+    }
+  }
+  & .benefit-icon {
+    color: var(--praxis-accent-text);
+    transition: transform 320ms ease, background 240ms ease;
+  }
+  & .benefit:hover .benefit-icon {
+    transform: rotate(-6deg);
+  }
+  & .learning-steps {
+    position: relative;
+  }
+}
+.subscription-page .learning-steps::before, .subscription-page .learning-steps::after { position: absolute; top: 20px; bottom: 42px; left: 12px; width: 1px; background: var(--praxis-line); content: ""; }
+.subscription-page {
+  & .learning-steps::after {
+    background: var(--praxis-accent-text);
+    transform-origin: top;
+  }
+  &.motion-enabled .learning-steps::after {
+    transform: scaleY(0);
+    transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
+  }
+  &.motion-enabled .learning-steps.has-entered::after {
+    transform: scaleY(1);
+  }
+  & .learning-step {
+    position: relative;
+    padding-left: 44px;
+    &>span {
+      position: absolute;
+      top: 26px;
+      left: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      margin: 0;
+      border: 1px solid var(--praxis-line);
+      border-radius: 50%;
+      background: var(--praxis-page);
+      font-size: 10px;
+    }
+    &:first-child>span {
+      top: 2px;
+    }
+  }
+  & .px-details {
+    transition: border-color 240ms ease;
+    &[open] {
+      border-color: var(--praxis-accent-text);
+    }
+    &.is-animating {
+      overflow: hidden;
+    }
+    & summary::after {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--praxis-line);
+      border-radius: 50%;
+      font-size: 20px;
+      line-height: 1;
+      transition: transform 320ms ease, background 240ms ease, color 240ms ease;
+    }
+    &[open] summary::after {
+      transform: rotate(180deg);
+      background: var(--praxis-accent-tint);
+      color: var(--praxis-accent-text);
+    }
+    &[open] summary {
+      color: var(--praxis-accent-text);
+    }
+  }
+}
+.subscription-page .px-button .px-icon, .subscription-page .text-link .px-icon { transition: transform 320ms cubic-bezier(.16, 1, .3, 1); }
+.subscription-page .px-button:hover .px-icon, .subscription-page .text-link:hover .px-icon { transform: translateX(4px); }
+.subscription-page {
+  & .px-button--primary {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    &::before {
+      position: absolute;
+      inset: 0 auto 0 -60%;
+      z-index: -1;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent);
+      transform: skewX(-20deg);
+      content: "";
+      pointer-events: none;
+    }
+  }
+  & .closing-section {
+    position: relative;
+    overflow: hidden;
+    padding-block: 68px;
+    background: radial-gradient(ellipse at 90% 100%, var(--praxis-accent-tint), transparent 64%);
+  }
+}
+@keyframes px-skill-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@keyframes px-orbit { to { transform: rotate(360deg); } }
+@keyframes px-board-scan { to { transform: translateY(430px); } }
+@keyframes px-aura-drift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.06); } }
+@keyframes px-tool-loop { to { transform: translateX(-50%); } }
+@keyframes px-plan-trace { to { stroke-dashoffset: -400; } }
+@keyframes px-ribbon-sheen { 0%, 65% { translate: 0 0; } 100% { translate: 470% 0; } }
+@keyframes px-button-sheen { to { translate: 380% 0; } }
+@keyframes px-dialog-enter { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes px-backdrop-enter { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .motion-enabled {
+    & .subscription-hero::before {
+      animation: px-aura-drift 14s ease-in-out infinite paused;
+    }
+    & .skill-card {
+      animation: px-skill-float 6s ease-in-out infinite paused;
+    }
+    & .skill-card--ai {
+      animation-delay: -2s;
+    }
+    & .skill-card--bi {
+      animation-delay: -4s;
+    }
+    & .board-orbit {
+      animation: px-orbit 18s linear infinite paused;
+    }
+    & .board-orbit--inner {
+      animation-duration: 14s;
+      animation-direction: reverse;
+    }
+    & .board-grid::before {
+      animation: px-board-scan 9s linear infinite paused;
+    }
+  }
+  .motion-enabled .subscription-hero.is-in-view::before,
+  .motion-enabled .subscription-hero.is-in-view :is(.skill-card, .board-orbit),
+  .motion-enabled .subscription-hero.is-in-view .board-grid::before { animation-play-state: running; }
+  .motion-enabled {
+    & .tools-rail__track {
+      animation: px-tool-loop 34s linear infinite paused;
+    }
+    & .tools-rail.is-in-view .tools-rail__track {
+      animation-play-state: running;
+    }
+  }
+  .motion-enabled .tools-rail:hover .tools-rail__track, .motion-enabled .tools-rail:focus-within .tools-rail__track { animation-play-state: paused; }
+  .motion-enabled {
+    & .plan-trace rect {
+      animation: px-plan-trace 9s linear infinite paused;
+    }
+    & .annual-ribbon::after {
+      animation: px-ribbon-sheen 8s ease-in-out infinite paused;
+    }
+    & .plan-card--annual {
+      &.is-in-view .plan-trace rect {
+        animation-play-state: running;
+      }
+      &.is-in-view .annual-ribbon::after {
+        animation-play-state: running;
+      }
+    }
+  }
+  .subscription-page:not(.motion-paused) .px-button--primary:is(:hover, :focus-visible)::before { animation: px-button-sheen 700ms ease; }
+  .motion-enabled {
+    &:not(.motion-paused) .px-dialog[open] {
+      animation: px-dialog-enter 340ms cubic-bezier(.16, 1, .3, 1);
+    }
+    &:not(.motion-paused) .px-dialog[open]::backdrop {
+      animation: px-backdrop-enter 260ms ease;
+    }
+  }
+}
+.subscription-page.motion-paused *, .subscription-page.motion-paused *::before, .subscription-page.motion-paused *::after { animation-play-state: paused !important; }
+.subscription-page {
+  &.motion-paused * {
+    transition: none !important;
+  }
+  &.motion-paused :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) {
+    transform: none !important;
+  }
+}
+.subscription-page.motion-paused .px-dialog[open], .subscription-page.motion-paused .px-dialog[open]::backdrop { animation: none; }
+@media (max-width: 1000px) {
+  .subscription-page .hero-copy h1 { font-size: 48px; }
+  .tools-rail__caption { flex-basis: 190px; }
+  .tools-rail__inner { gap: 18px; }
+}
+@media (max-width: 760px) {
+  .subscription-page {
+    & .subscription-hero {
+      padding-top: 48px;
+    }
+    & .hero-copy h1 {
+      font-size: clamp(36px, 7vw, 52px);
+    }
+  }
+  .practice-scene { justify-self: center; width: calc(100% - 12px); }
+  .subscription-page .practice-board { width: 100%; }
+  .tools-rail__inner { flex-wrap: wrap; gap: 0; }
+  .tools-rail__caption { flex: 1; padding-block: 20px 0; }
+  .tools-rail__window { flex: 0 0 100%; order: 3; }
+  .tools-rail__list {
+    gap: 24px;
+    padding-block: 20px;
+    & li {
+      font-size: 13px;
+    }
+  }
+  .subscription-page {
+    & .pricing-section {
+      padding-top: 52px;
+    }
+    & .plan-card.is-pointer-active {
+      transform: none;
+    }
+    & .benefit {
+      margin: 0;
+      padding: 0;
+    }
+    & .closing-section {
+      padding-block: 52px;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .subscription-page {
+    & .tools-rail__track {
+      width: 100%;
+    }
+    & .tools-rail__list {
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+    & .tools-rail__duplicate {
+      display: none;
+    }
+    & .tools-rail__window {
+      mask-image: none;
+    }
+    & :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) {
+      transform: none !important;
+    }
+  }
+  .subscription-page *, .subscription-page *::before, .subscription-page *::after { animation: none !important; transition: none !important; }
+}
