@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-10-10T04:01:46.431634+00:00",
+  "counts": {
+    "catalogo": 23,
+    "modulos": 23,
+    "aulas": 64,
+    "slides": 485,
+    "materiais": 27
+  },
+  "organized_referenced_files": 535,
+  "legacy_assets_preserved": 1,
+  "flat_files_remaining": 0,
+  "all_references_verified": true,
+  "all_ids_and_other_fields_preserved": true,
+  "empty_source_folders": 0
+}

@@ -9,3 +9,4 @@ __pycache__/
 server-key.txt
 tools/content-import/refs-*.json
 tools/content-import/combined-*.json
+tools/content-import/*.tmp

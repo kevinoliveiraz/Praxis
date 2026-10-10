@@ -1,12 +1,17 @@
 """Compare the supplied Drive tree with a read-only Supabase content export."""
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+import importlib.util
 import re
 import unicodedata
 from urllib.parse import unquote
 import zipfile
 
 ROOT = Path(__file__).resolve().parent
+_layout_spec = importlib.util.spec_from_file_location('storage_layout', ROOT/'storage-layout.py')
+_layout = importlib.util.module_from_spec(_layout_spec)
+_layout_spec.loader.exec_module(_layout)
+storage_path = _layout.storage_path
 DRIVE = json.loads((ROOT/'drive-inventory.json').read_text(encoding='utf-8-sig'))
 DB = json.loads((ROOT/'supabase-before.json').read_text(encoding='utf-8-sig'))
 DB = {key: value or [] for key, value in DB.items()}
@@ -71,7 +76,7 @@ def new_id(table):
     return value
 
 def stage(item,bucket):
-    target = f'drive-import/{item["id"]}{extension(item)}'
+    target = storage_path(item['path'])
     uploads[item['id']] = {**item,'bucket':bucket,'target':target,'extension':extension(item)}
     links.append({'drive_id':item['id'],'bucket':bucket,'path':target,'source':item['path'],'action':'upload'})
     return target
@@ -88,8 +93,8 @@ for source_title,course_id,title,slug in COURSES:
         encoded = existing.get('imagem_capa_url','').split('/object/public/storage%20capas/')[-1]
         original = unquote(encoded)
         candidates = [x for x in DB['objects'] if x['bucket']=='storage capas' and re.sub(r'\s+',' ',x['name'])==re.sub(r'\s+',' ',original)]
-        if len(candidates)==1:
-            cover_path = candidates[0]['name']
+        if len(candidates)==1 and int(candidates[0]['size'])==int(cover[0]['size']):
+            cover_path = storage_path(cover[0]['path'])
             links.append({'drive_id':cover[0]['id'],'bucket':'storage capas','path':cover_path,'source':cover[0]['path'],'action':'reuse'})
     if not cover_path: cover_path = stage(cover[0],'storage capas')
     module = next((x for x in DB['modulos'] if x['curso_id']==course_id),None)
@@ -111,7 +116,8 @@ for source_title,course_id,title,slug in COURSES:
             stored=[x for x in DB['objects'] if x['bucket']=='slides' and x['name'].startswith(f'excel/conteudo/{key}/') and x['mimetype'].startswith('image/')]
             for order,obj in enumerate(sorted(stored,key=lambda x:page(Path(x['name']).name)),1):
                 prior=next((x for x in old_slides if x['imagem_path']==obj['name']),None)
-                planned_slides.append({'id':prior['id'] if prior else new_id('slides'),'aula_id':lesson_id,'ordem':order,'titulo':f'{lesson_name(key)} — Slide {order}','imagem_path':obj['name'],'status':'publicado','existing':prior is not None})
+                target = storage_path(str(PurePosixPath(archives[0]['path']).parent / PurePosixPath(obj['name']).name))
+                planned_slides.append({'id':prior['id'] if prior else new_id('slides'),'aula_id':lesson_id,'ordem':order,'titulo':f'{lesson_name(key)} — Slide {order}','imagem_path':target,'status':'publicado','existing':prior is not None})
             for archive in archives:
                 cached=Path('C:/Users/Aluno/AppData/Local/Temp/praxis-drive-import-20261009/files/materiais')/(archive['id']+'.zip')
                 if not cached.exists():
@@ -134,6 +140,10 @@ for source_title,course_id,title,slug in COURSES:
                 if prior is None:
                     prior=next((x for x in old_slides if ('slides',x['imagem_path']) not in object_lookup and not any(s['id']==x['id'] for s in planned_slides)),None)
                 planned_slides.append({'id':prior['id'] if prior else new_id('slides'),'aula_id':lesson_id,'ordem':order,'titulo':f'{lesson_name(key)} — '+('Bônus' if page(item['name'])==10000 else f'Slide {order}'),'imagem_path':target,'status':'publicado','existing':prior is not None})
+                # Match old rows before replacing their paths with the original Drive hierarchy.
+                planned_slides[-1]['imagem_path'] = storage_path(item['path'])
+                if matching:
+                    links[-1]['path'] = storage_path(item['path'])
             numbered=[page(x['name']) for x in images if page(x['name'])!=10000]
             if numbered:
                 missing=[n for n in range(min(numbered),max(numbered)+1) if n not in numbered]

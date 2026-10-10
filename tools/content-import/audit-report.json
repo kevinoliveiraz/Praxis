@@ -2,9 +2,10 @@
   "source_files": 482,
   "courses": 23,
   "lessons": 64,
+  "drive_hierarchy_and_names_preserved": true,
   "slides": 485,
   "materials": 27,
-  "uploads": 387,
+  "uploads": 388,
   "source_gaps": [
     {
       "course": "PowerPoint",

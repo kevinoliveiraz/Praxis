@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-10T01:11:05.790365+00:00",
+  "verified_at": "2026-10-10T04:01:47.074791+00:00",
   "counts": {
     "catalogo": 23,
     "modulos": 23,
@@ -10,11 +10,11 @@
   "all_planned_values_match": true,
   "existing_ids_and_parents_preserved": true,
   "duplicate_slide_order": 0,
-  "verified_upload_receipts": 387,
+  "verified_upload_receipts": 388,
   "upload_buckets": {
+    "storage capas": 9,
     "materiais": 27,
-    "slides": 352,
-    "storage capas": 8
+    "slides": 352
   },
   "source_gaps": [
     {

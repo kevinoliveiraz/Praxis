@@ -5,7 +5,7 @@
       "created_at": "2026-07-29T16:35:31.396653+00:00",
       "nome": "Excel Prático — Básico ao Avançado",
       "descricao": "\nAprenda Excel do básico ao avançado com aulas práticas, exercícios e projetos aplicados ao dia a dia.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/capa%20excel.jpeg",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/EXCEL/CAPA/Excel%20pratico%20Basico%20ao%20Avanbcado%20%281%29.png",
       "categoria": "Excel",
       "ordem_exibicao": 1,
       "status": "publicado"
@@ -15,7 +15,7 @@
       "created_at": "2026-08-15T23:53:58.212019+00:00",
       "nome": "Word",
       "descricao": "Word na pratica",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/Word%20na%20pratica.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/WORD/CAPAS/Word%20na%20pratica",
       "categoria": "word",
       "ordem_exibicao": 2,
       "status": "publicado"
@@ -25,7 +25,7 @@
       "created_at": "2026-08-15T23:56:04.88202+00:00",
       "nome": "Power Point",
       "descricao": "powerpoint na pratica",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWERPOINT%20NA%20PRATICA.jpg",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWER%20POINT/CAPA/POWERPOINT%20NA%20PRATICA.jpg",
       "categoria": "powerpoint",
       "ordem_exibicao": 3,
       "status": "publicado"
@@ -35,7 +35,7 @@
       "created_at": "2026-08-16T00:00:30.431353+00:00",
       "nome": "Power BI",
       "descricao": "Power BI na prática",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWER%20BI%20NA%20PRATICA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWER%20BI/CAPA/POWER%20BI%20NA%20PRATICA.png",
       "categoria": "power-bi",
       "ordem_exibicao": 4,
       "status": "publicado"
@@ -45,7 +45,7 @@
       "created_at": "2026-08-19T01:33:41.964876+00:00",
       "nome": "Outlook",
       "descricao": "Outlook na prática",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/OUTLOOK%20NA%20%20%20%20%20%20%20%20%20%20PRATICA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/OUTLOOK/CONTEUDO/CAPA/OUTLOOK%20NA%20%20%20%20%20%20%20%20%20%20PRATICA.png",
       "categoria": "outlook",
       "ordem_exibicao": 5,
       "status": "publicado"
@@ -55,7 +55,7 @@
       "created_at": "2026-08-19T01:33:41.964876+00:00",
       "nome": "ChatGPT",
       "descricao": "ChatGPT na prática",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/chatgpt.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/CHAT%20GPT/CAPA/Excel%20pratico%20Basico%20ao%20Avanbcado.png",
       "categoria": "chat-gpt",
       "ordem_exibicao": 6,
       "status": "publicado"
@@ -65,7 +65,7 @@
       "created_at": "2026-08-19T01:33:41.964876+00:00",
       "nome": "Teams",
       "descricao": "Teams na prática",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/teams.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/TEAMS/CONTEUDO/CAPA/Excel%20pratico%20Basico%20ao%20Avanbcado.png",
       "categoria": "teams",
       "ordem_exibicao": 7,
       "status": "publicado"
@@ -75,7 +75,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Claude na Prática",
       "descricao": "Aprenda a usar o Claude na prática.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/CLAUDE%20NA%20PRATICA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/CLAUDE/CAPA/CLAUDE%20NA%20PRATICA.png",
       "categoria": "claude",
       "ordem_exibicao": 8,
       "status": "publicado"
@@ -85,7 +85,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Copilot na Prática",
       "descricao": "Aprenda a usar o Copilot na prática.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/COPILOT.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/COPILOT/CAPA/CAPA.png",
       "categoria": "copilot",
       "ordem_exibicao": 9,
       "status": "publicado"
@@ -95,7 +95,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Gemini na Prática",
       "descricao": "Aprenda a usar o Gemini na prática.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/GEMINI%20NA%20PRATICA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/GEMINI/CAPA/GEMINI%20NA%20PRATICA.png",
       "categoria": "gemini",
       "ordem_exibicao": 10,
       "status": "publicado"
@@ -105,7 +105,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Investimentos Pessoal",
       "descricao": "Aprenda conceitos práticos para organizar e desenvolver seus investimentos pessoais.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/INVESTIMENTOS%20PESSOAL.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/INVESTIMENTO%20PESSOAL/CONTEUDO/CAPA/ChatGPT%20Image%2028_08_2026%2C%2022_11_27.png",
       "categoria": "investimentos-pessoal",
       "ordem_exibicao": 11,
       "status": "publicado"
@@ -115,7 +115,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Oratória na Prática",
       "descricao": "Desenvolva sua comunicação e oratória através da prática.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/ORATORIA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/ORATORIA/CAPA/CAPA.png",
       "categoria": "oratoria",
       "ordem_exibicao": 12,
       "status": "publicado"
@@ -125,7 +125,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Projetos Práticos",
       "descricao": "Aprenda através do desenvolvimento de projetos práticos.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/PROJETOS%20PRATICOS.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/PROJETOS%20PRATICOS/CAPA/CAPA.png",
       "categoria": "projetos-praticos",
       "ordem_exibicao": 13,
       "status": "publicado"
@@ -135,7 +135,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Soft Skills na Prática",
       "descricao": "Desenvolva habilidades comportamentais importantes para sua carreira.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/SOFT%20SKILLS%20NA%20PRATICA.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/SOFT%20SKILLS/CAPA/SOFT%20SKILLS%20NA%20PRATICA.png",
       "categoria": "soft-skills",
       "ordem_exibicao": 14,
       "status": "publicado"
@@ -145,7 +145,7 @@
       "created_at": "2026-08-29T16:38:48.985874+00:00",
       "nome": "Vibe Coding",
       "descricao": "Aprenda desenvolvimento na prática utilizando Vibe Coding.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/VIBE%20CODING.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/VIBE%20CODING/CAPA/capa.png",
       "categoria": "vibe-coding",
       "ordem_exibicao": 15,
       "status": "publicado"
@@ -155,7 +155,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Transição de Carreira",
       "descricao": "Transição de Carreira na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1j3XED_jdYaAhlctxbCxrUec7kIQhcxKt.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/TRANSICAO%20DE%20CARREIRA/CAPA.png",
       "categoria": "transicao-de-carreira",
       "ordem_exibicao": 16,
       "status": "publicado"
@@ -165,7 +165,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "LinkedIn, Currículo e Entrevistas",
       "descricao": "LinkedIn, Currículo e Entrevistas na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/13c3VKcGb4dWGd-UNJaRx-VDTn4uemjQw.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/LINKEDIN%2C%20CURRICULO%20E%20ENTREVISTAS/CAPA/CAPA.png",
       "categoria": "linkedin-curriculo-entrevistas",
       "ordem_exibicao": 17,
       "status": "publicado"
@@ -175,7 +175,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Power Automate na Prática",
       "descricao": "Power Automate na Prática na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/14axKhkljuvF_RpOrGtsyjsAZXeaHYm6U.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/POWE%20AUTOMATE/CAPA/CAPA.png",
       "categoria": "power-automate",
       "ordem_exibicao": 18,
       "status": "publicado"
@@ -185,7 +185,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Sucesso do Cliente",
       "descricao": "Sucesso do Cliente na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1Nmx82jh8f-ojAi3xSmQDI2ZaytFSQUvD.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/SUCESSO%20DO%20CLIENTE/CAPA/CAPA.png",
       "categoria": "sucesso-do-cliente",
       "ordem_exibicao": 19,
       "status": "publicado"
@@ -195,7 +195,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Processos e Melhoria Contínua",
       "descricao": "Processos e Melhoria Contínua na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1xOOoYFsGZfM9PcsvJX9fVaxksAlXQbI3.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/PROCESSOS%20E%20MELHORIA%20CONTINUA/CAPA/CAPA.png",
       "categoria": "processos-melhoria-continua",
       "ordem_exibicao": 20,
       "status": "publicado"
@@ -205,7 +205,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Comunicação Escrita Corporativa",
       "descricao": "Comunicação Escrita Corporativa na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1lVnV_z6_4kYtUE8wojoXreTv8d7C-Y1M.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/COMUNICACAO%20ESCRITA%20CORPORATIVA/CAPA/CAPA.png",
       "categoria": "comunicacao-escrita",
       "ordem_exibicao": 21,
       "status": "publicado"
@@ -215,7 +215,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Agentes de IA na Prática",
       "descricao": "Agentes de IA na Prática na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1Ts-dfgxHHZ0m22rtmIj8Fed3Sydl02h-.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/AGENTES%20DE%20IA%20NA%20PRATICA/CAPA/CAPA.png",
       "categoria": "agentes-ia",
       "ordem_exibicao": 22,
       "status": "publicado"
@@ -225,7 +225,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "nome": "Storytelling na Prática",
       "descricao": "Storytelling na Prática na prática, com aulas e atividades da Praxis.",
-      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/drive-import/1Uj83I5S1OehGpjHxiAMO8uzrXKzilrKb.png",
+      "imagem_capa_url": "https://fxpmeosnnrgqdelffnvy.supabase.co/storage/v1/object/public/storage%20capas/STORYTELLING%20NA%20PRATICA/CAPA/CAPA%20%282%29.png",
       "categoria": "storytelling",
       "ordem_exibicao": 23,
       "status": "publicado"
@@ -1024,7 +1024,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 1",
-      "imagem_path": "excel/conteudo/conhecendo-excel/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1033,7 +1033,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 2",
-      "imagem_path": "excel/conteudo/conhecendo-excel/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1042,7 +1042,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 3",
-      "imagem_path": "excel/conteudo/conhecendo-excel/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1051,7 +1051,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 4",
-      "imagem_path": "excel/conteudo/conhecendo-excel/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1060,7 +1060,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 5",
-      "imagem_path": "excel/conteudo/conhecendo-excel/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1069,7 +1069,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 1,
       "titulo": "Conhecendo Excel — Slide 6",
-      "imagem_path": "excel/conteudo/conhecendo-excel/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1078,7 +1078,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 1",
-      "imagem_path": "excel/conteudo/introducao/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1087,7 +1087,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 2",
-      "imagem_path": "excel/conteudo/introducao/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1096,7 +1096,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 3",
-      "imagem_path": "excel/conteudo/introducao/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1105,7 +1105,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 4",
-      "imagem_path": "excel/conteudo/introducao/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1114,7 +1114,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 5",
-      "imagem_path": "excel/conteudo/introducao/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1123,7 +1123,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 6",
-      "imagem_path": "excel/conteudo/introducao/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1132,7 +1132,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 7",
-      "imagem_path": "excel/conteudo/introducao/7.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/7.jpg",
       "ordem": 7,
       "status": "publicado"
     },
@@ -1141,7 +1141,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 2,
       "titulo": "Introdução — Slide 8",
-      "imagem_path": "excel/conteudo/introducao/8.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/8.jpg",
       "ordem": 8,
       "status": "publicado"
     },
@@ -1150,7 +1150,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "excel/conteudo/pratica-01/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1159,7 +1159,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "excel/conteudo/pratica-01/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1168,7 +1168,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "excel/conteudo/pratica-01/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1177,7 +1177,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "excel/conteudo/pratica-01/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1186,7 +1186,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "excel/conteudo/pratica-01/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1195,7 +1195,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "excel/conteudo/pratica-01/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1204,7 +1204,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "excel/conteudo/pratica-01/7.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/7.jpg",
       "ordem": 7,
       "status": "publicado"
     },
@@ -1213,7 +1213,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "excel/conteudo/pratica-01/8.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/8.jpg",
       "ordem": 8,
       "status": "publicado"
     },
@@ -1222,7 +1222,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "excel/conteudo/pratica-01/9.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/9.jpg",
       "ordem": 9,
       "status": "publicado"
     },
@@ -1231,7 +1231,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "excel/conteudo/pratica-01/10.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/10.jpg",
       "ordem": 10,
       "status": "publicado"
     },
@@ -1240,7 +1240,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 3,
       "titulo": "Prática 01 — Slide 11",
-      "imagem_path": "excel/conteudo/pratica-01/11.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 01/11.jpg",
       "ordem": 11,
       "status": "publicado"
     },
@@ -1249,7 +1249,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 4,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "excel/conteudo/pratica-02/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 02/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1258,7 +1258,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 4,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "excel/conteudo/pratica-02/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 02/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1267,7 +1267,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 4,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "excel/conteudo/pratica-02/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 02/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1276,7 +1276,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 4,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "excel/conteudo/pratica-02/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 02/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1285,7 +1285,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "excel/conteudo/pratica-03/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1294,7 +1294,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "excel/conteudo/pratica-03/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1303,7 +1303,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "excel/conteudo/pratica-03/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1312,7 +1312,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "excel/conteudo/pratica-03/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1321,7 +1321,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "excel/conteudo/pratica-03/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1330,7 +1330,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 5,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "excel/conteudo/pratica-03/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 03/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1339,7 +1339,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 1",
-      "imagem_path": "excel/conteudo/pratica-04/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1348,7 +1348,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 2",
-      "imagem_path": "excel/conteudo/pratica-04/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1357,7 +1357,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 3",
-      "imagem_path": "excel/conteudo/pratica-04/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1366,7 +1366,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 4",
-      "imagem_path": "excel/conteudo/pratica-04/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1375,7 +1375,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 5",
-      "imagem_path": "excel/conteudo/pratica-04/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1384,7 +1384,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 6",
-      "imagem_path": "excel/conteudo/pratica-04/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1393,7 +1393,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 6,
       "titulo": "Prática 04 — Slide 7",
-      "imagem_path": "excel/conteudo/pratica-04/7.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 04/7.jpg",
       "ordem": 7,
       "status": "publicado"
     },
@@ -1402,7 +1402,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 1",
-      "imagem_path": "excel/conteudo/pratica-05/1.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/1.jpg",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1411,7 +1411,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 2",
-      "imagem_path": "excel/conteudo/pratica-05/2.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/2.jpg",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1420,7 +1420,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 3",
-      "imagem_path": "excel/conteudo/pratica-05/3.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/3.jpg",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1429,7 +1429,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 4",
-      "imagem_path": "excel/conteudo/pratica-05/4.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/4.jpg",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1438,7 +1438,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 5",
-      "imagem_path": "excel/conteudo/pratica-05/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1447,7 +1447,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 6",
-      "imagem_path": "excel/conteudo/pratica-05/6.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/6.jpg",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1456,7 +1456,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 7",
-      "imagem_path": "excel/conteudo/pratica-05/7.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/7.jpg",
       "ordem": 7,
       "status": "publicado"
     },
@@ -1465,7 +1465,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 8",
-      "imagem_path": "excel/conteudo/pratica-05/8.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/8.jpg",
       "ordem": 8,
       "status": "publicado"
     },
@@ -1474,7 +1474,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 9",
-      "imagem_path": "excel/conteudo/pratica-05/9.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/9.jpg",
       "ordem": 9,
       "status": "publicado"
     },
@@ -1483,7 +1483,7 @@
       "created_at": "2026-08-15T00:49:21.357274+00:00",
       "aula_id": 7,
       "titulo": "Prática 05 — Slide 10",
-      "imagem_path": "excel/conteudo/pratica-05/10.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 05/10.jpg",
       "ordem": 10,
       "status": "publicado"
     },
@@ -1492,7 +1492,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 8,
       "titulo": "Introdução — Slide 1",
-      "imagem_path": "word/conteudo/introducao/01-28.png",
+      "imagem_path": "WORD/CONTEUDO/INTRODUCAO/01-28.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1501,7 +1501,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 8,
       "titulo": "Introdução — Slide 2",
-      "imagem_path": "word/conteudo/introducao/02-28.png",
+      "imagem_path": "WORD/CONTEUDO/INTRODUCAO/02-28.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1510,7 +1510,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 8,
       "titulo": "Introdução — Slide 3",
-      "imagem_path": "word/conteudo/introducao/03-28.png",
+      "imagem_path": "WORD/CONTEUDO/INTRODUCAO/03-28.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1519,7 +1519,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 8,
       "titulo": "Introdução — Slide 4",
-      "imagem_path": "word/conteudo/introducao/04-28.png",
+      "imagem_path": "WORD/CONTEUDO/INTRODUCAO/04-28.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1528,7 +1528,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 9,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "word/conteudo/pratica-01/05-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 01/05-28.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1537,7 +1537,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 9,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "word/conteudo/pratica-01/06.-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 01/06.-28.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1546,7 +1546,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 9,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "word/conteudo/pratica-01/07-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 01/07-28.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1555,7 +1555,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 9,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "word/conteudo/pratica-01/08-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 01/08-28.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1564,7 +1564,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 9,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "word/conteudo/pratica-01/09-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 01/09-28.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1573,7 +1573,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "word/conteudo/pratica-02/10-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/10-28.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1582,7 +1582,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "word/conteudo/pratica-02/11-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/11-28.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1591,7 +1591,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "word/conteudo/pratica-02/12-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/12-28.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1600,7 +1600,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "word/conteudo/pratica-02/13-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/13-28.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1609,7 +1609,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "word/conteudo/pratica-02/14-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/14-28.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1618,7 +1618,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 10,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "word/conteudo/pratica-02/15-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 02/15-28.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1627,7 +1627,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 11,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "word/conteudo/pratica-03/16-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 03/16-28.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1636,7 +1636,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 11,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "word/conteudo/pratica-03/17-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 03/17-28.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1645,7 +1645,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 11,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "word/conteudo/pratica-03/18-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 03/18-28.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1654,7 +1654,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 11,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "word/conteudo/pratica-03/19-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 03/19-28.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1663,7 +1663,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 11,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "word/conteudo/pratica-03/20-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 03/20-28.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1672,7 +1672,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 1",
-      "imagem_path": "word/conteudo/pratica-04/21-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/21-28.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1681,7 +1681,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 2",
-      "imagem_path": "word/conteudo/pratica-04/22-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/22-28.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1690,7 +1690,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 3",
-      "imagem_path": "word/conteudo/pratica-04/23-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/23-28.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1699,7 +1699,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 4",
-      "imagem_path": "word/conteudo/pratica-04/24-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/24-28.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1708,7 +1708,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 5",
-      "imagem_path": "word/conteudo/pratica-04/25-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/25-28.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1717,7 +1717,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 6",
-      "imagem_path": "word/conteudo/pratica-04/26-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/26-28.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1726,7 +1726,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 7",
-      "imagem_path": "word/conteudo/pratica-04/27-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/27-28.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -1735,7 +1735,7 @@
       "created_at": "2026-08-16T00:58:46.009+00:00",
       "aula_id": 12,
       "titulo": "Prática 04 — Slide 8",
-      "imagem_path": "word/conteudo/pratica-04/28-28.png",
+      "imagem_path": "WORD/CONTEUDO/PRATICA 04/28-28.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -1744,7 +1744,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 13,
       "titulo": "Introdução — Slide 1",
-      "imagem_path": "power-bi/conteudo/introducao/01-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/INTRODUCAO/01-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1753,7 +1753,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 13,
       "titulo": "Introdução — Slide 2",
-      "imagem_path": "power-bi/conteudo/introducao/02-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/INTRODUCAO/02-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1762,7 +1762,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 13,
       "titulo": "Introdução — Slide 3",
-      "imagem_path": "power-bi/conteudo/introducao/03-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/INTRODUCAO/03-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1771,7 +1771,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 14,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "power-bi/conteudo/pratica-01/04-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 01/04-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1780,7 +1780,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 14,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "power-bi/conteudo/pratica-01/05-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 01/05-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1789,7 +1789,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 14,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "power-bi/conteudo/pratica-01/06-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 01/06-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1798,7 +1798,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 14,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "power-bi/conteudo/pratica-01/09-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 01/09-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1807,7 +1807,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 14,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "power-bi/conteudo/pratica-01/08-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 01/08-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1816,7 +1816,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 15,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "power-bi/conteudo/pratica-02/09-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 02/09-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1825,7 +1825,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 15,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "power-bi/conteudo/pratica-02/10-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 02/10-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1834,7 +1834,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 15,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "power-bi/conteudo/pratica-02/11-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 02/11-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1843,7 +1843,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 15,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "power-bi/conteudo/pratica-02/12-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 02/12-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1852,7 +1852,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 15,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "power-bi/conteudo/pratica-02/13-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 02/13-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1861,7 +1861,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 16,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "power-bi/conteudo/pratica-03/14-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 03/14-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1870,7 +1870,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 16,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "power-bi/conteudo/pratica-03/15-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 03/15-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1879,7 +1879,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 16,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "power-bi/conteudo/pratica-03/16-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 03/16-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1888,7 +1888,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 16,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "power-bi/conteudo/pratica-03/17-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 03/17-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1897,7 +1897,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 16,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "power-bi/conteudo/pratica-03/18-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 03/18-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1906,7 +1906,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 1",
-      "imagem_path": "power-bi/conteudo/pratica-04/19-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/19-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1915,7 +1915,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 2",
-      "imagem_path": "power-bi/conteudo/pratica-04/20-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/20-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1924,7 +1924,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 3",
-      "imagem_path": "power-bi/conteudo/pratica-04/21-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/21-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1933,7 +1933,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 4",
-      "imagem_path": "power-bi/conteudo/pratica-04/22-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/22-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -1942,7 +1942,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 5",
-      "imagem_path": "power-bi/conteudo/pratica-04/23-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/23-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1951,7 +1951,7 @@
       "created_at": "2026-08-19T00:42:26.422497+00:00",
       "aula_id": 17,
       "titulo": "Prática 04 — Slide 6",
-      "imagem_path": "power-bi/conteudo/pratica-04/24-24.png",
+      "imagem_path": "POWER BI/CONTEUDO/PRATICA 04/24-24.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -1960,7 +1960,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 4,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "excel/conteudo/pratica-02/5.jpg",
+      "imagem_path": "EXCEL/CONTEUDO/PRATICA 02/5.jpg",
       "ordem": 5,
       "status": "publicado"
     },
@@ -1969,7 +1969,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 18,
       "titulo": "Introdução — Slide 1",
-      "imagem_path": "drive-import/1IboYw22kUjIMBm8smaV3qMl5teM3aDQu.png",
+      "imagem_path": "POWER POINT/CONTEUDO/INTRODUCAO/01-17.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -1978,7 +1978,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 18,
       "titulo": "Introdução — Slide 2",
-      "imagem_path": "drive-import/1XA9nhiOcAH6hxjCuCkSi2u3E7Y9RDwI0.png",
+      "imagem_path": "POWER POINT/CONTEUDO/INTRODUCAO/02-17.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -1987,7 +1987,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 18,
       "titulo": "Introdução — Slide 3",
-      "imagem_path": "drive-import/1nYf1-c4T05eq1toBvBsezRdCZ5YFYYOw.png",
+      "imagem_path": "POWER POINT/CONTEUDO/INTRODUCAO/03-17.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -1996,7 +1996,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 19,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1vY3h2Lz8PbOhddZYS15YLqvxMGfJ8HH4.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 01/04-17.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2005,7 +2005,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 19,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1Ua1qgllHVmO7Q1DSbUnDajgY_yDSWYxz.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 01/05-17.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2014,7 +2014,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 19,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1gMSj9XHiHOhWbfLet3yjlun0kmM1ICo7.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 01/06-17.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2023,7 +2023,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 19,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/15BUc6ddlOQlmVfB4_NrJkVNcz6yx7A6I.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 01/07-17.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2032,7 +2032,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 19,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/16LO5fToKGThve9yaiaNnXiCAgX2u_zRV.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 01/08-17.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2041,7 +2041,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 20,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1zUGTDsqyX2iMUAiF4bq8iReX9O4Yvd8_.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 02/09-17.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2050,7 +2050,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 20,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1SniuHKyRkmuwNE2tsJA-fVr8weN62l36.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 02/10-17.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2059,7 +2059,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 20,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1QKFW_MVN6bsWZhc6I2zPLO8abnkA5JNi.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 02/11-17.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2068,7 +2068,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 20,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/14DJcV4zxwfxfGjyfA_mi-Nz0S5rRUJUq.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 02/12-17.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2077,7 +2077,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 21,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "power-point/conteudo/pratica-03/14-17.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 03/14-17.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2086,7 +2086,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 21,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "power-point/conteudo/pratica-03/15-17.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 03/15-17.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2095,7 +2095,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 21,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "power-point/conteudo/pratica-03/16-17.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 03/16-17.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2104,7 +2104,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 21,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "power-point/conteudo/pratica-03/17-17.png",
+      "imagem_path": "POWER POINT/CONTEUDO/PRATICA 03/17-17.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2113,7 +2113,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "outlook/conteudo/pratica-01/01.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/01.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2122,7 +2122,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "outlook/conteudo/pratica-01/02.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/02.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2131,7 +2131,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "outlook/conteudo/pratica-01/03.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/03.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2140,7 +2140,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "outlook/conteudo/pratica-01/04.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/04.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2149,7 +2149,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "outlook/conteudo/pratica-01/05.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/05.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2158,7 +2158,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "outlook/conteudo/pratica-01/06.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/06.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2167,7 +2167,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "outlook/conteudo/pratica-01/07.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/07.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2176,7 +2176,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "outlook/conteudo/pratica-01/08.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/08.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2185,7 +2185,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "outlook/conteudo/pratica-01/09.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/09.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2194,7 +2194,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 22,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "outlook/conteudo/pratica-01/10.png",
+      "imagem_path": "OUTLOOK/CONTEUDO/PRATICA 01/10.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -2203,7 +2203,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/01.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/01.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2212,7 +2212,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/02.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/02.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2221,7 +2221,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/03.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/03.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2230,7 +2230,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/04.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/04.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2239,7 +2239,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/05.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/05.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2248,7 +2248,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/06.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/06.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2257,7 +2257,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/07.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/07.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2266,7 +2266,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/08.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/08.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2275,7 +2275,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/09.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/09.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2284,7 +2284,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/10.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/10.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -2293,7 +2293,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 11",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/11.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/11.png",
       "ordem": 11,
       "status": "publicado"
     },
@@ -2302,7 +2302,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 12",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/12.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/12.png",
       "ordem": 12,
       "status": "publicado"
     },
@@ -2311,7 +2311,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 13",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/13.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/13.png",
       "ordem": 13,
       "status": "publicado"
     },
@@ -2320,7 +2320,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 23,
       "titulo": "Prática 01 — Slide 14",
-      "imagem_path": "chat-gpt/conteudo/pratica-01/14.png",
+      "imagem_path": "CHAT GPT/CONTEUDO/PRATICA 01/14.png",
       "ordem": 14,
       "status": "publicado"
     },
@@ -2329,7 +2329,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1HFBQ68oqHZ_b126Gco3ots6WY8VDBoiI.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/01-07.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2338,7 +2338,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1zVu-Yi-996dSB5IPVI84Z9WcdxVvv413.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/02-07.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2347,7 +2347,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1mj302eiOWiV2RR6__BSQACoZGBaXfWyA.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/03-07.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2356,7 +2356,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1VytZ7X6F0aryIwMRhFgrRnk-l2UWtYMt.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/04-07.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2365,7 +2365,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1zKU4m3tuK03D1YysnP-I2do4jQbqbPM7.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/05-07.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2374,7 +2374,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1HY9cX1paEgwPK6JJDHxHVq4XuNarL_I4.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/06-07.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2383,7 +2383,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1wKQbD1Vz-qnto7mi07UrWa1_5KNBfYT3.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/07-07.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2392,7 +2392,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 24,
       "titulo": "Prática 01 — Bônus",
-      "imagem_path": "drive-import/1qbA4LC9-HEphv1ER8namHtKTkZtJR_FR.png",
+      "imagem_path": "TEAMS/CONTEUDO/PRATICA 01/BONUS.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2401,7 +2401,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1YwxeM4JDLRATNZSjZhT07eNnGum5NsTC.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2410,7 +2410,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1RtVLyj2MzvSZ3gwl6Aid3q1MGAFjdY-F.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2419,7 +2419,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1WjuGDqLom6GpizWo0DydogblYdYvLBTC.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2428,7 +2428,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1eZtsuB2tMI_DO1bwa1xvhOdee8ipBoYk.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2437,7 +2437,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1nvk352QnE-QfXWHJfRWOpf7GD0pVyU5C.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2446,7 +2446,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/10RfVwf4ZFHbwxCMaiLFLurlMgcJR1C4_.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2455,7 +2455,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 25,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1EBhPZrfeujzhlXSnU6RNApFWG07yiYzq.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2464,7 +2464,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1eKRA2_b1aNpZ5zartG997pI5em7q27Qu.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/08-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2473,7 +2473,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1CpjqbWvXC2iS1XzfsKK0AXwGt9PJCGYt.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/09-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2482,7 +2482,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1LisqlHHk7sqzSJaPi6GJqV6G6GN_dBaW.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/10-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2491,7 +2491,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1u3kMgjwKW9KosVCCuB_fmeZi9giJzATV.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2500,7 +2500,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1s2vZ-6ispcZ56LIXQmxu9Fnsl78OTdsj.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2509,7 +2509,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 26,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1r0v740DQEPX8IzbADuZMTgRJWwyNMWW_.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2518,7 +2518,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1iX3qm9LKkGC9xxuQbbUMBpM9eeQBoIb-.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/14-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2527,7 +2527,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1aMHFJFkH9BCyDQc7FYUsxAFhr-5kUpkA.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2536,7 +2536,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1KVThz90NVJ7hEgDdbhOS_CQ6Ub0e5qZs.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2545,7 +2545,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1HtcTV9zGNT_LOnVCUMzVrlG4d6lVnIwA.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2554,7 +2554,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1ip963hDOGTl__jUrO7JcQtlPdIdMpPAP.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2563,7 +2563,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1VNIRxHm_w9ax_vDkj1nYY99oySnCeqTy.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2572,7 +2572,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1J3huGNR9n0seevVv9GPrbpGnCVacZm0D.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2581,7 +2581,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "titulo": "Prática 03 — Bônus",
-      "imagem_path": "drive-import/1FeKs9dEl3iPZ2CSO-beqd4vWUaSNBQFQ.png",
+      "imagem_path": "CLAUDE/CONTEUDO/PRATICA 03/BONUS.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2590,7 +2590,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1r7g6FoRJJ3NeDs8R1Xro9Sk6MAoL_oq7.png",
+      "imagem_path": "COPILOT/CONTEUDO/01-10.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2599,7 +2599,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1iRZvS1OU5q73iY9agOTgGRC3KK43revJ.png",
+      "imagem_path": "COPILOT/CONTEUDO/02-10.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2608,7 +2608,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1LEM1nuA3VoQ-ilFhXKBbAUSsW2IcK6HC.png",
+      "imagem_path": "COPILOT/CONTEUDO/03-10.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2617,7 +2617,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1OycZk-7nhkrNqThxd-PRPHWhrsPWUVQr.png",
+      "imagem_path": "COPILOT/CONTEUDO/04-10.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2626,7 +2626,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1PvhoB7Qxd2IVGUBl8iHE3ghe4wa7YF_l.png",
+      "imagem_path": "COPILOT/CONTEUDO/05-10.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2635,7 +2635,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1zNDJCdHBe6HOK-TaCVXji12Se8K6DbPC.png",
+      "imagem_path": "COPILOT/CONTEUDO/06-10.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2644,7 +2644,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1i2y6gtxG2I4rug9c9cKJsN4EuJuapyEH.png",
+      "imagem_path": "COPILOT/CONTEUDO/07-10.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2653,7 +2653,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/189oKbTlPbx39WZv3OCgegtPCbD8padtr.png",
+      "imagem_path": "COPILOT/CONTEUDO/08-10.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2662,7 +2662,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1b_DsOUGASLmLgwZ4cx-biYHryjnolOgD.png",
+      "imagem_path": "COPILOT/CONTEUDO/09-10.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2671,7 +2671,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 28,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1KYrG7TrlaGC39MILRZZK4Uhv7KOduCGK.png",
+      "imagem_path": "COPILOT/CONTEUDO/10-10.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -2680,7 +2680,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1LnML5MTj8myvDJqIBnoQxT4-wZOlYOfB.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/01-09.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2689,7 +2689,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1DdyyAwf2NgBkzAr9iUIVpDjPh8GXjFs8.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/02-09.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2698,7 +2698,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1rfJJoAuHQB59ogAxVQHFTienSoPJ-fVk.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/03-09.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2707,7 +2707,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1-uWbn4_PJ3xPhPOBrVWxTi9rPEyf3bxk.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/04-09.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2716,7 +2716,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1mL5j5nEA1rCcD_DzWE3Sj4BwBY8iCL96.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/05-09.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2725,7 +2725,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1kEeNs5FClUShnb7fssPj5AG4e7-U7BLT.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/06-09.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2734,7 +2734,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/150uOcY9HgitEwzHqWaM608X36kILVkfA.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/07-09.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2743,7 +2743,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1Ny3OHY-CRbEMaXpKjtIxtfaAIDr_JtfD.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/08-09.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2752,7 +2752,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1Y7DeeQkPq8VIyZmX5EE8GS10TqELNu2R.png",
+      "imagem_path": "GEMINI/CONTEUDO/PRATICA 01/09-09.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2761,7 +2761,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1kWz0-LWoyjqoINmRW3y0nzNRVxzObYAR.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/01-12.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2770,7 +2770,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1essdNVb7Ddf5u-2LeYY2e7WXqoImnZTg.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/02-12.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2779,7 +2779,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/19bBxJVsXefrgp3M9rpf7-H4hPSVnH_2e.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/03-12.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2788,7 +2788,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1sZrT6c7CrVtbKaMOZV3GfUZJznp9XjEU.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/04-12.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2797,7 +2797,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1dy3PJi-YyHXhZhCG1wYZJZrT0NJXlT6T.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/05-12.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2806,7 +2806,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1Dz2K_DordewOiZ9OXJNK_403Ve80galP.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/06-12.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2815,7 +2815,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1oN3CKN_SkBySD05LvTzR2NB-ZEYFMc4y.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/07-12.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2824,7 +2824,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/190cFXCKGmUFdOMxhFxhX0VOiUZgUdLu5.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/08-12.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2833,7 +2833,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1v4pmwzGl6Q06Q7PPicoZHkFOMl6B7Dyj.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/09-12.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2842,7 +2842,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1lbBwPd7dnSTwShOzlbv5O1dzm7zp4In5.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/10-12.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -2851,7 +2851,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 11",
-      "imagem_path": "drive-import/1t8lA1dPC5bo0ylmmayogLtxL0B7NueG8.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/11-12.png",
       "ordem": 11,
       "status": "publicado"
     },
@@ -2860,7 +2860,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 30,
       "titulo": "Prática 01 — Slide 12",
-      "imagem_path": "drive-import/1kRAGmqwiLs9odPFDA194ZHyPeHHDRrst.png",
+      "imagem_path": "INVESTIMENTO PESSOAL/CONTEUDO/PRATICA 01/12-12.png",
       "ordem": 12,
       "status": "publicado"
     },
@@ -2869,7 +2869,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1xFCoTYPEFN6yUdL0SeMw-N4M4e9w0Kpg.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/01-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2878,7 +2878,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1CqusBSacFsPnp6OR9g5_y6WdvCYgd88a.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/02-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2887,7 +2887,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1_MqjfPqN0P3iIxHn-gWt8GgxczIKrlLt.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/03-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2896,7 +2896,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1tJ6aqGapqaweXZzXyHKdJi7F2nQGZMOR.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/04-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2905,7 +2905,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1snuUaAfZpN3DccJjjn4a_p2_yk509JEe.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/05-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -2914,7 +2914,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1J2z1hFxHY8PBUUrUHhWMgZ4T8SdhdYN4.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/06-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -2923,7 +2923,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1Pzz2AiXPl9GDRb4ma3P6HePSAqfQRXFM.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/07-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -2932,7 +2932,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1pAfqmGNpQJ07FvFEPJyKuUW6FuFIVByq.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/08-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -2941,7 +2941,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1hD9CMya09TH4IHmr4RiQ4o24yxUG6iMi.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/09-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -2950,7 +2950,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 31,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1xCuZwutUw24ehSbigD6GOpK9gs4hVfyY.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 01/10-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -2959,7 +2959,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1Qy4EHIcE6y7RLkyuLauKW_FXPcpaP2Kr.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/11-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -2968,7 +2968,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1EaIOcXKVV5rFtW4I7SXRCfYApR2rqQIo.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/12-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -2977,7 +2977,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1BPwywv5cGp8nK-_u8Yin6nZizwxenAvO.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/13-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -2986,7 +2986,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1DYZ7NztzjWBIJEt34jlc_xv0JvyMrwnI.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/14-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -2995,7 +2995,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1U78fKmhgOVls87pImu7nOZ5X6O9cMRX-.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/15-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3004,7 +3004,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1JHb5Hw74HEXUtg-6q-XjvQ4VRwpTdXbV.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/16-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3013,7 +3013,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/1N1EsIHoWH8Vrln_6Azbut5JmNSP9f0NS.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/17-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3022,7 +3022,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1XFWeq4y8BTKFfkwmFKVkJ_00L9RRS-2f.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/18-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3031,7 +3031,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 9",
-      "imagem_path": "drive-import/12oMER94q6vX404tjtt-Wx6TDhkGqOJ_l.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/19-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3040,7 +3040,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 32,
       "titulo": "Prática 02 — Slide 10",
-      "imagem_path": "drive-import/1jx36Br78_BNl97gcRmtawZw2wDcvaqjU.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 02/20-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3049,7 +3049,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1j4Zf3_a4lxnYQfG-7Q19p1qd9W0AKHW6.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/21-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3058,7 +3058,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/19YdQ5t7sZ7LkzkwfRI0eBHQhfLTDwM0M.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/22-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3067,7 +3067,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1bMUiriDucEmtSEh79lFFfdC1jCjcVeQS.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/23-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3076,7 +3076,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/12WBC57D6VVyVzN03SdhfqLK_R9r9Z1TQ.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/24-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3085,7 +3085,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1BX_TVry7fW07m_TA5xCNV2cMKPjeDjNI.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/25-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3094,7 +3094,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1eOko0YSl8U6gyXfYkXf4b_Rp4m6_gRAE.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/26-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3103,7 +3103,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1Jgbjat8ngZOoA3Fx99b-FlGXemHLjjqt.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/27-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3112,7 +3112,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 8",
-      "imagem_path": "drive-import/1lMgp6puMhMK51NUN6UFW-M_CsOsK6_VF.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/28-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3121,7 +3121,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 9",
-      "imagem_path": "drive-import/18NqFMFYJ1tXgFaDQNIQVVr1wQwCYy6ez.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/29-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3130,7 +3130,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 33,
       "titulo": "Prática 03 — Slide 10",
-      "imagem_path": "drive-import/1SBcvIQbQKtY2rl7NKvpUC5DY0kY_VvJi.png",
+      "imagem_path": "ORATORIA/CONTEUDO/PRATICA 03/30-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3139,7 +3139,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1Pw5a0MMVvfRjwuJxtCl4YPU2wD5qs78q.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/01-27.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3148,7 +3148,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/11KfsZwkhyGTZFeZTGL-FOrKgBTkcLzbP.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/02-27.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3157,7 +3157,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1tF4x-KK0xs8frEOF1bXWojNmMUYWBVNV.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/03-27.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3166,7 +3166,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1iYKhBadhx13TNBwwivONj3aCVpbwYR7k.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/04-27.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3175,7 +3175,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1u5tXieC-CjX_eDOrYUH9ODk7hbHroK00.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/05-27.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3184,7 +3184,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1nr1uOKD7HHaYlBKjCkfa_RIhXaBEO-Wl.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/06-27.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3193,7 +3193,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1WK1rMVlU_Au676QrvAiTpm8DSI1fTK1h.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/07-27.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3202,7 +3202,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1wWje9QMKV7HY6RE2LVcKLRLqO6XXR_zM.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/08-27.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3211,7 +3211,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 34,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1wUPji9A-6ENXymKQDJN-gj6iXFo0Nkyi.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 01/09-27.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3220,7 +3220,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/163wimLXT6akfdRdymR4LgjxDlCjFZ0rl.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/10-27.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3229,7 +3229,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1d70TyVUyErSk171lOXIlLeSLGh7g26k3.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/11-27.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3238,7 +3238,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1dJRWx6DxwaNgV_bNQDeBUomkL-KQxz2N.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/12-27.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3247,7 +3247,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1kVSkfOm_FYiTZ_f7tFnztBO_TMXPjIqF.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/13-27.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3256,7 +3256,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1yvAjldS_26JuzQbQ5GvEfPl9Wut7_oaK.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/14-27.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3265,7 +3265,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1FXm5m-jCZ9Rjz7rzh2VO641_E61UZ7Zv.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/15-27.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3274,7 +3274,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/1VBfLxKOf9Ov5YGAGQ95Am16VFAoKYj70.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/16-27.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3283,7 +3283,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1cjd3dMegSF2b_zoQvBBD2SvDaBFx0n_h.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/17-27.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3292,7 +3292,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "titulo": "Prática 02 — Slide 9",
-      "imagem_path": "drive-import/1d-G6XXpK5_p1d8-on0vu1SXGjT8TJC-p.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 02/18-27.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3301,7 +3301,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1nleYVeAQx6QHQ-CjEsjTQyY_HvB1NLXW.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/19-27.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3310,7 +3310,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1ktx5Ezo8t-2wMwynN-KKQdCZ9-ZkGcJw.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/20-27.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3319,7 +3319,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/18fvFKTCBT7njbcQ6XD5jJdyOIXgPP9OD.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/21-27.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3328,7 +3328,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1knwdCQoII51jgFVcQ2ekhUvnQPFDK7aB.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/22-27.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3337,7 +3337,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1hTysCBTgLIcrI0vQLOptOOCwbPs1h79V.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/23-27.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3346,7 +3346,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1qmU91FHBjlbMbVjyAyXmYYoKbVkFndBU.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/24-27.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3355,7 +3355,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/13eo8dA7PfBHOXsH9PjPAm-_-7AWGjo3X.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/25-27.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3364,7 +3364,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 8",
-      "imagem_path": "drive-import/1_EDXWP6oLNgUK4Clf4aFWNCErhrBh8LW.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/26-27.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3373,7 +3373,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 36,
       "titulo": "Prática 03 — Slide 9",
-      "imagem_path": "drive-import/1CDfxnziuZ0K0NzGN59Y9jMZnzUgiuT4d.png",
+      "imagem_path": "PROJETOS PRATICOS/PRATICA 03/27-27.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3382,7 +3382,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1KkL83aUcmhONn3zTov2KAHRjJ-pRLwYS.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/01-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3391,7 +3391,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1S7VuohsBDQQrZ9j3BPkmkzBn2Y42D78_.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/02-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3400,7 +3400,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1yax9IO-Ay8zzYWlRp7qkuA5vQhtvmPvf.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/03-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3409,7 +3409,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1CqI0hkfqMEFWd1Wja-tmwufYCQYGlg5G.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/04-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3418,7 +3418,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1aLY2PtieAfybfLP-KpEoXoAnfa13-u9W.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/05-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3427,7 +3427,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/14ac8xLoexgwFcz1u1XNC82LpyzrvUJXJ.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/06-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3436,7 +3436,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1pXIbOVa_ksIc2j0GC15CCRsATeNyJ8LE.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/07-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3445,7 +3445,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1RbH2GHiJe8vtzhXYEmOtH6gvXA1zUAtd.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/08-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3454,7 +3454,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1ZGpW3lYHNlaV6q42YjDCQx9-cyB3mtpM.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/09-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3463,7 +3463,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 37,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1LnWF7hE64012aZq_3HUPySJpw1KpnLQs.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 01/10-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3472,7 +3472,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1lw5sipni2l018dgcRzrABxt1oPzBooMP.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/11-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3481,7 +3481,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1-r731MBdhQqWxToIOSf4FqrVUOC8GSZq.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/12-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3490,7 +3490,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/18Oz244x3YXN759GZa6tTR7TWw3p9yvGl.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/13-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3499,7 +3499,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1nOhpnmNZ-LDoF0qigwUW9fhGU9pcmcnS.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/14-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3508,7 +3508,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1d3emBVjD9g0lQ1wmv6_FKpuLnKhBhg41.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/15-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3517,7 +3517,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1EpGbaG9ytSVmeZvn1ffUMrZcMIGAhDO8.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/16-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3526,7 +3526,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/16Tlb06cx1yCJuEEYA54YFgsmI5ot1S_d.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/17-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3535,7 +3535,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1AqOC1GrhhEa0EQ2mqWhPsWp8fCqzOz1p.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/18-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3544,7 +3544,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 9",
-      "imagem_path": "drive-import/1EjH6j0C6SphJ3UV9nz6mQ6M880QC7o8y.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/19-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3553,7 +3553,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 38,
       "titulo": "Prática 02 — Slide 10",
-      "imagem_path": "drive-import/1EaeuqetNNjiOlKAhSwf_wV9d6F2CQD_B.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 02/20-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3562,7 +3562,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1n6JcP9KSBis0ybR6nL42ef1GsbE2ZoBn.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/21-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3571,7 +3571,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1dcgH3T3i-pHWDDNxZs6djJrlSHybbRH9.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/22-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3580,7 +3580,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1_CWFIIllgGmjdhGKCgJtEjlfBh4wYWW3.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/23-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3589,7 +3589,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1DF6rbAlAbC37G81zV3OahaRe3RWD5EX5.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/24-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3598,7 +3598,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1qqWGLUAkKBSQrq-bd1QFw9vv6HqAQOTF.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/25-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3607,7 +3607,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1i5ISL9DpGppiHSsvhA1ieFLrNyr19DcP.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/26-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3616,7 +3616,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1wu-icrqlomZurV6TBs7looSSEWQJZsNM.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/27-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3625,7 +3625,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 8",
-      "imagem_path": "drive-import/1-xTBfye6Qec8CDc4MC9S74MH5hL4rbT_.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/28-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3634,7 +3634,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 9",
-      "imagem_path": "drive-import/1eAXXConIGC0-kP8cNQK3H1UevmgunlHc.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/29-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3643,7 +3643,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 39,
       "titulo": "Prática 03 — Slide 10",
-      "imagem_path": "drive-import/1dVYd3k0FWJh6jrhK_Q5HE4-ayoHZhziR.png",
+      "imagem_path": "SOFT SKILLS/CONTEUDO/PRATICA 03/30-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3652,7 +3652,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1Z-MowloAnvMt3CSPZ4m5qxM395o74cer.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3661,7 +3661,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1xCpGActvfSjVfhP2aR_3LsJZyOjM6S4-.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3670,7 +3670,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1D_eyCdtghWH0i0oHHYTZVVjHhTo-mm1b.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3679,7 +3679,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1TcgensHvtTCbWS6gtCeYwIPfPitFloH1.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3688,7 +3688,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1AwcRVXE1WrVz-yAZOuFmFJrlzSSENbOG.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3697,7 +3697,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1VxgMcJDg5827SQja3_fAWjdpJo_WF5Fq.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3706,7 +3706,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1CuX_RUbbdarex2xCyXulgC-EaB4jQVPV.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/08-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3715,7 +3715,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1Wi9_XQS8LidztjTxeskieq5bNtVLoAJc.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/09-20.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3724,7 +3724,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/19HAL9ETs4bDPx1RPaF7zMSGqlYoj0ysa.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/10-20.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3733,7 +3733,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1hdqP51MKy73aK6ZeEnh3n4pHhpMvBYaU.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/11-20.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3742,7 +3742,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 11",
-      "imagem_path": "drive-import/18aS1T1UomDfxTqeQH6l_9PoO7HlTn5VS.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/12-20.png",
       "ordem": 11,
       "status": "publicado"
     },
@@ -3751,7 +3751,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 12",
-      "imagem_path": "drive-import/16RP0nEiAC5AW8NMPF0iloti9fhshO7OH.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/13-20.png",
       "ordem": 12,
       "status": "publicado"
     },
@@ -3760,7 +3760,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 13",
-      "imagem_path": "drive-import/13j6sOdsSt_xMoJhALXNBkvPvsPmmMQL1.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/14-20.png",
       "ordem": 13,
       "status": "publicado"
     },
@@ -3769,7 +3769,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 14",
-      "imagem_path": "drive-import/1kuEuMCplmBM3tNwTQ2G6DYKEd82-vhIr.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/15-20.png",
       "ordem": 14,
       "status": "publicado"
     },
@@ -3778,7 +3778,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 15",
-      "imagem_path": "drive-import/1yYe4L15xAjIKWI7CxWuKhtCmjFopEs9p.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/16-20.png",
       "ordem": 15,
       "status": "publicado"
     },
@@ -3787,7 +3787,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 16",
-      "imagem_path": "drive-import/15cIp2BG5zcarrY-30hFjxKeBRseVKV0k.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/17-20.png",
       "ordem": 16,
       "status": "publicado"
     },
@@ -3796,7 +3796,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 17",
-      "imagem_path": "drive-import/17VNf-kq-46UACUm85ZmoJlQDs31zFtv_.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/18-20.png",
       "ordem": 17,
       "status": "publicado"
     },
@@ -3805,7 +3805,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 18",
-      "imagem_path": "drive-import/1v30qSEWryWjlHOF2ZfjJZv3ecppgHv8T.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/19-20.png",
       "ordem": 18,
       "status": "publicado"
     },
@@ -3814,7 +3814,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 40,
       "titulo": "Prática 01 — Slide 19",
-      "imagem_path": "drive-import/1eCtpE1zGF5a-Sg3L4EvqS_1oeunmIeC2.png",
+      "imagem_path": "VIBE CODING/CONTEUDO/PRATICA 01/20-20.png",
       "ordem": 19,
       "status": "publicado"
     },
@@ -3823,7 +3823,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1kSnW5pbBJqo722HTdkmu_u1WHLenySGE.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3832,7 +3832,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1GLx10q-vUIKGwgoNpRtSjd3Dwdw6p4F6.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3841,7 +3841,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1gpoAqXREXjKuHiW4anb0mXNSfgc0Phci.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3850,7 +3850,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1OZ-fELJ6SN8fEGyo8TOSSMWYIciJpvXN.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3859,7 +3859,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1wnmPUcHLXyYHd2kYGDJQj6qWtrekOeXE.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3868,7 +3868,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1Pq3YKjccATGRSTxuyV69RD_-GZWTv8tH.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -3877,7 +3877,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1uB6tEVMu0FHQTYXFDp6P6TkKP1lVX4O2.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -3886,7 +3886,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1MwmgsDZFE83imTP4E3_fPr5KONhcYMAJ.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/08-20.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -3895,7 +3895,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1YJtX4bXwrFh9J8AjZdBbw3eFTlnIMmWi.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/09-20.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -3904,7 +3904,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 41,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1FUThoiFnfd7H4exp4SWcVlwHqQtgauxa.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 01/10-20.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -3913,7 +3913,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 42,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1On17HUL9MplXUDDF2c5ePpE3DjEH67jb.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3922,7 +3922,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 42,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1k6X0PD-R1Z0Qycth9dhaQw8D695dUi0W.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3931,7 +3931,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 42,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1ohLQeAyyjt4ohZ_tlS4dhgtPv-ivjm4g.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3940,7 +3940,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 42,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/15VIfsHn6BqXxGg6xda17uy4fD8lQKHYu.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 02/14-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3949,7 +3949,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1BZxbBMwMHEqakeCvTASOQTcj-dyH_Do7.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -3958,7 +3958,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1nvfzp2ctbgxZyHArtw1MbvW_fiNPFn_H.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -3967,7 +3967,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1dBnhDjP42HV-gYidbwGhnIj-s7otRBcT.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -3976,7 +3976,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1dhthgipmVWtaXEpZ6SaEaeb_a4OEtwYB.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -3985,7 +3985,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1TVpwdJAftIlYNEB8Txo7EUY_DP9Kgwh-.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -3994,7 +3994,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 43,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1DS37Xhi6RbhHh9UNz4EUdulPrJK5HPRi.png",
+      "imagem_path": "TRANSICAO DE CARREIRA/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4003,7 +4003,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1DBIVbI1-foR6ZYlUYchk_hsyDUn4PMlO.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/01-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4012,7 +4012,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1O-FsTn8wL37b8EWqdVF6xpmz8ldzSjNr.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/02-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4021,7 +4021,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/179lk32bBdSUXqLnEGXKl3aTbI5EIuYp5.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/03-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4030,7 +4030,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1Q_DaiPmMQvdHUKWW2NSuTBwt81kSSnXL.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/04-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4039,7 +4039,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1qfHDCYrACWQWw4r0eYy_xrwUJukLuXvJ.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/05-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4048,7 +4048,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1m6SZwAvuC1epWLAijylmsCQPscxWh2QO.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/06-24.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4057,7 +4057,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/16QigI6aNTAPsZch_iIvhejfpDd9S6JdW.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/07-24.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4066,7 +4066,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 44,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1qx_AM1i9PxY3LqJFGEaKbyBfG8ddnb9R.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 01/08-24.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -4075,7 +4075,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1yJf1vIKZxU56m14n6Koa3ilXFbfd-Ha9.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/09-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4084,7 +4084,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1sv39hc_oVCW9RRaAn2Rgs_2h2rvvh_Iq.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/10-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4093,7 +4093,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/16LoGWm3ruZrKNCNx3jE2Cw-SJuL_sW35.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/11-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4102,7 +4102,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1LZqTuBRUIkNt14nY-sqyaVoY3xhU34np.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/12-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4111,7 +4111,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1K8HGhZA-EV7oGi2MEdzTzXBHh0kmQTdm.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/13-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4120,7 +4120,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1ayN0ZcXjdsS38GyeauSSjZEcMbdWe8Yv.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/14-24.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4129,7 +4129,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/16uVgqqLvmiOSlxv9RPpYUNyMSR5ktn8-.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/15-24.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4138,7 +4138,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 45,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1DhCUosypm4WIA4qenIkKO1hHWcvfHtx3.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 02/16-24.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -4147,7 +4147,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1lmhZ-joe2ACBe6XhSvYcpdE0SU8Zyrj2.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/17-24.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4156,7 +4156,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1sa8fagYj5ve49du4eWno0PxXK5knc2gI.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/18-24.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4165,7 +4165,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1F_qp-VhDaAJrfnbF5JxmiNl6y6fCwy52.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/19-24.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4174,7 +4174,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1QzkDwleZhAUtM2_Sf1Kp7pvpGqToV24C.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/20-24.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4183,7 +4183,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1sSxEuAkvcaOc8j1LyXZCitDBbyp3OyjU.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/21-24.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4192,7 +4192,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1aASu7g8jUjuIARUMnH8BUFXCIkKn4Q3B.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/22-24.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4201,7 +4201,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1ouULXiM8J9QdvsVT9HDI2gYCTSFhb3zB.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/23-24.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4210,7 +4210,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 46,
       "titulo": "Prática 03 — Slide 8",
-      "imagem_path": "drive-import/16WIXVCET39zZT14bskmzkyrN_g70RUp1.png",
+      "imagem_path": "LINKEDIN, CURRICULO E ENTREVISTAS/CONTEUDO/PRATICA 03/24-24.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -4219,7 +4219,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1jGHrr5HsdtYKebeTpVmnJ69DDKBR3_Qf.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4228,7 +4228,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1isWAJrquOZAUI2tGXhHiTx-nhTilMOjY.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4237,7 +4237,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1vOWXjCGGu_wH0Eo-w3voQebumVSiuyMJ.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4246,7 +4246,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/10n3-emSuZItzvzC0FXQmpUJUgiu9M_BL.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4255,7 +4255,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1ZO7cexw2GqpDnEZTNW_6cjLF6cv3KeQp.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4264,7 +4264,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 47,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1Mw1ZLZvbc0UjYyW5iYIiGsJvtek_NZdJ.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4273,7 +4273,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1nRD7720zh63aKfOejng_OyHyIN2Sbjpp.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/07-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4282,7 +4282,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1NOXjO2eH9G1pjnJXFiOdMQ546kwB7s8l.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/08-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4291,7 +4291,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1uSU13st5MZO0m6mXneiPWah9qL5lQrKO.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/09-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4300,7 +4300,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1MZEkyhD0EKNxIfpnNYovZG4pdxbbEJwa.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/10-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4309,7 +4309,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1AwtWMu_49QSb7_-Bs64IfVlSPLyNMOzx.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4318,7 +4318,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1kIa3a3iMTZhsZ8nI4uWUqu8Zuq9C0QKK.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4327,7 +4327,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/1UHEIsP3dam_XB61qwKqfNVwb1gKF2G7p.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4336,7 +4336,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 48,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1s4oW2lkDRckP48ByKUBShv8Oy1fUklO_.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 02/14-20.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -4345,7 +4345,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1SKQFmByW_Sp3sXk0Elr09iH5rBgE0Gh_.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4354,7 +4354,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1aNS074vS9kUs8MSg0lJeLDOOvexBkpMe.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4363,7 +4363,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1W8xKuVeMh0Zhru54Ey4PtV961KWGj9pU.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4372,7 +4372,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1zX2OyNLedsvV6KTkVDJdtpPurYm_hIpI.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4381,7 +4381,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1M2xWcngTxNfs5_jCHve-yTDH4iNmsYKw.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4390,7 +4390,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 49,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1KGrl9ZV4ccxGiaN4h0gWYvERTX0RvAcT.png",
+      "imagem_path": "POWE AUTOMATE/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4399,7 +4399,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1ivottAeFL3CFGGslCiWfgdoLCEmRuraK.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4408,7 +4408,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1QRP_d4cmoPpBM27fzQwsqlkpmw8JUr0C.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4417,7 +4417,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1g1IOjpuhTBOklzn6undZNtPYznlOmO1f.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4426,7 +4426,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1jTLGzBjSjjv9LmZHgYgTQ8Ji8k2g6lJg.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4435,7 +4435,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1RHt5ULaF9unLhR9Qy2X-QaiLzWu-HFSV.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4444,7 +4444,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/14w0EbXnrB8roqQGkGwpz1e-n_IrL53U7.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4453,7 +4453,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 50,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1naEphuTovWbpNYRFEnUhshrsVWyLe9Rz.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4462,7 +4462,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1VsHDSC7witWCtAuyP9bQFeQjJdCmro_A.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/08-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4471,7 +4471,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1oJfj7i12UOZmimvHsURSyJRK8QcHvwk8.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/09-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4480,7 +4480,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1FYacIdZPuB59lw1sLaC13VrodrRo9Pj2.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/10-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4489,7 +4489,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/10an3kNcet6ReF0wdZZGH4E-5yYSn_dZy.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/11-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4498,7 +4498,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1lFUjJymSuslwyGJsBs5dKeBpXpIyIUDZ.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/12-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4507,7 +4507,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 51,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1sR-mZWTkyu2V96GkgDOzs45HAF5tJVjN.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 02/13-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4516,7 +4516,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1Us0s7UJhgYYivrvFYFBXvBUXdxRc9UAP.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/14-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4525,7 +4525,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1NYWBdq0XUgOr2r88dGs-A5cFZzs2j6dh.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/15-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4534,7 +4534,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1WHEDCb5GaaqV21b7W8M9UW9WwPHpGtk8.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/16-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4543,7 +4543,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1UIO8yxfloyO4Mve0XIfZg1SsQ6RkZMGV.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/17-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4552,7 +4552,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1dxD1bbBmqsXeSclpSDu4lwGUvenAETAp.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/18-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4561,7 +4561,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1wf5E9NKvcWYP0cWnONCMToJsBfUQFHf-.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/19-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4570,7 +4570,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 52,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1vyQwHRO_8eSQ7Hsy6IGP_YhkkbkEuMHp.png",
+      "imagem_path": "SUCESSO DO CLIENTE/PRATICA 03/20-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4579,7 +4579,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1kU7QsaMLdUx1sHxLgDfJQVf3ViKF5DW8.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4588,7 +4588,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1R71HP1JpE90xubEtOyekYg9S85X3Ef8o.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4597,7 +4597,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1s2KsRK9CQe4eoBgnEuDXY0Dykpl4-D0u.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4606,7 +4606,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1KCFSLbONVmWJpclwv1dPrpudADlyI2Fo.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4615,7 +4615,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1bMtCjRIrfvYMM2hh1DhjNttOLsXLNGRP.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4624,7 +4624,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1ZNvvSKoducIDsvTNv_khsBstQaFXNyjj.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4633,7 +4633,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 53,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/19Sx6w0KDSUcC70PsFh5JPRmM5llZRCfA.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4642,7 +4642,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1p1k1PYTT_3Qy7_bT1IWJVWYYA09qE00h.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/08-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4651,7 +4651,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1TYEirQ_dfba6Qlt9rpDUiO8j2dvyWcNT.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/09-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4660,7 +4660,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1EIHMklHcxCTOz1sB6FvAn_dJkOX059yK.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/10-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4669,7 +4669,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1wlkwvYA6iNH8Qw0MyZKQZPnqD45ctuej.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4678,7 +4678,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/13sItKG7fNDm4ozy9x2AnqD6KbkPBoGpq.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4687,7 +4687,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1HnlBUDxyliEPW0VYMip2nFaQSoBk150y.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4696,7 +4696,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 54,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/1VF0qZ-MzNe9rTXbLsJ-wh8CnmH1NLg2Q.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 02/14-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4705,7 +4705,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/18D8HNzmQy6QskKgrqqd0iIRC8a_2YIpC.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4714,7 +4714,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1cYvrhaPw18Bmh7NASpJcZeWPSXgWh5QF.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4723,7 +4723,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1EX9Obqt1fPKkosNxuAFKB1berNvBLQCI.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4732,7 +4732,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/19HaGwlsRVQKYB1-EbOfVivzA9zVxijAp.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4741,7 +4741,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1q1IRG206f3KvEc_KhKqCqorN5j_wmeMA.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4750,7 +4750,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 55,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1nyEPuoOU4rm0NGpAsKl07lnyOIjXHgUd.png",
+      "imagem_path": "PROCESSOS E MELHORIA CONTINUA/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4759,7 +4759,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1njemglSuvgn0RwWZThXCJ5COYs8xVgVs.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4768,7 +4768,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/12ofE-s1UEXC9Hp9xYdDe-IsYttYpWZZF.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4777,7 +4777,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1DI4sPXI3udXb5lhXXKp5OYEcHmE8q_BZ.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4786,7 +4786,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1VNjBKuGzuhFekjNOM0Jz7yzlUQ6hMeb1.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4795,7 +4795,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1glGgDH4iWVSgJ1XU5ysrxPfudwponCLe.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4804,7 +4804,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1IB4nV_4N0P91mBH0kHF0_iCi2A9LCpqT.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4813,7 +4813,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 56,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1_kS65VZMqCCBsgneF0l-igT-r32WczNG.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4822,7 +4822,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/17eMti4uKNwjmtG4m0ZZ_i__FTzCysZjF.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/08-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4831,7 +4831,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1Fyh-8w4_GlnDF4VW1Kipo5o61aDnU-3_.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/09-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4840,7 +4840,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1cLUxV49gB9w5uGxaB9bl0tfVMC5_pvHL.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/10-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4849,7 +4849,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1JX9N3h2t58olfbhZycb9KvODoOnfB1_c.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4858,7 +4858,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/10glTflLeH1ksvbGAxyenhZQlyCoqQvZs.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4867,7 +4867,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1EkhBSKnGPmZA1JsrGQJmCmP3rHaIf_mo.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4876,7 +4876,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 57,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/1pxvNay3Ma48mtKflHqNvz-LTlwbWaeCg.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 02/14-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -4885,7 +4885,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/17mGejMTf6Lzz8RhT2U3RqL-TDy94HOQ2.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4894,7 +4894,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1lGD9QQYVFVaQ_9ap0GhtY45ySUjLqe2l.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4903,7 +4903,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1QwUvf-A5Yn1BvMNHWey7Vcz6UG2c0l0s.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4912,7 +4912,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/14mF40cssF_DfefV0B2lg9BMbso_WJSZr.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4921,7 +4921,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1RwVMZxg-A88ZbpA0yFg2Mmf_1YRH2ogQ.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4930,7 +4930,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 58,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1ztJoQ0FYJeVPuLNAz73-BRa-mRlaeYUB.png",
+      "imagem_path": "COMUNICACAO ESCRITA CORPORATIVA/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4939,7 +4939,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1v36UHeqntO7LL13vIfbyTyKINSkxHZEb.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/01-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -4948,7 +4948,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1gKoGCCBLW9z92tKkPMYJwDGoiHIvbqco.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/02-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -4957,7 +4957,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/1mqFwZi7qW52iloP93lXAHb7aTY6ktpr2.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/03-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -4966,7 +4966,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/1EiYOk7_nkB3BAuKbz9nOpb8hcye2YQNT.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/04-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -4975,7 +4975,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1aHE8oF_i22TWVMJm8cgliqrPfuT9ukUQ.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/05-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -4984,7 +4984,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1BIt6jVKngaotfScnSYbxm0wnEqQzCQky.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/06-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -4993,7 +4993,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 59,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/18JM2WmSx81dPFFgGP4WdgGTd9SBdNgSD.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 01/07-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -5002,7 +5002,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1kgv4lLNu67mdkAHhrJTpdfn6TDv6SiHg.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/08-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -5011,7 +5011,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1K4EyC0PEXfKniD9rM7UYxOTQ1rQ2vyH7.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/09-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -5020,7 +5020,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/15MoC6N4dZG5Nku2eTTS2Ml2HMbSEy8OS.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/10-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -5029,7 +5029,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/13pAZaLMtmJsZFbDfxwlaHY31oBPT5on4.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/11-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -5038,7 +5038,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1LGcGF3ejPpTTvmgvzejauJTh8Qucpi2_.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/12-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -5047,7 +5047,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1tWj10V91R4oZN6YrAtlsuzxY8yV4JSOu.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/13-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -5056,7 +5056,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 60,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/18n60rm6I-HkTveFmJgAKWO2Mf0ma7Hge.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 02/14-20.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -5065,7 +5065,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1YI-MqIRbSJ3UDHNNj4eQe76jVEnnPAL1.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/15-20.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -5074,7 +5074,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1tue1vHztPsPyRH4im1MZ0uGYQJFWlFTU.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/16-20.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -5083,7 +5083,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/19TjDFAeDNdLnBNpj0X3bGe3J8isx1CWu.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/17-20.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -5092,7 +5092,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/19pITzTiY6-46GSyH3K6kRq9b7-8i_LVt.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/18-20.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -5101,7 +5101,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1dq2r5dJpW1RkFC8vaSCunI1hoz9H5n8U.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/19-20.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -5110,7 +5110,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 61,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/138vqQ_IEQmykfYPXB7hBfYp55bnl_CWv.png",
+      "imagem_path": "AGENTES DE IA NA PRATICA/CONTEUDO/PRATICA 03/20-20.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -5119,7 +5119,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 1",
-      "imagem_path": "drive-import/1HQWyAiDOXl4_hu2oKf6WOCCaBNubgOLQ.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/01-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -5128,7 +5128,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 2",
-      "imagem_path": "drive-import/1eHQv-piH39eHXZ0SFNHriScEowDbOdcE.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/02-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -5137,7 +5137,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 3",
-      "imagem_path": "drive-import/19qbAeNaOvmVHic0QNqIIFp9GXcokebTI.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/03-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -5146,7 +5146,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 4",
-      "imagem_path": "drive-import/19xjl2Ib5rEMGyZ4E8_CAwTmydkexS1KJ.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/04-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -5155,7 +5155,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 5",
-      "imagem_path": "drive-import/1UxxBcJtn2lbxkfooxrM9UyPi1gBsk0DN.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/05-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -5164,7 +5164,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 6",
-      "imagem_path": "drive-import/1HCkpFMABHZUsJZnDJICQInXasp1dhp3L.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/06-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -5173,7 +5173,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 7",
-      "imagem_path": "drive-import/1N7C0zerS48wMaAp8UXkOADzQA1QoEQBN.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/07-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -5182,7 +5182,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 8",
-      "imagem_path": "drive-import/1VM1r4begRljwE_Qz4WZLiTSjgeK_lXgA.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/08-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -5191,7 +5191,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 9",
-      "imagem_path": "drive-import/1eCfbQ4aX5-fQgeBri_ne0ZGAvPtKCr_1.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/09-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -5200,7 +5200,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 62,
       "titulo": "Prática 01 — Slide 10",
-      "imagem_path": "drive-import/1OEKjOeivTRtshatFX-kl99ovO_OWiSM4.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 01/10-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -5209,7 +5209,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 1",
-      "imagem_path": "drive-import/1FDQ-d8wEnYbePKSs8ViRGeDty5AJWIFv.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/11-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -5218,7 +5218,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 2",
-      "imagem_path": "drive-import/1svPozuH5G04SI8yxG4EJn7xeL3ArcECx.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/12-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -5227,7 +5227,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 3",
-      "imagem_path": "drive-import/1cYHfXN5AGhFm0zTonJFaUhZev69Wzrzk.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/13-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -5236,7 +5236,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 4",
-      "imagem_path": "drive-import/1vS6a4aKOFRiwT1O91RdtkQHY1Tia0fhe.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/14-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -5245,7 +5245,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 5",
-      "imagem_path": "drive-import/1IRk5oT6eQjlWK8AN2GvmrVCWvE0WkUi5.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/15-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -5254,7 +5254,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 6",
-      "imagem_path": "drive-import/1BNedflNUxECsEXh0zrRIwB3UxgWjOYov.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/16-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -5263,7 +5263,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 7",
-      "imagem_path": "drive-import/15rQp8QE53m8l9PO1lbGMEyo7xp41o4AU.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/17-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -5272,7 +5272,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 8",
-      "imagem_path": "drive-import/1L4HXNDwm-X5jx2NjOufs-b584k317sa5.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/18-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -5281,7 +5281,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 9",
-      "imagem_path": "drive-import/1eLKRs8ELWfd_xxdoots6BoFkXPw_ZSUz.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/19-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -5290,7 +5290,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 63,
       "titulo": "Prática 02 — Slide 10",
-      "imagem_path": "drive-import/1hiCqfQnRb9bfbGh1Cm2g4wto3Fp6qKFc.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 02/20-30.png",
       "ordem": 10,
       "status": "publicado"
     },
@@ -5299,7 +5299,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 1",
-      "imagem_path": "drive-import/1FYxKnfO9wAjW3ZMwA3C6CfmEaawGfbON.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/21-30.png",
       "ordem": 1,
       "status": "publicado"
     },
@@ -5308,7 +5308,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 2",
-      "imagem_path": "drive-import/1ac5ed1d1tiK85_rAQAvEd3oKH_AP5tXr.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/22-30.png",
       "ordem": 2,
       "status": "publicado"
     },
@@ -5317,7 +5317,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 3",
-      "imagem_path": "drive-import/1hmJdSeMZSWVrj0q5Nt-kpREK_jzr82Fk.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/23-30.png",
       "ordem": 3,
       "status": "publicado"
     },
@@ -5326,7 +5326,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 4",
-      "imagem_path": "drive-import/1BNR3ohH7Ag8cbV0HCKNF-vtnCGLgURK9.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/24-30.png",
       "ordem": 4,
       "status": "publicado"
     },
@@ -5335,7 +5335,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 5",
-      "imagem_path": "drive-import/1TWz1VG7VwgGaVsGDOVSxEoU06DA3yxOp.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/25-30.png",
       "ordem": 5,
       "status": "publicado"
     },
@@ -5344,7 +5344,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 6",
-      "imagem_path": "drive-import/1sQjYkCTmhh_lbgs12XocQe5ixlXQMTLd.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/26-30.png",
       "ordem": 6,
       "status": "publicado"
     },
@@ -5353,7 +5353,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 7",
-      "imagem_path": "drive-import/1z65bjNl0XOi6vEYVRa5PPPIiidGTHSDC.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/27-30.png",
       "ordem": 7,
       "status": "publicado"
     },
@@ -5362,7 +5362,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 8",
-      "imagem_path": "drive-import/1WUiTcwO31jKvFnnbU45OeIah0zdb6Jod.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/28-30.png",
       "ordem": 8,
       "status": "publicado"
     },
@@ -5371,7 +5371,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 9",
-      "imagem_path": "drive-import/1O8_3B_AjANNv4c5pytaADFKCzuV7KfIg.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/29-30.png",
       "ordem": 9,
       "status": "publicado"
     },
@@ -5380,7 +5380,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 64,
       "titulo": "Prática 03 — Slide 10",
-      "imagem_path": "drive-import/1gpwaxzMdyV4lhe18PGoZccZt4GmAzSqG.png",
+      "imagem_path": "STORYTELLING NA PRATICA/CONTEUDO/PRATICA 03/30-30.png",
       "ordem": 10,
       "status": "publicado"
     }
@@ -5391,7 +5391,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 1,
       "nome": "Conhecendo Excel — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/1p3EY5FoDE8piuYuG1shm7a_hSzIoN-zb.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/CONHECENDO EXCEL/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5401,7 +5401,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 2,
       "nome": "Introdução — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/1uyW2hfJKfeUqJR9zUDBIoquGKAzR7su6.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/INTRODUCAO/CONTEUDO/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5411,7 +5411,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 2,
       "nome": "Desafio_Excel_na_Pratica.xlsx",
-      "arquivo_path": "drive-import/1hcs7DBvwsX6QVTsyZERT1nyEn4gMKJpF.xlsx",
+      "arquivo_path": "EXCEL/CONTEUDO/INTRODUCAO/MATERIAL EXTERNO/Desafio_Excel_na_Pratica.xlsx",
       "tipo": "XLSX",
       "ordem": 2,
       "status": "publicado"
@@ -5421,7 +5421,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 3,
       "nome": "01.png",
-      "arquivo_path": "drive-import/18wboxrmOukumKnbyIcpqDCij8PIZekki.png",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 01/01.png",
       "tipo": "PNG",
       "ordem": 1,
       "status": "publicado"
@@ -5431,7 +5431,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 3,
       "nome": "ChatGPT Image 9_08_2026, 17_31_12.png",
-      "arquivo_path": "drive-import/1C3E3oHf3o_ZH3wZxQ5DzPZjCkfUHK2i8.png",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 01/ChatGPT Image 9_08_2026, 17_31_12.png",
       "tipo": "PNG",
       "ordem": 2,
       "status": "publicado"
@@ -5441,7 +5441,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 3,
       "nome": "Prática 01 — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/1N20jahlnvNzsW5-UEQ8QH3-ebslSH9o0.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 01/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 3,
       "status": "publicado"
@@ -5451,7 +5451,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 4,
       "nome": "Prática 02 — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/1ad4PXjC0XC9U9gArpWJsa1QBlTobl7xv.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 02/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5461,7 +5461,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 5,
       "nome": "Prática 03 — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/1NQFwPLO3RYlO4KJ0thSJyDtsZaJ4zZAm.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 03/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5471,7 +5471,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 6,
       "nome": "Prática 04 — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/16iFMCAobA8IhLd6EAjwCwQjIA00AIaI9.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 04/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5481,7 +5481,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 7,
       "nome": "Prática 05 — apresentação original (ZIP)",
-      "arquivo_path": "drive-import/19X_gyTKAuBKKse7ElLqHyD6_o44yaswC.zip",
+      "arquivo_path": "EXCEL/CONTEUDO/PRATICA 05/Green Abstract Organic Group Project Presentation.zip",
       "tipo": "ZIP",
       "ordem": 1,
       "status": "publicado"
@@ -5491,7 +5491,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 3,
       "nome": "Praxis_Distribuidora_Vendas.xlsx",
-      "arquivo_path": "drive-import/1E1E2K85oIWf_sCLRv-FnkDZhJitSdQG4.xlsx",
+      "arquivo_path": "EXCEL/EXTERNO/Praxis_Distribuidora_Vendas.xlsx",
       "tipo": "XLSX",
       "ordem": 4,
       "status": "publicado"
@@ -5501,7 +5501,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 3,
       "nome": "PRAXIS_Excel_na_Pratica_Exercicios.xlsx",
-      "arquivo_path": "drive-import/1jiji2ntmFEbVCjz21qGLfGJoyGEpcLas.xlsx",
+      "arquivo_path": "EXCEL/EXTERNO/PRAXIS_Excel_na_Pratica_Exercicios.xlsx",
       "tipo": "XLSX",
       "ordem": 5,
       "status": "publicado"
@@ -5511,7 +5511,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 9,
       "nome": "Comunicado_Interno_Sem_Formatacao.docx",
-      "arquivo_path": "drive-import/1y6xSxWirdzwR-3vh7HAobiJmn_g6FTod.docx",
+      "arquivo_path": "WORD/MATERIAL EXTERNO/Comunicado_Interno_Sem_Formatacao.docx",
       "tipo": "DOCX",
       "ordem": 1,
       "status": "publicado"
@@ -5521,7 +5521,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 12,
       "nome": "Relatorio_Cliente_Para_Revisao.docx",
-      "arquivo_path": "drive-import/1ke8Z3btRMX-870TeWmVs8xfxiivJ0rOc.docx",
+      "arquivo_path": "WORD/MATERIAL EXTERNO/Relatorio_Cliente_Para_Revisao.docx",
       "tipo": "DOCX",
       "ordem": 1,
       "status": "publicado"
@@ -5531,7 +5531,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 10,
       "nome": "Relatorio_Institucional_Para_Correcao.docx",
-      "arquivo_path": "drive-import/1CbG3C-pkox3mG7ifpssCp0AP6F5Mk_Il.docx",
+      "arquivo_path": "WORD/MATERIAL EXTERNO/Relatorio_Institucional_Para_Correcao.docx",
       "tipo": "DOCX",
       "ordem": 1,
       "status": "publicado"
@@ -5541,7 +5541,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 20,
       "nome": "pratica 02.pptx",
-      "arquivo_path": "drive-import/177i2xqbByuKGzehPN2668g9zbSEv0-z7.pptx",
+      "arquivo_path": "POWER POINT/CONTEUDO/MATERIAIS EXTERNOS/pratica 02.pptx",
       "tipo": "PPTX",
       "ordem": 1,
       "status": "publicado"
@@ -5551,7 +5551,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 21,
       "nome": "PRATICA 03.xlsx",
-      "arquivo_path": "drive-import/1QAaaLx8d-sLzeyy1bZXs-nJu6R9DYSGT.xlsx",
+      "arquivo_path": "POWER POINT/CONTEUDO/MATERIAIS EXTERNOS/PRATICA 03.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5561,7 +5561,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 14,
       "nome": "PRATICA 01.xlsx",
-      "arquivo_path": "drive-import/16_20jDqsnRKLc5C0BBY8fEpRUg4ahPZb.xlsx",
+      "arquivo_path": "POWER BI/MATERIAL EXTERNO/PRATICA 01.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5571,7 +5571,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 15,
       "nome": "PRATICA 02.xlsx",
-      "arquivo_path": "drive-import/1YLTJlU9TVGDzLSzk2gB_V1DMsAX0uOL7.xlsx",
+      "arquivo_path": "POWER BI/MATERIAL EXTERNO/PRATICA 02.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5581,7 +5581,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 16,
       "nome": "PRATICA 03.xlsx",
-      "arquivo_path": "drive-import/14oDW_zJpB9UKWZ8iBKFkLjUINSLvAAqw.xlsx",
+      "arquivo_path": "POWER BI/MATERIAL EXTERNO/PRATICA 03.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5591,7 +5591,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 17,
       "nome": "PRATICA 04.xlsx",
-      "arquivo_path": "drive-import/15o_ivRG1qarBfVzAXuhZpKyxzpAZXhfp.xlsx",
+      "arquivo_path": "POWER BI/MATERIAL EXTERNO/PRATICA 04.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5601,7 +5601,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 27,
       "nome": "PRT03-base_sala_decisao_operacoes.xlsx",
-      "arquivo_path": "drive-import/1NoIoMiwFUmFnScFCMGnwKkHOKy3p9k5J.xlsx",
+      "arquivo_path": "CLAUDE/MATERIAL/PRT03-base_sala_decisao_operacoes.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5611,7 +5611,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "nome": "06-09-Base_Satisfacao_Clientes.xlsx",
-      "arquivo_path": "drive-import/1zyWKRzt_WRlytKK4yAoDir_d-tThM4qp.xlsx",
+      "arquivo_path": "GEMINI/MATERIAL/06-09-Base_Satisfacao_Clientes.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5621,7 +5621,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 29,
       "nome": "08-9-Base_Projetos_NovaDesk.xlsx",
-      "arquivo_path": "drive-import/1Q-UDyuG8Qay-WPHvsTqa2-dV6TJNmTLE.xlsx",
+      "arquivo_path": "GEMINI/MATERIAL/08-9-Base_Projetos_NovaDesk.xlsx",
       "tipo": "XLSX",
       "ordem": 2,
       "status": "publicado"
@@ -5631,7 +5631,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "nome": "10-27.xlsx",
-      "arquivo_path": "drive-import/1f1rg3vcJPACOmtcExwWO9dzTAxNnIU8J.xlsx",
+      "arquivo_path": "PROJETOS PRATICOS/MATERIAL/10-27.xlsx",
       "tipo": "XLSX",
       "ordem": 1,
       "status": "publicado"
@@ -5641,7 +5641,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "nome": "11-27.xlsx",
-      "arquivo_path": "drive-import/11e1aFZXxSDJ_idjPguezQvM_ijDGmO3S.xlsx",
+      "arquivo_path": "PROJETOS PRATICOS/MATERIAL/11-27.xlsx",
       "tipo": "XLSX",
       "ordem": 2,
       "status": "publicado"
@@ -5651,7 +5651,7 @@
       "created_at": "2026-10-10T01:08:43.84647+00:00",
       "aula_id": 35,
       "nome": "12-17.xlsx",
-      "arquivo_path": "drive-import/1h_n1crNic0ilrkb5FMZpjCGnDucfy-k-.xlsx",
+      "arquivo_path": "PROJETOS PRATICOS/MATERIAL/12-17.xlsx",
       "tipo": "XLSX",
       "ordem": 3,
       "status": "publicado"

@@ -23,6 +23,11 @@ A home direciona o botão Assine agora à página de planos. Todos os cursos uti
 
 O Supabase contém 23 cursos, 23 módulos, 64 aulas, 485 slides e 27 materiais de apoio após a importação do Drive em 2026-10-09. O site carrega esse conteúdo diretamente do banco e do Storage. Os IDs e vínculos existentes foram preservados.
 
+Em 2026-10-10, os arquivos foram reorganizados conforme as pastas do Drive,
+com curso, subpastas e nomes originais dentro dos buckets de slides, materiais
+e capas. Os 535 caminhos registrados foram atualizados; acentos são removidos
+apenas dos caminhos por uma restrição do Storage.
+
 [O relatório da importação](tools/content-import/README.md) inclui os inventários, a migração SQL, os recibos de upload e a conferência do conteúdo publicado. Os arquivos de aulas ficam no Supabase; chaves do servidor e links temporários de download não fazem parte do repositório.
 
 Há três lacunas na numeração da origem: PowerPoint 13, Power BI 7 e Vibe Coding 6. Os demais arquivos disponíveis foram associados aos cursos e às práticas.

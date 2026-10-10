@@ -1,14 +1,24 @@
 """Validate source coverage and preserve the IDs used by student progress."""
 import json
+import importlib.util
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('storage_layout',ROOT/'storage-layout.py')
+layout=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(layout)
 drive=json.loads((ROOT/'drive-inventory.json').read_text(encoding='utf-8'))
 before=json.loads((ROOT/'supabase-before.json').read_text(encoding='utf-8-sig'))
 plan=json.loads((ROOT/'import-plan.json').read_text(encoding='utf-8'))
 source_ids={x['id'] for x in drive['items'] if x['mime_type']!='application/vnd.google-apps.folder'}
 assert source_ids=={x['drive_id'] for x in plan['links']},'A source file has no destination'
 assert len(plan['links'])==len(source_ids),'A source file is assigned twice'
+source_files={x['id']:x for x in drive['items'] if x['id'] in source_ids}
+for link in plan['links']:
+    source=source_files[link['drive_id']]
+    assert link['source']==source['path'],'Source path changed'
+    assert link['path']==layout.storage_path(source['path']),'Drive hierarchy or original filename lost'
+assert len({(x['bucket'],x['path']) for x in plan['links']})==len(plan['links']),'Normalized source names collide'
 tables={'catalogo':plan['courses'],'modulos':[c['module'] for c in plan['courses']],
         'aulas':[l for c in plan['courses'] for l in c['lessons']],
         'slides':[s for c in plan['courses'] for l in c['lessons'] for s in l['slides']],
@@ -30,6 +40,7 @@ if (ROOT/'upload-receipts.json').exists():
         if receipt:
             assert receipt['size']==upload['size'] and receipt['path']==upload['target']
 report={'source_files':len(source_ids),'courses':len(tables['catalogo']),'lessons':len(tables['aulas']),
+        'drive_hierarchy_and_names_preserved':True,
         'slides':len(tables['slides']),'materials':len(tables['materiais']),
         'uploads':len(plan['uploads']),'source_gaps':[x for x in plan['issues'] if x['type']=='course_source_gap'],
         'preserved_existing_ids':{t:len(before.get(t) or []) for t in tables}}

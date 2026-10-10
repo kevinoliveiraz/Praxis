@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import hashlib
 import json
+import importlib.util
 from pathlib import Path
 import re
 import time
@@ -12,6 +13,9 @@ import urllib.request
 
 BASE = 'https://fxpmeosnnrgqdelffnvy.supabase.co'
 BUCKETS = ('slides','materiais','storage capas')
+_layout_spec=importlib.util.spec_from_file_location('storage_layout',Path(__file__).with_name('storage-layout.py'))
+_layout=importlib.util.module_from_spec(_layout_spec)
+_layout_spec.loader.exec_module(_layout)
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         return None
@@ -33,21 +37,14 @@ def main():
         with opener.open(req,timeout=45) as response:
             return json.loads(response.read())
     def stored_files():
-        stored={}
-        for bucket in BUCKETS:
-            body=json.dumps({'prefix':'drive-import','limit':1000,'offset':0,'sortBy':{'column':'name','order':'asc'}}).encode()
-            files=request('/storage/v1/object/list/'+urllib.parse.quote(bucket,safe=''),body)
-            for item in files:
-                if item.get('metadata'):
-                    stored[(bucket,'drive-import/'+item['name'])]=int(item['metadata']['size'])
-        return stored
+        return {(o['bucket'],o['path']):o['size'] for o in _layout.Client(args.key_file).storage()}
     existing=stored_files()
     receipts={}
     receipt_path=plan_path.with_name('upload-receipts.json')
     if receipt_path.exists(): receipts=json.loads(receipt_path.read_text(encoding='utf-8'))
     def upload(item):
         bucket,target=item['bucket'],item['target']
-        if bucket not in BUCKETS or not re.fullmatch(r'drive-import/[A-Za-z0-9_-]+\.[a-z0-9]+',target):
+        if bucket not in BUCKETS or target!=_layout.storage_path(item['path']):
             raise ValueError('Unexpected upload destination')
         source=(args.cache/bucket/(item['id']+item['extension'])).resolve()
         if not source.is_relative_to(args.cache.resolve()): raise ValueError('Source outside cache')

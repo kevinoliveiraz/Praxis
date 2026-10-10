@@ -6,6 +6,8 @@ from urllib.parse import quote
 ROOT=Path(__file__).resolve().parent
 plan=json.loads((ROOT/'import-plan.json').read_text(encoding='utf-8'))
 before=json.loads((ROOT/'supabase-before.json').read_text(encoding='utf-8-sig'))
+layout=json.loads((ROOT/'storage-layout-plan.json').read_text(encoding='utf-8'))
+organized_sizes={(m['bucket'],m['target']):m['size'] for m in layout['moves']}
 tables={t:[] for t in ('catalogo','modulos','aulas','slides','materiais')}
 for course in plan['courses']:
     catalog={k:course[k] for k in ('id','nome','categoria','descricao','ordem_exibicao')}
@@ -24,13 +26,11 @@ for table,column,bucket in (('slides','imagem_path','slides'),('materiais','arqu
     for row in tables[table]:
         path=row[column]
         if (bucket,path) not in files:
-            match=next(x for x in before['objects'] if x['bucket']==bucket and x['name']==path)
-            files[(bucket,path)]=int(match['size'])
+            files[(bucket,path)]=organized_sizes[(bucket,path)]
 for course in plan['courses']:
     path=course['cover_path']
     if ('storage capas',path) not in files:
-        match=next(x for x in before['objects'] if x['bucket']=='storage capas' and x['name']==path)
-        files[('storage capas',path)]=int(match['size'])
+        files[('storage capas',path)]=organized_sizes[('storage capas',path)]
 sql=["-- Praxis: importação do Drive. Gerada a partir dos inventários verificados.",
      "-- Preserva IDs existentes e progresso dos alunos; não remove registros.",
      "BEGIN;", "SET LOCAL lock_timeout = '10s';", "SET LOCAL statement_timeout = '120s';",

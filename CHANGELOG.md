@@ -2,6 +2,14 @@
 
 Este arquivo registra as alterações estruturais e funcionais relevantes do projeto.
 
+## 2026-10-10 — Pastas do Storage conforme o Drive
+
+- Reorganização de 535 arquivos referenciados com curso, subpastas e nomes originais, substituindo a pasta única `drive-import`.
+- Atualização dos caminhos de slides, materiais e capas sem alterar IDs, vínculos, ordens ou outros campos das aulas.
+- Inclusão da capa original PNG de Excel; preservação da imagem JPEG anterior na pasta CAPA.
+- Normalização somente dos caracteres incompatíveis com as chaves do Supabase, incluindo acentos.
+- Importador, SQL e recibos atualizados para manter a mesma hierarquia; auditorias de arquivos e registros e conferência visual no painel.
+
 ## 2026-10-09 — Conteúdo dos cursos importado do Drive
 
 - Catálogo publicado no Supabase com 23 cursos, 23 módulos, 64 aulas, 485 slides e 27 materiais de apoio.
