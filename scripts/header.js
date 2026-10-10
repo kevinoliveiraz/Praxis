@@ -16,6 +16,14 @@
       <a href="index.html" class="logo" aria-label="Ir para a página inicial da Praxis">
         <img src="assets/logo.png" alt="Praxis" class="logo-image">
       </a>
+      <form id="header-search" class="header-search" role="search" action="index.html#catalog-title" method="get">
+        <button id="search-btn" class="header-search__button" type="submit" aria-label="Pesquisar cursos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/>
+          </svg>
+        </button>
+        <input id="search-input" name="q" type="search" placeholder="Pesquisar cursos, temas..." aria-label="Pesquisar cursos" autocomplete="off">
+      </form>
       <div class="header-actions">
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro">
           <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg>

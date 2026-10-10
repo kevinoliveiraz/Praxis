@@ -106,265 +106,88 @@ img { /* seleciona todas as imagens da página */
    HERO
 ========================================================= */
 
-.hero { /* seleciona a seção principal de apresentação da página */
-
-  position: relative; /* permite posicionar elementos internos em relação à seção */
-
-  overflow: hidden; /* esconde qualquer conteúdo que ultrapasse os limites da seção */
-
-  padding: 0px; /* adiciona 40px acima, nenhum nas laterais e 80px abaixo */
-  padding-bottom: 80px;
-
-} /* encerra as configurações da seção hero */
-
-
-.hero-grid { /* seleciona a grade utilizada para organizar o conteúdo do hero */
-
-  display: grid; /* transforma o elemento em um layout CSS Grid */
-
-  grid-template-columns:
-    1fr 1.15fr; /* cria duas colunas, sendo a segunda ligeiramente maior que a primeira */
-
-  align-items: center; /* centraliza verticalmente os conteúdos das colunas */
-
-  gap: 60px; /* cria um espaço de 60 pixels entre as colunas */
-
-} /* encerra as configurações da grade do hero */
-
-
-.eyebrow { /* seleciona o pequeno texto de destaque utilizado acima de títulos */
-
-  display: inline-flex; /* utiliza Flexbox mantendo o elemento com largura baseada no conteúdo */
-  align-items: center; /* centraliza verticalmente o texto e o indicador */
-
-  gap: 8px; /* cria 8 pixels entre o indicador e o texto */
-
-  margin-bottom: 22px; /* cria 22 pixels de espaço abaixo do elemento */
-
-  color: var(--accent); /* utiliza a cor de destaque */
-
-  font-size: 12px; /* define o tamanho do texto em 12 pixels */
-  font-weight: 700; /* deixa o texto em negrito */
-
-  letter-spacing: 1.2px; /* aumenta o espaço entre as letras em 1,2 pixel */
-
-} /* encerra as configurações do eyebrow */
-
-
-.eyebrow::before { /* cria um pseudo-elemento antes do texto do eyebrow */
-
-  width: 8px; /* define a largura do indicador em 8 pixels */
-  height: 8px; /* define a altura do indicador em 8 pixels */
-
-  border-radius: 50%; /* transforma o indicador em um círculo */
-
-  background: var(--accent); /* utiliza a cor de destaque como fundo */
-
-  box-shadow:
-    0 0 10px var(--accent); /* cria um brilho ao redor do indicador */
-
-  content: ""; /* cria o pseudo-elemento vazio necessário para que ele seja exibido */
-
-} /* encerra o pseudo-elemento do eyebrow */
-
-
-.hero h1 { /* seleciona o título principal existente dentro da seção hero */
-
-  font-size:
-    clamp(40px, 5vw, 68px); /* cria um tamanho responsivo com mínimo de 40px, valor ideal de 5vw e máximo de 68px */
-
-  font-weight: 800; /* deixa o título com peso forte */
-
-  line-height: 1.02; /* reduz o espaço vertical entre as linhas do título */
-
-  letter-spacing: -1.5px; /* aproxima as letras do título em 1,5 pixel */
-
-} /* encerra as configurações do título principal */
-
-
-.hero h1 .accent { /* seleciona a parte do título que possui a classe accent */
-
-  color: var(--accent); /* aplica a cor de destaque ao trecho do título */
-
-} /* encerra as configurações do destaque do título */
-
-
-.hero-desc { /* seleciona o texto descritivo abaixo do título do hero */
-
-  max-width: 460px; /* limita a largura do texto para facilitar a leitura */
-
-  margin-top: 22px; /* cria 22 pixels de espaço acima da descrição */
-
-  color: #b6bac6; /* define uma cor clara e secundária para o texto */
-
-  font-size: 16px; /* define o tamanho da fonte em 16 pixels */
-
-  line-height: 1.55; /* aumenta o espaço entre as linhas para melhorar a leitura */
-
-} /* encerra as configurações da descrição do hero */
-
-
-
-/* =========================================================
-   PESQUISA
-========================================================= */
-
-.search-block h2 { /* seleciona o título h2 existente dentro do bloco de pesquisa */
-
-  margin-bottom: 18px; /* cria 18 pixels de espaço abaixo do título */
-
-  font-size: 20px; /* define o tamanho do texto em 20 pixels */
-  font-weight: 700; /* deixa o título em negrito */
-
-} /* encerra as configurações do título da pesquisa */
-
-
-.search-box { /* seleciona o contêiner principal da barra de pesquisa */
-
-  position: relative; /* permite posicionar o ícone de pesquisa em relação a este elemento */
-
-  display: flex; /* utiliza Flexbox para organizar campo e botão */
-  align-items: center; /* centraliza verticalmente os elementos */
-
-  padding:
-    8px
-    8px
-    8px
-    58px; /* cria 8px em cima, direita e baixo e 58px à esquerda para reservar espaço ao ícone */
-
-  border:
-    1px solid var(--border); /* cria uma borda de 1 pixel utilizando a cor padrão */
-
-  border-radius: 999px; /* cria um formato completamente arredondado semelhante a uma cápsula */
-
-  background: #191b25; /* define o fundo escuro da barra de pesquisa */
-
-} /* encerra as configurações da barra de pesquisa */
-
-
-.search-box:focus-within { /* aplica estas regras quando algum elemento interno da pesquisa recebe foco */
-
-  border-color:
-    rgba(224, 251, 56, 0.65); /* altera a borda para a cor de destaque com transparência */
-
-  box-shadow:
-    0 0 0 3px
-    rgba(224, 251, 56, 0.08); /* cria um brilho suave ao redor da pesquisa quando ela recebe foco */
-
-} /* encerra o estado de foco da pesquisa */
-
-
-.search-box .search-ico { /* seleciona o ícone localizado dentro da barra de pesquisa */
-
-  position: absolute; /* permite posicionar o ícone livremente dentro da barra */
-
-  top: 50%; /* posiciona o início do ícone na metade vertical do contêiner */
-  left: 22px; /* posiciona o ícone a 22 pixels da borda esquerda */
-
-  color: var(--text-muted); /* utiliza a cor secundária para o ícone */
-
-  transform:
-    translateY(-50%); /* desloca o ícone metade de sua altura para cima e o centraliza verticalmente */
-
-} /* encerra as configurações do ícone de pesquisa */
-
-
-.search-box input { /* seleciona o campo de texto existente dentro da barra de pesquisa */
-
-  flex: 1; /* faz o input ocupar todo o espaço restante */
-
-  min-width: 0; /* permite que o input diminua corretamente dentro do Flexbox */
-
-  padding: 14px 12px; /* cria 14 pixels verticalmente e 12 pixels horizontalmente */
-
-  border: none; /* remove a borda padrão do input */
-
-  outline: none; /* remove o contorno padrão exibido pelo navegador */
-
-  background: transparent; /* deixa o fundo do campo transparente */
-
-  color: var(--bg-light); /* utiliza a cor clara para o texto digitado */
-
-  font-size: 16px; /* define o tamanho do texto digitado em 16 pixels */
-
-} /* encerra as configurações do campo de pesquisa */
-
-
-.search-box input::placeholder { /* seleciona o texto temporário exibido no campo de pesquisa vazio */
-
-  color: #6a6f7d; /* define uma cor secundária para o placeholder */
-
-} /* encerra as configurações do placeholder */
-
-
-.search-box .search-btn { /* seleciona o botão de pesquisa localizado dentro da barra */
-
-  display: grid; /* utiliza CSS Grid para facilitar a centralização do ícone */
-
-  width: 48px; /* define a largura do botão em 48 pixels */
-  height: 48px; /* define a altura do botão em 48 pixels */
-
-  flex-shrink: 0; /* impede que o botão seja comprimido */
-
-  place-items: center; /* centraliza o conteúdo horizontal e verticalmente */
-
-  border-radius: 50%; /* transforma o botão em um círculo */
-
-  background: var(--accent); /* utiliza a cor de destaque como fundo */
-
-  color: #0b0d10; /* define uma cor escura para o ícone */
-
-} /* encerra as configurações do botão de pesquisa */
-
-
-.popular { /* seleciona o grupo de pesquisas ou tags populares */
-
-  display: flex; /* utiliza Flexbox para organizar as tags */
-  flex-wrap: wrap; /* permite que as tags passem para outra linha quando necessário */
-  align-items: center; /* centraliza verticalmente os elementos */
-
-  gap: 10px; /* cria 10 pixels de espaço entre os elementos */
-
-  margin-top: 18px; /* cria 18 pixels de espaço acima do grupo */
-
-} /* encerra as configurações das pesquisas populares */
-
-
-.popular-label { /* seleciona o texto que identifica as pesquisas populares */
-
-  color: #a3a8b6; /* define uma cor secundária para o texto */
-
-  font-size: 13px; /* define o tamanho do texto em 13 pixels */
-
-} /* encerra as configurações do texto das pesquisas populares */
-
-
-.tag { /* seleciona cada botão ou elemento utilizado como tag */
-
-  padding: 7px 14px; /* cria 7 pixels verticalmente e 14 pixels horizontalmente */
-
-  border:
-    1px solid var(--border); /* cria uma borda utilizando a cor padrão */
-
-  border-radius: 999px; /* deixa a tag completamente arredondada */
-
-  background: #191b25; /* define um fundo escuro para a tag */
-
-  color: #d8dbe4; /* define uma cor clara para o texto */
-
-  font-size: 13px; /* define o tamanho do texto em 13 pixels */
-
-} /* encerra as configurações das tags */
-
-
-.tag:hover { /* aplica estas regras quando o mouse passa sobre uma tag */
-
-  border-color: #343847; /* deixa a borda um pouco mais clara */
-
-  background: var(--card); /* utiliza a cor dos cartões como fundo */
-
-} /* encerra o hover das tags */
-
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+.eyebrow::before {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  content: "";
+}
+.home-page .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #070b09 url("../assets/hero-workspace.png") center / cover no-repeat;
+  color: #ffffff;
+}
+.home-page .hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%),
+    linear-gradient(0deg, rgb(3 8 7 / 25%), transparent 45%);
+  content: "";
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
+  min-height: clamp(560px, calc(100svh - var(--praxis-header-height)), 780px);
+  padding-block: 88px;
+}
+.hero-content { width: min(760px, 62%); }
+.home-page .hero .eyebrow {
+  margin-bottom: 28px;
+  color: var(--praxis-color-accent);
+  font-size: clamp(12px, 1.1vw, 16px);
+  letter-spacing: 1.4px;
+}
+.home-page .hero h1 {
+  color: #ffffff;
+  font-size: clamp(48px, 6.3vw, 104px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+.hero-title-line { display: block; }
+.home-page .hero h1 .accent { color: var(--praxis-color-accent); }
+.home-page .hero-desc {
+  max-width: 640px;
+  margin-top: 30px;
+  color: #dce1df;
+  font-size: clamp(17px, 1.5vw, 24px);
+  line-height: 1.55;
+}
+.home-page .catalog-panel { margin-top: 0; }
+#catalog-title { scroll-margin-top: calc(var(--praxis-header-height) + 24px); }
+.catalog-search-status { margin-bottom: 20px; color: var(--praxis-muted); font-size: 14px; }
+@media (max-width: 980px) {
+  .hero-inner { min-height: 560px; padding-block: 72px; }
+  .hero-content { width: min(600px, 75%); }
+}
+@media (max-width: 700px) {
+  .home-page .hero { background-position: 62% center; }
+  .home-page .hero::before {
+    background: linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)),
+      linear-gradient(0deg, rgb(3 8 7 / 40%), transparent 70%);
+  }
+  .hero-inner { min-height: 510px; padding-block: 64px; }
+  .hero-content { width: 100%; }
+  .home-page .hero h1 { font-size: clamp(40px, 8.7vw, 60px); }
+  .home-page .hero .eyebrow { margin-bottom: 24px; }
+  .home-page .hero-desc { max-width: 420px; margin-top: 24px; font-size: 17px; }
+}
 
 
 /* =========================================================
@@ -979,16 +802,7 @@ img { /* seleciona todas as imagens da página */
 
 @media (max-width: 980px) { /* aplica as regras abaixo quando a tela tiver no máximo 980 pixels */
 
-  .hero-grid { /* ajusta a grade principal do hero */
-
-    grid-template-columns: 1fr; /* transforma as duas colunas do hero em apenas uma coluna */
-
-    gap: 40px; /* reduz o espaço entre os conteúdos para 40 pixels */
-
-  } /* encerra os ajustes do hero */
-
-
-  .features { /* ajusta o bloco de benefícios */
+.features { /* ajusta o bloco de benefícios */
 
     grid-template-columns:
       1fr 1fr; /* organiza os benefícios em duas colunas iguais */
@@ -1040,32 +854,6 @@ img { /* seleciona todas as imagens da página */
   } /* encerra a correção do botão de logout */
 
 
-  /* HERO */
-
-  .hero { /* ajusta a seção hero para celulares */
-
-    padding:
-      30px 0 65px; /* reduz o espaço superior para 30px e inferior para 65px */
-
-  } /* encerra os ajustes do hero */
-
-
-  .hero h1 { /* ajusta o título principal do hero */
-
-    font-size:
-      clamp(
-        35px,
-        11vw, 
-        50px 
-      );
-
-      /* 35px: impede que o título fique menor que 35 pixels */
-      /*11vw: utiliza 11% da largura da tela como tamanho responsivo ideal */
-      /*50px: impede que o título ultrapasse 50 pixels */
-
-  } /* encerra os ajustes do título */
-
-
   /* CATÁLOGO */
 
   .catalog-panel { /* ajusta o painel do catálogo */
@@ -1114,47 +902,6 @@ img { /* seleciona todas as imagens da página */
 ========================================================= */
 
 @media (max-width: 520px) { /* encerra os ajustes do texto da assinatura */
-
-
-  /* PESQUISA */
-
-  .search-block h2 { /* ajusta o título da pesquisa */
-
-    font-size: 18px; /* reduz o tamanho do título para 18 pixels */
-
-  } /* encerra os ajustes do título */
-
-
-  .search-box { /* ajusta a barra de pesquisa */
-
-    padding-left: 46px; /* reduz o espaço reservado ao ícone no lado esquerdo */
-
-  } /* encerra os ajustes da barra de pesquisa */
-
-
-  .search-box .search-ico { /* ajusta a posição do ícone de pesquisa */
-
-    left: 17px; /* aproxima o ícone da lateral esquerda */
-
-  } /* encerra os ajustes do ícone */
-
-
-  .search-box input { /* ajusta o campo de pesquisa */
-
-    padding-right: 6px; /* reduz o espaço interno do lado direito */
-    padding-left: 6px; /* reduz o espaço interno do lado esquerdo */
-
-    font-size: 14px; /* reduz o tamanho do texto digitado */
-
-  } /* encerra os ajustes do campo */
-
-
-  .search-box .search-btn { /* ajusta o botão circular da pesquisa */
-
-    width: 44px; /* reduz a largura para 44 pixels */
-    height: 44px; /* reduz a altura para 44 pixels */
-
-  } /* encerra os ajustes do botão de pesquisa */
 
 
   /* BENEFÍCIOS */

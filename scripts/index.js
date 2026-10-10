@@ -14,11 +14,19 @@ const grid =
 const searchInput =
   document.getElementById("search-input");
 
-const searchBtn =
-  document.getElementById("search-btn");
+const searchForm =
+  document.getElementById("header-search");
+
+const searchStatus =
+  document.getElementById("catalog-search-status");
+
+if (searchInput) {
+  searchInput.value = new URLSearchParams(window.location.search).get("q") || "";
+}
 
 
 let allCourses = [];
+let catalogLoaded = false;
 
 
 /* =========================================================
@@ -526,10 +534,8 @@ async function loadCatalog() {
         ? data
         : [];
 
-
-    renderCourses(
-      allCourses
-    );
+    catalogLoaded = true;
+    searchCourses();
 
 
   } catch (error) {
@@ -830,85 +836,25 @@ function addCourseEvents() {
 ========================================================= */
 
 function searchCourses() {
-  if (!searchInput) {
-    return;
+  if (!searchInput || !catalogLoaded) return;
+
+  const normalize = value => String(value || "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-BR");
+  const term = searchInput.value.trim();
+  const query = normalize(term);
+  const courses = query ? allCourses.filter(course =>
+    [course.nome, course.descricao, course.categoria]
+      .some(value => normalize(value).includes(query))
+  ) : allCourses;
+
+  renderCourses(courses);
+  if (searchStatus) {
+    searchStatus.hidden = !term;
+    searchStatus.textContent = term
+      ? `${courses.length} ${courses.length === 1 ? "curso encontrado" : "cursos encontrados"} para “${term}”.`
+      : "";
   }
-
-
-  const query =
-    searchInput
-      .value
-      .trim()
-      .toLocaleLowerCase(
-        "pt-BR"
-      );
-
-
-  if (!query) {
-
-    renderCourses(
-      allCourses
-    );
-
-
-    return;
-  }
-
-
-  const filteredCourses =
-    allCourses.filter(
-      (course) => {
-
-        const name =
-          String(
-            course.nome ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        const description =
-          String(
-            course.descricao ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        const category =
-          String(
-            course.categoria ||
-            ""
-          )
-            .toLocaleLowerCase(
-              "pt-BR"
-            );
-
-
-        return (
-          name.includes(
-            query
-          ) ||
-
-          description.includes(
-            query
-          ) ||
-
-          category.includes(
-            query
-          )
-        );
-      }
-    );
-
-
-  renderCourses(
-    filteredCourses
-  );
 }
 
 
@@ -916,12 +862,21 @@ function searchCourses() {
    BOTÃO DE PESQUISA
 ========================================================= */
 
-if (searchBtn) {
-
-  searchBtn.addEventListener(
-    "click",
-    searchCourses
-  );
+if (searchForm) {
+  searchForm.addEventListener("submit", event => {
+    event.preventDefault();
+    searchCourses();
+    const url = new URL(window.location.href);
+    const query = searchInput?.value.trim() || "";
+    if (query) url.searchParams.set("q", query);
+    else url.searchParams.delete("q");
+    url.hash = "catalog-title";
+    window.history.replaceState(null, "", url);
+    document.getElementById("catalog-title")?.scrollIntoView({
+      block: "start",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  });
 }
 
 
@@ -930,40 +885,7 @@ if (searchBtn) {
 ========================================================= */
 
 if (searchInput) {
-
-  searchInput.addEventListener(
-    "input",
-    () => {
-
-      if (
-        !searchInput
-          .value
-          .trim()
-      ) {
-
-        renderCourses(
-          allCourses
-        );
-      }
-
-    }
-  );
-
-
-  searchInput.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (
-        event.key ===
-          "Enter"
-      ) {
-
-        searchCourses();
-      }
-
-    }
-  );
+  searchInput.addEventListener("input", searchCourses);
 }
 
 
