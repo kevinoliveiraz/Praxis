@@ -7,6 +7,7 @@ Com Node.js disponível, execute `npm run dev` nesta pasta e abra http://127.0.0
 
 ## Entregas
 - `assine-agora.html`: página de assinatura responsiva com planos provisórios mensal e anual.
+- `404.html`: página de erro com temas claro/escuro, animações e atalhos para retomar a navegação.
 - `design-system.html`: catálogo visual de fundamentos e componentes.
 - `DESIGN-SYSTEM.md`: documentação de uso.
 - `styles/tokens.css`: tokens compartilhados.
@@ -18,6 +19,12 @@ Com Node.js disponível, execute `npm run dev` nesta pasta e abra http://127.0.0
 - `scripts/header.js`, `scripts/header-session.js` e `scripts/account-menu.js`: cabeçalho compartilhado e menu ao clicar na foto, disponível na home, cursos e perfil.
 
 A home direciona o botão Assine agora à página de planos. Todos os cursos utilizam `curso.html?id=ID_DO_CURSO`. Autenticação, catálogo e cursos continuam com o Supabase existente. A assinatura é uma prévia: pagamento e ativação de acesso ainda precisam de integração.
+
+## Página não encontrada
+
+Abra `404.html` para ver a página de erro. O servidor de `npm run dev` também a entrega com status HTTP 404 para endereços inexistentes, incluindo caminhos com subpastas. Se o servidor já estava aberto durante a atualização, reinicie-o para carregar o novo handler. Os estilos e links usam a raiz do site, com ajuste para `/Praxis/` no GitHub Pages.
+
+O arquivo segue a [convenção de página 404 do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site). A publicação e a configuração de outros provedores de hospedagem são independentes do preview local.
 
 ## Conteúdo dos cursos
 

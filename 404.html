@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06070c">
+  <meta name="robots" content="noindex">
+  <base href="/" id="praxis-base">
+  <script data-page-base>
+    // Mantém os recursos acessíveis em rotas profundas e no GitHub Pages do projeto.
+    if (location.hostname.endsWith('.github.io') && /^\/Praxis(?:\/|$)/i.test(location.pathname)) {
+      document.getElementById('praxis-base').href = '/' + location.pathname.split('/')[1] + '/';
+    }
+  </script>
+  <script src="scripts/theme.js"></script>
+  <title>Página não encontrada — Praxis</title>
+  <meta name="description" content="Essa página não foi encontrada. Volte ao início ou explore os cursos da Praxis para continuar aprendendo.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/404.css">
+  <script src="scripts/header.js" defer></script>
+</head>
+<body class="px-page error-page">
+  <a class="px-skip" href="404.html#conteudo">Pular para o conteúdo</a>
+  <header class="site-header" data-site-header data-subscription="false"></header>
+
+  <main id="conteudo" class="px-container error-main">
+    <section class="error-layout" aria-labelledby="error-title">
+      <div class="error-copy">
+        <span class="px-eyebrow"><span class="error-status-dot" aria-hidden="true"></span>Erro 404 · Você saiu da trilha</span>
+        <h1 id="error-title">Essa página ficou<br>fora do <span>caminho.</span></h1>
+        <p>O endereço pode ter mudado ou não existir. Seu próximo aprendizado continua por aqui.</p>
+        <div class="error-actions">
+          <a class="px-button px-button--primary" href="index.html">Voltar para o início <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="error-catalog-link" href="index.html#catalog-title">Explorar os cursos <svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+        <p class="error-caption">Às vezes, um desvio é só o começo de uma nova descoberta.</p>
+      </div>
+
+      <div class="error-scene" aria-hidden="true">
+        <div class="error-window">
+          <div class="error-window-bar"><span class="error-window-dots"><i></i><i></i><i></i></span><span>praxis / próxima descoberta</span><span class="error-window-mark">↗</span></div>
+          <div class="error-grid">
+            <div class="error-orbit"></div>
+            <div class="error-code"><span>4</span><span class="error-zero">0<svg class="error-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6z"/></svg></span><span>4</span></div>
+            <div class="error-route-tag"><span class="error-route-dot"></span>Rota não encontrada</div>
+            <span class="error-location"><svg class="px-icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="error-spark">✦</span>
+          </div>
+          <div class="error-window-footer"><span>ERROR / 404</span><span>Um novo caminho te espera <span>↗</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="error-shortcuts" aria-label="Encontre seu próximo caminho">
+      <div class="error-shortcuts-intro"><span class="px-eyebrow">Retome por aqui</span><p>Qual é o seu próximo passo?</p></div>
+      <a class="error-shortcut" href="index.html#catalog-title"><span class="error-shortcut-number">01</span><span><strong>Catálogo de cursos</strong><small>Encontre uma nova habilidade.</small></span><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="error-shortcut" href="perfil.html"><span class="error-shortcut-number">02</span><span><strong>Minha conta</strong><small>Acesse seu perfil e preferências.</small></span><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="error-shortcut" href="assine-agora.html"><span class="error-shortcut-number">03</span><span><strong>Planos Praxis</strong><small>Conheça as opções para aprender.</small></span><svg class="px-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </nav>
+  </main>
+
+  <footer class="error-footer"><div class="px-container"><span>© Praxis</span><span>Entenda. Pratique. Crie.</span></div></footer>
+</body>
+</html>
