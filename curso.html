@@ -1,36 +1,72 @@
-<!doctype html>
-<html lang="pt-BR" data-theme="dark">
+<!doctype html><!-- Declara o documento como HTML5. -->
+<html lang="pt-BR" data-theme="dark"><!-- Insere o documento HTML. -->
 
-<head>
-  <meta name="theme-color" content="#06070c">
-  <script src="scripts/theme.js"></script>
-  <meta charset="utf-8">
+<head><!-- Insere as configurações e os recursos da página. -->
+  <meta name="theme-color" content="#06070c"><!-- Configura os metadados da página: Define o nome da configuração ou do campo como “theme-color”. Define o valor da configuração como “#06070c”. -->
+  <script src="scripts/theme.js"></script><!-- Carrega o script scripts/theme.js. -->
+  <meta charset="utf-8"><!-- Configura os metadados da página: Define a codificação de caracteres como “utf-8”. -->
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “viewport”.
+    Linha 3 do trecho: Define o valor da configuração como “width=device-width, initial-scale=1”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
 
+  <!-- Explicações do texto abaixo, preservando seu conteúdo.
+    Linha 1 do trecho: Insere o título da página ou a descrição do SVG.
+    Linha 2 do trecho: Exibe o texto “Curso — Praxis” neste ponto da página.
+    Linha 3 do trecho: Encerra o título da página ou a descrição do SVG.
+  -->
   <title>
     Curso — Praxis
   </title>
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “description”.
+    Linha 3 do trecho: Define o valor da configuração como “Curso prático da Praxis com conteúdo direto e aplicado.”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="description"
     content="Curso prático da Praxis com conteúdo direto e aplicado."
   >
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.googleapis.com”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
   >
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.gstatic.com”.
+    Linha 4 do trecho: Configura o carregamento entre origens.
+    Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define o destino do link como “https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap”.
+    Linha 3 do trecho: Define a relação com o recurso como “stylesheet”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
@@ -41,32 +77,41 @@
 
   <!-- Tokens compartilhados da identidade Praxis. -->
 
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/curso.css">
-<link rel="stylesheet" href="styles/theme.css">
-<link rel="stylesheet" href="styles/header.css">
-<script src="scripts/header.js" defer></script>
-  <link rel="icon" href="assets/logo.png" type="image/png">
-</head>
+<link rel="stylesheet" href="styles/tokens.css"><!-- Carrega a folha de estilos styles/tokens.css. -->
+<link rel="stylesheet" href="styles/curso.css"><!-- Carrega a folha de estilos styles/curso.css. -->
+<link rel="stylesheet" href="styles/theme.css"><!-- Carrega a folha de estilos styles/theme.css. -->
+<link rel="stylesheet" href="styles/header.css"><!-- Carrega a folha de estilos styles/header.css. -->
+<script src="scripts/header.js" defer></script><!-- Carrega o script scripts/header.js. -->
+  <link rel="icon" href="assets/logo.png" type="image/png"><!-- Define o favicon da Praxis em assets/logo.png. -->
+</head><!-- Encerra as configurações e os recursos da página. -->
 
 
-<body class="course-shell">
+<body class="course-shell"><!-- Insere o conteúdo visível da página com as classes “course-shell”. -->
 
   <!-- =====================================================
        HEADER
   ====================================================== -->
 
-  <header class="site-header" data-site-header data-subscription="false"></header>
+  <header class="site-header" data-site-header data-subscription="false"></header><!-- Insere o cabeçalho com as classes “site-header”. -->
 
 
   <!-- =====================================================
        NAVEGAÇÃO — VOLTAR
   ====================================================== -->
 
-  <div class="breadcrumb-area">
+  <div class="breadcrumb-area"><!-- Insere um contêiner de layout com as classes “breadcrumb-area”. -->
 
-    <div class="container breadcrumb">
+    <div class="container breadcrumb"><!-- Insere um contêiner de layout com as classes “container breadcrumb”. -->
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um botão com o texto “<button”.
+        Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+        Linha 3 do trecho: Define o identificador único como “history-back”.
+        Linha 4 do trecho: Aplica as classes de estilo como “history-back”.
+        Linha 5 do trecho: Define o nome acessível como “Voltar para a página anterior”.
+        Linha 6 do trecho: Define a informação complementar como “Voltar”.
+        Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <button
         type="button"
         id="history-back"
@@ -75,6 +120,19 @@
         title="Voltar"
       >
 
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+          Linha 2 do trecho: Define a largura como “20”.
+          Linha 3 do trecho: Define a altura como “20”.
+          Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+          Linha 5 do trecho: Define o preenchimento SVG como “none”.
+          Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+          Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+          Linha 8 do trecho: Define o atributo stroke-linecap como “round”.
+          Linha 9 do trecho: Define o atributo stroke-linejoin como “round”.
+          Linha 10 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+          Linha 11 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <svg
           width="20"
           height="20"
@@ -86,26 +144,36 @@
           stroke-linejoin="round"
           aria-hidden="true"
         >
-          <path d="M15 18l-6-6 6-6"></path>
-        </svg>
+          <path d="M15 18l-6-6 6-6"></path><!-- Insere um traçado vetorial. -->
+        </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-      </button>
+      </button><!-- Encerra um botão. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </div>
+  </div><!-- Encerra um contêiner de layout. -->
 
 
   <!-- =====================================================
        BARRA DE CONTROLES DAS SIDEBARS
   ====================================================== -->
 
-  <div class="course-toolbar">
+  <div class="course-toolbar"><!-- Insere um contêiner de layout com as classes “course-toolbar”. -->
 
-    <div class="container course-toolbar-inner">
+    <div class="container course-toolbar-inner"><!-- Insere um contêiner de layout com as classes “container course-toolbar-inner”. -->
 
       <!-- ABRIR AULAS -->
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um botão com o texto “<button”.
+        Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+        Linha 3 do trecho: Define o identificador único como “open-lessons-sidebar”.
+        Linha 4 do trecho: Aplica as classes de estilo como “sidebar-trigger sidebar-trigger-left”.
+        Linha 5 do trecho: Define o nome acessível como “Abrir aulas do curso”.
+        Linha 6 do trecho: Relaciona o controle ao elemento afetado como “lessons-sidebar”.
+        Linha 7 do trecho: Informa se o controle está expandido como “false”.
+        Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <button
         type="button"
         id="open-lessons-sidebar"
@@ -115,6 +183,18 @@
         aria-expanded="false"
       >
 
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+          Linha 2 do trecho: Define a largura como “20”.
+          Linha 3 do trecho: Define a altura como “20”.
+          Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+          Linha 5 do trecho: Define o preenchimento SVG como “none”.
+          Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+          Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+          Linha 8 do trecho: Define o atributo stroke-linecap como “round”.
+          Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+          Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <svg
           width="20"
           height="20"
@@ -125,33 +205,43 @@
           stroke-linecap="round"
           aria-hidden="true"
         >
-          <line x1="4" y1="6" x2="20" y2="6"></line>
-          <line x1="4" y1="12" x2="20" y2="12"></line>
-          <line x1="4" y1="18" x2="20" y2="18"></line>
-        </svg>
+          <line x1="4" y1="6" x2="20" y2="6"></line><!-- Insere uma linha vetorial. -->
+          <line x1="4" y1="12" x2="20" y2="12"></line><!-- Insere uma linha vetorial. -->
+          <line x1="4" y1="18" x2="20" y2="18"></line><!-- Insere uma linha vetorial. -->
+        </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-        <span>
-          Aulas
-        </span>
+        <span><!-- Insere um trecho de texto em linha. -->
+          Aulas<!-- Exibe o texto “Aulas” neste ponto da página. -->
+        </span><!-- Encerra um trecho de texto em linha. -->
 
-      </button>
+      </button><!-- Encerra um botão. -->
 
 
-      <div class="course-toolbar-title">
+      <div class="course-toolbar-title"><!-- Insere um contêiner de layout com as classes “course-toolbar-title”. -->
 
-        <span class="course-toolbar-label">
-          CURSO
-        </span>
+        <span class="course-toolbar-label"><!-- Insere um trecho de texto em linha com as classes “course-toolbar-label”. -->
+          CURSO<!-- Exibe o texto “CURSO” neste ponto da página. -->
+        </span><!-- Encerra um trecho de texto em linha. -->
 
-        <strong>
-          Curso
-        </strong>
+        <strong><!-- Insere um texto com destaque semântico. -->
+          Curso<!-- Exibe o texto “Curso” neste ponto da página. -->
+        </strong><!-- Encerra um texto com destaque semântico. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
 
       <!-- ABRIR MATERIAIS -->
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um botão com o texto “<button”.
+        Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+        Linha 3 do trecho: Define o identificador único como “open-materials-sidebar”.
+        Linha 4 do trecho: Aplica as classes de estilo como “sidebar-trigger sidebar-trigger-right”.
+        Linha 5 do trecho: Define o nome acessível como “Abrir materiais do curso”.
+        Linha 6 do trecho: Relaciona o controle ao elemento afetado como “materials-sidebar”.
+        Linha 7 do trecho: Informa se o controle está expandido como “false”.
+        Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <button
         type="button"
         id="open-materials-sidebar"
@@ -161,10 +251,22 @@
         aria-expanded="false"
       >
 
-        <span>
-          Materiais
-        </span>
+        <span><!-- Insere um trecho de texto em linha. -->
+          Materiais<!-- Exibe o texto “Materiais” neste ponto da página. -->
+        </span><!-- Encerra um trecho de texto em linha. -->
 
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+          Linha 2 do trecho: Define a largura como “20”.
+          Linha 3 do trecho: Define a altura como “20”.
+          Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+          Linha 5 do trecho: Define o preenchimento SVG como “none”.
+          Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+          Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+          Linha 8 do trecho: Define o atributo stroke-linecap como “round”.
+          Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+          Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <svg
           width="20"
           height="20"
@@ -175,22 +277,29 @@
           stroke-linecap="round"
           aria-hidden="true"
         >
-          <line x1="4" y1="6" x2="20" y2="6"></line>
-          <line x1="4" y1="12" x2="20" y2="12"></line>
-          <line x1="4" y1="18" x2="20" y2="18"></line>
-        </svg>
+          <line x1="4" y1="6" x2="20" y2="6"></line><!-- Insere uma linha vetorial. -->
+          <line x1="4" y1="12" x2="20" y2="12"></line><!-- Insere uma linha vetorial. -->
+          <line x1="4" y1="18" x2="20" y2="18"></line><!-- Insere uma linha vetorial. -->
+        </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-      </button>
+      </button><!-- Encerra um botão. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </div>
+  </div><!-- Encerra um contêiner de layout. -->
 
 
   <!-- =====================================================
        OVERLAY DAS SIDEBARS
   ====================================================== -->
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+    Linha 2 do trecho: Define o identificador único como “sidebar-overlay”.
+    Linha 3 do trecho: Aplica as classes de estilo como “sidebar-overlay”.
+    Linha 4 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+    Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <div
     id="sidebar-overlay"
     class="sidebar-overlay"
@@ -203,6 +312,14 @@
        AULAS
   ====================================================== -->
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Insere o conteúdo lateral com o texto “<aside”.
+    Linha 2 do trecho: Define o identificador único como “lessons-sidebar”.
+    Linha 3 do trecho: Aplica as classes de estilo como “course-sidebar course-sidebar-left”.
+    Linha 4 do trecho: Define o nome acessível como “Aulas do curso”.
+    Linha 5 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+    Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <aside
     id="lessons-sidebar"
     class="course-sidebar course-sidebar-left"
@@ -210,27 +327,47 @@
     aria-hidden="true"
   >
 
-    <div class="course-sidebar-header">
+    <div class="course-sidebar-header"><!-- Insere um contêiner de layout com as classes “course-sidebar-header”. -->
 
-      <div>
+      <div><!-- Insere um contêiner de layout. -->
 
-        <span class="sidebar-eyebrow">
-          CURSO
-        </span>
+        <span class="sidebar-eyebrow"><!-- Insere um trecho de texto em linha com as classes “sidebar-eyebrow”. -->
+          CURSO<!-- Exibe o texto “CURSO” neste ponto da página. -->
+        </span><!-- Encerra um trecho de texto em linha. -->
 
-        <h2>
-          Aulas do curso
-        </h2>
+        <h2><!-- Insere um título de seção. -->
+          Aulas do curso<!-- Exibe o texto “Aulas do curso” neste ponto da página. -->
+        </h2><!-- Encerra um título de seção. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um botão com o texto “<button”.
+        Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+        Linha 3 do trecho: Define o identificador único como “close-lessons-sidebar”.
+        Linha 4 do trecho: Aplica as classes de estilo como “sidebar-close”.
+        Linha 5 do trecho: Define o nome acessível como “Fechar aulas do curso”.
+        Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <button
         type="button"
         id="close-lessons-sidebar"
         class="sidebar-close"
         aria-label="Fechar aulas do curso"
       >
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+          Linha 2 do trecho: Define a largura como “22”.
+          Linha 3 do trecho: Define a altura como “22”.
+          Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+          Linha 5 do trecho: Define o preenchimento SVG como “none”.
+          Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+          Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+          Linha 8 do trecho: Define o atributo stroke-linecap como “round”.
+          Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+          Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <svg
           width="22"
           height="22"
@@ -241,58 +378,74 @@
           stroke-linecap="round"
           aria-hidden="true"
         >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
+          <line x1="18" y1="6" x2="6" y2="18"></line><!-- Insere uma linha vetorial. -->
+          <line x1="6" y1="6" x2="18" y2="18"></line><!-- Insere uma linha vetorial. -->
+        </svg><!-- Encerra um ícone ou desenho vetorial. -->
+      </button><!-- Encerra um botão. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
 
-    <div class="course-sidebar-content">
+    <div class="course-sidebar-content"><!-- Insere um contêiner de layout com as classes “course-sidebar-content”. -->
 
       <!-- =================================================
            LISTA DE AULAS
       ================================================== -->
 
-      <div id="lessons-container">
+      <div id="lessons-container"><!-- Insere um contêiner de layout identificado por “lessons-container”. -->
 
-        <div class="module-block">
+        <div class="module-block"><!-- Insere um contêiner de layout com as classes “module-block”. -->
 
-          <div class="module-label">
-            MÓDULO 1
-          </div>
+          <div class="module-label"><!-- Insere um contêiner de layout com as classes “module-label”. -->
+            MÓDULO 1<!-- Exibe o texto “MÓDULO 1” neste ponto da página. -->
+          </div><!-- Encerra um contêiner de layout. -->
 
-          <div class="module-title">
-            Módulo do curso
-          </div>
+          <div class="module-title"><!-- Insere um contêiner de layout com as classes “module-title”. -->
+            Módulo do curso<!-- Exibe o texto “Módulo do curso” neste ponto da página. -->
+          </div><!-- Encerra um contêiner de layout. -->
 
 
-          <ul class="lesson-list">
+          <ul class="lesson-list"><!-- Insere uma lista sem numeração com as classes “lesson-list”. -->
 
             <!-- AULA 1 -->
 
-            <li class="lesson active">
+            <li class="lesson active"><!-- Insere um item da lista com as classes “lesson active”. -->
 
-              <div class="lesson-status"></div>
+              <div class="lesson-status"></div><!-- Insere um contêiner de layout com as classes “lesson-status”. -->
 
-              <div class="lesson-num">
-                1.1
-              </div>
+              <div class="lesson-num"><!-- Insere um contêiner de layout com as classes “lesson-num”. -->
+                1.1<!-- Exibe o texto “1.1” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-name">
-                Aula do curso
-              </div>
+              <div class="lesson-name"><!-- Insere um contêiner de layout com as classes “lesson-name”. -->
+                Aula do curso<!-- Exibe o texto “Aula do curso” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-duration">
-                —
-              </div>
+              <div class="lesson-duration"><!-- Insere um contêiner de layout com as classes “lesson-duration”. -->
+                —<!-- Exibe o texto “—” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um botão com o texto “<button”.
+                Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+                Linha 3 do trecho: Aplica as classes de estilo como “lesson-play”.
+                Linha 4 do trecho: Define o nome acessível como “Abrir aula do curso”.
+                Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <button
                 type="button"
                 class="lesson-play"
                 aria-label="Abrir aula do curso"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                  Linha 2 do trecho: Define a largura como “10”.
+                  Linha 3 do trecho: Define a altura como “10”.
+                  Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                  Linha 5 do trecho: Define o preenchimento SVG como “currentColor”.
+                  Linha 6 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                  Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <svg
                   width="10"
                   height="10"
@@ -300,36 +453,52 @@
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
+                  <path d="M8 5v14l11-7z"/><!-- Insere um traçado vetorial. -->
+                </svg><!-- Encerra um ícone ou desenho vetorial. -->
+              </button><!-- Encerra um botão. -->
 
-            </li>
+            </li><!-- Encerra um item da lista. -->
 
 
             <!-- AULA 2 -->
 
-            <li class="lesson">
+            <li class="lesson"><!-- Insere um item da lista com as classes “lesson”. -->
 
-              <div class="lesson-status"></div>
+              <div class="lesson-status"></div><!-- Insere um contêiner de layout com as classes “lesson-status”. -->
 
-              <div class="lesson-num">
-                1.2
-              </div>
+              <div class="lesson-num"><!-- Insere um contêiner de layout com as classes “lesson-num”. -->
+                1.2<!-- Exibe o texto “1.2” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-name">
-                Criando sua primeira planilha
-              </div>
+              <div class="lesson-name"><!-- Insere um contêiner de layout com as classes “lesson-name”. -->
+                Criando sua primeira planilha<!-- Exibe o texto “Criando sua primeira planilha” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-duration">
-                —
-              </div>
+              <div class="lesson-duration"><!-- Insere um contêiner de layout com as classes “lesson-duration”. -->
+                —<!-- Exibe o texto “—” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um botão com o texto “<button”.
+                Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+                Linha 3 do trecho: Aplica as classes de estilo como “lesson-play”.
+                Linha 4 do trecho: Define o nome acessível como “Abrir aula Criando sua primeira planilha”.
+                Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <button
                 type="button"
                 class="lesson-play"
                 aria-label="Abrir aula Criando sua primeira planilha"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                  Linha 2 do trecho: Define a largura como “10”.
+                  Linha 3 do trecho: Define a altura como “10”.
+                  Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                  Linha 5 do trecho: Define o preenchimento SVG como “currentColor”.
+                  Linha 6 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                  Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <svg
                   width="10"
                   height="10"
@@ -337,36 +506,52 @@
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
+                  <path d="M8 5v14l11-7z"/><!-- Insere um traçado vetorial. -->
+                </svg><!-- Encerra um ícone ou desenho vetorial. -->
+              </button><!-- Encerra um botão. -->
 
-            </li>
+            </li><!-- Encerra um item da lista. -->
 
 
             <!-- AULA 3 -->
 
-            <li class="lesson">
+            <li class="lesson"><!-- Insere um item da lista com as classes “lesson”. -->
 
-              <div class="lesson-status"></div>
+              <div class="lesson-status"></div><!-- Insere um contêiner de layout com as classes “lesson-status”. -->
 
-              <div class="lesson-num">
-                1.3
-              </div>
+              <div class="lesson-num"><!-- Insere um contêiner de layout com as classes “lesson-num”. -->
+                1.3<!-- Exibe o texto “1.3” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-name">
-                Navegação e seleção
-              </div>
+              <div class="lesson-name"><!-- Insere um contêiner de layout com as classes “lesson-name”. -->
+                Navegação e seleção<!-- Exibe o texto “Navegação e seleção” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
-              <div class="lesson-duration">
-                —
-              </div>
+              <div class="lesson-duration"><!-- Insere um contêiner de layout com as classes “lesson-duration”. -->
+                —<!-- Exibe o texto “—” neste ponto da página. -->
+              </div><!-- Encerra um contêiner de layout. -->
 
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um botão com o texto “<button”.
+                Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+                Linha 3 do trecho: Aplica as classes de estilo como “lesson-play”.
+                Linha 4 do trecho: Define o nome acessível como “Abrir aula Navegação e seleção”.
+                Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <button
                 type="button"
                 class="lesson-play"
                 aria-label="Abrir aula Navegação e seleção"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                  Linha 2 do trecho: Define a largura como “10”.
+                  Linha 3 do trecho: Define a altura como “10”.
+                  Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                  Linha 5 do trecho: Define o preenchimento SVG como “currentColor”.
+                  Linha 6 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                  Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <svg
                   width="10"
                   height="10"
@@ -374,58 +559,85 @@
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
+                  <path d="M8 5v14l11-7z"/><!-- Insere um traçado vetorial. -->
+                </svg><!-- Encerra um ícone ou desenho vetorial. -->
+              </button><!-- Encerra um botão. -->
 
-            </li>
+            </li><!-- Encerra um item da lista. -->
 
-          </ul>
+          </ul><!-- Encerra uma lista sem numeração. -->
 
-        </div>
+        </div><!-- Encerra um contêiner de layout. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
 
       <!-- =================================================
            PROGRESSO
       ================================================== -->
 
-      <div class="progress-card">
+      <div class="progress-card"><!-- Insere um contêiner de layout com as classes “progress-card”. -->
 
-        <div class="progress-grid">
+        <div class="progress-grid"><!-- Insere um contêiner de layout com as classes “progress-grid”. -->
 
-          <div>
+          <div><!-- Insere um contêiner de layout. -->
 
-            <div class="progress-small">
-              Seu progresso
-            </div>
+            <div class="progress-small"><!-- Insere um contêiner de layout com as classes “progress-small”. -->
+              Seu progresso<!-- Exibe o texto “Seu progresso” neste ponto da página. -->
+            </div><!-- Encerra um contêiner de layout. -->
 
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+              Linha 2 do trecho: Define o identificador único como “progress-pct”.
+              Linha 3 do trecho: Aplica as classes de estilo como “progress-value”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <div
               id="progress-pct"
               class="progress-value"
             >
-              0%
-            </div>
+              0%<!-- Exibe o texto “0%” neste ponto da página. -->
+            </div><!-- Encerra um contêiner de layout. -->
 
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+              Linha 2 do trecho: Define o identificador único como “progress-count”.
+              Linha 3 do trecho: Aplica as classes de estilo como “progress-count”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <div
               id="progress-count"
               class="progress-count"
             >
-              0 de 0 aulas concluídas
-            </div>
+              0 de 0 aulas concluídas<!-- Exibe o texto “0 de 0 aulas concluídas” neste ponto da página. -->
+            </div><!-- Encerra um contêiner de layout. -->
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
 
 
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+            Linha 2 do trecho: Aplica as classes de estilo como “progress-ring”.
+            Linha 3 do trecho: Define o sistema de coordenadas SVG como “0 0 80 80”.
+            Linha 4 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+            Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <svg
             class="progress-ring"
             viewBox="0 0 80 80"
             aria-hidden="true"
           >
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+              Linha 2 do trecho: Aplica as classes de estilo como “progress-ring-bg”.
+              Linha 3 do trecho: Define o atributo cx como “40”.
+              Linha 4 do trecho: Define o atributo cy como “40”.
+              Linha 5 do trecho: Define o atributo r como “31”.
+              Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <circle
               class="progress-ring-bg"
               cx="40"
@@ -433,6 +645,15 @@
               r="31"
             ></circle>
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+              Linha 2 do trecho: Define o identificador único como “progress-circle”.
+              Linha 3 do trecho: Aplica as classes de estilo como “progress-ring-value”.
+              Linha 4 do trecho: Define o atributo cx como “40”.
+              Linha 5 do trecho: Define o atributo cy como “40”.
+              Linha 6 do trecho: Define o atributo r como “31”.
+              Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <circle
               id="progress-circle"
               class="progress-ring-value"
@@ -441,15 +662,15 @@
               r="31"
             ></circle>
 
-          </svg>
+          </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-        </div>
+        </div><!-- Encerra um contêiner de layout. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </aside>
+  </aside><!-- Encerra o conteúdo lateral. -->
 
 
   <!-- =====================================================
@@ -457,6 +678,14 @@
        MATERIAIS
   ====================================================== -->
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Insere o conteúdo lateral com o texto “<aside”.
+    Linha 2 do trecho: Define o identificador único como “materials-sidebar”.
+    Linha 3 do trecho: Aplica as classes de estilo como “course-sidebar course-sidebar-right”.
+    Linha 4 do trecho: Define o nome acessível como “Materiais do curso”.
+    Linha 5 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+    Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <aside
     id="materials-sidebar"
     class="course-sidebar course-sidebar-right"
@@ -464,21 +693,29 @@
     aria-hidden="true"
   >
 
-    <div class="course-sidebar-header">
+    <div class="course-sidebar-header"><!-- Insere um contêiner de layout com as classes “course-sidebar-header”. -->
 
-      <div>
+      <div><!-- Insere um contêiner de layout. -->
 
-        <span class="sidebar-eyebrow">
-          CURSO
-        </span>
+        <span class="sidebar-eyebrow"><!-- Insere um trecho de texto em linha com as classes “sidebar-eyebrow”. -->
+          CURSO<!-- Exibe o texto “CURSO” neste ponto da página. -->
+        </span><!-- Encerra um trecho de texto em linha. -->
 
-        <h2>
-          Materiais
-        </h2>
+        <h2><!-- Insere um título de seção. -->
+          Materiais<!-- Exibe o texto “Materiais” neste ponto da página. -->
+        </h2><!-- Encerra um título de seção. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um botão com o texto “<button”.
+        Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+        Linha 3 do trecho: Define o identificador único como “close-materials-sidebar”.
+        Linha 4 do trecho: Aplica as classes de estilo como “sidebar-close”.
+        Linha 5 do trecho: Define o nome acessível como “Fechar materiais do curso”.
+        Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <button
         type="button"
         id="close-materials-sidebar"
@@ -486,6 +723,18 @@
         aria-label="Fechar materiais do curso"
       >
 
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+          Linha 2 do trecho: Define a largura como “22”.
+          Linha 3 do trecho: Define a altura como “22”.
+          Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+          Linha 5 do trecho: Define o preenchimento SVG como “none”.
+          Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+          Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+          Linha 8 do trecho: Define o atributo stroke-linecap como “round”.
+          Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+          Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <svg
           width="22"
           height="22"
@@ -496,72 +745,84 @@
           stroke-linecap="round"
           aria-hidden="true"
         >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+          <line x1="18" y1="6" x2="6" y2="18"></line><!-- Insere uma linha vetorial. -->
+          <line x1="6" y1="6" x2="18" y2="18"></line><!-- Insere uma linha vetorial. -->
+        </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-      </button>
+      </button><!-- Encerra um botão. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
 
-    <div class="course-sidebar-content">
+    <div class="course-sidebar-content"><!-- Insere um contêiner de layout com as classes “course-sidebar-content”. -->
 
       <!-- =================================================
            DOWNLOADS
       ================================================== -->
 
-      <section class="sidebar-section">
+      <section class="sidebar-section"><!-- Insere uma seção de conteúdo com as classes “sidebar-section”. -->
 
-        <h3>
-          Arquivos para download
-        </h3>
+        <h3><!-- Insere um subtítulo. -->
+          Arquivos para download<!-- Exibe o texto “Arquivos para download” neste ponto da página. -->
+        </h3><!-- Encerra um subtítulo. -->
 
 
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere uma lista sem numeração com o texto “<ul”.
+          Linha 2 do trecho: Define o identificador único como “downloads-list”.
+          Linha 3 do trecho: Aplica as classes de estilo como “download-list”.
+          Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <ul
           id="downloads-list"
           class="download-list"
         >
 
-          <li class="empty-side">
-            Nenhum material complementar foi cadastrado ainda.
-          </li>
+          <li class="empty-side"><!-- Insere um item da lista com as classes “empty-side”. -->
+            Nenhum material complementar foi cadastrado ainda.<!-- Exibe o texto “Nenhum material complementar foi cadastrado ainda.” neste ponto da página. -->
+          </li><!-- Encerra um item da lista. -->
 
-        </ul>
+        </ul><!-- Encerra uma lista sem numeração. -->
 
-      </section>
+      </section><!-- Encerra uma seção de conteúdo. -->
 
 
       <!-- =================================================
            LINKS
       ================================================== -->
 
-      <section class="sidebar-section">
+      <section class="sidebar-section"><!-- Insere uma seção de conteúdo com as classes “sidebar-section”. -->
 
-        <h3>
-          Links úteis
-        </h3>
+        <h3><!-- Insere um subtítulo. -->
+          Links úteis<!-- Exibe o texto “Links úteis” neste ponto da página. -->
+        </h3><!-- Encerra um subtítulo. -->
 
-        <div class="empty-side">
-          Os links úteis do curso poderão ser adicionados
-          posteriormente ao banco de dados.
-        </div>
+        <div class="empty-side"><!-- Insere um contêiner de layout com as classes “empty-side”. -->
+          Os links úteis do curso poderão ser adicionados<!-- Exibe o texto “Os links úteis do curso poderão ser adicionados” neste ponto da página. -->
+          posteriormente ao banco de dados.<!-- Exibe o texto “posteriormente ao banco de dados.” neste ponto da página. -->
+        </div><!-- Encerra um contêiner de layout. -->
 
-      </section>
+      </section><!-- Encerra uma seção de conteúdo. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </aside>
+  </aside><!-- Encerra o conteúdo lateral. -->
 
 
   <!-- =====================================================
        CONTEÚDO PRINCIPAL
   ====================================================== -->
 
-  <main class="course-page">
+  <main class="course-page"><!-- Insere o conteúdo principal com as classes “course-page”. -->
 
-    <div class="container">
+    <div class="container"><!-- Insere um contêiner de layout com as classes “container”. -->
 
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+        Linha 2 do trecho: Define o identificador único como “course-layout”.
+        Linha 3 do trecho: Aplica as classes de estilo como “course-layout course-layout-focus”.
+        Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <div
         id="course-layout"
         class="course-layout course-layout-focus"
@@ -571,74 +832,121 @@
              AULA CENTRAL
         ================================================== -->
 
-        <section class="panel lesson-main">
+        <section class="panel lesson-main"><!-- Insere uma seção de conteúdo com as classes “panel lesson-main”. -->
 
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um link com o texto “<a”.
+            Linha 2 do trecho: Define o destino do link como “index.html”.
+            Linha 3 do trecho: Aplica as classes de estilo como “back-course”.
+            Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <a
             href="index.html"
             class="back-course"
           >
-            ← Voltar para o catálogo
-          </a>
+            ← Voltar para o catálogo<!-- Exibe o texto “← Voltar para o catálogo” neste ponto da página. -->
+          </a><!-- Encerra um link. -->
 
 
-          <header class="lesson-header">
+          <header class="lesson-header"><!-- Insere o cabeçalho com as classes “lesson-header”. -->
 
-            <h1 id="lesson-title">
-              Aula do curso
-            </h1>
+            <h1 id="lesson-title"><!-- Insere o título principal identificado por “lesson-title”. -->
+              Aula do curso<!-- Exibe o texto “Aula do curso” neste ponto da página. -->
+            </h1><!-- Encerra o título principal. -->
 
-            <p id="lesson-description">
-              Área preparada para receber os slides desta aula.
-            </p>
+            <p id="lesson-description"><!-- Insere um parágrafo identificado por “lesson-description”. -->
+              Área preparada para receber os slides desta aula.<!-- Exibe o texto “Área preparada para receber os slides desta aula.” neste ponto da página. -->
+            </p><!-- Encerra um parágrafo. -->
 
-          </header>
+          </header><!-- Encerra o cabeçalho. -->
 
 
           <!-- =================================================
                PROGRESSO DA AULA
           ================================================== -->
 
-          <div class="lesson-progress-row">
+          <div class="lesson-progress-row"><!-- Insere um contêiner de layout com as classes “lesson-progress-row”. -->
 
-            <div class="progress-track">
+            <div class="progress-track"><!-- Insere um contêiner de layout com as classes “progress-track”. -->
 
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+                Linha 2 do trecho: Define o identificador único como “progress-bar-fill”.
+                Linha 3 do trecho: Aplica as classes de estilo como “progress-fill”.
+                Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <div
                 id="progress-bar-fill"
                 class="progress-fill"
               ></div>
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
 
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+              Linha 2 do trecho: Define o identificador único como “progress-label”.
+              Linha 3 do trecho: Aplica as classes de estilo como “lesson-progress-label”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <div
               id="progress-label"
               class="lesson-progress-label"
             >
-              0% concluído
-            </div>
+              0% concluído<!-- Exibe o texto “0% concluído” neste ponto da página. -->
+            </div><!-- Encerra um contêiner de layout. -->
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
 
 
           <!-- =================================================
                SLIDE
           ================================================== -->
 
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+            Linha 2 do trecho: Define o identificador único como “current-lesson”.
+            Linha 3 do trecho: Aplica as classes de estilo como “current-lesson”.
+            Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <div
             id="current-lesson"
             class="current-lesson"
           >
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+              Linha 2 do trecho: Define o identificador único como “slide-stage”.
+              Linha 3 do trecho: Aplica as classes de estilo como “slide-stage”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <div
               id="slide-stage"
               class="slide-stage"
             >
 
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+                Linha 2 do trecho: Aplica as classes de estilo como “slide-placeholder”.
+                Linha 3 do trecho: Define o nome acessível como “Área reservada para os slides do curso”.
+                Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <div
                 class="slide-placeholder"
                 aria-label="Área reservada para os slides do curso"
               >
 
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                  Linha 2 do trecho: Aplica as classes de estilo como “slide-placeholder-svg”.
+                  Linha 3 do trecho: Define o sistema de coordenadas SVG como “0 0 1600 900”.
+                  Linha 4 do trecho: Define o papel acessível do elemento como “img”.
+                  Linha 5 do trecho: Exibe o texto “aria-labelledby="” neste ponto da página.
+                  Linha 6 do trecho: Exibe o texto “slidePlaceholderTitle” neste ponto da página.
+                  Linha 7 do trecho: Exibe o texto “slidePlaceholderDesc” neste ponto da página.
+                  Linha 8 do trecho: Exibe o texto “"” neste ponto da página.
+                  Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <svg
                   class="slide-placeholder-svg"
                   viewBox="0 0 1600 900"
@@ -649,17 +957,30 @@
                   "
                 >
 
+                  <!-- Explicações do texto abaixo, preservando seu conteúdo.
+                    Linha 1 do trecho: Insere o título da página ou a descrição do SVG identificado por “slidePlaceholderTitle”.
+                    Linha 2 do trecho: Exibe o texto “Área do slide do curso” neste ponto da página.
+                    Linha 3 do trecho: Encerra o título da página ou a descrição do SVG.
+                  -->
                   <title id="slidePlaceholderTitle">
                     Área do slide do curso
                   </title>
 
 
-                  <desc id="slidePlaceholderDesc">
-                    Espaço demonstrativo em proporção 16 por 9
-                    preparado para receber os slides do Supabase.
-                  </desc>
+                  <desc id="slidePlaceholderDesc"><!-- Insere o elemento desc identificado por “slidePlaceholderDesc”. -->
+                    Espaço demonstrativo em proporção 16 por 9<!-- Exibe o texto “Espaço demonstrativo em proporção 16 por 9” neste ponto da página. -->
+                    preparado para receber os slides do Supabase.<!-- Exibe o texto “preparado para receber os slides do Supabase.” neste ponto da página. -->
+                  </desc><!-- Encerra o elemento desc. -->
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define a largura como “1600”.
+                    Linha 3 do trecho: Define a altura como “900”.
+                    Linha 4 do trecho: Define o atributo rx como “34”.
+                    Linha 5 do trecho: Define o preenchimento SVG como “#07110b”.
+                    Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     width="1600"
                     height="900"
@@ -668,6 +989,18 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “2”.
+                    Linha 3 do trecho: Define o atributo y como “2”.
+                    Linha 4 do trecho: Define a largura como “1596”.
+                    Linha 5 do trecho: Define a altura como “896”.
+                    Linha 6 do trecho: Define o atributo rx como “32”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “none”.
+                    Linha 8 do trecho: Define a cor do traço SVG como “#193522”.
+                    Linha 9 do trecho: Define a espessura do traço SVG como “4”.
+                    Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="2"
                     y="2"
@@ -680,6 +1013,15 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                    Linha 2 do trecho: Define o atributo cx como “1350”.
+                    Linha 3 do trecho: Define o atributo cy como “170”.
+                    Linha 4 do trecho: Define o atributo r como “270”.
+                    Linha 5 do trecho: Define o preenchimento SVG como “#0e2918”.
+                    Linha 6 do trecho: Define o atributo opacity como “.72”.
+                    Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <circle
                     cx="1350"
                     cy="170"
@@ -689,6 +1031,15 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                    Linha 2 do trecho: Define o atributo cx como “1415”.
+                    Linha 3 do trecho: Define o atributo cy como “705”.
+                    Linha 4 do trecho: Define o atributo r como “230”.
+                    Linha 5 do trecho: Define o preenchimento SVG como “#102118”.
+                    Linha 6 do trecho: Define o atributo opacity como “.58”.
+                    Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <circle
                     cx="1415"
                     cy="705"
@@ -698,6 +1049,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “110”.
+                    Linha 4 do trecho: Define a largura como “170”.
+                    Linha 5 do trecho: Define a altura como “38”.
+                    Linha 6 do trecho: Define o atributo rx como “19”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#dfff00”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="110"
                     y="110"
@@ -708,6 +1069,17 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere o elemento text com o texto “<text”.
+                    Linha 2 do trecho: Define o atributo x como “195”.
+                    Linha 3 do trecho: Define o atributo y como “136”.
+                    Linha 4 do trecho: Define o atributo text-anchor como “middle”.
+                    Linha 5 do trecho: Define o atributo font-family como “Inter, Arial, sans-serif”.
+                    Linha 6 do trecho: Define o atributo font-size como “18”.
+                    Linha 7 do trecho: Define o atributo font-weight como “800”.
+                    Linha 8 do trecho: Define o preenchimento SVG como “#071008”.
+                    Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <text
                     x="195"
                     y="136"
@@ -717,10 +1089,20 @@
                     font-weight="800"
                     fill="#071008"
                   >
-                    SLIDE 01
-                  </text>
+                    SLIDE 01<!-- Exibe o texto “SLIDE 01” neste ponto da página. -->
+                  </text><!-- Encerra o elemento text. -->
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere o elemento text com o texto “<text”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “255”.
+                    Linha 4 do trecho: Define o atributo font-family como “Inter, Arial, sans-serif”.
+                    Linha 5 do trecho: Define o atributo font-size como “72”.
+                    Linha 6 do trecho: Define o atributo font-weight como “800”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#ffffff”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <text
                     x="110"
                     y="255"
@@ -729,10 +1111,20 @@
                     font-weight="800"
                     fill="#ffffff"
                   >
-                    Área do conteúdo
-                  </text>
+                    Área do conteúdo<!-- Exibe o texto “Área do conteúdo” neste ponto da página. -->
+                  </text><!-- Encerra o elemento text. -->
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere o elemento text com o texto “<text”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “325”.
+                    Linha 4 do trecho: Define o atributo font-family como “Inter, Arial, sans-serif”.
+                    Linha 5 do trecho: Define o atributo font-size como “30”.
+                    Linha 6 do trecho: Define o atributo font-weight como “500”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#aeb9b1”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <text
                     x="110"
                     y="325"
@@ -741,10 +1133,20 @@
                     font-weight="500"
                     fill="#aeb9b1"
                   >
-                    Os slides do Supabase serão exibidos exatamente neste espaço.
-                  </text>
+                    Os slides do Supabase serão exibidos exatamente neste espaço.<!-- Exibe o texto “Os slides do Supabase serão exibidos exatamente neste espaço.” neste ponto da página. -->
+                  </text><!-- Encerra o elemento text. -->
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “410”.
+                    Linha 4 do trecho: Define a largura como “650”.
+                    Linha 5 do trecho: Define a altura como “32”.
+                    Linha 6 do trecho: Define o atributo rx como “16”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#17301f”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="110"
                     y="410"
@@ -755,6 +1157,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “475”.
+                    Linha 4 do trecho: Define a largura como “790”.
+                    Linha 5 do trecho: Define a altura como “32”.
+                    Linha 6 do trecho: Define o atributo rx como “16”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#17301f”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="110"
                     y="475"
@@ -765,6 +1177,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “540”.
+                    Linha 4 do trecho: Define a largura como “565”.
+                    Linha 5 do trecho: Define a altura como “32”.
+                    Linha 6 do trecho: Define o atributo rx como “16”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#17301f”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="110"
                     y="540"
@@ -775,6 +1197,18 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                    Linha 2 do trecho: Define o atributo x como “1050”.
+                    Linha 3 do trecho: Define o atributo y como “355”.
+                    Linha 4 do trecho: Define a largura como “360”.
+                    Linha 5 do trecho: Define a altura como “300”.
+                    Linha 6 do trecho: Define o atributo rx como “26”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#0f2517”.
+                    Linha 8 do trecho: Define a cor do traço SVG como “#245132”.
+                    Linha 9 do trecho: Define a espessura do traço SVG como “3”.
+                    Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <rect
                     x="1050"
                     y="355"
@@ -787,6 +1221,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                    Linha 2 do trecho: Define os comandos do traçado SVG como “M1165 575V435h175”.
+                    Linha 3 do trecho: Define o preenchimento SVG como “none”.
+                    Linha 4 do trecho: Define a cor do traço SVG como “#dfff00”.
+                    Linha 5 do trecho: Define a espessura do traço SVG como “18”.
+                    Linha 6 do trecho: Define o atributo stroke-linecap como “round”.
+                    Linha 7 do trecho: Define o atributo stroke-linejoin como “round”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <path
                     d="M1165 575V435h175"
                     fill="none"
@@ -797,6 +1241,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                    Linha 2 do trecho: Define os comandos do traçado SVG como “M1188 540l55-63 48 38 72-92”.
+                    Linha 3 do trecho: Define o preenchimento SVG como “none”.
+                    Linha 4 do trecho: Define a cor do traço SVG como “#ffffff”.
+                    Linha 5 do trecho: Define a espessura do traço SVG como “12”.
+                    Linha 6 do trecho: Define o atributo stroke-linecap como “round”.
+                    Linha 7 do trecho: Define o atributo stroke-linejoin como “round”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <path
                     d="M1188 540l55-63 48 38 72-92"
                     fill="none"
@@ -807,6 +1261,16 @@
                   />
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere o elemento text com o texto “<text”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “790”.
+                    Linha 4 do trecho: Define o atributo font-family como “Inter, Arial, sans-serif”.
+                    Linha 5 do trecho: Define o atributo font-size como “24”.
+                    Linha 6 do trecho: Define o atributo font-weight como “700”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#dfff00”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <text
                     x="110"
                     y="790"
@@ -815,10 +1279,20 @@
                     font-weight="700"
                     fill="#dfff00"
                   >
-                    Proporção 16:9 • 1600 × 900
-                  </text>
+                    Proporção 16:9 • 1600 × 900<!-- Exibe o texto “Proporção 16:9 • 1600 × 900” neste ponto da página. -->
+                  </text><!-- Encerra o elemento text. -->
 
 
+                  <!-- Explicações da tag e dos atributos abaixo.
+                    Linha 1 do trecho: Insere o elemento text com o texto “<text”.
+                    Linha 2 do trecho: Define o atributo x como “110”.
+                    Linha 3 do trecho: Define o atributo y como “830”.
+                    Linha 4 do trecho: Define o atributo font-family como “Inter, Arial, sans-serif”.
+                    Linha 5 do trecho: Define o atributo font-size como “20”.
+                    Linha 6 do trecho: Define o atributo font-weight como “500”.
+                    Linha 7 do trecho: Define o preenchimento SVG como “#7f8f84”.
+                    Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+                  -->
                   <text
                     x="110"
                     y="830"
@@ -827,84 +1301,106 @@
                     font-weight="500"
                     fill="#7f8f84"
                   >
-                    Placeholder visual — será substituído pelo arquivo real do Storage
-                  </text>
+                    Placeholder visual — será substituído pelo arquivo real do Storage<!-- Exibe o texto “Placeholder visual — será substituído pelo arquivo real do Storage” neste ponto da página. -->
+                  </text><!-- Encerra o elemento text. -->
 
-                </svg>
+                </svg><!-- Encerra um ícone ou desenho vetorial. -->
 
-              </div>
+              </div><!-- Encerra um contêiner de layout. -->
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
 
 
           <!-- =================================================
                NAVEGAÇÃO
           ================================================== -->
 
-          <div class="lesson-navigation">
+          <div class="lesson-navigation"><!-- Insere um contêiner de layout com as classes “lesson-navigation”. -->
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um botão com o texto “<button”.
+              Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+              Linha 3 do trecho: Define o identificador único como “prev-lesson”.
+              Linha 4 do trecho: Aplica as classes de estilo como “nav-btn”.
+              Linha 5 do trecho: Desativa o controle.
+              Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <button
               type="button"
               id="prev-lesson"
               class="nav-btn"
               disabled
             >
-              ← Anterior
-            </button>
+              ← Anterior<!-- Exibe o texto “← Anterior” neste ponto da página. -->
+            </button><!-- Encerra um botão. -->
 
 
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um botão com o texto “<button”.
+              Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+              Linha 3 do trecho: Define o identificador único como “next-lesson”.
+              Linha 4 do trecho: Aplica as classes de estilo como “nav-btn primary”.
+              Linha 5 do trecho: Desativa o controle.
+              Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <button
               type="button"
               id="next-lesson"
               class="nav-btn primary"
               disabled
             >
-              Próxima →
-            </button>
+              Próxima →<!-- Exibe o texto “Próxima →” neste ponto da página. -->
+            </button><!-- Encerra um botão. -->
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
 
-        </section>
+        </section><!-- Encerra uma seção de conteúdo. -->
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </main>
+  </main><!-- Encerra o conteúdo principal. -->
 
 
   <!-- =====================================================
        FOOTER
   ====================================================== -->
 
-  <footer class="site-footer">
+  <footer class="site-footer"><!-- Insere o rodapé com as classes “site-footer”. -->
 
-    <div class="container footer-inner">
+    <div class="container footer-inner"><!-- Insere um contêiner de layout com as classes “container footer-inner”. -->
 
-      <span>
-        © Praxis. Todos os direitos reservados.
-      </span>
+      <span><!-- Insere um trecho de texto em linha. -->
+        © Praxis. Todos os direitos reservados.<!-- Exibe o texto “© Praxis. Todos os direitos reservados.” neste ponto da página. -->
+      </span><!-- Encerra um trecho de texto em linha. -->
 
-      <a href="index.html">
-        Voltar ao catálogo
-      </a>
+      <a href="index.html"><!-- Insere um link. -->
+        Voltar ao catálogo<!-- Exibe o texto “Voltar ao catálogo” neste ponto da página. -->
+      </a><!-- Encerra um link. -->
 
-    </div>
+    </div><!-- Encerra um contêiner de layout. -->
 
-  </footer>
+  </footer><!-- Encerra o rodapé. -->
 
 
   <!-- =====================================================
        JAVASCRIPT
   ====================================================== -->
 
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Inicia o bloco JavaScript embutido nesta página.
+    Linha 2 do trecho: Define o tipo do recurso ou controle como “module”.
+    Linha 3 do trecho: Define o arquivo ou endereço carregado como “scripts/curso.js”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <script
     type="module"
     src="scripts/curso.js"
   ></script>
 
-</body>
+</body><!-- Encerra o conteúdo visível da página. -->
 
-</html>
+</html><!-- Encerra o documento HTML. -->

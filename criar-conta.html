@@ -1,68 +1,130 @@
-<!doctype html>
-<html lang="pt-BR" data-theme="dark">
-<head>
-  <meta name="theme-color" content="#06070c">
-  <script src="scripts/theme.js"></script>
-  <meta charset="utf-8">
+<!doctype html><!-- Declara o documento como HTML5. -->
+<html lang="pt-BR" data-theme="dark"><!-- Insere o documento HTML. -->
+<head><!-- Insere as configurações e os recursos da página. -->
+  <meta name="theme-color" content="#06070c"><!-- Configura os metadados da página: Define o nome da configuração ou do campo como “theme-color”. Define o valor da configuração como “#06070c”. -->
+  <script src="scripts/theme.js"></script><!-- Carrega o script scripts/theme.js. -->
+  <meta charset="utf-8"><!-- Configura os metadados da página: Define a codificação de caracteres como “utf-8”. -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “viewport”.
+    Linha 3 do trecho: Define o valor da configuração como “width=device-width, initial-scale=1”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+  <!-- Explicações do texto abaixo, preservando seu conteúdo.
+    Linha 1 do trecho: Insere o título da página ou a descrição do SVG.
+    Linha 2 do trecho: Exibe o texto “Criar conta — Praxis” neste ponto da página.
+    Linha 3 do trecho: Encerra o título da página ou a descrição do SVG.
+  -->
   <title>
     Criar conta — Praxis
   </title>
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “description”.
+    Linha 3 do trecho: Define o valor da configuração como “Crie sua conta Praxis e comece a aprender.”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="description"
     content="Crie sua conta Praxis e comece a aprender."
   >
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="icon" href="assets/logo.png" type="image/png"><!-- Define o favicon da Praxis em assets/logo.png. -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.googleapis.com”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
   >
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.gstatic.com”.
+    Linha 4 do trecho: Configura o carregamento entre origens.
+    Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define o destino do link como “https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap”.
+    Linha 3 do trecho: Define a relação com o recurso como “stylesheet”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
 
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/login.css">
-<link rel="stylesheet" href="styles/theme.css">
-</head>
-<body class="auth-page">
-<header class="auth-topbar"><a class="auth-back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg>Voltar para os cursos</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro">
-  <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg>
-  <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg>
-  <span class="theme-toggle__label" data-theme-label>Modo claro</span>
-</button></header>
+<link rel="stylesheet" href="styles/tokens.css"><!-- Carrega a folha de estilos styles/tokens.css. -->
+<link rel="stylesheet" href="styles/login.css"><!-- Carrega a folha de estilos styles/login.css. -->
+<link rel="stylesheet" href="styles/theme.css"><!-- Carrega a folha de estilos styles/theme.css. -->
+</head><!-- Encerra as configurações e os recursos da página. -->
+<body class="auth-page"><!-- Insere o conteúdo visível da página com as classes “auth-page”. -->
+<header class="auth-topbar"><a class="auth-back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg>Voltar para os cursos</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro"><!-- Insere o cabeçalho com as classes “auth-topbar” com o texto “Voltar para os cursos”. -->
+  <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg><!-- Insere um ícone ou desenho vetorial com as classes “theme-icon-light”. -->
+  <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><!-- Insere um ícone ou desenho vetorial com as classes “theme-icon-dark”. -->
+  <span class="theme-toggle__label" data-theme-label>Modo claro</span><!-- Insere um trecho de texto em linha com as classes “theme-toggle__label” com o texto “Modo claro”. -->
+</button></header><!-- Encerra um botão. -->
 
-  <main class="login-wrap">
-    <div class="login-card">
-      <div class="login-logo">
+  <main class="login-wrap"><!-- Insere o conteúdo principal com as classes “login-wrap”. -->
+    <div class="login-card"><!-- Insere um contêiner de layout com as classes “login-card”. -->
+      <div class="login-logo"><!-- Insere um contêiner de layout com as classes “login-logo”. -->
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere uma imagem com o texto “<img”.
+          Linha 2 do trecho: Define o arquivo ou endereço carregado como “assets/logo.png”.
+          Linha 3 do trecho: Descreve a imagem para leitores de tela como “Praxis”.
+          Linha 4 do trecho: Aplica as classes de estilo como “login-logo-img”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <img
           src="assets/logo.png"
           alt="Praxis"
           class="login-logo-img"
         >
-      </div>
-<h1 class="auth-title">Crie sua conta</h1>
-<p class="auth-subtitle">Comece sua jornada na Praxis.</p>
+      </div><!-- Encerra um contêiner de layout. -->
+<h1 class="auth-title">Crie sua conta</h1><!-- Insere o título principal com as classes “auth-title” com o texto “Crie sua conta”. -->
+<p class="auth-subtitle">Comece sua jornada na Praxis.</p><!-- Insere um parágrafo com as classes “auth-subtitle” com o texto “Comece sua jornada na Praxis.”. -->
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um formulário com o texto “<form”.
+        Linha 2 do trecho: Aplica as classes de estilo como “login-form”.
+        Linha 3 do trecho: Define o identificador único como “register-form”.
+        Linha 4 do trecho: Desativa a validação nativa ao enviar.
+        Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <form
         class="login-form"
         id="register-form"
         novalidate
       >
-        <div class="field">
-          <label for="username">
-            Nome de usuário
-          </label>
-          <div class="field-input">
+        <div class="field"><!-- Insere um contêiner de layout com as classes “field”. -->
+          <label for="username"><!-- Insere um rótulo de campo. -->
+            Nome de usuário<!-- Exibe o texto “Nome de usuário” neste ponto da página. -->
+          </label><!-- Encerra um rótulo de campo. -->
+          <div class="field-input"><!-- Insere um contêiner de layout com as classes “field-input”. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+              Linha 2 do trecho: Aplica as classes de estilo como “icon-left”.
+              Linha 3 do trecho: Define a largura como “18”.
+              Linha 4 do trecho: Define a altura como “18”.
+              Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+              Linha 6 do trecho: Define o preenchimento SVG como “none”.
+              Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+              Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+              Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+              Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -73,15 +135,40 @@
               stroke-width="2"
               aria-hidden="true"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               />
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                Linha 2 do trecho: Define o atributo cx como “12”.
+                Linha 3 do trecho: Define o atributo cy como “7”.
+                Linha 4 do trecho: Define o atributo r como “4”.
+                Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <circle
                 cx="12"
                 cy="7"
                 r="4"
               />
-            </svg>
+            </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um campo de entrada com o texto “<input”.
+              Linha 2 do trecho: Define o identificador único como “username”.
+              Linha 3 do trecho: Define o nome da configuração ou do campo como “username”.
+              Linha 4 do trecho: Define o tipo do recurso ou controle como “text”.
+              Linha 5 do trecho: Define a sugestão de preenchimento como “username”.
+              Linha 6 do trecho: Define a dica exibida no campo vazio como “Escolha seu nome de usuário”.
+              Linha 7 do trecho: Define o mínimo de caracteres como “3”.
+              Linha 8 do trecho: Define o máximo de caracteres como “30”.
+              Linha 9 do trecho: Define o atributo pattern como “[A-Za-z0-9._]+”.
+              Linha 10 do trecho: Exige o preenchimento do campo.
+              Linha 11 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <input
               id="username"
               name="username"
@@ -93,13 +180,25 @@
               pattern="[A-Za-z0-9._]+"
               required
             >
-          </div>
-        </div>
-        <div class="field">
-          <label for="email">
-            E-mail
-          </label>
-          <div class="field-input">
+          </div><!-- Encerra um contêiner de layout. -->
+        </div><!-- Encerra um contêiner de layout. -->
+        <div class="field"><!-- Insere um contêiner de layout com as classes “field”. -->
+          <label for="email"><!-- Insere um rótulo de campo. -->
+            E-mail<!-- Exibe o texto “E-mail” neste ponto da página. -->
+          </label><!-- Encerra um rótulo de campo. -->
+          <div class="field-input"><!-- Insere um contêiner de layout com as classes “field-input”. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+              Linha 2 do trecho: Aplica as classes de estilo como “icon-left”.
+              Linha 3 do trecho: Define a largura como “18”.
+              Linha 4 do trecho: Define a altura como “18”.
+              Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+              Linha 6 do trecho: Define o preenchimento SVG como “none”.
+              Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+              Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+              Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+              Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -110,13 +209,33 @@
               stroke-width="2"
               aria-hidden="true"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “M4 4h16v16H4z”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="M4 4h16v16H4z"
               />
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “m4 6 8 6 8-6”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="m4 6 8 6 8-6"
               />
-            </svg>
+            </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um campo de entrada com o texto “<input”.
+              Linha 2 do trecho: Define o identificador único como “email”.
+              Linha 3 do trecho: Define o nome da configuração ou do campo como “email”.
+              Linha 4 do trecho: Define o tipo do recurso ou controle como “email”.
+              Linha 5 do trecho: Define a sugestão de preenchimento como “email”.
+              Linha 6 do trecho: Define a dica exibida no campo vazio como “seu@email.com”.
+              Linha 7 do trecho: Exige o preenchimento do campo.
+              Linha 8 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <input
               id="email"
               name="email"
@@ -125,13 +244,25 @@
               placeholder="seu@email.com"
               required
             >
-          </div>
-        </div>
-        <div class="field">
-          <label for="password">
-            Senha
-          </label>
-          <div class="field-input">
+          </div><!-- Encerra um contêiner de layout. -->
+        </div><!-- Encerra um contêiner de layout. -->
+        <div class="field"><!-- Insere um contêiner de layout com as classes “field”. -->
+          <label for="password"><!-- Insere um rótulo de campo. -->
+            Senha<!-- Exibe o texto “Senha” neste ponto da página. -->
+          </label><!-- Encerra um rótulo de campo. -->
+          <div class="field-input"><!-- Insere um contêiner de layout com as classes “field-input”. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+              Linha 2 do trecho: Aplica as classes de estilo como “icon-left”.
+              Linha 3 do trecho: Define a largura como “18”.
+              Linha 4 do trecho: Define a altura como “18”.
+              Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+              Linha 6 do trecho: Define o preenchimento SVG como “none”.
+              Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+              Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+              Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+              Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -142,6 +273,15 @@
               stroke-width="2"
               aria-hidden="true"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                Linha 2 do trecho: Define o atributo x como “3”.
+                Linha 3 do trecho: Define o atributo y como “11”.
+                Linha 4 do trecho: Define a largura como “18”.
+                Linha 5 do trecho: Define a altura como “11”.
+                Linha 6 do trecho: Define o atributo rx como “2”.
+                Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <rect
                 x="3"
                 y="11"
@@ -149,10 +289,26 @@
                 height="11"
                 rx="2"
               />
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “M7 11V7a5 5 0 0 1 10 0v4”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="M7 11V7a5 5 0 0 1 10 0v4"
               />
-            </svg>
+            </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um campo de entrada com o texto “<input”.
+              Linha 2 do trecho: Define o identificador único como “password”.
+              Linha 3 do trecho: Define o nome da configuração ou do campo como “password”.
+              Linha 4 do trecho: Define o tipo do recurso ou controle como “password”.
+              Linha 5 do trecho: Define a sugestão de preenchimento como “new-password”.
+              Linha 6 do trecho: Define a dica exibida no campo vazio como “Crie uma senha”.
+              Linha 7 do trecho: Define o mínimo de caracteres como “6”.
+              Linha 8 do trecho: Exige o preenchimento do campo.
+              Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <input
               id="password"
               name="password"
@@ -162,6 +318,15 @@
               minlength="6"
               required
             >
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um botão com o texto “<button”.
+              Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+              Linha 3 do trecho: Define o identificador único como “toggle-password”.
+              Linha 4 do trecho: Aplica as classes de estilo como “btn-toggle-pass”.
+              Linha 5 do trecho: Define o nome acessível como “Alternar exibição da senha”.
+              Linha 6 do trecho: Define a informação complementar como “Ver ou ocultar senha”.
+              Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <button
               type="button"
               id="toggle-password"
@@ -169,6 +334,18 @@
               aria-label="Alternar exibição da senha"
               title="Ver ou ocultar senha"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define o identificador único como “eye-off”.
+                Linha 3 do trecho: Define a largura como “18”.
+                Linha 4 do trecho: Define a altura como “18”.
+                Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 6 do trecho: Define o preenchimento SVG como “none”.
+                Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 id="eye-off"
                 width="18"
@@ -179,16 +356,42 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 …”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
                 ></path>
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere uma linha vetorial com o texto “<line”.
+                  Linha 2 do trecho: Define o atributo x1 como “1”.
+                  Linha 3 do trecho: Define o atributo y1 como “1”.
+                  Linha 4 do trecho: Define o atributo x2 como “23”.
+                  Linha 5 do trecho: Define o atributo y2 como “23”.
+                  Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <line
                   x1="1"
                   y1="1"
                   x2="23"
                   y2="23"
                 ></line>
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define o identificador único como “eye-on”.
+                Linha 3 do trecho: Aplica as classes de estilo como “hidden”.
+                Linha 4 do trecho: Define a largura como “18”.
+                Linha 5 do trecho: Define a altura como “18”.
+                Linha 6 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 7 do trecho: Define o preenchimento SVG como “none”.
+                Linha 8 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 9 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 10 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 11 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 id="eye-on"
                 class="hidden"
@@ -200,23 +403,47 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
                 ></path>
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                  Linha 2 do trecho: Define o atributo cx como “12”.
+                  Linha 3 do trecho: Define o atributo cy como “12”.
+                  Linha 4 do trecho: Define o atributo r como “3”.
+                  Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <circle
                   cx="12"
                   cy="12"
                   r="3"
                 ></circle>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="field">
-          <label for="confirm-password">
-            Confirmar senha
-          </label>
-          <div class="field-input">
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            </button><!-- Encerra um botão. -->
+          </div><!-- Encerra um contêiner de layout. -->
+        </div><!-- Encerra um contêiner de layout. -->
+        <div class="field"><!-- Insere um contêiner de layout com as classes “field”. -->
+          <label for="confirm-password"><!-- Insere um rótulo de campo. -->
+            Confirmar senha<!-- Exibe o texto “Confirmar senha” neste ponto da página. -->
+          </label><!-- Encerra um rótulo de campo. -->
+          <div class="field-input"><!-- Insere um contêiner de layout com as classes “field-input”. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+              Linha 2 do trecho: Aplica as classes de estilo como “icon-left”.
+              Linha 3 do trecho: Define a largura como “18”.
+              Linha 4 do trecho: Define a altura como “18”.
+              Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+              Linha 6 do trecho: Define o preenchimento SVG como “none”.
+              Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+              Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+              Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+              Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -227,6 +454,15 @@
               stroke-width="2"
               aria-hidden="true"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um retângulo vetorial com o texto “<rect”.
+                Linha 2 do trecho: Define o atributo x como “3”.
+                Linha 3 do trecho: Define o atributo y como “11”.
+                Linha 4 do trecho: Define a largura como “18”.
+                Linha 5 do trecho: Define a altura como “11”.
+                Linha 6 do trecho: Define o atributo rx como “2”.
+                Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <rect
                 x="3"
                 y="11"
@@ -234,10 +470,26 @@
                 height="11"
                 rx="2"
               />
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “M7 11V7a5 5 0 0 1 10 0v4”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="M7 11V7a5 5 0 0 1 10 0v4"
               />
-            </svg>
+            </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um campo de entrada com o texto “<input”.
+              Linha 2 do trecho: Define o identificador único como “confirm-password”.
+              Linha 3 do trecho: Define o nome da configuração ou do campo como “confirm-password”.
+              Linha 4 do trecho: Define o tipo do recurso ou controle como “password”.
+              Linha 5 do trecho: Define a sugestão de preenchimento como “new-password”.
+              Linha 6 do trecho: Define a dica exibida no campo vazio como “Digite a senha novamente”.
+              Linha 7 do trecho: Define o mínimo de caracteres como “6”.
+              Linha 8 do trecho: Exige o preenchimento do campo.
+              Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <input
               id="confirm-password"
               name="confirm-password"
@@ -247,6 +499,15 @@
               minlength="6"
               required
             >
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um botão com o texto “<button”.
+              Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+              Linha 3 do trecho: Define o identificador único como “toggle-confirm-password”.
+              Linha 4 do trecho: Aplica as classes de estilo como “btn-toggle-pass”.
+              Linha 5 do trecho: Define o nome acessível como “Alternar exibição da confirmação de senha”.
+              Linha 6 do trecho: Define a informação complementar como “Ver ou ocultar senha”.
+              Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <button
               type="button"
               id="toggle-confirm-password"
@@ -254,6 +515,18 @@
               aria-label="Alternar exibição da confirmação de senha"
               title="Ver ou ocultar senha"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define o identificador único como “confirm-eye-off”.
+                Linha 3 do trecho: Define a largura como “18”.
+                Linha 4 do trecho: Define a altura como “18”.
+                Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 6 do trecho: Define o preenchimento SVG como “none”.
+                Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 id="confirm-eye-off"
                 width="18"
@@ -264,16 +537,42 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 …”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
                 ></path>
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere uma linha vetorial com o texto “<line”.
+                  Linha 2 do trecho: Define o atributo x1 como “1”.
+                  Linha 3 do trecho: Define o atributo y1 como “1”.
+                  Linha 4 do trecho: Define o atributo x2 como “23”.
+                  Linha 5 do trecho: Define o atributo y2 como “23”.
+                  Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <line
                   x1="1"
                   y1="1"
                   x2="23"
                   y2="23"
                 ></line>
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define o identificador único como “confirm-eye-on”.
+                Linha 3 do trecho: Aplica as classes de estilo como “hidden”.
+                Linha 4 do trecho: Define a largura como “18”.
+                Linha 5 do trecho: Define a altura como “18”.
+                Linha 6 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 7 do trecho: Define o preenchimento SVG como “none”.
+                Linha 8 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 9 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 10 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 11 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 id="confirm-eye-on"
                 class="hidden"
@@ -285,37 +584,78 @@
                 stroke-width="2"
                 aria-hidden="true"
               >
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M1 12s4-8 11-8 11-8 11 8-4 8-11 8-11-8-11-8z"
                 ></path>
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                  Linha 2 do trecho: Define o atributo cx como “12”.
+                  Linha 3 do trecho: Define o atributo cy como “12”.
+                  Linha 4 do trecho: Define o atributo r como “3”.
+                  Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <circle
                   cx="12"
                   cy="12"
                   r="3"
                 ></circle>
-              </svg>
-            </button>
-          </div>
-        </div>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            </button><!-- Encerra um botão. -->
+          </div><!-- Encerra um contêiner de layout. -->
+        </div><!-- Encerra um contêiner de layout. -->
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+          Linha 2 do trecho: Define o identificador único como “register-msg”.
+          Linha 3 do trecho: Aplica as classes de estilo como “login-msg”.
+          Linha 4 do trecho: Define o anúncio de mudanças aos leitores de tela como “polite”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <div
           id="register-msg"
           class="login-msg"
           aria-live="polite"
         ></div>
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um botão com o texto “<button”.
+          Linha 2 do trecho: Define o tipo do recurso ou controle como “submit”.
+          Linha 3 do trecho: Aplica as classes de estilo como “btn-login”.
+          Linha 4 do trecho: Define o identificador único como “register-submit”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <button
           type="submit"
           class="btn-login"
           id="register-submit"
         >
-          CRIAR CONTA
-        </button>
-        <div class="actions-group">
+          CRIAR CONTA<!-- Exibe o texto “CRIAR CONTA” neste ponto da página. -->
+        </button><!-- Encerra um botão. -->
+        <div class="actions-group"><!-- Insere um contêiner de layout com as classes “actions-group”. -->
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um link com o texto “<a”.
+            Linha 2 do trecho: Define o destino do link como “login.html”.
+            Linha 3 do trecho: Aplica as classes de estilo como “btn-register”.
+            Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <a
             href="login.html"
             class="btn-register"
           >
-            Já tenho uma conta
-          </a>
+            Já tenho uma conta<!-- Exibe o texto “Já tenho uma conta” neste ponto da página. -->
+          </a><!-- Encerra um link. -->
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um botão com o texto “<button”.
+            Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+            Linha 3 do trecho: Aplica as classes de estilo como “google-btn”.
+            Linha 4 do trecho: Define o identificador único como “google-register-btn”.
+            Linha 5 do trecho: Define o nome acessível como “Continuar com Google”.
+            Linha 6 do trecho: Define a informação complementar como “Continuar com Google”.
+            Linha 7 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <button
             type="button"
             class="google-btn"
@@ -323,104 +663,111 @@
             aria-label="Continuar com Google"
             title="Continuar com Google"
           >
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere uma imagem com o texto “<img”.
+              Linha 2 do trecho: Define o arquivo ou endereço carregado como “https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg”.
+              Linha 3 do trecho: Descreve a imagem para leitores de tela como “Google”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <img
               src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
               alt="Google"
             >
-            <span>
-              Continuar com Google
-            </span>
-          </button>
-        </div>
-      </form>
-    </div>
-</main>
-<footer class="auth-footer">Aprenda. Pratique. Resolva.</footer>
+            <span><!-- Insere um trecho de texto em linha. -->
+              Continuar com Google<!-- Exibe o texto “Continuar com Google” neste ponto da página. -->
+            </span><!-- Encerra um trecho de texto em linha. -->
+          </button><!-- Encerra um botão. -->
+        </div><!-- Encerra um contêiner de layout. -->
+      </form><!-- Encerra um formulário. -->
+    </div><!-- Encerra um contêiner de layout. -->
+</main><!-- Encerra o conteúdo principal. -->
+<footer class="auth-footer">Aprenda. Pratique. Resolva.</footer><!-- Insere o rodapé com as classes “auth-footer” com o texto “Aprenda. Pratique. Resolva.”. -->
+<!-- Inicia o bloco JavaScript embutido nesta página. -->
 <script>
     // Adiciona um evento que aguarda o HTML terminar de ser carregado.
-    document.addEventListener(
+    document.addEventListener( // Executa a chamada que produz o registro do evento o texto “DOMContentLoaded” em document.
       // Nome do evento disparado quando a estrutura HTML estiver pronta.
-      "DOMContentLoaded",
+      "DOMContentLoaded", // Fornece o texto “DOMContentLoaded” à expressão atual.
       // Função executada depois que o DOM estiver carregado.
-      () => {
+      () => { // Define a função que recebe nenhum argumento.
         /* ===============================================
            SENHA PRINCIPAL
            controla o campo onde a senha é criada
         ================================================ */
         // Procura o botão responsável por mostrar ou ocultar a senha principal.
-        const togglePassword =
+        const togglePassword = // Define togglePassword como o elemento cujo ID é o texto “toggle-password”.
           // Busca no documento um elemento através do seu ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “toggle-password”.
             // ID do botão de mostrar/ocultar senha.
-            "toggle-password"
-          );
+            "toggle-password" // Fornece o texto “toggle-password” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o campo da senha principal.
-        const password =
+        const password = // Define password como o elemento cujo ID é o texto “password”.
           // Busca um elemento através do seu ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “password”.
             // ID do campo de senha.
-            "password"
-          );
+            "password" // Fornece o texto “password” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o ícone de olho aberto da senha principal.
-        const eyeOn =
+        const eyeOn = // Define eyeOn como o elemento cujo ID é o texto “eye-on”.
           // Busca o elemento através do ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “eye-on”.
             // ID do ícone de olho aberto.
-            "eye-on"
-          );
+            "eye-on" // Fornece o texto “eye-on” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o ícone de olho riscado da senha principal.
-        const eyeOff =
+        const eyeOff = // Define eyeOff como o elemento cujo ID é o texto “eye-off”.
           // Busca o elemento através do ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “eye-off”.
             // ID do ícone de olho riscado.
-            "eye-off"
-          );
+            "eye-off" // Fornece o texto “eye-off” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Verifica se o botão e o campo realmente existem antes de adicionar o evento.
-        if (
+        if ( // Verifica togglePassword e password para decidir se executa este bloco.
           // Confirma que togglePassword foi encontrado.
-          togglePassword &&
+          togglePassword && // Calcula togglePassword e password.
           // Confirma que password foi encontrado.
-          password
-        ) {
+          password // Utiliza o valor de password.
+        ) { // Verifica togglePassword e password para decidir se executa este bloco.
           // Adiciona um evento de clique ao botão da senha principal.
-          togglePassword.addEventListener(
+          togglePassword.addEventListener( // Executa a chamada que produz o registro do evento o texto “click” em togglePassword.
             // Define que o evento observado será um clique.
-            "click",
+            "click", // Fornece o texto “click” à expressão atual.
             // Função executada sempre que o botão for clicado.
-            () => {
+            () => { // Define a função que recebe nenhum argumento.
               // Cria uma variável que verifica se a senha está atualmente escondida.
-              const isPassword =
+              const isPassword = // Define isPassword como password.type igual, inclusive no tipo, a o texto “password”.
                 // Compara o tipo atual do campo.
-                password.type ===
+                password.type === // Acessa password.type.
                 // "password" significa que os caracteres estão escondidos.
-                "password";
+                "password"; // Fornece o texto “password” à expressão atual.
               // Altera o tipo do campo.
-              password.type =
+              password.type = // Atualiza password.type com o texto “text” se isPassword; caso contrário, o texto “password”.
                 // Verifica o valor verdadeiro ou falso armazenado em isPassword.
-                isPassword
+                isPassword // Utiliza o valor de isPassword.
                   // Se estava escondida, muda para text e mostra a senha.
-                  ? "text"
+                  ? "text" // Fornece o texto “text” à expressão atual.
                   // Caso contrário, volta para password e esconde a senha.
-                  : "password";
+                  : "password"; // Fornece o texto “password” à expressão atual.
               // Tenta acessar o ícone de olho aberto e alternar sua classe hidden.
-              eyeOn?.classList.toggle(
+              eyeOn?.classList.toggle( // Executa a chamada que produz a alternância da classe ou do estado o texto “hidden” em eyeOn.classList.
                 // Nome da classe CSS que esconde o elemento.
-                "hidden",
+                "hidden", // Fornece o texto “hidden” à expressão atual.
                 // Define se a classe hidden deve permanecer ou ser removida.
-                !isPassword
-              );
+                !isPassword // Compõe a negação de isPassword na operação atual.
+              ); // Encerra a chamada de eyeOn.classList.toggle.
               // Tenta acessar o ícone de olho riscado e alternar sua classe hidden.
-              eyeOff?.classList.toggle(
+              eyeOff?.classList.toggle( // Executa a chamada que produz a alternância da classe ou do estado o texto “hidden” em eyeOff.classList.
                 // Nome da classe que esconde o elemento.
-                "hidden",
+                "hidden", // Fornece o texto “hidden” à expressão atual.
                 // Esconde o olho riscado quando a senha estiver sendo exibida.
-                isPassword
-              );
-            }
+                isPassword // Utiliza o valor de isPassword.
+              ); // Encerra a chamada de eyeOff.classList.toggle.
+            } // Encerra o bloco atual.
             // encerra a função executada ao clicar
-          );
+          ); // Encerra a chamada de togglePassword.addEventListener.
           // encerra o registro do evento de clique
-        }
+        } // Encerra o bloco da condição.
         // encerra a verificação da existência dos elementos
         /* ===============================================
            CONFIRMAR SENHA
@@ -428,88 +775,94 @@
            confirmar a senha escolhida
         ================================================ */
         // Procura o botão de mostrar ou ocultar a confirmação da senha.
-        const toggleConfirm =
+        const toggleConfirm = // Define toggleConfirm como o elemento cujo ID é o texto “toggle-confirm-password”.
           // Busca um elemento através do ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “toggle-confirm-password”.
             // ID do botão da confirmação.
-            "toggle-confirm-password"
-          );
+            "toggle-confirm-password" // Fornece o texto “toggle-confirm-password” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o campo onde a senha é digitada novamente.
-        const confirmPassword =
+        const confirmPassword = // Define confirmPassword como o elemento cujo ID é o texto “confirm-password”.
           // Busca o elemento através do seu ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “confirm-password”.
             // ID do campo de confirmação.
-            "confirm-password"
-          );
+            "confirm-password" // Fornece o texto “confirm-password” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o ícone de olho aberto da confirmação.
-        const confirmEyeOn =
+        const confirmEyeOn = // Define confirmEyeOn como o elemento cujo ID é o texto “confirm-eye-on”.
           // Busca o elemento pelo ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “confirm-eye-on”.
             // ID do olho aberto.
-            "confirm-eye-on"
-          );
+            "confirm-eye-on" // Fornece o texto “confirm-eye-on” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Procura o ícone de olho riscado da confirmação.
-        const confirmEyeOff =
+        const confirmEyeOff = // Define confirmEyeOff como o elemento cujo ID é o texto “confirm-eye-off”.
           // Busca o elemento pelo ID.
-          document.getElementById(
+          document.getElementById( // Executa a chamada que produz o elemento cujo ID é o texto “confirm-eye-off”.
             // ID do olho riscado.
-            "confirm-eye-off"
-          );
+            "confirm-eye-off" // Fornece o texto “confirm-eye-off” à expressão atual.
+          ); // Encerra a chamada de document.getElementById.
         // Confirma que o botão e o campo existem antes de registrar o evento.
-        if (
+        if ( // Verifica toggleConfirm e confirmPassword para decidir se executa este bloco.
           // Verifica se o botão foi encontrado.
-          toggleConfirm &&
+          toggleConfirm && // Calcula toggleConfirm e confirmPassword.
           // Verifica se o campo foi encontrado.
-          confirmPassword
-        ) {
+          confirmPassword // Utiliza o valor de confirmPassword.
+        ) { // Verifica toggleConfirm e confirmPassword para decidir se executa este bloco.
           // Adiciona um evento de clique ao botão da confirmação.
-          toggleConfirm.addEventListener(
+          toggleConfirm.addEventListener( // Executa a chamada que produz o registro do evento o texto “click” em toggleConfirm.
             // Define o clique como evento observado.
-            "click",
+            "click", // Fornece o texto “click” à expressão atual.
             // Função executada quando o usuário clicar.
-            () => {
+            () => { // Define a função que recebe nenhum argumento.
               // Verifica se a confirmação está atualmente escondida.
-              const isPassword =
+              const isPassword = // Define isPassword como confirmPassword.type igual, inclusive no tipo, a o texto “password”.
                 // Compara o tipo atual do input.
-                confirmPassword.type ===
+                confirmPassword.type === // Acessa confirmPassword.type.
                 // O tipo password significa que os caracteres estão escondidos.
-                "password";
+                "password"; // Fornece o texto “password” à expressão atual.
               // Altera o tipo do campo de confirmação.
-              confirmPassword.type =
+              confirmPassword.type = // Atualiza confirmPassword.type com o texto “text” se isPassword; caso contrário, o texto “password”.
                 // Verifica o estado atual.
-                isPassword
+                isPassword // Utiliza o valor de isPassword.
                   // Se estava escondido, passa para texto.
-                  ? "text"
+                  ? "text" // Fornece o texto “text” à expressão atual.
                   // Se estava visível, volta para senha.
-                  : "password";
+                  : "password"; // Fornece o texto “password” à expressão atual.
               // Alterna a classe hidden do olho aberto.
-              confirmEyeOn?.classList.toggle(
+              confirmEyeOn?.classList.toggle( // Executa a chamada que produz a alternância da classe ou do estado o texto “hidden” em confirmEyeOn.classList.
                 // Classe responsável por esconder o elemento.
-                "hidden",
+                "hidden", // Fornece o texto “hidden” à expressão atual.
                 // Define quando o olho aberto deve ficar escondido.
-                !isPassword
-              );
+                !isPassword // Compõe a negação de isPassword na operação atual.
+              ); // Encerra a chamada de confirmEyeOn.classList.toggle.
               // Alterna a classe hidden do olho riscado.
-              confirmEyeOff?.classList.toggle(
+              confirmEyeOff?.classList.toggle( // Executa a chamada que produz a alternância da classe ou do estado o texto “hidden” em confirmEyeOff.classList.
                 // Classe responsável por esconder o elemento.
-                "hidden",
+                "hidden", // Fornece o texto “hidden” à expressão atual.
                 // Define quando o olho riscado deve ficar escondido.
-                isPassword
-              );
-            }
+                isPassword // Utiliza o valor de isPassword.
+              ); // Encerra a chamada de confirmEyeOff.classList.toggle.
+            } // Encerra o bloco atual.
             // encerra a função executada ao clicar
-          );
+          ); // Encerra a chamada de toggleConfirm.addEventListener.
           // encerra o registro do evento
-        }
+        } // Encerra o bloco da condição.
         // encerra a verificação da confirmação de senha
-      }
+      } // Encerra o bloco atual.
       // encerra a função executada após o carregamento do DOM
-    );
+    ); // Encerra a chamada de document.addEventListener.
     // encerra o registro do evento DOMContentLoaded
-  </script>
+  </script><!-- Encerra um script. -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Inicia o bloco JavaScript embutido nesta página.
+    Linha 2 do trecho: Define o tipo do recurso ou controle como “module”.
+    Linha 3 do trecho: Define o arquivo ou endereço carregado como “scripts/criar-conta.js”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <script
     type="module"
     src="scripts/criar-conta.js"
   ></script>
-</body>
-</html>
+</body><!-- Encerra o conteúdo visível da página. -->
+</html><!-- Encerra o documento HTML. -->

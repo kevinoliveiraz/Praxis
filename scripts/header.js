@@ -1,8 +1,17 @@
 /* Monta o mesmo cabeçalho antes do DOMContentLoaded, quando o tema vincula o botão. */
-(() => {
-  const header = document.querySelector('[data-site-header]');
-  if (!header) return;
+(() => { // Inicia uma função executada imediatamente para isolar as variáveis deste script.
+  const header = document.querySelector('[data-site-header]'); // Define header como o primeiro elemento que corresponde ao seletor o texto “[data-site-header]”.
+  if (!header) return; // Verifica a negação de header; se verdadeiro, encerra a função sem retornar um valor.
 
+  /* Explicações do texto multilinha abaixo; os comentários ficam fora do valor.
+   * Linha 1 do trecho: Define subscription como um texto montado com 0 valores dinâmicos se header.dataset.subscription igual, inclusive no tipo, a o texto “true”; caso contrário, o texto “”.
+   * Linha 2 do trecho: Insere um link com as classes “btn btn-primary btn-subscribe”.
+   * Linha 3 do trecho: Insere um ícone ou desenho vetorial.
+   * Linha 4 do trecho: Insere um polígono vetorial.
+   * Linha 5 do trecho: Encerra um ícone ou desenho vetorial.
+   * Linha 6 do trecho: Insere um trecho de texto em linha com as classes “subscribe-text” com o texto “Assine agora”.
+   * Linha 7 do trecho: Encerra um link.
+   */
   const subscription = header.dataset.subscription === 'true' ? `
     <a href="assine-agora.html" class="btn btn-primary btn-subscribe" aria-label="Assine agora">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -11,6 +20,38 @@
       <span class="subscribe-text">Assine agora</span>
     </a>` : '';
 
+  /* Explicações do texto multilinha abaixo; os comentários ficam fora do valor.
+   * Linha 1 do trecho: Atualiza header.innerHTML com um texto montado com 1 valor dinâmico.
+   * Linha 2 do trecho: Insere um contêiner de layout com as classes “site-header__inner”.
+   * Linha 3 do trecho: Insere um link com as classes “logo”.
+   * Linha 4 do trecho: Insere uma imagem com as classes “logo-image”.
+   * Linha 5 do trecho: Encerra um link.
+   * Linha 6 do trecho: Insere um formulário identificado por “header-search”.
+   * Linha 7 do trecho: Insere um botão identificado por “search-btn”.
+   * Linha 8 do trecho: Insere um ícone ou desenho vetorial.
+   * Linha 9 do trecho: Insere um círculo vetorial.
+   * Linha 10 do trecho: Encerra um ícone ou desenho vetorial.
+   * Linha 11 do trecho: Encerra um botão.
+   * Linha 12 do trecho: Insere um campo de entrada identificado por “search-input”.
+   * Linha 13 do trecho: Encerra um formulário.
+   * Linha 14 do trecho: Insere um contêiner de layout com as classes “header-actions”.
+   * Linha 15 do trecho: Insere um botão com as classes “theme-toggle”.
+   * Linha 16 do trecho: Insere um ícone ou desenho vetorial com as classes “theme-icon-light”.
+   * Linha 17 do trecho: Insere um ícone ou desenho vetorial com as classes “theme-icon-dark”.
+   * Linha 18 do trecho: Insere um trecho de texto em linha com as classes “theme-toggle__label” com o texto “Modo claro”.
+   * Linha 19 do trecho: Encerra um botão.
+   * Linha 20 do trecho: Insere um contêiner de layout identificado por “user-area”.
+   * Linha 21 do trecho: Insere um link com as classes “btn btn-ghost”.
+   * Linha 22 do trecho: Insere um ícone ou desenho vetorial.
+   * Linha 23 do trecho: Insere um traçado vetorial.
+   * Linha 24 do trecho: Encerra um ícone ou desenho vetorial.
+   * Linha 25 do trecho: Insere um trecho de texto em linha com o texto “Entrar”.
+   * Linha 26 do trecho: Encerra um link.
+   * Linha 27 do trecho: Encerra um contêiner de layout.
+   * Linha 28 do trecho: Insere no texto o valor calculado por ${subscription}.
+   * Linha 29 do trecho: Encerra um contêiner de layout.
+   * Linha 30 do trecho: Encerra um contêiner de layout.
+   */
   header.innerHTML = `
     <div class="site-header__inner">
       <a href="index.html" class="logo" aria-label="Ir para a página inicial da Praxis">
@@ -43,7 +84,7 @@
     </div>`;
 
   // O layout e o tema não dependem do carregamento do cliente de autenticação.
-  import('./header-session.js')
-    .then(({ initHeaderSession }) => initHeaderSession(header))
-    .catch(error => console.error('Erro ao iniciar a sessão do cabeçalho:', error));
-})();
+  import('./header-session.js') // Carrega dinamicamente o módulo o texto “./header-session.js”.
+    .then(({ initHeaderSession }) => initHeaderSession(header)) // Executa a chamada que produz o tratamento do resultado de importação dinâmica quando concluído.
+    .catch(error => console.error('Erro ao iniciar a sessão do cabeçalho:', error)); // Executa a chamada que produz o tratamento de falhas de importação dinâmica.then(…).
+})(); // Encerra a função e sua execução imediata.

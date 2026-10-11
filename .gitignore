@@ -1,12 +1,24 @@
+# Ignora dependências instaladas pelo npm, que podem ser recriadas a partir da configuração do projeto.
 node_modules/
+# Ignora o arquivo local de variáveis de ambiente.
 .env
+# Ignora outras versões locais do arquivo de variáveis de ambiente.
 .env.*
+# Permite versionar o modelo de variáveis de ambiente sem incluir valores privados.
 !.env.example
+# Ignora arquivos de log gerados pelas ferramentas.
 *.log
+# Ignora preferências locais do editor Visual Studio Code.
 .vscode/
+# Ignora o cache de módulos compilados do Python.
 __pycache__/
+# Ignora arquivos de bytecode Python com as extensões pyc, pyo e pyd.
 *.py[cod]
+# Ignora o arquivo local usado para fornecer a chave do servidor aos importadores.
 server-key.txt
+# Ignora referências temporárias de download obtidas pelo conector do Drive.
 tools/content-import/refs-*.json
+# Ignora pacotes temporários combinados para a importação.
 tools/content-import/combined-*.json
+# Ignora arquivos temporários de trabalho dos importadores.
 tools/content-import/*.tmp

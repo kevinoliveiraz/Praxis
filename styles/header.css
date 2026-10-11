@@ -1,350 +1,350 @@
 /* Layout único para a home e os cursos, independente dos contêineres de cada página. */
-:root { --praxis-header-height: 101px; }
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  min-height: var(--praxis-header-height);
-  background: var(--praxis-page);
-  color: var(--praxis-text);
-  border-bottom: 1px solid var(--praxis-line);
-}
-.site-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: 100%;
-  max-width: 1440px;
-  min-height: calc(var(--praxis-header-height) - 1px);
-  margin: 0 auto;
-  padding: 20px 32px;
-}
-.site-header {
-  & .logo {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  & .logo-image {
-    display: block;
-    width: auto;
-    height: 60px;
-    object-fit: contain;
-  }
-  & .header-search {
-    display: flex;
-    align-items: center;
-    flex: 1 1 400px;
-    min-width: 180px;
-    max-width: 440px;
-    height: 48px;
-    margin-left: auto;
-    padding-right: 16px;
-    border: 1px solid var(--praxis-line);
-    border-radius: var(--praxis-radius-pill);
-    background: var(--praxis-panel-raised);
-    color: var(--praxis-text);
-    transition: border-color var(--praxis-duration-fast), box-shadow var(--praxis-duration-fast);
-    &:focus-within {
-      border-color: var(--praxis-focus);
-      box-shadow: 0 0 0 3px var(--praxis-accent-tint);
-    }
-  }
-  & .header-search__button {
-    display: grid;
-    place-items: center;
-    flex: 0 0 48px;
-    align-self: stretch;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    &:hover {
-      color: var(--praxis-accent-text);
-    }
-    & svg {
-      width: 22px;
-      height: 22px;
-    }
-  }
-  & .header-search {
-    & input {
-      width: 100%;
-      min-width: 0;
-      height: 100%;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      color: inherit;
-      font: 400 16px/1.4 var(--praxis-font);
-    }
-    & input:focus-visible {
-      outline: none;
-    }
-    & input::placeholder {
-      color: var(--praxis-muted);
-      opacity: 1;
-    }
-  }
-  & .header-search__button:focus-visible {
-    outline: 3px solid var(--praxis-focus);
-    outline-offset: 2px;
-  }
-  & .header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    min-width: 0;
-  }
-}
-.site-header #user-area, .site-header .user-info { display: flex; align-items: center; min-width: 0; }
-.site-header {
-  & .user-info {
-    gap: 10px;
-  }
-  & .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 11px 20px;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    font: 600 14px/1.4 var(--praxis-font);
-    white-space: nowrap;
-    transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast),
-    box-shadow var(--praxis-duration-fast), transform var(--praxis-duration-fast);
-    &:focus-visible {
-      outline: 3px solid var(--praxis-focus);
-      outline-offset: 4px;
-    }
-  }
-  & .btn-ghost {
-    background: transparent;
-    color: var(--praxis-text);
-    border-color: var(--praxis-line);
-    &:hover {
-      background: var(--praxis-panel-raised);
-      border-color: var(--praxis-muted);
-    }
-  }
-  & .btn-primary {
-    background: var(--praxis-color-accent);
-    color: var(--praxis-color-ink);
-    & svg {
-      flex-shrink: 0;
-    }
-  }
-  & .btn-subscribe:focus-visible {
-    background: var(--praxis-color-accent-hover);
-    box-shadow: 0 8px 24px rgb(224 251 56 / 24%);
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .site-header .btn-subscribe:hover {
-    background: var(--praxis-color-accent-hover);
-    box-shadow: 0 8px 24px rgb(224 251 56 / 24%);
-  }
-}
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .site-header .btn-subscribe:hover { transform: translateY(-2px); }
-}
-.site-header .btn-subscribe:active { transform: translateY(0); box-shadow: 0 3px 10px rgb(224 251 56 / 16%); }
-.site-header .user-avatar, .site-header .user-avatar-placeholder {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border: 1px solid var(--praxis-line);
-  border-radius: 50%;
-  background: var(--praxis-panel);
-}
-.site-header {
-  & .user-avatar {
-    object-fit: cover;
-  }
-  & .user-avatar-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--praxis-accent-text);
-    font: 700 14px var(--praxis-font);
-  }
-  & .user-email {
-    max-width: 180px;
-    overflow: hidden;
-    color: var(--praxis-text);
-    font: 500 14px var(--praxis-font);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  & .user-account {
-    position: relative;
-  }
-  & .account-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 44px;
-    padding: 4px 8px 4px 4px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    background: transparent;
-    color: var(--praxis-text);
-    font: inherit;
-    cursor: pointer;
-  }
-}
-.site-header .account-toggle:hover, .site-header .account-toggle[aria-expanded="true"] { background: var(--praxis-panel-raised); border-color: var(--praxis-line); }
-.site-header {
-  & .account-chevron {
-    width: 16px;
-    height: 16px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    transition: transform var(--praxis-duration-fast);
-  }
-  & .account-toggle[aria-expanded="true"] .account-chevron {
-    transform: rotate(180deg);
-  }
-  & .account-menu {
-    position: absolute;
-    right: 0;
-    top: calc(100% + 14px);
-    z-index: 1;
-    width: min(290px, calc(100vw - 36px));
-    padding: 8px;
-    border: 1px solid var(--praxis-line);
-    border-radius: 16px;
-    background: var(--praxis-panel);
-    color: var(--praxis-text);
-    box-shadow: 0 18px 48px rgb(0 0 0 / 24%);
-  }
-  & .account-menu__identity {
-    display: grid;
-    gap: 3px;
-    padding: 12px;
-    & :is(strong,span) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    & strong {
-      font: 600 14px/1.5 var(--praxis-font);
-    }
-    & span {
-      color: var(--praxis-muted);
-      font: 400 12px/1.5 var(--praxis-font);
-    }
-  }
-  & .account-menu__item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    min-height: 44px;
-    padding: 10px 12px;
-    border: 0;
-    border-radius: 9px;
-    background: transparent;
-    color: var(--praxis-text);
-    font: 500 14px/1.5 var(--praxis-font);
-    text-align: left;
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-      background: var(--praxis-panel-raised);
-    }
-    &:disabled {
-      opacity: .5;
-      cursor: wait;
-    }
-    & svg {
-      width: 19px;
-      height: 19px;
-      flex-shrink: 0;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  }
-  & .account-menu__separator {
-    height: 1px;
-    margin: 8px 12px;
-    background: var(--praxis-line);
-  }
-}
+:root { --praxis-header-height: 101px; } /* Define a variável CSS --praxis-header-height como 101px. */
+.site-header { /* Seleciona .site-header. */
+  position: sticky; /* Define o posicionamento como sticky. */
+  top: 0; /* Define a distância do topo como 0. */
+  z-index: 100; /* Define a ordem de sobreposição como 100. */
+  width: 100%; /* Define a largura como 100%. */
+  min-height: var(--praxis-header-height); /* Define a altura mínima como var(--praxis-header-height). */
+  background: var(--praxis-page); /* Define o fundo como var(--praxis-page). */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  border-bottom: 1px solid var(--praxis-line); /* Define a borda inferior como 1px solid var(--praxis-line). */
+} /* Encerra o bloco do seletor .site-header. */
+.site-header__inner { /* Seleciona .site-header__inner. */
+  display: flex; /* Define o modelo de layout como flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
+  gap: 24px; /* Define o espaço entre os itens como 24px. */
+  width: 100%; /* Define a largura como 100%. */
+  max-width: 1440px; /* Define a largura máxima como 1440px. */
+  min-height: calc(var(--praxis-header-height) - 1px); /* Define a altura mínima como calc(var(--praxis-header-height) - 1px). */
+  margin: 0 auto; /* Define as margens externas como 0 auto. */
+  padding: 20px 32px; /* Define os espaços internos como 20px 32px. */
+} /* Encerra o bloco do seletor .site-header__inner. */
+.site-header { /* Seleciona .site-header. */
+  & .logo { /* Seleciona & .logo usando & para manter a relação com o seletor pai. */
+    display: inline-flex; /* Define o modelo de layout como inline-flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  } /* Encerra o bloco do seletor & .logo. */
+  & .logo-image { /* Seleciona & .logo-image usando & para manter a relação com o seletor pai. */
+    display: block; /* Define o modelo de layout como block. */
+    width: auto; /* Define a largura como auto. */
+    height: 60px; /* Define a altura como 60px. */
+    object-fit: contain; /* Define o ajuste da imagem na caixa como contain. */
+  } /* Encerra o bloco do seletor & .logo-image. */
+  & .header-search { /* Seleciona & .header-search usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    flex: 1 1 400px; /* Define o crescimento, a redução e a base do item flexível como 1 1 400px. */
+    min-width: 180px; /* Define a largura mínima como 180px. */
+    max-width: 440px; /* Define a largura máxima como 440px. */
+    height: 48px; /* Define a altura como 48px. */
+    margin-left: auto; /* Define a margem esquerda como auto. */
+    padding-right: 16px; /* Define o espaço interno direito como 16px. */
+    border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+    border-radius: var(--praxis-radius-pill); /* Define o arredondamento dos cantos como var(--praxis-radius-pill). */
+    background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    transition: border-color var(--praxis-duration-fast), box-shadow var(--praxis-duration-fast); /* Define as propriedades e o tempo da transição como border-color var(--praxis-duration-fast), box-shadow var(--praxis-duration-fast). */
+    &:focus-within { /* Seleciona &:focus-within usando & para manter a relação com o seletor pai. */
+      border-color: var(--praxis-focus); /* Define a cor das bordas como var(--praxis-focus). */
+      box-shadow: 0 0 0 3px var(--praxis-accent-tint); /* Define a sombra da caixa como 0 0 0 3px var(--praxis-accent-tint). */
+    } /* Encerra o bloco do seletor &:focus-within. */
+  } /* Encerra o bloco do seletor & .header-search. */
+  & .header-search__button { /* Seleciona & .header-search__button usando & para manter a relação com o seletor pai. */
+    display: grid; /* Define o modelo de layout como grid. */
+    place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
+    flex: 0 0 48px; /* Define o crescimento, a redução e a base do item flexível como 0 0 48px. */
+    align-self: stretch; /* Define o alinhamento individual como stretch. */
+    padding: 0; /* Define os espaços internos como 0. */
+    border: 0; /* Define a borda como 0. */
+    border-radius: 999px; /* Define o arredondamento dos cantos como 999px. */
+    background: transparent; /* Define o fundo como transparent. */
+    color: inherit; /* Define a cor do texto como inherit. */
+    cursor: pointer; /* Define o formato do cursor como pointer. */
+    &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &:hover. */
+    & svg { /* Seleciona & svg usando & para manter a relação com o seletor pai. */
+      width: 22px; /* Define a largura como 22px. */
+      height: 22px; /* Define a altura como 22px. */
+    } /* Encerra o bloco do seletor & svg. */
+  } /* Encerra o bloco do seletor & .header-search__button. */
+  & .header-search { /* Seleciona & .header-search usando & para manter a relação com o seletor pai. */
+    & input { /* Seleciona & input usando & para manter a relação com o seletor pai. */
+      width: 100%; /* Define a largura como 100%. */
+      min-width: 0; /* Define a largura mínima como 0. */
+      height: 100%; /* Define a altura como 100%. */
+      padding: 0; /* Define os espaços internos como 0. */
+      border: 0; /* Define a borda como 0. */
+      border-radius: 0; /* Define o arredondamento dos cantos como 0. */
+      background: transparent; /* Define o fundo como transparent. */
+      color: inherit; /* Define a cor do texto como inherit. */
+      font: 400 16px/1.4 var(--praxis-font); /* Define a fonte e suas medidas como 400 16px/1.4 var(--praxis-font). */
+    } /* Encerra o bloco do seletor & input. */
+    & input:focus-visible { /* Seleciona & input:focus-visible usando & para manter a relação com o seletor pai. */
+      outline: none; /* Define o contorno de foco como none. */
+    } /* Encerra o bloco do seletor & input:focus-visible. */
+    & input::placeholder { /* Seleciona & input::placeholder usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+      opacity: 1; /* Define a opacidade como 1. */
+    } /* Encerra o bloco do seletor & input::placeholder. */
+  } /* Encerra o bloco do seletor & .header-search. */
+  & .header-search__button:focus-visible { /* Seleciona & .header-search__button:focus-visible usando & para manter a relação com o seletor pai. */
+    outline: 3px solid var(--praxis-focus); /* Define o contorno de foco como 3px solid var(--praxis-focus). */
+    outline-offset: 2px; /* Define a distância do contorno como 2px. */
+  } /* Encerra o bloco do seletor & .header-search__button:focus-visible. */
+  & .header-actions { /* Seleciona & .header-actions usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    justify-content: flex-end; /* Define a distribuição no eixo principal como flex-end. */
+    gap: 10px; /* Define o espaço entre os itens como 10px. */
+    min-width: 0; /* Define a largura mínima como 0. */
+  } /* Encerra o bloco do seletor & .header-actions. */
+} /* Encerra o bloco do seletor .site-header. */
+.site-header #user-area, .site-header .user-info { display: flex; align-items: center; min-width: 0; } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. Define a largura mínima como 0. */
+.site-header { /* Seleciona .site-header. */
+  & .user-info { /* Seleciona & .user-info usando & para manter a relação com o seletor pai. */
+    gap: 10px; /* Define o espaço entre os itens como 10px. */
+  } /* Encerra o bloco do seletor & .user-info. */
+  & .btn { /* Seleciona & .btn usando & para manter a relação com o seletor pai. */
+    display: inline-flex; /* Define o modelo de layout como inline-flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    justify-content: center; /* Define a distribuição no eixo principal como center. */
+    gap: 8px; /* Define o espaço entre os itens como 8px. */
+    min-height: 44px; /* Define a altura mínima como 44px. */
+    padding: 11px 20px; /* Define os espaços internos como 11px 20px. */
+    border: 1px solid transparent; /* Define a borda como 1px solid transparent. */
+    border-radius: 12px; /* Define o arredondamento dos cantos como 12px. */
+    font: 600 14px/1.4 var(--praxis-font); /* Define a fonte e suas medidas como 600 14px/1.4 var(--praxis-font). */
+    white-space: nowrap; /* Define o tratamento dos espaços e das quebras de linha como nowrap. */
+    transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast), /* Define as propriedades e o tempo da transição como background var(--praxis-duration-fast), border-color var(--praxis-duration-fast), bo…. */
+    box-shadow var(--praxis-duration-fast), transform var(--praxis-duration-fast); /* Continua o valor de transition com box-shadow var(--praxis-duration-fast), transform var(--praxis-duration-fast);. */
+    &:focus-visible { /* Seleciona &:focus-visible usando & para manter a relação com o seletor pai. */
+      outline: 3px solid var(--praxis-focus); /* Define o contorno de foco como 3px solid var(--praxis-focus). */
+      outline-offset: 4px; /* Define a distância do contorno como 4px. */
+    } /* Encerra o bloco do seletor &:focus-visible. */
+  } /* Encerra o bloco do seletor & .btn. */
+  & .btn-ghost { /* Seleciona & .btn-ghost usando & para manter a relação com o seletor pai. */
+    background: transparent; /* Define o fundo como transparent. */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    border-color: var(--praxis-line); /* Define a cor das bordas como var(--praxis-line). */
+    &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+      background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+      border-color: var(--praxis-muted); /* Define a cor das bordas como var(--praxis-muted). */
+    } /* Encerra o bloco do seletor &:hover. */
+  } /* Encerra o bloco do seletor & .btn-ghost. */
+  & .btn-primary { /* Seleciona & .btn-primary usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+    color: var(--praxis-color-ink); /* Define a cor do texto como var(--praxis-color-ink). */
+    & svg { /* Seleciona & svg usando & para manter a relação com o seletor pai. */
+      flex-shrink: 0; /* Define a redução do item flexível como 0. */
+    } /* Encerra o bloco do seletor & svg. */
+  } /* Encerra o bloco do seletor & .btn-primary. */
+  & .btn-subscribe:focus-visible { /* Seleciona & .btn-subscribe:focus-visible usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-color-accent-hover); /* Define o fundo como var(--praxis-color-accent-hover). */
+    box-shadow: 0 8px 24px rgb(224 251 56 / 24%); /* Define a sombra da caixa como 0 8px 24px rgb(224 251 56 / 24%). */
+  } /* Encerra o bloco do seletor & .btn-subscribe:focus-visible. */
+} /* Encerra o bloco do seletor .site-header. */
+@media (hover: hover) and (pointer: fine) { /* Aplica estas regras quando (hover: hover) and (pointer: fine). */
+  .site-header .btn-subscribe:hover { /* Seleciona .site-header .btn-subscribe:hover. */
+    background: var(--praxis-color-accent-hover); /* Define o fundo como var(--praxis-color-accent-hover). */
+    box-shadow: 0 8px 24px rgb(224 251 56 / 24%); /* Define a sombra da caixa como 0 8px 24px rgb(224 251 56 / 24%). */
+  } /* Encerra o bloco do seletor .site-header .btn-subscribe:hover. */
+} /* Encerra o bloco da regra @media. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) { /* Aplica estas regras quando (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference). */
+  .site-header .btn-subscribe:hover { transform: translateY(-2px); } /* Define a transformação visual como translateY(-2px). */
+} /* Encerra o bloco da regra @media. */
+.site-header .btn-subscribe:active { transform: translateY(0); box-shadow: 0 3px 10px rgb(224 251 56 / 16%); } /* Define a transformação visual como translateY(0). Define a sombra da caixa como 0 3px 10px rgb(224 251 56 / 16%). */
+.site-header .user-avatar, .site-header .user-avatar-placeholder { /* Seleciona .site-header .user-avatar, .site-header .user-avatar-placeholder. */
+  width: 36px; /* Define a largura como 36px. */
+  height: 36px; /* Define a altura como 36px. */
+  flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+  background: var(--praxis-panel); /* Define o fundo como var(--praxis-panel). */
+} /* Encerra o bloco do seletor .site-header .user-avatar, .site-header .user-avatar-placeholder. */
+.site-header { /* Seleciona .site-header. */
+  & .user-avatar { /* Seleciona & .user-avatar usando & para manter a relação com o seletor pai. */
+    object-fit: cover; /* Define o ajuste da imagem na caixa como cover. */
+  } /* Encerra o bloco do seletor & .user-avatar. */
+  & .user-avatar-placeholder { /* Seleciona & .user-avatar-placeholder usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    justify-content: center; /* Define a distribuição no eixo principal como center. */
+    color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    font: 700 14px var(--praxis-font); /* Define a fonte e suas medidas como 700 14px var(--praxis-font). */
+  } /* Encerra o bloco do seletor & .user-avatar-placeholder. */
+  & .user-email { /* Seleciona & .user-email usando & para manter a relação com o seletor pai. */
+    max-width: 180px; /* Define a largura máxima como 180px. */
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    font: 500 14px var(--praxis-font); /* Define a fonte e suas medidas como 500 14px var(--praxis-font). */
+    text-overflow: ellipsis; /* Define a indicação do texto excedente como ellipsis. */
+    white-space: nowrap; /* Define o tratamento dos espaços e das quebras de linha como nowrap. */
+  } /* Encerra o bloco do seletor & .user-email. */
+  & .user-account { /* Seleciona & .user-account usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+  } /* Encerra o bloco do seletor & .user-account. */
+  & .account-toggle { /* Seleciona & .account-toggle usando & para manter a relação com o seletor pai. */
+    display: inline-flex; /* Define o modelo de layout como inline-flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 10px; /* Define o espaço entre os itens como 10px. */
+    min-height: 44px; /* Define a altura mínima como 44px. */
+    padding: 4px 8px 4px 4px; /* Define os espaços internos como 4px 8px 4px 4px. */
+    border: 1px solid transparent; /* Define a borda como 1px solid transparent. */
+    border-radius: 999px; /* Define o arredondamento dos cantos como 999px. */
+    background: transparent; /* Define o fundo como transparent. */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    font: inherit; /* Define a fonte e suas medidas como inherit. */
+    cursor: pointer; /* Define o formato do cursor como pointer. */
+  } /* Encerra o bloco do seletor & .account-toggle. */
+} /* Encerra o bloco do seletor .site-header. */
+.site-header .account-toggle:hover, .site-header .account-toggle[aria-expanded="true"] { background: var(--praxis-panel-raised); border-color: var(--praxis-line); } /* Define o fundo como var(--praxis-panel-raised). Define a cor das bordas como var(--praxis-line). */
+.site-header { /* Seleciona .site-header. */
+  & .account-chevron { /* Seleciona & .account-chevron usando & para manter a relação com o seletor pai. */
+    width: 16px; /* Define a largura como 16px. */
+    height: 16px; /* Define a altura como 16px. */
+    fill: none; /* Define a cor de preenchimento SVG como none. */
+    stroke: currentColor; /* Define a cor do traço SVG como currentColor. */
+    stroke-width: 1.8; /* Define a espessura do traço SVG como 1.8. */
+    transition: transform var(--praxis-duration-fast); /* Define as propriedades e o tempo da transição como transform var(--praxis-duration-fast). */
+  } /* Encerra o bloco do seletor & .account-chevron. */
+  & .account-toggle[aria-expanded="true"] .account-chevron { /* Seleciona & .account-toggle[aria-expanded="true"] .account-chevron usando & para manter a relação com o seletor pai. */
+    transform: rotate(180deg); /* Define a transformação visual como rotate(180deg). */
+  } /* Encerra o bloco do seletor & .account-toggle[aria-expanded="true"] .account-chevron. */
+  & .account-menu { /* Seleciona & .account-menu usando & para manter a relação com o seletor pai. */
+    position: absolute; /* Define o posicionamento como absolute. */
+    right: 0; /* Define a distância da direita como 0. */
+    top: calc(100% + 14px); /* Define a distância do topo como calc(100% + 14px). */
+    z-index: 1; /* Define a ordem de sobreposição como 1. */
+    width: min(290px, calc(100vw - 36px)); /* Define a largura como min(290px, calc(100vw - 36px)). */
+    padding: 8px; /* Define os espaços internos como 8px. */
+    border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+    border-radius: 16px; /* Define o arredondamento dos cantos como 16px. */
+    background: var(--praxis-panel); /* Define o fundo como var(--praxis-panel). */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    box-shadow: 0 18px 48px rgb(0 0 0 / 24%); /* Define a sombra da caixa como 0 18px 48px rgb(0 0 0 / 24%). */
+  } /* Encerra o bloco do seletor & .account-menu. */
+  & .account-menu__identity { /* Seleciona & .account-menu__identity usando & para manter a relação com o seletor pai. */
+    display: grid; /* Define o modelo de layout como grid. */
+    gap: 3px; /* Define o espaço entre os itens como 3px. */
+    padding: 12px; /* Define os espaços internos como 12px. */
+    & :is(strong,span) { /* Seleciona & :is(strong,span) usando & para manter a relação com o seletor pai. */
+      overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+      text-overflow: ellipsis; /* Define a indicação do texto excedente como ellipsis. */
+      white-space: nowrap; /* Define o tratamento dos espaços e das quebras de linha como nowrap. */
+    } /* Encerra o bloco do seletor & :is(strong,span). */
+    & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+      font: 600 14px/1.5 var(--praxis-font); /* Define a fonte e suas medidas como 600 14px/1.5 var(--praxis-font). */
+    } /* Encerra o bloco do seletor & strong. */
+    & span { /* Seleciona & span usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+      font: 400 12px/1.5 var(--praxis-font); /* Define a fonte e suas medidas como 400 12px/1.5 var(--praxis-font). */
+    } /* Encerra o bloco do seletor & span. */
+  } /* Encerra o bloco do seletor & .account-menu__identity. */
+  & .account-menu__item { /* Seleciona & .account-menu__item usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 12px; /* Define o espaço entre os itens como 12px. */
+    width: 100%; /* Define a largura como 100%. */
+    min-height: 44px; /* Define a altura mínima como 44px. */
+    padding: 10px 12px; /* Define os espaços internos como 10px 12px. */
+    border: 0; /* Define a borda como 0. */
+    border-radius: 9px; /* Define o arredondamento dos cantos como 9px. */
+    background: transparent; /* Define o fundo como transparent. */
+    color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    font: 500 14px/1.5 var(--praxis-font); /* Define a fonte e suas medidas como 500 14px/1.5 var(--praxis-font). */
+    text-align: left; /* Define o alinhamento do texto como left. */
+    text-decoration: none; /* Define a decoração do texto como none. */
+    cursor: pointer; /* Define o formato do cursor como pointer. */
+    &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+      background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+    } /* Encerra o bloco do seletor &:hover. */
+    &:disabled { /* Seleciona &:disabled usando & para manter a relação com o seletor pai. */
+      opacity: .5; /* Define a opacidade como .5. */
+      cursor: wait; /* Define o formato do cursor como wait. */
+    } /* Encerra o bloco do seletor &:disabled. */
+    & svg { /* Seleciona & svg usando & para manter a relação com o seletor pai. */
+      width: 19px; /* Define a largura como 19px. */
+      height: 19px; /* Define a altura como 19px. */
+      flex-shrink: 0; /* Define a redução do item flexível como 0. */
+      fill: none; /* Define a cor de preenchimento SVG como none. */
+      stroke: currentColor; /* Define a cor do traço SVG como currentColor. */
+      stroke-width: 1.8; /* Define a espessura do traço SVG como 1.8. */
+      stroke-linecap: round; /* Define a propriedade stroke-linecap como round. */
+      stroke-linejoin: round; /* Define a propriedade stroke-linejoin como round. */
+    } /* Encerra o bloco do seletor & svg. */
+  } /* Encerra o bloco do seletor & .account-menu__item. */
+  & .account-menu__separator { /* Seleciona & .account-menu__separator usando & para manter a relação com o seletor pai. */
+    height: 1px; /* Define a altura como 1px. */
+    margin: 8px 12px; /* Define as margens externas como 8px 12px. */
+    background: var(--praxis-line); /* Define o fundo como var(--praxis-line). */
+  } /* Encerra o bloco do seletor & .account-menu__separator. */
+} /* Encerra o bloco do seletor .site-header. */
 /* A barra de aulas permanece abaixo do cabeçalho durante a rolagem. */
-.course-toolbar { top: var(--praxis-header-height); }
-@media (max-width: 980px) {
-  :root { --praxis-header-height: 161px; }
-  .site-header__inner { flex-wrap: wrap; gap: 12px 24px; }
-  .site-header {
-    & .header-actions {
-      margin-left: auto;
-    }
-    & .header-search {
-      order: 3;
-      flex-basis: 100%;
-      max-width: none;
-      margin-left: 0;
-    }
-  }
-}
-@media (max-width: 700px) {
-  :root { --praxis-header-height: 133px; }
-  .site-header__inner { gap: 12px; padding: 14px 18px; }
-  .site-header {
-    & .logo-image {
-      height: 38px;
-    }
-    & .header-actions {
-      gap: 8px;
-    }
-    & .user-email {
-      display: none;
-    }
-  }
-  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 34px; height: 34px; }
-  .site-header .btn { min-height: 40px; padding: 9px 13px; font-size: 13px; }
-}
-@media (max-width: 520px) {
-  :root { --praxis-header-height: 129px; }
-  .site-header__inner { gap: 8px; }
-  .site-header .logo-image { height: 34px; max-width: 110px; }
-  .site-header .header-actions, .site-header .user-info { gap: 6px; }
-  .site-header .header-actions { flex-shrink: 0; }
-  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 32px; height: 32px; }
-  .site-header {
-    & .account-toggle {
-      gap: 6px;
-      min-height: 40px;
-    }
-    & .account-menu {
-      position: fixed;
-      top: calc(var(--praxis-header-height) + 8px);
-      right: 18px;
-    }
-    & .btn-primary {
-      min-width: 38px;
-      min-height: 38px;
-      padding: 8px 10px;
-    }
-    & .subscribe-text {
-      display: none;
-    }
-  }
-}
-@media (max-width: 360px) {
-  .site-header__inner { gap: 6px; }
-  .site-header .btn { padding-inline: 9px; }
-}
+.course-toolbar { top: var(--praxis-header-height); } /* Define a distância do topo como var(--praxis-header-height). */
+@media (max-width: 980px) { /* Aplica estas regras quando (max-width: 980px). */
+  :root { --praxis-header-height: 161px; } /* Define a variável CSS --praxis-header-height como 161px. */
+  .site-header__inner { flex-wrap: wrap; gap: 12px 24px; } /* Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como 12px 24px. */
+  .site-header { /* Seleciona .site-header. */
+    & .header-actions { /* Seleciona & .header-actions usando & para manter a relação com o seletor pai. */
+      margin-left: auto; /* Define a margem esquerda como auto. */
+    } /* Encerra o bloco do seletor & .header-actions. */
+    & .header-search { /* Seleciona & .header-search usando & para manter a relação com o seletor pai. */
+      order: 3; /* Define a propriedade order como 3. */
+      flex-basis: 100%; /* Define o tamanho inicial do item flexível como 100%. */
+      max-width: none; /* Define a largura máxima como none. */
+      margin-left: 0; /* Define a margem esquerda como 0. */
+    } /* Encerra o bloco do seletor & .header-search. */
+  } /* Encerra o bloco do seletor .site-header. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 700px) { /* Aplica estas regras quando (max-width: 700px). */
+  :root { --praxis-header-height: 133px; } /* Define a variável CSS --praxis-header-height como 133px. */
+  .site-header__inner { gap: 12px; padding: 14px 18px; } /* Define o espaço entre os itens como 12px. Define os espaços internos como 14px 18px. */
+  .site-header { /* Seleciona .site-header. */
+    & .logo-image { /* Seleciona & .logo-image usando & para manter a relação com o seletor pai. */
+      height: 38px; /* Define a altura como 38px. */
+    } /* Encerra o bloco do seletor & .logo-image. */
+    & .header-actions { /* Seleciona & .header-actions usando & para manter a relação com o seletor pai. */
+      gap: 8px; /* Define o espaço entre os itens como 8px. */
+    } /* Encerra o bloco do seletor & .header-actions. */
+    & .user-email { /* Seleciona & .user-email usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor & .user-email. */
+  } /* Encerra o bloco do seletor .site-header. */
+  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 34px; height: 34px; } /* Define a largura como 34px. Define a altura como 34px. */
+  .site-header .btn { min-height: 40px; padding: 9px 13px; font-size: 13px; } /* Define a altura mínima como 40px. Define os espaços internos como 9px 13px. Define o tamanho da fonte como 13px. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 520px) { /* Aplica estas regras quando (max-width: 520px). */
+  :root { --praxis-header-height: 129px; } /* Define a variável CSS --praxis-header-height como 129px. */
+  .site-header__inner { gap: 8px; } /* Define o espaço entre os itens como 8px. */
+  .site-header .logo-image { height: 34px; max-width: 110px; } /* Define a altura como 34px. Define a largura máxima como 110px. */
+  .site-header .header-actions, .site-header .user-info { gap: 6px; } /* Define o espaço entre os itens como 6px. */
+  .site-header .header-actions { flex-shrink: 0; } /* Define a redução do item flexível como 0. */
+  .site-header .user-avatar, .site-header .user-avatar-placeholder { width: 32px; height: 32px; } /* Define a largura como 32px. Define a altura como 32px. */
+  .site-header { /* Seleciona .site-header. */
+    & .account-toggle { /* Seleciona & .account-toggle usando & para manter a relação com o seletor pai. */
+      gap: 6px; /* Define o espaço entre os itens como 6px. */
+      min-height: 40px; /* Define a altura mínima como 40px. */
+    } /* Encerra o bloco do seletor & .account-toggle. */
+    & .account-menu { /* Seleciona & .account-menu usando & para manter a relação com o seletor pai. */
+      position: fixed; /* Define o posicionamento como fixed. */
+      top: calc(var(--praxis-header-height) + 8px); /* Define a distância do topo como calc(var(--praxis-header-height) + 8px). */
+      right: 18px; /* Define a distância da direita como 18px. */
+    } /* Encerra o bloco do seletor & .account-menu. */
+    & .btn-primary { /* Seleciona & .btn-primary usando & para manter a relação com o seletor pai. */
+      min-width: 38px; /* Define a largura mínima como 38px. */
+      min-height: 38px; /* Define a altura mínima como 38px. */
+      padding: 8px 10px; /* Define os espaços internos como 8px 10px. */
+    } /* Encerra o bloco do seletor & .btn-primary. */
+    & .subscribe-text { /* Seleciona & .subscribe-text usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor & .subscribe-text. */
+  } /* Encerra o bloco do seletor .site-header. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 360px) { /* Aplica estas regras quando (max-width: 360px). */
+  .site-header__inner { gap: 6px; } /* Define o espaço entre os itens como 6px. */
+  .site-header .btn { padding-inline: 9px; } /* Define os espaços internos laterais como 9px. */
+} /* Encerra o bloco da regra @media. */

@@ -64,13 +64,13 @@ Raios: 8 px pequeno, 12 px botões/campos, 14 px médio, 22 px cards/dialog, 32 
 Os estilos usam [aninhamento nativo de CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using), sem Sass ou etapa de compilação. `&` representa o seletor do bloco atual e agrupa estados e elementos relacionados:
 
 ```css
-.px-button--primary {
-  background: var(--praxis-color-accent);
+.px-button--primary { /* Seleciona os botões com o estilo principal da Praxis. */
+  background: var(--praxis-color-accent); /* Usa a cor de destaque compartilhada como fundo do botão. */
 
-  &:hover {
-    background: var(--praxis-color-accent-hover);
-  }
-}
+  &:hover { /* Aplica o estado de ponteiro sobre o botão, mantendo o seletor pai com &. */
+    background: var(--praxis-color-accent-hover); /* Troca o fundo pela cor de destaque definida para hover. */
+  } /* Encerra as regras de hover. */
+} /* Encerra as regras do botão principal. */
 ```
 
 Use `&:hover`, `&:focus-visible`, `&.is-active` e `& .elemento`. Classes com nomes próprios, como `.px-button--primary`, permanecem completas; CSS nativo não aceita concatenar nomes com `&--primary`. Mantenha a ordem das regras e evite agrupar seletores de especificidades diferentes no bloco pai. Os tokens continuam definidos em `styles/tokens.css`.

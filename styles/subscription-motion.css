@@ -1,450 +1,450 @@
 /* Movimento e acabamento da assinatura, usando os mesmos tokens da Praxis. */
-.subscription-page {
-  overflow-x: clip;
-  & .px-skip {
-    z-index: 120;
-  }
-  & :is(#planos,#faq-title) {
-    scroll-margin-top: calc(var(--praxis-header-height) + 24px);
-  }
-}
-.subscription-progress {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 110;
-  height: 3px;
-  background: var(--praxis-color-accent);
-  transform: scaleX(var(--page-progress, 0));
-  transform-origin: left;
-  pointer-events: none;
-}
-.subscription-page {
-  & .subscription-hero {
-    position: relative;
-    isolation: isolate;
-    padding-top: 80px;
-    &::before {
-      position: absolute;
-      inset: -15% -10% 0 30%;
-      z-index: -1;
-      background: radial-gradient(ellipse at 65% 35%, rgb(224 251 56 / 12%), transparent 56%);
-      content: "";
-      pointer-events: none;
-    }
-  }
-  & .hero-copy h1 {
-    font-size: clamp(42px, 4.7vw, 68px);
-  }
-}
-.hero-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
-.hero-line__text { display: inline-block; }
-.hero-accent { font-style: normal; }
-.practice-scene {
-  position: relative;
-  width: 100%;
-  max-width: 465px;
-  justify-self: end;
-  &::before {
-    position: absolute;
-    inset: -60px;
-    z-index: -1;
-    border-radius: 50%;
-    background: radial-gradient(ellipse, rgb(224 251 56 / 17%), transparent 64%);
-    content: "";
-  }
-}
-.subscription-page {
-  & .practice-board {
-    box-shadow: 12px 14px 0 var(--praxis-accent-tint), 0 28px 72px rgb(0 0 0 / 16%);
-  }
-  & .board-grid {
-    background-size: 24px 24px;
-    &::before {
-      position: absolute;
-      inset: -85px 0 auto;
-      height: 80px;
-      background: linear-gradient(transparent, rgb(224 251 56 / 9%), transparent);
-      content: "";
-      pointer-events: none;
-    }
-  }
-  & .board-orbit::after {
-    position: absolute;
-    top: 50%;
-    left: -4px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--praxis-color-accent);
-    box-shadow: 0 0 18px rgb(224 251 56 / 65%);
-    content: "";
-  }
-}
-.tools-rail { margin-top: 10px; border-block: 1px solid var(--praxis-line); background: var(--praxis-panel); }
-.tools-rail__inner { display: flex; align-items: center; gap: 28px; }
-.tools-rail__caption {
-  flex: 0 0 214px;
-  display: grid;
-  gap: 5px;
-  padding-block: 24px;
-  & .px-eyebrow {
-    font-size: 10px;
-  }
-  &>:last-child {
-    color: var(--praxis-muted);
-    font-size: 12px;
-  }
-}
-.tools-rail__window { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); }
-.tools-rail__track { display: flex; width: max-content; }
-.tools-rail__list {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-  padding: 24px 16px;
-  margin: 0;
-  & li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    white-space: nowrap;
-    font-size: 15px;
-    font-weight: 600;
-  }
-}
-.subscription-page {
-  &:not(.motion-enabled) .tools-rail__track {
-    width: 100%;
-  }
-  &:not(.motion-enabled) .tools-rail__list {
-    flex-wrap: wrap;
-  }
-  &:not(.motion-enabled) .tools-rail__duplicate {
-    display: none;
-  }
-  &:not(.motion-enabled) .tools-rail__window {
-    mask-image: none;
-  }
-}
-.tool-rail-mark { display: grid; place-items: center; min-width: 32px; height: 32px; padding-inline: 5px; border: 1px solid var(--praxis-line); border-radius: 8px; background: var(--praxis-accent-tint); color: var(--praxis-accent-text); font-size: 11px; }
-.tool-rail-dot { width: 4px; height: 4px; margin-left: 12px; border-radius: 50%; background: var(--praxis-line); }
-.subscription-page {
-  & .pricing-section {
-    position: relative;
-    padding-top: 80px;
-  }
-  & .plan-card {
-    isolation: isolate;
-    transition: transform 320ms ease, box-shadow 320ms ease, border-color 240ms ease;
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      border-radius: inherit;
-      background: radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 30%), var(--praxis-accent-tint), transparent 72%);
-      opacity: 0;
-      transition: opacity 320ms ease;
-      content: "";
-      pointer-events: none;
-    }
-  }
-}
-.subscription-page .plan-card:focus-within::before, .subscription-page .plan-card.is-pointer-active::before { opacity: .8; }
-.subscription-page {
-  & .plan-card {
-    &:focus-within {
-      border-color: var(--praxis-accent-text);
-    }
-    &.is-pointer-active {
-      transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
-      border-color: var(--praxis-accent-text);
-      box-shadow: 0 24px 60px rgb(0 0 0 / 15%);
-    }
-  }
-}
-.plan-trace {
-  position: absolute;
-  inset: -1px;
-  z-index: 1;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-  overflow: visible;
-  pointer-events: none;
-  & rect {
-    fill: none;
-    stroke: var(--praxis-color-accent);
-    stroke-width: 1.5;
-    stroke-dasharray: 36 364;
-  }
-}
-.subscription-page {
-  & .annual-ribbon {
-    overflow: hidden;
-    &::after {
-      position: absolute;
-      inset: 0 auto 0 -40%;
-      width: 32%;
-      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 55%), transparent);
-      transform: skewX(-18deg);
-      content: "";
-      pointer-events: none;
-    }
-  }
-  & .benefit {
-    padding: 20px 18px;
-    margin: -20px -18px;
-    border-radius: 16px;
-    transition: background 240ms ease, transform 240ms ease;
-    &:hover {
-      background: var(--praxis-panel);
-      transform: translateY(-4px);
-    }
-  }
-  & .benefit-icon {
-    color: var(--praxis-accent-text);
-    transition: transform 320ms ease, background 240ms ease;
-  }
-  & .benefit:hover .benefit-icon {
-    transform: rotate(-6deg);
-  }
-  & .learning-steps {
-    position: relative;
-  }
-}
-.subscription-page .learning-steps::before, .subscription-page .learning-steps::after { position: absolute; top: 20px; bottom: 42px; left: 12px; width: 1px; background: var(--praxis-line); content: ""; }
-.subscription-page {
-  & .learning-steps::after {
-    background: var(--praxis-accent-text);
-    transform-origin: top;
-  }
-  &.motion-enabled .learning-steps::after {
-    transform: scaleY(0);
-    transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
-  }
-  &.motion-enabled .learning-steps.has-entered::after {
-    transform: scaleY(1);
-  }
-  & .learning-step {
-    position: relative;
-    padding-left: 44px;
-    &>span {
-      position: absolute;
-      top: 26px;
-      left: 0;
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      width: 25px;
-      height: 25px;
-      margin: 0;
-      border: 1px solid var(--praxis-line);
-      border-radius: 50%;
-      background: var(--praxis-page);
-      font-size: 10px;
-    }
-    &:first-child>span {
-      top: 2px;
-    }
-  }
-  & .px-details {
-    transition: border-color 240ms ease;
-    &[open] {
-      border-color: var(--praxis-accent-text);
-    }
-    &.is-animating {
-      overflow: hidden;
-    }
-    & summary::after {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border: 1px solid var(--praxis-line);
-      border-radius: 50%;
-      font-size: 20px;
-      line-height: 1;
-      transition: transform 320ms ease, background 240ms ease, color 240ms ease;
-    }
-    &[open] summary::after {
-      transform: rotate(180deg);
-      background: var(--praxis-accent-tint);
-      color: var(--praxis-accent-text);
-    }
-    &[open] summary {
-      color: var(--praxis-accent-text);
-    }
-  }
-}
-.subscription-page .px-button .px-icon, .subscription-page .text-link .px-icon { transition: transform 320ms cubic-bezier(.16, 1, .3, 1); }
-.subscription-page .px-button:hover .px-icon, .subscription-page .text-link:hover .px-icon { transform: translateX(4px); }
-.subscription-page {
-  & .px-button--primary {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    &::before {
-      position: absolute;
-      inset: 0 auto 0 -60%;
-      z-index: -1;
-      width: 45%;
-      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent);
-      transform: skewX(-20deg);
-      content: "";
-      pointer-events: none;
-    }
-  }
-  & .closing-section {
-    position: relative;
-    overflow: hidden;
-    padding-block: 68px;
-    background: radial-gradient(ellipse at 90% 100%, var(--praxis-accent-tint), transparent 64%);
-  }
-}
-@keyframes px-skill-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
-@keyframes px-orbit { to { transform: rotate(360deg); } }
-@keyframes px-board-scan { to { transform: translateY(430px); } }
-@keyframes px-aura-drift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.06); } }
-@keyframes px-tool-loop { to { transform: translateX(-50%); } }
-@keyframes px-plan-trace { to { stroke-dashoffset: -400; } }
-@keyframes px-ribbon-sheen { 0%, 65% { translate: 0 0; } 100% { translate: 470% 0; } }
-@keyframes px-button-sheen { to { translate: 380% 0; } }
-@keyframes px-dialog-enter { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
-@keyframes px-backdrop-enter { from { opacity: 0; } to { opacity: 1; } }
-@media (prefers-reduced-motion: no-preference) {
-  .motion-enabled {
-    & .subscription-hero::before {
-      animation: px-aura-drift 14s ease-in-out infinite paused;
-    }
-    & .skill-card {
-      animation: px-skill-float 6s ease-in-out infinite paused;
-    }
-    & .skill-card--ai {
-      animation-delay: -2s;
-    }
-    & .skill-card--bi {
-      animation-delay: -4s;
-    }
-    & .board-orbit {
-      animation: px-orbit 18s linear infinite paused;
-    }
-    & .board-orbit--inner {
-      animation-duration: 14s;
-      animation-direction: reverse;
-    }
-    & .board-grid::before {
-      animation: px-board-scan 9s linear infinite paused;
-    }
-  }
-  .motion-enabled .subscription-hero.is-in-view::before,
-  .motion-enabled .subscription-hero.is-in-view :is(.skill-card, .board-orbit),
-  .motion-enabled .subscription-hero.is-in-view .board-grid::before { animation-play-state: running; }
-  .motion-enabled {
-    & .tools-rail__track {
-      animation: px-tool-loop 34s linear infinite paused;
-    }
-    & .tools-rail.is-in-view .tools-rail__track {
-      animation-play-state: running;
-    }
-  }
-  .motion-enabled .tools-rail:hover .tools-rail__track, .motion-enabled .tools-rail:focus-within .tools-rail__track { animation-play-state: paused; }
-  .motion-enabled {
-    & .plan-trace rect {
-      animation: px-plan-trace 9s linear infinite paused;
-    }
-    & .annual-ribbon::after {
-      animation: px-ribbon-sheen 8s ease-in-out infinite paused;
-    }
-    & .plan-card--annual {
-      &.is-in-view .plan-trace rect {
-        animation-play-state: running;
-      }
-      &.is-in-view .annual-ribbon::after {
-        animation-play-state: running;
-      }
-    }
-  }
-  .subscription-page:not(.motion-paused) .px-button--primary:is(:hover, :focus-visible)::before { animation: px-button-sheen 700ms ease; }
-  .motion-enabled {
-    &:not(.motion-paused) .px-dialog[open] {
-      animation: px-dialog-enter 340ms cubic-bezier(.16, 1, .3, 1);
-    }
-    &:not(.motion-paused) .px-dialog[open]::backdrop {
-      animation: px-backdrop-enter 260ms ease;
-    }
-  }
-}
-.subscription-page.motion-paused *, .subscription-page.motion-paused *::before, .subscription-page.motion-paused *::after { animation-play-state: paused !important; }
-.subscription-page {
-  &.motion-paused * {
-    transition: none !important;
-  }
-  &.motion-paused :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) {
-    transform: none !important;
-  }
-}
-.subscription-page.motion-paused .px-dialog[open], .subscription-page.motion-paused .px-dialog[open]::backdrop { animation: none; }
-@media (max-width: 1000px) {
-  .subscription-page .hero-copy h1 { font-size: 48px; }
-  .tools-rail__caption { flex-basis: 190px; }
-  .tools-rail__inner { gap: 18px; }
-}
-@media (max-width: 760px) {
-  .subscription-page {
-    & .subscription-hero {
-      padding-top: 48px;
-    }
-    & .hero-copy h1 {
-      font-size: clamp(36px, 7vw, 52px);
-    }
-  }
-  .practice-scene { justify-self: center; width: calc(100% - 12px); }
-  .subscription-page .practice-board { width: 100%; }
-  .tools-rail__inner { flex-wrap: wrap; gap: 0; }
-  .tools-rail__caption { flex: 1; padding-block: 20px 0; }
-  .tools-rail__window { flex: 0 0 100%; order: 3; }
-  .tools-rail__list {
-    gap: 24px;
-    padding-block: 20px;
-    & li {
-      font-size: 13px;
-    }
-  }
-  .subscription-page {
-    & .pricing-section {
-      padding-top: 52px;
-    }
-    & .plan-card.is-pointer-active {
-      transform: none;
-    }
-    & .benefit {
-      margin: 0;
-      padding: 0;
-    }
-    & .closing-section {
-      padding-block: 52px;
-    }
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .subscription-page {
-    & .tools-rail__track {
-      width: 100%;
-    }
-    & .tools-rail__list {
-      flex-wrap: wrap;
-      gap: 16px 24px;
-    }
-    & .tools-rail__duplicate {
-      display: none;
-    }
-    & .tools-rail__window {
-      mask-image: none;
-    }
-    & :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) {
-      transform: none !important;
-    }
-  }
-  .subscription-page *, .subscription-page *::before, .subscription-page *::after { animation: none !important; transition: none !important; }
-}
+.subscription-page { /* Seleciona .subscription-page. */
+  overflow-x: clip; /* Define o excesso horizontal como clip. */
+  & .px-skip { /* Seleciona & .px-skip usando & para manter a relação com o seletor pai. */
+    z-index: 120; /* Define a ordem de sobreposição como 120. */
+  } /* Encerra o bloco do seletor & .px-skip. */
+  & :is(#planos,#faq-title) { /* Seleciona & :is(#planos,#faq-title) usando & para manter a relação com o seletor pai. */
+    scroll-margin-top: calc(var(--praxis-header-height) + 24px); /* Define a folga superior ao rolar até o elemento como calc(var(--praxis-header-height) + 24px). */
+  } /* Encerra o bloco do seletor & :is(#planos,#faq-title). */
+} /* Encerra o bloco do seletor .subscription-page. */
+.subscription-progress { /* Seleciona .subscription-progress. */
+  position: fixed; /* Define o posicionamento como fixed. */
+  inset: 0 0 auto; /* Define as distâncias às bordas como 0 0 auto. */
+  z-index: 110; /* Define a ordem de sobreposição como 110. */
+  height: 3px; /* Define a altura como 3px. */
+  background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+  transform: scaleX(var(--page-progress, 0)); /* Define a transformação visual como scaleX(var(--page-progress, 0)). */
+  transform-origin: left; /* Define o ponto de origem da transformação como left. */
+  pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+} /* Encerra o bloco do seletor .subscription-progress. */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .subscription-hero { /* Seleciona & .subscription-hero usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    isolation: isolate; /* Define o isolamento da camada de composição como isolate. */
+    padding-top: 80px; /* Define o espaço interno superior como 80px. */
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: -15% -10% 0 30%; /* Define as distâncias às bordas como -15% -10% 0 30%. */
+      z-index: -1; /* Define a ordem de sobreposição como -1. */
+      background: radial-gradient(ellipse at 65% 35%, rgb(224 251 56 / 12%), transparent 56%); /* Define o fundo como radial-gradient(ellipse at 65% 35%, rgb(224 251 56 / 12%), transparent 56%). */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+      pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .subscription-hero. */
+  & .hero-copy h1 { /* Seleciona & .hero-copy h1 usando & para manter a relação com o seletor pai. */
+    font-size: clamp(42px, 4.7vw, 68px); /* Define o tamanho da fonte como clamp(42px, 4.7vw, 68px). */
+  } /* Encerra o bloco do seletor & .hero-copy h1. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.hero-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; } /* Define o modelo de layout como block. Define o tratamento do conteúdo excedente como hidden. Define o espaço interno inferior como .08em. Define a margem inferior como -.08em. */
+.hero-line__text { display: inline-block; } /* Define o modelo de layout como inline-block. */
+.hero-accent { font-style: normal; } /* Define o estilo da fonte como normal. */
+.practice-scene { /* Seleciona .practice-scene. */
+  position: relative; /* Define o posicionamento como relative. */
+  width: 100%; /* Define a largura como 100%. */
+  max-width: 465px; /* Define a largura máxima como 465px. */
+  justify-self: end; /* Define a propriedade justify-self como end. */
+  &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+    position: absolute; /* Define o posicionamento como absolute. */
+    inset: -60px; /* Define as distâncias às bordas como -60px. */
+    z-index: -1; /* Define a ordem de sobreposição como -1. */
+    border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+    background: radial-gradient(ellipse, rgb(224 251 56 / 17%), transparent 64%); /* Define o fundo como radial-gradient(ellipse, rgb(224 251 56 / 17%), transparent 64%). */
+    content: ""; /* Define o conteúdo do pseudoelemento como "". */
+  } /* Encerra o bloco do seletor &::before. */
+} /* Encerra o bloco do seletor .practice-scene. */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .practice-board { /* Seleciona & .practice-board usando & para manter a relação com o seletor pai. */
+    box-shadow: 12px 14px 0 var(--praxis-accent-tint), 0 28px 72px rgb(0 0 0 / 16%); /* Define a sombra da caixa como 12px 14px 0 var(--praxis-accent-tint), 0 28px 72px rgb(0 0 0 / 16%). */
+  } /* Encerra o bloco do seletor & .practice-board. */
+  & .board-grid { /* Seleciona & .board-grid usando & para manter a relação com o seletor pai. */
+    background-size: 24px 24px; /* Define o tamanho da imagem de fundo como 24px 24px. */
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: -85px 0 auto; /* Define as distâncias às bordas como -85px 0 auto. */
+      height: 80px; /* Define a altura como 80px. */
+      background: linear-gradient(transparent, rgb(224 251 56 / 9%), transparent); /* Define o fundo como linear-gradient(transparent, rgb(224 251 56 / 9%), transparent). */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+      pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .board-grid. */
+  & .board-orbit::after { /* Seleciona & .board-orbit::after usando & para manter a relação com o seletor pai. */
+    position: absolute; /* Define o posicionamento como absolute. */
+    top: 50%; /* Define a distância do topo como 50%. */
+    left: -4px; /* Define a distância da esquerda como -4px. */
+    width: 7px; /* Define a largura como 7px. */
+    height: 7px; /* Define a altura como 7px. */
+    border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+    background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+    box-shadow: 0 0 18px rgb(224 251 56 / 65%); /* Define a sombra da caixa como 0 0 18px rgb(224 251 56 / 65%). */
+    content: ""; /* Define o conteúdo do pseudoelemento como "". */
+  } /* Encerra o bloco do seletor & .board-orbit::after. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.tools-rail { margin-top: 10px; border-block: 1px solid var(--praxis-line); background: var(--praxis-panel); } /* Define a margem superior como 10px. Define a propriedade border-block como 1px solid var(--praxis-line). Define o fundo como var(--praxis-panel). */
+.tools-rail__inner { display: flex; align-items: center; gap: 28px; } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. Define o espaço entre os itens como 28px. */
+.tools-rail__caption { /* Seleciona .tools-rail__caption. */
+  flex: 0 0 214px; /* Define o crescimento, a redução e a base do item flexível como 0 0 214px. */
+  display: grid; /* Define o modelo de layout como grid. */
+  gap: 5px; /* Define o espaço entre os itens como 5px. */
+  padding-block: 24px; /* Define a propriedade padding-block como 24px. */
+  & .px-eyebrow { /* Seleciona & .px-eyebrow usando & para manter a relação com o seletor pai. */
+    font-size: 10px; /* Define o tamanho da fonte como 10px. */
+  } /* Encerra o bloco do seletor & .px-eyebrow. */
+  &>:last-child { /* Seleciona &>:last-child usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  } /* Encerra o bloco do seletor &>:last-child. */
+} /* Encerra o bloco do seletor .tools-rail__caption. */
+.tools-rail__window { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); } /* Define o crescimento, a redução e a base do item flexível como 1. Define a largura mínima como 0. Define o tratamento do conteúdo excedente como hidden. Define a propriedade mask-image como linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent). */
+.tools-rail__track { display: flex; width: max-content; } /* Define o modelo de layout como flex. Define a largura como max-content. */
+.tools-rail__list { /* Seleciona .tools-rail__list. */
+  display: flex; /* Define o modelo de layout como flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: 32px; /* Define o espaço entre os itens como 32px. */
+  list-style: none; /* Define o marcador da lista como none. */
+  padding: 24px 16px; /* Define os espaços internos como 24px 16px. */
+  margin: 0; /* Define as margens externas como 0. */
+  & li { /* Seleciona & li usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 12px; /* Define o espaço entre os itens como 12px. */
+    white-space: nowrap; /* Define o tratamento dos espaços e das quebras de linha como nowrap. */
+    font-size: 15px; /* Define o tamanho da fonte como 15px. */
+    font-weight: 600; /* Define o peso da fonte como 600. */
+  } /* Encerra o bloco do seletor & li. */
+} /* Encerra o bloco do seletor .tools-rail__list. */
+.subscription-page { /* Seleciona .subscription-page. */
+  &:not(.motion-enabled) .tools-rail__track { /* Seleciona &:not(.motion-enabled) .tools-rail__track usando & para manter a relação com o seletor pai. */
+    width: 100%; /* Define a largura como 100%. */
+  } /* Encerra o bloco do seletor &:not(.motion-enabled) .tools-rail__track. */
+  &:not(.motion-enabled) .tools-rail__list { /* Seleciona &:not(.motion-enabled) .tools-rail__list usando & para manter a relação com o seletor pai. */
+    flex-wrap: wrap; /* Define a quebra de linha dos itens flexíveis como wrap. */
+  } /* Encerra o bloco do seletor &:not(.motion-enabled) .tools-rail__list. */
+  &:not(.motion-enabled) .tools-rail__duplicate { /* Seleciona &:not(.motion-enabled) .tools-rail__duplicate usando & para manter a relação com o seletor pai. */
+    display: none; /* Define o modelo de layout como none. */
+  } /* Encerra o bloco do seletor &:not(.motion-enabled) .tools-rail__duplicate. */
+  &:not(.motion-enabled) .tools-rail__window { /* Seleciona &:not(.motion-enabled) .tools-rail__window usando & para manter a relação com o seletor pai. */
+    mask-image: none; /* Define a propriedade mask-image como none. */
+  } /* Encerra o bloco do seletor &:not(.motion-enabled) .tools-rail__window. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.tool-rail-mark { display: grid; place-items: center; min-width: 32px; height: 32px; padding-inline: 5px; border: 1px solid var(--praxis-line); border-radius: 8px; background: var(--praxis-accent-tint); color: var(--praxis-accent-text); font-size: 11px; } /* Define o modelo de layout como grid. Define o alinhamento dos itens nos dois eixos como center. Define a largura mínima como 32px. Define a altura como 32px. Define os espaços internos laterais como 5px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como 8px. … */
+.tool-rail-dot { width: 4px; height: 4px; margin-left: 12px; border-radius: 50%; background: var(--praxis-line); } /* Define a largura como 4px. Define a altura como 4px. Define a margem esquerda como 12px. Define o arredondamento dos cantos como 50%. Define o fundo como var(--praxis-line). */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .pricing-section { /* Seleciona & .pricing-section usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    padding-top: 80px; /* Define o espaço interno superior como 80px. */
+  } /* Encerra o bloco do seletor & .pricing-section. */
+  & .plan-card { /* Seleciona & .plan-card usando & para manter a relação com o seletor pai. */
+    isolation: isolate; /* Define o isolamento da camada de composição como isolate. */
+    transition: transform 320ms ease, box-shadow 320ms ease, border-color 240ms ease; /* Define as propriedades e o tempo da transição como transform 320ms ease, box-shadow 320ms ease, border-color 240ms ease. */
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: 0; /* Define as distâncias às bordas como 0. */
+      z-index: -1; /* Define a ordem de sobreposição como -1. */
+      border-radius: inherit; /* Define o arredondamento dos cantos como inherit. */
+      background: radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 30%), var(--praxis-accent-tint), transparent 72%); /* Define o fundo como radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 30%), var(--praxis-…. */
+      opacity: 0; /* Define a opacidade como 0. */
+      transition: opacity 320ms ease; /* Define as propriedades e o tempo da transição como opacity 320ms ease. */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+      pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .plan-card. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.subscription-page .plan-card:focus-within::before, .subscription-page .plan-card.is-pointer-active::before { opacity: .8; } /* Define a opacidade como .8. */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .plan-card { /* Seleciona & .plan-card usando & para manter a relação com o seletor pai. */
+    &:focus-within { /* Seleciona &:focus-within usando & para manter a relação com o seletor pai. */
+      border-color: var(--praxis-accent-text); /* Define a cor das bordas como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &:focus-within. */
+    &.is-pointer-active { /* Seleciona &.is-pointer-active usando & para manter a relação com o seletor pai. */
+      transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px); /* Define a transformação visual como perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) transl…. */
+      border-color: var(--praxis-accent-text); /* Define a cor das bordas como var(--praxis-accent-text). */
+      box-shadow: 0 24px 60px rgb(0 0 0 / 15%); /* Define a sombra da caixa como 0 24px 60px rgb(0 0 0 / 15%). */
+    } /* Encerra o bloco do seletor &.is-pointer-active. */
+  } /* Encerra o bloco do seletor & .plan-card. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.plan-trace { /* Seleciona .plan-trace. */
+  position: absolute; /* Define o posicionamento como absolute. */
+  inset: -1px; /* Define as distâncias às bordas como -1px. */
+  z-index: 1; /* Define a ordem de sobreposição como 1. */
+  width: calc(100% + 2px); /* Define a largura como calc(100% + 2px). */
+  height: calc(100% + 2px); /* Define a altura como calc(100% + 2px). */
+  overflow: visible; /* Define o tratamento do conteúdo excedente como visible. */
+  pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+  & rect { /* Seleciona & rect usando & para manter a relação com o seletor pai. */
+    fill: none; /* Define a cor de preenchimento SVG como none. */
+    stroke: var(--praxis-color-accent); /* Define a cor do traço SVG como var(--praxis-color-accent). */
+    stroke-width: 1.5; /* Define a espessura do traço SVG como 1.5. */
+    stroke-dasharray: 36 364; /* Define a propriedade stroke-dasharray como 36 364. */
+  } /* Encerra o bloco do seletor & rect. */
+} /* Encerra o bloco do seletor .plan-trace. */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .annual-ribbon { /* Seleciona & .annual-ribbon usando & para manter a relação com o seletor pai. */
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    &::after { /* Seleciona &::after usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: 0 auto 0 -40%; /* Define as distâncias às bordas como 0 auto 0 -40%. */
+      width: 32%; /* Define a largura como 32%. */
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 55%), transparent); /* Define o fundo como linear-gradient(90deg, transparent, rgb(255 255 255 / 55%), transparent). */
+      transform: skewX(-18deg); /* Define a transformação visual como skewX(-18deg). */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+      pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+    } /* Encerra o bloco do seletor &::after. */
+  } /* Encerra o bloco do seletor & .annual-ribbon. */
+  & .benefit { /* Seleciona & .benefit usando & para manter a relação com o seletor pai. */
+    padding: 20px 18px; /* Define os espaços internos como 20px 18px. */
+    margin: -20px -18px; /* Define as margens externas como -20px -18px. */
+    border-radius: 16px; /* Define o arredondamento dos cantos como 16px. */
+    transition: background 240ms ease, transform 240ms ease; /* Define as propriedades e o tempo da transição como background 240ms ease, transform 240ms ease. */
+    &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+      background: var(--praxis-panel); /* Define o fundo como var(--praxis-panel). */
+      transform: translateY(-4px); /* Define a transformação visual como translateY(-4px). */
+    } /* Encerra o bloco do seletor &:hover. */
+  } /* Encerra o bloco do seletor & .benefit. */
+  & .benefit-icon { /* Seleciona & .benefit-icon usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    transition: transform 320ms ease, background 240ms ease; /* Define as propriedades e o tempo da transição como transform 320ms ease, background 240ms ease. */
+  } /* Encerra o bloco do seletor & .benefit-icon. */
+  & .benefit:hover .benefit-icon { /* Seleciona & .benefit:hover .benefit-icon usando & para manter a relação com o seletor pai. */
+    transform: rotate(-6deg); /* Define a transformação visual como rotate(-6deg). */
+  } /* Encerra o bloco do seletor & .benefit:hover .benefit-icon. */
+  & .learning-steps { /* Seleciona & .learning-steps usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+  } /* Encerra o bloco do seletor & .learning-steps. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.subscription-page .learning-steps::before, .subscription-page .learning-steps::after { position: absolute; top: 20px; bottom: 42px; left: 12px; width: 1px; background: var(--praxis-line); content: ""; } /* Define o posicionamento como absolute. Define a distância do topo como 20px. Define a distância da base como 42px. Define a distância da esquerda como 12px. Define a largura como 1px. Define o fundo como var(--praxis-line). Define o conteúdo do pseudoelemento como "". */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .learning-steps::after { /* Seleciona & .learning-steps::after usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-accent-text); /* Define o fundo como var(--praxis-accent-text). */
+    transform-origin: top; /* Define o ponto de origem da transformação como top. */
+  } /* Encerra o bloco do seletor & .learning-steps::after. */
+  &.motion-enabled .learning-steps::after { /* Seleciona &.motion-enabled .learning-steps::after usando & para manter a relação com o seletor pai. */
+    transform: scaleY(0); /* Define a transformação visual como scaleY(0). */
+    transition: transform 1.2s cubic-bezier(.16, 1, .3, 1); /* Define as propriedades e o tempo da transição como transform 1.2s cubic-bezier(.16, 1, .3, 1). */
+  } /* Encerra o bloco do seletor &.motion-enabled .learning-steps::after. */
+  &.motion-enabled .learning-steps.has-entered::after { /* Seleciona &.motion-enabled .learning-steps.has-entered::after usando & para manter a relação com o seletor pai. */
+    transform: scaleY(1); /* Define a transformação visual como scaleY(1). */
+  } /* Encerra o bloco do seletor &.motion-enabled .learning-steps.has-entered::after. */
+  & .learning-step { /* Seleciona & .learning-step usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    padding-left: 44px; /* Define o espaço interno esquerdo como 44px. */
+    &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      top: 26px; /* Define a distância do topo como 26px. */
+      left: 0; /* Define a distância da esquerda como 0. */
+      z-index: 1; /* Define a ordem de sobreposição como 1. */
+      display: grid; /* Define o modelo de layout como grid. */
+      place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
+      width: 25px; /* Define a largura como 25px. */
+      height: 25px; /* Define a altura como 25px. */
+      margin: 0; /* Define as margens externas como 0. */
+      border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+      border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+      background: var(--praxis-page); /* Define o fundo como var(--praxis-page). */
+      font-size: 10px; /* Define o tamanho da fonte como 10px. */
+    } /* Encerra o bloco do seletor &>span. */
+    &:first-child>span { /* Seleciona &:first-child>span usando & para manter a relação com o seletor pai. */
+      top: 2px; /* Define a distância do topo como 2px. */
+    } /* Encerra o bloco do seletor &:first-child>span. */
+  } /* Encerra o bloco do seletor & .learning-step. */
+  & .px-details { /* Seleciona & .px-details usando & para manter a relação com o seletor pai. */
+    transition: border-color 240ms ease; /* Define as propriedades e o tempo da transição como border-color 240ms ease. */
+    &[open] { /* Seleciona &[open] usando & para manter a relação com o seletor pai. */
+      border-color: var(--praxis-accent-text); /* Define a cor das bordas como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &[open]. */
+    &.is-animating { /* Seleciona &.is-animating usando & para manter a relação com o seletor pai. */
+      overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    } /* Encerra o bloco do seletor &.is-animating. */
+    & summary::after { /* Seleciona & summary::after usando & para manter a relação com o seletor pai. */
+      display: grid; /* Define o modelo de layout como grid. */
+      place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
+      flex-shrink: 0; /* Define a redução do item flexível como 0. */
+      width: 28px; /* Define a largura como 28px. */
+      height: 28px; /* Define a altura como 28px. */
+      border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+      border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+      font-size: 20px; /* Define o tamanho da fonte como 20px. */
+      line-height: 1; /* Define a altura das linhas como 1. */
+      transition: transform 320ms ease, background 240ms ease, color 240ms ease; /* Define as propriedades e o tempo da transição como transform 320ms ease, background 240ms ease, color 240ms ease. */
+    } /* Encerra o bloco do seletor & summary::after. */
+    &[open] summary::after { /* Seleciona &[open] summary::after usando & para manter a relação com o seletor pai. */
+      transform: rotate(180deg); /* Define a transformação visual como rotate(180deg). */
+      background: var(--praxis-accent-tint); /* Define o fundo como var(--praxis-accent-tint). */
+      color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &[open] summary::after. */
+    &[open] summary { /* Seleciona &[open] summary usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &[open] summary. */
+  } /* Encerra o bloco do seletor & .px-details. */
+} /* Encerra o bloco do seletor .subscription-page. */
+.subscription-page .px-button .px-icon, .subscription-page .text-link .px-icon { transition: transform 320ms cubic-bezier(.16, 1, .3, 1); } /* Define as propriedades e o tempo da transição como transform 320ms cubic-bezier(.16, 1, .3, 1). */
+.subscription-page .px-button:hover .px-icon, .subscription-page .text-link:hover .px-icon { transform: translateX(4px); } /* Define a transformação visual como translateX(4px). */
+.subscription-page { /* Seleciona .subscription-page. */
+  & .px-button--primary { /* Seleciona & .px-button--primary usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    isolation: isolate; /* Define o isolamento da camada de composição como isolate. */
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: 0 auto 0 -60%; /* Define as distâncias às bordas como 0 auto 0 -60%. */
+      z-index: -1; /* Define a ordem de sobreposição como -1. */
+      width: 45%; /* Define a largura como 45%. */
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent); /* Define o fundo como linear-gradient(90deg, transparent, rgb(255 255 255 / 45%), transparent). */
+      transform: skewX(-20deg); /* Define a transformação visual como skewX(-20deg). */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+      pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .px-button--primary. */
+  & .closing-section { /* Seleciona & .closing-section usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    padding-block: 68px; /* Define a propriedade padding-block como 68px. */
+    background: radial-gradient(ellipse at 90% 100%, var(--praxis-accent-tint), transparent 64%); /* Define o fundo como radial-gradient(ellipse at 90% 100%, var(--praxis-accent-tint), transparent 64%). */
+  } /* Encerra o bloco do seletor & .closing-section. */
+} /* Encerra o bloco do seletor .subscription-page. */
+@keyframes px-skill-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } } /* Define a propriedade translate como 0 0. Define a propriedade translate como 0 -8px. */
+@keyframes px-orbit { to { transform: rotate(360deg); } } /* Define a transformação visual como rotate(360deg). */
+@keyframes px-board-scan { to { transform: translateY(430px); } } /* Define a transformação visual como translateY(430px). */
+@keyframes px-aura-drift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.06); } } /* Define a transformação visual como translateY(0) scale(1). Define a transformação visual como translateY(-14px) scale(1.06). */
+@keyframes px-tool-loop { to { transform: translateX(-50%); } } /* Define a transformação visual como translateX(-50%). */
+@keyframes px-plan-trace { to { stroke-dashoffset: -400; } } /* Define a propriedade stroke-dashoffset como -400. */
+@keyframes px-ribbon-sheen { 0%, 65% { translate: 0 0; } 100% { translate: 470% 0; } } /* Define a propriedade translate como 0 0. Define a propriedade translate como 470% 0. */
+@keyframes px-button-sheen { to { translate: 380% 0; } } /* Define a propriedade translate como 380% 0. */
+@keyframes px-dialog-enter { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } } /* Define a opacidade como 0. Define a transformação visual como translateY(18px) scale(.97). Define a opacidade como 1. Define a transformação visual como none. */
+@keyframes px-backdrop-enter { from { opacity: 0; } to { opacity: 1; } } /* Define a opacidade como 0. Define a opacidade como 1. */
+@media (prefers-reduced-motion: no-preference) { /* Aplica estas regras quando (prefers-reduced-motion: no-preference). */
+  .motion-enabled { /* Seleciona .motion-enabled. */
+    & .subscription-hero::before { /* Seleciona & .subscription-hero::before usando & para manter a relação com o seletor pai. */
+      animation: px-aura-drift 14s ease-in-out infinite paused; /* Define a animação e seus parâmetros como px-aura-drift 14s ease-in-out infinite paused. */
+    } /* Encerra o bloco do seletor & .subscription-hero::before. */
+    & .skill-card { /* Seleciona & .skill-card usando & para manter a relação com o seletor pai. */
+      animation: px-skill-float 6s ease-in-out infinite paused; /* Define a animação e seus parâmetros como px-skill-float 6s ease-in-out infinite paused. */
+    } /* Encerra o bloco do seletor & .skill-card. */
+    & .skill-card--ai { /* Seleciona & .skill-card--ai usando & para manter a relação com o seletor pai. */
+      animation-delay: -2s; /* Define o atraso da animação como -2s. */
+    } /* Encerra o bloco do seletor & .skill-card--ai. */
+    & .skill-card--bi { /* Seleciona & .skill-card--bi usando & para manter a relação com o seletor pai. */
+      animation-delay: -4s; /* Define o atraso da animação como -4s. */
+    } /* Encerra o bloco do seletor & .skill-card--bi. */
+    & .board-orbit { /* Seleciona & .board-orbit usando & para manter a relação com o seletor pai. */
+      animation: px-orbit 18s linear infinite paused; /* Define a animação e seus parâmetros como px-orbit 18s linear infinite paused. */
+    } /* Encerra o bloco do seletor & .board-orbit. */
+    & .board-orbit--inner { /* Seleciona & .board-orbit--inner usando & para manter a relação com o seletor pai. */
+      animation-duration: 14s; /* Define a duração da animação como 14s. */
+      animation-direction: reverse; /* Define a propriedade animation-direction como reverse. */
+    } /* Encerra o bloco do seletor & .board-orbit--inner. */
+    & .board-grid::before { /* Seleciona & .board-grid::before usando & para manter a relação com o seletor pai. */
+      animation: px-board-scan 9s linear infinite paused; /* Define a animação e seus parâmetros como px-board-scan 9s linear infinite paused. */
+    } /* Encerra o bloco do seletor & .board-grid::before. */
+  } /* Encerra o bloco do seletor .motion-enabled. */
+  .motion-enabled .subscription-hero.is-in-view::before, /* Seleciona .motion-enabled .subscription-hero.is-in-view::before, .motion-enabled .subscription-hero.is-in-view :is(.skill-card, .board-orbit), .motion-enabled .subscript…. */
+  .motion-enabled .subscription-hero.is-in-view :is(.skill-card, .board-orbit), /* Continua a seleção ou o valor CSS com .motion-enabled .subscription-hero.is-in-view :is(.skill-card, .board-orbit),. */
+  .motion-enabled .subscription-hero.is-in-view .board-grid::before { animation-play-state: running; } /* Define o estado de execução da animação como running. */
+  .motion-enabled { /* Seleciona .motion-enabled. */
+    & .tools-rail__track { /* Seleciona & .tools-rail__track usando & para manter a relação com o seletor pai. */
+      animation: px-tool-loop 34s linear infinite paused; /* Define a animação e seus parâmetros como px-tool-loop 34s linear infinite paused. */
+    } /* Encerra o bloco do seletor & .tools-rail__track. */
+    & .tools-rail.is-in-view .tools-rail__track { /* Seleciona & .tools-rail.is-in-view .tools-rail__track usando & para manter a relação com o seletor pai. */
+      animation-play-state: running; /* Define o estado de execução da animação como running. */
+    } /* Encerra o bloco do seletor & .tools-rail.is-in-view .tools-rail__track. */
+  } /* Encerra o bloco do seletor .motion-enabled. */
+  .motion-enabled .tools-rail:hover .tools-rail__track, .motion-enabled .tools-rail:focus-within .tools-rail__track { animation-play-state: paused; } /* Define o estado de execução da animação como paused. */
+  .motion-enabled { /* Seleciona .motion-enabled. */
+    & .plan-trace rect { /* Seleciona & .plan-trace rect usando & para manter a relação com o seletor pai. */
+      animation: px-plan-trace 9s linear infinite paused; /* Define a animação e seus parâmetros como px-plan-trace 9s linear infinite paused. */
+    } /* Encerra o bloco do seletor & .plan-trace rect. */
+    & .annual-ribbon::after { /* Seleciona & .annual-ribbon::after usando & para manter a relação com o seletor pai. */
+      animation: px-ribbon-sheen 8s ease-in-out infinite paused; /* Define a animação e seus parâmetros como px-ribbon-sheen 8s ease-in-out infinite paused. */
+    } /* Encerra o bloco do seletor & .annual-ribbon::after. */
+    & .plan-card--annual { /* Seleciona & .plan-card--annual usando & para manter a relação com o seletor pai. */
+      &.is-in-view .plan-trace rect { /* Seleciona &.is-in-view .plan-trace rect usando & para manter a relação com o seletor pai. */
+        animation-play-state: running; /* Define o estado de execução da animação como running. */
+      } /* Encerra o bloco do seletor &.is-in-view .plan-trace rect. */
+      &.is-in-view .annual-ribbon::after { /* Seleciona &.is-in-view .annual-ribbon::after usando & para manter a relação com o seletor pai. */
+        animation-play-state: running; /* Define o estado de execução da animação como running. */
+      } /* Encerra o bloco do seletor &.is-in-view .annual-ribbon::after. */
+    } /* Encerra o bloco do seletor & .plan-card--annual. */
+  } /* Encerra o bloco do seletor .motion-enabled. */
+  .subscription-page:not(.motion-paused) .px-button--primary:is(:hover, :focus-visible)::before { animation: px-button-sheen 700ms ease; } /* Define a animação e seus parâmetros como px-button-sheen 700ms ease. */
+  .motion-enabled { /* Seleciona .motion-enabled. */
+    &:not(.motion-paused) .px-dialog[open] { /* Seleciona &:not(.motion-paused) .px-dialog[open] usando & para manter a relação com o seletor pai. */
+      animation: px-dialog-enter 340ms cubic-bezier(.16, 1, .3, 1); /* Define a animação e seus parâmetros como px-dialog-enter 340ms cubic-bezier(.16, 1, .3, 1). */
+    } /* Encerra o bloco do seletor &:not(.motion-paused) .px-dialog[open]. */
+    &:not(.motion-paused) .px-dialog[open]::backdrop { /* Seleciona &:not(.motion-paused) .px-dialog[open]::backdrop usando & para manter a relação com o seletor pai. */
+      animation: px-backdrop-enter 260ms ease; /* Define a animação e seus parâmetros como px-backdrop-enter 260ms ease. */
+    } /* Encerra o bloco do seletor &:not(.motion-paused) .px-dialog[open]::backdrop. */
+  } /* Encerra o bloco do seletor .motion-enabled. */
+} /* Encerra o bloco da regra @media. */
+.subscription-page.motion-paused *, .subscription-page.motion-paused *::before, .subscription-page.motion-paused *::after { animation-play-state: paused !important; } /* Define o estado de execução da animação como paused. */
+.subscription-page { /* Seleciona .subscription-page. */
+  &.motion-paused * { /* Seleciona &.motion-paused * usando & para manter a relação com o seletor pai. */
+    transition: none !important; /* Define as propriedades e o tempo da transição como none. */
+  } /* Encerra o bloco do seletor &.motion-paused *. */
+  &.motion-paused :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) { /* Seleciona &.motion-paused :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) usando & para manter a relação com o seletor pai. */
+    transform: none !important; /* Define a transformação visual como none. */
+  } /* Encerra o bloco do seletor &.motion-paused :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon). */
+} /* Encerra o bloco do seletor .subscription-page. */
+.subscription-page.motion-paused .px-dialog[open], .subscription-page.motion-paused .px-dialog[open]::backdrop { animation: none; } /* Define a animação e seus parâmetros como none. */
+@media (max-width: 1000px) { /* Aplica estas regras quando (max-width: 1000px). */
+  .subscription-page .hero-copy h1 { font-size: 48px; } /* Define o tamanho da fonte como 48px. */
+  .tools-rail__caption { flex-basis: 190px; } /* Define o tamanho inicial do item flexível como 190px. */
+  .tools-rail__inner { gap: 18px; } /* Define o espaço entre os itens como 18px. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 760px) { /* Aplica estas regras quando (max-width: 760px). */
+  .subscription-page { /* Seleciona .subscription-page. */
+    & .subscription-hero { /* Seleciona & .subscription-hero usando & para manter a relação com o seletor pai. */
+      padding-top: 48px; /* Define o espaço interno superior como 48px. */
+    } /* Encerra o bloco do seletor & .subscription-hero. */
+    & .hero-copy h1 { /* Seleciona & .hero-copy h1 usando & para manter a relação com o seletor pai. */
+      font-size: clamp(36px, 7vw, 52px); /* Define o tamanho da fonte como clamp(36px, 7vw, 52px). */
+    } /* Encerra o bloco do seletor & .hero-copy h1. */
+  } /* Encerra o bloco do seletor .subscription-page. */
+  .practice-scene { justify-self: center; width: calc(100% - 12px); } /* Define a propriedade justify-self como center. Define a largura como calc(100% - 12px). */
+  .subscription-page .practice-board { width: 100%; } /* Define a largura como 100%. */
+  .tools-rail__inner { flex-wrap: wrap; gap: 0; } /* Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como 0. */
+  .tools-rail__caption { flex: 1; padding-block: 20px 0; } /* Define o crescimento, a redução e a base do item flexível como 1. Define a propriedade padding-block como 20px 0. */
+  .tools-rail__window { flex: 0 0 100%; order: 3; } /* Define o crescimento, a redução e a base do item flexível como 0 0 100%. Define a propriedade order como 3. */
+  .tools-rail__list { /* Seleciona .tools-rail__list. */
+    gap: 24px; /* Define o espaço entre os itens como 24px. */
+    padding-block: 20px; /* Define a propriedade padding-block como 20px. */
+    & li { /* Seleciona & li usando & para manter a relação com o seletor pai. */
+      font-size: 13px; /* Define o tamanho da fonte como 13px. */
+    } /* Encerra o bloco do seletor & li. */
+  } /* Encerra o bloco do seletor .tools-rail__list. */
+  .subscription-page { /* Seleciona .subscription-page. */
+    & .pricing-section { /* Seleciona & .pricing-section usando & para manter a relação com o seletor pai. */
+      padding-top: 52px; /* Define o espaço interno superior como 52px. */
+    } /* Encerra o bloco do seletor & .pricing-section. */
+    & .plan-card.is-pointer-active { /* Seleciona & .plan-card.is-pointer-active usando & para manter a relação com o seletor pai. */
+      transform: none; /* Define a transformação visual como none. */
+    } /* Encerra o bloco do seletor & .plan-card.is-pointer-active. */
+    & .benefit { /* Seleciona & .benefit usando & para manter a relação com o seletor pai. */
+      margin: 0; /* Define as margens externas como 0. */
+      padding: 0; /* Define os espaços internos como 0. */
+    } /* Encerra o bloco do seletor & .benefit. */
+    & .closing-section { /* Seleciona & .closing-section usando & para manter a relação com o seletor pai. */
+      padding-block: 52px; /* Define a propriedade padding-block como 52px. */
+    } /* Encerra o bloco do seletor & .closing-section. */
+  } /* Encerra o bloco do seletor .subscription-page. */
+} /* Encerra o bloco da regra @media. */
+@media (prefers-reduced-motion: reduce) { /* Aplica estas regras quando (prefers-reduced-motion: reduce). */
+  .subscription-page { /* Seleciona .subscription-page. */
+    & .tools-rail__track { /* Seleciona & .tools-rail__track usando & para manter a relação com o seletor pai. */
+      width: 100%; /* Define a largura como 100%. */
+    } /* Encerra o bloco do seletor & .tools-rail__track. */
+    & .tools-rail__list { /* Seleciona & .tools-rail__list usando & para manter a relação com o seletor pai. */
+      flex-wrap: wrap; /* Define a quebra de linha dos itens flexíveis como wrap. */
+      gap: 16px 24px; /* Define o espaço entre os itens como 16px 24px. */
+    } /* Encerra o bloco do seletor & .tools-rail__list. */
+    & .tools-rail__duplicate { /* Seleciona & .tools-rail__duplicate usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor & .tools-rail__duplicate. */
+    & .tools-rail__window { /* Seleciona & .tools-rail__window usando & para manter a relação com o seletor pai. */
+      mask-image: none; /* Define a propriedade mask-image como none. */
+    } /* Encerra o bloco do seletor & .tools-rail__window. */
+    & :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) { /* Seleciona & :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon) usando & para manter a relação com o seletor pai. */
+      transform: none !important; /* Define a transformação visual como none. */
+    } /* Encerra o bloco do seletor & :is(.plan-card,.benefit,.benefit-icon,.px-button,.px-button .px-icon,.text-link .px-icon). */
+  } /* Encerra o bloco do seletor .subscription-page. */
+  .subscription-page *, .subscription-page *::before, .subscription-page *::after { animation: none !important; transition: none !important; } /* Define a animação e seus parâmetros como none. Define as propriedades e o tempo da transição como none. */
+} /* Encerra o bloco da regra @media. */

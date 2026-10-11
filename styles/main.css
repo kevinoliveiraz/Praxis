@@ -28,7 +28,7 @@ html { /* seleciona o elemento raiz do documento HTML */
 } /* encerra as configurações do elemento html */
 
 
-html,
+html, /* Seleciona html, body. */
 body { /* aplica as mesmas configurações ao html e ao body */
 
   min-height: 100vh; /* garante uma altura mínima equivalente a toda a altura visível da tela */
@@ -55,7 +55,7 @@ a { /* seleciona todos os links da página */
 } /* encerra as configurações dos links */
 
 
-button,
+button, /* Seleciona button, input. */
 input { /* aplica as mesmas configurações aos botões e campos de entrada */
 
   font-family: inherit; /* faz botões e inputs herdarem a fonte utilizada pelo elemento pai */
@@ -88,11 +88,11 @@ img { /* seleciona todas as imagens da página */
   margin: 0 auto; /* remove margens verticais e centraliza horizontalmente o contêiner */
   padding: 0 32px; /* adiciona 32 pixels de espaço interno nas laterais */
 
-}
-.search-btn:focus-visible,
-.tag:focus-visible,
-.search-box input:focus-visible,
-.course-card:focus-visible,
+} /* Encerra o bloco do seletor .container. */
+.search-btn:focus-visible, /* Seleciona .search-btn:focus-visible, .tag:focus-visible, .search-box input:focus-visible, .course-card:focus-visible, .catalog-carousel-btn:focus-visible. */
+.tag:focus-visible, /* Continua a seleção ou o valor CSS com .tag:focus-visible,. */
+.search-box input:focus-visible, /* Continua a seleção ou o valor CSS com .search-box input:focus-visible,. */
+.course-card:focus-visible, /* Continua a seleção ou o valor CSS com .course-card:focus-visible,. */
 .catalog-carousel-btn:focus-visible { /* seleciona elementos interativos quando recebem foco visível pelo teclado */
 
   outline: 2px solid var(--accent); /* cria um contorno de 2 pixels usando a cor de destaque */
@@ -106,116 +106,116 @@ img { /* seleciona todas as imagens da página */
    HERO
 ========================================================= */
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 22px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  &::before {
-    width: 8px;
-    height: 8px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
-    content: "";
-  }
-}
-.home-page {
-  & .hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background: #070b09 url("../assets/hero-workspace.png") center / cover no-repeat;
-    color: #ffffff;
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%),
-    linear-gradient(0deg, rgb(3 8 7 / 25%), transparent 45%);
-      content: "";
-    }
-  }
-}
-.hero-inner {
-  display: flex;
-  align-items: center;
-  min-height: clamp(560px, calc(100svh - var(--praxis-header-height)), 780px);
-  padding-block: 88px;
-}
-.hero-content { width: min(760px, 62%); }
-.home-page {
-  & .hero {
-    & .eyebrow {
-      margin-bottom: 28px;
-      color: var(--praxis-color-accent);
-      font-size: clamp(12px, 1.1vw, 16px);
-      letter-spacing: 1.4px;
-    }
-    & h1 {
-      color: #ffffff;
-      font-size: clamp(48px, 6.3vw, 104px);
-      font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -0.045em;
-    }
-  }
-}
-.hero-title-line { display: block; }
-.home-page {
-  & .hero h1 .accent {
-    color: var(--praxis-color-accent);
-  }
-  & .hero-desc {
-    max-width: 640px;
-    margin-top: 30px;
-    color: #dce1df;
-    font-size: clamp(17px, 1.5vw, 24px);
-    line-height: 1.55;
-  }
-  & .catalog-panel {
-    margin-top: 0;
-  }
-}
-#catalog-title { scroll-margin-top: calc(var(--praxis-header-height) + 24px); }
-.catalog-search-status { margin-bottom: 20px; color: var(--praxis-muted); font-size: 14px; }
-@media (max-width: 980px) {
-  .hero-inner { min-height: 560px; padding-block: 72px; }
-  .hero-content { width: min(600px, 75%); }
-}
-@media (max-width: 700px) {
-  .home-page {
-    & .hero {
-      background-position: 62% center;
-      &::before {
-        background: linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)),
-      linear-gradient(0deg, rgb(3 8 7 / 40%), transparent 70%);
-      }
-    }
-  }
-  .hero-inner { min-height: 510px; padding-block: 64px; }
-  .hero-content { width: 100%; }
-  .home-page {
-    & .hero {
-      & h1 {
-        font-size: clamp(40px, 8.7vw, 60px);
-      }
-      & .eyebrow {
-        margin-bottom: 24px;
-      }
-    }
-    & .hero-desc {
-      max-width: 420px;
-      margin-top: 24px;
-      font-size: 17px;
-    }
-  }
-}
+.eyebrow { /* Seleciona .eyebrow. */
+  display: inline-flex; /* Define o modelo de layout como inline-flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: 8px; /* Define o espaço entre os itens como 8px. */
+  margin-bottom: 22px; /* Define a margem inferior como 22px. */
+  color: var(--accent); /* Define a cor do texto como var(--accent). */
+  font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  font-weight: 700; /* Define o peso da fonte como 700. */
+  letter-spacing: 1.2px; /* Define o espaçamento entre letras como 1.2px. */
+  &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+    width: 8px; /* Define a largura como 8px. */
+    height: 8px; /* Define a altura como 8px. */
+    flex-shrink: 0; /* Define a redução do item flexível como 0. */
+    border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+    background: var(--accent); /* Define o fundo como var(--accent). */
+    box-shadow: 0 0 10px var(--accent); /* Define a sombra da caixa como 0 0 10px var(--accent). */
+    content: ""; /* Define o conteúdo do pseudoelemento como "". */
+  } /* Encerra o bloco do seletor &::before. */
+} /* Encerra o bloco do seletor .eyebrow. */
+.home-page { /* Seleciona .home-page. */
+  & .hero { /* Seleciona & .hero usando & para manter a relação com o seletor pai. */
+    position: relative; /* Define o posicionamento como relative. */
+    isolation: isolate; /* Define o isolamento da camada de composição como isolate. */
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+    background: #070b09 url("../assets/hero-workspace.png") center / cover no-repeat; /* Define o fundo como #070b09 url("../assets/hero-workspace.png") center / cover no-repeat. */
+    color: #ffffff; /* Define a cor do texto como #ffffff. */
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+      position: absolute; /* Define o posicionamento como absolute. */
+      inset: 0; /* Define as distâncias às bordas como 0. */
+      z-index: -1; /* Define a ordem de sobreposição como -1. */
+      background: linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%), /* Define o fundo como linear-gradient(90deg, rgb(3 8 7 / 40%), rgb(3 8 7 / 15%) 48%, transparent 75%), lin…. */
+    linear-gradient(0deg, rgb(3 8 7 / 25%), transparent 45%); /* Continua o valor de background com linear-gradient(0deg, rgb(3 8 7 / 25%), transparent 45%);. */
+      content: ""; /* Define o conteúdo do pseudoelemento como "". */
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .hero. */
+} /* Encerra o bloco do seletor .home-page. */
+.hero-inner { /* Seleciona .hero-inner. */
+  display: flex; /* Define o modelo de layout como flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  min-height: clamp(560px, calc(100svh - var(--praxis-header-height)), 780px); /* Define a altura mínima como clamp(560px, calc(100svh - var(--praxis-header-height)), 780px). */
+  padding-block: 88px; /* Define a propriedade padding-block como 88px. */
+} /* Encerra o bloco do seletor .hero-inner. */
+.hero-content { width: min(760px, 62%); } /* Define a largura como min(760px, 62%). */
+.home-page { /* Seleciona .home-page. */
+  & .hero { /* Seleciona & .hero usando & para manter a relação com o seletor pai. */
+    & .eyebrow { /* Seleciona & .eyebrow usando & para manter a relação com o seletor pai. */
+      margin-bottom: 28px; /* Define a margem inferior como 28px. */
+      color: var(--praxis-color-accent); /* Define a cor do texto como var(--praxis-color-accent). */
+      font-size: clamp(12px, 1.1vw, 16px); /* Define o tamanho da fonte como clamp(12px, 1.1vw, 16px). */
+      letter-spacing: 1.4px; /* Define o espaçamento entre letras como 1.4px. */
+    } /* Encerra o bloco do seletor & .eyebrow. */
+    & h1 { /* Seleciona & h1 usando & para manter a relação com o seletor pai. */
+      color: #ffffff; /* Define a cor do texto como #ffffff. */
+      font-size: clamp(48px, 6.3vw, 104px); /* Define o tamanho da fonte como clamp(48px, 6.3vw, 104px). */
+      font-weight: 800; /* Define o peso da fonte como 800. */
+      line-height: 1.04; /* Define a altura das linhas como 1.04. */
+      letter-spacing: -0.045em; /* Define o espaçamento entre letras como -0.045em. */
+    } /* Encerra o bloco do seletor & h1. */
+  } /* Encerra o bloco do seletor & .hero. */
+} /* Encerra o bloco do seletor .home-page. */
+.hero-title-line { display: block; } /* Define o modelo de layout como block. */
+.home-page { /* Seleciona .home-page. */
+  & .hero h1 .accent { /* Seleciona & .hero h1 .accent usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-color-accent); /* Define a cor do texto como var(--praxis-color-accent). */
+  } /* Encerra o bloco do seletor & .hero h1 .accent. */
+  & .hero-desc { /* Seleciona & .hero-desc usando & para manter a relação com o seletor pai. */
+    max-width: 640px; /* Define a largura máxima como 640px. */
+    margin-top: 30px; /* Define a margem superior como 30px. */
+    color: #dce1df; /* Define a cor do texto como #dce1df. */
+    font-size: clamp(17px, 1.5vw, 24px); /* Define o tamanho da fonte como clamp(17px, 1.5vw, 24px). */
+    line-height: 1.55; /* Define a altura das linhas como 1.55. */
+  } /* Encerra o bloco do seletor & .hero-desc. */
+  & .catalog-panel { /* Seleciona & .catalog-panel usando & para manter a relação com o seletor pai. */
+    margin-top: 0; /* Define a margem superior como 0. */
+  } /* Encerra o bloco do seletor & .catalog-panel. */
+} /* Encerra o bloco do seletor .home-page. */
+#catalog-title { scroll-margin-top: calc(var(--praxis-header-height) + 24px); } /* Define a folga superior ao rolar até o elemento como calc(var(--praxis-header-height) + 24px). */
+.catalog-search-status { margin-bottom: 20px; color: var(--praxis-muted); font-size: 14px; } /* Define a margem inferior como 20px. Define a cor do texto como var(--praxis-muted). Define o tamanho da fonte como 14px. */
+@media (max-width: 980px) { /* Aplica estas regras quando (max-width: 980px). */
+  .hero-inner { min-height: 560px; padding-block: 72px; } /* Define a altura mínima como 560px. Define a propriedade padding-block como 72px. */
+  .hero-content { width: min(600px, 75%); } /* Define a largura como min(600px, 75%). */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 700px) { /* Aplica estas regras quando (max-width: 700px). */
+  .home-page { /* Seleciona .home-page. */
+    & .hero { /* Seleciona & .hero usando & para manter a relação com o seletor pai. */
+      background-position: 62% center; /* Define a posição da imagem de fundo como 62% center. */
+      &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+        background: linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)), /* Define o fundo como linear-gradient(90deg, rgb(3 8 7 / 85%), rgb(3 8 7 / 48%) 68%, rgb(3 8 7 / 20%)), li…. */
+      linear-gradient(0deg, rgb(3 8 7 / 40%), transparent 70%); /* Continua o valor de background com linear-gradient(0deg, rgb(3 8 7 / 40%), transparent 70%);. */
+      } /* Encerra o bloco do seletor &::before. */
+    } /* Encerra o bloco do seletor & .hero. */
+  } /* Encerra o bloco do seletor .home-page. */
+  .hero-inner { min-height: 510px; padding-block: 64px; } /* Define a altura mínima como 510px. Define a propriedade padding-block como 64px. */
+  .hero-content { width: 100%; } /* Define a largura como 100%. */
+  .home-page { /* Seleciona .home-page. */
+    & .hero { /* Seleciona & .hero usando & para manter a relação com o seletor pai. */
+      & h1 { /* Seleciona & h1 usando & para manter a relação com o seletor pai. */
+        font-size: clamp(40px, 8.7vw, 60px); /* Define o tamanho da fonte como clamp(40px, 8.7vw, 60px). */
+      } /* Encerra o bloco do seletor & h1. */
+      & .eyebrow { /* Seleciona & .eyebrow usando & para manter a relação com o seletor pai. */
+        margin-bottom: 24px; /* Define a margem inferior como 24px. */
+      } /* Encerra o bloco do seletor & .eyebrow. */
+    } /* Encerra o bloco do seletor & .hero. */
+    & .hero-desc { /* Seleciona & .hero-desc usando & para manter a relação com o seletor pai. */
+      max-width: 420px; /* Define a largura máxima como 420px. */
+      margin-top: 24px; /* Define a margem superior como 24px. */
+      font-size: 17px; /* Define o tamanho da fonte como 17px. */
+    } /* Encerra o bloco do seletor & .hero-desc. */
+  } /* Encerra o bloco do seletor .home-page. */
+} /* Encerra o bloco da regra @media. */
 
 
 /* =========================================================
@@ -226,10 +226,10 @@ img { /* seleciona todas as imagens da página */
 
   margin-top: -10px; /* desloca o catálogo 10 pixels para cima */
 
-  padding:
+  padding: /* Define os espaços internos como 42px 0 60px. */
     42px 0 60px; /* cria 42px acima, nenhum espaço lateral e 60px abaixo */
 
-  border-radius:
+  border-radius: /* Define o arredondamento dos cantos como 24px 24px 0 0. */
     24px 24px 0 0; /* arredonda apenas os cantos superiores do painel */
 
   background: var(--bg-light); /* utiliza a cor clara como fundo do catálogo */
@@ -239,32 +239,32 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações do painel do catálogo */
 
 
-.catalog-head {
+.catalog-head { /* Seleciona .catalog-head. */
   /* seleciona o cabeçalho interno do catálogo */
-  display: flex;
+  display: flex; /* Define o modelo de layout como flex. */
   /* utiliza Flexbox para organizar seus elementos */
-  align-items: center;
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
   /* centraliza verticalmente os elementos */
-  justify-content: space-between;
+  justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
   /* coloca os elementos nas extremidades disponíveis */
-  gap: 20px;
+  gap: 20px; /* Define o espaço entre os itens como 20px. */
   /* cria 20 pixels de espaço mínimo entre os elementos */
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Define a margem inferior como 20px. */
   /* cria 20 pixels de espaço abaixo do cabeçalho */
   /* encerra as configurações do cabeçalho do catálogo */
-  & .eyebrow {
+  & .eyebrow { /* Seleciona & .eyebrow usando & para manter a relação com o seletor pai. */
     /* seleciona o eyebrow utilizado especificamente dentro do catálogo */
-    margin-bottom: 0;
+    margin-bottom: 0; /* Define a margem inferior como 0. */
     /* remove a margem inferior utilizada no eyebrow geral */
-    color: #0b0d10;
+    color: #0b0d10; /* Define a cor do texto como #0b0d10. */
     /* altera o texto para uma cor escura */
     /* encerra as configurações do eyebrow do catálogo */
-    &::before {
+    &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
       /* seleciona o círculo decorativo do eyebrow do catálogo */
-      box-shadow: none;
+      box-shadow: none; /* Define a sombra da caixa como none. */
       /* remove o efeito de brilho aplicado no eyebrow geral */
-    }
-  }
+    } /* Encerra o bloco do seletor &::before. */
+  } /* Encerra o bloco do seletor & .eyebrow. */
 } /* encerra as configurações do indicador do catálogo */
 
 
@@ -318,69 +318,69 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações dos controles */
 
 
-.catalog-carousel-btn {
+.catalog-carousel-btn { /* Seleciona .catalog-carousel-btn. */
   /* seleciona cada botão de navegação do carrossel */
-  display: grid;
+  display: grid; /* Define o modelo de layout como grid. */
   /* utiliza Grid para centralizar seu conteúdo */
-  width: 40px;
+  width: 40px; /* Define a largura como 40px. */
   /* define a largura do botão */
-  height: 40px;
+  height: 40px; /* Define a altura como 40px. */
   /* define a altura do botão */
-  flex-shrink: 0;
+  flex-shrink: 0; /* Define a redução do item flexível como 0. */
   /* impede que o botão seja comprimido */
-  place-items: center;
+  place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
   /* centraliza o conteúdo horizontal e verticalmente */
-  border:
-    1px solid #d9dce2;
+  border: /* Define a borda como 1px solid #d9dce2. */
+    1px solid #d9dce2; /* Continua o valor de border com 1px solid #d9dce2;. */
   /* cria uma borda clara de 1 pixel */
-  border-radius: 50%;
+  border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
   /* transforma o botão em um círculo */
-  background: #ffffff;
+  background: #ffffff; /* Define o fundo como #ffffff. */
   /* define o fundo branco */
-  color: #0b0d10;
+  color: #0b0d10; /* Define a cor do texto como #0b0d10. */
   /* define a cor escura para a seta */
-  font-size: 20px;
+  font-size: 20px; /* Define o tamanho da fonte como 20px. */
   /* define o tamanho do símbolo em 20 pixels */
-  font-weight: 800;
+  font-weight: 800; /* Define o peso da fonte como 800. */
   /* deixa o símbolo com peso forte */
-  line-height: 1;
+  line-height: 1; /* Define a altura das linhas como 1. */
   /* evita espaço vertical adicional ao redor do símbolo */
-  box-shadow:
-    0 6px 18px
-    rgba(0, 0, 0, 0.08);
+  box-shadow: /* Define a sombra da caixa como 0 6px 18px rgba(0, 0, 0, 0.08). */
+    0 6px 18px /* Continua o valor de box-shadow com 0 6px 18px. */
+    rgba(0, 0, 0, 0.08); /* Continua o valor de box-shadow com rgba(0, 0, 0, 0.08);. */
   /* cria uma sombra suave abaixo do botão */
-  transition:
-    transform 0.15s ease, /* suaviza movimentos do botão */
-    background 0.2s ease, /* suaviza alterações do fundo */
-    border-color 0.2s ease, /* suaviza alterações da borda */
-    opacity 0.2s ease;
+  transition: /* Define as propriedades e o tempo da transição como transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease. */
+    transform 0.15s ease, /* suaviza movimentos do botão */ /* Continua o valor de transition com transform 0.15s ease, /* suaviza movimentos do botão * /. */
+    background 0.2s ease, /* suaviza alterações do fundo */ /* Continua o valor de transition com background 0.2s ease, /* suaviza alterações do fundo * /. */
+    border-color 0.2s ease, /* suaviza alterações da borda */ /* Continua o valor de transition com border-color 0.2s ease, /* suaviza alterações da borda * /. */
+    opacity 0.2s ease; /* Continua o valor de transition com opacity 0.2s ease;. */
   /* suaviza alterações de transparência */
   /* encerra as configurações dos botões do carrossel */
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled) { /* Seleciona &:hover:not(:disabled) usando & para manter a relação com o seletor pai. */
     /* aplica hover somente aos botões do carrossel que não estão desabilitados */
-    border-color: var(--accent);
+    border-color: var(--accent); /* Define a cor das bordas como var(--accent). */
     /* altera a borda para a cor de destaque */
-    background: var(--accent);
+    background: var(--accent); /* Define o fundo como var(--accent). */
     /* altera o fundo para a cor de destaque */
-    transform:
-    translateY(-2px);
+    transform: /* Define a transformação visual como translateY(-2px). */
+    translateY(-2px); /* Continua o valor de transform com translateY(-2px);. */
     /* desloca o botão 2 pixels para cima */
-  }
+  } /* Encerra o bloco do seletor &:hover:not(:disabled). */
   /* encerra o hover dos controles ativos */
-  &:active:not(:disabled) {
+  &:active:not(:disabled) { /* Seleciona &:active:not(:disabled) usando & para manter a relação com o seletor pai. */
     /* aplica estas regras durante o clique em um controle habilitado */
-    transform:
-    translateY(0);
+    transform: /* Define a transformação visual como translateY(0). */
+    translateY(0); /* Continua o valor de transform com translateY(0);. */
     /* retorna o botão para sua posição original durante o clique */
-  }
+  } /* Encerra o bloco do seletor &:active:not(:disabled). */
   /* encerra o estado ativo dos controles */
-  &:disabled {
+  &:disabled { /* Seleciona &:disabled usando & para manter a relação com o seletor pai. */
     /* seleciona os controles que estão desabilitados */
-    cursor: default;
+    cursor: default; /* Define o formato do cursor como default. */
     /* utiliza o cursor padrão em vez do cursor de clique */
-    opacity: 0.28;
+    opacity: 0.28; /* Define a opacidade como 0.28. */
     /* deixa o botão bastante transparente para indicar que está indisponível */
-  }
+  } /* Encerra o bloco do seletor &:disabled. */
 } /* encerra as configurações dos controles desabilitados */
 
 
@@ -389,50 +389,50 @@ img { /* seleciona todas as imagens da página */
    TRILHO DO CARROSSEL
 ========================================================= */
 
-.catalog-grid {
+.catalog-grid { /* Seleciona .catalog-grid. */
   /* seleciona o trilho horizontal onde os cards dos cursos são exibidos */
-  display: grid;
+  display: grid; /* Define o modelo de layout como grid. */
   /* utiliza CSS Grid para organizar os cards */
-  grid-auto-flow: column;
+  grid-auto-flow: column; /* Define o preenchimento automático da grade como column. */
   /* faz novos cards serem adicionados horizontalmente em colunas */
-  grid-auto-columns:
-    calc((100% - 72px) / 5);
+  grid-auto-columns: /* Define a propriedade grid-auto-columns como calc((100% - 72px) / 5). */
+    calc((100% - 72px) / 5); /* Continua o valor de grid-auto-columns com calc((100% - 72px) / 5);. */
   /* calcula a largura para exibir aproximadamente cinco cards no espaço disponível */
-  grid-template-columns: none;
+  grid-template-columns: none; /* Define as colunas da grade como none. */
   /* remove uma definição fixa de colunas para utilizar as colunas automáticas */
-  gap: 18px;
+  gap: 18px; /* Define o espaço entre os itens como 18px. */
   /* cria 18 pixels de espaço entre os cards */
-  width: 100%;
+  width: 100%; /* Define a largura como 100%. */
   /* faz o trilho ocupar toda a largura disponível */
-  align-items: start;
+  align-items: start; /* Define o alinhamento dos itens no eixo transversal como start. */
   /* alinha os cards pelo início vertical */
-  overflow-x: auto;
+  overflow-x: auto; /* Define o excesso horizontal como auto. */
   /* permite rolagem horizontal quando os cards ultrapassarem a largura */
-  overflow-y: hidden;
+  overflow-y: hidden; /* Define o excesso vertical como hidden. */
   /* impede rolagem vertical dentro do trilho */
-  padding:
-    8px 3px 22px;
+  padding: /* Define os espaços internos como 8px 3px 22px. */
+    8px 3px 22px; /* Continua o valor de padding com 8px 3px 22px;. */
   /* cria espaço interno de 8px acima, 3px nas laterais e 22px abaixo */
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Define o comportamento da rolagem como smooth. */
   /* deixa a movimentação horizontal do carrossel suave */
-  scroll-snap-type:
-    x mandatory;
+  scroll-snap-type: /* Define o encaixe da rolagem como x mandatory. */
+    x mandatory; /* Continua o valor de scroll-snap-type com x mandatory;. */
   /* faz a rolagem horizontal encaixar obrigatoriamente nos pontos definidos pelos cards */
-  overscroll-behavior-inline:
-    contain;
+  overscroll-behavior-inline: /* Define a propriedade overscroll-behavior-inline como contain. */
+    contain; /* Continua o valor de overscroll-behavior-inline com contain;. */
   /* evita que a rolagem horizontal do carrossel afete outros elementos externos */
-  scrollbar-width: none;
+  scrollbar-width: none; /* Define a propriedade scrollbar-width como none. */
   /* esconde a barra de rolagem em navegadores compatíveis como Firefox */
-  -ms-overflow-style: none;
+  -ms-overflow-style: none; /* Define a propriedade -ms-overflow-style como none. */
   /* esconde a barra de rolagem em versões antigas de navegadores Microsoft */
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; /* Define a propriedade -webkit-overflow-scrolling como touch. */
   /* melhora a rolagem por toque em navegadores WebKit móveis */
   /* encerra as configurações do trilho do carrossel */
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar { /* Seleciona &::-webkit-scrollbar usando & para manter a relação com o seletor pai. */
     /* seleciona a barra de rolagem do carrossel em navegadores WebKit */
-    display: none;
+    display: none; /* Define o modelo de layout como none. */
     /* esconde visualmente a barra de rolagem */
-  }
+  } /* Encerra o bloco do seletor &::-webkit-scrollbar. */
 } /* encerra as configurações da barra de rolagem */
 
 
@@ -441,75 +441,75 @@ img { /* seleciona todas as imagens da página */
    CARD DO CURSO
 ========================================================= */
 
-.course-card {
+.course-card { /* Seleciona .course-card. */
   /* seleciona cada cartão individual de curso */
-  position: relative;
+  position: relative; /* Define o posicionamento como relative. */
   /* permite posicionar capa, conteúdo e botão play dentro do card */
-  width: 100%;
+  width: 100%; /* Define a largura como 100%. */
   /* faz o card utilizar toda a largura da coluna */
-  min-width: 0;
+  min-width: 0; /* Define a largura mínima como 0. */
   /* permite que o card diminua corretamente dentro do Grid */
-  overflow: hidden;
+  overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
   /* esconde qualquer conteúdo que ultrapasse os limites do card */
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4; /* Define a proporção entre largura e altura como 3 / 4. */
   /* mantém o card no formato vertical de proporção 3 por 4 */
-  scroll-snap-align: start;
+  scroll-snap-align: start; /* Define o alinhamento do encaixe da rolagem como start. */
   /* faz o início do card funcionar como ponto de encaixe do carrossel */
-  border:
-    1px solid #222634;
+  border: /* Define a borda como 1px solid #222634. */
+    1px solid #222634; /* Continua o valor de border com 1px solid #222634;. */
   /* cria uma borda escura de 1 pixel */
-  border-radius: 15px;
+  border-radius: 15px; /* Define o arredondamento dos cantos como 15px. */
   /* arredonda os cantos do card */
-  background: #0b0d10;
+  background: #0b0d10; /* Define o fundo como #0b0d10. */
   /* define uma cor escura como fundo */
-  color: #fff;
+  color: #fff; /* Define a cor do texto como #fff. */
   /* define branco como cor padrão dos textos internos */
-  cursor: pointer;
+  cursor: pointer; /* Define o formato do cursor como pointer. */
   /* mostra que o card pode ser clicado */
-  transition:
-    transform 0.2s ease, /* suaviza o movimento do card */
-    box-shadow 0.2s ease, /* suaviza alterações da sombra */
-    border-color 0.2s ease;
+  transition: /* Define as propriedades e o tempo da transição como transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease. */
+    transform 0.2s ease, /* suaviza o movimento do card */ /* Continua o valor de transition com transform 0.2s ease, /* suaviza o movimento do card * /. */
+    box-shadow 0.2s ease, /* suaviza alterações da sombra */ /* Continua o valor de transition com box-shadow 0.2s ease, /* suaviza alterações da sombra * /. */
+    border-color 0.2s ease; /* Continua o valor de transition com border-color 0.2s ease;. */
   /* suaviza alterações da cor da borda */
   /* encerra as configurações do card */
-  &:hover {
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
     /* aplica estas regras quando o mouse passa sobre um card */
-    border-color: var(--accent);
+    border-color: var(--accent); /* Define a cor das bordas como var(--accent). */
     /* altera a borda para a cor de destaque */
-    box-shadow:
-    0 18px 36px
-    rgba(0, 0, 0, 0.25);
+    box-shadow: /* Define a sombra da caixa como 0 18px 36px rgba(0, 0, 0, 0.25). */
+    0 18px 36px /* Continua o valor de box-shadow com 0 18px 36px. */
+    rgba(0, 0, 0, 0.25); /* Continua o valor de box-shadow com rgba(0, 0, 0, 0.25);. */
     /* cria uma sombra abaixo do card */
-    transform:
-    translateY(-4px);
+    transform: /* Define a transformação visual como translateY(-4px). */
+    translateY(-4px); /* Continua o valor de transform com translateY(-4px);. */
     /* move o card 4 pixels para cima */
-  }
+  } /* Encerra o bloco do seletor &:hover. */
   /* encerra o hover do card */
-  & .cover {
+  & .cover { /* Seleciona & .cover usando & para manter a relação com o seletor pai. */
     /* seleciona o contêiner da capa dentro de cada card */
-    position: absolute;
+    position: absolute; /* Define o posicionamento como absolute. */
     /* posiciona a capa livremente dentro do card */
-    inset: 0;
+    inset: 0; /* Define as distâncias às bordas como 0. */
     /* equivale a top, right, bottom e left iguais a zero, preenchendo todo o card */
-    z-index: 0;
+    z-index: 0; /* Define a ordem de sobreposição como 0. */
     /* coloca a capa na camada de fundo do card */
-    background: #0b0d10;
+    background: #0b0d10; /* Define o fundo como #0b0d10. */
     /* define fundo escuro caso a imagem não ocupe alguma área */
     /* encerra as configurações do contêiner da capa */
-    & img {
+    & img { /* Seleciona & img usando & para manter a relação com o seletor pai. */
       /* seleciona especificamente a imagem da capa do curso */
-      width: 100%;
+      width: 100%; /* Define a largura como 100%. */
       /* faz a imagem utilizar toda a largura do contêiner */
-      height: 100%;
+      height: 100%; /* Define a altura como 100%. */
       /* faz a imagem utilizar toda a altura do contêiner */
-      object-fit: contain;
+      object-fit: contain; /* Define o ajuste da imagem na caixa como contain. */
       /* mantém a capa inteira visível sem aplicar corte */
-      object-position: center;
+      object-position: center; /* Define o alinhamento da imagem como center. */
       /* centraliza a capa dentro do espaço disponível */
-      background: #0b0d10;
+      background: #0b0d10; /* Define o fundo como #0b0d10. */
       /* utiliza fundo escuro nas áreas eventualmente vazias */
-    }
-  }
+    } /* Encerra o bloco do seletor & img. */
+  } /* Encerra o bloco do seletor & .cover. */
 } /* encerra as configurações da imagem da capa */
 
 
@@ -530,12 +530,12 @@ img { /* seleciona todas as imagens da página */
 
   padding: 20px; /* cria 20 pixels de espaço interno */
 
-  background:
-    radial-gradient(
-      circle at top right, /* posiciona o centro do gradiente circular no canto superior direito */
-      rgba(224, 251, 56, 0.2), /* inicia o gradiente com a cor de destaque transparente */
-      transparent 38% /* torna o gradiente completamente transparente após 38% */
-    ),
+  background: /* Define o fundo como radial-gradient( circle at top right, rgba(224, 251, 56, 0.2), transparent 38% ), #1…. */
+    radial-gradient( /* Continua o valor de background com radial-gradient(. */
+      circle at top right, /* posiciona o centro do gradiente circular no canto superior direito */ /* Continua o valor de background com circle at top right, /* posiciona o centro do gradiente circular no canto superior direito * /. */
+      rgba(224, 251, 56, 0.2), /* inicia o gradiente com a cor de destaque transparente */ /* Continua o valor de background com rgba(224, 251, 56, 0.2), /* inicia o gradiente com a cor de destaque transparente * /. */
+      transparent 38% /* torna o gradiente completamente transparente após 38% */ /* Continua o valor de background com transparent 38% /* torna o gradiente completamente transparente após 38% * /. */
+    ), /* Continua o valor de background com ),. */
     #10131a; /* utiliza uma cor escura como fundo base */
 
   color: var(--accent); /* utiliza a cor de destaque para o texto */
@@ -569,18 +569,18 @@ img { /* seleciona todas as imagens da página */
 
   justify-content: flex-end; /* posiciona o conteúdo na parte inferior da área */
 
-  padding:
+  padding: /* Define os espaços internos como 70px 16px 16px. */
     70px 16px 16px; /* cria espaço maior acima para o gradiente e 16px nas laterais e abaixo */
 
-  background:
-    linear-gradient(
-      180deg, /* cria o gradiente na direção vertical de cima para baixo */
-      rgba(6, 7, 12, 0) 0%, /* inicia completamente transparente */
-      rgba(6, 7, 12, 0.08) 28%, /* adiciona uma pequena sombra em 28% */
-      rgba(6, 7, 12, 0.46) 60%, /* aumenta a escuridão em 60% */
-      rgba(6, 7, 12, 0.78) 82%, /* deixa a parte inferior ainda mais escura */
-      rgba(6, 7, 12, 0.92) 100% /* termina quase completamente escuro */
-    );
+  background: /* Define o fundo como linear-gradient( 180deg, rgba(6, 7, 12, 0) 0%, rgba(6, 7, 12, 0.08) 28%, rgba(6, 7, …. */
+    linear-gradient( /* Continua o valor de background com linear-gradient(. */
+      180deg, /* cria o gradiente na direção vertical de cima para baixo */ /* Continua o valor de background com 180deg, /* cria o gradiente na direção vertical de cima para baixo * /. */
+      rgba(6, 7, 12, 0) 0%, /* inicia completamente transparente */ /* Continua o valor de background com rgba(6, 7, 12, 0) 0%, /* inicia completamente transparente * /. */
+      rgba(6, 7, 12, 0.08) 28%, /* adiciona uma pequena sombra em 28% */ /* Continua o valor de background com rgba(6, 7, 12, 0.08) 28%, /* adiciona uma pequena sombra em 28% * /. */
+      rgba(6, 7, 12, 0.46) 60%, /* aumenta a escuridão em 60% */ /* Continua o valor de background com rgba(6, 7, 12, 0.46) 60%, /* aumenta a escuridão em 60% * /. */
+      rgba(6, 7, 12, 0.78) 82%, /* deixa a parte inferior ainda mais escura */ /* Continua o valor de background com rgba(6, 7, 12, 0.78) 82%, /* deixa a parte inferior ainda mais escura * /. */
+      rgba(6, 7, 12, 0.92) 100% /* termina quase completamente escuro */ /* Continua o valor de background com rgba(6, 7, 12, 0.92) 100% /* termina quase completamente escuro * /. */
+    ); /* Continua o valor de background com );. */
 
   pointer-events: none; /* permite que cliques atravessem esta camada e sejam recebidos pelo card */
 
@@ -599,7 +599,7 @@ img { /* seleciona todas as imagens da página */
 
   border-radius: 7px; /* arredonda os cantos da etiqueta */
 
-  background:
+  background: /* Define o fundo como rgba(224, 251, 56, 0.16). */
     rgba(224, 251, 56, 0.16); /* utiliza a cor de destaque com transparência no fundo */
 
   color: var(--accent); /* utiliza a cor de destaque no texto */
@@ -615,45 +615,45 @@ img { /* seleciona todas as imagens da página */
 } /* encerra as configurações da categoria */
 
 
-.course-card {
-  & h3 {
+.course-card { /* Seleciona .course-card. */
+  & h3 { /* Seleciona & h3 usando & para manter a relação com o seletor pai. */
     /* seleciona os títulos h3 existentes dentro dos cards */
-    max-width: 100%;
+    max-width: 100%; /* Define a largura máxima como 100%. */
     /* impede que o título ultrapasse a largura do card */
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Define a margem inferior como 8px. */
     /* cria 8 pixels de espaço abaixo do título */
-    color: #fff;
+    color: #fff; /* Define a cor do texto como #fff. */
     /* define o texto como branco */
-    font-size: 18px;
+    font-size: 18px; /* Define o tamanho da fonte como 18px. */
     /* define o tamanho da fonte em 18 pixels */
-    font-weight: 800;
+    font-weight: 800; /* Define o peso da fonte como 800. */
     /* deixa o título em negrito forte */
-    line-height: 1.15;
+    line-height: 1.15; /* Define a altura das linhas como 1.15. */
     /* controla o espaço vertical entre as linhas do título */
-  }
+  } /* Encerra o bloco do seletor & h3. */
   /* encerra as configurações do título do curso */
-  & p {
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
     /* seleciona os parágrafos existentes dentro dos cards */
-    display: -webkit-box;
+    display: -webkit-box; /* Define o modelo de layout como -webkit-box. */
     /* utiliza um modelo de caixa necessário para limitar linhas em navegadores WebKit */
-    max-width: 100%;
+    max-width: 100%; /* Define a largura máxima como 100%. */
     /* impede que o texto ultrapasse a largura do card */
-    margin: 0;
+    margin: 0; /* Define as margens externas como 0. */
     /* remove a margem padrão do parágrafo */
-    overflow: hidden;
+    overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
     /* esconde o texto que ultrapassar o limite definido */
-    color: #d0d3db;
+    color: #d0d3db; /* Define a cor do texto como #d0d3db. */
     /* utiliza uma cor clara secundária */
-    font-size: 11px;
+    font-size: 11px; /* Define o tamanho da fonte como 11px. */
     /* define o tamanho do texto em 11 pixels */
-    line-height: 1.45;
+    line-height: 1.45; /* Define a altura das linhas como 1.45. */
     /* define o espaçamento entre as linhas */
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; /* Define a propriedade -webkit-box-orient como vertical. */
     /* organiza as linhas verticalmente para permitir o corte */
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 3; /* Define a propriedade -webkit-line-clamp como 3. */
     /* limita o texto a no máximo três linhas */
-    line-clamp: 3;
-  }
+    line-clamp: 3; /* Define a propriedade line-clamp como 3. */
+  } /* Encerra o bloco do seletor & p. */
 } /* encerra as configurações da descrição do curso */
 
 
@@ -669,44 +669,44 @@ img { /* seleciona todas as imagens da página */
    BOTÃO PLAY
 ========================================================= */
 
-.play-btn {
+.play-btn { /* Seleciona .play-btn. */
   /* seleciona o botão visual de reprodução existente no card */
-  position: absolute;
+  position: absolute; /* Define o posicionamento como absolute. */
   /* permite posicionar o botão sobre a capa */
-  z-index: 3;
+  z-index: 3; /* Define a ordem de sobreposição como 3. */
   /* mantém o botão acima da capa e do conteúdo */
-  top: 13px;
+  top: 13px; /* Define a distância do topo como 13px. */
   /* posiciona o botão a 13 pixels do topo */
-  right: 13px;
+  right: 13px; /* Define a distância da direita como 13px. */
   /* posiciona o botão a 13 pixels da lateral direita */
-  display: grid;
+  display: grid; /* Define o modelo de layout como grid. */
   /* utiliza Grid para centralizar o ícone */
-  width: 38px;
+  width: 38px; /* Define a largura como 38px. */
   /* define a largura do botão */
-  height: 38px;
+  height: 38px; /* Define a altura como 38px. */
   /* define a altura do botão */
-  place-items: center;
+  place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
   /* centraliza o ícone horizontal e verticalmente */
-  border-radius: 50%;
+  border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
   /* transforma o botão em um círculo */
-  background: var(--accent);
+  background: var(--accent); /* Define o fundo como var(--accent). */
   /* utiliza a cor de destaque como fundo */
-  color: #0b0d10;
+  color: #0b0d10; /* Define a cor do texto como #0b0d10. */
   /* utiliza uma cor escura para o ícone */
-  box-shadow:
-    0 8px 20px
-    rgba(0, 0, 0, 0.28);
+  box-shadow: /* Define a sombra da caixa como 0 8px 20px rgba(0, 0, 0, 0.28). */
+    0 8px 20px /* Continua o valor de box-shadow com 0 8px 20px. */
+    rgba(0, 0, 0, 0.28); /* Continua o valor de box-shadow com rgba(0, 0, 0, 0.28);. */
   /* cria uma sombra abaixo do botão */
-  pointer-events: none;
+  pointer-events: none; /* Define a resposta aos eventos do ponteiro como none. */
   /* faz o botão ser apenas visual e deixa o clique ser recebido pelo card */
   /* encerra as configurações do botão play */
-  & svg {
+  & svg { /* Seleciona & svg usando & para manter a relação com o seletor pai. */
     /* seleciona o SVG existente dentro do botão play */
-    width: 16px;
+    width: 16px; /* Define a largura como 16px. */
     /* define a largura do ícone */
-    height: 16px;
+    height: 16px; /* Define a altura como 16px. */
     /* define a altura do ícone */
-  }
+  } /* Encerra o bloco do seletor & svg. */
 } /* encerra as configurações do ícone play */
 
 
@@ -719,7 +719,7 @@ img { /* seleciona todas as imagens da página */
 
   display: grid; /* utiliza CSS Grid para organizar os benefícios */
 
-  grid-template-columns:
+  grid-template-columns: /* Define as colunas da grade como repeat(4, minmax(0, 1fr)). */
     repeat(4, minmax(0, 1fr)); /* cria quatro colunas de largura igual permitindo que diminuam corretamente */
 
   gap: 24px; /* cria 24 pixels de espaço entre os benefícios */
@@ -761,30 +761,30 @@ img { /* seleciona todas as imagens da página */
 
   border-radius: 50%; /* transforma o elemento em um círculo */
 
-  background:
+  background: /* Define o fundo como rgba(224, 251, 56, 0.2). */
     rgba(224, 251, 56, 0.2); /* utiliza a cor de destaque com transparência como fundo */
 
 } /* encerra as configurações do ícone dos benefícios */
 
 
-.feature {
-  & h4 {
+.feature { /* Seleciona .feature. */
+  & h4 { /* Seleciona & h4 usando & para manter a relação com o seletor pai. */
     /* seleciona o título de cada benefício */
-    font-size: 15px;
+    font-size: 15px; /* Define o tamanho da fonte como 15px. */
     /* define o tamanho do título em 15 pixels */
-    font-weight: 700;
+    font-weight: 700; /* Define o peso da fonte como 700. */
     /* deixa o título em negrito */
-  }
+  } /* Encerra o bloco do seletor & h4. */
   /* encerra as configurações dos títulos dos benefícios */
-  & p {
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
     /* seleciona a descrição de cada benefício */
-    margin-top: 2px;
+    margin-top: 2px; /* Define a margem superior como 2px. */
     /* cria 2 pixels de espaço acima do texto */
-    color: #5f6472;
+    color: #5f6472; /* Define a cor do texto como #5f6472. */
     /* utiliza uma cor secundária para a descrição */
-    font-size: 13px;
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
     /* define o tamanho do texto em 13 pixels */
-  }
+  } /* Encerra o bloco do seletor & p. */
 } /* encerra as configurações das descrições */
 
 
@@ -797,7 +797,7 @@ img { /* seleciona todas as imagens da página */
 
   width: 100%; /* faz o elemento ocupar toda a largura disponível */
 
-  padding:
+  padding: /* Define os espaços internos como 60px 20px. */
     60px 20px; /* cria 60 pixels verticalmente e 20 pixels horizontalmente */
 
   color: #6a6f7d; /* utiliza uma cor secundária para o texto */
@@ -816,7 +816,7 @@ img { /* seleciona todas as imagens da página */
 
   .catalog-grid { /* ajusta o trilho do catálogo para telas menores */
 
-    grid-auto-columns:
+    grid-auto-columns: /* Define a propriedade grid-auto-columns como calc((100% - 54px) / 4). */
       calc((100% - 54px) / 4); /* calcula a largura para exibir aproximadamente quatro cards por vez */
 
   } /* encerra o ajuste do catálogo */
@@ -833,7 +833,7 @@ img { /* seleciona todas as imagens da página */
 
 .features { /* ajusta o bloco de benefícios */
 
-    grid-template-columns:
+    grid-template-columns: /* Define as colunas da grade como 1fr 1fr. */
       1fr 1fr; /* organiza os benefícios em duas colunas iguais */
 
   } /* encerra os ajustes dos benefícios */
@@ -841,7 +841,7 @@ img { /* seleciona todas as imagens da página */
 
   .catalog-grid { /* ajusta o carrossel de cursos */
 
-    grid-auto-columns:
+    grid-auto-columns: /* Define a propriedade grid-auto-columns como calc((100% - 36px) / 3). */
       calc((100% - 36px) / 3); /* calcula a largura para exibir aproximadamente três cards por vez */
 
   } /* encerra os ajustes do carrossel */
@@ -858,7 +858,7 @@ img { /* seleciona todas as imagens da página */
 
   .catalog-grid { /* ajusta o catálogo para tablets menores */
 
-    grid-auto-columns:
+    grid-auto-columns: /* Define a propriedade grid-auto-columns como calc((100% - 14px) / 2). */
       calc((100% - 14px) / 2); /* calcula a largura para exibir aproximadamente dois cards por vez */
 
     gap: 14px; /* reduz o espaço entre os cards para 14 pixels */
@@ -877,7 +877,7 @@ img { /* seleciona todas as imagens da página */
 
   .container { /* ajusta o espaçamento lateral dos contêineres */
 
-    padding:
+    padding: /* Define os espaços internos como 0 18px. */
       0 18px; /* reduz o espaço lateral para 18 pixels */
 
   } /* encerra a correção do botão de logout */
@@ -887,7 +887,7 @@ img { /* seleciona todas as imagens da página */
 
   .catalog-panel { /* ajusta o painel do catálogo */
 
-    padding:
+    padding: /* Define os espaços internos como 36px 0 50px. */
       36px 0 50px; /* reduz o espaço interno superior e inferior */
 
   } /* encerra os ajustes do painel */
@@ -946,28 +946,28 @@ img { /* seleciona todas as imagens da página */
 
   .catalog-grid { /* ajusta o carrossel para celulares pequenos */
 
-    grid-auto-columns:
+    grid-auto-columns: /* Define a propriedade grid-auto-columns como calc((100% - 12px) / 2). */
       calc((100% - 12px) / 2); /* calcula a largura para exibir dois cards por vez */
 
     gap: 12px; /* cria 12 pixels de espaço entre os cards */
 
-    padding:
+    padding: /* Define os espaços internos como 6px 2px 16px. */
       6px 2px 16px; /* reduz o espaço interno do trilho */
 
   } /* encerra os ajustes do carrossel */
 
 
-  .course-card {
+  .course-card { /* Seleciona .course-card. */
     /* ajusta os cards dos cursos */
-    border-radius: 13px;
+    border-radius: 13px; /* Define o arredondamento dos cantos como 13px. */
     /* reduz o arredondamento dos cards para 13 pixels */
     /* encerra os ajustes dos cards */
-    & .body {
+    & .body { /* Seleciona & .body usando & para manter a relação com o seletor pai. */
       /* ajusta o conteúdo sobreposto nos cards */
-      padding:
-      55px 10px 10px;
+      padding: /* Define os espaços internos como 55px 10px 10px. */
+      55px 10px 10px; /* Continua o valor de padding com 55px 10px 10px;. */
       /* reduz os espaços internos do conteúdo */
-    }
+    } /* Encerra o bloco do seletor & .body. */
   } /* encerra os ajustes do conteúdo do card */
 
 
@@ -975,7 +975,7 @@ img { /* seleciona todas as imagens da página */
 
     margin-bottom: 7px; /* reduz o espaço abaixo da etiqueta */
 
-    padding:
+    padding: /* Define os espaços internos como 3px 7px. */
       3px 7px; /* reduz o espaço interno da etiqueta */
 
     font-size: 8px; /* reduz o texto para 8 pixels */
@@ -983,46 +983,46 @@ img { /* seleciona todas as imagens da página */
   } /* encerra os ajustes da categoria */
 
 
-  .course-card {
-    & h3 {
+  .course-card { /* Seleciona .course-card. */
+    & h3 { /* Seleciona & h3 usando & para manter a relação com o seletor pai. */
       /* ajusta o título dos cursos */
-      margin-bottom: 5px;
+      margin-bottom: 5px; /* Define a margem inferior como 5px. */
       /* reduz o espaço abaixo do título */
-      font-size: 13px;
+      font-size: 13px; /* Define o tamanho da fonte como 13px. */
       /* reduz o tamanho do título para 13 pixels */
-    }
+    } /* Encerra o bloco do seletor & h3. */
     /* encerra os ajustes dos títulos */
-    & p {
+    & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
       /* ajusta a descrição dos cursos */
-      font-size: 9px;
+      font-size: 9px; /* Define o tamanho da fonte como 9px. */
       /* reduz o tamanho do texto para 9 pixels */
-      line-height: 1.35;
+      line-height: 1.35; /* Define a altura das linhas como 1.35. */
       /* reduz levemente o espaço entre as linhas */
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 2; /* Define a propriedade -webkit-line-clamp como 2. */
       /* limita a descrição a no máximo duas linhas */
-      line-clamp: 2;
-    }
+      line-clamp: 2; /* Define a propriedade line-clamp como 2. */
+    } /* Encerra o bloco do seletor & p. */
   } /* encerra os ajustes das descrições */
 
 
-  .play-btn {
+  .play-btn { /* Seleciona .play-btn. */
     /* ajusta o botão play dos cards */
-    top: 9px;
+    top: 9px; /* Define a distância do topo como 9px. */
     /* aproxima o botão do topo */
-    right: 9px;
+    right: 9px; /* Define a distância da direita como 9px. */
     /* aproxima o botão da lateral direita */
-    width: 32px;
+    width: 32px; /* Define a largura como 32px. */
     /* reduz a largura para 32 pixels */
-    height: 32px;
+    height: 32px; /* Define a altura como 32px. */
     /* reduz a altura para 32 pixels */
     /* encerra os ajustes do botão play */
-    & svg {
+    & svg { /* Seleciona & svg usando & para manter a relação com o seletor pai. */
       /* ajusta o ícone dentro do botão play */
-      width: 13px;
+      width: 13px; /* Define a largura como 13px. */
       /* reduz a largura do ícone para 13 pixels */
-      height: 13px;
+      height: 13px; /* Define a altura como 13px. */
       /* reduz a altura do ícone para 13 pixels */
-    }
+    } /* Encerra o bloco do seletor & svg. */
   } /* encerra os ajustes do ícone play */
 
 } /* encerra a responsividade para telas de até 520 pixels */
@@ -1044,18 +1044,18 @@ img { /* seleciona todas as imagens da página */
   } /* encerra os ajustes do carrossel */
 
 
-  .course-card {
-    & h3 {
+  .course-card { /* Seleciona .course-card. */
+    & h3 { /* Seleciona & h3 usando & para manter a relação com o seletor pai. */
       /* ajusta novamente o título do curso */
-      font-size: 16px;
+      font-size: 16px; /* Define o tamanho da fonte como 16px. */
       /* aumenta o título para 16 pixels nesta configuração de card maior */
-    }
+    } /* Encerra o bloco do seletor & h3. */
     /* encerra os ajustes do título */
-    & p {
+    & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
       /* ajusta novamente a descrição do curso */
-      font-size: 11px;
+      font-size: 11px; /* Define o tamanho da fonte como 11px. */
       /* aumenta a descrição para 11 pixels */
-    }
+    } /* Encerra o bloco do seletor & p. */
   } /* encerra os ajustes do botão de logout */
 
 } /* encerra a responsividade para telas de até 390 pixels */

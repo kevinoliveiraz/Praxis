@@ -1,366 +1,366 @@
-html { scroll-padding-top: var(--praxis-header-height); }
-.profile-page { min-height: 100vh; }
-.profile-container { width: min(1240px, calc(100% - 64px)); margin: 0 auto; }
-.profile-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 48px 0 36px; }
-.profile-eyebrow { color: var(--praxis-accent-text); font-size: 11px; font-weight: 800; letter-spacing: 1.8px; margin-bottom: 10px !important; }
-.profile-heading {
-  & h1 {
-    font-size: clamp(30px, 3.3vw, 42px);
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    &+p {
-      margin-top: 12px;
-      color: var(--praxis-muted);
-      font-size: 14px;
-    }
-  }
-}
-.profile-back {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  flex-shrink: 0;
-  padding-bottom: 4px;
-  color: var(--praxis-muted) !important;
-  font-size: 13px;
-  &:hover {
-    color: var(--praxis-text) !important;
-  }
-}
-.profile-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start; padding-bottom: 60px; }
-.profile-sidebar { position: sticky; top: calc(var(--praxis-header-height) + 24px); padding: 24px 16px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); }
-.profile-summary { display: grid; justify-items: center; text-align: center; min-width: 0; padding: 4px 0 24px; border-bottom: 1px solid var(--praxis-line); }
-.profile-avatar {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  overflow: hidden;
-  border: 1px solid var(--praxis-line);
-  border-radius: 50%;
-  background: var(--praxis-accent-tint);
-  color: var(--praxis-accent-text);
-  font-size: 25px;
-  font-weight: 700;
-  & img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-.profile-avatar--large { width: 76px; height: 76px; font-size: 30px; }
-.profile-summary {
-  & strong {
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    font-size: 16px;
-    margin-top: 14px;
-  }
-  &>span:not(.profile-account-label) {
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    color: var(--praxis-muted);
-    font-size: 11px;
-    margin-top: 4px;
-  }
-  & .profile-account-label {
-    margin-top: 14px;
-    color: var(--praxis-accent-text);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-  }
-}
-.profile-nav {
-  display: grid;
-  gap: 4px;
-  margin-top: 16px;
-  & a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    color: var(--praxis-muted);
-    font-size: 13px;
-    font-weight: 500;
-    &:hover {
-      background: var(--praxis-panel-raised);
-      color: var(--praxis-text);
-    }
-    &[aria-current] {
-      background: var(--praxis-accent-tint);
-      color: var(--praxis-text);
-      font-weight: 700;
-    }
-    &[aria-current] svg {
-      color: var(--praxis-accent-text);
-    }
-  }
-}
-.profile-sidebar-note { margin: 24px 12px 0 !important; color: var(--praxis-muted); font-size: 11px; line-height: 1.8; }
-.profile-sections { display: grid; gap: 24px; min-width: 0; }
-.profile-card { padding: 30px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); scroll-margin-top: 24px; }
-.profile-card-heading { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 24px; border-bottom: 1px solid var(--praxis-line); }
-.profile-section-number { padding-top: 2px; color: var(--praxis-accent-text); font-size: 11px; font-weight: 700; letter-spacing: 1px; }
-.profile-card h2 { font-size: 20px; line-height: 1.4; letter-spacing: -.5px; }
-.profile-card-heading p { margin-top: 3px; color: var(--praxis-muted); font-size: 13px; }
-.profile-card fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
-.profile-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.profile-photo-row {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  padding: 24px 0;
-  & strong {
-    font-size: 14px;
-  }
-  & p {
-    margin-top: 3px;
-    color: var(--praxis-muted);
-    font-size: 12px;
-  }
-}
-.profile-text-button {
-  margin-top: 8px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--praxis-accent-text);
-  cursor: pointer;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-.profile-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; }
-.profile-field-wide { grid-column: 1 / -1; }
-.profile-card {
-  & .px-field {
-    gap: 7px;
-    & label {
-      font-size: 12px;
-    }
-  }
-  & .px-input {
-    background: var(--praxis-panel-raised);
-    font-size: 14px;
-    &[readonly] {
-      color: var(--praxis-muted);
-    }
-  }
-  & .px-help {
-    font-size: 11px;
-    line-height: 1.6;
-  }
-}
-.profile-optional { color: var(--praxis-muted); font-weight: 400; }
-.profile-form-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid var(--praxis-line);
-  & .px-button {
-    flex-shrink: 0;
-  }
-}
-.profile-card .px-button { min-height: 44px; font-size: 12px; }
-.profile-message {
-  font-size: 12px;
-  color: var(--praxis-muted);
-  line-height: 1.6;
-  &:empty {
-    display: none;
-  }
-  &[data-kind="error"] {
-    color: var(--praxis-error-text);
-  }
-  &[data-kind="success"] {
-    color: var(--praxis-success-text);
-  }
-  &[data-kind="warning"] {
-    color: var(--praxis-accent-text);
-  }
-}
-.profile-setting-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--praxis-line);
-  &:last-of-type {
-    border-bottom: 0;
-    padding-bottom: 8px;
-  }
-  & h3 {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  & p {
-    max-width: 450px;
-    margin-top: 5px;
-    color: var(--praxis-muted);
-    font-size: 12px;
-  }
-}
-.profile-setting-row .px-button, .profile-setting-row .px-tag { flex-shrink: 0; }
-.profile-setting-note { margin-top: 12px !important; color: var(--praxis-muted); font-size: 11px; line-height: 1.7; }
-.profile-card > .profile-message { margin-top: 16px; }
-.profile-theme-fieldset {
-  padding-top: 24px !important;
-  & legend {
-    float: left;
-    width: 100%;
-    margin-bottom: 14px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-}
-.profile-theme-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; clear: both; }
-.profile-theme-choice {
-  position: relative;
-  display: grid;
-  gap: 12px;
-  padding: 12px;
-  border: 1px solid var(--praxis-line);
-  border-radius: 13px;
-  font-size: 12px;
-  cursor: pointer;
-  &:hover {
-    background: var(--praxis-panel-raised);
-  }
-  &:has(input:checked) {
-    border-color: var(--praxis-accent-text);
-    box-shadow: 0 0 0 1px var(--praxis-accent-text);
-  }
-  & input {
-    position: absolute;
-    right: 13px;
-    bottom: 14px;
-    margin: 0;
-    accent-color: var(--praxis-accent-text);
-  }
-}
-.profile-theme-preview {
-  display: grid;
-  grid-template-columns: 24% 1fr;
-  grid-template-rows: 18px 1fr;
-  gap: 8px;
-  height: 100px;
-  padding: 12px;
-  border: 1px solid rgb(128 128 128 / 25%);
-  border-radius: 8px;
-  &>span {
-    display: block;
-    border-radius: 3px;
-  }
-  &>span:first-child {
-    grid-column: 1 / -1;
-  }
-}
-.profile-theme-preview--light {
-  background: #f4f5f2;
-  &>span {
-    background: #dce1d4;
-  }
-  &>span:first-child {
-    background: #cadb82;
-  }
-}
-.profile-theme-preview--dark {
-  background: #090b10;
-  &>span {
-    background: #242834;
-  }
-  &>span:first-child {
-    background: #768528;
-  }
-}
-.profile-theme-preview--system {
-  background: linear-gradient(90deg, #f4f5f2 50%, #090b10 50%);
-  &>span {
-    background: linear-gradient(90deg, #dce1d4 50%, #242834 50%);
-  }
-  &>span:first-child {
-    background: linear-gradient(90deg, #cadb82 50%, #768528 50%);
-  }
-}
-.profile-loading { padding: 40px; margin-bottom: 32px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); color: var(--praxis-muted); text-align: center; }
-.profile-footer {
-  padding: 24px 0;
-  border-top: 1px solid var(--praxis-line);
-  & .profile-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-  & p {
-    color: var(--praxis-muted);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.1px;
-    & span {
-      padding: 0 8px;
-      color: var(--praxis-accent-text);
-    }
-  }
-  & a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--praxis-muted);
-    font-size: 12px;
-  }
-}
-@media (max-width: 1000px) {
-  .profile-layout { grid-template-columns: 210px minmax(0, 1fr); gap: 20px; }
-  .profile-card { padding: 24px; }
-  .profile-setting-row { align-items: flex-start; flex-direction: column; gap: 14px; }
-}
-@media (max-width: 760px) {
-  .profile-container { width: calc(100% - 36px); }
-  .profile-heading { align-items: flex-start; flex-direction: column; padding: 32px 0 24px; gap: 18px; }
-  .profile-layout { grid-template-columns: 1fr; }
-  .profile-sidebar { position: static; padding: 12px; }
-  .profile-summary, .profile-sidebar-note { display: none; }
-  .profile-nav {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
-    margin: 0;
-    & a {
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 4px;
-      font-size: 11px;
-    }
-  }
-  .profile-card { padding: 24px 20px; }
-  .profile-form-footer { align-items: flex-start; flex-direction: column; gap: 16px; }
-  .profile-footer .profile-container { align-items: flex-start; flex-direction: column; }
-}
-@media (max-width: 480px) {
-  .profile-field-grid { grid-template-columns: 1fr; }
-  .profile-heading h1 { letter-spacing: -1px; }
-  .profile-photo-row { gap: 14px; }
-  .profile-avatar--large { width: 60px; height: 60px; }
-  .profile-theme-options { gap: 8px; }
-  .profile-theme-choice {
-    padding: 8px;
-    font-size: 11px;
-    & input {
-      position: static;
-      order: 3;
-      justify-self: start;
-    }
-  }
-  .profile-theme-preview { padding: 8px; gap: 5px; height: 80px; }
-  .profile-card .px-button { width: 100%; }
-}
+html { scroll-padding-top: var(--praxis-header-height); } /* Define a propriedade scroll-padding-top como var(--praxis-header-height). */
+.profile-page { min-height: 100vh; } /* Define a altura mínima como 100vh. */
+.profile-container { width: min(1240px, calc(100% - 64px)); margin: 0 auto; } /* Define a largura como min(1240px, calc(100% - 64px)). Define as margens externas como 0 auto. */
+.profile-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 48px 0 36px; } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como flex-end. Define a distribuição no eixo principal como space-between. Define o espaço entre os itens como 24px. Define os espaços internos como 48px 0 36px. */
+.profile-eyebrow { color: var(--praxis-accent-text); font-size: 11px; font-weight: 800; letter-spacing: 1.8px; margin-bottom: 10px !important; } /* Define a cor do texto como var(--praxis-accent-text). Define o tamanho da fonte como 11px. Define o peso da fonte como 800. Define o espaçamento entre letras como 1.8px. Define a margem inferior como 10px. */
+.profile-heading { /* Seleciona .profile-heading. */
+  & h1 { /* Seleciona & h1 usando & para manter a relação com o seletor pai. */
+    font-size: clamp(30px, 3.3vw, 42px); /* Define o tamanho da fonte como clamp(30px, 3.3vw, 42px). */
+    line-height: 1.15; /* Define a altura das linhas como 1.15. */
+    letter-spacing: -1.5px; /* Define o espaçamento entre letras como -1.5px. */
+    &+p { /* Seleciona &+p usando & para manter a relação com o seletor pai. */
+      margin-top: 12px; /* Define a margem superior como 12px. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+      font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    } /* Encerra o bloco do seletor &+p. */
+  } /* Encerra o bloco do seletor & h1. */
+} /* Encerra o bloco do seletor .profile-heading. */
+.profile-back { /* Seleciona .profile-back. */
+  display: inline-flex; /* Define o modelo de layout como inline-flex. */
+  gap: 8px; /* Define o espaço entre os itens como 8px. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  padding-bottom: 4px; /* Define o espaço interno inferior como 4px. */
+  color: var(--praxis-muted) !important; /* Define a cor do texto como var(--praxis-muted). */
+  font-size: 13px; /* Define o tamanho da fonte como 13px. */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-text) !important; /* Define a cor do texto como var(--praxis-text). */
+  } /* Encerra o bloco do seletor &:hover. */
+} /* Encerra o bloco do seletor .profile-back. */
+.profile-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start; padding-bottom: 60px; } /* Define o modelo de layout como grid. Define as colunas da grade como 240px minmax(0, 1fr). Define o espaço entre os itens como 28px. Define o alinhamento dos itens no eixo transversal como start. Define o espaço interno inferior como 60px. */
+.profile-sidebar { position: sticky; top: calc(var(--praxis-header-height) + 24px); padding: 24px 16px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); } /* Define o posicionamento como sticky. Define a distância do topo como calc(var(--praxis-header-height) + 24px). Define os espaços internos como 24px 16px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como 20px. Define o fundo como var(--praxis-panel). */
+.profile-summary { display: grid; justify-items: center; text-align: center; min-width: 0; padding: 4px 0 24px; border-bottom: 1px solid var(--praxis-line); } /* Define o modelo de layout como grid. Define o alinhamento horizontal dos itens da grade como center. Define o alinhamento do texto como center. Define a largura mínima como 0. Define os espaços internos como 4px 0 24px. Define a borda inferior como 1px solid var(--praxis-line). */
+.profile-avatar { /* Seleciona .profile-avatar. */
+  display: grid; /* Define o modelo de layout como grid. */
+  place-items: center; /* Define o alinhamento dos itens nos dois eixos como center. */
+  flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  width: 64px; /* Define a largura como 64px. */
+  height: 64px; /* Define a altura como 64px. */
+  overflow: hidden; /* Define o tratamento do conteúdo excedente como hidden. */
+  border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+  background: var(--praxis-accent-tint); /* Define o fundo como var(--praxis-accent-tint). */
+  color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+  font-size: 25px; /* Define o tamanho da fonte como 25px. */
+  font-weight: 700; /* Define o peso da fonte como 700. */
+  & img { /* Seleciona & img usando & para manter a relação com o seletor pai. */
+    width: 100%; /* Define a largura como 100%. */
+    height: 100%; /* Define a altura como 100%. */
+    object-fit: cover; /* Define o ajuste da imagem na caixa como cover. */
+  } /* Encerra o bloco do seletor & img. */
+} /* Encerra o bloco do seletor .profile-avatar. */
+.profile-avatar--large { width: 76px; height: 76px; font-size: 30px; } /* Define a largura como 76px. Define a altura como 76px. Define o tamanho da fonte como 30px. */
+.profile-summary { /* Seleciona .profile-summary. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    max-width: 100%; /* Define a largura máxima como 100%. */
+    overflow-wrap: anywhere; /* Define a propriedade overflow-wrap como anywhere. */
+    font-size: 16px; /* Define o tamanho da fonte como 16px. */
+    margin-top: 14px; /* Define a margem superior como 14px. */
+  } /* Encerra o bloco do seletor & strong. */
+  &>span:not(.profile-account-label) { /* Seleciona &>span:not(.profile-account-label) usando & para manter a relação com o seletor pai. */
+    max-width: 100%; /* Define a largura máxima como 100%. */
+    overflow-wrap: anywhere; /* Define a propriedade overflow-wrap como anywhere. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 11px; /* Define o tamanho da fonte como 11px. */
+    margin-top: 4px; /* Define a margem superior como 4px. */
+  } /* Encerra o bloco do seletor &>span:not(.profile-account-label). */
+  & .profile-account-label { /* Seleciona & .profile-account-label usando & para manter a relação com o seletor pai. */
+    margin-top: 14px; /* Define a margem superior como 14px. */
+    color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    font-size: 9px; /* Define o tamanho da fonte como 9px. */
+    font-weight: 700; /* Define o peso da fonte como 700. */
+    letter-spacing: 1.4px; /* Define o espaçamento entre letras como 1.4px. */
+  } /* Encerra o bloco do seletor & .profile-account-label. */
+} /* Encerra o bloco do seletor .profile-summary. */
+.profile-nav { /* Seleciona .profile-nav. */
+  display: grid; /* Define o modelo de layout como grid. */
+  gap: 4px; /* Define o espaço entre os itens como 4px. */
+  margin-top: 16px; /* Define a margem superior como 16px. */
+  & a { /* Seleciona & a usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 12px; /* Define o espaço entre os itens como 12px. */
+    padding: 12px; /* Define os espaços internos como 12px. */
+    border-radius: 10px; /* Define o arredondamento dos cantos como 10px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+    font-weight: 500; /* Define o peso da fonte como 500. */
+    &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+      background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+      color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+    } /* Encerra o bloco do seletor &:hover. */
+    &[aria-current] { /* Seleciona &[aria-current] usando & para manter a relação com o seletor pai. */
+      background: var(--praxis-accent-tint); /* Define o fundo como var(--praxis-accent-tint). */
+      color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+      font-weight: 700; /* Define o peso da fonte como 700. */
+    } /* Encerra o bloco do seletor &[aria-current]. */
+    &[aria-current] svg { /* Seleciona &[aria-current] svg usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor &[aria-current] svg. */
+  } /* Encerra o bloco do seletor & a. */
+} /* Encerra o bloco do seletor .profile-nav. */
+.profile-sidebar-note { margin: 24px 12px 0 !important; color: var(--praxis-muted); font-size: 11px; line-height: 1.8; } /* Define as margens externas como 24px 12px 0. Define a cor do texto como var(--praxis-muted). Define o tamanho da fonte como 11px. Define a altura das linhas como 1.8. */
+.profile-sections { display: grid; gap: 24px; min-width: 0; } /* Define o modelo de layout como grid. Define o espaço entre os itens como 24px. Define a largura mínima como 0. */
+.profile-card { padding: 30px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); scroll-margin-top: 24px; } /* Define os espaços internos como 30px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como 20px. Define o fundo como var(--praxis-panel). Define a folga superior ao rolar até o elemento como 24px. */
+.profile-card-heading { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 24px; border-bottom: 1px solid var(--praxis-line); } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como flex-start. Define o espaço entre os itens como 14px. Define o espaço interno inferior como 24px. Define a borda inferior como 1px solid var(--praxis-line). */
+.profile-section-number { padding-top: 2px; color: var(--praxis-accent-text); font-size: 11px; font-weight: 700; letter-spacing: 1px; } /* Define o espaço interno superior como 2px. Define a cor do texto como var(--praxis-accent-text). Define o tamanho da fonte como 11px. Define o peso da fonte como 700. Define o espaçamento entre letras como 1px. */
+.profile-card h2 { font-size: 20px; line-height: 1.4; letter-spacing: -.5px; } /* Define o tamanho da fonte como 20px. Define a altura das linhas como 1.4. Define o espaçamento entre letras como -.5px. */
+.profile-card-heading p { margin-top: 3px; color: var(--praxis-muted); font-size: 13px; } /* Define a margem superior como 3px. Define a cor do texto como var(--praxis-muted). Define o tamanho da fonte como 13px. */
+.profile-card fieldset { min-width: 0; padding: 0; margin: 0; border: 0; } /* Define a largura mínima como 0. Define os espaços internos como 0. Define as margens externas como 0. Define a borda como 0. */
+.profile-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } /* Define o posicionamento como absolute. Define a largura como 1px. Define a altura como 1px. Define os espaços internos como 0. Define as margens externas como -1px. Define o tratamento do conteúdo excedente como hidden. Define o recorte visual como inset(50%). Define o tratamento dos espaços e das … */
+.profile-photo-row { /* Seleciona .profile-photo-row. */
+  display: flex; /* Define o modelo de layout como flex. */
+  gap: 20px; /* Define o espaço entre os itens como 20px. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  padding: 24px 0; /* Define os espaços internos como 24px 0. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+  } /* Encerra o bloco do seletor & strong. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    margin-top: 3px; /* Define a margem superior como 3px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  } /* Encerra o bloco do seletor & p. */
+} /* Encerra o bloco do seletor .profile-photo-row. */
+.profile-text-button { /* Seleciona .profile-text-button. */
+  margin-top: 8px; /* Define a margem superior como 8px. */
+  padding: 0; /* Define os espaços internos como 0. */
+  border: 0; /* Define a borda como 0. */
+  background: none; /* Define o fundo como none. */
+  color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+  cursor: pointer; /* Define o formato do cursor como pointer. */
+  font-size: 12px !important; /* Define o tamanho da fonte como 12px. */
+  font-weight: 600 !important; /* Define o peso da fonte como 600. */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    text-decoration: underline; /* Define a decoração do texto como underline. */
+  } /* Encerra o bloco do seletor &:hover. */
+} /* Encerra o bloco do seletor .profile-text-button. */
+.profile-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; } /* Define o modelo de layout como grid. Define as colunas da grade como repeat(2, minmax(0, 1fr)). Define o espaço entre os itens como 22px 20px. */
+.profile-field-wide { grid-column: 1 / -1; } /* Define as colunas ocupadas pelo item como 1 / -1. */
+.profile-card { /* Seleciona .profile-card. */
+  & .px-field { /* Seleciona & .px-field usando & para manter a relação com o seletor pai. */
+    gap: 7px; /* Define o espaço entre os itens como 7px. */
+    & label { /* Seleciona & label usando & para manter a relação com o seletor pai. */
+      font-size: 12px; /* Define o tamanho da fonte como 12px. */
+    } /* Encerra o bloco do seletor & label. */
+  } /* Encerra o bloco do seletor & .px-field. */
+  & .px-input { /* Seleciona & .px-input usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    &[readonly] { /* Seleciona &[readonly] usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    } /* Encerra o bloco do seletor &[readonly]. */
+  } /* Encerra o bloco do seletor & .px-input. */
+  & .px-help { /* Seleciona & .px-help usando & para manter a relação com o seletor pai. */
+    font-size: 11px; /* Define o tamanho da fonte como 11px. */
+    line-height: 1.6; /* Define a altura das linhas como 1.6. */
+  } /* Encerra o bloco do seletor & .px-help. */
+} /* Encerra o bloco do seletor .profile-card. */
+.profile-optional { color: var(--praxis-muted); font-weight: 400; } /* Define a cor do texto como var(--praxis-muted). Define o peso da fonte como 400. */
+.profile-form-footer { /* Seleciona .profile-form-footer. */
+  display: flex; /* Define o modelo de layout como flex. */
+  justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: 24px; /* Define o espaço entre os itens como 24px. */
+  margin-top: 28px; /* Define a margem superior como 28px. */
+  padding-top: 24px; /* Define o espaço interno superior como 24px. */
+  border-top: 1px solid var(--praxis-line); /* Define a borda superior como 1px solid var(--praxis-line). */
+  & .px-button { /* Seleciona & .px-button usando & para manter a relação com o seletor pai. */
+    flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  } /* Encerra o bloco do seletor & .px-button. */
+} /* Encerra o bloco do seletor .profile-form-footer. */
+.profile-card .px-button { min-height: 44px; font-size: 12px; } /* Define a altura mínima como 44px. Define o tamanho da fonte como 12px. */
+.profile-message { /* Seleciona .profile-message. */
+  font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  line-height: 1.6; /* Define a altura das linhas como 1.6. */
+  &:empty { /* Seleciona &:empty usando & para manter a relação com o seletor pai. */
+    display: none; /* Define o modelo de layout como none. */
+  } /* Encerra o bloco do seletor &:empty. */
+  &[data-kind="error"] { /* Seleciona &[data-kind="error"] usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-error-text); /* Define a cor do texto como var(--praxis-error-text). */
+  } /* Encerra o bloco do seletor &[data-kind="error"]. */
+  &[data-kind="success"] { /* Seleciona &[data-kind="success"] usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-success-text); /* Define a cor do texto como var(--praxis-success-text). */
+  } /* Encerra o bloco do seletor &[data-kind="success"]. */
+  &[data-kind="warning"] { /* Seleciona &[data-kind="warning"] usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+  } /* Encerra o bloco do seletor &[data-kind="warning"]. */
+} /* Encerra o bloco do seletor .profile-message. */
+.profile-setting-row { /* Seleciona .profile-setting-row. */
+  display: flex; /* Define o modelo de layout como flex. */
+  justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: 24px; /* Define o espaço entre os itens como 24px. */
+  padding: 24px 0; /* Define os espaços internos como 24px 0. */
+  border-bottom: 1px solid var(--praxis-line); /* Define a borda inferior como 1px solid var(--praxis-line). */
+  &:last-of-type { /* Seleciona &:last-of-type usando & para manter a relação com o seletor pai. */
+    border-bottom: 0; /* Define a borda inferior como 0. */
+    padding-bottom: 8px; /* Define o espaço interno inferior como 8px. */
+  } /* Encerra o bloco do seletor &:last-of-type. */
+  & h3 { /* Seleciona & h3 usando & para manter a relação com o seletor pai. */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    font-weight: 600; /* Define o peso da fonte como 600. */
+  } /* Encerra o bloco do seletor & h3. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    max-width: 450px; /* Define a largura máxima como 450px. */
+    margin-top: 5px; /* Define a margem superior como 5px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  } /* Encerra o bloco do seletor & p. */
+} /* Encerra o bloco do seletor .profile-setting-row. */
+.profile-setting-row .px-button, .profile-setting-row .px-tag { flex-shrink: 0; } /* Define a redução do item flexível como 0. */
+.profile-setting-note { margin-top: 12px !important; color: var(--praxis-muted); font-size: 11px; line-height: 1.7; } /* Define a margem superior como 12px. Define a cor do texto como var(--praxis-muted). Define o tamanho da fonte como 11px. Define a altura das linhas como 1.7. */
+.profile-card > .profile-message { margin-top: 16px; } /* Define a margem superior como 16px. */
+.profile-theme-fieldset { /* Seleciona .profile-theme-fieldset. */
+  padding-top: 24px !important; /* Define o espaço interno superior como 24px. */
+  & legend { /* Seleciona & legend usando & para manter a relação com o seletor pai. */
+    float: left; /* Define a propriedade float como left. */
+    width: 100%; /* Define a largura como 100%. */
+    margin-bottom: 14px; /* Define a margem inferior como 14px. */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+    font-weight: 600; /* Define o peso da fonte como 600. */
+  } /* Encerra o bloco do seletor & legend. */
+} /* Encerra o bloco do seletor .profile-theme-fieldset. */
+.profile-theme-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; clear: both; } /* Define o modelo de layout como grid. Define as colunas da grade como repeat(3, minmax(0, 1fr)). Define o espaço entre os itens como 14px. Define a propriedade clear como both. */
+.profile-theme-choice { /* Seleciona .profile-theme-choice. */
+  position: relative; /* Define o posicionamento como relative. */
+  display: grid; /* Define o modelo de layout como grid. */
+  gap: 12px; /* Define o espaço entre os itens como 12px. */
+  padding: 12px; /* Define os espaços internos como 12px. */
+  border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  border-radius: 13px; /* Define o arredondamento dos cantos como 13px. */
+  font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  cursor: pointer; /* Define o formato do cursor como pointer. */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+  } /* Encerra o bloco do seletor &:hover. */
+  &:has(input:checked) { /* Seleciona &:has(input:checked) usando & para manter a relação com o seletor pai. */
+    border-color: var(--praxis-accent-text); /* Define a cor das bordas como var(--praxis-accent-text). */
+    box-shadow: 0 0 0 1px var(--praxis-accent-text); /* Define a sombra da caixa como 0 0 0 1px var(--praxis-accent-text). */
+  } /* Encerra o bloco do seletor &:has(input:checked). */
+  & input { /* Seleciona & input usando & para manter a relação com o seletor pai. */
+    position: absolute; /* Define o posicionamento como absolute. */
+    right: 13px; /* Define a distância da direita como 13px. */
+    bottom: 14px; /* Define a distância da base como 14px. */
+    margin: 0; /* Define as margens externas como 0. */
+    accent-color: var(--praxis-accent-text); /* Define a cor de destaque dos controles como var(--praxis-accent-text). */
+  } /* Encerra o bloco do seletor & input. */
+} /* Encerra o bloco do seletor .profile-theme-choice. */
+.profile-theme-preview { /* Seleciona .profile-theme-preview. */
+  display: grid; /* Define o modelo de layout como grid. */
+  grid-template-columns: 24% 1fr; /* Define as colunas da grade como 24% 1fr. */
+  grid-template-rows: 18px 1fr; /* Define as linhas da grade como 18px 1fr. */
+  gap: 8px; /* Define o espaço entre os itens como 8px. */
+  height: 100px; /* Define a altura como 100px. */
+  padding: 12px; /* Define os espaços internos como 12px. */
+  border: 1px solid rgb(128 128 128 / 25%); /* Define a borda como 1px solid rgb(128 128 128 / 25%). */
+  border-radius: 8px; /* Define o arredondamento dos cantos como 8px. */
+  &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+    display: block; /* Define o modelo de layout como block. */
+    border-radius: 3px; /* Define o arredondamento dos cantos como 3px. */
+  } /* Encerra o bloco do seletor &>span. */
+  &>span:first-child { /* Seleciona &>span:first-child usando & para manter a relação com o seletor pai. */
+    grid-column: 1 / -1; /* Define as colunas ocupadas pelo item como 1 / -1. */
+  } /* Encerra o bloco do seletor &>span:first-child. */
+} /* Encerra o bloco do seletor .profile-theme-preview. */
+.profile-theme-preview--light { /* Seleciona .profile-theme-preview--light. */
+  background: #f4f5f2; /* Define o fundo como #f4f5f2. */
+  &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+    background: #dce1d4; /* Define o fundo como #dce1d4. */
+  } /* Encerra o bloco do seletor &>span. */
+  &>span:first-child { /* Seleciona &>span:first-child usando & para manter a relação com o seletor pai. */
+    background: #cadb82; /* Define o fundo como #cadb82. */
+  } /* Encerra o bloco do seletor &>span:first-child. */
+} /* Encerra o bloco do seletor .profile-theme-preview--light. */
+.profile-theme-preview--dark { /* Seleciona .profile-theme-preview--dark. */
+  background: #090b10; /* Define o fundo como #090b10. */
+  &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+    background: #242834; /* Define o fundo como #242834. */
+  } /* Encerra o bloco do seletor &>span. */
+  &>span:first-child { /* Seleciona &>span:first-child usando & para manter a relação com o seletor pai. */
+    background: #768528; /* Define o fundo como #768528. */
+  } /* Encerra o bloco do seletor &>span:first-child. */
+} /* Encerra o bloco do seletor .profile-theme-preview--dark. */
+.profile-theme-preview--system { /* Seleciona .profile-theme-preview--system. */
+  background: linear-gradient(90deg, #f4f5f2 50%, #090b10 50%); /* Define o fundo como linear-gradient(90deg, #f4f5f2 50%, #090b10 50%). */
+  &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+    background: linear-gradient(90deg, #dce1d4 50%, #242834 50%); /* Define o fundo como linear-gradient(90deg, #dce1d4 50%, #242834 50%). */
+  } /* Encerra o bloco do seletor &>span. */
+  &>span:first-child { /* Seleciona &>span:first-child usando & para manter a relação com o seletor pai. */
+    background: linear-gradient(90deg, #cadb82 50%, #768528 50%); /* Define o fundo como linear-gradient(90deg, #cadb82 50%, #768528 50%). */
+  } /* Encerra o bloco do seletor &>span:first-child. */
+} /* Encerra o bloco do seletor .profile-theme-preview--system. */
+.profile-loading { padding: 40px; margin-bottom: 32px; border: 1px solid var(--praxis-line); border-radius: 20px; background: var(--praxis-panel); color: var(--praxis-muted); text-align: center; } /* Define os espaços internos como 40px. Define a margem inferior como 32px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como 20px. Define o fundo como var(--praxis-panel). Define a cor do texto como var(--praxis-muted). Define o alinhamento do texto como cente… */
+.profile-footer { /* Seleciona .profile-footer. */
+  padding: 24px 0; /* Define os espaços internos como 24px 0. */
+  border-top: 1px solid var(--praxis-line); /* Define a borda superior como 1px solid var(--praxis-line). */
+  & .profile-container { /* Seleciona & .profile-container usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 16px; /* Define o espaço entre os itens como 16px. */
+  } /* Encerra o bloco do seletor & .profile-container. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 9px; /* Define o tamanho da fonte como 9px. */
+    font-weight: 600; /* Define o peso da fonte como 600. */
+    letter-spacing: 1.1px; /* Define o espaçamento entre letras como 1.1px. */
+    & span { /* Seleciona & span usando & para manter a relação com o seletor pai. */
+      padding: 0 8px; /* Define os espaços internos como 0 8px. */
+      color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+    } /* Encerra o bloco do seletor & span. */
+  } /* Encerra o bloco do seletor & p. */
+  & a { /* Seleciona & a usando & para manter a relação com o seletor pai. */
+    display: inline-flex; /* Define o modelo de layout como inline-flex. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 8px; /* Define o espaço entre os itens como 8px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+  } /* Encerra o bloco do seletor & a. */
+} /* Encerra o bloco do seletor .profile-footer. */
+@media (max-width: 1000px) { /* Aplica estas regras quando (max-width: 1000px). */
+  .profile-layout { grid-template-columns: 210px minmax(0, 1fr); gap: 20px; } /* Define as colunas da grade como 210px minmax(0, 1fr). Define o espaço entre os itens como 20px. */
+  .profile-card { padding: 24px; } /* Define os espaços internos como 24px. */
+  .profile-setting-row { align-items: flex-start; flex-direction: column; gap: 14px; } /* Define o alinhamento dos itens no eixo transversal como flex-start. Define a direção dos itens flexíveis como column. Define o espaço entre os itens como 14px. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 760px) { /* Aplica estas regras quando (max-width: 760px). */
+  .profile-container { width: calc(100% - 36px); } /* Define a largura como calc(100% - 36px). */
+  .profile-heading { align-items: flex-start; flex-direction: column; padding: 32px 0 24px; gap: 18px; } /* Define o alinhamento dos itens no eixo transversal como flex-start. Define a direção dos itens flexíveis como column. Define os espaços internos como 32px 0 24px. Define o espaço entre os itens como 18px. */
+  .profile-layout { grid-template-columns: 1fr; } /* Define as colunas da grade como 1fr. */
+  .profile-sidebar { position: static; padding: 12px; } /* Define o posicionamento como static. Define os espaços internos como 12px. */
+  .profile-summary, .profile-sidebar-note { display: none; } /* Define o modelo de layout como none. */
+  .profile-nav { /* Seleciona .profile-nav. */
+    grid-template-columns: repeat(4, 1fr); /* Define as colunas da grade como repeat(4, 1fr). */
+    gap: 4px; /* Define o espaço entre os itens como 4px. */
+    margin: 0; /* Define as margens externas como 0. */
+    & a { /* Seleciona & a usando & para manter a relação com o seletor pai. */
+      flex-direction: column; /* Define a direção dos itens flexíveis como column. */
+      justify-content: center; /* Define a distribuição no eixo principal como center. */
+      gap: 6px; /* Define o espaço entre os itens como 6px. */
+      padding: 10px 4px; /* Define os espaços internos como 10px 4px. */
+      font-size: 11px; /* Define o tamanho da fonte como 11px. */
+    } /* Encerra o bloco do seletor & a. */
+  } /* Encerra o bloco do seletor .profile-nav. */
+  .profile-card { padding: 24px 20px; } /* Define os espaços internos como 24px 20px. */
+  .profile-form-footer { align-items: flex-start; flex-direction: column; gap: 16px; } /* Define o alinhamento dos itens no eixo transversal como flex-start. Define a direção dos itens flexíveis como column. Define o espaço entre os itens como 16px. */
+  .profile-footer .profile-container { align-items: flex-start; flex-direction: column; } /* Define o alinhamento dos itens no eixo transversal como flex-start. Define a direção dos itens flexíveis como column. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 480px) { /* Aplica estas regras quando (max-width: 480px). */
+  .profile-field-grid { grid-template-columns: 1fr; } /* Define as colunas da grade como 1fr. */
+  .profile-heading h1 { letter-spacing: -1px; } /* Define o espaçamento entre letras como -1px. */
+  .profile-photo-row { gap: 14px; } /* Define o espaço entre os itens como 14px. */
+  .profile-avatar--large { width: 60px; height: 60px; } /* Define a largura como 60px. Define a altura como 60px. */
+  .profile-theme-options { gap: 8px; } /* Define o espaço entre os itens como 8px. */
+  .profile-theme-choice { /* Seleciona .profile-theme-choice. */
+    padding: 8px; /* Define os espaços internos como 8px. */
+    font-size: 11px; /* Define o tamanho da fonte como 11px. */
+    & input { /* Seleciona & input usando & para manter a relação com o seletor pai. */
+      position: static; /* Define o posicionamento como static. */
+      order: 3; /* Define a propriedade order como 3. */
+      justify-self: start; /* Define a propriedade justify-self como start. */
+    } /* Encerra o bloco do seletor & input. */
+  } /* Encerra o bloco do seletor .profile-theme-choice. */
+  .profile-theme-preview { padding: 8px; gap: 5px; height: 80px; } /* Define os espaços internos como 8px. Define o espaço entre os itens como 5px. Define a altura como 80px. */
+  .profile-card .px-button { width: 100%; } /* Define a largura como 100%. */
+} /* Encerra o bloco da regra @media. */

@@ -1,67 +1,129 @@
-<!doctype html>
-<html lang="pt-BR" data-theme="dark">
-<head>
-  <meta name="theme-color" content="#06070c">
-  <script src="scripts/theme.js"></script>
-  <meta charset="utf-8">
+<!doctype html><!-- Declara o documento como HTML5. -->
+<html lang="pt-BR" data-theme="dark"><!-- Insere o documento HTML. -->
+<head><!-- Insere as configurações e os recursos da página. -->
+  <meta name="theme-color" content="#06070c"><!-- Configura os metadados da página: Define o nome da configuração ou do campo como “theme-color”. Define o valor da configuração como “#06070c”. -->
+  <script src="scripts/theme.js"></script><!-- Carrega o script scripts/theme.js. -->
+  <meta charset="utf-8"><!-- Configura os metadados da página: Define a codificação de caracteres como “utf-8”. -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “viewport”.
+    Linha 3 do trecho: Define o valor da configuração como “width=device-width, initial-scale=1”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+  <!-- Explicações do texto abaixo, preservando seu conteúdo.
+    Linha 1 do trecho: Insere o título da página ou a descrição do SVG.
+    Linha 2 do trecho: Exibe o texto “Complete seu perfil — Praxis” neste ponto da página.
+    Linha 3 do trecho: Encerra o título da página ou a descrição do SVG.
+  -->
   <title>
     Complete seu perfil — Praxis
   </title>
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “description”.
+    Linha 3 do trecho: Define o valor da configuração como “Escolha seu nome de usuário para continuar na Praxis.”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="description"
     content="Escolha seu nome de usuário para continuar na Praxis."
   >
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="icon" href="assets/logo.png" type="image/png"><!-- Define o favicon da Praxis em assets/logo.png. -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.googleapis.com”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
   >
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.gstatic.com”.
+    Linha 4 do trecho: Configura o carregamento entre origens.
+    Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define o destino do link como “https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap”.
+    Linha 3 do trecho: Define a relação com o recurso como “stylesheet”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
 
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/login.css">
-<link rel="stylesheet" href="styles/theme.css">
-</head>
-<body class="auth-page">
-<header class="auth-topbar"><a class="auth-back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg>Voltar para os cursos</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro">
-  <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg>
-  <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg>
-  <span class="theme-toggle__label" data-theme-label>Modo claro</span>
-</button></header>
+<link rel="stylesheet" href="styles/tokens.css"><!-- Carrega a folha de estilos styles/tokens.css. -->
+<link rel="stylesheet" href="styles/login.css"><!-- Carrega a folha de estilos styles/login.css. -->
+<link rel="stylesheet" href="styles/theme.css"><!-- Carrega a folha de estilos styles/theme.css. -->
+</head><!-- Encerra as configurações e os recursos da página. -->
+<body class="auth-page"><!-- Insere o conteúdo visível da página com as classes “auth-page”. -->
+<header class="auth-topbar"><a class="auth-back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg>Voltar para os cursos</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro"><!-- Insere o cabeçalho com as classes “auth-topbar” com o texto “Voltar para os cursos”. -->
+  <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg><!-- Insere um ícone ou desenho vetorial com as classes “theme-icon-light”. -->
+  <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><!-- Insere um ícone ou desenho vetorial com as classes “theme-icon-dark”. -->
+  <span class="theme-toggle__label" data-theme-label>Modo claro</span><!-- Insere um trecho de texto em linha com as classes “theme-toggle__label” com o texto “Modo claro”. -->
+</button></header><!-- Encerra um botão. -->
 
-  <main class="login-wrap">
-    <div class="login-card">
-      <div class="login-logo">
+  <main class="login-wrap"><!-- Insere o conteúdo principal com as classes “login-wrap”. -->
+    <div class="login-card"><!-- Insere um contêiner de layout com as classes “login-card”. -->
+      <div class="login-logo"><!-- Insere um contêiner de layout com as classes “login-logo”. -->
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere uma imagem com o texto “<img”.
+          Linha 2 do trecho: Define o arquivo ou endereço carregado como “assets/logo.png”.
+          Linha 3 do trecho: Descreve a imagem para leitores de tela como “Praxis”.
+          Linha 4 do trecho: Aplica as classes de estilo como “login-logo-img”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <img
           src="assets/logo.png"
           alt="Praxis"
           class="login-logo-img"
         >
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
+      <!-- Explicações da tag e dos atributos abaixo.
+        Linha 1 do trecho: Insere um formulário com o texto “<form”.
+        Linha 2 do trecho: Aplica as classes de estilo como “login-form”.
+        Linha 3 do trecho: Define o identificador único como “profile-form”.
+        Linha 4 do trecho: Desativa a validação nativa ao enviar.
+        Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+      -->
       <form
         class="login-form"
         id="profile-form"
         novalidate
       >
-        <div class="profile-intro"><h1>Complete seu perfil</h1><p>Escolha um nome de usuário para continuar.</p></div>
-        <div class="field">
-          <label for="username">
-            Nome de usuário
-          </label>
-          <div class="field-input">
+        <div class="profile-intro"><h1>Complete seu perfil</h1><p>Escolha um nome de usuário para continuar.</p></div><!-- Insere um contêiner de layout com as classes “profile-intro” com o texto “Complete seu perfilEscolha um nome de usuário para continuar.”. -->
+        <div class="field"><!-- Insere um contêiner de layout com as classes “field”. -->
+          <label for="username"><!-- Insere um rótulo de campo. -->
+            Nome de usuário<!-- Exibe o texto “Nome de usuário” neste ponto da página. -->
+          </label><!-- Encerra um rótulo de campo. -->
+          <div class="field-input"><!-- Insere um contêiner de layout com as classes “field-input”. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+              Linha 2 do trecho: Aplica as classes de estilo como “icon-left”.
+              Linha 3 do trecho: Define a largura como “18”.
+              Linha 4 do trecho: Define a altura como “18”.
+              Linha 5 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+              Linha 6 do trecho: Define o preenchimento SVG como “none”.
+              Linha 7 do trecho: Define a cor do traço SVG como “currentColor”.
+              Linha 8 do trecho: Define a espessura do traço SVG como “2”.
+              Linha 9 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+              Linha 10 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <svg
               class="icon-left"
               width="18"
@@ -72,15 +134,40 @@
               stroke-width="2"
               aria-hidden="true"
             >
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                Linha 2 do trecho: Define os comandos do traçado SVG como “M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2”.
+                Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <path
                 d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               />
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                Linha 2 do trecho: Define o atributo cx como “12”.
+                Linha 3 do trecho: Define o atributo cy como “7”.
+                Linha 4 do trecho: Define o atributo r como “4”.
+                Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <circle
                 cx="12"
                 cy="7"
                 r="4"
               />
-            </svg>
+            </svg><!-- Encerra um ícone ou desenho vetorial. -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um campo de entrada com o texto “<input”.
+              Linha 2 do trecho: Define o identificador único como “username”.
+              Linha 3 do trecho: Define o nome da configuração ou do campo como “username”.
+              Linha 4 do trecho: Define o tipo do recurso ou controle como “text”.
+              Linha 5 do trecho: Define a sugestão de preenchimento como “username”.
+              Linha 6 do trecho: Define a dica exibida no campo vazio como “Escolha seu nome de usuário”.
+              Linha 7 do trecho: Define o mínimo de caracteres como “3”.
+              Linha 8 do trecho: Define o máximo de caracteres como “30”.
+              Linha 9 do trecho: Define o atributo pattern como “[A-Za-z0-9._]+”.
+              Linha 10 do trecho: Exige o preenchimento do campo.
+              Linha 11 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <input
               id="username"
               name="username"
@@ -92,36 +179,63 @@
               pattern="[A-Za-z0-9._]+"
               required
             >
-          </div>
-        </div>
+          </div><!-- Encerra um contêiner de layout. -->
+        </div><!-- Encerra um contêiner de layout. -->
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+          Linha 2 do trecho: Define o identificador único como “profile-msg”.
+          Linha 3 do trecho: Aplica as classes de estilo como “login-msg”.
+          Linha 4 do trecho: Define o anúncio de mudanças aos leitores de tela como “polite”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <div
           id="profile-msg"
           class="login-msg"
           aria-live="polite"
         ></div>
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um botão com o texto “<button”.
+          Linha 2 do trecho: Define o tipo do recurso ou controle como “submit”.
+          Linha 3 do trecho: Aplica as classes de estilo como “btn-login”.
+          Linha 4 do trecho: Define o identificador único como “profile-submit”.
+          Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <button
           type="submit"
           class="btn-login"
           id="profile-submit"
         >
-          SALVAR E CONTINUAR
-        </button>
-        <div class="actions-group">
+          SALVAR E CONTINUAR<!-- Exibe o texto “SALVAR E CONTINUAR” neste ponto da página. -->
+        </button><!-- Encerra um botão. -->
+        <div class="actions-group"><!-- Insere um contêiner de layout com as classes “actions-group”. -->
+          <!-- Explicações da tag e dos atributos abaixo.
+            Linha 1 do trecho: Insere um botão com o texto “<button”.
+            Linha 2 do trecho: Define o tipo do recurso ou controle como “button”.
+            Linha 3 do trecho: Aplica as classes de estilo como “btn-register”.
+            Linha 4 do trecho: Define o identificador único como “logout-btn”.
+            Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+          -->
           <button
             type="button"
             class="btn-register"
             id="logout-btn"
           >
-            Sair da conta
-          </button>
-        </div>
-      </form>
-    </div>
-</main>
-<footer class="auth-footer">Aprenda. Pratique. Resolva.</footer>
+            Sair da conta<!-- Exibe o texto “Sair da conta” neste ponto da página. -->
+          </button><!-- Encerra um botão. -->
+        </div><!-- Encerra um contêiner de layout. -->
+      </form><!-- Encerra um formulário. -->
+    </div><!-- Encerra um contêiner de layout. -->
+</main><!-- Encerra o conteúdo principal. -->
+<footer class="auth-footer">Aprenda. Pratique. Resolva.</footer><!-- Insere o rodapé com as classes “auth-footer” com o texto “Aprenda. Pratique. Resolva.”. -->
+<!-- Explicações da tag e dos atributos abaixo.
+  Linha 1 do trecho: Inicia o bloco JavaScript embutido nesta página.
+  Linha 2 do trecho: Define o tipo do recurso ou controle como “module”.
+  Linha 3 do trecho: Define o arquivo ou endereço carregado como “scripts/completar-perfil.js”.
+  Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+-->
 <script
     type="module"
     src="scripts/completar-perfil.js"
   ></script>
-</body>
-</html>
+</body><!-- Encerra o conteúdo visível da página. -->
+</html><!-- Encerra o documento HTML. -->

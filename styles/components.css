@@ -1,236 +1,236 @@
 /* Componentes reutilizáveis. O prefixo px evita conflitos com as páginas existentes. */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-body.px-page { margin: 0; background: var(--praxis-page); color: var(--praxis-text); font-family: var(--praxis-font); -webkit-font-smoothing: antialiased; line-height: var(--praxis-leading-body); }
-.px-page {
-  & :where(h1,h2,h3,p) {
-    margin: 0;
-  }
-  & :where(a) {
-    color: inherit;
-    text-decoration: none;
-  }
-  & :where(button,input) {
-    font: inherit;
-  }
-  & :where(img) {
-    display: block;
-    max-width: 100%;
-  }
-}
-.px-container { width: min(var(--praxis-container), calc(100% - 64px)); margin-inline: auto; }
-.px-icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.px-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--praxis-space-3);
-  min-height: 48px;
-  padding: 12px 20px;
-  border: 1px solid transparent;
-  border-radius: var(--praxis-radius-button);
-  font-size: var(--praxis-text-sm);
-  font-weight: var(--praxis-weight-bold);
-  line-height: 1.3;
-  cursor: pointer;
-  text-align: center;
-  transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast), transform var(--praxis-duration-fast);
-  &:hover {
-    transform: translateY(-2px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
-}
-.px-button--primary {
-  background: var(--praxis-color-accent);
-  color: var(--praxis-color-ink) !important;
-  &:hover {
-    background: var(--praxis-color-accent-hover);
-  }
-}
-.px-button--secondary {
-  background: transparent;
-  color: var(--praxis-text);
-  border-color: var(--praxis-line);
-  &:hover {
-    background: var(--praxis-panel-raised);
-  }
-}
-.px-button--outline {
-  background: transparent;
-  color: var(--praxis-text);
-  border-color: var(--praxis-line);
-  &:hover {
-    border-color: var(--praxis-text);
-    background: var(--praxis-panel);
-  }
-}
-.px-button:disabled, .px-button[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; }
-.px-page :where(a, button, input, summary):focus-visible { outline: 3px solid var(--praxis-focus); outline-offset: 4px; }
-.px-light :where(a, button, input, summary):focus-visible { outline-color: var(--praxis-focus); }
-.px-skip {
-  position: fixed;
-  left: 16px;
-  top: -100px;
-  z-index: 100;
-  background: var(--praxis-color-accent);
-  color: var(--praxis-color-ink) !important;
-  padding: 12px 20px;
-  border-radius: var(--praxis-radius-button);
-  &:focus {
-    top: 12px;
-  }
-}
-.px-header { position: sticky; top: 0; z-index: 20; background: var(--praxis-page); border-bottom: 1px solid var(--praxis-line); }
-.px-header__inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: var(--praxis-space-6); }
-.px-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  & img {
-    width: 54px;
-    height: 54px;
-    object-fit: contain;
-  }
-}
-.px-logo__word { font-size: 21px; font-weight: var(--praxis-weight-display); letter-spacing: -.6px; }
-.px-nav { display: flex; align-items: center; gap: var(--praxis-space-8); }
-.px-nav__link { font-size: var(--praxis-text-sm); font-weight: var(--praxis-weight-medium); color: var(--praxis-muted) !important; }
-.px-nav__link:hover, .px-nav__link[aria-current="page"] { color: var(--praxis-accent-text) !important; }
-.px-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--praxis-space-2);
-  color: var(--praxis-accent-text);
-  font-size: var(--praxis-text-xs);
-  font-weight: var(--praxis-weight-bold);
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  &::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--praxis-color-accent);
-  }
-}
-.px-light .px-eyebrow { color: var(--praxis-muted); }
-.px-heading { font-size: clamp(1.8rem, 3.4vw, 2.75rem); font-weight: var(--praxis-weight-display); line-height: 1.14; letter-spacing: -1.2px; }
-.px-muted { color: var(--praxis-muted); }
-.px-light {
-  color: var(--praxis-text);
-  background: var(--praxis-panel-alt);
-  & .px-muted {
-    color: var(--praxis-muted);
-  }
-}
-.px-tag { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-pill); padding: 5px 10px; font-size: var(--praxis-text-xs); font-weight: var(--praxis-weight-semibold); line-height: 1.4; }
-.px-tag--accent { background: var(--praxis-color-accent); color: var(--praxis-color-ink); border-color: var(--praxis-accent-text); }
-.px-tag--soft { background: var(--praxis-accent-tint); border-color: var(--praxis-accent-tint); color: var(--praxis-text); }
-.px-card { border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-lg); background: var(--praxis-panel); padding: var(--praxis-space-8); }
-.px-card--dark { color: var(--praxis-text); background: var(--praxis-panel-raised); border-color: var(--praxis-line); }
-.px-field {
-  display: grid;
-  gap: var(--praxis-space-2);
-  & label {
-    font-size: var(--praxis-text-sm);
-    font-weight: var(--praxis-weight-semibold);
-  }
-}
-.px-input {
-  min-height: 48px;
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--praxis-line);
-  border-radius: var(--praxis-radius-button);
-  background: var(--praxis-panel);
-  color: var(--praxis-text);
-  &::placeholder {
-    color: var(--praxis-muted);
-  }
-  &:focus {
-    outline: 2px solid var(--praxis-focus);
-    outline-offset: 2px;
-  }
-  &[aria-invalid="true"] {
-    border-color: var(--praxis-error-text);
-  }
-}
-.px-help { font-size: var(--praxis-text-xs); color: var(--praxis-muted); }
-.px-help--error { color: var(--praxis-error-text); }
-.px-notice { display: flex; align-items: flex-start; gap: var(--praxis-space-3); font-size: var(--praxis-text-sm); padding: var(--praxis-space-4); border-radius: var(--praxis-radius-button); background: var(--praxis-accent-tint); color: var(--praxis-text); }
-.px-details {
-  border-bottom: 1px solid var(--praxis-line);
-  & summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 22px 0;
-    font-size: var(--praxis-text-base);
-    font-weight: var(--praxis-weight-semibold);
-    cursor: pointer;
-    &::-webkit-details-marker {
-      display: none;
-    }
-    &::after {
-      content: "+";
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--praxis-muted);
-    }
-  }
-  &[open] summary::after {
-    content: "−";
-  }
-  & p {
-    padding: 0 32px 24px 0;
-    color: var(--praxis-muted);
-    font-size: var(--praxis-text-sm);
-    max-width: 720px;
-  }
-}
-.px-footer { padding: var(--praxis-space-8) 0; border-top: 1px solid var(--praxis-line); }
-.px-footer__inner { display: flex; justify-content: space-between; align-items: center; gap: var(--praxis-space-6); }
-.px-footer p, .px-footer a { font-size: var(--praxis-text-xs); color: var(--praxis-muted); }
-.px-footer a:hover { color: var(--praxis-accent-text); }
-.px-footer__links { display: flex; flex-wrap: wrap; gap: var(--praxis-space-6); }
-.px-dialog {
-  width: min(480px, calc(100% - 32px));
-  padding: 32px;
-  border: 1px solid var(--praxis-line);
-  border-radius: var(--praxis-radius-lg);
-  color: var(--praxis-text);
-  background: var(--praxis-panel-raised);
-  font-family: var(--praxis-font);
-  box-shadow: var(--praxis-shadow);
-  &::backdrop {
-    background: rgb(6 7 12 / 78%);
-  }
-}
-.px-dialog__top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
-.px-close { display: grid; place-items: center; border: 1px solid var(--praxis-line); border-radius: 50%; background: transparent; color: inherit; width: 44px; height: 44px; cursor: pointer; }
-.px-dialog h2 { font-size: var(--praxis-text-2xl); letter-spacing: -.8px; line-height: 1.2; }
-.px-dialog__description { font-size: var(--praxis-text-sm); color: var(--praxis-muted); margin: 12px 0 24px; }
-.px-dialog__summary { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 20px 0; border-block: 1px solid var(--praxis-line); font-size: var(--praxis-text-sm); }
-.px-dialog__summary dd, .px-dialog__summary dt { margin: 0; }
-.px-dialog__note { color: var(--praxis-muted); font-size: var(--praxis-text-xs); margin: 20px 0; }
-.px-dialog__actions { display: grid; gap: var(--praxis-space-3); }
-@media (max-width: 700px) {
-  .px-container { width: calc(100% - 36px); }
-  .px-header__inner { min-height: 72px; gap: 12px; }
-  .px-logo img { width: 42px; height: 42px; }
-  .px-logo__word { font-size: 18px; }
-  .px-nav { gap: 12px; }
-  .px-nav__catalog { display: none; }
-  .px-card { padding: 24px; }
-  .px-footer__inner { align-items: flex-start; flex-direction: column; gap: 16px; }
-}
-@media (max-width: 380px) { .px-logo__word { display: none; } }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .px-page *, .px-page *::before, .px-page *::after { transition: none !important; animation: none !important; }
-}
+* { box-sizing: border-box; } /* Define a forma de calcular o tamanho da caixa como border-box. */
+html { scroll-behavior: smooth; scroll-padding-top: 100px; } /* Define o comportamento da rolagem como smooth. Define a propriedade scroll-padding-top como 100px. */
+body.px-page { margin: 0; background: var(--praxis-page); color: var(--praxis-text); font-family: var(--praxis-font); -webkit-font-smoothing: antialiased; line-height: var(--praxis-leading-body); } /* Define as margens externas como 0. Define o fundo como var(--praxis-page). Define a cor do texto como var(--praxis-text). Define a família da fonte como var(--praxis-font). Define a propriedade -webkit-font-smoothing como antialiased. Define a altura das linhas como var(--praxis-leading-body). */
+.px-page { /* Seleciona .px-page. */
+  & :where(h1,h2,h3,p) { /* Seleciona & :where(h1,h2,h3,p) usando & para manter a relação com o seletor pai. */
+    margin: 0; /* Define as margens externas como 0. */
+  } /* Encerra o bloco do seletor & :where(h1,h2,h3,p). */
+  & :where(a) { /* Seleciona & :where(a) usando & para manter a relação com o seletor pai. */
+    color: inherit; /* Define a cor do texto como inherit. */
+    text-decoration: none; /* Define a decoração do texto como none. */
+  } /* Encerra o bloco do seletor & :where(a). */
+  & :where(button,input) { /* Seleciona & :where(button,input) usando & para manter a relação com o seletor pai. */
+    font: inherit; /* Define a fonte e suas medidas como inherit. */
+  } /* Encerra o bloco do seletor & :where(button,input). */
+  & :where(img) { /* Seleciona & :where(img) usando & para manter a relação com o seletor pai. */
+    display: block; /* Define o modelo de layout como block. */
+    max-width: 100%; /* Define a largura máxima como 100%. */
+  } /* Encerra o bloco do seletor & :where(img). */
+} /* Encerra o bloco do seletor .px-page. */
+.px-container { width: min(var(--praxis-container), calc(100% - 64px)); margin-inline: auto; } /* Define a largura como min(var(--praxis-container), calc(100% - 64px)). Define as margens laterais no eixo do texto como auto. */
+.px-icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; } /* Define a largura como 20px. Define a altura como 20px. Define a redução do item flexível como 0. Define a cor de preenchimento SVG como none. Define a cor do traço SVG como currentColor. Define a espessura do traço SVG como 1.8. Define a propriedade stroke-linecap como round. Define a propriedade s… */
+.px-button { /* Seleciona .px-button. */
+  display: inline-flex; /* Define o modelo de layout como inline-flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  justify-content: center; /* Define a distribuição no eixo principal como center. */
+  gap: var(--praxis-space-3); /* Define o espaço entre os itens como var(--praxis-space-3). */
+  min-height: 48px; /* Define a altura mínima como 48px. */
+  padding: 12px 20px; /* Define os espaços internos como 12px 20px. */
+  border: 1px solid transparent; /* Define a borda como 1px solid transparent. */
+  border-radius: var(--praxis-radius-button); /* Define o arredondamento dos cantos como var(--praxis-radius-button). */
+  font-size: var(--praxis-text-sm); /* Define o tamanho da fonte como var(--praxis-text-sm). */
+  font-weight: var(--praxis-weight-bold); /* Define o peso da fonte como var(--praxis-weight-bold). */
+  line-height: 1.3; /* Define a altura das linhas como 1.3. */
+  cursor: pointer; /* Define o formato do cursor como pointer. */
+  text-align: center; /* Define o alinhamento do texto como center. */
+  transition: background var(--praxis-duration-fast), border-color var(--praxis-duration-fast), transform var(--praxis-duration-fast); /* Define as propriedades e o tempo da transição como background var(--praxis-duration-fast), border-color var(--praxis-duration-fast), tr…. */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    transform: translateY(-2px); /* Define a transformação visual como translateY(-2px). */
+  } /* Encerra o bloco do seletor &:hover. */
+  &:active { /* Seleciona &:active usando & para manter a relação com o seletor pai. */
+    transform: translateY(0); /* Define a transformação visual como translateY(0). */
+  } /* Encerra o bloco do seletor &:active. */
+} /* Encerra o bloco do seletor .px-button. */
+.px-button--primary { /* Seleciona .px-button--primary. */
+  background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+  color: var(--praxis-color-ink) !important; /* Define a cor do texto como var(--praxis-color-ink). */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-color-accent-hover); /* Define o fundo como var(--praxis-color-accent-hover). */
+  } /* Encerra o bloco do seletor &:hover. */
+} /* Encerra o bloco do seletor .px-button--primary. */
+.px-button--secondary { /* Seleciona .px-button--secondary. */
+  background: transparent; /* Define o fundo como transparent. */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  border-color: var(--praxis-line); /* Define a cor das bordas como var(--praxis-line). */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+  } /* Encerra o bloco do seletor &:hover. */
+} /* Encerra o bloco do seletor .px-button--secondary. */
+.px-button--outline { /* Seleciona .px-button--outline. */
+  background: transparent; /* Define o fundo como transparent. */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  border-color: var(--praxis-line); /* Define a cor das bordas como var(--praxis-line). */
+  &:hover { /* Seleciona &:hover usando & para manter a relação com o seletor pai. */
+    border-color: var(--praxis-text); /* Define a cor das bordas como var(--praxis-text). */
+    background: var(--praxis-panel); /* Define o fundo como var(--praxis-panel). */
+  } /* Encerra o bloco do seletor &:hover. */
+} /* Encerra o bloco do seletor .px-button--outline. */
+.px-button:disabled, .px-button[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; } /* Define a opacidade como .45. Define o formato do cursor como not-allowed. Define a transformação visual como none. */
+.px-page :where(a, button, input, summary):focus-visible { outline: 3px solid var(--praxis-focus); outline-offset: 4px; } /* Define o contorno de foco como 3px solid var(--praxis-focus). Define a distância do contorno como 4px. */
+.px-light :where(a, button, input, summary):focus-visible { outline-color: var(--praxis-focus); } /* Define a cor do contorno como var(--praxis-focus). */
+.px-skip { /* Seleciona .px-skip. */
+  position: fixed; /* Define o posicionamento como fixed. */
+  left: 16px; /* Define a distância da esquerda como 16px. */
+  top: -100px; /* Define a distância do topo como -100px. */
+  z-index: 100; /* Define a ordem de sobreposição como 100. */
+  background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+  color: var(--praxis-color-ink) !important; /* Define a cor do texto como var(--praxis-color-ink). */
+  padding: 12px 20px; /* Define os espaços internos como 12px 20px. */
+  border-radius: var(--praxis-radius-button); /* Define o arredondamento dos cantos como var(--praxis-radius-button). */
+  &:focus { /* Seleciona &:focus usando & para manter a relação com o seletor pai. */
+    top: 12px; /* Define a distância do topo como 12px. */
+  } /* Encerra o bloco do seletor &:focus. */
+} /* Encerra o bloco do seletor .px-skip. */
+.px-header { position: sticky; top: 0; z-index: 20; background: var(--praxis-page); border-bottom: 1px solid var(--praxis-line); } /* Define o posicionamento como sticky. Define a distância do topo como 0. Define a ordem de sobreposição como 20. Define o fundo como var(--praxis-page). Define a borda inferior como 1px solid var(--praxis-line). */
+.px-header__inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: var(--praxis-space-6); } /* Define a altura mínima como 88px. Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. Define a distribuição no eixo principal como space-between. Define o espaço entre os itens como var(--praxis-space-6). */
+.px-logo { /* Seleciona .px-logo. */
+  display: inline-flex; /* Define o modelo de layout como inline-flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: 10px; /* Define o espaço entre os itens como 10px. */
+  flex-shrink: 0; /* Define a redução do item flexível como 0. */
+  & img { /* Seleciona & img usando & para manter a relação com o seletor pai. */
+    width: 54px; /* Define a largura como 54px. */
+    height: 54px; /* Define a altura como 54px. */
+    object-fit: contain; /* Define o ajuste da imagem na caixa como contain. */
+  } /* Encerra o bloco do seletor & img. */
+} /* Encerra o bloco do seletor .px-logo. */
+.px-logo__word { font-size: 21px; font-weight: var(--praxis-weight-display); letter-spacing: -.6px; } /* Define o tamanho da fonte como 21px. Define o peso da fonte como var(--praxis-weight-display). Define o espaçamento entre letras como -.6px. */
+.px-nav { display: flex; align-items: center; gap: var(--praxis-space-8); } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. Define o espaço entre os itens como var(--praxis-space-8). */
+.px-nav__link { font-size: var(--praxis-text-sm); font-weight: var(--praxis-weight-medium); color: var(--praxis-muted) !important; } /* Define o tamanho da fonte como var(--praxis-text-sm). Define o peso da fonte como var(--praxis-weight-medium). Define a cor do texto como var(--praxis-muted). */
+.px-nav__link:hover, .px-nav__link[aria-current="page"] { color: var(--praxis-accent-text) !important; } /* Define a cor do texto como var(--praxis-accent-text). */
+.px-eyebrow { /* Seleciona .px-eyebrow. */
+  display: inline-flex; /* Define o modelo de layout como inline-flex. */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  gap: var(--praxis-space-2); /* Define o espaço entre os itens como var(--praxis-space-2). */
+  color: var(--praxis-accent-text); /* Define a cor do texto como var(--praxis-accent-text). */
+  font-size: var(--praxis-text-xs); /* Define o tamanho da fonte como var(--praxis-text-xs). */
+  font-weight: var(--praxis-weight-bold); /* Define o peso da fonte como var(--praxis-weight-bold). */
+  letter-spacing: 1.4px; /* Define o espaçamento entre letras como 1.4px. */
+  text-transform: uppercase; /* Define a transformação das letras como uppercase. */
+  &::before { /* Seleciona &::before usando & para manter a relação com o seletor pai. */
+    content: ""; /* Define o conteúdo do pseudoelemento como "". */
+    width: 7px; /* Define a largura como 7px. */
+    height: 7px; /* Define a altura como 7px. */
+    border-radius: 50%; /* Define o arredondamento dos cantos como 50%. */
+    background: var(--praxis-color-accent); /* Define o fundo como var(--praxis-color-accent). */
+  } /* Encerra o bloco do seletor &::before. */
+} /* Encerra o bloco do seletor .px-eyebrow. */
+.px-light .px-eyebrow { color: var(--praxis-muted); } /* Define a cor do texto como var(--praxis-muted). */
+.px-heading { font-size: clamp(1.8rem, 3.4vw, 2.75rem); font-weight: var(--praxis-weight-display); line-height: 1.14; letter-spacing: -1.2px; } /* Define o tamanho da fonte como clamp(1.8rem, 3.4vw, 2.75rem). Define o peso da fonte como var(--praxis-weight-display). Define a altura das linhas como 1.14. Define o espaçamento entre letras como -1.2px. */
+.px-muted { color: var(--praxis-muted); } /* Define a cor do texto como var(--praxis-muted). */
+.px-light { /* Seleciona .px-light. */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  background: var(--praxis-panel-alt); /* Define o fundo como var(--praxis-panel-alt). */
+  & .px-muted { /* Seleciona & .px-muted usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor & .px-muted. */
+} /* Encerra o bloco do seletor .px-light. */
+.px-tag { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-pill); padding: 5px 10px; font-size: var(--praxis-text-xs); font-weight: var(--praxis-weight-semibold); line-height: 1.4; } /* Define o modelo de layout como inline-flex. Define o alinhamento dos itens no eixo transversal como center. Define o espaço entre os itens como 6px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como var(--praxis-radius-pill). Define os espaços internos como 5… */
+.px-tag--accent { background: var(--praxis-color-accent); color: var(--praxis-color-ink); border-color: var(--praxis-accent-text); } /* Define o fundo como var(--praxis-color-accent). Define a cor do texto como var(--praxis-color-ink). Define a cor das bordas como var(--praxis-accent-text). */
+.px-tag--soft { background: var(--praxis-accent-tint); border-color: var(--praxis-accent-tint); color: var(--praxis-text); } /* Define o fundo como var(--praxis-accent-tint). Define a cor das bordas como var(--praxis-accent-tint). Define a cor do texto como var(--praxis-text). */
+.px-card { border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-lg); background: var(--praxis-panel); padding: var(--praxis-space-8); } /* Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como var(--praxis-radius-lg). Define o fundo como var(--praxis-panel). Define os espaços internos como var(--praxis-space-8). */
+.px-card--dark { color: var(--praxis-text); background: var(--praxis-panel-raised); border-color: var(--praxis-line); } /* Define a cor do texto como var(--praxis-text). Define o fundo como var(--praxis-panel-raised). Define a cor das bordas como var(--praxis-line). */
+.px-field { /* Seleciona .px-field. */
+  display: grid; /* Define o modelo de layout como grid. */
+  gap: var(--praxis-space-2); /* Define o espaço entre os itens como var(--praxis-space-2). */
+  & label { /* Seleciona & label usando & para manter a relação com o seletor pai. */
+    font-size: var(--praxis-text-sm); /* Define o tamanho da fonte como var(--praxis-text-sm). */
+    font-weight: var(--praxis-weight-semibold); /* Define o peso da fonte como var(--praxis-weight-semibold). */
+  } /* Encerra o bloco do seletor & label. */
+} /* Encerra o bloco do seletor .px-field. */
+.px-input { /* Seleciona .px-input. */
+  min-height: 48px; /* Define a altura mínima como 48px. */
+  width: 100%; /* Define a largura como 100%. */
+  padding: 12px 14px; /* Define os espaços internos como 12px 14px. */
+  border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  border-radius: var(--praxis-radius-button); /* Define o arredondamento dos cantos como var(--praxis-radius-button). */
+  background: var(--praxis-panel); /* Define o fundo como var(--praxis-panel). */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  &::placeholder { /* Seleciona &::placeholder usando & para manter a relação com o seletor pai. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor &::placeholder. */
+  &:focus { /* Seleciona &:focus usando & para manter a relação com o seletor pai. */
+    outline: 2px solid var(--praxis-focus); /* Define o contorno de foco como 2px solid var(--praxis-focus). */
+    outline-offset: 2px; /* Define a distância do contorno como 2px. */
+  } /* Encerra o bloco do seletor &:focus. */
+  &[aria-invalid="true"] { /* Seleciona &[aria-invalid="true"] usando & para manter a relação com o seletor pai. */
+    border-color: var(--praxis-error-text); /* Define a cor das bordas como var(--praxis-error-text). */
+  } /* Encerra o bloco do seletor &[aria-invalid="true"]. */
+} /* Encerra o bloco do seletor .px-input. */
+.px-help { font-size: var(--praxis-text-xs); color: var(--praxis-muted); } /* Define o tamanho da fonte como var(--praxis-text-xs). Define a cor do texto como var(--praxis-muted). */
+.px-help--error { color: var(--praxis-error-text); } /* Define a cor do texto como var(--praxis-error-text). */
+.px-notice { display: flex; align-items: flex-start; gap: var(--praxis-space-3); font-size: var(--praxis-text-sm); padding: var(--praxis-space-4); border-radius: var(--praxis-radius-button); background: var(--praxis-accent-tint); color: var(--praxis-text); } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como flex-start. Define o espaço entre os itens como var(--praxis-space-3). Define o tamanho da fonte como var(--praxis-text-sm). Define os espaços internos como var(--praxis-space-4). Define o arredondamento do… */
+.px-details { /* Seleciona .px-details. */
+  border-bottom: 1px solid var(--praxis-line); /* Define a borda inferior como 1px solid var(--praxis-line). */
+  & summary { /* Seleciona & summary usando & para manter a relação com o seletor pai. */
+    list-style: none; /* Define o marcador da lista como none. */
+    display: flex; /* Define o modelo de layout como flex. */
+    justify-content: space-between; /* Define a distribuição no eixo principal como space-between. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 20px; /* Define o espaço entre os itens como 20px. */
+    padding: 22px 0; /* Define os espaços internos como 22px 0. */
+    font-size: var(--praxis-text-base); /* Define o tamanho da fonte como var(--praxis-text-base). */
+    font-weight: var(--praxis-weight-semibold); /* Define o peso da fonte como var(--praxis-weight-semibold). */
+    cursor: pointer; /* Define o formato do cursor como pointer. */
+    &::-webkit-details-marker { /* Seleciona &::-webkit-details-marker usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor &::-webkit-details-marker. */
+    &::after { /* Seleciona &::after usando & para manter a relação com o seletor pai. */
+      content: "+"; /* Define o conteúdo do pseudoelemento como "+". */
+      font-size: 24px; /* Define o tamanho da fonte como 24px. */
+      font-weight: 400; /* Define o peso da fonte como 400. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    } /* Encerra o bloco do seletor &::after. */
+  } /* Encerra o bloco do seletor & summary. */
+  &[open] summary::after { /* Seleciona &[open] summary::after usando & para manter a relação com o seletor pai. */
+    content: "−"; /* Define o conteúdo do pseudoelemento como "−". */
+  } /* Encerra o bloco do seletor &[open] summary::after. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    padding: 0 32px 24px 0; /* Define os espaços internos como 0 32px 24px 0. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    font-size: var(--praxis-text-sm); /* Define o tamanho da fonte como var(--praxis-text-sm). */
+    max-width: 720px; /* Define a largura máxima como 720px. */
+  } /* Encerra o bloco do seletor & p. */
+} /* Encerra o bloco do seletor .px-details. */
+.px-footer { padding: var(--praxis-space-8) 0; border-top: 1px solid var(--praxis-line); } /* Define os espaços internos como var(--praxis-space-8) 0. Define a borda superior como 1px solid var(--praxis-line). */
+.px-footer__inner { display: flex; justify-content: space-between; align-items: center; gap: var(--praxis-space-6); } /* Define o modelo de layout como flex. Define a distribuição no eixo principal como space-between. Define o alinhamento dos itens no eixo transversal como center. Define o espaço entre os itens como var(--praxis-space-6). */
+.px-footer p, .px-footer a { font-size: var(--praxis-text-xs); color: var(--praxis-muted); } /* Define o tamanho da fonte como var(--praxis-text-xs). Define a cor do texto como var(--praxis-muted). */
+.px-footer a:hover { color: var(--praxis-accent-text); } /* Define a cor do texto como var(--praxis-accent-text). */
+.px-footer__links { display: flex; flex-wrap: wrap; gap: var(--praxis-space-6); } /* Define o modelo de layout como flex. Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como var(--praxis-space-6). */
+.px-dialog { /* Seleciona .px-dialog. */
+  width: min(480px, calc(100% - 32px)); /* Define a largura como min(480px, calc(100% - 32px)). */
+  padding: 32px; /* Define os espaços internos como 32px. */
+  border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  border-radius: var(--praxis-radius-lg); /* Define o arredondamento dos cantos como var(--praxis-radius-lg). */
+  color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+  background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+  font-family: var(--praxis-font); /* Define a família da fonte como var(--praxis-font). */
+  box-shadow: var(--praxis-shadow); /* Define a sombra da caixa como var(--praxis-shadow). */
+  &::backdrop { /* Seleciona &::backdrop usando & para manter a relação com o seletor pai. */
+    background: rgb(6 7 12 / 78%); /* Define o fundo como rgb(6 7 12 / 78%). */
+  } /* Encerra o bloco do seletor &::backdrop. */
+} /* Encerra o bloco do seletor .px-dialog. */
+.px-dialog__top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; } /* Define o modelo de layout como flex. Define a distribuição no eixo principal como space-between. Define o alinhamento dos itens no eixo transversal como center. Define o espaço entre os itens como 16px. Define a margem inferior como 24px. */
+.px-close { display: grid; place-items: center; border: 1px solid var(--praxis-line); border-radius: 50%; background: transparent; color: inherit; width: 44px; height: 44px; cursor: pointer; } /* Define o modelo de layout como grid. Define o alinhamento dos itens nos dois eixos como center. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como 50%. Define o fundo como transparent. Define a cor do texto como inherit. Define a largura como 44px. Define a al… */
+.px-dialog h2 { font-size: var(--praxis-text-2xl); letter-spacing: -.8px; line-height: 1.2; } /* Define o tamanho da fonte como var(--praxis-text-2xl). Define o espaçamento entre letras como -.8px. Define a altura das linhas como 1.2. */
+.px-dialog__description { font-size: var(--praxis-text-sm); color: var(--praxis-muted); margin: 12px 0 24px; } /* Define o tamanho da fonte como var(--praxis-text-sm). Define a cor do texto como var(--praxis-muted). Define as margens externas como 12px 0 24px. */
+.px-dialog__summary { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 20px 0; border-block: 1px solid var(--praxis-line); font-size: var(--praxis-text-sm); } /* Define o modelo de layout como grid. Define as colunas da grade como 1fr auto. Define o espaço entre os itens como 12px. Define os espaços internos como 20px 0. Define a propriedade border-block como 1px solid var(--praxis-line). Define o tamanho da fonte como var(--praxis-text-sm). */
+.px-dialog__summary dd, .px-dialog__summary dt { margin: 0; } /* Define as margens externas como 0. */
+.px-dialog__note { color: var(--praxis-muted); font-size: var(--praxis-text-xs); margin: 20px 0; } /* Define a cor do texto como var(--praxis-muted). Define o tamanho da fonte como var(--praxis-text-xs). Define as margens externas como 20px 0. */
+.px-dialog__actions { display: grid; gap: var(--praxis-space-3); } /* Define o modelo de layout como grid. Define o espaço entre os itens como var(--praxis-space-3). */
+@media (max-width: 700px) { /* Aplica estas regras quando (max-width: 700px). */
+  .px-container { width: calc(100% - 36px); } /* Define a largura como calc(100% - 36px). */
+  .px-header__inner { min-height: 72px; gap: 12px; } /* Define a altura mínima como 72px. Define o espaço entre os itens como 12px. */
+  .px-logo img { width: 42px; height: 42px; } /* Define a largura como 42px. Define a altura como 42px. */
+  .px-logo__word { font-size: 18px; } /* Define o tamanho da fonte como 18px. */
+  .px-nav { gap: 12px; } /* Define o espaço entre os itens como 12px. */
+  .px-nav__catalog { display: none; } /* Define o modelo de layout como none. */
+  .px-card { padding: 24px; } /* Define os espaços internos como 24px. */
+  .px-footer__inner { align-items: flex-start; flex-direction: column; gap: 16px; } /* Define o alinhamento dos itens no eixo transversal como flex-start. Define a direção dos itens flexíveis como column. Define o espaço entre os itens como 16px. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 380px) { .px-logo__word { display: none; } } /* Define o modelo de layout como none. */
+@media (prefers-reduced-motion: reduce) { /* Aplica estas regras quando (prefers-reduced-motion: reduce). */
+  html { scroll-behavior: auto; } /* Define o comportamento da rolagem como auto. */
+  .px-page *, .px-page *::before, .px-page *::after { transition: none !important; animation: none !important; } /* Define as propriedades e o tempo da transição como none. Define a animação e seus parâmetros como none. */
+} /* Encerra o bloco da regra @media. */

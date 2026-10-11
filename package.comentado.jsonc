@@ -1,0 +1,13 @@
+// Versão comentada de consulta; o npm continua lendo package.json.
+{ // Inicia o objeto de configuração do projeto.
+  "name": "praxis", // Define o nome do pacote como praxis.
+  "version": "1.0.0", // Define a versão do pacote.
+  "private": true, // Impede a publicação acidental no registro npm.
+  "description": "Plataforma Praxis com design system e página de assinatura", // Descreve a plataforma Praxis.
+  "scripts": { // Agrupa os comandos executados por npm run.
+    "dev": "node tools/dev-server.cjs", // Inicia o servidor de desenvolvimento local.
+    "check": "node --check scripts/theme.js && node --check scripts/header.js && node --check scripts/header-session.js && node --check scripts/account-menu.js && node --check scripts/perfil.js && node --check scripts/supabaseClient.js && node --check scripts/index.js && node --check scripts/catalog-motion.js && node --check scripts/subscription-motion.js && node --check scripts/curso.js && node --check scripts/login-ui.js && node --check scripts/login.js && node --check scripts/assine-agora.js && node --check scripts/planos.js && node --check tools/dev-server.cjs", // Verifica a sintaxe dos scripts JavaScript sem executá-los.
+    "test": "node --experimental-vm-modules --experimental-test-isolation=none --test tests/*.test.cjs" // Executa os testes automatizados com o runner do Node.js.
+  }, // Encerra o objeto de configuração.
+  "type": "module" // Define os arquivos .js como módulos ES.
+} // Encerra o objeto de configuração.

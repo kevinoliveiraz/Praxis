@@ -1,269 +1,269 @@
 /* Catálogo visual: documentação do sistema, com exemplos claros e escaneáveis. */
-body.ds-page { background: var(--praxis-panel-alt); }
-.ds-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; color: var(--praxis-text); }
-.ds-sidebar { position: sticky; top: 120px; align-self: start; padding-top: 44px; }
-.ds-sidebar__title {
-  display: grid;
-  justify-items: start;
-  gap: 12px;
-  & strong {
-    font-size: 18px;
-    letter-spacing: -.5px;
-  }
-}
-.ds-sidebar {
-  & nav {
-    display: grid;
-    margin-top: 24px;
-    gap: 2px;
-    & a {
-      padding: 9px 0;
-      font-size: 13px;
-      color: var(--praxis-muted);
-    }
-    & a:hover {
-      color: var(--praxis-text);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-  }
-  &>p {
-    font-size: 12px;
-    color: var(--praxis-muted);
-    margin-top: 28px;
-    border-top: 1px solid var(--praxis-line);
-    padding-top: 20px;
-  }
-}
-.ds-content { min-width: 0; padding-top: 52px; }
-.ds-overview {
-  padding-bottom: 44px;
-  & h1 {
-    font-size: clamp(32px, 4vw, 48px);
-    letter-spacing: -1.8px;
-    line-height: 1.12;
-    font-weight: 800;
-    margin-top: 20px;
-  }
-  &>p {
-    font-size: 14px;
-    max-width: 620px;
-    margin-top: 20px;
-  }
-}
-.ds-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-.ds-section { padding-block: 44px; border-top: 1px solid var(--praxis-line); }
-.ds-section__head {
-  margin-bottom: 26px;
-  &>span {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    color: var(--praxis-muted);
-  }
-  & h2 {
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -.8px;
-    margin-top: 10px;
-  }
-  & p {
-    font-size: 13px;
-    color: var(--praxis-muted);
-    max-width: 620px;
-    margin-top: 12px;
-  }
-}
-.ds-palette { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.ds-swatch { border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); overflow: hidden; background: var(--praxis-panel); }
-.ds-swatch__color { color: var(--praxis-color-ink); height: 95px; padding: 14px; display: flex; align-items: flex-end; font-size: 11px; font-weight: 600; }
-.swatch--dark { color: var(--praxis-color-paper); }
-.ds-swatch__label {
-  padding: 14px;
-  & strong {
-    display: block;
-    font-size: 13px;
-  }
-  & code {
-    display: block;
-    font-size: 9px;
-    margin-top: 6px;
-    overflow-wrap: anywhere;
-    color: var(--praxis-muted);
-  }
-}
-.ds-rule {
-  padding: 20px 24px;
-  margin-top: 24px;
-  border-left: 3px solid #899d1b;
-  background: var(--praxis-panel-raised);
-  border-radius: 0 10px 10px 0;
-  & strong {
-    font-size: 13px;
-  }
-  & p {
-    font-size: 12px;
-    color: var(--praxis-muted);
-    margin-top: 8px;
-  }
-}
-.ds-type-row {
-  display: grid;
-  grid-template-columns: 155px minmax(0, 1fr);
-  gap: 20px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--praxis-line);
-  align-items: center;
-  &>div {
-    display: grid;
-    gap: 6px;
-  }
-  & code {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  & small {
-    font-size: 10px;
-    color: var(--praxis-muted);
-  }
-  & .ds-display {
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 800;
-    letter-spacing: -1.3px;
-    line-height: 1.08;
-  }
-  & .px-heading {
-    font-size: 32px;
-  }
-  & .ds-small {
-    font-size: 14px;
-    font-weight: 500;
-  }
-}
-.ds-spacing { display: flex; flex-wrap: wrap; gap: 28px; padding: 24px; background: var(--praxis-panel); border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); }
-.ds-space {
-  display: grid;
-  gap: 16px;
-  justify-items: start;
-  & span {
-    font-size: 10px;
-    color: var(--praxis-muted);
-  }
-  & i {
-    height: 32px;
-    background: var(--praxis-text);
-    display: block;
-  }
-}
-.ds-radii {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 24px;
-  &>div {
-    background: var(--praxis-accent-tint);
-    min-height: 96px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    text-align: center;
-    border: 1px solid var(--praxis-line);
-  }
-  & strong {
-    font-size: 16px;
-  }
-  & span {
-    font-size: 10px;
-  }
-}
-.ds-button-stage { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; padding: 24px; }
-.ds-stage--dark { background: var(--praxis-page); border-radius: var(--praxis-radius-lg); }
-.ds-caption { font-size: 11px; color: var(--praxis-muted); }
-.ds-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.ds-component-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  & .px-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 26px;
-  }
-}
-.ds-card-icon {
-  display: block;
-  margin-block: 24px 14px;
-  & .px-icon {
-    width: 28px;
-    height: 28px;
-  }
-}
-.ds-component-grid {
-  & h3 {
-    font-size: 20px;
-    line-height: 1.25;
-    letter-spacing: -.5px;
-  }
-  & p {
-    font-size: 13px;
-    margin-top: 12px;
-    margin-bottom: 24px;
-  }
-  & .px-button {
-    margin-top: auto;
-    font-size: 12px;
-    width: 100%;
-  }
-}
-.ds-tag-row { display: flex; gap: 8px; margin-block: 24px; }
-.ds-demo-details { margin-top: 20px; }
-.ds-content pre { padding: 24px; border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); background: var(--praxis-page); color: var(--praxis-accent-text); font-size: 12px; overflow-x: auto; line-height: 1.9; }
-#uso > .px-button { margin-top: 24px; }
-.ds-page .px-footer { color: var(--praxis-text); background: var(--praxis-page); }
-@media (max-width: 1000px) {
-  .ds-layout { grid-template-columns: 155px minmax(0, 1fr); gap: 28px; }
-  .ds-type-row { grid-template-columns: 1fr; gap: 12px; }
-  .ds-radii { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ds-component-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 700px) {
-  .ds-layout { grid-template-columns: 1fr; gap: 0; }
-  .ds-sidebar { position: static; padding-top: 24px; }
-  .ds-sidebar__title { display: flex; align-items: center; }
-  .ds-sidebar {
-    & nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 16px;
-      margin-top: 14px;
-    }
-    &>p {
-      display: none;
-    }
-  }
-  .ds-content { padding-top: 32px; }
-  .ds-overview h1 { font-size: 34px; letter-spacing: -1.2px; }
-  .ds-palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ds-fields { grid-template-columns: 1fr; }
-  .ds-section { padding-block: 32px; }
-  .ds-page {
-    & .px-header {
-      & .px-button {
-        padding-inline: 12px;
-        font-size: 11px;
-        gap: 8px;
-      }
-      & .px-nav {
-        gap: 12px;
-      }
-    }
-    & .px-logo__word {
-      display: none;
-    }
-  }
-}
+body.ds-page { background: var(--praxis-panel-alt); } /* Define o fundo como var(--praxis-panel-alt). */
+.ds-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; color: var(--praxis-text); } /* Define o modelo de layout como grid. Define as colunas da grade como 200px minmax(0, 1fr). Define o espaço entre os itens como 48px. Define a cor do texto como var(--praxis-text). */
+.ds-sidebar { position: sticky; top: 120px; align-self: start; padding-top: 44px; } /* Define o posicionamento como sticky. Define a distância do topo como 120px. Define o alinhamento individual como start. Define o espaço interno superior como 44px. */
+.ds-sidebar__title { /* Seleciona .ds-sidebar__title. */
+  display: grid; /* Define o modelo de layout como grid. */
+  justify-items: start; /* Define o alinhamento horizontal dos itens da grade como start. */
+  gap: 12px; /* Define o espaço entre os itens como 12px. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    font-size: 18px; /* Define o tamanho da fonte como 18px. */
+    letter-spacing: -.5px; /* Define o espaçamento entre letras como -.5px. */
+  } /* Encerra o bloco do seletor & strong. */
+} /* Encerra o bloco do seletor .ds-sidebar__title. */
+.ds-sidebar { /* Seleciona .ds-sidebar. */
+  & nav { /* Seleciona & nav usando & para manter a relação com o seletor pai. */
+    display: grid; /* Define o modelo de layout como grid. */
+    margin-top: 24px; /* Define a margem superior como 24px. */
+    gap: 2px; /* Define o espaço entre os itens como 2px. */
+    & a { /* Seleciona & a usando & para manter a relação com o seletor pai. */
+      padding: 9px 0; /* Define os espaços internos como 9px 0. */
+      font-size: 13px; /* Define o tamanho da fonte como 13px. */
+      color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    } /* Encerra o bloco do seletor & a. */
+    & a:hover { /* Seleciona & a:hover usando & para manter a relação com o seletor pai. */
+      color: var(--praxis-text); /* Define a cor do texto como var(--praxis-text). */
+      text-decoration: underline; /* Define a decoração do texto como underline. */
+      text-underline-offset: 4px; /* Define a propriedade text-underline-offset como 4px. */
+    } /* Encerra o bloco do seletor & a:hover. */
+  } /* Encerra o bloco do seletor & nav. */
+  &>p { /* Seleciona &>p usando & para manter a relação com o seletor pai. */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    margin-top: 28px; /* Define a margem superior como 28px. */
+    border-top: 1px solid var(--praxis-line); /* Define a borda superior como 1px solid var(--praxis-line). */
+    padding-top: 20px; /* Define o espaço interno superior como 20px. */
+  } /* Encerra o bloco do seletor &>p. */
+} /* Encerra o bloco do seletor .ds-sidebar. */
+.ds-content { min-width: 0; padding-top: 52px; } /* Define a largura mínima como 0. Define o espaço interno superior como 52px. */
+.ds-overview { /* Seleciona .ds-overview. */
+  padding-bottom: 44px; /* Define o espaço interno inferior como 44px. */
+  & h1 { /* Seleciona & h1 usando & para manter a relação com o seletor pai. */
+    font-size: clamp(32px, 4vw, 48px); /* Define o tamanho da fonte como clamp(32px, 4vw, 48px). */
+    letter-spacing: -1.8px; /* Define o espaçamento entre letras como -1.8px. */
+    line-height: 1.12; /* Define a altura das linhas como 1.12. */
+    font-weight: 800; /* Define o peso da fonte como 800. */
+    margin-top: 20px; /* Define a margem superior como 20px. */
+  } /* Encerra o bloco do seletor & h1. */
+  &>p { /* Seleciona &>p usando & para manter a relação com o seletor pai. */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    max-width: 620px; /* Define a largura máxima como 620px. */
+    margin-top: 20px; /* Define a margem superior como 20px. */
+  } /* Encerra o bloco do seletor &>p. */
+} /* Encerra o bloco do seletor .ds-overview. */
+.ds-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; } /* Define o modelo de layout como flex. Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como 8px. Define a margem superior como 24px. */
+.ds-section { padding-block: 44px; border-top: 1px solid var(--praxis-line); } /* Define a propriedade padding-block como 44px. Define a borda superior como 1px solid var(--praxis-line). */
+.ds-section__head { /* Seleciona .ds-section__head. */
+  margin-bottom: 26px; /* Define a margem inferior como 26px. */
+  &>span { /* Seleciona &>span usando & para manter a relação com o seletor pai. */
+    font-size: 10px; /* Define o tamanho da fonte como 10px. */
+    font-weight: 700; /* Define o peso da fonte como 700. */
+    letter-spacing: 1.2px; /* Define o espaçamento entre letras como 1.2px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor &>span. */
+  & h2 { /* Seleciona & h2 usando & para manter a relação com o seletor pai. */
+    font-size: 25px; /* Define o tamanho da fonte como 25px. */
+    font-weight: 700; /* Define o peso da fonte como 700. */
+    line-height: 1.2; /* Define a altura das linhas como 1.2. */
+    letter-spacing: -.8px; /* Define o espaçamento entre letras como -.8px. */
+    margin-top: 10px; /* Define a margem superior como 10px. */
+  } /* Encerra o bloco do seletor & h2. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    max-width: 620px; /* Define a largura máxima como 620px. */
+    margin-top: 12px; /* Define a margem superior como 12px. */
+  } /* Encerra o bloco do seletor & p. */
+} /* Encerra o bloco do seletor .ds-section__head. */
+.ds-palette { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } /* Define o modelo de layout como grid. Define as colunas da grade como repeat(3, minmax(0, 1fr)). Define o espaço entre os itens como 16px. */
+.ds-swatch { border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); overflow: hidden; background: var(--praxis-panel); } /* Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como var(--praxis-radius-md). Define o tratamento do conteúdo excedente como hidden. Define o fundo como var(--praxis-panel). */
+.ds-swatch__color { color: var(--praxis-color-ink); height: 95px; padding: 14px; display: flex; align-items: flex-end; font-size: 11px; font-weight: 600; } /* Define a cor do texto como var(--praxis-color-ink). Define a altura como 95px. Define os espaços internos como 14px. Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como flex-end. Define o tamanho da fonte como 11px. Define o peso da fonte como 600. */
+.swatch--dark { color: var(--praxis-color-paper); } /* Define a cor do texto como var(--praxis-color-paper). */
+.ds-swatch__label { /* Seleciona .ds-swatch__label. */
+  padding: 14px; /* Define os espaços internos como 14px. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    display: block; /* Define o modelo de layout como block. */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+  } /* Encerra o bloco do seletor & strong. */
+  & code { /* Seleciona & code usando & para manter a relação com o seletor pai. */
+    display: block; /* Define o modelo de layout como block. */
+    font-size: 9px; /* Define o tamanho da fonte como 9px. */
+    margin-top: 6px; /* Define a margem superior como 6px. */
+    overflow-wrap: anywhere; /* Define a propriedade overflow-wrap como anywhere. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor & code. */
+} /* Encerra o bloco do seletor .ds-swatch__label. */
+.ds-rule { /* Seleciona .ds-rule. */
+  padding: 20px 24px; /* Define os espaços internos como 20px 24px. */
+  margin-top: 24px; /* Define a margem superior como 24px. */
+  border-left: 3px solid #899d1b; /* Define a borda esquerda como 3px solid #899d1b. */
+  background: var(--praxis-panel-raised); /* Define o fundo como var(--praxis-panel-raised). */
+  border-radius: 0 10px 10px 0; /* Define o arredondamento dos cantos como 0 10px 10px 0. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+  } /* Encerra o bloco do seletor & strong. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+    margin-top: 8px; /* Define a margem superior como 8px. */
+  } /* Encerra o bloco do seletor & p. */
+} /* Encerra o bloco do seletor .ds-rule. */
+.ds-type-row { /* Seleciona .ds-type-row. */
+  display: grid; /* Define o modelo de layout como grid. */
+  grid-template-columns: 155px minmax(0, 1fr); /* Define as colunas da grade como 155px minmax(0, 1fr). */
+  gap: 20px; /* Define o espaço entre os itens como 20px. */
+  padding: 24px 0; /* Define os espaços internos como 24px 0. */
+  border-bottom: 1px solid var(--praxis-line); /* Define a borda inferior como 1px solid var(--praxis-line). */
+  align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+  &>div { /* Seleciona &>div usando & para manter a relação com o seletor pai. */
+    display: grid; /* Define o modelo de layout como grid. */
+    gap: 6px; /* Define o espaço entre os itens como 6px. */
+  } /* Encerra o bloco do seletor &>div. */
+  & code { /* Seleciona & code usando & para manter a relação com o seletor pai. */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+    font-weight: 600; /* Define o peso da fonte como 600. */
+  } /* Encerra o bloco do seletor & code. */
+  & small { /* Seleciona & small usando & para manter a relação com o seletor pai. */
+    font-size: 10px; /* Define o tamanho da fonte como 10px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor & small. */
+  & .ds-display { /* Seleciona & .ds-display usando & para manter a relação com o seletor pai. */
+    font-size: clamp(32px, 4vw, 48px); /* Define o tamanho da fonte como clamp(32px, 4vw, 48px). */
+    font-weight: 800; /* Define o peso da fonte como 800. */
+    letter-spacing: -1.3px; /* Define o espaçamento entre letras como -1.3px. */
+    line-height: 1.08; /* Define a altura das linhas como 1.08. */
+  } /* Encerra o bloco do seletor & .ds-display. */
+  & .px-heading { /* Seleciona & .px-heading usando & para manter a relação com o seletor pai. */
+    font-size: 32px; /* Define o tamanho da fonte como 32px. */
+  } /* Encerra o bloco do seletor & .px-heading. */
+  & .ds-small { /* Seleciona & .ds-small usando & para manter a relação com o seletor pai. */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    font-weight: 500; /* Define o peso da fonte como 500. */
+  } /* Encerra o bloco do seletor & .ds-small. */
+} /* Encerra o bloco do seletor .ds-type-row. */
+.ds-spacing { display: flex; flex-wrap: wrap; gap: 28px; padding: 24px; background: var(--praxis-panel); border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); } /* Define o modelo de layout como flex. Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como 28px. Define os espaços internos como 24px. Define o fundo como var(--praxis-panel). Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos … */
+.ds-space { /* Seleciona .ds-space. */
+  display: grid; /* Define o modelo de layout como grid. */
+  gap: 16px; /* Define o espaço entre os itens como 16px. */
+  justify-items: start; /* Define o alinhamento horizontal dos itens da grade como start. */
+  & span { /* Seleciona & span usando & para manter a relação com o seletor pai. */
+    font-size: 10px; /* Define o tamanho da fonte como 10px. */
+    color: var(--praxis-muted); /* Define a cor do texto como var(--praxis-muted). */
+  } /* Encerra o bloco do seletor & span. */
+  & i { /* Seleciona & i usando & para manter a relação com o seletor pai. */
+    height: 32px; /* Define a altura como 32px. */
+    background: var(--praxis-text); /* Define o fundo como var(--praxis-text). */
+    display: block; /* Define o modelo de layout como block. */
+  } /* Encerra o bloco do seletor & i. */
+} /* Encerra o bloco do seletor .ds-space. */
+.ds-radii { /* Seleciona .ds-radii. */
+  display: grid; /* Define o modelo de layout como grid. */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Define as colunas da grade como repeat(4, minmax(0, 1fr)). */
+  gap: 16px; /* Define o espaço entre os itens como 16px. */
+  margin-top: 24px; /* Define a margem superior como 24px. */
+  &>div { /* Seleciona &>div usando & para manter a relação com o seletor pai. */
+    background: var(--praxis-accent-tint); /* Define o fundo como var(--praxis-accent-tint). */
+    min-height: 96px; /* Define a altura mínima como 96px. */
+    padding: 18px; /* Define os espaços internos como 18px. */
+    display: flex; /* Define o modelo de layout como flex. */
+    flex-direction: column; /* Define a direção dos itens flexíveis como column. */
+    justify-content: center; /* Define a distribuição no eixo principal como center. */
+    align-items: center; /* Define o alinhamento dos itens no eixo transversal como center. */
+    gap: 6px; /* Define o espaço entre os itens como 6px. */
+    text-align: center; /* Define o alinhamento do texto como center. */
+    border: 1px solid var(--praxis-line); /* Define a borda como 1px solid var(--praxis-line). */
+  } /* Encerra o bloco do seletor &>div. */
+  & strong { /* Seleciona & strong usando & para manter a relação com o seletor pai. */
+    font-size: 16px; /* Define o tamanho da fonte como 16px. */
+  } /* Encerra o bloco do seletor & strong. */
+  & span { /* Seleciona & span usando & para manter a relação com o seletor pai. */
+    font-size: 10px; /* Define o tamanho da fonte como 10px. */
+  } /* Encerra o bloco do seletor & span. */
+} /* Encerra o bloco do seletor .ds-radii. */
+.ds-button-stage { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; padding: 24px; } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. Define a quebra de linha dos itens flexíveis como wrap. Define o espaço entre os itens como 14px. Define os espaços internos como 24px. */
+.ds-stage--dark { background: var(--praxis-page); border-radius: var(--praxis-radius-lg); } /* Define o fundo como var(--praxis-page). Define o arredondamento dos cantos como var(--praxis-radius-lg). */
+.ds-caption { font-size: 11px; color: var(--praxis-muted); } /* Define o tamanho da fonte como 11px. Define a cor do texto como var(--praxis-muted). */
+.ds-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } /* Define o modelo de layout como grid. Define as colunas da grade como repeat(2, minmax(0, 1fr)). Define o espaço entre os itens como 24px. */
+.ds-component-grid { /* Seleciona .ds-component-grid. */
+  display: grid; /* Define o modelo de layout como grid. */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* Define as colunas da grade como repeat(2, minmax(0, 1fr)). */
+  gap: 20px; /* Define o espaço entre os itens como 20px. */
+  & .px-card { /* Seleciona & .px-card usando & para manter a relação com o seletor pai. */
+    display: flex; /* Define o modelo de layout como flex. */
+    flex-direction: column; /* Define a direção dos itens flexíveis como column. */
+    align-items: flex-start; /* Define o alinhamento dos itens no eixo transversal como flex-start. */
+    padding: 26px; /* Define os espaços internos como 26px. */
+  } /* Encerra o bloco do seletor & .px-card. */
+} /* Encerra o bloco do seletor .ds-component-grid. */
+.ds-card-icon { /* Seleciona .ds-card-icon. */
+  display: block; /* Define o modelo de layout como block. */
+  margin-block: 24px 14px; /* Define a propriedade margin-block como 24px 14px. */
+  & .px-icon { /* Seleciona & .px-icon usando & para manter a relação com o seletor pai. */
+    width: 28px; /* Define a largura como 28px. */
+    height: 28px; /* Define a altura como 28px. */
+  } /* Encerra o bloco do seletor & .px-icon. */
+} /* Encerra o bloco do seletor .ds-card-icon. */
+.ds-component-grid { /* Seleciona .ds-component-grid. */
+  & h3 { /* Seleciona & h3 usando & para manter a relação com o seletor pai. */
+    font-size: 20px; /* Define o tamanho da fonte como 20px. */
+    line-height: 1.25; /* Define a altura das linhas como 1.25. */
+    letter-spacing: -.5px; /* Define o espaçamento entre letras como -.5px. */
+  } /* Encerra o bloco do seletor & h3. */
+  & p { /* Seleciona & p usando & para manter a relação com o seletor pai. */
+    font-size: 13px; /* Define o tamanho da fonte como 13px. */
+    margin-top: 12px; /* Define a margem superior como 12px. */
+    margin-bottom: 24px; /* Define a margem inferior como 24px. */
+  } /* Encerra o bloco do seletor & p. */
+  & .px-button { /* Seleciona & .px-button usando & para manter a relação com o seletor pai. */
+    margin-top: auto; /* Define a margem superior como auto. */
+    font-size: 12px; /* Define o tamanho da fonte como 12px. */
+    width: 100%; /* Define a largura como 100%. */
+  } /* Encerra o bloco do seletor & .px-button. */
+} /* Encerra o bloco do seletor .ds-component-grid. */
+.ds-tag-row { display: flex; gap: 8px; margin-block: 24px; } /* Define o modelo de layout como flex. Define o espaço entre os itens como 8px. Define a propriedade margin-block como 24px. */
+.ds-demo-details { margin-top: 20px; } /* Define a margem superior como 20px. */
+.ds-content pre { padding: 24px; border: 1px solid var(--praxis-line); border-radius: var(--praxis-radius-md); background: var(--praxis-page); color: var(--praxis-accent-text); font-size: 12px; overflow-x: auto; line-height: 1.9; } /* Define os espaços internos como 24px. Define a borda como 1px solid var(--praxis-line). Define o arredondamento dos cantos como var(--praxis-radius-md). Define o fundo como var(--praxis-page). Define a cor do texto como var(--praxis-accent-text). Define o tamanho da fonte como 12px. Define o excess… */
+#uso > .px-button { margin-top: 24px; } /* Define a margem superior como 24px. */
+.ds-page .px-footer { color: var(--praxis-text); background: var(--praxis-page); } /* Define a cor do texto como var(--praxis-text). Define o fundo como var(--praxis-page). */
+@media (max-width: 1000px) { /* Aplica estas regras quando (max-width: 1000px). */
+  .ds-layout { grid-template-columns: 155px minmax(0, 1fr); gap: 28px; } /* Define as colunas da grade como 155px minmax(0, 1fr). Define o espaço entre os itens como 28px. */
+  .ds-type-row { grid-template-columns: 1fr; gap: 12px; } /* Define as colunas da grade como 1fr. Define o espaço entre os itens como 12px. */
+  .ds-radii { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* Define as colunas da grade como repeat(2, minmax(0, 1fr)). */
+  .ds-component-grid { grid-template-columns: 1fr; } /* Define as colunas da grade como 1fr. */
+} /* Encerra o bloco da regra @media. */
+@media (max-width: 700px) { /* Aplica estas regras quando (max-width: 700px). */
+  .ds-layout { grid-template-columns: 1fr; gap: 0; } /* Define as colunas da grade como 1fr. Define o espaço entre os itens como 0. */
+  .ds-sidebar { position: static; padding-top: 24px; } /* Define o posicionamento como static. Define o espaço interno superior como 24px. */
+  .ds-sidebar__title { display: flex; align-items: center; } /* Define o modelo de layout como flex. Define o alinhamento dos itens no eixo transversal como center. */
+  .ds-sidebar { /* Seleciona .ds-sidebar. */
+    & nav { /* Seleciona & nav usando & para manter a relação com o seletor pai. */
+      display: flex; /* Define o modelo de layout como flex. */
+      flex-wrap: wrap; /* Define a quebra de linha dos itens flexíveis como wrap. */
+      gap: 4px 16px; /* Define o espaço entre os itens como 4px 16px. */
+      margin-top: 14px; /* Define a margem superior como 14px. */
+    } /* Encerra o bloco do seletor & nav. */
+    &>p { /* Seleciona &>p usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor &>p. */
+  } /* Encerra o bloco do seletor .ds-sidebar. */
+  .ds-content { padding-top: 32px; } /* Define o espaço interno superior como 32px. */
+  .ds-overview h1 { font-size: 34px; letter-spacing: -1.2px; } /* Define o tamanho da fonte como 34px. Define o espaçamento entre letras como -1.2px. */
+  .ds-palette { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* Define as colunas da grade como repeat(2, minmax(0, 1fr)). */
+  .ds-fields { grid-template-columns: 1fr; } /* Define as colunas da grade como 1fr. */
+  .ds-section { padding-block: 32px; } /* Define a propriedade padding-block como 32px. */
+  .ds-page { /* Seleciona .ds-page. */
+    & .px-header { /* Seleciona & .px-header usando & para manter a relação com o seletor pai. */
+      & .px-button { /* Seleciona & .px-button usando & para manter a relação com o seletor pai. */
+        padding-inline: 12px; /* Define os espaços internos laterais como 12px. */
+        font-size: 11px; /* Define o tamanho da fonte como 11px. */
+        gap: 8px; /* Define o espaço entre os itens como 8px. */
+      } /* Encerra o bloco do seletor & .px-button. */
+      & .px-nav { /* Seleciona & .px-nav usando & para manter a relação com o seletor pai. */
+        gap: 12px; /* Define o espaço entre os itens como 12px. */
+      } /* Encerra o bloco do seletor & .px-nav. */
+    } /* Encerra o bloco do seletor & .px-header. */
+    & .px-logo__word { /* Seleciona & .px-logo__word usando & para manter a relação com o seletor pai. */
+      display: none; /* Define o modelo de layout como none. */
+    } /* Encerra o bloco do seletor & .px-logo__word. */
+  } /* Encerra o bloco do seletor .ds-page. */
+} /* Encerra o bloco da regra @media. */

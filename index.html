@@ -1,18 +1,18 @@
-<!doctype html>
+<!doctype html><!-- Declara o documento como HTML5. -->
 <!-- informa ao navegador que este documento utiliza HTML5 -->
 
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="dark"><!-- Insere o documento HTML. -->
 <!-- inicia o documento HTML e define o idioma principal como português do Brasil -->
 
 
-<head>
-  <meta name="theme-color" content="#06070c">
-  <script src="scripts/theme.js"></script>
+<head><!-- Insere as configurações e os recursos da página. -->
+  <meta name="theme-color" content="#06070c"><!-- Configura os metadados da página: Define o nome da configuração ou do campo como “theme-color”. Define o valor da configuração como “#06070c”. -->
+  <script src="scripts/theme.js"></script><!-- Carrega o script scripts/theme.js. -->
 <!-- inicia a área de configurações e informações da página -->
 
 
   <!-- define a codificação de caracteres como UTF-8 para aceitar acentos e caracteres especiais -->
-  <meta charset="utf-8">
+  <meta charset="utf-8"><!-- Configura os metadados da página: Define a codificação de caracteres como “utf-8”. -->
 
 
   <!--
@@ -28,6 +28,12 @@
     initial-scale=1:
     inicia o nível de zoom da página em 100%
   -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “viewport”.
+    Linha 3 do trecho: Define o valor da configuração como “width=device-width, initial-scale=1”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
@@ -36,6 +42,11 @@
 
   <!-- inicia o título exibido na aba do navegador -->
    <!-- texto exibido na aba do navegador -->
+  <!-- Explicações do texto abaixo, preservando seu conteúdo.
+    Linha 1 do trecho: Insere o título da página ou a descrição do SVG.
+    Linha 2 do trecho: Exibe o texto “Praxis” neste ponto da página.
+    Linha 3 do trecho: Encerra o título da página ou a descrição do SVG.
+  -->
   <title> 
     Praxis
   </title>  <!-- encerra o título da página -->
@@ -51,6 +62,12 @@
 
     content:
     contém o texto utilizado como descrição
+  -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Configura os metadados da página:
+    Linha 2 do trecho: Define o nome da configuração ou do campo como “description”.
+    Linha 3 do trecho: Define o valor da configuração como “Cursos práticos, diretos e atualizados para você aprender do zero ao avançado.”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
   -->
   <meta
     name="description"
@@ -68,6 +85,12 @@
     href:
     indica o endereço do servidor que será acessado
   -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.googleapis.com”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -80,6 +103,13 @@
 
     crossorigin:
     permite carregar recursos provenientes de outro domínio
+  -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define a relação com o recurso como “preconnect”.
+    Linha 3 do trecho: Define o destino do link como “https://fonts.gstatic.com”.
+    Linha 4 do trecho: Configura o carregamento entre origens.
+    Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
   -->
   <link
     rel="preconnect"
@@ -96,6 +126,12 @@
 
     rel="stylesheet":
     informa ao navegador que o recurso carregado é uma folha de estilos
+  -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Relaciona o recurso indicado no atributo href.
+    Linha 2 do trecho: Define o destino do link como “https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap”.
+    Linha 3 do trecho: Define a relação com o recurso como “stylesheet”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
   -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -117,20 +153,20 @@
 
   <!-- Tokens compartilhados da identidade Praxis. -->
 
-<link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high">
-<link rel="stylesheet" href="styles/tokens.css">
-<link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="styles/theme.css">
-<link rel="stylesheet" href="styles/header.css">
-<script src="scripts/header.js" defer></script>
-<script src="scripts/catalog-motion.js" defer></script>
-  <link rel="icon" href="assets/logo.png" type="image/png">
-</head>
+<link rel="preload" as="image" href="assets/hero-workspace.png" fetchpriority="high"><!-- Relaciona o recurso assets/hero-workspace.png. -->
+<link rel="stylesheet" href="styles/tokens.css"><!-- Carrega a folha de estilos styles/tokens.css. -->
+<link rel="stylesheet" href="styles/main.css"><!-- Carrega a folha de estilos styles/main.css. -->
+<link rel="stylesheet" href="styles/theme.css"><!-- Carrega a folha de estilos styles/theme.css. -->
+<link rel="stylesheet" href="styles/header.css"><!-- Carrega a folha de estilos styles/header.css. -->
+<script src="scripts/header.js" defer></script><!-- Carrega o script scripts/header.js. -->
+<script src="scripts/catalog-motion.js" defer></script><!-- Carrega o script scripts/catalog-motion.js. -->
+  <link rel="icon" href="assets/logo.png" type="image/png"><!-- Define o favicon da Praxis em assets/logo.png. -->
+</head><!-- Encerra as configurações e os recursos da página. -->
 <!-- encerra a área de configurações da página -->
 
 
 
-<body class="home-page">
+<body class="home-page"><!-- Insere o conteúdo visível da página com as classes “home-page”. -->
 <!-- inicia todo o conteúdo visual exibido para o usuário -->
 
 
@@ -148,7 +184,7 @@
     class="site-header":
     permite que o CSS estilize este cabeçalho
   -->
-  <header class="site-header" data-site-header data-subscription="true"></header>
+  <header class="site-header" data-site-header data-subscription="true"></header><!-- Insere o cabeçalho com as classes “site-header”. -->
   <!-- encerra o cabeçalho principal da página -->
 
 
@@ -162,7 +198,7 @@
 
 
   <!-- inicia o conteúdo principal da página -->
-  <main>
+  <main><!-- Insere o conteúdo principal. -->
 
 
 
@@ -179,22 +215,22 @@
       class="hero":
       permite aplicar os estilos específicos do hero
     -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <div class="eyebrow">ENTENDA. PRATIQUE. CRIE.</div>
-          <h1 id="hero-title">
-            <span class="hero-title-line">Aprenda</span>
-            <span class="hero-title-line">ferramentas na</span>
-            <span class="hero-title-line"><span class="accent">prática</span>.</span>
-          </h1>
-          <p class="hero-desc">
-            Cursos práticos, diretos e atualizados para você aprender
-            do zero ao avançado.
-          </p>
-        </div>
-      </div>
-    </section>
+    <section class="hero" aria-labelledby="hero-title"><!-- Insere uma seção de conteúdo com as classes “hero”. -->
+      <div class="container hero-inner"><!-- Insere um contêiner de layout com as classes “container hero-inner”. -->
+        <div class="hero-content"><!-- Insere um contêiner de layout com as classes “hero-content”. -->
+          <div class="eyebrow">ENTENDA. PRATIQUE. CRIE.</div><!-- Insere um contêiner de layout com as classes “eyebrow” com o texto “ENTENDA. PRATIQUE. CRIE.”. -->
+          <h1 id="hero-title"><!-- Insere o título principal identificado por “hero-title”. -->
+            <span class="hero-title-line">Aprenda</span><!-- Insere um trecho de texto em linha com as classes “hero-title-line” com o texto “Aprenda”. -->
+            <span class="hero-title-line">ferramentas na</span><!-- Insere um trecho de texto em linha com as classes “hero-title-line” com o texto “ferramentas na”. -->
+            <span class="hero-title-line"><span class="accent">prática</span>.</span><!-- Insere um trecho de texto em linha com as classes “hero-title-line” com o texto “prática.”. -->
+          </h1><!-- Encerra o título principal. -->
+          <p class="hero-desc"><!-- Insere um parágrafo com as classes “hero-desc”. -->
+            Cursos práticos, diretos e atualizados para você aprender<!-- Exibe o texto “Cursos práticos, diretos e atualizados para você aprender” neste ponto da página. -->
+            do zero ao avançado.<!-- Exibe o texto “do zero ao avançado.” neste ponto da página. -->
+          </p><!-- Encerra um parágrafo. -->
+        </div><!-- Encerra um contêiner de layout. -->
+      </div><!-- Encerra um contêiner de layout. -->
+    </section><!-- Encerra uma seção de conteúdo. -->
     <!-- encerra a seção hero -->
 
 
@@ -215,6 +251,12 @@
       aria-labelledby:
       relaciona esta seção ao título que possui id="catalog-title"
     -->
+    <!-- Explicações da tag e dos atributos abaixo.
+      Linha 1 do trecho: Insere uma seção de conteúdo com o texto “<section”.
+      Linha 2 do trecho: Aplica as classes de estilo como “catalog-panel”.
+      Linha 3 do trecho: Relaciona o nome acessível ao elemento como “catalog-title”.
+      Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+    -->
     <section
       class="catalog-panel"
       aria-labelledby="catalog-title"
@@ -223,27 +265,27 @@
 
 
       <!-- cria o contêiner centralizado do catálogo -->
-      <div class="container">
+      <div class="container"><!-- Insere um contêiner de layout com as classes “container”. -->
 
 
 
         <!-- cria o cabeçalho da área do catálogo -->
-        <div class="catalog-head">
+        <div class="catalog-head"><!-- Insere um contêiner de layout com as classes “catalog-head”. -->
 
 
 
           <!-- agrupa o pequeno título e o título principal -->
-          <div>
+          <div><!-- Insere um contêiner de layout. -->
 
 
 
             <!-- cria o pequeno texto de destaque -->
-            <div class="eyebrow">
+            <div class="eyebrow"><!-- Insere um contêiner de layout com as classes “eyebrow”. -->
 
               <!-- identificação da seção -->
-              CATÁLOGO DE CURSOS
+              CATÁLOGO DE CURSOS<!-- Exibe o texto “CATÁLOGO DE CURSOS” neste ponto da página. -->
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra o pequeno título -->
 
 
@@ -257,26 +299,32 @@
               catalog-title:
               classe utilizada pelo CSS
             -->
+            <!-- Explicações da tag e dos atributos abaixo.
+              Linha 1 do trecho: Insere um título de seção com o texto “<h2”.
+              Linha 2 do trecho: Define o identificador único como “catalog-title”.
+              Linha 3 do trecho: Aplica as classes de estilo como “catalog-title”.
+              Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+            -->
             <h2
               id="catalog-title"
               class="catalog-title"
             >
 
               <!-- texto principal do catálogo -->
-              Escolha uma trilha e comece a praticar
+              Escolha uma trilha e comece a praticar<!-- Exibe o texto “Escolha uma trilha e comece a praticar” neste ponto da página. -->
 
-            </h2>
+            </h2><!-- Encerra um título de seção. -->
             <!-- encerra o título do catálogo -->
 
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra o agrupamento do cabeçalho -->
 
 
-        </div>
+        </div><!-- Encerra um contêiner de layout. -->
         <!-- encerra o cabeçalho do catálogo -->
 
-        <p id="catalog-search-status" class="catalog-search-status" role="status" hidden></p>
+        <p id="catalog-search-status" class="catalog-search-status" role="status" hidden></p><!-- Insere um parágrafo identificado por “catalog-search-status”. -->
 
 
 
@@ -303,6 +351,14 @@
           aria-busy="true":
           informa inicialmente que esta área está carregando conteúdo
         -->
+        <!-- Explicações da tag e dos atributos abaixo.
+          Linha 1 do trecho: Insere um contêiner de layout com o texto “<div”.
+          Linha 2 do trecho: Aplica as classes de estilo como “catalog-grid”.
+          Linha 3 do trecho: Define o identificador único como “catalog-grid”.
+          Linha 4 do trecho: Define o anúncio de mudanças aos leitores de tela como “polite”.
+          Linha 5 do trecho: Define o atributo aria-busy como “true”.
+          Linha 6 do trecho: Conclui a declaração da tag e de seus atributos.
+        -->
         <div
           class="catalog-grid"
           id="catalog-grid"
@@ -313,16 +369,16 @@
 
 
           <!-- cria o elemento utilizado para exibir mensagens de estado -->
-          <div class="state">
+          <div class="state"><!-- Insere um contêiner de layout com as classes “state”. -->
 
             <!-- mensagem mostrada durante a busca dos cursos -->
-            Carregando cursos...
+            Carregando cursos...<!-- Exibe o texto “Carregando cursos...” neste ponto da página. -->
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra a mensagem de estado -->
 
 
-        </div>
+        </div><!-- Encerra um contêiner de layout. -->
         <!-- encerra a área onde os cards serão inseridos -->
 
 
@@ -335,7 +391,7 @@
 
 
         <!-- agrupa todos os recursos exibidos abaixo do catálogo -->
-        <div class="features">
+        <div class="features"><!-- Insere um contêiner de layout com as classes “features”. -->
 
 
 
@@ -345,12 +401,12 @@
 
 
           <!-- cria o primeiro bloco de benefício -->
-          <div class="feature">
+          <div class="feature"><!-- Insere um contêiner de layout com as classes “feature”. -->
 
 
 
             <!-- cria o contêiner visual do ícone -->
-            <div class="feature-ico">
+            <div class="feature-ico"><!-- Insere um contêiner de layout com as classes “feature-ico”. -->
 
 
 
@@ -378,6 +434,17 @@
                 aria-hidden:
                 define o SVG como decorativo
               -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define a largura como “20”.
+                Linha 3 do trecho: Define a altura como “20”.
+                Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 5 do trecho: Define o preenchimento SVG como “none”.
+                Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 8 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 width="20"
                 height="20"
@@ -390,57 +457,67 @@
 
 
                 <!-- desenha o lado esquerdo do livro -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
                 />
 
 
                 <!-- desenha o lado direito do livro -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
                 />
 
 
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
               <!-- encerra o ícone do livro -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra o contêiner do ícone -->
 
 
 
             <!-- agrupa o título e a descrição deste benefício -->
-            <div>
+            <div><!-- Insere um contêiner de layout. -->
 
 
 
               <!-- cria o título do benefício -->
-              <h4>
+              <h4><!-- Insere um título de nível quatro. -->
 
                 <!-- nome do benefício -->
-                Aprenda no seu ritmo
+                Aprenda no seu ritmo<!-- Exibe o texto “Aprenda no seu ritmo” neste ponto da página. -->
 
-              </h4>
+              </h4><!-- Encerra um título de nível quatro. -->
               <!-- encerra o título -->
 
 
 
               <!-- cria a descrição -->
-              <p>
+              <p><!-- Insere um parágrafo. -->
 
                 <!-- explica o benefício -->
-                Acesse quando e onde quiser
+                Acesse quando e onde quiser<!-- Exibe o texto “Acesse quando e onde quiser” neste ponto da página. -->
 
-              </p>
+              </p><!-- Encerra um parágrafo. -->
               <!-- encerra a descrição -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra os textos do benefício -->
 
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra o primeiro benefício -->
 
 
@@ -451,16 +528,27 @@
 
 
           <!-- cria o segundo bloco de benefício -->
-          <div class="feature">
+          <div class="feature"><!-- Insere um contêiner de layout com as classes “feature”. -->
 
 
 
             <!-- cria o contêiner visual do ícone -->
-            <div class="feature-ico">
+            <div class="feature-ico"><!-- Insere um contêiner de layout com as classes “feature-ico”. -->
 
 
 
               <!-- cria o SVG utilizado para representar os certificados -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define a largura como “20”.
+                Linha 3 do trecho: Define a altura como “20”.
+                Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 5 do trecho: Define o preenchimento SVG como “none”.
+                Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 8 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 width="20"
                 height="20"
@@ -473,51 +561,56 @@
 
 
                 <!-- desenha um escudo -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
                 />
 
 
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
               <!-- encerra o SVG -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra o contêiner do ícone -->
 
 
 
             <!-- agrupa os textos do benefício -->
-            <div>
+            <div><!-- Insere um contêiner de layout. -->
 
 
 
               <!-- cria o título -->
-              <h4>
+              <h4><!-- Insere um título de nível quatro. -->
 
                 <!-- nome do benefício -->
-                Certificados
+                Certificados<!-- Exibe o texto “Certificados” neste ponto da página. -->
 
-              </h4>
+              </h4><!-- Encerra um título de nível quatro. -->
               <!-- encerra o título -->
 
 
 
               <!-- cria a descrição -->
-              <p>
+              <p><!-- Insere um parágrafo. -->
 
                 <!-- explica o propósito dos certificados -->
-                Comprove suas conquistas
+                Comprove suas conquistas<!-- Exibe o texto “Comprove suas conquistas” neste ponto da página. -->
 
-              </p>
+              </p><!-- Encerra um parágrafo. -->
               <!-- encerra a descrição -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra os textos -->
 
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra o benefício de certificados -->
 
 
@@ -528,16 +621,27 @@
 
 
           <!-- cria o terceiro bloco de benefício -->
-          <div class="feature">
+          <div class="feature"><!-- Insere um contêiner de layout com as classes “feature”. -->
 
 
 
             <!-- cria o contêiner do ícone -->
-            <div class="feature-ico">
+            <div class="feature-ico"><!-- Insere um contêiner de layout com as classes “feature-ico”. -->
 
 
 
               <!-- cria o SVG que representa um relógio -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define a largura como “20”.
+                Linha 3 do trecho: Define a altura como “20”.
+                Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 5 do trecho: Define o preenchimento SVG como “none”.
+                Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 8 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 width="20"
                 height="20"
@@ -550,6 +654,13 @@
 
 
                 <!-- cria o círculo externo do relógio -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um círculo vetorial com o texto “<circle”.
+                  Linha 2 do trecho: Define o atributo cx como “12”.
+                  Linha 3 do trecho: Define o atributo cy como “12”.
+                  Linha 4 do trecho: Define o atributo r como “10”.
+                  Linha 5 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <circle
                   cx="12"
                   cy="12"
@@ -558,51 +669,56 @@
 
 
                 <!-- desenha os ponteiros do relógio -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere uma sequência de segmentos vetoriais com o texto “<polyline”.
+                  Linha 2 do trecho: Define os pontos do desenho SVG como “12 6 12 12 16 14”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <polyline
                   points="12 6 12 12 16 14"
                 />
 
 
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
               <!-- encerra o ícone -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra o contêiner do ícone -->
 
 
 
             <!-- agrupa os textos -->
-            <div>
+            <div><!-- Insere um contêiner de layout. -->
 
 
 
               <!-- cria o título -->
-              <h4>
+              <h4><!-- Insere um título de nível quatro. -->
 
                 <!-- nome do benefício -->
-                Conteúdo atualizado
+                Conteúdo atualizado<!-- Exibe o texto “Conteúdo atualizado” neste ponto da página. -->
 
-              </h4>
+              </h4><!-- Encerra um título de nível quatro. -->
               <!-- encerra o título -->
 
 
 
               <!-- cria a descrição -->
-              <p>
+              <p><!-- Insere um parágrafo. -->
 
                 <!-- explica o benefício -->
-                Sempre atual e relevante
+                Sempre atual e relevante<!-- Exibe o texto “Sempre atual e relevante” neste ponto da página. -->
 
-              </p>
+              </p><!-- Encerra um parágrafo. -->
               <!-- encerra a descrição -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra os textos -->
 
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra o terceiro benefício -->
 
 
@@ -613,16 +729,27 @@
 
 
           <!-- cria o quarto bloco de benefício -->
-          <div class="feature">
+          <div class="feature"><!-- Insere um contêiner de layout com as classes “feature”. -->
 
 
 
             <!-- cria o contêiner do ícone de suporte -->
-            <div class="feature-ico">
+            <div class="feature-ico"><!-- Insere um contêiner de layout com as classes “feature-ico”. -->
 
 
 
               <!-- cria o SVG utilizado para representar suporte -->
+              <!-- Explicações da tag e dos atributos abaixo.
+                Linha 1 do trecho: Insere um ícone ou desenho vetorial com o texto “<svg”.
+                Linha 2 do trecho: Define a largura como “20”.
+                Linha 3 do trecho: Define a altura como “20”.
+                Linha 4 do trecho: Define o sistema de coordenadas SVG como “0 0 24 24”.
+                Linha 5 do trecho: Define o preenchimento SVG como “none”.
+                Linha 6 do trecho: Define a cor do traço SVG como “currentColor”.
+                Linha 7 do trecho: Define a espessura do traço SVG como “2”.
+                Linha 8 do trecho: Define se o elemento é omitido dos leitores de tela como “true”.
+                Linha 9 do trecho: Conclui a declaração da tag e de seus atributos.
+              -->
               <svg
                 width="20"
                 height="20"
@@ -635,73 +762,83 @@
 
 
                 <!-- desenha uma parte do ícone -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M18 8h1a4 4 0 0 1 0 8h-1”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M18 8h1a4 4 0 0 1 0 8h-1"
                 />
 
 
                 <!-- desenha o restante do ícone -->
+                <!-- Explicações da tag e dos atributos abaixo.
+                  Linha 1 do trecho: Insere um traçado vetorial com o texto “<path”.
+                  Linha 2 do trecho: Define os comandos do traçado SVG como “M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z”.
+                  Linha 3 do trecho: Conclui a declaração da tag e de seus atributos.
+                -->
                 <path
                   d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"
                 />
 
 
-              </svg>
+              </svg><!-- Encerra um ícone ou desenho vetorial. -->
               <!-- encerra o ícone -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra o contêiner do ícone -->
 
 
 
             <!-- agrupa os textos -->
-            <div>
+            <div><!-- Insere um contêiner de layout. -->
 
 
 
               <!-- cria o título -->
-              <h4>
+              <h4><!-- Insere um título de nível quatro. -->
 
                 <!-- nome do benefício -->
-                Suporte dedicado
+                Suporte dedicado<!-- Exibe o texto “Suporte dedicado” neste ponto da página. -->
 
-              </h4>
+              </h4><!-- Encerra um título de nível quatro. -->
               <!-- encerra o título -->
 
 
 
               <!-- cria a descrição -->
-              <p>
+              <p><!-- Insere um parágrafo. -->
 
                 <!-- explica o benefício -->
-                Tire suas dúvidas sempre
+                Tire suas dúvidas sempre<!-- Exibe o texto “Tire suas dúvidas sempre” neste ponto da página. -->
 
-              </p>
+              </p><!-- Encerra um parágrafo. -->
               <!-- encerra a descrição -->
 
 
-            </div>
+            </div><!-- Encerra um contêiner de layout. -->
             <!-- encerra os textos -->
 
 
-          </div>
+          </div><!-- Encerra um contêiner de layout. -->
           <!-- encerra o benefício de suporte -->
 
 
-        </div>
+        </div><!-- Encerra um contêiner de layout. -->
         <!-- encerra a área com todos os benefícios -->
 
 
-      </div>
+      </div><!-- Encerra um contêiner de layout. -->
       <!-- encerra o contêiner principal do catálogo -->
 
 
-    </section>
+    </section><!-- Encerra uma seção de conteúdo. -->
     <!-- encerra a seção do catálogo -->
 
 
-  </main>
+  </main><!-- Encerra o conteúdo principal. -->
   <!-- encerra o conteúdo principal da página -->
 
 
@@ -727,6 +864,12 @@
     src:
     informa o caminho do arquivo JavaScript
   -->
+  <!-- Explicações da tag e dos atributos abaixo.
+    Linha 1 do trecho: Inicia o bloco JavaScript embutido nesta página.
+    Linha 2 do trecho: Define o tipo do recurso ou controle como “module”.
+    Linha 3 do trecho: Define o arquivo ou endereço carregado como “scripts/index.js”.
+    Linha 4 do trecho: Conclui a declaração da tag e de seus atributos.
+  -->
   <script
     type="module"
     src="scripts/index.js"
@@ -734,9 +877,9 @@
 
 
 
-</body>
+</body><!-- Encerra o conteúdo visível da página. -->
 <!-- encerra todo o conteúdo visual da página -->
 
 
-</html>
+</html><!-- Encerra o documento HTML. -->
 <!-- encerra o documento HTML -->

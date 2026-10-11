@@ -42,6 +42,10 @@ Há três lacunas na numeração da origem: PowerPoint 13, Power BI 7 e Vibe Cod
 ## Verificação
 Execute `npm run check` para verificar a sintaxe dos scripts e do servidor local. Com Node.js 22, execute `npm test` para os testes locais de tema e autenticação. Os testes simulam o Supabase e não enviam e-mails nem alteram contas. Com Python 3, `python tools/audit-pages.py` verifica estrutura, arquivos, tokens e contraste das cores semânticas. Consulte `VALIDACAO.md` para os limites da verificação.
 
+## Comentários para estudo
+
+Os 59 arquivos de código têm explicações em português para cada linha, incluindo páginas, estilos, scripts, testes, servidor, auditorias e importadores. Trechos textuais e tags multilinha usam blocos numerados imediatamente anteriores. [COMENTARIOS.md](COMENTARIOS.md) descreve o padrão e a conferência de equivalência. [package.comentado.jsonc](package.comentado.jsonc) explica a configuração do npm mantendo `package.json` válido.
+
 ## Recuperação de senha
 Em Auth → URL Configuration do Supabase, os endereços de retorno precisam ser permitidos, incluindo o caminho `login.html?modo=redefinir` no ambiente usado (local ou publicado). O envio depende do serviço de e-mail configurado no projeto. O botão já usa [resetPasswordForEmail](https://supabase.com/docs/reference/javascript/auth-resetpasswordforemail), e a nova senha é salva com [updateUser](https://supabase.com/docs/reference/javascript/auth-updateuser) após abrir um link válido. Nenhuma configuração do painel Supabase foi alterada nesta entrega.
 
